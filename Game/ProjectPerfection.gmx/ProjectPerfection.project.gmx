@@ -5,9 +5,60 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
-  <backgrounds name="background"/>
+  <sprites name="sprites">
+    <sprites name="Player">
+      <sprite>sprites\spr_player</sprite>
+    </sprites>
+    <sprite>sprites\spr_wall</sprite>
+    <sprite>sprites\spr_door</sprite>
+  </sprites>
+  <backgrounds name="background">
+    <background>background\bkg_tile</background>
+  </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <scripts name="Dungeon">
+      <script>scripts\dungeon_init.gml</script>
+      <script>scripts\dungeon_add_option.gml</script>
+      <script>scripts\dungeon_set_room.gml</script>
+      <script>scripts\dungeon_populate.gml</script>
+      <script>scripts\dungeon_right.gml</script>
+      <script>scripts\dungeon_down.gml</script>
+      <script>scripts\dungeon_up.gml</script>
+      <script>scripts\dungeon_left.gml</script>
+      <script>scripts\dungeon_clear.gml</script>
+    </scripts>
+    <scripts name="Entity">
+      <script>scripts\entity_init.gml</script>
+      <script>scripts\entity_move_input.gml</script>
+      <script>scripts\entity_dampening.gml</script>
+    </scripts>
+    <scripts name="Camera">
+      <script>scripts\camera_init.gml</script>
+      <script>scripts\camera_update.gml</script>
+      <script>scripts\camera_apply.gml</script>
+    </scripts>
+    <scripts name="Keymap">
+      <script>scripts\keymap_check.gml</script>
+    </scripts>
+  </scripts>
+  <objects name="objects">
+    <object>objects\obj_player</object>
+    <object>objects\obj_wall</object>
+    <object>objects\obj_dungeon</object>
+    <object>objects\obj_door</object>
+    <object>objects\obj_control</object>
+    <objects name="Camera">
+      <object>objects\obj_camera</object>
+      <object>objects\obj_room_camera</object>
+    </objects>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\rm_test</room>
+    <rooms name="Stubs">
+      <room>rooms\room1</room>
+    </rooms>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
