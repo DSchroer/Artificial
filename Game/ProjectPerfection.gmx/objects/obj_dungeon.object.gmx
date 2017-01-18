@@ -25,13 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>dungeon_init(30, 30);
-
+            <string>dungeon_init(20, 20);
 
 dungeon_add_option(room1, 3, 3);
-dungeon_add_option(room1, 9, 9);
+dungeon_add_option(room1, 9, 3);
+dungeon_add_option(room1, 3, 5);
 dungeon_add_option(room1, 7, 7);
-
 </string>
           </argument>
         </arguments>
@@ -54,15 +53,19 @@ dungeon_add_option(room1, 7, 7);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>for(var i = 0; i &lt; width; i++)
+            <string>var size = 30;
+
+for(var i = 0; i &lt; width; i++)
 {
     for(var j = 0; j &lt; height; j++)
     {
         var value = ds_grid_get(room_grid, i, j);
         if(value != 0)
         {
-            draw_text(i * 25, j * 25, string(value));
-            //draw_rectangle(i * 20, j * 20, i * 20 + 20, j * 20 + 20, false);
+            draw_set_color(c_black);
+            draw_rectangle(i * size, j * size, i * size + size, j * size + size, false);
+            draw_set_color(c_white);
+            draw_text(i * size, j * size, string(value));
         }
     }
 }
@@ -91,8 +94,8 @@ dungeon_add_option(room1, 7, 7);
           <argument>
             <kind>1</kind>
             <string>dungeon_clear();
-dungeon_set_room(room1, 0, 0, 9, 9);
-dungeon_populate(0, 0, 9, 9);
+dungeon_set_room(room1, 0, 0, 3, 3);
+dungeon_populate(0, 0, 3, 3);
 </string>
           </argument>
         </arguments>

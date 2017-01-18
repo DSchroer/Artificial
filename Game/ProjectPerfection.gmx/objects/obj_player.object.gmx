@@ -48,7 +48,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle = point_direction(x, y, mouse_x, mouse_y);
+            <string>//image_angle = point_direction(x, y, mouse_x, mouse_y);
 
 entity_dampening();
 entity_move_input();
