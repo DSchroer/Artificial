@@ -72,10 +72,10 @@ camera_apply()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>y = room_height + (room_height)
+            <string>//y = room_height + (room_height)
 
-x_target = room_width / 2;
-y_target = room_height / 2;
+//x_target = room_width / 2;
+//y_target = room_height / 2;
 </string>
           </argument>
         </arguments>

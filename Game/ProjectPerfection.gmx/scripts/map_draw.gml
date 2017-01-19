@@ -1,7 +1,7 @@
 ///map_draw()
 if(level != -1)
 {
-    var size = 30;
+    var size = 7;
     for(var i = 0; i < ds_list_size(level.room_list); i++)
     {
         var r = ds_list_find_value(level.room_list, i);
@@ -12,6 +12,13 @@ if(level != -1)
         
         draw_rectangle_color(x1 * size, y1 * size, x2 * size, y2 * size, fill_color, fill_color, fill_color, fill_color, false);
         draw_rectangle(x1 * size, y1 * size, x2 * size, y2 * size, true);
-        draw_text(x1 * size, y1 * size, string(i));
     }
 }
+
+with(level)
+{
+    draw_circle_colour(level_position_x(obj_player.x) * size, level_position_y(obj_player.y) * size, 3, c_red, c_red, false);
+}
+
+
+

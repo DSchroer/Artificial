@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -52,6 +52,26 @@
 
 entity_dampening();
 entity_move_input();
+
+with(obj_level)
+{
+    var x1 = level_position_x(other.x);
+    var y1 =  level_position_y(other.y);
+    var level = level_grid_value(x1, y1);
+    if(level != 0 &amp;&amp; level - 1 != current_room)
+    {
+        var x_diff = ds_list_find_value(room_x_list, level - 1) - ds_list_find_value(room_x_list, current_room);
+        var y_diff = ds_list_find_value(room_y_list, level - 1) - ds_list_find_value(room_y_list, current_room);
+     
+        x_diff *= 64;
+        y_diff *= 64;
+        
+        current_room = level - 1;
+        other.x -= x_diff;
+        other.y -= y_diff;
+        room_goto(ds_list_find_value(room_list, level - 1));
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -79,7 +99,6 @@ entity_move_input();
 if(debug_mode)
 {
     draw_set_color(c_red)
-    draw_line(x,y,x + move_vec_x,y + move_vec_y)
 }
 
 </string>
