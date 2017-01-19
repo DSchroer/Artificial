@@ -25,12 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>dungeon_init(20, 20);
-
-dungeon_add_option(room1, 3, 3);
-dungeon_add_option(room1, 9, 3);
-dungeon_add_option(room1, 3, 5);
-dungeon_add_option(room1, 7, 7);
+            <string>map_init()
 </string>
           </argument>
         </arguments>
@@ -53,49 +48,7 @@ dungeon_add_option(room1, 7, 7);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var size = 30;
-
-for(var i = 0; i &lt; width; i++)
-{
-    for(var j = 0; j &lt; height; j++)
-    {
-        var value = ds_grid_get(room_grid, i, j);
-        if(value != 0)
-        {
-            draw_set_color(c_black);
-            draw_rectangle(i * size, j * size, i * size + size, j * size + size, false);
-            draw_set_color(c_white);
-            draw_text(i * size, j * size, string(value));
-        }
-    }
-}
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="10" enumb="18">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>dungeon_clear();
-dungeon_set_room(room1, 0, 0, 3, 3);
-dungeon_populate(0, 0, 3, 3);
+            <string>map_draw()
 </string>
           </argument>
         </arguments>

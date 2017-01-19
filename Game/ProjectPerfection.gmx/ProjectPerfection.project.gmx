@@ -17,16 +17,13 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <scripts name="Dungeon">
-      <script>scripts\dungeon_init.gml</script>
-      <script>scripts\dungeon_add_option.gml</script>
-      <script>scripts\dungeon_set_room.gml</script>
-      <script>scripts\dungeon_populate.gml</script>
-      <script>scripts\dungeon_right.gml</script>
-      <script>scripts\dungeon_down.gml</script>
-      <script>scripts\dungeon_up.gml</script>
-      <script>scripts\dungeon_left.gml</script>
-      <script>scripts\dungeon_clear.gml</script>
+    <scripts name="Level">
+      <script>scripts\level_create.gml</script>
+      <script>scripts\level_init.gml</script>
+      <script>scripts\level_destroy.gml</script>
+      <script>scripts\level_position_x.gml</script>
+      <script>scripts\level_position_y.gml</script>
+      <script>scripts\level_set_room.gml</script>
     </scripts>
     <scripts name="Entity">
       <script>scripts\entity_init.gml</script>
@@ -41,22 +38,49 @@
     <scripts name="Keymap">
       <script>scripts\keymap_check.gml</script>
     </scripts>
+    <scripts name="Generator">
+      <script>scripts\generator_init.gml</script>
+      <script>scripts\generator_left.gml</script>
+      <script>scripts\generator_clear.gml</script>
+      <script>scripts\generator_add_option.gml</script>
+      <script>scripts\generator_set_room.gml</script>
+      <script>scripts\generator_populate.gml</script>
+      <script>scripts\generator_right.gml</script>
+      <script>scripts\generator_down.gml</script>
+      <script>scripts\generator_up.gml</script>
+      <script>scripts\generator_create_level.gml</script>
+    </scripts>
+    <scripts name="Map">
+      <script>scripts\map_init.gml</script>
+      <script>scripts\map_set_level.gml</script>
+      <script>scripts\map_draw.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
     <object>objects\obj_wall</object>
-    <object>objects\obj_dungeon</object>
     <object>objects\obj_door</object>
     <object>objects\obj_control</object>
     <objects name="Camera">
       <object>objects\obj_camera</object>
       <object>objects\obj_room_camera</object>
     </objects>
+    <objects name="Dungeon">
+      <object>objects\obj_generator</object>
+      <object>objects\obj_level</object>
+    </objects>
+    <objects name="UI">
+      <object>objects\obj_minimap</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_dungeon_test</room>
     <room>rooms\rm_test</room>
     <rooms name="Stubs">
-      <room>rooms\room1</room>
+      <room>rooms\rm_stub_1</room>
+      <room>rooms\rm_stub_2</room>
+      <room>rooms\rm_stub_3</room>
+      <room>rooms\rm_stub_4</room>
     </rooms>
   </rooms>
   <help>
