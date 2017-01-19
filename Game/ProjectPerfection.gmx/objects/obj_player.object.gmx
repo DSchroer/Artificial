@@ -60,8 +60,8 @@ with(obj_level)
     var level = level_grid_value(x1, y1);
     if(level != 0 &amp;&amp; level - 1 != current_room)
     {
-        var x_diff = ds_list_find_value(room_x_list, level - 1) - ds_list_find_value(room_x_list, current_room);
-        var y_diff = ds_list_find_value(room_y_list, level - 1) - ds_list_find_value(room_y_list, current_room);
+        x_diff = ds_list_find_value(room_x_list, level - 1) - ds_list_find_value(room_x_list, current_room);
+        y_diff = ds_list_find_value(room_y_list, level - 1) - ds_list_find_value(room_y_list, current_room);
      
         x_diff *= 64;
         y_diff *= 64;
@@ -69,6 +69,13 @@ with(obj_level)
         current_room = level - 1;
         other.x -= x_diff;
         other.y -= y_diff;
+        
+        with(obj_camera)
+        {
+            x -= other.x_diff;
+            y -= other.y_diff;
+        }
+        
         room_goto(ds_list_find_value(room_list, level - 1));
     }
 }
