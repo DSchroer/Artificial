@@ -1,7 +1,7 @@
 ///map_draw()
 if(level != -1)
 {
-    var size = 7;
+    var size = 5;
     for(var i = 0; i < ds_list_size(level.room_list); i++)
     {
         var r = ds_list_find_value(level.room_list, i);

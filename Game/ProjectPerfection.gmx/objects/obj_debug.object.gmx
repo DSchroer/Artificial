@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,20 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>generator_init(50, 50);
-
-//generator_add_option(rm_stub_1, 3, 3);
-generator_add_option(rm_stub_2, 9, 3);
-generator_add_option(rm_stub_3, 3, 5);
-generator_add_option(rm_stub_4, 7, 7);
-generator_add_option(rm_stub_5, 9, 9);
-
+            <string>show_debug_overlay(true);
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="10">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -55,76 +48,7 @@ generator_add_option(rm_stub_5, 9, 9);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-while(ds_list_size(room_list) &lt;= 1)
-{
-    generator_clear();
-    generator_set_room(rm_stub_1, 0, 0, 3, 3);
-    generator_populate(0, 0, 3, 3);
-}
-
-level = generator_create_level();
-with(obj_minimap)
-{
-    map_set_level(other.level);
-}
-with(obj_room_display)
-{
-    overlay_set_level(other.level);   
-}
-
-room_goto(ds_list_find_value(level.room_list, 0));
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="4">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if(!debug_mode)
-{
-    randomize();
-}
-
-event_user(0);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="10" enumb="18">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>event_user(0);
+            <string>draw_text(30,0, string(fps));
 </string>
           </argument>
         </arguments>

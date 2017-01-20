@@ -56,6 +56,13 @@
       <script>scripts\map_set_level.gml</script>
       <script>scripts\map_draw.gml</script>
     </scripts>
+    <scripts name="Overlay">
+      <script>scripts\overlay_init.gml</script>
+      <script>scripts\overlay_set_level.gml</script>
+      <script>scripts\overlay_draw.gml</script>
+      <script>scripts\overlay_capture.gml</script>
+      <script>scripts\overlay_save.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
@@ -72,6 +79,8 @@
     </objects>
     <objects name="UI">
       <object>objects\obj_minimap</object>
+      <object>objects\obj_room_display</object>
+      <object>objects\obj_debug</object>
     </objects>
   </objects>
   <rooms name="rooms">
@@ -82,6 +91,7 @@
       <room>rooms\rm_stub_2</room>
       <room>rooms\rm_stub_3</room>
       <room>rooms\rm_stub_4</room>
+      <room>rooms\rm_stub_5</room>
     </rooms>
   </rooms>
   <help>
