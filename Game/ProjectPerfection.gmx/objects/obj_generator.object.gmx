@@ -3,8 +3,8 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-100</depth>
-  <persistent>-1</persistent>
+  <depth>0</depth>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,15 +25,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>texture = 0;
-surf = surface_create(room_width, room_height)
-alarm[0] = 30
+            <string>generator_init(20, 20);
+
+generator_add_option(rm_stub_1, 3, 3);
+generator_add_option(rm_stub_2, 9, 3);
+generator_add_option(rm_stub_3, 3, 5);
+generator_add_option(rm_stub_4, 7, 7);
+
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
+    <event eventtype="7" enumb="10">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -50,31 +54,15 @@ alarm[0] = 30
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-alarm[0] = 30
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>texture = sprite_create_from_surface(surf, 0,0, room_width, room_height, false, false, 0, 0)
+            <string>generator_clear();
+generator_set_room(rm_stub_1, 0, 0, 3, 3);
+generator_populate(0, 0, 3, 3);
+
+level = generator_create_level();
+with(obj_minimap)
+{
+    map_set_level(other.level);
+}
 </string>
           </argument>
         </arguments>
@@ -97,31 +85,13 @@ alarm[0] = 30
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-surface_resize(surf, room_width, room_height);
-
-view_xview[1] = 0;
-view_yview[1] = 0;
-view_wview[1] = room_width;
-view_hview[1] = room_height;
-
-view_visible[1] = true;
-view_surface_id[1] = surf;
-
-with(rm_test)
-{
-    show_debug_message(room_width)
-}
-
-
-
-
+            <string>event_user(0);
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="10" enumb="18">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -138,15 +108,7 @@ with(rm_test)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(texture != 0)
-{
-    draw_sprite(texture, 0, 0, 576)
-    draw_sprite(texture, 0, 0, -576)
-}
-
-
-
-
+            <string>event_user(0);
 </string>
           </argument>
         </arguments>

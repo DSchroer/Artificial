@@ -1,4 +1,4 @@
-///dungeon_populate(x, y, width, height)
+///generator_populate(x, y, width, height)
 var x1 = argument0;
 var y1 = argument1;
 var w = argument2;
@@ -29,16 +29,16 @@ while(ds_list_size(list) > 0)
     switch(dir)
     {
         case 0:
-            dungeon_left(n, x1, y_mid);
+            generator_left(n, x1, y_mid);
             break;
         case 1:
-            dungeon_right(n, x2, y_mid);
+            generator_right(n, x2, y_mid);
             break;
         case 2:
-            dungeon_up(n, y1, x_mid);
+            generator_up(n, y1, x_mid);
             break;
         case 3:
-            dungeon_down(n, y2, x_mid);
+            generator_down(n, y2, x_mid);
             break;
     }
 }
