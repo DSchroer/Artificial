@@ -1,5 +1,5 @@
 ///overlay_draw()
-if(level != -1)
+if(draw && level != -1)
 {
     var size = 64;
     for(var i = 0; i < ds_list_size(level.room_list); i++)
