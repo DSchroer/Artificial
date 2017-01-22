@@ -34,7 +34,7 @@
     <scripts name="Camera">
       <script>scripts\camera_init.gml</script>
       <script>scripts\camera_update.gml</script>
-      <script>scripts\camera_apply.gml</script>
+      <script>scripts\camera_resize.gml</script>
     </scripts>
     <scripts name="Keymap">
       <script>scripts\keymap_check.gml</script>
