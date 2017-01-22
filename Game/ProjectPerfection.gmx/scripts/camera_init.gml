@@ -10,3 +10,4 @@ height = 1024;
 current_zoom = 1;
 zoom = 1;
 
+
