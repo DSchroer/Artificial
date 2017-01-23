@@ -3,6 +3,25 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
+  <datafiles number="1" name="datafiles">
+    <datafile>
+      <name>Credits.txt</name>
+      <exists>-1</exists>
+      <size>0</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>Credits.txt</filename>
+    </datafile>
+  </datafiles>
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
@@ -64,6 +83,11 @@
       <script>scripts\overlay_save.gml</script>
       <script>scripts\overlay_set_draw.gml</script>
     </scripts>
+    <scripts name="Credits">
+      <script>scripts\credits_init.gml</script>
+      <script>scripts\credits_draw.gml</script>
+      <script>scripts\credits_is_complete.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
@@ -83,8 +107,10 @@
       <object>objects\obj_room_display</object>
       <object>objects\obj_debug</object>
     </objects>
+    <object>objects\obj_credits</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_credits</room>
     <room>rooms\rm_dungeon_test</room>
     <room>rooms\rm_test</room>
     <rooms name="Stubs">
