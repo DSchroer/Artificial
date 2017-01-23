@@ -88,6 +88,13 @@
       <script>scripts\credits_draw.gml</script>
       <script>scripts\credits_is_complete.gml</script>
     </scripts>
+    <scripts name="Save">
+      <script>scripts\save_open.gml</script>
+      <script>scripts\save_get_value.gml</script>
+      <script>scripts\save_set_value.gml</script>
+      <script>scripts\save_has_value.gml</script>
+      <script>scripts\save_flush.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
@@ -108,6 +115,7 @@
       <object>objects\obj_debug</object>
     </objects>
     <object>objects\obj_credits</object>
+    <object>objects\obj_save_test</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_credits</room>
