@@ -1,4 +1,4 @@
 Developer:Dominick Schroer
-Artist:Nick
-Producer:Alec
-Designer:Spencer
+Artist:Nick Tremblay
+Producer:Alec Sobeck
+Designer:Spencer Gould
