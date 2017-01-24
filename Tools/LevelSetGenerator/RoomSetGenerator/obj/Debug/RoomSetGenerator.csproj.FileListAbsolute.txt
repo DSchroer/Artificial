@@ -1,1 +1,6 @@
 C:\Users\Dominick Schroer\Documents\GitHub\ProjectPerfection\Tools\LevelSetGenerator\RoomSetGenerator\bin\Debug\RoomSetGenerator.exe.config
+C:\Users\Dominick Schroer\Documents\GitHub\ProjectPerfection\Tools\LevelSetGenerator\RoomSetGenerator\bin\Debug\RoomSetGenerator.exe
+C:\Users\Dominick Schroer\Documents\GitHub\ProjectPerfection\Tools\LevelSetGenerator\RoomSetGenerator\bin\Debug\RoomSetGenerator.pdb
+C:\Users\Dominick Schroer\Documents\GitHub\ProjectPerfection\Tools\LevelSetGenerator\RoomSetGenerator\obj\Debug\RoomSetGenerator.csprojResolveAssemblyReference.cache
+C:\Users\Dominick Schroer\Documents\GitHub\ProjectPerfection\Tools\LevelSetGenerator\RoomSetGenerator\obj\Debug\RoomSetGenerator.exe
+C:\Users\Dominick Schroer\Documents\GitHub\ProjectPerfection\Tools\LevelSetGenerator\RoomSetGenerator\obj\Debug\RoomSetGenerator.pdb
