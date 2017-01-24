@@ -102,9 +102,11 @@
     <scripts name="Player">
       <script>scripts\inventory_swap.gml</script>
       <script>scripts\script44.gml</script>
-      <script>scripts\player_shield.gml</script>
+      <script>scripts\player_get_shield.gml</script>
       <script>scripts\player_init.gml</script>
       <script>scripts\player_levelup.gml</script>
+      <script>scripts\player_update_shield.gml</script>
+      <script>scripts\player_inflict_damage.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">

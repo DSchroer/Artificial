@@ -6,6 +6,7 @@ var item = argument2;
 
 var equipped_item = player.inventory[slot];
 player.inventory[slot] = item;
+
 return equipped_item;
 
 
