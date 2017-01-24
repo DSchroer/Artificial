@@ -53,13 +53,14 @@
 
 var player = obj_player;
 draw_text(500, 0, player.selected_slot);
+/*
 if(!is_undefined(player.inventory[inventory_slot.weapon1]))
 {
     draw_text(500, 20, player.inventory[inventory_slot.weapon1].name);
 }
 if(!is_undefined(player.inventory[inventory_slot.weapon2]))
 {
-        draw_text(500, 40, player.inventory[inventory_slot.weapon2].name);
+    draw_text(500, 40, player.inventory[inventory_slot.weapon2].name);
 }
 if(!is_undefined(player.inventory[inventory_slot.weapon3]))
 {
@@ -71,9 +72,11 @@ if(!is_undefined(player.inventory[inventory_slot.weapon4]))
 }
 if(!is_undefined(player.inventory[inventory_slot.shield]))
 {
-    draw_text(500, 100, player.inventory[inventory_slot.shield].name);
+    //draw_text(500, 100, player.inventory[inventory_slot.shield].name);
 }
-
+*/
+var text = string(player.health) + "/" + string(player.max_health);
+draw_text(600, 0, text);
 
 </string>
           </argument>

@@ -1,9 +1,8 @@
 ///entity_dampening()
 
-var max_speed = 8;
-if(speed > max_speed)
+if(speed > max_movement_speed)
 {
-    speed = max_speed;
+    speed = max_movement_speed;
 }
 
 if(speed <= 1)

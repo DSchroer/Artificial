@@ -31,6 +31,7 @@
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_door</sprite>
     <sprite>sprites\spr_bush</sprite>
+    <sprite>sprites\spr_shield</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -100,6 +101,10 @@
     <script>scripts\isomorphic_set_depth.gml</script>
     <scripts name="Player">
       <script>scripts\inventory_swap.gml</script>
+      <script>scripts\script44.gml</script>
+      <script>scripts\player_shield.gml</script>
+      <script>scripts\player_init.gml</script>
+      <script>scripts\player_levelup.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">

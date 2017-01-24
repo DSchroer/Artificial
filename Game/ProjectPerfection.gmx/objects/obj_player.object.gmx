@@ -26,27 +26,51 @@
           <argument>
             <kind>1</kind>
             <string>
-enum inventory_slot
-{
-    weapon1 = 0,
-    weapon2 = 1, 
-    weapon3 = 2,
-    weapon4 = 3,
-    shield = 4
-};
-
-entity_init(); 
-
-selected_slot = inventory_slot.weapon1;
-inventory[0] = undefined;
-inventory[1] = undefined;
-inventory[2] = undefined;
-inventory[3] = undefined;
-inventory[4] = undefined;
+player_init();
 
 
 
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>723</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_draw_health</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
           </argument>
         </arguments>
       </action>
@@ -126,6 +150,10 @@ with(obj_level)
 if(view_current == 0)
 {
     draw_self()
+    if(shield_active) 
+    {
+        draw_sprite(spr_shield, 0, x - 32, y - 128);
+    }
 }
 
 

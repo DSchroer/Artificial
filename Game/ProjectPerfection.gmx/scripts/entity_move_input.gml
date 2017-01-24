@@ -28,6 +28,18 @@ if(x_dir != 0 || y_dir != 0)
     motion_add(new_dir, 3);
 }
 
+// Fix this later, I'm just putting it in for testing
+if(keyboard_check(vk_space))
+{
+    
+    shield_active = true;
+    exit;
+} 
+else 
+{
+    shield_active = false;
+}
+
 // Controller
 //
 if(gamepad_get_device_count() == 0)
@@ -101,7 +113,6 @@ if(gamepad_button_check_pressed(0, gp_face1))
     var item = instance_create(0, 0, obj_weapon);
     item.name = "A";    
     var r = inventory_swap(self, selected_slot, item);
-
 }
 
 // B/circle
@@ -143,11 +154,17 @@ if(gamepad_button_check_pressed(0, gp_shoulderl))
 // Left Trigger
 if(gamepad_button_check(0, gp_shoulderlb))
 {
+    shield_active = true;
+} 
+else 
+{
+    shield_active = false;
 }
 
 // Right Button
 if(gamepad_button_check_pressed(0, gp_shoulderr))
 {
+    player_levelup();
 }
 
 // Right Trigger
