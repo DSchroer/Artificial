@@ -98,6 +98,9 @@
       <script>scripts\save_flush.gml</script>
     </scripts>
     <script>scripts\isomorphic_set_depth.gml</script>
+    <scripts name="Player">
+      <script>scripts\inventory_swap.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
@@ -122,6 +125,8 @@
     <objects name="Environment">
       <object>objects\obj_bush</object>
     </objects>
+    <object>objects\obj_weapon</object>
+    <object>objects\obj_shield</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_dungeon_test</room>

@@ -71,54 +71,73 @@ if(abs(haxis_rs) > 0.05 || abs(vaxis_rs) > 0.05)
 // Up
 if(gamepad_button_check(0, gp_padu))
 {
-    //motion_add(90, 3);
+    selected_slot = inventory_slot.weapon1;
 }
 
 // Down   
 if(gamepad_button_check(0, gp_padd))
 {
-    //motion_add(270, 3);
+    selected_slot = inventory_slot.weapon4;
 }
 
 // Right
 if(gamepad_button_check(0, gp_padr))
 {
-    //motion_add(0, 3);
+    selected_slot = inventory_slot.weapon3;
 }
 
 // Left
 if(gamepad_button_check(0, gp_padl))
 {
-   // motion_add(180, 3);
+    selected_slot = inventory_slot.weapon2;
 }
 
 // ABXY:
 // (Attacks, interacting with world, etc...)
 
 // A/cross 
-if(gamepad_button_check(0, gp_face1))
+if(gamepad_button_check_pressed(0, gp_face1))
 {
+    var item = instance_create(0, 0, obj_weapon);
+    item.name = "A";    
+    var r = inventory_swap(self, selected_slot, item);
+
 }
 
 // B/circle
-if(gamepad_button_check(0, gp_face2))
+if(gamepad_button_check_pressed(0, gp_face2))
 {
+    var item = instance_create(0, 0, obj_weapon);
+    item.name = "B";    
+    var r = inventory_swap(self, selected_slot, item);
+
 }
 
 // X/square
-if(gamepad_button_check(0, gp_face3))
+if(gamepad_button_check_pressed(0, gp_face3))
 {
+    var item = instance_create(0, 0, obj_weapon);
+    item.name = "X";    
+    var r = inventory_swap(self, selected_slot, item);
+
 }
 
 // Y/triangle
-if(gamepad_button_check(0, gp_face4))
+if(gamepad_button_check_pressed(0, gp_face4))
 {
+    var item = instance_create(0, 0, obj_weapon);
+    item.name = "Y";    
+    var r = inventory_swap(self, selected_slot, item);
+
 }
 
 // Triggers/Shoulder buttons:
 // Left button
-if(gamepad_button_check(0, gp_shoulderl))
+if(gamepad_button_check_pressed(0, gp_shoulderl))
 {
+    var item = instance_create(0, 0, obj_shield);
+    item.name = "LT";    
+    inventory_swap(self, inventory_slot.shield, item);
 }
 
 // Left Trigger
@@ -127,7 +146,7 @@ if(gamepad_button_check(0, gp_shoulderlb))
 }
 
 // Right Button
-if(gamepad_button_check(0, gp_shoulderr))
+if(gamepad_button_check_pressed(0, gp_shoulderr))
 {
 }
 

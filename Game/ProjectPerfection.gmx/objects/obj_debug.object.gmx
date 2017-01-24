@@ -49,6 +49,32 @@
           <argument>
             <kind>1</kind>
             <string>draw_text(30,0, string(fps));
+
+
+var player = obj_player;
+draw_text(500, 0, player.selected_slot);
+if(!is_undefined(player.inventory[inventory_slot.weapon1]))
+{
+    draw_text(500, 20, player.inventory[inventory_slot.weapon1].name);
+}
+if(!is_undefined(player.inventory[inventory_slot.weapon2]))
+{
+        draw_text(500, 40, player.inventory[inventory_slot.weapon2].name);
+}
+if(!is_undefined(player.inventory[inventory_slot.weapon3]))
+{
+    draw_text(500, 60, player.inventory[inventory_slot.weapon3].name);
+}
+if(!is_undefined(player.inventory[inventory_slot.weapon4]))
+{
+    draw_text(500, 80, player.inventory[inventory_slot.weapon4].name);
+}
+if(!is_undefined(player.inventory[inventory_slot.shield]))
+{
+    draw_text(500, 100, player.inventory[inventory_slot.shield].name);
+}
+
+
 </string>
           </argument>
         </arguments>
