@@ -52,6 +52,7 @@
 
 entity_dampening();
 entity_move_input();
+entity_collision();
 
 with(obj_level)
 {

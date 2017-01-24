@@ -49,6 +49,7 @@
       <script>scripts\entity_init.gml</script>
       <script>scripts\entity_move_input.gml</script>
       <script>scripts\entity_dampening.gml</script>
+      <script>scripts\entity_collision.gml</script>
     </scripts>
     <scripts name="Camera">
       <script>scripts\camera_init.gml</script>
@@ -118,8 +119,9 @@
     <object>objects\obj_save_test</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_credits</room>
+    <room>rooms\rm_sandbox</room>
     <room>rooms\rm_dungeon_test</room>
+    <room>rooms\rm_credits</room>
     <room>rooms\rm_test</room>
     <rooms name="Stubs">
       <room>rooms\rm_stub_1</room>
