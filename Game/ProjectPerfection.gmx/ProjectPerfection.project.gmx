@@ -30,6 +30,7 @@
     </sprites>
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_door</sprite>
+    <sprite>sprites\spr_bush</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -96,6 +97,7 @@
       <script>scripts\save_has_value.gml</script>
       <script>scripts\save_flush.gml</script>
     </scripts>
+    <script>scripts\isomorphic_set_depth.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
@@ -117,10 +119,13 @@
     </objects>
     <object>objects\obj_credits</object>
     <object>objects\obj_save_test</object>
+    <objects name="Environment">
+      <object>objects\obj_bush</object>
+    </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_sandbox</room>
     <room>rooms\rm_dungeon_test</room>
+    <room>rooms\rm_sandbox</room>
     <room>rooms\rm_credits</room>
     <room>rooms\rm_test</room>
     <rooms name="Stubs">
