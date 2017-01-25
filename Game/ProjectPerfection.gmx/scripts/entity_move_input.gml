@@ -1,4 +1,5 @@
 ///entity_move_input()
+
 var x_dir = 0;
 var y_dir = 0;
 
@@ -28,11 +29,56 @@ if(x_dir != 0 || y_dir != 0)
     motion_add(new_dir, 3);
 }
 
+// Fix this later, I'm just putting it in for testing
+if(keyboard_check(vk_space))
+{
+    
+    shield_active = true;
+    exit;
+} 
+else 
+{
+    shield_active = false;
+}
+
 // Controller
 //
 if(gamepad_get_device_count() == 0)
 {
     exit;
+}
+
+// Triggers/Shoulder buttons:
+// Left button
+if(gamepad_button_check_pressed(0, gp_shoulderl))
+{
+    var item = instance_create(0, 0, obj_shield);
+    item.recharge_delay = 5;
+    item.recharge_rate = 40;
+    item.max_shield_health = 100;    
+    item.name = "LT";    
+    inventory_swap(self, inventory_slot.shield, item);
+}
+
+// Left Trigger
+if(gamepad_button_check(0, gp_shoulderlb))
+{
+    shield_active = true;
+} 
+else 
+{
+    shield_active = false;
+}
+
+// Right Button
+if(gamepad_button_check_pressed(0, gp_shoulderr))
+{
+    player_levelup();
+}
+
+// Right Trigger
+if(gamepad_button_check(0, gp_shoulderrb))
+{
 }
 
 // Left analogue stick:
@@ -71,70 +117,58 @@ if(abs(haxis_rs) > 0.05 || abs(vaxis_rs) > 0.05)
 // Up
 if(gamepad_button_check(0, gp_padu))
 {
-    //motion_add(90, 3);
+    selected_slot = inventory_slot.weapon1;
 }
 
 // Down   
 if(gamepad_button_check(0, gp_padd))
 {
-    //motion_add(270, 3);
+    selected_slot = inventory_slot.weapon4;
 }
 
 // Right
 if(gamepad_button_check(0, gp_padr))
 {
-    //motion_add(0, 3);
+    selected_slot = inventory_slot.weapon3;
 }
 
 // Left
 if(gamepad_button_check(0, gp_padl))
 {
-   // motion_add(180, 3);
+    selected_slot = inventory_slot.weapon2;
 }
 
 // ABXY:
 // (Attacks, interacting with world, etc...)
 
 // A/cross 
-if(gamepad_button_check(0, gp_face1))
+if(gamepad_button_check_pressed(0, gp_face1))
 {
+    player_inflict_damage(15);
 }
 
 // B/circle
-if(gamepad_button_check(0, gp_face2))
+if(gamepad_button_check_pressed(0, gp_face2))
 {
+    player_inflict_damage(100);
 }
 
 // X/square
-if(gamepad_button_check(0, gp_face3))
+if(gamepad_button_check_pressed(0, gp_face3))
 {
+    player_inflict_damage(300);
 }
 
 // Y/triangle
-if(gamepad_button_check(0, gp_face4))
+if(gamepad_button_check_pressed(0, gp_face4))
 {
+    var item = instance_create(0, 0, obj_weapon);
+    item.name = "Y";    
+    var r = inventory_swap(self, selected_slot, item);
+
 }
 
-// Triggers/Shoulder buttons:
-// Left button
-if(gamepad_button_check(0, gp_shoulderl))
-{
-}
 
-// Left Trigger
-if(gamepad_button_check(0, gp_shoulderlb))
-{
-}
-
-// Right Button
-if(gamepad_button_check(0, gp_shoulderr))
-{
-}
-
-// Right Trigger
-if(gamepad_button_check(0, gp_shoulderrb))
-{
-}
 
 // We can also push the left and right sticks with gp_stickl, gl_stickr
 // Start and select are gp_start, gp_select.

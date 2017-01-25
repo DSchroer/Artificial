@@ -25,8 +25,52 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>entity_init();
+            <string>
+player_init();
+
+
+
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>723</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_draw_health</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
           </argument>
         </arguments>
       </action>
@@ -80,6 +124,7 @@ with(obj_level)
         room_goto(ds_list_find_value(room_list, level - 1));
     }
 }
+player_update_shield();
 </string>
           </argument>
         </arguments>
@@ -106,6 +151,10 @@ with(obj_level)
 if(view_current == 0)
 {
     draw_self()
+    if(shield_active &amp;&amp; remaining_shield &gt; 0) 
+    {
+        draw_sprite(spr_shield, 0, x - 32, y - 128);
+    }
 }
 
 
