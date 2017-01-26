@@ -1,11 +1,16 @@
-///save_set_value(name, value)
-var name = argument0;
-var value = argument1;
+///save_set_value(save_object, name, value)
+var save = argument0;
+var name = argument1;
+var value = argument2;
 
-if(!ds_map_exists(save_data, name))
+with(save)
 {
-    ds_map_add(save_data, name, value);
-}else{
-    ds_map_replace(save_data, name, value);
+    if(!ds_map_exists(save_data, name))
+    {
+        ds_map_add(save_data, name, value);
+    }else{
+        ds_map_replace(save_data, name, value);
+    }
 }
+
 

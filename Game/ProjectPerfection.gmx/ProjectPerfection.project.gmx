@@ -32,6 +32,7 @@
     <sprite>sprites\spr_door</sprite>
     <sprite>sprites\spr_bush</sprite>
     <sprite>sprites\spr_shield</sprite>
+    <sprite>sprites\spr_item</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -101,12 +102,19 @@
     <script>scripts\isomorphic_set_depth.gml</script>
     <scripts name="Player">
       <script>scripts\inventory_swap.gml</script>
-      <script>scripts\script44.gml</script>
       <script>scripts\player_get_shield.gml</script>
       <script>scripts\player_init.gml</script>
       <script>scripts\player_levelup.gml</script>
       <script>scripts\player_update_shield.gml</script>
       <script>scripts\player_inflict_damage.gml</script>
+    </scripts>
+    <scripts name="Debug">
+      <script>scripts\debug_init.gml</script>
+      <script>scripts\debug_show_string.gml</script>
+      <script>scripts\debug_draw.gml</script>
+    </scripts>
+    <scripts name="Helper">
+      <script>scripts\string_array.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -128,12 +136,13 @@
       <object>objects\obj_debug</object>
     </objects>
     <object>objects\obj_credits</object>
-    <object>objects\obj_save_test</object>
     <objects name="Environment">
       <object>objects\obj_bush</object>
     </objects>
     <object>objects\obj_weapon</object>
     <object>objects\obj_shield</object>
+    <object>objects\obj_item</object>
+    <object>objects\obj_save_data</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_dungeon_test</room>
