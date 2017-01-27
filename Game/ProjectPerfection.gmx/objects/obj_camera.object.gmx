@@ -48,7 +48,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(window_get_width() != view_wport[0] || window_get_height() != view_hport[0])
+            <string>x_target = obj_player.x;
+y_target = obj_player.y;
+
+if(window_get_width() != view_wport[0] || window_get_height() != view_hport[0])
 {
     camera_resize();
 }
@@ -77,8 +80,7 @@ camera_update()
           <argument>
             <kind>1</kind>
             <string>camera_resize();
-x_target = room_width / 2;
-y_target = room_height / 2;
+
 </string>
           </argument>
         </arguments>

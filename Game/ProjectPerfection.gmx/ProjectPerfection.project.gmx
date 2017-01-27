@@ -36,6 +36,7 @@
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
+    <background>background\bkg_tmp_tiles</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -73,6 +74,8 @@
       <script>scripts\generator_down.gml</script>
       <script>scripts\generator_up.gml</script>
       <script>scripts\generator_create_level.gml</script>
+      <script>scripts\generator_copy_instances.gml</script>
+      <script>scripts\generator_copy_tiles.gml</script>
     </scripts>
     <scripts name="Map">
       <script>scripts\map_init.gml</script>
@@ -116,6 +119,7 @@
     <scripts name="Helper">
       <script>scripts\string_array.gml</script>
     </scripts>
+    <script>scripts\clone.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>

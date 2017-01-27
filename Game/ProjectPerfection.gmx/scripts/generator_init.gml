@@ -4,6 +4,9 @@ height = argument1;
 room_number = 0;
 level = -1;
 
+constructing = false;
+itteration = 0;
+
 option_rooms = ds_list_create();
 option_width = ds_list_create();
 option_height = ds_list_create();
