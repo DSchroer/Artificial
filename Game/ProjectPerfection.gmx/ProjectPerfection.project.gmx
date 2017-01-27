@@ -32,12 +32,14 @@
     <sprite>sprites\spr_door</sprite>
     <sprite>sprites\spr_bush</sprite>
     <sprite>sprites\spr_shield</sprite>
+    <sprite>sprites\spr_item</sprite>
     <sprite>sprites\spr_inventory_background</sprite>
     <sprite>sprites\spr_inv_rifle1</sprite>
     <sprite>sprites\spr_inv_shield1</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
+    <background>background\bkg_tmp_tiles</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -75,6 +77,8 @@
       <script>scripts\generator_down.gml</script>
       <script>scripts\generator_up.gml</script>
       <script>scripts\generator_create_level.gml</script>
+      <script>scripts\generator_copy_instances.gml</script>
+      <script>scripts\generator_copy_tiles.gml</script>
     </scripts>
     <scripts name="Map">
       <script>scripts\map_init.gml</script>
@@ -104,7 +108,6 @@
     <script>scripts\isomorphic_set_depth.gml</script>
     <scripts name="Player">
       <script>scripts\inventory_swap.gml</script>
-      <script>scripts\script44.gml</script>
       <script>scripts\player_get_shield.gml</script>
       <script>scripts\player_init.gml</script>
       <script>scripts\player_levelup.gml</script>
@@ -115,6 +118,15 @@
     <scripts name="Ui">
       <script>scripts\ui_draw_inventory.gml</script>
     </scripts>
+    <scripts name="Debug">
+      <script>scripts\debug_init.gml</script>
+      <script>scripts\debug_show_string.gml</script>
+      <script>scripts\debug_draw.gml</script>
+    </scripts>
+    <scripts name="Helper">
+      <script>scripts\string_array.gml</script>
+    </scripts>
+    <script>scripts\clone.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
@@ -135,12 +147,13 @@
       <object>objects\obj_debug</object>
     </objects>
     <object>objects\obj_credits</object>
-    <object>objects\obj_save_test</object>
     <objects name="Environment">
       <object>objects\obj_bush</object>
     </objects>
     <object>objects\obj_weapon</object>
     <object>objects\obj_shield</object>
+    <object>objects\obj_item</object>
+    <object>objects\obj_save_data</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_dungeon_test</room>

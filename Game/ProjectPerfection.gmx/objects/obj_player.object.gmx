@@ -34,46 +34,6 @@ player_init();
           </argument>
         </arguments>
       </action>
-      <action>
-        <libid>1</libid>
-        <id>723</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_draw_health</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
     </event>
     <event eventtype="3" enumb="0">
       <action>
@@ -98,6 +58,70 @@ entity_dampening();
 entity_move_input();
 entity_collision();
 
+player_update_shield();
+
+debug_show_string("in0: " + string_array(inventory[0]));
+debug_show_string("in1: " + string_array(inventory[1]));
+debug_show_string("in2: " + string_array(inventory[2]));
+debug_show_string("in3: " + string_array(inventory[3]));
+debug_show_string("in4: " + string_array(inventory[4]));
+
+debug_show_string("fps: " + string(fps));
+
+var obj = instance_place(x, y, obj_item);
+
+var data = -1;
+if(obj)
+{
+    data = obj.data;
+}
+
+var out = -1;
+
+if(keymap_check(keycode.inv0))
+{
+    out = inventory_swap(self, 0, data);
+    with(obj)
+    {
+        instance_destroy();
+    }
+}else if(keymap_check(keycode.inv1))
+{
+    out = inventory_swap(self, 1, data);
+    with(obj)
+    {
+        instance_destroy();
+    }
+}else if(keymap_check(keycode.inv2))
+{
+    out = inventory_swap(self, 2, data);
+    with(obj)
+    {
+        instance_destroy();
+    }
+}else if(keymap_check(keycode.inv3))
+{
+    out = inventory_swap(self, 3, data);
+    with(obj)
+    {
+        instance_destroy();
+    }
+}else if(keymap_check(keycode.inv4))
+{
+    out = inventory_swap(self, 4, data);
+    with(obj)
+    {
+        instance_destroy();
+    }
+}
+
+if(out != -1 &amp;&amp; is_array(out))
+{
+    var item = instance_create(x,y, obj_item);
+    item.data = out;
+}
+
+/*
 with(obj_level)
 {
     var x1 = level_position_x(other.x);
@@ -123,8 +147,32 @@ with(obj_level)
         
         room_goto(ds_list_find_value(room_list, level - 1));
     }
-}
-player_update_shield();
+}*/
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>room_speed = 60;
 </string>
           </argument>
         </arguments>
@@ -180,35 +228,12 @@ if(view_current == 0)
     }
 }
 
-
 if(debug_mode)
 {
     draw_set_color(c_red)
 }
 
 </string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="10" enumb="82">
-      <action>
-        <libid>1</libid>
-        <id>224</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_another_room</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>11</kind>
-            <room>rm_dungeon_test</room>
           </argument>
         </arguments>
       </action>

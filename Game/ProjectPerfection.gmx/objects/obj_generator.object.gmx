@@ -25,13 +25,65 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>generator_init(50, 50);
+            <string>generator_init(30, 30);
 
-generator_add_option(rm_stub_1, 3, 3);
+//generator_add_option(rm_stub_1, 3, 3);
 generator_add_option(rm_stub_2, 9, 3);
 generator_add_option(rm_stub_3, 3, 5);
 generator_add_option(rm_stub_4, 7, 7);
 generator_add_option(rm_stub_5, 9, 9);
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+var x_off = ds_list_find_value(room_x_list, itteration);
+var y_off = ds_list_find_value(room_y_list, itteration);
+
+generator_copy_instances(custom_room, x_off * 64, y_off * 64);
+generator_copy_tiles(custom_room, x_off * 64, y_off * 64);
+
+itteration += 1;
+
+if(itteration &lt; ds_list_size(room_list))
+{
+    var goto = ds_list_find_value(room_list, itteration);
+    room_goto(goto);
+}else{
+    level = generator_create_level();
+    with(obj_minimap)
+    {
+        map_set_level(other.level);
+    }
+    with(obj_room_display)
+    {
+        overlay_set_level(other.level);   
+    }
+    
+    persistent = false;
+    room_goto(custom_room);
+}
+
+
 
 </string>
           </argument>
@@ -63,17 +115,22 @@ while(ds_list_size(room_list) &lt;= 1)
     generator_populate(0, 0, 3, 3);
 }
 
-level = generator_create_level();
-with(obj_minimap)
-{
-    map_set_level(other.level);
-}
-with(obj_room_display)
-{
-    overlay_set_level(other.level);   
-}
+constructing = true;
+persistent = true;
+
+custom_room = room_add();
+room_set_height(custom_room, height * 64);
+room_set_width(custom_room, width * 64);
+room_set_persistent(custom_room, false);
+
+itteration = 0;
+room_goto(ds_list_find_value(room_list, 0));
+
+/*
+
 
 room_goto(ds_list_find_value(level.room_list, 0));
+*/
 </string>
           </argument>
         </arguments>
@@ -101,7 +158,13 @@ room_goto(ds_list_find_value(level.room_list, 0));
     randomize();
 }
 
-event_user(0);
+if(!constructing)
+{
+    event_user(0);
+}else{
+    event_user(1);
+}
+
 </string>
           </argument>
         </arguments>

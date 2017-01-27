@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>show_debug_overlay(true);
+            <string>debug_init();
+show_debug_overlay(true);
 </string>
           </argument>
         </arguments>
@@ -48,41 +49,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text(30,0, string(fps));
-
-
-var player = obj_player;
-draw_text(500, 0, player.selected_slot);
-/*
-if(!is_undefined(player.inventory[inventory_slot.weapon1]))
-{
-    draw_text(500, 20, player.inventory[inventory_slot.weapon1].name);
-}
-if(!is_undefined(player.inventory[inventory_slot.weapon2]))
-{
-    draw_text(500, 40, player.inventory[inventory_slot.weapon2].name);
-}
-if(!is_undefined(player.inventory[inventory_slot.weapon3]))
-{
-    draw_text(500, 60, player.inventory[inventory_slot.weapon3].name);
-}
-if(!is_undefined(player.inventory[inventory_slot.weapon4]))
-{
-    draw_text(500, 80, player.inventory[inventory_slot.weapon4].name);
-}
-if(!is_undefined(player.inventory[inventory_slot.shield]))
-{
-    //draw_text(500, 100, player.inventory[inventory_slot.shield].name);
-}
-*/
-var text = string(player.health) + "/" + string(player.max_health);
-draw_text(600, 0, text);
-
-draw_text(600, 20, "S" + string(player.remaining_shield));
-draw_text(600, 40, "SP" + string(player.shield_penalty_time));
-draw_text(600, 60, "A:" + string(player.shield_active));
-draw_text(600, 80, "B:" + string(player.shield_active &amp;&amp; player.remaining_shield &gt; 0));
-
+            <string>
+debug_draw();
 
 </string>
           </argument>

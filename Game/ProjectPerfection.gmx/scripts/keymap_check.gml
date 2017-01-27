@@ -3,7 +3,12 @@ enum keycode{
     up,
     down,
     left,
-    right
+    right,
+    inv0,
+    inv1,
+    inv2,
+    inv3,
+    inv4,
 }
 
 var key = argument0;
@@ -25,4 +30,29 @@ if(key == keycode.left)
 if(key == keycode.right)
 {
     return keyboard_check(vk_right) || keyboard_check(ord("D"));
+}
+
+if(key == keycode.inv0)
+{
+    return keyboard_check_pressed(ord("1"));
+}
+
+if(key == keycode.inv1)
+{
+    return keyboard_check_pressed(ord("2"));
+}
+
+if(key == keycode.inv2)
+{
+    return keyboard_check_pressed(ord("3"));
+}
+
+if(key == keycode.inv3)
+{
+    return keyboard_check_pressed(ord("4"));
+}
+
+if(key == keycode.inv4)
+{
+    return keyboard_check_pressed(ord("5"));
 }

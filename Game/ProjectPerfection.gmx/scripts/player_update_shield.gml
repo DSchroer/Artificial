@@ -1,6 +1,6 @@
 
 var equipped_shield = player_get_shield();
-if(!is_undefined(equipped_shield))
+if(is_array(equipped_shield))
 {
     if(shield_penalty_time > 0)
     {
