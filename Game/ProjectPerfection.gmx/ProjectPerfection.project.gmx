@@ -110,6 +110,7 @@
       <script>scripts\player_levelup.gml</script>
       <script>scripts\player_update_shield.gml</script>
       <script>scripts\player_inflict_damage.gml</script>
+      <script>scripts\locker_swap.gml</script>
     </scripts>
     <scripts name="Ui">
       <script>scripts\ui_draw_inventory.gml</script>

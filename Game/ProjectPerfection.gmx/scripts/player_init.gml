@@ -7,6 +7,12 @@ enum inventory_slot
     shield = 4
 };
 
+enum locker_slot
+{
+    weapon = 0,
+    shield = 1
+}
+
 entity_init(); 
 
 inventory_open = false;
@@ -23,4 +29,5 @@ inventory[3] = undefined;
 inventory[4] = undefined;
 
 // Locker
-
+locker[0] = undefined;
+locker[1] = undefined;
