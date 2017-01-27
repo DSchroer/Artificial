@@ -144,31 +144,30 @@ if(gamepad_button_check(0, gp_padl))
 // A/cross 
 if(gamepad_button_check_pressed(0, gp_face1))
 {
-    player_inflict_damage(15);
+    var ite = instance_create(0, 0, obj_weapon);
+    inventory_swap(self, selected_slot, ite);
 }
 
 // B/circle
 if(gamepad_button_check_pressed(0, gp_face2))
 {
-    player_inflict_damage(100);
+    var ite = instance_create(0, 0, obj_shield);
+    inventory_swap(self, inventory_slot.shield, ite);
+
 }
 
 // X/square
 if(gamepad_button_check_pressed(0, gp_face3))
 {
-    player_inflict_damage(300);
+    player_inflict_damage(100);
 }
 
 // Y/triangle
 if(gamepad_button_check_pressed(0, gp_face4))
 {
-    var item = instance_create(0, 0, obj_weapon);
-    item.name = "Y";    
-    var r = inventory_swap(self, selected_slot, item);
+    inventory_open = !inventory_open;
 
 }
-
-
 
 // We can also push the left and right sticks with gp_stickl, gl_stickr
 // Start and select are gp_start, gp_select.

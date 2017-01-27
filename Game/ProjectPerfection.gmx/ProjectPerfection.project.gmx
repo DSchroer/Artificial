@@ -32,6 +32,9 @@
     <sprite>sprites\spr_door</sprite>
     <sprite>sprites\spr_bush</sprite>
     <sprite>sprites\spr_shield</sprite>
+    <sprite>sprites\spr_inventory_background</sprite>
+    <sprite>sprites\spr_inv_rifle1</sprite>
+    <sprite>sprites\spr_inv_shield1</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -107,6 +110,10 @@
       <script>scripts\player_levelup.gml</script>
       <script>scripts\player_update_shield.gml</script>
       <script>scripts\player_inflict_damage.gml</script>
+      <script>scripts\locker_swap.gml</script>
+    </scripts>
+    <scripts name="Ui">
+      <script>scripts\ui_draw_inventory.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
