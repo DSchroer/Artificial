@@ -1,4 +1,4 @@
-
+///inventory_create_shield()
 
 var shield;
 shield[shield_index.max_health] = 1;

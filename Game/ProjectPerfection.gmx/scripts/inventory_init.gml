@@ -1,3 +1,5 @@
+///inventory_init()
+
 enum inventory_slot
 {
     weapon1 = 0,

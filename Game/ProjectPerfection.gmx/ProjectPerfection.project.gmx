@@ -43,6 +43,12 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <scripts name="Inventory">
+      <script>scripts\inventory_create_shield.gml</script>
+      <script>scripts\inventory_swap.gml</script>
+      <script>scripts\inventory_create_weapon.gml</script>
+      <script>scripts\inventory_init.gml</script>
+    </scripts>
     <scripts name="Level">
       <script>scripts\level_create.gml</script>
       <script>scripts\level_init.gml</script>
@@ -112,12 +118,6 @@
       <script>scripts\player_levelup.gml</script>
       <script>scripts\player_update_shield.gml</script>
       <script>scripts\player_inflict_damage.gml</script>
-      <scripts name="Inventory">
-        <script>scripts\inventory_create_shield.gml</script>
-        <script>scripts\inventory_swap.gml</script>
-        <script>scripts\inventory_create_weapon.gml</script>
-        <script>scripts\inventory_init.gml</script>
-      </scripts>
     </scripts>
     <scripts name="Ui">
       <script>scripts\ui_draw_inventory.gml</script>

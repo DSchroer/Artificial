@@ -1,3 +1,4 @@
+///inventory_create_weapon()
 
 var weapon;
 weapon[weapon_index.type] = weapon_type.sword ;

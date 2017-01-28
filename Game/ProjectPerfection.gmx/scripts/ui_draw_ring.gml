@@ -1,4 +1,4 @@
-//scr_health_ring(x,y,radius,thickness,maxsegments,segments,startangle,totalangle,direction,colour)
+///ui_draw_ring(x,y,radius,thickness,maxsegments,segments,startangle,totalangle,direction,colour)
 
 var xpos = argument0;
 var ypos = argument1;

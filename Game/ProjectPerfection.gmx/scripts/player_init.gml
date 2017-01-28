@@ -1,4 +1,4 @@
-
+///player_init()
 entity_init(); 
 
 shield_active = false;

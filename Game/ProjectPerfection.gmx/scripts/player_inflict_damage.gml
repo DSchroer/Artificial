@@ -1,4 +1,4 @@
-
+///player_inflict_damage(damage)
 var damage = argument0;
 
 if(shield_active && remaining_shield > 0)
