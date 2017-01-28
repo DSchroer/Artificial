@@ -12,6 +12,7 @@ enum keycode{
     shield,
     inventory_up,
     inventory_down,
+    fire
 }
 
 var key = argument0;
@@ -73,6 +74,11 @@ if(key == keycode.inventory_up)
 if(key == keycode.inventory_down)
 {
     return keyboard_check_pressed(ord("e")) || keyboard_check_pressed(ord("E")) || gamepad_button_check_pressed(0, gp_padd);
+}
+
+if(key == keycode.fire)
+{
+    return mouse_check_button_pressed(mb_left);
 }
 
 

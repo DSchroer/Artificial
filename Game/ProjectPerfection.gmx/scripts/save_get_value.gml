@@ -5,12 +5,15 @@ var def = argument2;
 
 with(save)
 {
-    if(ds_map_exists(save_data, name))
+    if(ds_exists(save_data, ds_type_map))
     {
-        return ds_map_find_value(save_data, name);
-    }else{
-        save_set_value(save, name, def);
-        return def;
+        if(ds_map_exists(save_data, name))
+        {
+            return ds_map_find_value(save_data, name);
+        }else{
+            save_set_value(save, name, def);
+            return def;
+        }
     }
 }
 

@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-1</depth>
   <persistent>-1</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_entity</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -121,34 +121,10 @@ if(out != -1 &amp;&amp; is_array(out))
     item.data = out;
 }
 
-/*
-with(obj_level)
+if(keymap_check(keycode.fire))
 {
-    var x1 = level_position_x(other.x);
-    var y1 =  level_position_y(other.y);
-    var level = level_grid_value(x1, y1);
-    if(level != 0 &amp;&amp; level - 1 != current_room)
-    {
-        x_diff = ds_list_find_value(room_x_list, level - 1) - ds_list_find_value(room_x_list, current_room);
-        y_diff = ds_list_find_value(room_y_list, level - 1) - ds_list_find_value(room_y_list, current_room);
-     
-        x_diff *= 64;
-        y_diff *= 64;
-        
-        current_room = level - 1;
-        other.x -= x_diff;
-        other.y -= y_diff;
-        
-        with(obj_camera)
-        {
-            x -= other.x_diff;
-            y -= other.y_diff;
-        }
-        
-        room_goto(ds_list_find_value(room_list, level - 1));
-    }
-}*/
-
+    player_fire();
+}
 
 </string>
           </argument>

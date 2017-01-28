@@ -15,7 +15,7 @@ if(shield_penalty_time > 0)
 }
 
 // Background for health/shield
-ui_draw_ring(rx, ry, rad, 10, 36, 36, 0, 360, -1, make_color_rgb(20, 20, 20));
+ui_draw_ring(rx, ry, rad - 3, 16, 36, 36, 0, 360, -1, make_color_rgb(20, 20, 20));
 
 // Health
 var percent_health = health / max_health;
