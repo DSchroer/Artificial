@@ -9,6 +9,9 @@ enum keycode{
     inv2,
     inv3,
     inv4,
+    shield,
+    inventory_up,
+    inventory_down,
 }
 
 var key = argument0;
@@ -56,3 +59,21 @@ if(key == keycode.inv4)
 {
     return keyboard_check_pressed(ord("5"));
 }
+
+if(key == keycode.shield)
+{
+    return keyboard_check(vk_space) || gamepad_button_check(0, gp_shoulderlb);
+}
+
+if(key == keycode.inventory_up)
+{
+    return keyboard_check_pressed(ord("q")) | keyboard_check_pressed(ord("Q")) || gamepad_button_check_pressed(0, gp_padu);
+}
+
+if(key == keycode.inventory_down)
+{
+    return keyboard_check_pressed(ord("e")) || keyboard_check_pressed(ord("E")) || gamepad_button_check_pressed(0, gp_padd);
+}
+
+
+

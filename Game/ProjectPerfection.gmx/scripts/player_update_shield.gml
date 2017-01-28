@@ -9,8 +9,8 @@ if(is_array(equipped_shield))
     }
     else if(!shield_active)
     {
-        remaining_shield += equipped_shield.recharge_rate * (delta_time / 1000000);
-        remaining_shield = min(remaining_shield, equipped_shield.max_shield_health);
+        remaining_shield += equipped_shield[shield_index.recharge_rate] * (delta_time / 1000000);
+        remaining_shield = min(remaining_shield, equipped_shield[shield_index.max_health]);
     } 
     else 
     {

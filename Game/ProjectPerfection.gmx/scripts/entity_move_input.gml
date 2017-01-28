@@ -29,45 +29,35 @@ if(x_dir != 0 || y_dir != 0)
     motion_add(new_dir, 3);
 }
 
-// Fix this later, I'm just putting it in for testing
-if(keyboard_check(vk_space))
+shield_active = keymap_check(keycode.shield);
+
+if(keymap_check(keycode.inventory_up))
 {
-    
-    shield_active = true;
-    exit;
-} 
-else 
-{
-    shield_active = false;
+    selected_slot += 1;
+    selected_slot = selected_slot % inventory_slot.shield;
 }
 
-// Controller
-//
-if(gamepad_get_device_count() == 0)
+if(keymap_check(keycode.inventory_down))
 {
-    exit;
+    selected_slot -= 1;
+    if(selected_slot < 0)
+        selected_slot += inventory_slot.shield; 
 }
+
+
+
+
 
 // Triggers/Shoulder buttons:
 // Left button
 if(gamepad_button_check_pressed(0, gp_shoulderl))
 {
-    var item = instance_create(0, 0, obj_shield);
-    item.recharge_delay = 5;
-    item.recharge_rate = 40;
-    item.max_shield_health = 100;    
-    item.name = "LT";    
+    var item = inventory_create_shield();
+    item[shield_index.recharge_delay] = 5;
+    item[shield_index.recharge_rate] = 40;
+    item[shield_index.max_health] = 100;    
+    item[shield_index.name] = "LT";    
     inventory_swap(self, inventory_slot.shield, item);
-}
-
-// Left Trigger
-if(gamepad_button_check(0, gp_shoulderlb))
-{
-    shield_active = true;
-} 
-else 
-{
-    shield_active = false;
 }
 
 // Right Button
@@ -114,28 +104,15 @@ if(abs(haxis_rs) > 0.05 || abs(vaxis_rs) > 0.05)
 
 // Left Pad:
 // (One use for this is "quick swapping" weapons from your inventory, assuming we allow 4 slots, aligned to the cardinal directions)
-// Up
-if(gamepad_button_check(0, gp_padu))
-{
-    selected_slot = inventory_slot.weapon1;
-}
-
-// Down   
-if(gamepad_button_check(0, gp_padd))
-{
-    selected_slot = inventory_slot.weapon4;
-}
 
 // Right
-if(gamepad_button_check(0, gp_padr))
+if(gamepad_button_check_pressed(0, gp_padr))
 {
-    selected_slot = inventory_slot.weapon3;
 }
 
 // Left
-if(gamepad_button_check(0, gp_padl))
+if(gamepad_button_check_pressed(0, gp_padl))
 {
-    selected_slot = inventory_slot.weapon2;
 }
 
 // ABXY:
@@ -144,7 +121,7 @@ if(gamepad_button_check(0, gp_padl))
 // A/cross 
 if(gamepad_button_check_pressed(0, gp_face1))
 {
-    var ite = instance_create(0, 0, obj_weapon);
+    var ite = inventory_create_weapon();
     inventory_swap(self, selected_slot, ite);
 }
 
@@ -159,13 +136,13 @@ if(gamepad_button_check_pressed(0, gp_face2))
 // X/square
 if(gamepad_button_check_pressed(0, gp_face3))
 {
-    player_inflict_damage(100);
+    player_inflict_damage(43);
 }
 
 // Y/triangle
 if(gamepad_button_check_pressed(0, gp_face4))
 {
-    inventory_open = !inventory_open;
+    
 
 }
 
