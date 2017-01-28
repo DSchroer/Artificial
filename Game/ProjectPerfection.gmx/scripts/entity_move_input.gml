@@ -102,23 +102,11 @@ if(abs(haxis_rs) > 0.05 || abs(vaxis_rs) > 0.05)
 
 }
 
-// Left Pad:
-// (One use for this is "quick swapping" weapons from your inventory, assuming we allow 4 slots, aligned to the cardinal directions)
-
-// Right
-if(gamepad_button_check_pressed(0, gp_padr))
-{
-}
-
-// Left
-if(gamepad_button_check_pressed(0, gp_padl))
-{
-}
-
 // ABXY:
 // (Attacks, interacting with world, etc...)
 
 // A/cross 
+/*
 if(gamepad_button_check_pressed(0, gp_face1))
 {
     var ite = inventory_create_weapon();
@@ -131,7 +119,7 @@ if(gamepad_button_check_pressed(0, gp_face2))
     var ite = instance_create(0, 0, obj_shield);
     inventory_swap(self, inventory_slot.shield, ite);
 
-}
+}*/
 
 // X/square
 if(gamepad_button_check_pressed(0, gp_face3))

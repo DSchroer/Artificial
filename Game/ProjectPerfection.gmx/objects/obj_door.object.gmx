@@ -30,9 +30,6 @@
     
 }
 
-room_goto(room1);
-
-
 </string>
           </argument>
         </arguments>

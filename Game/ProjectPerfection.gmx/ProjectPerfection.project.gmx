@@ -137,7 +137,6 @@
   <objects name="objects">
     <object>objects\obj_player</object>
     <object>objects\obj_wall</object>
-    <object>objects\obj_door</object>
     <object>objects\obj_control</object>
     <objects name="Camera">
       <object>objects\obj_camera</object>
