@@ -11,12 +11,14 @@ enum inventory_slot
 
 enum weapon_type
 {
-    sword = 0
+    sword = 0,
+    gun = 1
 };
 
 enum weapon_modifier
 {
-    rail = 0
+    rail = 0,
+    plasma = 1
 };
 
 enum weapon_index
@@ -28,8 +30,9 @@ enum weapon_index
     reload_time = 4,
     name = 5,
     damage = 6,
-    inv_sprite = 7,
-    world_sprite = 8
+    bullet_sprite = 7,
+    inv_sprite = 8,
+    world_sprite = 9
 };
 
 enum shield_index

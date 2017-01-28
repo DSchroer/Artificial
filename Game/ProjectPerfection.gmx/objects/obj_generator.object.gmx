@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>generator_init(30, 30);
+            <string>generator_init(50, 50);
 
 //generator_add_option(rm_stub_1, 3, 3);
 generator_add_option(rm_stub_2, 9, 3);

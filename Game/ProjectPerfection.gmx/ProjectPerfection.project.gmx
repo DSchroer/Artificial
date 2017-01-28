@@ -34,8 +34,13 @@
     <sprite>sprites\spr_shield</sprite>
     <sprite>sprites\spr_item</sprite>
     <sprite>sprites\spr_inventory_background</sprite>
-    <sprite>sprites\spr_inv_rifle1</sprite>
     <sprite>sprites\spr_inv_shield1</sprite>
+    <sprites name="Weapons">
+      <sprite>sprites\spr_inv_rifle1</sprite>
+      <sprite>sprites\spr_world_rifle1</sprite>
+    </sprites>
+    <sprite>sprites\spr_bullet</sprite>
+    <sprite>sprites\spr_target</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -118,6 +123,7 @@
       <script>scripts\player_levelup.gml</script>
       <script>scripts\player_update_shield.gml</script>
       <script>scripts\player_inflict_damage.gml</script>
+      <script>scripts\player_fire.gml</script>
     </scripts>
     <scripts name="Ui">
       <script>scripts\ui_draw_inventory.gml</script>
@@ -133,11 +139,20 @@
       <script>scripts\string_array.gml</script>
     </scripts>
     <script>scripts\clone.gml</script>
+    <scripts name="Attack">
+      <script>scripts\attack_plasma.gml</script>
+      <script>scripts\attack_rail.gml</script>
+      <script>scripts\attack_explosive.gml</script>
+      <script>scripts\attack_physical.gml</script>
+      <script>scripts\attack_sword.gml</script>
+      <script>scripts\attack_gun.gml</script>
+    </scripts>
+    <scripts name="Collision">
+      <script>scripts\range_finder.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
-    <object>objects\obj_player</object>
     <object>objects\obj_wall</object>
-    <object>objects\obj_door</object>
     <object>objects\obj_control</object>
     <objects name="Camera">
       <object>objects\obj_camera</object>
@@ -158,6 +173,15 @@
     </objects>
     <object>objects\obj_item</object>
     <object>objects\obj_save_data</object>
+    <objects name="Attacks">
+      <object>objects\obj_plasma</object>
+      <object>objects\obj_rail</object>
+    </objects>
+    <objects name="Entity">
+      <object>objects\obj_entity</object>
+      <object>objects\obj_player</object>
+      <object>objects\obj_target</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_dungeon_test</room>
