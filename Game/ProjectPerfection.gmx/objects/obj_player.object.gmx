@@ -196,6 +196,7 @@ with(obj_level)
           <argument>
             <kind>1</kind>
             <string>ui_draw_inventory();
+ui_draw_health();
 </string>
           </argument>
         </arguments>
