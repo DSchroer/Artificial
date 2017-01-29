@@ -42,6 +42,7 @@
     <sprite>sprites\spr_bullet</sprite>
     <sprite>sprites\spr_target</sprite>
     <sprite>sprites\spr_sword</sprite>
+    <sprite>sprites\spr_dishonDuck</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -190,6 +191,8 @@
       <object>objects\obj_player</object>
       <object>objects\obj_target</object>
     </objects>
+    <object>objects\object18</object>
+    <object>objects\obj_duck</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_dungeon_test</room>
