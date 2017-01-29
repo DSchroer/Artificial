@@ -13,4 +13,7 @@ switch(weapon[weapon_index.modifier])
     case weapon_modifier.plasma:
         attack_plasma(weapon, xpos, ypos, dir, ignore);
         break;
+    case weapon_modifier.sword:
+        attack_sword(weapon, xpos, ypos, dir, ignore);
+        break;
 }

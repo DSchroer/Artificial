@@ -23,7 +23,7 @@ if(slot < 0)
 if(is_array(inventory[slot])) 
 {
     var equipped = inventory[slot];
-    draw_sprite_ext(equipped[weapon_index.inv_sprite], -1, bx + 6, by + 82, 0.75, 0.75, 0, c_white, 1);
+    draw_weapon(equipped, bx + 6, by + 82, 0.75, 0.75, 0, 1);
 }
 else 
 {    
@@ -39,7 +39,7 @@ if(slot < 0)
 if(is_array(inventory[slot])) 
 {
     var equipped = inventory[slot];
-    draw_sprite_ext(equipped[weapon_index.inv_sprite], -1, bx + 6, by + 140, 0.75, 0.75, 0, c_white, 1);
+    draw_weapon(equipped, bx + 6, by + 140, 0.75, 0.75, 0, 1);
 }
 else 
 {
@@ -55,7 +55,7 @@ if(slot < 0)
 if(is_array(inventory[slot])) 
 {
     var equipped = inventory[slot];
-    draw_sprite_ext(equipped[weapon_index.inv_sprite], -1, bx + 6, by + 197, 0.75, 0.75, 0, c_white, 1);
+    draw_weapon(equipped, bx + 6, by + 197, 0.75, 0.75, 0, 1);
 }
 else 
 {
@@ -67,7 +67,7 @@ var slot = selected_slot;
 if(is_array(inventory[selected_slot])) 
 {
     var equipped = inventory[slot];
-    draw_sprite(equipped[weapon_index.inv_sprite], -1, bx + 6, by + 254);
+    draw_weapon(equipped,  bx + 6, by + 254, 1, 1, 0, 1);
 }
 else 
 {

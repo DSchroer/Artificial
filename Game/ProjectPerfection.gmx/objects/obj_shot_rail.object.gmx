@@ -29,7 +29,33 @@
 x_end = x;
 y_end = y;
 hit_instance = undefined;
+alarm[0] = 5;
+
 parent = self;
+damage = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -68,6 +94,10 @@ parent = self;
         x_end = x + lengthdir_x(entity_dist, direction);
         y_end = y + lengthdir_y(entity_dist, direction);
         hit_instance = instance_nearest(x_end, y_end, obj_entity);
+        with(hit_instance)
+        {
+            entity_apply_damage(other.damage);
+        }
     }
     else if(wall_dist != -1)
     {
@@ -102,7 +132,16 @@ parent = self;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_line(x, y, x_end, y_end);
+            <string>//draw_line(x, y, x_end, y_end);
+var distance = point_distance(x, y, x_end, y_end);
+
+var w = sprite_get_width(sprite_index);
+var p = w / 2;
+while(p &lt; distance)
+{
+    draw_sprite_ext(sprite_index, image_index, x + lengthdir_x(p, direction), y + lengthdir_y(p, direction), 1, 1, direction, c_white, 255);
+    p += w;
+}
 </string>
           </argument>
         </arguments>
