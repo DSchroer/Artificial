@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>data = inventory_create_weapon();
+data[weapon_index.modifier] = round(random(2));
 </string>
           </argument>
         </arguments>
@@ -48,9 +49,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(data != -1 &amp;&amp; data[0] == weapon_type.gun)
+            <string>if(data != -1 &amp;&amp; data[0] == item_ids.gun)
 {
-    draw_sprite(data[weapon_index.world_sprite], 0, x, y);
+    draw_weapon(data, x, y, 1, 1, 0, 1);
 }else{
     draw_self();
 }

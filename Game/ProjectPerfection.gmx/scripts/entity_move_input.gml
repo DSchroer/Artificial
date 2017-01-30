@@ -121,11 +121,6 @@ if(gamepad_button_check_pressed(0, gp_face2))
 
 }*/
 
-// X/square
-if(gamepad_button_check_pressed(0, gp_face3))
-{
-    player_inflict_damage(43);
-}
 
 // Y/triangle
 if(gamepad_button_check_pressed(0, gp_face4))

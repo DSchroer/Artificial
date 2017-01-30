@@ -41,6 +41,7 @@
     </sprites>
     <sprite>sprites\spr_bullet</sprite>
     <sprite>sprites\spr_target</sprite>
+    <sprite>sprites\spr_sword</sprite>
     <sprite>sprites\spr_dishonDuck</sprite>
   </sprites>
   <backgrounds name="background">
@@ -69,6 +70,8 @@
       <script>scripts\entity_move_input.gml</script>
       <script>scripts\entity_dampening.gml</script>
       <script>scripts\entity_collision.gml</script>
+      <script>scripts\entity_apply_damage.gml</script>
+      <script>scripts\entity_take_damage.gml</script>
     </scripts>
     <scripts name="Camera">
       <script>scripts\camera_init.gml</script>
@@ -123,7 +126,7 @@
       <script>scripts\player_init.gml</script>
       <script>scripts\player_levelup.gml</script>
       <script>scripts\player_update_shield.gml</script>
-      <script>scripts\player_inflict_damage.gml</script>
+      <script>scripts\player_take_damage.gml</script>
       <script>scripts\player_fire.gml</script>
     </scripts>
     <scripts name="Ui">
@@ -151,6 +154,10 @@
     <scripts name="Collision">
       <script>scripts\range_finder.gml</script>
     </scripts>
+    <scripts name="Draw">
+      <script>scripts\draw_weapon.gml</script>
+    </scripts>
+    <script>scripts\color_random.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_wall</object>
@@ -175,8 +182,9 @@
     <object>objects\obj_item</object>
     <object>objects\obj_save_data</object>
     <objects name="Attacks">
-      <object>objects\obj_plasma</object>
-      <object>objects\obj_rail</object>
+      <object>objects\obj_shot_plasma</object>
+      <object>objects\obj_shot_rail</object>
+      <object>objects\obj_hit_sword</object>
     </objects>
     <objects name="Entity">
       <object>objects\obj_entity</object>

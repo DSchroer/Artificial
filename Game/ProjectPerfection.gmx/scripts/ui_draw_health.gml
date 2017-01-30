@@ -18,7 +18,7 @@ if(shield_penalty_time > 0)
 ui_draw_ring(rx, ry, rad - 3, 16, 36, 36, 0, 360, -1, make_color_rgb(20, 20, 20));
 
 // Health
-var percent_health = health / max_health;
+var percent_health = current_health / max_health;
 percent_health = max(0, percent_health);
 ui_draw_ring(rx, ry, rad, 10, 36, 36, 90, 180 * percent_health, 1, make_color_rgb(69, 166, 87));
 

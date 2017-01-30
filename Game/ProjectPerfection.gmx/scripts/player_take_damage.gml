@@ -1,4 +1,4 @@
-///player_inflict_damage()
+///player_take_damage()
 if(shield_active && remaining_shield > 0)
 {
     // Hit shield.
@@ -24,7 +24,7 @@ if(shield_active && remaining_shield > 0)
 } 
 else 
 {
-    current_health -= damage;    
+    entity_take_damage();   
 }
 
 damage = 0;
