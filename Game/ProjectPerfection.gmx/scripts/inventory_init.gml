@@ -1,5 +1,11 @@
 ///inventory_init()
 
+enum item_ids
+{
+    gun,
+    sheild
+};
+
 enum inventory_slot
 {
     weapon1 = 0,
@@ -9,40 +15,38 @@ enum inventory_slot
     shield = 4
 };
 
-enum weapon_type
-{
-    sword = 0,
-    gun = 1
-};
-
 enum weapon_modifier
 {
-    rail = 0,
-    plasma = 1
+    rail,
+    plasma,
+    sword
 };
 
 enum weapon_index
 {
-    type = 0,
-    modifier = 1,
-    capacity = 2,
-    fire_rate = 3,
-    reload_time = 4,
-    name = 5,
-    damage = 6,
-    bullet_sprite = 7,
-    inv_sprite = 8,
-    world_sprite = 9
+    item_id,
+    modifier,
+    damage,
+    capacity,
+    fire_timeout,
+    fire_cooldown,
+    reload_timeout,
+    reload_cooldown,
+    bullet_sprite,
+    bullet_sprite_speed,
+    bullet_sprite_color,
+    sprite_count
 };
 
 enum shield_index
 {
-    max_health = 0,
-    recharge_delay = 1,
-    recharge_rate = 2,
-    name = 3,
-    inv_sprite = 4,
-    world_sprite = 5
+    item_id,
+    max_health,
+    recharge_delay,
+    recharge_rate,
+    name,
+    inv_sprite,
+    world_sprite
 };
 
 

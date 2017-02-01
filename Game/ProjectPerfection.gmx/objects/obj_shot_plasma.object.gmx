@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>parent = self;
+damage = 1;
 </string>
           </argument>
         </arguments>
@@ -52,6 +53,10 @@
 var entity = instance_place(x, y, obj_entity);
 if(entity &amp;&amp; entity != parent)
 {
+    with(entity)
+    {
+        entity_apply_damage(other.damage);
+    }
     instance_destroy();
 }
 
