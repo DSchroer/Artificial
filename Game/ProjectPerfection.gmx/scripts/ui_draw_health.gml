@@ -3,6 +3,8 @@
 var width = display_get_gui_width();
 var height = display_get_gui_height();
 
+var mx = device_mouse_x_to_gui(0);
+var my = device_mouse_y_to_gui(0);
 var rad = 75;
 var rx = width - rad - 20;
 var ry = height - rad - 20;
@@ -11,7 +13,7 @@ var ry = height - rad - 20;
 if(shield_penalty_time > 0)
 {
     var penalty_percent = 1 - (shield_penalty_time / previous_shield_penalty_time);
-    ui_draw_ring(rx, ry, rad, 14, 36, 36, 90, penalty_percent * 360, 1, make_color_rgb(150, 24, 45));
+    ui_draw_ring(rx, ry, rad, 16, 36, 36, 90, penalty_percent * 360, 1, make_color_rgb(150, 24, 45));
 }
 
 // Background for health/shield
@@ -31,7 +33,11 @@ if(equipped_shield != -1)
     ui_draw_ring(rx, ry, rad, 10, 36, 36, 90 + 180 * percent_health, 180 * shield_percent, 1, c_aqua);
 }
 
-
+var distance_from_center = point_distance(rx, ry, mx, my);
+if(distance_from_center > rad && distance_from_center < rad + 16)
+{
+    ui_draw_health_tooltip(mx, my);
+}
 
 
 

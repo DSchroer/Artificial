@@ -42,6 +42,11 @@
     <sprite>sprites\spr_bullet</sprite>
     <sprite>sprites\spr_target</sprite>
     <sprite>sprites\spr_dishonDuck</sprite>
+    <sprites name="Ui">
+      <sprite>sprites\spr_inventory_background_hide</sprite>
+      <sprite>sprites\spr_textback</sprite>
+      <sprite>sprites\spr_tooltip</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -54,6 +59,8 @@
       <script>scripts\inventory_swap.gml</script>
       <script>scripts\inventory_create_weapon.gml</script>
       <script>scripts\inventory_init.gml</script>
+      <script>scripts\inventory_get_type_name.gml</script>
+      <script>scripts\inventory_get_modifier_name.gml</script>
     </scripts>
     <scripts name="Level">
       <script>scripts\level_create.gml</script>
@@ -130,6 +137,15 @@
       <script>scripts\ui_draw_inventory.gml</script>
       <script>scripts\ui_draw_health.gml</script>
       <script>scripts\ui_draw_ring.gml</script>
+      <script>scripts\ui_draw_textbox.gml</script>
+      <script>scripts\ui_draw_weapon_tooltip.gml</script>
+      <script>scripts\ui_draw_shield_tooltip.gml</script>
+      <script>scripts\ui_draw_health_tooltip.gml</script>
+      <script>scripts\ui_draw_weapon_slot.gml</script>
+      <script>scripts\ui_adjust_slot.gml</script>
+      <script>scripts\ui_draw_tooltip.gml</script>
+      <script>scripts\ui_set_colour.gml</script>
+      <script>scripts\ui_check_weapon_slot_tooltip.gml</script>
     </scripts>
     <scripts name="Debug">
       <script>scripts\debug_init.gml</script>

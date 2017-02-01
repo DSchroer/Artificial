@@ -44,7 +44,10 @@ if(keymap_check(keycode.inventory_down))
         selected_slot += inventory_slot.shield; 
 }
 
-
+if(keymap_check(keycode.hide_inventory))
+{
+    hide_inventory = !hide_inventory;
+}
 
 
 
@@ -106,13 +109,13 @@ if(abs(haxis_rs) > 0.05 || abs(vaxis_rs) > 0.05)
 // (Attacks, interacting with world, etc...)
 
 // A/cross 
-/*
+
 if(gamepad_button_check_pressed(0, gp_face1))
 {
     var ite = inventory_create_weapon();
     inventory_swap(self, selected_slot, ite);
 }
-
+/*
 // B/circle
 if(gamepad_button_check_pressed(0, gp_face2))
 {
