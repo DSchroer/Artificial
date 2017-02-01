@@ -60,7 +60,6 @@
       <script>scripts\inventory_swap.gml</script>
       <script>scripts\inventory_create_weapon.gml</script>
       <script>scripts\inventory_init.gml</script>
-      <script>scripts\inventory_get_type_name.gml</script>
       <script>scripts\inventory_get_modifier_name.gml</script>
     </scripts>
     <scripts name="Level">

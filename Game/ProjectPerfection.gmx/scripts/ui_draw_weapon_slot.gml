@@ -12,7 +12,7 @@ var cell_height = 64 * scale;
 
 if(is_array(item)) 
 {
-    draw_sprite_ext(item[weapon_index.inv_sprite], -1, xpos, ypos, scale, scale, 0, c_white, 1);
+    draw_weapon(item, xpos, ypos, scale, scale, 0, 1);
 }
 else 
 {

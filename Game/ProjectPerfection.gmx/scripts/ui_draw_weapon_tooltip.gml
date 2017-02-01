@@ -7,21 +7,17 @@ var weapon = argument2;
 var text;
 var args;
 var c = 0;
-text[c++] = string(weapon[weapon_index.name]);
-text[c++] = inventory_get_type_name(weapon[weapon_index.type]);
 text[c++] = inventory_get_modifier_name(weapon[weapon_index.modifier]);
+args[c] = "|green";
 text[c++] = string(weapon[weapon_index.damage]) + " Damage";
-text[c++] = string(weapon[weapon_index.fire_rate]) + " Firerate";
-text[c++] = string(weapon[weapon_index.capacity]) + " Bullet Capacity";
-
-args[0] = 0;
-args[1] = "|green";
-args[2] = "|green";
-args[3] = "|white";
-args[4] = 0;
-args[5] = 0;
-
-
+args[c] = "|white";
+text[c++] = string(1.0 / weapon[weapon_index.fire_timeout]) + " Firerate";
+args[c] = 0; 
+if(weapon[weapon_index.modifier] != weapon_modifier.sword)
+{
+    text[c++] = string(weapon[weapon_index.capacity]) + " Bullet Capacity";
+    args[c] = 0;
+}
 
 ui_draw_tooltip(xpos, ypos, text, args);
 
