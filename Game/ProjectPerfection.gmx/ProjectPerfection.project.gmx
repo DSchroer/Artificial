@@ -201,7 +201,6 @@
       <object>objects\obj_player</object>
       <object>objects\obj_target</object>
     </objects>
-    <object>objects\object18</object>
     <object>objects\obj_duck</object>
     <object>objects\obj_sfx_test</object>
   </objects>
