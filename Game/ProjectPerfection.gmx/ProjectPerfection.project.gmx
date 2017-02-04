@@ -23,7 +23,9 @@
     </datafile>
   </datafiles>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_attack</sound>
+  </sounds>
   <sprites name="sprites">
     <sprites name="Player">
       <sprite>sprites\spr_player</sprite>
@@ -158,6 +160,13 @@
       <script>scripts\draw_weapon.gml</script>
     </scripts>
     <script>scripts\color_random.gml</script>
+    <scripts name="Sound">
+      <script>scripts\sfx_play.gml</script>
+      <script>scripts\sfx_bkg_add.gml</script>
+      <script>scripts\sfx_bkg_clear.gml</script>
+      <script>scripts\sfx_bkg_init.gml</script>
+      <script>scripts\sfx_bkg_update.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_wall</object>
