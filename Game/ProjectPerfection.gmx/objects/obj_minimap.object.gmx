@@ -48,7 +48,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>map_draw()
+            <string>map_draw(100, 100)
 </string>
           </argument>
         </arguments>

@@ -25,13 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>generator_init(50, 50);
+            <string>generator_init(100, 100);
 
-//generator_add_option(rm_stub_1, 3, 3);
-generator_add_option(rm_stub_2, 9, 3);
-generator_add_option(rm_stub_3, 3, 5);
-generator_add_option(rm_stub_4, 7, 7);
-generator_add_option(rm_stub_5, 9, 9);
+generator_add_option(rm_stub_1, 9, 9);
+generator_add_option(rm_stub_2, 13, 13);
+generator_add_option(rm_stub_3, 15, 15);
 
 </string>
           </argument>
@@ -111,9 +109,11 @@ if(itteration &lt; ds_list_size(room_list))
 while(ds_list_size(room_list) &lt;= 1)
 {
     generator_clear();
-    generator_set_room(rm_stub_1, 0, 0, 3, 3);
-    generator_populate(0, 0, 3, 3);
+    generator_set_room(rm_stub_1, 0, 0, 9, 9);
+    generator_populate(0, 0, 9, 9);
 }
+
+generator_add_doors();
 
 constructing = true;
 persistent = true;

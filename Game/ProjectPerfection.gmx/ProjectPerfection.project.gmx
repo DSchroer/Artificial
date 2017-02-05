@@ -23,7 +23,10 @@
     </datafile>
   </datafiles>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_attack</sound>
+    <sound>sound\snd_not_attack</sound>
+  </sounds>
   <sprites name="sprites">
     <sprites name="Player">
       <sprite>sprites\spr_player</sprite>
@@ -43,6 +46,7 @@
     <sprite>sprites\spr_target</sprite>
     <sprite>sprites\spr_sword</sprite>
     <sprite>sprites\spr_dishonDuck</sprite>
+    <sprite>sprites\spr_grunt</sprite>
     <sprites name="Ui">
       <sprite>sprites\spr_inventory_background_hide</sprite>
       <sprite>sprites\spr_textback</sprite>
@@ -100,11 +104,14 @@
       <script>scripts\generator_create_level.gml</script>
       <script>scripts\generator_copy_instances.gml</script>
       <script>scripts\generator_copy_tiles.gml</script>
+      <script>scripts\generator_add_doors.gml</script>
+      <script>scripts\generator_place_door.gml</script>
     </scripts>
     <scripts name="Map">
       <script>scripts\map_init.gml</script>
       <script>scripts\map_set_level.gml</script>
       <script>scripts\map_draw.gml</script>
+      <script>scripts\map_render_map_texture.gml</script>
     </scripts>
     <scripts name="Overlay">
       <script>scripts\overlay_init.gml</script>
@@ -134,6 +141,7 @@
       <script>scripts\player_update_shield.gml</script>
       <script>scripts\player_take_damage.gml</script>
       <script>scripts\player_fire.gml</script>
+      <script>scripts\player_exists.gml</script>
     </scripts>
     <scripts name="Ui">
       <script>scripts\ui_draw_inventory.gml</script>
@@ -173,7 +181,40 @@
       <script>scripts\draw_weapon.gml</script>
     </scripts>
     <script>scripts\color_random.gml</script>
+    <scripts name="Sound">
+      <script>scripts\sfx_play.gml</script>
+      <script>scripts\sfx_bkg_add.gml</script>
+      <script>scripts\sfx_bkg_clear.gml</script>
+      <script>scripts\sfx_bkg_init.gml</script>
+      <script>scripts\sfx_bkg_update.gml</script>
+    </scripts>
+    <scripts name="State">
+      <script>scripts\sm_init.gml</script>
+      <script>scripts\sm_get_state.gml</script>
+      <script>scripts\sm_set_state.gml</script>
+      <script>scripts\sm_pre_update.gml</script>
+      <script>scripts\sm_set_var.gml</script>
+      <script>scripts\sm_get_var.gml</script>
+      <script>scripts\sm_state_pop.gml</script>
+      <script>scripts\sm_time.gml</script>
+      <script>scripts\sm_ticks.gml</script>
+    </scripts>
+    <scripts name="Enemy">
+      <scripts name="Grunt">
+        <script>scripts\eg_idle.gml</script>
+        <script>scripts\eg_approach.gml</script>
+        <script>scripts\eg_retreat.gml</script>
+        <script>scripts\eg_attack.gml</script>
+      </scripts>
+    </scripts>
+    <scripts name="Interact">
+      <script>scripts\interact_any.gml</script>
+      <script>scripts\interact_trigger.gml</script>
+    </scripts>
   </scripts>
+  <shaders name="shaders">
+    <shader type="GLSLES">shaders\sdr_circle.shader</shader>
+  </shaders>
   <objects name="objects">
     <object>objects\obj_wall</object>
     <object>objects\obj_control</object>
@@ -205,9 +246,14 @@
       <object>objects\obj_entity</object>
       <object>objects\obj_player</object>
       <object>objects\obj_target</object>
+      <object>objects\obj_grunt</object>
     </objects>
-    <object>objects\object18</object>
     <object>objects\obj_duck</object>
+    <objects name="Interact">
+      <object>objects\obj_interact</object>
+      <object>objects\obj_interact_solid</object>
+      <object>objects\obj_prompt</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_dungeon_test</room>
@@ -218,8 +264,6 @@
       <room>rooms\rm_stub_1</room>
       <room>rooms\rm_stub_2</room>
       <room>rooms\rm_stub_3</room>
-      <room>rooms\rm_stub_4</room>
-      <room>rooms\rm_stub_5</room>
     </rooms>
   </rooms>
   <help>

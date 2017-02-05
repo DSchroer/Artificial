@@ -1,5 +1,4 @@
 ///draw_weapon(weapon, x, y, xscale, yscale, rot, alpha)
-exit;
 var weapon = argument0;
 var xp = argument1;
 var yp = argument2;

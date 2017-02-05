@@ -48,8 +48,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x_target = obj_player.x;
-y_target = obj_player.y;
+            <string>
+if(player_exists())
+{
+    x_target = obj_player.x;
+    y_target = obj_player.y;
+}
+
 
 if(window_get_width() != view_wport[0] || window_get_height() != view_hport[0])
 {
