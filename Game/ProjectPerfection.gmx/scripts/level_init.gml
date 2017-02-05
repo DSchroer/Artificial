@@ -3,6 +3,7 @@ width = argument0;
 height = argument1;
 
 room_grid = ds_grid_create(width, height);
+door_grid = ds_grid_create(width, height);
 
 current_room = 0;
 
