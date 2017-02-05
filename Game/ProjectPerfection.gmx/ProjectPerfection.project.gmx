@@ -102,6 +102,7 @@
       <script>scripts\map_init.gml</script>
       <script>scripts\map_set_level.gml</script>
       <script>scripts\map_draw.gml</script>
+      <script>scripts\map_render_map_texture.gml</script>
     </scripts>
     <scripts name="Overlay">
       <script>scripts\overlay_init.gml</script>
@@ -169,6 +170,9 @@
       <script>scripts\sfx_bkg_update.gml</script>
     </scripts>
   </scripts>
+  <shaders name="shaders">
+    <shader type="GLSLES">shaders\sdr_circle.shader</shader>
+  </shaders>
   <objects name="objects">
     <object>objects\obj_wall</object>
     <object>objects\obj_control</object>
@@ -202,7 +206,6 @@
       <object>objects\obj_target</object>
     </objects>
     <object>objects\obj_duck</object>
-    <object>objects\obj_sfx_test</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_dungeon_test</room>

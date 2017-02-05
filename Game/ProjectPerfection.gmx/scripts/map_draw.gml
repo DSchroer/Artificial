@@ -1,24 +1,32 @@
-///map_draw()
-if(level != -1)
+///map_draw(x, y)
+
+if(!surface_exists(main_surface))
 {
-    var size = 5;
-    for(var i = 0; i < ds_list_size(level.room_list); i++)
-    {
-        var r = ds_list_find_value(level.room_list, i);
-        var x1 = ds_list_find_value(level.room_x_list, i);
-        var y1 = ds_list_find_value(level.room_y_list, i);
-        var x2 = x1 + ds_list_find_value(level.room_w_list, i);
-        var y2 = y1 + ds_list_find_value(level.room_h_list, i);
-        
-        draw_rectangle_color(x1 * size, y1 * size, x2 * size, y2 * size, fill_color, fill_color, fill_color, fill_color, false);
-        draw_rectangle(x1 * size, y1 * size, x2 * size, y2 * size, true);
-    }
+    main_surface = surface_create(map_diameter, map_diameter);
 }
 
-with(level)
+surface_set_target(main_surface);
+draw_clear(c_black);
+if(level != -1)
 {
-    draw_circle_colour(level_position_x(obj_player.x) * size, level_position_y(obj_player.y) * size, 3, c_red, c_red, false);
+    if(map_texture == -1)
+    {
+        map_render_map_texture();
+    }
+
+    with(level)
+    {
+        var px = level_position_x(obj_player.x);
+        var py = level_position_y(obj_player.y);
+    }
+
+    draw_sprite(map_texture, 0, (map_diameter / 2) - (px * map_size), (map_diameter / 2) - (py * map_size));
 }
+surface_reset_target();
+
+shader_set(sdr_circle);
+draw_surface(main_surface, display_get_gui_width() - 20 - map_diameter, display_get_gui_height() - 20 - map_diameter);
+shader_reset();
 
 
 
