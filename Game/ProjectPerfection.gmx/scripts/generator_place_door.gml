@@ -14,7 +14,7 @@ if(y1 < 0 || y2 >= height)
     return 0;
 }
 
-if(ds_grid_get_min(room_grid, x1, y1, x2, y2) > 0)
+if(ds_grid_get_min(room_grid, x1 - 1, y1 - 1, x2 + 1, y2 + 1) > 0)
 {
    ds_grid_set_region(door_grid, x1, y1, x2, y2, 1)
 }
