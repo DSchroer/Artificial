@@ -121,6 +121,11 @@ if(out != -1 &amp;&amp; is_array(out))
     item.data = out;
 }
 
+if(keymap_check(keycode.interact))
+{
+    interact_trigger(interact_any(80));
+}
+
 if(keymap_check(keycode.fire))
 {
     player_fire();

@@ -14,6 +14,7 @@ enum keycode{
     inventory_down,
     fire,
     hide_inventory,
+    interact
 }
 
 var key = argument0;
@@ -85,6 +86,11 @@ if(key == keycode.fire)
 if(key == keycode.hide_inventory)
 {
     return keyboard_check_pressed(ord("i")) || keyboard_check_pressed(ord("I")) || gamepad_button_check_pressed(0, gp_face4); 
+}
+
+if(key == keycode.interact)
+{
+    return keyboard_check_pressed(ord("F"));
 }
 
 
