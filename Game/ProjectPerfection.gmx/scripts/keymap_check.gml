@@ -12,7 +12,8 @@ enum keycode{
     shield,
     inventory_up,
     inventory_down,
-    fire
+    fire,
+    hide_inventory,
 }
 
 var key = argument0;
@@ -81,5 +82,9 @@ if(key == keycode.fire)
     return mouse_check_button_pressed(mb_left);
 }
 
+if(key == keycode.hide_inventory)
+{
+    return keyboard_check_pressed(ord("i")) || keyboard_check_pressed(ord("I")) || gamepad_button_check_pressed(0, gp_face4); 
+}
 
 
