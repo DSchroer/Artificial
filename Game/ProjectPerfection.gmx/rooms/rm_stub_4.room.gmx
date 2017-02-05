@@ -51,7 +51,6 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="obj_item" x="256" y="256" name="inst_9600D8EA" locked="0" code="data[0] = inventory_create_weapon();&#xA;data[1] = 2;&#xA;data[2] = -1;&#xA;&#xA;image_angle = random(360);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="64" y="64" name="inst_6F415CAA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="128" y="64" name="inst_56D34397" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="192" y="64" name="inst_BCE43000" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -59,6 +58,7 @@
     <instance objName="obj_wall" x="320" y="64" name="inst_52E430FD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="320" y="128" name="inst_8F90007E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="64" y="128" name="inst_6E68547C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_grunt" x="256" y="320" name="inst_DE8B6079" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bkg_tmp_tiles" x="64" y="64" w="64" h="64" xo="320" yo="384" id="10000033" name="inst_354AF4B5" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

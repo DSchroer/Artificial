@@ -8,3 +8,6 @@ main_surface = surface_create(map_diameter, map_diameter);
 
 map_size = 5;
 
+center_x = 0;
+center_y = 0;
+

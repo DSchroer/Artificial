@@ -16,11 +16,14 @@ if(level != -1)
 
     with(level)
     {
-        var px = level_position_x(obj_player.x);
-        var py = level_position_y(obj_player.y);
+        if(player_exists())
+        {
+            other.center_x = level_position_x(obj_player.x);
+            other.center_y = level_position_y(obj_player.y);
+        }
     }
 
-    draw_sprite(map_texture, 0, (map_diameter / 2) - (px * map_size), (map_diameter / 2) - (py * map_size));
+    draw_sprite(map_texture, 0, (map_diameter / 2) - (center_x * map_size), (map_diameter / 2) - (center_x * map_size));
 }
 surface_reset_target();
 
