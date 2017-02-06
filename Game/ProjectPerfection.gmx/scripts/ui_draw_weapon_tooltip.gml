@@ -11,7 +11,7 @@ text[c++] = inventory_get_modifier_name(weapon[weapon_index.modifier]);
 args[c] = "|green";
 text[c++] = string(weapon[weapon_index.damage]) + " Damage";
 args[c] = "|white";
-text[c++] = string(1.0 / weapon[weapon_index.fire_timeout]) + " Firerate";
+//text[c++] = string(1.0 / weapon[weapon_index.fire_timeout]) + " Firerate";
 args[c] = 0; 
 if(weapon[weapon_index.modifier] != weapon_modifier.sword)
 {

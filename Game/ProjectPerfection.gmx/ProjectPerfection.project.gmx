@@ -252,12 +252,12 @@
     </objects>
     <object>objects\obj_duck</object>
     <objects name="Interact">
+      <object>objects\obj_door</object>
       <object>objects\obj_interact</object>
       <object>objects\obj_interact_solid</object>
       <object>objects\obj_prompt</object>
     </objects>
     <objects name="Control">
-      <object>objects\obj_door</object>
       <object>objects\obj_hub_jump</object>
     </objects>
   </objects>

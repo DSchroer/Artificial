@@ -17,7 +17,7 @@ if(is_array(equipped_shield))
         var shield_damage = (20 * (delta_time / 1000000));
         // This line is a workaround for now - it cauases the player's shield 
         // to properly break again after recharging if they keep holding the button
-        remaining_shield += shield_damage * 0.5;
+        remaining_shield -= shield_damage * 0.5;
         player_take_damage(shield_damage);
     }
 }

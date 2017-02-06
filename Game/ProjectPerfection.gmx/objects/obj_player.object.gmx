@@ -28,7 +28,7 @@
             <string>event_inherited();
 player_init();
 
-
+inventory_swap(self, inventory_slot.shield, inventory_create_shield());
 
 </string>
           </argument>
@@ -123,7 +123,7 @@ if(out != -1 &amp;&amp; is_array(out))
 
 if(keymap_check(keycode.interact))
 {
-    interact_trigger(interact_any(80));
+    interact_trigger(interact_any(128));
 }
 
 if(keymap_check(keycode.fire))
@@ -294,6 +294,29 @@ if(debug_mode)
     draw_set_color(c_red)
 }
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="116">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_user(1)
 </string>
           </argument>
         </arguments>

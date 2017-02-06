@@ -12,7 +12,7 @@ var cell_height = 64 * scale;
 
 if(is_array(item)) 
 {
-    draw_weapon(item, xpos, ypos, scale, scale, 0, 1);
+    draw_weapon(item, xpos + (32 * scale), ypos + (32 * scale), scale, scale, 0, 1);
 }
 else 
 {
