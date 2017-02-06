@@ -26,6 +26,8 @@
   <sounds name="sound">
     <sound>sound\snd_attack</sound>
     <sound>sound\snd_not_attack</sound>
+    <sound>sound\snd_music</sound>
+    <sound>sound\snd_gunshot</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="Player">

@@ -30,6 +30,7 @@ player_init();
 
 inventory_swap(self, inventory_slot.shield, inventory_create_shield());
 
+sfx_bkg_init();
 </string>
           </argument>
         </arguments>
@@ -52,7 +53,9 @@ inventory_swap(self, inventory_slot.shield, inventory_create_shield());
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>isomorphic_set_depth();
+            <string>sfx_bkg_update();
+
+isomorphic_set_depth();
 
 entity_dampening();
 entity_move_input();
@@ -291,6 +294,59 @@ if(view_current == 0)
 if(debug_mode)
 {
     draw_set_color(c_red)
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="118">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>sfx_play(snd_gunshot);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="117">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+if(ds_list_size(sfx_list) == 0)
+{
+    sfx_bkg_add(snd_music);
+}else{
+    sfx_bkg_clear();
 }
 
 </string>
