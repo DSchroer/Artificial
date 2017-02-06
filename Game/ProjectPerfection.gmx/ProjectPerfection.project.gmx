@@ -107,6 +107,7 @@
       <script>scripts\generator_add_doors.gml</script>
       <script>scripts\generator_place_door.gml</script>
       <script>scripts\generator_cleanup.gml</script>
+      <script>scripts\generator_spawn_exit.gml</script>
     </scripts>
     <scripts name="Map">
       <script>scripts\map_init.gml</script>

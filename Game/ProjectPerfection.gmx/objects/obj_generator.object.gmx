@@ -107,16 +107,19 @@ if(itteration &lt; ds_list_size(room_list))
 while(ds_list_size(room_list) &lt;= 1)
 {
     generator_clear();
-    generator_set_room(rm_stub_1, 0, 0, 15, 15);
-    generator_populate(0, 0, 15, 15);
+    generator_set_room(rm_stub_1, 0, 0, 15, 15, 0);
+    generator_populate(0, 0, 15, 15, 0);
 }
 
 generator_add_doors();
+
 
 constructing = true;
 persistent = true;
 
 custom_room = room_add();
+
+generator_spawn_exit(custom_room);
 
 room_set_height(custom_room, height * 64);
 room_set_width(custom_room, width * 64);

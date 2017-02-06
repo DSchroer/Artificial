@@ -162,7 +162,6 @@ with(obj_level)
     instance_destroy();
 }
 
-
 room_goto(rm_hub);
 </string>
           </argument>
