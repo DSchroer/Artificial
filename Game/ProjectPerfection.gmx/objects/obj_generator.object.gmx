@@ -68,13 +68,11 @@ if(itteration &lt; ds_list_size(room_list))
     room_goto(goto);
 }else{
     level = generator_create_level();
+    generator_cleanup();
+    
     with(obj_minimap)
     {
         map_set_level(other.level);
-    }
-    with(obj_room_display)
-    {
-        overlay_set_level(other.level);   
     }
     
     persistent = false;
@@ -119,18 +117,13 @@ constructing = true;
 persistent = true;
 
 custom_room = room_add();
+
 room_set_height(custom_room, height * 64);
 room_set_width(custom_room, width * 64);
 room_set_persistent(custom_room, false);
 
 itteration = 0;
 room_goto(ds_list_find_value(room_list, 0));
-
-/*
-
-
-room_goto(ds_list_find_value(level.room_list, 0));
-*/
 </string>
           </argument>
         </arguments>

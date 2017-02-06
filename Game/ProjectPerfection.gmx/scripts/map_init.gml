@@ -6,7 +6,7 @@ map_texture =  -1;
 map_diameter = 75 * 2;
 main_surface = surface_create(map_diameter, map_diameter);
 
-map_size = 3;
+map_size = 2;
 
 center_x = 0;
 center_y = 0;

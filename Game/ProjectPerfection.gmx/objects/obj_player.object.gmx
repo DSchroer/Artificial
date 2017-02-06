@@ -156,6 +156,13 @@ if(keymap_check(keycode.fire))
             <string>current_health = 100;
 x = 3 * 64;
 y = 4 * 64;
+
+with(obj_level)
+{
+    instance_destroy();
+}
+
+
 room_goto(rm_hub);
 </string>
           </argument>

@@ -1,4 +1,8 @@
-///level_destroy()
+///generator_cleanup()
+ds_list_destroy(option_rooms);
+ds_list_destroy(option_width);
+ds_list_destroy(option_height);
+
 ds_grid_destroy(room_grid);
 ds_grid_destroy(door_grid);
 

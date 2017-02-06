@@ -106,6 +106,7 @@
       <script>scripts\generator_copy_tiles.gml</script>
       <script>scripts\generator_add_doors.gml</script>
       <script>scripts\generator_place_door.gml</script>
+      <script>scripts\generator_cleanup.gml</script>
     </scripts>
     <scripts name="Map">
       <script>scripts\map_init.gml</script>
@@ -272,6 +273,7 @@
       <room>rooms\rm_stub_2</room>
       <room>rooms\rm_stub_3</room>
     </rooms>
+    <room>rooms\rm_empty</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
