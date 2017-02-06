@@ -53,8 +53,6 @@ if(!hide_inventory)
         draw_set_colour(c_aqua);
         draw_text_transformed(bx + 6, by + 6 + 25, "(Empty)", 0.9, 0.9, 0);
     }
-    ui_draw_textbox(300, 300, "Lorem ipsum dolor sit amet, consectetur adipiscing |green elit. Aliquam blandit ante enim, mollis lacinia erat mattis in. Praesent at justo pharetra, semper lorem et, sollicitudin enim. In v");  
-  
 }
 
 

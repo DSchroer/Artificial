@@ -206,6 +206,7 @@
         <script>scripts\eg_retreat.gml</script>
         <script>scripts\eg_attack.gml</script>
       </scripts>
+      <script>scripts\enemy_target.gml</script>
     </scripts>
     <scripts name="Interact">
       <script>scripts\interact_any.gml</script>
@@ -254,8 +255,14 @@
       <object>objects\obj_interact_solid</object>
       <object>objects\obj_prompt</object>
     </objects>
+    <objects name="Control">
+      <object>objects\obj_door</object>
+      <object>objects\obj_hub_jump</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_base</room>
+    <room>rooms\rm_hub</room>
     <room>rooms\rm_dungeon_test</room>
     <room>rooms\rm_sandbox</room>
     <room>rooms\rm_credits</room>

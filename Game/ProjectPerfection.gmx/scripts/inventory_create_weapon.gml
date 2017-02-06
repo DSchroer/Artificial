@@ -10,7 +10,7 @@ weapon[weapon_index.fire_cooldown] = 0;
 weapon[weapon_index.reload_timeout] = 10;
 weapon[weapon_index.reload_cooldown] = 0;
 
-weapon[weapon_index.bullet_sprite] = spr_sword;
+weapon[weapon_index.bullet_sprite] = spr_bullet;
 weapon[weapon_index.bullet_sprite_speed] = 1;
 weapon[weapon_index.bullet_sprite_color] = color_random();
 

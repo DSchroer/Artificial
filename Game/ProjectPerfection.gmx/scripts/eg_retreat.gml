@@ -1,6 +1,6 @@
 ///eg_retreat()
 
-if(point_distance(x, y, obj_player.x, obj_player.y) > 150)
+if(point_distance(x, y, obj_player.x, obj_player.y) > 250)
 {
     sm_set_state("attack");
 }
