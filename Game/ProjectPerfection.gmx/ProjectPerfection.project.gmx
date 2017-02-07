@@ -63,6 +63,10 @@
       <sprite>sprites\spr_controller_dright</sprite>
       <sprite>sprites\spr_controller_dleft</sprite>
     </sprites>
+    <sprite>sprites\sprite28</sprite>
+    <sprites name="Fonts">
+      <sprite>sprites\spr_base_font</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -292,6 +296,7 @@
     </objects>
     <object>objects\obj_clear_entities</object>
     <object>objects\obj_post_process</object>
+    <object>objects\obj_fonts</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_base</room>
