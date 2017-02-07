@@ -23,12 +23,7 @@ for(var i = 0; i < ds_map_size(save_data); i++)
     var val = ds_map_find_value(save_data, key);
     if(ds_exists(val, ds_type_list))
     {
-        var arr;
-        for(var j = 0; j < ds_list_size(val); j++)
-        {
-            arr[j] = ds_list_find_value(val, j);
-        }
-        ds_map_replace(save_data, key, arr);
+        ds_map_replace(save_data, key, save_create_array(val));
     }
     
     key = ds_map_find_next(save_data, key);

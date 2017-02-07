@@ -8,7 +8,9 @@ with(save)
     if(!ds_map_exists(save_data, name))
     {
         ds_map_add(save_data, name, value);
-    }else{
+    }
+    else
+    {
         ds_map_replace(save_data, name, value);
     }
 }

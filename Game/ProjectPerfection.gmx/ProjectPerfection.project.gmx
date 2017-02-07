@@ -154,6 +154,7 @@
       <script>scripts\save_set_value.gml</script>
       <script>scripts\save_has_value.gml</script>
       <script>scripts\save_flush.gml</script>
+      <script>scripts\save_create_array.gml</script>
     </scripts>
     <script>scripts\isomorphic_set_depth.gml</script>
     <scripts name="Player">

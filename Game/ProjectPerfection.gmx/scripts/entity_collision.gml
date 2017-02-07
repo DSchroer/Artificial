@@ -1,5 +1,10 @@
 ///entity_collision()
 
+if(speed == 0)
+{
+    exit;
+}
+
 var x_change = lengthdir_x(speed, direction);
 var y_change = lengthdir_y(speed, direction)
 if(place_meeting(x + x_change, y, obj_wall) || place_meeting(x + x_change, y, obj_entity))
