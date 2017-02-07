@@ -11,3 +11,7 @@ ds_list_destroy(room_x_list);
 ds_list_destroy(room_y_list);
 ds_list_destroy(room_w_list);
 ds_list_destroy(room_h_list);
+ds_list_destroy(room_d_list);
+ds_list_destroy(room_e_list);
+
+ds_map_destroy(spawn_map);

@@ -27,6 +27,12 @@
             <kind>1</kind>
             <string>obj_player.x = 4.5 * 64;
 obj_player.y = 4.5 * 64;
+
+with(obj_level)
+{
+    instance_destroy();
+}
+
 room_goto(rm_dungeon_test)
 </string>
           </argument>

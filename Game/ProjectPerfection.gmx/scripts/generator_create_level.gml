@@ -8,6 +8,7 @@ with(level)
     
     ds_list_copy(room_list, other.room_list);
     
+    ds_list_copy(room_d_list, other.room_x_list);
     ds_list_copy(room_x_list, other.room_x_list);
     ds_list_copy(room_y_list, other.room_y_list);
     ds_list_copy(room_w_list, other.room_w_list);

@@ -26,12 +26,15 @@
   <sounds name="sound">
     <sound>sound\snd_attack</sound>
     <sound>sound\snd_not_attack</sound>
+    <sound>sound\snd_music</sound>
+    <sound>sound\snd_gunshot</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="Player">
       <sprite>sprites\spr_player</sprite>
     </sprites>
     <sprite>sprites\spr_wall</sprite>
+    <sprite>sprites\spr_invisible_wall</sprite>
     <sprite>sprites\spr_door</sprite>
     <sprite>sprites\spr_bush</sprite>
     <sprite>sprites\spr_shield</sprite>
@@ -82,6 +85,8 @@
       <script>scripts\level_position_y.gml</script>
       <script>scripts\level_set_room.gml</script>
       <script>scripts\level_grid_value.gml</script>
+      <script>scripts\level_stub_find.gml</script>
+      <script>scripts\level_stub_find_all.gml</script>
     </scripts>
     <scripts name="Entity">
       <script>scripts\entity_init.gml</script>
@@ -115,6 +120,11 @@
       <script>scripts\generator_add_doors.gml</script>
       <script>scripts\generator_place_door.gml</script>
       <script>scripts\generator_cleanup.gml</script>
+      <script>scripts\generator_spawn_exit.gml</script>
+      <script>scripts\generator_create_spawn_map.gml</script>
+      <script>scripts\generator_random_room.gml</script>
+      <script>scripts\generator_use_room.gml</script>
+      <script>scripts\generator_spawn_at.gml</script>
     </scripts>
     <scripts name="Map">
       <script>scripts\map_init.gml</script>
@@ -229,6 +239,9 @@
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
   </shaders>
+  <fonts name="fonts">
+    <font>fonts\fnt_hit</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_wall</object>
     <object>objects\obj_control</object>
@@ -271,6 +284,10 @@
     </objects>
     <objects name="Control">
       <object>objects\obj_hub_jump</object>
+    </objects>
+    <object>objects\obj_invisible_wall</object>
+    <objects name="Effects">
+      <object>objects\obj_damage_indicator</object>
     </objects>
   </objects>
   <rooms name="rooms">

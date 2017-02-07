@@ -8,3 +8,6 @@ ds_list_clear(room_x_list);
 ds_list_clear(room_y_list);
 ds_list_clear(room_w_list);
 ds_list_clear(room_h_list);
+ds_list_clear(room_d_list);
+ds_list_clear(room_e_list);
+ds_map_clear(spawn_map);

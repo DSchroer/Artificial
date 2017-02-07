@@ -1,8 +1,9 @@
-///generator_populate(x, y, width, height)
+///generator_populate(x, y, width, height, distance)
 var x1 = argument0;
 var y1 = argument1;
 var w = argument2;
 var h = argument3;
+var distance = argument4;
 
 var x2 = x1 + w;
 var y2 = y1 + h;
@@ -19,6 +20,8 @@ ds_list_add(list, 2);
 ds_list_add(list, 3);
 
 ds_list_shuffle(list);
+var pos = room_number;
+var doors = 1;
 
 while(ds_list_size(list) > 0)
 {
@@ -29,18 +32,31 @@ while(ds_list_size(list) > 0)
     switch(dir)
     {
         case 0:
-            generator_left(n, x1, y_mid);
+            if(generator_left(n, x1, y_mid, distance + 1))
+            {
+                doors++;
+            }
             break;
         case 1:
-            generator_right(n, x2, y_mid);
+            if(generator_right(n, x2, y_mid, distance + 1))
+            {
+                doors++;
+            }
             break;
         case 2:
-            generator_up(n, y1, x_mid);
+            if(generator_up(n, y1, x_mid, distance + 1))
+            {
+                doors++;
+            }
             break;
         case 3:
-            generator_down(n, y2, x_mid);
+            if(generator_down(n, y2, x_mid, distance + 1))
+            {
+                doors++;
+            }
             break;
     }
 }
+ds_list_insert(room_e_list, pos, doors);
 
 ds_list_destroy(list);

@@ -1,6 +1,5 @@
 ///eg_approach()
-
-if(point_distance(x, y, obj_player.x, obj_player.y) > 500)
+if(!level_stub_find(obj_player))
 {
     sm_set_state("idle");
 }
