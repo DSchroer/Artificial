@@ -223,6 +223,9 @@
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
   </shaders>
+  <fonts name="fonts">
+    <font>fonts\fnt_hit</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_wall</object>
     <object>objects\obj_control</object>
@@ -267,6 +270,9 @@
       <object>objects\obj_hub_jump</object>
     </objects>
     <object>objects\obj_invisible_wall</object>
+    <objects name="Effects">
+      <object>objects\obj_damage_indicator</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_base</room>
