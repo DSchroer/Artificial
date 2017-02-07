@@ -55,6 +55,59 @@ while(word_index < array_length_1d(words))
     {
         ui_set_colour(word);
     }    
+    else if(string_char_at(word, 0) == "`")
+    {
+        word_width = 16;
+        // Draw a 16x16 image
+        if(remaining_space < word_width)
+        {
+            linex = xpos + border_size_x;
+            remaining_space = textbox_width;
+            liney += text_height;
+        }
+        
+        switch(word)
+        {
+        case "`a":
+            ui_draw_icon(linex, liney, spr_controller_a);            
+            break;
+        case "`b":
+            ui_draw_icon(linex, liney, spr_controller_b);            
+            break;
+        case "`x":
+            ui_draw_icon(linex, liney, spr_controller_x);            
+            break;
+        case "`y":
+            ui_draw_icon(linex, liney, spr_controller_y);            
+            break;
+        case "`l":
+            ui_draw_icon(linex, liney, spr_controller_dleft);            
+            break;
+        case "`r":
+            ui_draw_icon(linex, liney, spr_controller_dright);            
+            break;
+        case "`d":
+            ui_draw_icon(linex, liney, spr_controller_ddown);            
+            break;
+        case "`u":
+            ui_draw_icon(linex, liney, spr_controller_dup);            
+            break;
+        case "`s":
+            word_width = 8;
+            break;
+        case "`br":
+            word_width = 0;
+            linex = xpos + border_size_x;
+            remaining_space = textbox_width;
+            liney += text_height;
+            break;
+        }
+
+        
+
+        linex += word_width;
+        remaining_space -= word_width;
+    }
     else 
     {
         // Draw text

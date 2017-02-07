@@ -39,7 +39,6 @@
     <sprite>sprites\spr_bush</sprite>
     <sprite>sprites\spr_shield</sprite>
     <sprite>sprites\spr_item</sprite>
-    <sprite>sprites\spr_inventory_background</sprite>
     <sprite>sprites\spr_inv_shield1</sprite>
     <sprites name="Weapons">
       <sprite>sprites\spr_inv_rifle1</sprite>
@@ -54,6 +53,15 @@
       <sprite>sprites\spr_inventory_background_hide</sprite>
       <sprite>sprites\spr_textback</sprite>
       <sprite>sprites\spr_tooltip</sprite>
+      <sprite>sprites\spr_inventory_background</sprite>
+      <sprite>sprites\spr_controller_a</sprite>
+      <sprite>sprites\spr_controller_b</sprite>
+      <sprite>sprites\spr_controller_y</sprite>
+      <sprite>sprites\spr_controller_x</sprite>
+      <sprite>sprites\spr_controller_ddown</sprite>
+      <sprite>sprites\spr_controller_dup</sprite>
+      <sprite>sprites\spr_controller_dright</sprite>
+      <sprite>sprites\spr_controller_dleft</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -167,6 +175,10 @@
       <script>scripts\ui_draw_tooltip.gml</script>
       <script>scripts\ui_set_colour.gml</script>
       <script>scripts\ui_check_weapon_slot_tooltip.gml</script>
+      <script>scripts\ui_draw_icon.gml</script>
+      <script>scripts\ui_get_quality_colour.gml</script>
+      <script>scripts\ui_get_modifier_colour.gml</script>
+      <script>scripts\ui_get_quality_string.gml</script>
     </scripts>
     <scripts name="Debug">
       <script>scripts\debug_init.gml</script>

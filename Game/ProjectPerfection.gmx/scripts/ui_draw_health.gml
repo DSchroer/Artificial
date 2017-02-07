@@ -28,7 +28,7 @@ ui_draw_ring(rx, ry, rad, 10, 36, 36, 90, 180 * percent_health, 1, make_color_rg
 var equipped_shield = player_get_shield();
 if(equipped_shield != -1)
 {
-    var shield_percent = remaining_shield / 100;//equipped_shield.max_shield_health;
+    var shield_percent = remaining_shield / equipped_shield[shield_index.max_health];
     shield_percent = max(0, shield_percent);    
     ui_draw_ring(rx, ry, rad, 10, 36, 36, 90 + 180 * percent_health, 180 * shield_percent, 1, c_aqua);
 }

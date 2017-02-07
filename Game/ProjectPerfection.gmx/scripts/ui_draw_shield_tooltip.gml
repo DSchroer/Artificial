@@ -4,21 +4,49 @@ var xpos = argument0;
 var ypos = argument1;
 var shield = argument2;
 
+var quality_colour = ui_get_quality_colour(shield[shield_index.quality]);
+
 var c = 0;
 var lines;
-lines[c++] = string(shield[shield_index.name]);
-lines[c++] = string(shield[shield_index.max_health]) + " Absorption";
-lines[c++] = string(shield[shield_index.recharge_rate]) + " Recharge Rate";
-lines[c++] = string(shield[shield_index.recharge_delay]) + " Recharge Delay";
+var colours;
+var scales;
+var stats;
+var stat_colours;
 
-var args;
-args[0] = "|aqua";
-args[1] = "|white";
-args[2] = 0;
-args[3] = 0;
+lines[c] = string(shield[shield_index.name]);
+colours[c] = quality_colour;
+scales[c] = 1;
+stats[c] = -1;
+c++;
 
+lines[c] = ui_get_quality_string(shield[shield_index.quality]);
+colours[c] = quality_colour;
+scales[c] = 1;
+stats[c] = -1;
+c++;
 
-ui_draw_tooltip(xpos, ypos, lines, args);
+lines[c] = " Absorption";
+colours[c] = "|gray";
+scales[c] = 1;
+stats[c] = string(shield[shield_index.max_health]);
+stat_colours[c] = "|white";
+c++;
+
+lines[c] = " Recharge Rate";
+colours[c] = "|gray";
+scales[c] = 1;
+stats[c] = string(shield[shield_index.recharge_rate]);
+stat_colours[c] = "|white";
+c++;
+
+lines[c] = " Recharge Delay";
+colours[c] = "|gray";
+scales[c] = 1;
+stats[c] = string(shield[shield_index.recharge_delay]);
+stat_colours[c] = "|white";
+c++;
+
+ui_draw_tooltip(xpos, ypos, lines, colours, scales, stats, stat_colours);
 
 
 
