@@ -34,6 +34,7 @@
       <sprite>sprites\spr_player</sprite>
     </sprites>
     <sprite>sprites\spr_wall</sprite>
+    <sprite>sprites\spr_invisible_wall</sprite>
     <sprite>sprites\spr_door</sprite>
     <sprite>sprites\spr_bush</sprite>
     <sprite>sprites\spr_shield</sprite>
@@ -76,6 +77,8 @@
       <script>scripts\level_position_y.gml</script>
       <script>scripts\level_set_room.gml</script>
       <script>scripts\level_grid_value.gml</script>
+      <script>scripts\level_stub_find.gml</script>
+      <script>scripts\level_stub_find_all.gml</script>
     </scripts>
     <scripts name="Entity">
       <script>scripts\entity_init.gml</script>
