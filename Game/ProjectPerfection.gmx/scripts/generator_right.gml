@@ -14,4 +14,7 @@ var n_y1 = y_mid - (room_h / 2);
 if(generator_set_room(room_p, n_x1, n_y1, room_w, room_h, distance))
 {
     generator_populate(n_x1, n_y1, room_w, room_h, distance);
+    return true;
+}else{
+    return false;
 }

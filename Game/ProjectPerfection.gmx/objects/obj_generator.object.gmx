@@ -112,6 +112,7 @@ while(ds_list_size(room_list) &lt;= 1)
 }
 
 generator_add_doors();
+generator_create_spawn_map();
 
 
 constructing = true;
@@ -119,7 +120,15 @@ persistent = true;
 
 custom_room = room_add();
 
-generator_spawn_exit(custom_room);
+var end_key = generator_spawn_exit(custom_room);
+generator_use_room(end_key);
+
+for(var i = 0; i &lt; 3; i++)
+{
+    var p = generator_random_room();
+    generator_spawn_at(p, custom_room, obj_item);
+    generator_use_room(p);
+}
 
 room_set_height(custom_room, height * 64);
 room_set_width(custom_room, width * 64);

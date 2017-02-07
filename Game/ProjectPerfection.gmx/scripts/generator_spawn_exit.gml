@@ -20,3 +20,4 @@ var rw = ds_list_find_value(room_w_list, furthest_index);
 var rh = ds_list_find_value(room_h_list, furthest_index);
 
 room_instance_add(new_room, (rx + (rw/2) - 1) * 64, (ry + (rh/2) - 1) * 64, obj_door);
+return furthest_index;

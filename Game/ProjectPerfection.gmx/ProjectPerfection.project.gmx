@@ -113,6 +113,10 @@
       <script>scripts\generator_place_door.gml</script>
       <script>scripts\generator_cleanup.gml</script>
       <script>scripts\generator_spawn_exit.gml</script>
+      <script>scripts\generator_create_spawn_map.gml</script>
+      <script>scripts\generator_random_room.gml</script>
+      <script>scripts\generator_use_room.gml</script>
+      <script>scripts\generator_spawn_at.gml</script>
     </scripts>
     <scripts name="Map">
       <script>scripts\map_init.gml</script>
