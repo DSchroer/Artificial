@@ -127,6 +127,7 @@ for(var i = 0; i &lt; 3; i++)
 {
     var p = generator_random_room();
     generator_spawn_at(p, custom_room, obj_item);
+    generator_spawn_at(p, custom_room, obj_clear_entities);
     generator_use_room(p);
 }
 

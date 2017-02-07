@@ -14,6 +14,8 @@ with(obj_level)
 }
 
 var t;
+t[0] = noone;
+
 var p = 0;
 for(var i = 0; i < instance_number(target); i++)
 {
