@@ -54,8 +54,8 @@ if(!hide_inventory)
         draw_text_transformed(bx + 6, by + 6 + 25, "(Empty)", 0.9, 0.9, 0);
     }
     
-    ui_draw_textbox(300, 100, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id porttito. `a `s `b `s `x `y `br `l `s `r `s `u `s `d Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id porttito" + 
-    " `a `b `x `y `br `l `r `u `d ");
+    //ui_draw_textbox(300, 100, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id porttito. `a `s `b `s `x `y `br `l `s `r `s `u `s `d Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id porttito" + 
+    //" `a `b `x `y `br `l `r `u `d ");
     
 }
 

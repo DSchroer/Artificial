@@ -1,6 +1,8 @@
 ///inventory_create_shield()
 
 var shield;
+
+shield[shield_index.quality] = item_quality.legendary;
 shield[shield_index.max_health] = 40;
 shield[shield_index.recharge_delay] = 10;
 shield[shield_index.recharge_rate] = 20;

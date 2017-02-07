@@ -7,7 +7,7 @@ var weapon = argument2;
 var dmg = weapon[weapon_index.damage];
 var fire_rate = 1; //(60 / weapon[weapon_index.fire_timeout]);
 var dps = dmg * fire_rate;
-var quality_colour = ui_get_quality_colour();
+var quality_colour = ui_get_quality_colour(weapon[weapon_index.quality]);
 var modifier_colour = ui_get_modifier_colour(weapon[weapon_index.modifier]);
 
 var text;
@@ -23,7 +23,7 @@ scales[c] = 1;
 stats[c] = -1;
 c++;
 
-text[c] = ui_get_quality_string() + " " + inventory_get_modifier_name(weapon[weapon_index.modifier]);
+text[c] = ui_get_quality_string(weapon[weapon_index.quality]) + " " + inventory_get_modifier_name(weapon[weapon_index.modifier]);
 colours[c] = quality_colour;
 scales[c] = 1;
 stats[c] = -1;

@@ -8,13 +8,13 @@ case "|legendary":
     draw_set_colour(make_color_rgb(191, 100, 47));
     break;
 case "|epic":
-    draw_set_colour(make_color_rgb(191, 100, 47));
+    draw_set_colour(make_color_rgb(128, 6, 173));
     break;
 case "|rare":
-    draw_set_colour(make_color_rgb(191, 100, 47));
+    draw_set_colour(make_color_rgb(28, 41, 213));
     break;
 case "|uncommon":
-    draw_set_colour(make_color_rgb(191, 100, 47));
+    draw_set_colour(make_color_rgb(26, 239, 15));
     break;
 case "|common":
     draw_set_colour(c_white);

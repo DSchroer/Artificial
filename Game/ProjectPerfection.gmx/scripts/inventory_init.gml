@@ -6,6 +6,15 @@ enum item_ids
     sheild
 };
 
+enum item_quality
+{
+    common = 0,
+    uncommon = 1,
+    rare = 2,
+    epic = 3,
+    legendary = 4
+}
+
 enum inventory_slot
 {
     weapon1 = 0,
@@ -24,6 +33,8 @@ enum weapon_modifier
 
 enum weapon_index
 {
+    name,
+    quality,
     item_id,
     modifier,
     damage,
@@ -45,8 +56,9 @@ enum shield_index
     recharge_delay,
     recharge_rate,
     name,
+    quality,
     inv_sprite,
-    world_sprite
+    world_sprite,
 };
 
 

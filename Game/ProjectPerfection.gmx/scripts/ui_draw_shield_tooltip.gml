@@ -4,7 +4,7 @@ var xpos = argument0;
 var ypos = argument1;
 var shield = argument2;
 
-var quality_colour = ui_get_quality_colour();
+var quality_colour = ui_get_quality_colour(shield[shield_index.quality]);
 
 var c = 0;
 var lines;
@@ -19,7 +19,7 @@ scales[c] = 1;
 stats[c] = -1;
 c++;
 
-lines[c] = ui_get_quality_string();
+lines[c] = ui_get_quality_string(shield[shield_index.quality]);
 colours[c] = quality_colour;
 scales[c] = 1;
 stats[c] = -1;
@@ -44,12 +44,6 @@ colours[c] = "|gray";
 scales[c] = 1;
 stats[c] = string(shield[shield_index.recharge_delay]);
 stat_colours[c] = "|white";
-c++;
-
-text[c] = ui_get_quality_string();
-colours[c] = quality_colour;
-scales[c] = 1;
-stats[c] = -1;
 c++;
 
 ui_draw_tooltip(xpos, ypos, lines, colours, scales, stats, stat_colours);
