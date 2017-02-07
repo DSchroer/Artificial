@@ -238,6 +238,7 @@
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
+    <shader type="GLSLES">shaders\sdr_grey.shader</shader>
   </shaders>
   <fonts name="fonts">
     <font>fonts\fnt_hit</font>
@@ -290,6 +291,7 @@
       <object>objects\obj_damage_indicator</object>
     </objects>
     <object>objects\obj_clear_entities</object>
+    <object>objects\obj_post_process</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_base</room>
