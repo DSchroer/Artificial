@@ -302,6 +302,7 @@
     <room>rooms\rm_test</room>
     <rooms name="Stubs">
       <room>rooms\rm_stub_1</room>
+      <room>rooms\rm_stub_4</room>
       <room>rooms\rm_stub_2</room>
       <room>rooms\rm_stub_3</room>
     </rooms>
