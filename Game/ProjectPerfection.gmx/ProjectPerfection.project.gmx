@@ -63,7 +63,6 @@
       <sprite>sprites\spr_controller_dright</sprite>
       <sprite>sprites\spr_controller_dleft</sprite>
     </sprites>
-    <sprite>sprites\sprite28</sprite>
     <sprites name="Fonts">
       <sprite>sprites\spr_base_font</sprite>
     </sprites>
@@ -238,6 +237,10 @@
     <scripts name="Interact">
       <script>scripts\interact_any.gml</script>
       <script>scripts\interact_trigger.gml</script>
+    </scripts>
+    <scripts name="Fonts">
+      <script>scripts\fonts_init.gml</script>
+      <script>scripts\fonts_get.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">
