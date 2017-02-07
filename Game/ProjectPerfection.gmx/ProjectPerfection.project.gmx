@@ -263,6 +263,7 @@
     <objects name="Control">
       <object>objects\obj_hub_jump</object>
     </objects>
+    <object>objects\obj_invisible_wall</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_base</room>
