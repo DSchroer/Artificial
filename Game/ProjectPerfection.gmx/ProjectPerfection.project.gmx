@@ -245,7 +245,6 @@
   </fonts>
   <objects name="objects">
     <object>objects\obj_wall</object>
-    <object>objects\obj_control</object>
     <objects name="Camera">
       <object>objects\obj_camera</object>
       <object>objects\obj_room_camera</object>
@@ -285,6 +284,7 @@
     </objects>
     <objects name="Control">
       <object>objects\obj_hub_jump</object>
+      <object>objects\obj_progress</object>
     </objects>
     <object>objects\obj_invisible_wall</object>
     <objects name="Effects">
