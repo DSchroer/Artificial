@@ -12,3 +12,4 @@ for(var i = 0; i < ds_map_size(clone_list) - 1; i++)
     clone_set_inst(inst, values);
     inst = ds_map_find_next(clone_list, inst);
 }
+ds_map_destroy(clone_list);

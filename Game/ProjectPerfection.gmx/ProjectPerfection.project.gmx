@@ -66,6 +66,7 @@
     <sprites name="Fonts">
       <sprite>sprites\spr_base_font</sprite>
     </sprites>
+    <sprite>sprites\spr_trap</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -251,6 +252,7 @@
       <script>scripts\clone_register.gml</script>
       <script>scripts\clone_apply.gml</script>
       <script>scripts\clone_set_inst.gml</script>
+      <script>scripts\clone_is_type.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">
@@ -269,6 +271,7 @@
     <objects name="Dungeon">
       <object>objects\obj_generator</object>
       <object>objects\obj_level</object>
+      <object>objects\obj_cloner</object>
     </objects>
     <objects name="UI">
       <object>objects\obj_minimap</object>
@@ -311,6 +314,9 @@
     <object>objects\obj_post_process</object>
     <object>objects\obj_fonts</object>
     <object>objects\obj_pause</object>
+    <objects name="Traps">
+      <object>objects\obj_trap</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_base</room>

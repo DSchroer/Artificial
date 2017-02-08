@@ -135,6 +135,8 @@ room_set_height(custom_room, height * 64);
 room_set_width(custom_room, width * 64);
 room_set_persistent(custom_room, false);
 
+instance_create(0,0,obj_cloner);
+
 itteration = 0;
 room_goto(ds_list_find_value(room_list, 0));
 </string>
