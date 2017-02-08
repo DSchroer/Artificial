@@ -26,6 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>
+padding = 10;
+width = 256 + 128;
+fill_colour = c_aqua;
+height = 64;
 user_event_index = -1;
 percent = 0.50;
 center_x = false;
@@ -87,6 +91,15 @@ if(point_in_rectangle(mouse_x, mouse_y, x + 64 + 256, y, x + 256 + 64 + 64, y + 
     percent = min(1, percent + 0.05);
 }
 
+var index = user_event_index;
+with(obj_main_menu)
+{
+    if(index &gt;= 0)
+    {
+        event_user(index);
+    }
+}
+
 
 
 </string>
@@ -112,20 +125,14 @@ if(point_in_rectangle(mouse_x, mouse_y, x + 64 + 256, y, x + 256 + 64 + 64, y + 
           <argument>
             <kind>1</kind>
             <string>draw_self();
-draw_rectangle_color(x + 64, y, x + 64 + 256 * percent, y + 64, c_green, c_green, c_green, c_green, false);
-draw_text(x, y, text);
+draw_rectangle_color(x + width * (1/6), y + padding, x + width * (1/6) + width * (4/6) * percent, y + height - padding, fill_colour, fill_colour, fill_colour, fill_colour, false);
+
+var scale = 1.5;
+var text_width = string_width(text) * scale;
+var text_height = string_height(text) * scale;
+draw_text_transformed(x + (width - text_width) / 2, y + (height - text_height) / 2, text, scale, scale, 0);
 
 
-
-var index = user_event_index;
-
-with(obj_main_menu)
-{
-    if(index &gt;= 0)
-    {
-        event_user(index);
-    }
-}
 
 </string>
           </argument>

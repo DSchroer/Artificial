@@ -66,6 +66,7 @@
       <sprite>sprites\spr_logo</sprite>
       <sprite>sprites\spr_button</sprite>
       <sprite>sprites\spr_slider</sprite>
+      <sprite>sprites\spr_button_active</sprite>
     </sprites>
     <sprites name="Fonts">
       <sprite>sprites\spr_base_font</sprite>
@@ -259,7 +260,7 @@
       <script>scripts\clone_apply.gml</script>
       <script>scripts\clone_set_inst.gml</script>
       <script>scripts\clone_is_type.gml</script>
-	</scripts>
+    </scripts>
     <scripts name="MainMenu">
       <script>scripts\menu_destroy_main_menu.gml</script>
       <script>scripts\menu_destroy_options_menu.gml</script>
