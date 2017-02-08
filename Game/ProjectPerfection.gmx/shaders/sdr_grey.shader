@@ -24,11 +24,32 @@ void main()
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
 
+const vec3 size = vec3(1920, 1080, 5);//width,height,radius
+
+const float MaxDist = 5.0;
+const int Quality = 4;
+const int Directions = 8;
+const float Pi = 6.28318530718;//pi * 2
+
 void main()
 {
-    vec4 finalColor = v_vColour *  texture2D( gm_BaseTexture, v_vTexcoord );
+    float ratio = size.z / MaxDist;
+    vec2 radius = size.z/size.xy;
+    vec4 Color = texture2D( gm_BaseTexture, v_vTexcoord);
+    for( float d=0.0;d<Pi;d+=Pi/float(Directions) )
+    {
+        for( float i=1.0/float(Quality);i<=1.0;i+=1.0/float(Quality) )
+        {
+                Color += texture2D( gm_BaseTexture, v_vTexcoord+vec2(cos(d),sin(d))*radius*i);
+        }
+    }
+    Color /= float(Quality)*float(Directions)+1.0;
+    vec4 finalColor =  Color *  v_vColour;
+    
+    vec4 colored = finalColor;
     float avg = (finalColor.r + finalColor.g + finalColor.b) / 3.0;
-        
-    gl_FragColor = vec4(avg, avg, avg, 1);
+    vec4 greyscale = vec4(avg, avg, avg, 1);
+    
+    gl_FragColor = (colored * (1.0 - ratio)) + (greyscale * ratio);
 }
 

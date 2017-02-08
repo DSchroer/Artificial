@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>parent = self;
 damage = 1;
+paused = false;
 </string>
           </argument>
         </arguments>
@@ -50,6 +51,17 @@ damage = 1;
           <argument>
             <kind>1</kind>
             <string>
+if(!paused &amp;&amp; is_paused())
+{
+    old_speed = speed;
+    speed = 0;
+    paused = true;
+}else if(paused &amp;&amp; !is_paused())
+{
+    speed = old_speed;
+    paused = false;
+}
+
 var entity = instance_place(x, y, obj_entity);
 if(entity &amp;&amp; entity != parent)
 {

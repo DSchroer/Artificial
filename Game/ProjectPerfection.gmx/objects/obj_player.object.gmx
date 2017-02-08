@@ -31,6 +31,8 @@ player_init();
 inventory_swap(self, inventory_slot.shield, inventory_create_shield());
 
 sfx_bkg_init();
+
+gun_angle = 0;
 </string>
           </argument>
         </arguments>
@@ -60,6 +62,13 @@ isomorphic_set_depth();
 entity_dampening();
 entity_move_input();
 entity_collision();
+
+if(is_paused())
+{
+    exit;
+}
+
+gun_angle = point_direction(x, y, mouse_x, mouse_y);
 
 player_update_shield();
 
@@ -132,6 +141,14 @@ if(keymap_check(keycode.interact))
 if(keymap_check(keycode.fire))
 {
     player_fire();
+}
+
+if(keyboard_check_pressed(vk_escape))
+{
+    if(!is_paused())
+    {
+        instance_create(0,0,obj_pause);
+    }
 }
 
 </string>
@@ -234,8 +251,12 @@ room_goto(rm_hub);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ui_draw_inventory();
-ui_draw_health();
+            <string>if(!is_paused())
+{
+    ui_draw_inventory();
+    ui_draw_health();
+}
+
 </string>
           </argument>
         </arguments>
@@ -259,29 +280,29 @@ ui_draw_health();
           <argument>
             <kind>1</kind>
             <string>
-var yscale = -1;
-if(mouse_x - x)
+var yscale = 1;
+if(gun_angle &gt; 90 &amp;&amp; gun_angle &lt; 270)
 {
-    yscale = 1;
+    yscale = -1;
 }
 
 if(view_current == 0)
 {
-    if(mouse_y &lt; y)
+    if(gun_angle &lt; 180)
     {
         if(is_array(inventory[0]))
         {
-            draw_weapon(inventory[0], x, y - 64, 1, yscale, point_direction(x, y, mouse_x, mouse_y), 1);
+            draw_weapon(inventory[0], x, y - 64, 1, yscale, gun_angle, 1);
         }
     }
 
     draw_self()
     
-    if(mouse_y &gt;= y)
+    if(gun_angle &gt;= 180)
     {
         if(is_array(inventory[0]))
         {
-            draw_weapon(inventory[0], x, y - 64, 1, yscale, point_direction(x, y, mouse_x, mouse_y), 1);
+            draw_weapon(inventory[0], x, y - 64, 1, yscale, gun_angle, 1);
         }
     }
     

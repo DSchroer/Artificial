@@ -63,6 +63,10 @@
       <sprite>sprites\spr_controller_dright</sprite>
       <sprite>sprites\spr_controller_dleft</sprite>
     </sprites>
+    <sprites name="Fonts">
+      <sprite>sprites\spr_base_font</sprite>
+    </sprites>
+    <sprite>sprites\spr_trap</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -106,14 +110,9 @@
     </scripts>
     <scripts name="Generator">
       <script>scripts\generator_init.gml</script>
-      <script>scripts\generator_left.gml</script>
       <script>scripts\generator_clear.gml</script>
       <script>scripts\generator_add_option.gml</script>
-      <script>scripts\generator_set_room.gml</script>
-      <script>scripts\generator_populate.gml</script>
-      <script>scripts\generator_right.gml</script>
-      <script>scripts\generator_down.gml</script>
-      <script>scripts\generator_up.gml</script>
+      <script>scripts\generator_add_option_ext.gml</script>
       <script>scripts\generator_create_level.gml</script>
       <script>scripts\generator_copy_instances.gml</script>
       <script>scripts\generator_copy_tiles.gml</script>
@@ -125,6 +124,14 @@
       <script>scripts\generator_random_room.gml</script>
       <script>scripts\generator_use_room.gml</script>
       <script>scripts\generator_spawn_at.gml</script>
+      <scripts name="Core">
+        <script>scripts\generator_up.gml</script>
+        <script>scripts\generator_right.gml</script>
+        <script>scripts\generator_down.gml</script>
+        <script>scripts\generator_left.gml</script>
+        <script>scripts\generator_populate.gml</script>
+        <script>scripts\generator_set_room.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Map">
       <script>scripts\map_init.gml</script>
@@ -151,6 +158,7 @@
       <script>scripts\save_set_value.gml</script>
       <script>scripts\save_has_value.gml</script>
       <script>scripts\save_flush.gml</script>
+      <script>scripts\save_create_array.gml</script>
     </scripts>
     <script>scripts\isomorphic_set_depth.gml</script>
     <scripts name="Player">
@@ -188,7 +196,6 @@
     <scripts name="Helper">
       <script>scripts\string_array.gml</script>
     </scripts>
-    <script>scripts\clone.gml</script>
     <scripts name="Attack">
       <script>scripts\attack_plasma.gml</script>
       <script>scripts\attack_rail.gml</script>
@@ -235,17 +242,28 @@
       <script>scripts\interact_any.gml</script>
       <script>scripts\interact_trigger.gml</script>
     </scripts>
+    <scripts name="Fonts">
+      <script>scripts\fonts_init.gml</script>
+      <script>scripts\fonts_get.gml</script>
+    </scripts>
+    <script>scripts\is_paused.gml</script>
+    <scripts name="Clone">
+      <script>scripts\clone_init.gml</script>
+      <script>scripts\clone_register.gml</script>
+      <script>scripts\clone_apply.gml</script>
+      <script>scripts\clone_set_inst.gml</script>
+      <script>scripts\clone_is_type.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
-    <shader type="GLSLES">shaders\sdr_grey.shader</shader>
+    <shader type="GLSLES">shaders\sdr_pause.shader</shader>
   </shaders>
   <fonts name="fonts">
     <font>fonts\fnt_hit</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_wall</object>
-    <object>objects\obj_control</object>
     <objects name="Camera">
       <object>objects\obj_camera</object>
       <object>objects\obj_room_camera</object>
@@ -253,6 +271,7 @@
     <objects name="Dungeon">
       <object>objects\obj_generator</object>
       <object>objects\obj_level</object>
+      <object>objects\obj_cloner</object>
     </objects>
     <objects name="UI">
       <object>objects\obj_minimap</object>
@@ -285,6 +304,7 @@
     </objects>
     <objects name="Control">
       <object>objects\obj_hub_jump</object>
+      <object>objects\obj_progress</object>
     </objects>
     <object>objects\obj_invisible_wall</object>
     <objects name="Effects">
@@ -292,6 +312,11 @@
     </objects>
     <object>objects\obj_clear_entities</object>
     <object>objects\obj_post_process</object>
+    <object>objects\obj_fonts</object>
+    <object>objects\obj_pause</object>
+    <objects name="Traps">
+      <object>objects\obj_trap</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_base</room>
@@ -302,7 +327,6 @@
     <room>rooms\rm_test</room>
     <rooms name="Stubs">
       <room>rooms\rm_stub_1</room>
-      <room>rooms\rm_stub_4</room>
       <room>rooms\rm_stub_2</room>
       <room>rooms\rm_stub_3</room>
     </rooms>
