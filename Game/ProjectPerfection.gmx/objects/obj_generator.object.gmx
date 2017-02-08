@@ -27,9 +27,9 @@
             <kind>1</kind>
             <string>generator_init(100, 100);
 
-generator_add_option(rm_stub_1, 15, 15);
+generator_add_option_ext(rm_stub_1, 15, 15, stub_flags.no_door_down);
 generator_add_option(rm_stub_2, 19, 19);
-generator_add_option(rm_stub_3, 23, 23);
+generator_add_option_ext(rm_stub_3, 23, 23, 0);
 
 </string>
           </argument>
@@ -107,8 +107,8 @@ if(itteration &lt; ds_list_size(room_list))
 while(ds_list_size(room_list) &lt;= 1)
 {
     generator_clear();
-    generator_set_room(rm_stub_1, 0, 0, 15, 15, 0);
-    generator_populate(0, 0, 15, 15, 0);
+    generator_set_room(rm_stub_1, 0, 0, 15, 15, 0, 0);
+    generator_populate(0, 0, 15, 15, 0, 0);
 }
 
 generator_add_doors();

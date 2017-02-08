@@ -109,14 +109,9 @@
     </scripts>
     <scripts name="Generator">
       <script>scripts\generator_init.gml</script>
-      <script>scripts\generator_left.gml</script>
       <script>scripts\generator_clear.gml</script>
       <script>scripts\generator_add_option.gml</script>
-      <script>scripts\generator_set_room.gml</script>
-      <script>scripts\generator_populate.gml</script>
-      <script>scripts\generator_right.gml</script>
-      <script>scripts\generator_down.gml</script>
-      <script>scripts\generator_up.gml</script>
+      <script>scripts\generator_add_option_ext.gml</script>
       <script>scripts\generator_create_level.gml</script>
       <script>scripts\generator_copy_instances.gml</script>
       <script>scripts\generator_copy_tiles.gml</script>
@@ -128,6 +123,14 @@
       <script>scripts\generator_random_room.gml</script>
       <script>scripts\generator_use_room.gml</script>
       <script>scripts\generator_spawn_at.gml</script>
+      <scripts name="Core">
+        <script>scripts\generator_up.gml</script>
+        <script>scripts\generator_right.gml</script>
+        <script>scripts\generator_down.gml</script>
+        <script>scripts\generator_left.gml</script>
+        <script>scripts\generator_populate.gml</script>
+        <script>scripts\generator_set_room.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Map">
       <script>scripts\map_init.gml</script>
