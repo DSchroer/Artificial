@@ -1,4 +1,8 @@
 ///map_draw(x, y)
+if(is_paused())
+{
+    exit;
+}
 
 if(!surface_exists(main_surface))
 {

@@ -10,6 +10,7 @@ weapon[weapon_index.fire_timeout] = 1;
 weapon[weapon_index.fire_cooldown] = 0;
 weapon[weapon_index.reload_timeout] = 10;
 weapon[weapon_index.reload_cooldown] = 0;
+weapon[weapon_index.name] = "Pew Pew Lazors";
 
 weapon[weapon_index.bullet_sprite] = spr_bullet;
 weapon[weapon_index.bullet_sprite_speed] = 1;

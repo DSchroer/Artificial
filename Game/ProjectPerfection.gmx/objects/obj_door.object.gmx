@@ -28,12 +28,34 @@
             <string>obj_player.x = 4.5 * 64;
 obj_player.y = 4.5 * 64;
 
+var prog;
+if(room == rm_hub)
+{
+    with(obj_progress)
+    {
+        progress = 5;
+        prog = progress;
+    }
+}else{
+    with(obj_progress)
+    {
+        progress--;
+        prog = progress;
+    }
+}
+
 with(obj_level)
 {
     instance_destroy();
 }
 
-room_goto(rm_dungeon_test)
+if(prog == 0)
+{
+    room_goto(rm_hub)
+}else{
+    room_goto(rm_dungeon_test)
+}
+
 </string>
           </argument>
         </arguments>
