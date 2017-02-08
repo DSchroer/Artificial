@@ -195,7 +195,6 @@
     <scripts name="Helper">
       <script>scripts\string_array.gml</script>
     </scripts>
-    <script>scripts\clone.gml</script>
     <scripts name="Attack">
       <script>scripts\attack_plasma.gml</script>
       <script>scripts\attack_rail.gml</script>
@@ -247,6 +246,12 @@
       <script>scripts\fonts_get.gml</script>
     </scripts>
     <script>scripts\is_paused.gml</script>
+    <scripts name="Clone">
+      <script>scripts\clone_init.gml</script>
+      <script>scripts\clone_register.gml</script>
+      <script>scripts\clone_apply.gml</script>
+      <script>scripts\clone_set_inst.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
