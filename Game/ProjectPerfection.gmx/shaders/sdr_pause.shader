@@ -24,10 +24,10 @@ void main()
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
 
-const vec3 size = vec3(1920, 1080, 5);//width,height,radius
+uniform vec3 size;//width,height,radius
 
 const float MaxDist = 5.0;
-const int Quality = 4;
+const int Quality = 2;
 const int Directions = 8;
 const float Pi = 6.28318530718;//pi * 2
 

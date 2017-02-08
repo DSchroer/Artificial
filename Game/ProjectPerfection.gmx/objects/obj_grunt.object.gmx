@@ -64,6 +64,7 @@ if(player_exists())
     switch(state)
     {
         case "idle":
+        case "paused":
             eg_idle();
             break;
         case "approach":

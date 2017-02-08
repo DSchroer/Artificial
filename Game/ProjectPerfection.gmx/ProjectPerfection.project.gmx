@@ -243,10 +243,11 @@
       <script>scripts\fonts_init.gml</script>
       <script>scripts\fonts_get.gml</script>
     </scripts>
+    <script>scripts\is_paused.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
-    <shader type="GLSLES">shaders\sdr_grey.shader</shader>
+    <shader type="GLSLES">shaders\sdr_pause.shader</shader>
   </shaders>
   <fonts name="fonts">
     <font>fonts\fnt_hit</font>
@@ -301,6 +302,7 @@
     <object>objects\obj_clear_entities</object>
     <object>objects\obj_post_process</object>
     <object>objects\obj_fonts</object>
+    <object>objects\obj_pause</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_base</room>
@@ -311,7 +313,6 @@
     <room>rooms\rm_test</room>
     <rooms name="Stubs">
       <room>rooms\rm_stub_1</room>
-      <room>rooms\rm_stub_4</room>
       <room>rooms\rm_stub_2</room>
       <room>rooms\rm_stub_3</room>
     </rooms>

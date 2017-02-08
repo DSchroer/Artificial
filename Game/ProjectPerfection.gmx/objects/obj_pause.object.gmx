@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-50000</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,9 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>parent = self;
-damage = 1;
-paused = false;
+            <string>with(obj_post_process)
+{
+    instance_destroy();
+}
+
+instance_create(0, 0, obj_post_process);
 </string>
           </argument>
         </arguments>
@@ -50,29 +53,7 @@ paused = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-if(!paused &amp;&amp; is_paused())
-{
-    old_speed = speed;
-    speed = 0;
-    paused = true;
-}else if(paused &amp;&amp; !is_paused())
-{
-    speed = old_speed;
-    paused = false;
-}
-
-var entity = instance_place(x, y, obj_entity);
-if(entity &amp;&amp; entity != parent)
-{
-    with(entity)
-    {
-        entity_apply_damage(other.damage);
-    }
-    instance_destroy();
-}
-
-if(place_meeting(x, y, obj_wall))
+            <string>if(keyboard_check_pressed(vk_escape))
 {
     instance_destroy();
 }

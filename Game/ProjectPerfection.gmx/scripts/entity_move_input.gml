@@ -1,5 +1,11 @@
 ///entity_move_input()
 
+if(is_paused())
+{
+    speed = 0;
+    exit;
+}
+
 var x_dir = 0;
 var y_dir = 0;
 
