@@ -17,9 +17,9 @@ var stats;
 var stat_colours;
 var c = 0;
 
-text[c] = "Epic Rifle";
+text[c] = weapon[weapon_index.name];
 colours[c] = quality_colour;
-scales[c] = 1;
+scales[c] = 1.25;
 stats[c] = -1;
 c++;
 
@@ -35,6 +35,7 @@ scales[c] = 1;
 stats[c] = string(dps);
 stat_colours[c] = "|white";
 c++;
+
 
 text[c] = " Damage";
 colours[c] = "|tooltip";
