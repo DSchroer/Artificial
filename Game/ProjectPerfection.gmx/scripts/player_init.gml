@@ -8,5 +8,7 @@ hide_inventory = false;
 // Inventory
 inventory_init();
 
+// UI queue
+textbox_queue = ds_queue_create();
 
 

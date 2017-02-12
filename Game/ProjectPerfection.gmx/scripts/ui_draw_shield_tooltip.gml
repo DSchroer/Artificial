@@ -15,32 +15,32 @@ var stat_colours;
 
 lines[c] = string(shield[shield_index.name]);
 colours[c] = quality_colour;
-scales[c] = 1;
+scales[c] = 1.25;
 stats[c] = -1;
 c++;
 
-lines[c] = ui_get_quality_string(shield[shield_index.quality]);
+lines[c] = ui_get_quality_string(shield[shield_index.quality]) + " Shield";
 colours[c] = quality_colour;
 scales[c] = 1;
 stats[c] = -1;
 c++;
 
 lines[c] = " Absorption";
-colours[c] = "|gray";
+colours[c] = "|tooltip";
 scales[c] = 1;
 stats[c] = string(shield[shield_index.max_health]);
 stat_colours[c] = "|white";
 c++;
 
 lines[c] = " Recharge Rate";
-colours[c] = "|gray";
+colours[c] = "|tooltip";
 scales[c] = 1;
 stats[c] = string(shield[shield_index.recharge_rate]);
 stat_colours[c] = "|white";
 c++;
 
 lines[c] = " Recharge Delay";
-colours[c] = "|gray";
+colours[c] = "|tooltip";
 scales[c] = 1;
 stats[c] = string(shield[shield_index.recharge_delay]);
 stat_colours[c] = "|white";

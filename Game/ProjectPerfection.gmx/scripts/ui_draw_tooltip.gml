@@ -16,7 +16,7 @@ var background = spr_tooltip;
 var scale_factor_x = 2;
 var scale_factor_y = 1;
 var border_size_x = 32;
-var border_size_y = 16;
+var border_size_y = 24;
 var space_width = string_width(" ");
 var text_height = string_height(" ");
 
@@ -85,10 +85,23 @@ while(line_index < array_length_1d(descriptions))
     {
         ui_set_colour(colour);
     }
-    draw_text_transformed(linex, liney, line, 1, 1, 0);
-
+    
+    if(stat == -1)
+    {
+        draw_text_transformed(linex, liney, line, scale, scale, 0);
+        liney += text_height * (scale - 1);
+    }
+    else
+    {
+        if(scale > 1)
+        {
+            liney += text_height * (scale - 1);
+        }
+        draw_text_transformed(linex, liney, line, 1, 1, 0);
+    }
+    
     line_index += 1;   
-    liney += text_height * scale;
+    liney += text_height;
     linex = xpos + border_size_x;
 }
 
