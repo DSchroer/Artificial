@@ -33,9 +33,6 @@
     <sprites name="Player">
       <sprite>sprites\spr_player</sprite>
     </sprites>
-    <sprite>sprites\spr_wall</sprite>
-    <sprite>sprites\spr_invisible_wall</sprite>
-    <sprite>sprites\spr_door</sprite>
     <sprite>sprites\spr_bush</sprite>
     <sprite>sprites\spr_shield</sprite>
     <sprite>sprites\spr_item</sprite>
@@ -77,10 +74,19 @@
       <sprite>sprites\spr_spawner</sprite>
       <sprite>sprites\spr_spawn_enemy</sprite>
     </sprites>
+    <sprites name="Walls">
+      <sprite>sprites\spr_door</sprite>
+      <sprite>sprites\spr_gate</sprite>
+      <sprite>sprites\spr_gate_open</sprite>
+      <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_invisible_wall</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
     <background>background\bkg_tmp_tiles</background>
+    <background>background\bkg_hub</background>
+    <background>background\bkg_desert</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -288,7 +294,6 @@
     <font>fonts\fnt_hit</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_wall</object>
     <objects name="Camera">
       <object>objects\obj_camera</object>
       <object>objects\obj_room_camera</object>
@@ -319,6 +324,7 @@
       <object>objects\obj_player</object>
       <object>objects\obj_target</object>
       <object>objects\obj_grunt</object>
+      <object>objects\obj_enemy</object>
     </objects>
     <object>objects\obj_duck</object>
     <objects name="Interact">
@@ -331,7 +337,6 @@
       <object>objects\obj_hub_jump</object>
       <object>objects\obj_progress</object>
     </objects>
-    <object>objects\obj_invisible_wall</object>
     <objects name="Effects">
       <object>objects\obj_damage_indicator</object>
     </objects>
@@ -353,6 +358,12 @@
     <objects name="Spawners">
       <object>objects\obj_spawn</object>
       <object>objects\obj_spawn_enemy</object>
+    </objects>
+    <objects name="Walls">
+      <object>objects\obj_wall</object>
+      <object>objects\obj_invisible_wall</object>
+      <object>objects\obj_gate</object>
+      <object>objects\obj_gate_open</object>
     </objects>
   </objects>
   <rooms name="rooms">

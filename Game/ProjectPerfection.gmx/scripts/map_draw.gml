@@ -29,6 +29,7 @@ if(level != -1)
 
     draw_sprite(map_texture, 0, (map_diameter / 2) - (center_x * map_size), (map_diameter / 2) - (center_y * map_size));
 }
+draw_circle_colour((map_diameter / 2), (map_diameter / 2), 3, c_red, c_red, false);
 surface_reset_target();
 
 shader_set(sdr_circle);
