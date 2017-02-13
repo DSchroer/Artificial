@@ -62,11 +62,17 @@
       <sprite>sprites\spr_controller_dup</sprite>
       <sprite>sprites\spr_controller_dright</sprite>
       <sprite>sprites\spr_controller_dleft</sprite>
+      <sprite>sprites\sprite27</sprite>
+      <sprite>sprites\spr_logo</sprite>
+      <sprite>sprites\spr_button</sprite>
+      <sprite>sprites\spr_slider</sprite>
+      <sprite>sprites\spr_button_active</sprite>
     </sprites>
     <sprites name="Fonts">
       <sprite>sprites\spr_base_font</sprite>
     </sprites>
     <sprite>sprites\spr_trap</sprite>
+    <sprite>sprites\sprite30</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -159,6 +165,7 @@
       <script>scripts\save_has_value.gml</script>
       <script>scripts\save_flush.gml</script>
       <script>scripts\save_create_array.gml</script>
+      <script>scripts\save_clear.gml</script>
     </scripts>
     <script>scripts\isomorphic_set_depth.gml</script>
     <scripts name="Player">
@@ -174,7 +181,7 @@
       <script>scripts\ui_draw_inventory.gml</script>
       <script>scripts\ui_draw_health.gml</script>
       <script>scripts\ui_draw_ring.gml</script>
-      <script>scripts\ui_draw_textbox.gml</script>
+      <script>scripts\ui_draw_textbox_pos.gml</script>
       <script>scripts\ui_draw_weapon_tooltip.gml</script>
       <script>scripts\ui_draw_shield_tooltip.gml</script>
       <script>scripts\ui_draw_health_tooltip.gml</script>
@@ -187,6 +194,8 @@
       <script>scripts\ui_get_quality_colour.gml</script>
       <script>scripts\ui_get_modifier_colour.gml</script>
       <script>scripts\ui_get_quality_string.gml</script>
+      <script>scripts\ui_draw_textbox.gml</script>
+      <script>scripts\ui_queue_message.gml</script>
     </scripts>
     <scripts name="Debug">
       <script>scripts\debug_init.gml</script>
@@ -254,6 +263,14 @@
       <script>scripts\clone_set_inst.gml</script>
       <script>scripts\clone_is_type.gml</script>
     </scripts>
+    <scripts name="MainMenu">
+      <script>scripts\menu_destroy_main_menu.gml</script>
+      <script>scripts\menu_destroy_options_menu.gml</script>
+      <script>scripts\menu_create_main_menu.gml</script>
+      <script>scripts\menu_create_options_menu.gml</script>
+      <script>scripts\menu_destroy_menu.gml</script>
+      <script>scripts\menu_create_menu.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
@@ -317,8 +334,15 @@
     <objects name="Traps">
       <object>objects\obj_trap</object>
     </objects>
+    <objects name="menu">
+      <object>objects\obj_main_menu</object>
+      <object>objects\obj_button</object>
+      <object>objects\obj_logo</object>
+      <object>objects\obj_slider</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_main_menu</room>
     <room>rooms\rm_base</room>
     <room>rooms\rm_hub</room>
     <room>rooms\rm_dungeon_test</room>

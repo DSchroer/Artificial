@@ -14,7 +14,8 @@ enum keycode{
     inventory_down,
     fire,
     hide_inventory,
-    interact
+    interact, 
+    dequeue_message
 }
 
 var key = argument0;
@@ -93,4 +94,8 @@ if(key == keycode.interact)
     return keyboard_check_pressed(ord("F"));
 }
 
+if(key == keycode.dequeue_message)
+{
+    return keyboard_check_pressed(vk_enter);
+}
 
