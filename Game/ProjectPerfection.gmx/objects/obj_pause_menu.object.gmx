@@ -62,6 +62,34 @@ room_goto(rm_main_menu);
         </arguments>
       </action>
     </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var scale = 2.5;
+var text_width = string_width("Paused") * scale;
+var text_height = string_height("Paused") * scale;
+var yp = (display_get_gui_height() / 2)
+draw_text_transformed((display_get_gui_width() / 2) - (text_width / 2), yp - 100, "Paused", scale, scale, 0);
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
   </events>
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
