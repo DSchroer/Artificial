@@ -114,11 +114,11 @@ while(ds_list_size(room_list) &lt;= 5)
 generator_add_doors();
 generator_create_spawn_map();
 
-
 constructing = true;
 persistent = true;
 
 custom_room = room_add();
+room_set_background_colour(custom_room, c_black, true);
 generator_spawn_at(0, custom_room, obj_clear_entities);
 
 var end_key = generator_spawn_exit(custom_room);

@@ -8,6 +8,51 @@
   <parentName>obj_wall</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string></string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>instance_destroy();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -80,7 +125,27 @@ if(level_stub_find(obj_player) &amp;&amp; level_stub_find(obj_enemy))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Do Nothing
+            <string>var center = true;
+center = center &amp;&amp; collision_point(x - 32, y + 32, obj_gate, false, true)
+center = center &amp;&amp; collision_point(x + 96, y + 32, obj_gate, false, true)
+
+var left = true;
+left = left &amp;&amp; collision_point(x + 96, y + 32, obj_gate, false, true)
+left = left &amp;&amp; collision_point(x + 160, y + 32, obj_gate, false, true)
+
+var right = true;
+right = right &amp;&amp; collision_point(x - 32, y + 32, obj_gate, false, true)
+right = right &amp;&amp; collision_point(x - 96, y + 32, obj_gate, false, true)
+
+
+if(collision_point(x + 32, y - 128, obj_gate, false, true))
+{
+    if(center || left || right)
+    {
+        alarm[0] = 1;
+    }
+}
+
 </string>
           </argument>
         </arguments>
