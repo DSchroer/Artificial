@@ -119,6 +119,7 @@ constructing = true;
 persistent = true;
 
 custom_room = room_add();
+generator_spawn_at(0, custom_room, obj_clear_entities);
 
 var end_key = generator_spawn_exit(custom_room);
 generator_use_room(end_key);

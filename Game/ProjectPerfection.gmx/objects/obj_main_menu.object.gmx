@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_menu</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -39,7 +39,6 @@ ds_stack_push(menu_stack, menu_type.main);
 full_screen = false;
 
 keep_centered = ds_list_create();
-
 menu_create_main_menu();
 </string>
           </argument>
@@ -259,7 +258,7 @@ var sound_effect_percent = slider_sound.percent;
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -281,9 +280,7 @@ var sound_effect_percent = slider_sound.percent;
     var scale = 2.5;
     var text_width = string_width("Options") * scale;
     var text_height = string_height("Options") * scale;
-    draw_text_transformed((view_wview - text_width) / 2, 64, "Options", scale, scale, 0);
-
-
+    draw_text_transformed((display_get_gui_width() / 2) - (text_width / 2), 100, "Options", scale, scale, 0);
 }
 </string>
           </argument>

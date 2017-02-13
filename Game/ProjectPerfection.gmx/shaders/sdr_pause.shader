@@ -48,7 +48,7 @@ void main()
     
     vec4 colored = finalColor;
     float avg = (finalColor.r + finalColor.g + finalColor.b) / 3.0;
-    vec4 greyscale = vec4(avg, avg, avg, 1);
+    vec4 greyscale = vec4(avg, avg, avg, 1) / vec4(2, 2, 2, 2);
     
     gl_FragColor = (colored * (1.0 - ratio)) + (greyscale * ratio);
 }
