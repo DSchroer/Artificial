@@ -63,6 +63,12 @@
       <sprite>sprites\spr_controller_dright</sprite>
       <sprite>sprites\spr_controller_dleft</sprite>
     </sprites>
+    <sprites name="Traps">
+      <sprite>sprites\spr_trap_stall</sprite>
+      <sprite>sprites\spr_trap_Pitfall</sprite>
+      <sprite>sprites\spr_trap_rock</sprite>
+      <sprite>sprites\spr_trap_spike</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -292,6 +298,12 @@
     </objects>
     <object>objects\obj_clear_entities</object>
     <object>objects\obj_post_process</object>
+    <objects name="Traps">
+      <object>objects\obj_trap_stall</object>
+      <object>objects\obj_trap_spike</object>
+      <object>objects\obj_trap_rock</object>
+      <object>objects\obj_trap_pitfall</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_base</room>
@@ -302,9 +314,17 @@
     <room>rooms\rm_test</room>
     <rooms name="Stubs">
       <room>rooms\rm_stub_1</room>
-      <room>rooms\rm_stub_4</room>
       <room>rooms\rm_stub_2</room>
       <room>rooms\rm_stub_3</room>
+      <room>rooms\rm_stub_4</room>
+      <room>rooms\rm_stub_5</room>
+      <room>rooms\rm_stub_6</room>
+      <room>rooms\rm_stub_7</room>
+      <room>rooms\rm_stub_8</room>
+      <room>rooms\rm_stub_9</room>
+      <room>rooms\rm_stub_10</room>
+      <room>rooms\rm_stub_11</room>
+      <room>rooms\rm_stub_12</room>
     </rooms>
     <room>rooms\rm_empty</room>
   </rooms>
