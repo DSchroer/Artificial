@@ -116,8 +116,6 @@
     <instance objName="obj_spawn" x="576" y="512" name="inst_204216D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn" x="576" y="384" name="inst_A9B7E07A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn_enemy" x="64" y="64" name="inst_B0DDF719" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_spawn_enemy" x="128" y="64" name="inst_BBD682AB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_spawn_enemy" x="192" y="64" name="inst_1ABB508E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bkg_tmp_tiles" x="0" y="0" w="64" h="64" xo="256" yo="64" id="10000210" name="inst_892BDA16" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
