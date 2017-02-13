@@ -25,7 +25,24 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>camera_init();
+            <string>
+var num = instance_number(obj_camera);
+if(num != 0)
+{
+    for(var i = 0; i &lt; num; i++)
+    {
+        var inst = instance_find(obj_camera, i);
+        if(inst != self)
+        {
+            with(inst)
+            {
+                instance_destroy();
+            }
+        }
+    }
+}
+
+camera_init();
 </string>
           </argument>
         </arguments>

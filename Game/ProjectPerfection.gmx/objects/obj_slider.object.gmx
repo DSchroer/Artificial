@@ -57,48 +57,34 @@ center_x = false;
             <kind>1</kind>
             <string>if(center_x)
 {
-    x = (view_wview / 2 - (bbox_right - bbox_left) / 2);
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="6" enumb="4">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>
-if(point_in_rectangle(mouse_x, mouse_y, x, y, x + 64, y + 64))
-{
-    percent = max(0, percent - 0.05);
-}
-if(point_in_rectangle(mouse_x, mouse_y, x + 64 + 256, y, x + 256 + 64 + 64, y + 64))
-{
-    percent = min(1, percent + 0.05);
+    x = (display_get_gui_width() / 2 - (bbox_right - bbox_left) / 2);
 }
 
-var index = user_event_index;
-with(obj_main_menu)
+var mx = device_mouse_x_to_gui(0);
+var my = device_mouse_y_to_gui(0);
+
+if(mouse_check_button_pressed(mb_left))
 {
-    if(index &gt;= 0)
+    if(point_in_rectangle(mx, my, x, y, x + 64, y + 64))
     {
-        event_user(index);
+        percent = max(0, percent - 0.05);
     }
+    if(point_in_rectangle(mx, my, x + 64 + 256, y, x + 256 + 64 + 64, y + 64))
+    {
+        percent = min(1, percent + 0.05);
+    }
+    
+    var index = user_event_index;
+    with(obj_menu)
+    {
+        if(index &gt;= 0)
+        {
+            event_user(index);
+        }
+    }
+
 }
+
 
 
 
@@ -107,7 +93,7 @@ with(obj_main_menu)
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -134,6 +120,29 @@ draw_text_transformed(x + (width - text_width) / 2, y + (height - text_height) /
 
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Do Nothing
 </string>
           </argument>
         </arguments>

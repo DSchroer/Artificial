@@ -73,6 +73,10 @@
     </sprites>
     <sprite>sprites\spr_trap</sprite>
     <sprite>sprites\sprite30</sprite>
+    <sprites name="Spawn">
+      <sprite>sprites\spr_spawner</sprite>
+      <sprite>sprites\spr_spawn_enemy</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -271,6 +275,10 @@
       <script>scripts\menu_destroy_menu.gml</script>
       <script>scripts\menu_create_menu.gml</script>
     </scripts>
+    <scripts name="PauseMenu">
+      <script>scripts\menu_create_pause.gml</script>
+      <script>scripts\menu_destroy_pause.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
@@ -339,6 +347,12 @@
       <object>objects\obj_button</object>
       <object>objects\obj_logo</object>
       <object>objects\obj_slider</object>
+      <object>objects\obj_pause_menu</object>
+      <object>objects\obj_menu</object>
+    </objects>
+    <objects name="Spawners">
+      <object>objects\obj_spawn</object>
+      <object>objects\obj_spawn_enemy</object>
     </objects>
   </objects>
   <rooms name="rooms">
