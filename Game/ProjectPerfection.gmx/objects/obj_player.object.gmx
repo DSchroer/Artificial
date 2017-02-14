@@ -174,8 +174,8 @@ if(keyboard_check_pressed(vk_escape))
           <argument>
             <kind>1</kind>
             <string>current_health = 100;
-x = 3 * 64;
-y = 4 * 64;
+x = 1600;
+y = 320;
 
 with(obj_level)
 {
