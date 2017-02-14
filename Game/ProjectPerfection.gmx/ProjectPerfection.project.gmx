@@ -79,6 +79,7 @@
     </sprites>
     <sprites name="Walls">
       <sprite>sprites\spr_door</sprite>
+      <sprite>sprites\spr_cube</sprite>
       <sprite>sprites\spr_gate</sprite>
       <sprite>sprites\spr_gate_open</sprite>
       <sprite>sprites\spr_wall</sprite>
@@ -268,6 +269,7 @@
       <script>scripts\sm_state_pop.gml</script>
       <script>scripts\sm_time.gml</script>
       <script>scripts\sm_ticks.gml</script>
+      <script>scripts\sm_state_push.gml</script>
     </scripts>
     <scripts name="Enemy">
       <scripts name="Grunt">
@@ -349,6 +351,7 @@
     <object>objects\obj_duck</object>
     <objects name="Interact">
       <object>objects\obj_door</object>
+      <object>objects\obj_cube</object>
       <object>objects\obj_interact</object>
       <object>objects\obj_interact_solid</object>
       <object>objects\obj_prompt</object>
@@ -356,6 +359,7 @@
     <objects name="Control">
       <object>objects\obj_hub_jump</object>
       <object>objects\obj_progress</object>
+      <object>objects\obj_boss_battle</object>
     </objects>
     <objects name="Effects">
       <object>objects\obj_damage_indicator</object>

@@ -11,7 +11,7 @@ if(!surface_exists(main_surface))
 
 surface_set_target(main_surface);
 draw_clear(c_black);
-if(level != -1)
+if(level != -1 && instance_exists(level))
 {
     if(map_texture == -1 || level.fog_changed)
     {
