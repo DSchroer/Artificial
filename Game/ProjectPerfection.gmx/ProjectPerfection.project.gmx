@@ -206,6 +206,7 @@
       <script>scripts\player_fire.gml</script>
       <script>scripts\player_exists.gml</script>
       <script>scripts\player_heal_percent.gml</script>
+      <script>scripts\player_update_gun.gml</script>
     </scripts>
     <scripts name="Ui">
       <script>scripts\ui_draw_inventory.gml</script>

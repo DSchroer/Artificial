@@ -25,10 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>obj_player.x = 4.5 * 64;
-obj_player.y = 4.5 * 64;
+            <string>
+if(obj_progress.cube_parts == 1)
+{
+    obj_player.x = 4.5 * 64;
+    obj_player.y = 4.5 * 64;
 
-room_goto(rm_boss_final)
+    room_goto(rm_boss_final)
+}
 
 </string>
           </argument>

@@ -39,13 +39,13 @@ enum weapon_index
     modifier,
     damage,
     capacity,
+    remaining,
     fire_timeout,
     fire_cooldown,
     reload_timeout,
     reload_cooldown,
     bullet_sprite,
     bullet_sprite_speed,
-    bullet_sprite_color,
     sprite_count
 };
 
