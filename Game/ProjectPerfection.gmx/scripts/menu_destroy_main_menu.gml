@@ -18,6 +18,10 @@ with(button_options)
 {
     instance_destroy();
 }
+with(button_credits)
+{
+    instance_destroy();
+}
 with(button_exit)
 {
     instance_destroy();
