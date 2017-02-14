@@ -106,14 +106,17 @@
     </scripts>
     <scripts name="Level">
       <script>scripts\level_create.gml</script>
-      <script>scripts\level_init.gml</script>
       <script>scripts\level_destroy.gml</script>
+      <script>scripts\level_init.gml</script>
       <script>scripts\level_position_x.gml</script>
       <script>scripts\level_position_y.gml</script>
       <script>scripts\level_set_room.gml</script>
       <script>scripts\level_grid_value.gml</script>
       <script>scripts\level_stub_find.gml</script>
       <script>scripts\level_stub_find_all.gml</script>
+      <script>scripts\level_set_fog.gml</script>
+      <script>scripts\level_update_fog.gml</script>
+      <script>scripts\level_draw_fog.gml</script>
     </scripts>
     <scripts name="Entity">
       <script>scripts\entity_init.gml</script>

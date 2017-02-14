@@ -13,10 +13,11 @@ surface_set_target(main_surface);
 draw_clear(c_black);
 if(level != -1)
 {
-    if(map_texture == -1)
+    if(map_texture == -1 || level.fog_changed)
     {
         map_render_map_texture();
     }
+    
 
     with(level)
     {
