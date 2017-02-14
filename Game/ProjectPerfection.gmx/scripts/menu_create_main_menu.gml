@@ -24,9 +24,15 @@ button_options.y = button_load.y + button_load.height + padding;
 button_options.text = "Options";
 button_options.center_x = true;
 
+button_credits = instance_create(0, 0, obj_button);
+button_credits.user_event_index = 8;
+button_credits.y = button_options.y + button_load.height + padding;
+button_credits.text = "Credits";
+button_credits.center_x = true;
+
 button_exit = instance_create(0, 0, obj_button);
 button_exit.user_event_index = 15;
-button_exit.y = button_options.y + button_options.height + padding;
+button_exit.y = button_credits.y + button_options.height + padding;
 button_exit.text = "Exit";
 button_exit.center_x = true;
 
