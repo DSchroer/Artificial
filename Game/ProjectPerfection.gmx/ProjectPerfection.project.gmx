@@ -374,7 +374,6 @@
       <object>objects\obj_damage_indicator</object>
     </objects>
     <object>objects\obj_clear_entities</object>
-    <object>objects\obj_post_process</object>
     <object>objects\obj_fonts</object>
     <object>objects\obj_pause</object>
     <objects name="Traps">
@@ -408,6 +407,11 @@
       <object>objects\obj_game_save</object>
     </objects>
     <object>objects\obj_health_can</object>
+    <objects name="Transitions">
+      <object>objects\obj_post_process</object>
+      <object>objects\obj_fade_out</object>
+      <object>objects\obj_fade_in</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>
