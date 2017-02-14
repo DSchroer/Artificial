@@ -368,6 +368,7 @@
       <object>objects\obj_hub_jump</object>
       <object>objects\obj_progress</object>
       <object>objects\obj_boss_battle</object>
+      <object>objects\obj_final_boss</object>
     </objects>
     <objects name="Effects">
       <object>objects\obj_damage_indicator</object>
