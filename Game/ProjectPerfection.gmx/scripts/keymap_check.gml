@@ -15,7 +15,8 @@ enum keycode{
     fire,
     hide_inventory,
     interact, 
-    dequeue_message
+    dequeue_message,
+    healthpack
 }
 
 var key = argument0;
@@ -99,3 +100,7 @@ if(key == keycode.dequeue_message)
     return keyboard_check_pressed(vk_enter);
 }
 
+if(key == keycode.healthpack)
+{
+    return keyboard_check_pressed(vk_tab);
+}

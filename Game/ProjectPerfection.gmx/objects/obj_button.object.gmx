@@ -78,6 +78,7 @@ if(point_in_rectangle(mx, my, x, y, x + sprite_width, y + sprite_height))
                 event_user(index);
             }
         }
+        sfx_play(snd_button);
     }
     sprite_index = spr_button_active;
 }else{
