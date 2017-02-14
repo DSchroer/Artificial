@@ -68,6 +68,11 @@ if(is_paused())
     exit;
 }
 
+if(inventory[selected_slot] != -1 &amp;&amp; is_array(inventory[selected_slot]))
+{
+    inventory[selected_slot] = player_update_gun(inventory[selected_slot]);
+}
+
 gun_angle = point_direction(x, y, mouse_x, mouse_y);
 
 player_update_shield();
@@ -229,6 +234,12 @@ room_goto(rm_hub);
           <argument>
             <kind>1</kind>
             <string>room_speed = 60;
+
+if(instance_number(obj_spawn_player) &gt; 0)
+{
+    x = obj_spawn_player.x;
+    y = obj_spawn_player.y;
+}
 </string>
           </argument>
         </arguments>
@@ -393,6 +404,29 @@ if(ds_list_size(sfx_list) == 0)
           <argument>
             <kind>1</kind>
             <string>event_user(1)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="82">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>inventory[selected_slot] = player_reload(inventory[selected_slot]);
 </string>
           </argument>
         </arguments>

@@ -8,6 +8,12 @@ if(level != -1)
     
     for(var i = 0; i < ds_list_size(level.room_list); i++)
     {
+        var fog = ds_list_find_value(level.fog_list, i);
+        if(fog == 0)
+        {
+            continue;
+        }
+    
         var r = ds_list_find_value(level.room_list, i);
         var x1 = ds_list_find_value(level.room_x_list, i);
         var y1 = ds_list_find_value(level.room_y_list, i);

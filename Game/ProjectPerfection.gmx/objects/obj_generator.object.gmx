@@ -42,6 +42,8 @@ generator_add_option(rm_stub_9, 19, 19);
 generator_add_option(rm_stub_10, 23, 23);
 generator_add_option(rm_stub_11, 23, 23);
 generator_add_option(rm_stub_12, 23, 23);
+
+generator_add_option_ext(rm_stub_13, 23, 23, stub_flags.no_door_down | stub_flags.no_door_right);
 </string>
           </argument>
         </arguments>

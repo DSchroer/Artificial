@@ -75,9 +75,11 @@
     <sprites name="Spawn">
       <sprite>sprites\spr_spawner</sprite>
       <sprite>sprites\spr_spawn_enemy</sprite>
+      <sprite>sprites\spr_spawn_player</sprite>
     </sprites>
     <sprites name="Walls">
       <sprite>sprites\spr_door</sprite>
+      <sprite>sprites\spr_cube</sprite>
       <sprite>sprites\spr_gate</sprite>
       <sprite>sprites\spr_gate_open</sprite>
       <sprite>sprites\spr_wall</sprite>
@@ -88,8 +90,12 @@
       <sprite>sprites\spr_trap_Pitfall</sprite>
       <sprite>sprites\spr_trap_rock</sprite>
       <sprite>sprites\spr_trap_spike</sprite>
+      <sprite>sprites\spr_spike</sprite>
     </sprites>
     <sprite>sprites\spr_healthpack</sprite>
+    <sprites name="Moments">
+      <sprite>sprites\spr_pickle_boss</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -111,14 +117,18 @@
     </scripts>
     <scripts name="Level">
       <script>scripts\level_create.gml</script>
-      <script>scripts\level_init.gml</script>
       <script>scripts\level_destroy.gml</script>
+      <script>scripts\level_init.gml</script>
       <script>scripts\level_position_x.gml</script>
       <script>scripts\level_position_y.gml</script>
       <script>scripts\level_set_room.gml</script>
       <script>scripts\level_grid_value.gml</script>
       <script>scripts\level_stub_find.gml</script>
       <script>scripts\level_stub_find_all.gml</script>
+      <script>scripts\level_set_fog.gml</script>
+      <script>scripts\level_update_fog.gml</script>
+      <script>scripts\level_draw_fog.gml</script>
+      <script>scripts\level_get_spawn_point.gml</script>
     </scripts>
     <scripts name="Entity">
       <script>scripts\entity_init.gml</script>
@@ -188,6 +198,8 @@
       <script>scripts\save_flush.gml</script>
       <script>scripts\save_create_array.gml</script>
       <script>scripts\save_clear.gml</script>
+      <script>scripts\__jso_gmt_tuple.gml</script>
+      <script>scripts\save_list_from_array.gml</script>
     </scripts>
     <script>scripts\isomorphic_set_depth.gml</script>
     <scripts name="Player">
@@ -199,6 +211,8 @@
       <script>scripts\player_fire.gml</script>
       <script>scripts\player_exists.gml</script>
       <script>scripts\player_heal_percent.gml</script>
+      <script>scripts\player_update_gun.gml</script>
+      <script>scripts\player_reload.gml</script>
     </scripts>
     <scripts name="Ui">
       <script>scripts\ui_draw_inventory.gml</script>
@@ -249,6 +263,8 @@
       <script>scripts\sfx_bkg_clear.gml</script>
       <script>scripts\sfx_bkg_init.gml</script>
       <script>scripts\sfx_bkg_update.gml</script>
+      <script>scripts\sfx_set_volume.gml</script>
+      <script>scripts\sfx_bkg_set_volume.gml</script>
     </scripts>
     <scripts name="State">
       <script>scripts\sm_init.gml</script>
@@ -260,6 +276,7 @@
       <script>scripts\sm_state_pop.gml</script>
       <script>scripts\sm_time.gml</script>
       <script>scripts\sm_ticks.gml</script>
+      <script>scripts\sm_state_push.gml</script>
     </scripts>
     <scripts name="Enemy">
       <scripts name="Grunt">
@@ -326,7 +343,6 @@
       <object>objects\obj_bush</object>
     </objects>
     <object>objects\obj_item</object>
-    <object>objects\obj_save_data</object>
     <objects name="Attacks">
       <object>objects\obj_shot_plasma</object>
       <object>objects\obj_shot_rail</object>
@@ -342,6 +358,8 @@
     <object>objects\obj_duck</object>
     <objects name="Interact">
       <object>objects\obj_door</object>
+      <object>objects\obj_final_door</object>
+      <object>objects\obj_cube</object>
       <object>objects\obj_interact</object>
       <object>objects\obj_interact_solid</object>
       <object>objects\obj_prompt</object>
@@ -349,6 +367,7 @@
     <objects name="Control">
       <object>objects\obj_hub_jump</object>
       <object>objects\obj_progress</object>
+      <object>objects\obj_boss_battle</object>
     </objects>
     <objects name="Effects">
       <object>objects\obj_damage_indicator</object>
@@ -375,12 +394,17 @@
     <objects name="Spawners">
       <object>objects\obj_spawn</object>
       <object>objects\obj_spawn_enemy</object>
+      <object>objects\obj_spawn_player</object>
     </objects>
     <objects name="Walls">
       <object>objects\obj_wall</object>
       <object>objects\obj_invisible_wall</object>
       <object>objects\obj_gate</object>
       <object>objects\obj_gate_open</object>
+    </objects>
+    <objects name="Save">
+      <object>objects\obj_save_data</object>
+      <object>objects\obj_game_save</object>
     </objects>
   </objects>
   <rooms name="rooms">
@@ -404,8 +428,13 @@
       <room>rooms\rm_stub_10</room>
       <room>rooms\rm_stub_11</room>
       <room>rooms\rm_stub_12</room>
+      <room>rooms\rm_stub_13</room>
     </rooms>
     <room>rooms\rm_empty</room>
+    <rooms name="Boss">
+      <room>rooms\rm_boss_1</room>
+      <room>rooms\rm_boss_final</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

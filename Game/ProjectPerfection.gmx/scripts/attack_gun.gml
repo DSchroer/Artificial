@@ -7,8 +7,23 @@ var ignore = argument4;
 
 if(is_paused())
 {
+    return weapon;
     exit;
 }
+
+if(weapon[weapon_index.reload_cooldown] > 0 || weapon[weapon_index.fire_cooldown] > 0)
+{
+    return weapon;
+    exit;
+}
+
+if(--weapon[weapon_index.remaining] <= 0)
+{
+    weapon[weapon_index.remaining] = weapon[weapon_index.capacity];
+    weapon[weapon_index.reload_cooldown] = weapon[weapon_index.reload_timeout];
+}
+
+weapon[weapon_index.fire_cooldown] = weapon[weapon_index.fire_timeout];
 
 switch(weapon[weapon_index.modifier])
 {
@@ -22,3 +37,5 @@ switch(weapon[weapon_index.modifier])
         attack_sword(weapon, xpos, ypos, dir, ignore);
         break;
 }
+
+return weapon;
