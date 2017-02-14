@@ -25,7 +25,24 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>camera_init();
+            <string>
+var num = instance_number(obj_camera);
+if(num != 0)
+{
+    for(var i = 0; i &lt; num; i++)
+    {
+        var inst = instance_find(obj_camera, i);
+        if(inst != self)
+        {
+            with(inst)
+            {
+                instance_destroy();
+            }
+        }
+    }
+}
+
+camera_init();
 </string>
           </argument>
         </arguments>
@@ -155,29 +172,6 @@ camera_update()
           <argument>
             <kind>1</kind>
             <string>zoom -= 0.1;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="10" enumb="27">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>game_end();
 </string>
           </argument>
         </arguments>

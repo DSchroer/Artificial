@@ -19,6 +19,12 @@ for(var i = 0; i < array_length_1d(tiles); i++)
     var x_scale = tile_get_xscale(tile);
     var y_scale = tile_get_yscale(tile);
     var alpha = tile_get_alpha(tile)
+    
+    if(dep < 0 && ds_grid_get(door_grid, (xpos + xp)/64, (ypos + yp)/64) > 0)
+    {
+        continue;
+    }
+    
     room_tile_add_ext(new_room, back, left, top, width, height, xp + xpos, yp + ypos, dep, x_scale, y_scale, alpha);
 }
 

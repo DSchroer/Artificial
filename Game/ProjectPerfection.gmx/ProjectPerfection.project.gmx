@@ -33,9 +33,6 @@
     <sprites name="Player">
       <sprite>sprites\spr_player</sprite>
     </sprites>
-    <sprite>sprites\spr_wall</sprite>
-    <sprite>sprites\spr_invisible_wall</sprite>
-    <sprite>sprites\spr_door</sprite>
     <sprite>sprites\spr_bush</sprite>
     <sprite>sprites\spr_shield</sprite>
     <sprite>sprites\spr_item</sprite>
@@ -62,6 +59,27 @@
       <sprite>sprites\spr_controller_dup</sprite>
       <sprite>sprites\spr_controller_dright</sprite>
       <sprite>sprites\spr_controller_dleft</sprite>
+      <sprite>sprites\sprite27</sprite>
+      <sprite>sprites\spr_logo</sprite>
+      <sprite>sprites\spr_button</sprite>
+      <sprite>sprites\spr_slider</sprite>
+      <sprite>sprites\spr_button_active</sprite>
+    </sprites>
+    <sprites name="Fonts">
+      <sprite>sprites\spr_base_font</sprite>
+    </sprites>
+    <sprite>sprites\spr_trap</sprite>
+    <sprite>sprites\sprite30</sprite>
+    <sprites name="Spawn">
+      <sprite>sprites\spr_spawner</sprite>
+      <sprite>sprites\spr_spawn_enemy</sprite>
+    </sprites>
+    <sprites name="Walls">
+      <sprite>sprites\spr_door</sprite>
+      <sprite>sprites\spr_gate</sprite>
+      <sprite>sprites\spr_gate_open</sprite>
+      <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_invisible_wall</sprite>
     </sprites>
     <sprites name="Traps">
       <sprite>sprites\spr_trap_stall</sprite>
@@ -73,6 +91,8 @@
   <backgrounds name="background">
     <background>background\bkg_tile</background>
     <background>background\bkg_tmp_tiles</background>
+    <background>background\bkg_hub</background>
+    <background>background\bkg_desert</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -112,14 +132,9 @@
     </scripts>
     <scripts name="Generator">
       <script>scripts\generator_init.gml</script>
-      <script>scripts\generator_left.gml</script>
       <script>scripts\generator_clear.gml</script>
       <script>scripts\generator_add_option.gml</script>
-      <script>scripts\generator_set_room.gml</script>
-      <script>scripts\generator_populate.gml</script>
-      <script>scripts\generator_right.gml</script>
-      <script>scripts\generator_down.gml</script>
-      <script>scripts\generator_up.gml</script>
+      <script>scripts\generator_add_option_ext.gml</script>
       <script>scripts\generator_create_level.gml</script>
       <script>scripts\generator_copy_instances.gml</script>
       <script>scripts\generator_copy_tiles.gml</script>
@@ -131,6 +146,14 @@
       <script>scripts\generator_random_room.gml</script>
       <script>scripts\generator_use_room.gml</script>
       <script>scripts\generator_spawn_at.gml</script>
+      <scripts name="Core">
+        <script>scripts\generator_up.gml</script>
+        <script>scripts\generator_right.gml</script>
+        <script>scripts\generator_down.gml</script>
+        <script>scripts\generator_left.gml</script>
+        <script>scripts\generator_populate.gml</script>
+        <script>scripts\generator_set_room.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Map">
       <script>scripts\map_init.gml</script>
@@ -157,6 +180,8 @@
       <script>scripts\save_set_value.gml</script>
       <script>scripts\save_has_value.gml</script>
       <script>scripts\save_flush.gml</script>
+      <script>scripts\save_create_array.gml</script>
+      <script>scripts\save_clear.gml</script>
     </scripts>
     <script>scripts\isomorphic_set_depth.gml</script>
     <scripts name="Player">
@@ -172,7 +197,7 @@
       <script>scripts\ui_draw_inventory.gml</script>
       <script>scripts\ui_draw_health.gml</script>
       <script>scripts\ui_draw_ring.gml</script>
-      <script>scripts\ui_draw_textbox.gml</script>
+      <script>scripts\ui_draw_textbox_pos.gml</script>
       <script>scripts\ui_draw_weapon_tooltip.gml</script>
       <script>scripts\ui_draw_shield_tooltip.gml</script>
       <script>scripts\ui_draw_health_tooltip.gml</script>
@@ -185,6 +210,8 @@
       <script>scripts\ui_get_quality_colour.gml</script>
       <script>scripts\ui_get_modifier_colour.gml</script>
       <script>scripts\ui_get_quality_string.gml</script>
+      <script>scripts\ui_draw_textbox.gml</script>
+      <script>scripts\ui_queue_message.gml</script>
     </scripts>
     <scripts name="Debug">
       <script>scripts\debug_init.gml</script>
@@ -194,7 +221,6 @@
     <scripts name="Helper">
       <script>scripts\string_array.gml</script>
     </scripts>
-    <script>scripts\clone.gml</script>
     <scripts name="Attack">
       <script>scripts\attack_plasma.gml</script>
       <script>scripts\attack_rail.gml</script>
@@ -241,17 +267,39 @@
       <script>scripts\interact_any.gml</script>
       <script>scripts\interact_trigger.gml</script>
     </scripts>
+    <scripts name="Fonts">
+      <script>scripts\fonts_init.gml</script>
+      <script>scripts\fonts_get.gml</script>
+    </scripts>
+    <script>scripts\is_paused.gml</script>
+    <scripts name="Clone">
+      <script>scripts\clone_init.gml</script>
+      <script>scripts\clone_register.gml</script>
+      <script>scripts\clone_apply.gml</script>
+      <script>scripts\clone_set_inst.gml</script>
+      <script>scripts\clone_is_type.gml</script>
+    </scripts>
+    <scripts name="MainMenu">
+      <script>scripts\menu_destroy_main_menu.gml</script>
+      <script>scripts\menu_destroy_options_menu.gml</script>
+      <script>scripts\menu_create_main_menu.gml</script>
+      <script>scripts\menu_create_options_menu.gml</script>
+      <script>scripts\menu_destroy_menu.gml</script>
+      <script>scripts\menu_create_menu.gml</script>
+    </scripts>
+    <scripts name="PauseMenu">
+      <script>scripts\menu_create_pause.gml</script>
+      <script>scripts\menu_destroy_pause.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
-    <shader type="GLSLES">shaders\sdr_grey.shader</shader>
+    <shader type="GLSLES">shaders\sdr_pause.shader</shader>
   </shaders>
   <fonts name="fonts">
     <font>fonts\fnt_hit</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_wall</object>
-    <object>objects\obj_control</object>
     <objects name="Camera">
       <object>objects\obj_camera</object>
       <object>objects\obj_room_camera</object>
@@ -259,6 +307,7 @@
     <objects name="Dungeon">
       <object>objects\obj_generator</object>
       <object>objects\obj_level</object>
+      <object>objects\obj_cloner</object>
     </objects>
     <objects name="UI">
       <object>objects\obj_minimap</object>
@@ -281,6 +330,7 @@
       <object>objects\obj_player</object>
       <object>objects\obj_target</object>
       <object>objects\obj_grunt</object>
+      <object>objects\obj_enemy</object>
     </objects>
     <object>objects\obj_duck</object>
     <objects name="Interact">
@@ -291,21 +341,43 @@
     </objects>
     <objects name="Control">
       <object>objects\obj_hub_jump</object>
+      <object>objects\obj_progress</object>
     </objects>
-    <object>objects\obj_invisible_wall</object>
     <objects name="Effects">
       <object>objects\obj_damage_indicator</object>
     </objects>
     <object>objects\obj_clear_entities</object>
     <object>objects\obj_post_process</object>
+    <object>objects\obj_fonts</object>
+    <object>objects\obj_pause</object>
     <objects name="Traps">
+      <object>objects\obj_trap</object>
       <object>objects\obj_trap_stall</object>
       <object>objects\obj_trap_spike</object>
       <object>objects\obj_trap_rock</object>
       <object>objects\obj_trap_pitfall</object>
     </objects>
+    <objects name="menu">
+      <object>objects\obj_main_menu</object>
+      <object>objects\obj_button</object>
+      <object>objects\obj_logo</object>
+      <object>objects\obj_slider</object>
+      <object>objects\obj_pause_menu</object>
+      <object>objects\obj_menu</object>
+    </objects>
+    <objects name="Spawners">
+      <object>objects\obj_spawn</object>
+      <object>objects\obj_spawn_enemy</object>
+    </objects>
+    <objects name="Walls">
+      <object>objects\obj_wall</object>
+      <object>objects\obj_invisible_wall</object>
+      <object>objects\obj_gate</object>
+      <object>objects\obj_gate_open</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_main_menu</room>
     <room>rooms\rm_base</room>
     <room>rooms\rm_hub</room>
     <room>rooms\rm_dungeon_test</room>

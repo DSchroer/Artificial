@@ -38,7 +38,7 @@ case "|lblue":
     draw_set_colour(make_color_rgb(91, 170, 241));
     break;
 case "|tooltip":
-    draw_set_colour(make_color_rgb(128, 128, 128));
+    draw_set_colour(make_color_rgb(80, 79, 145));
     break;
 case "|gray":
     draw_set_colour(make_color_rgb(128, 128, 128));

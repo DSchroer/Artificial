@@ -1,5 +1,11 @@
 ///entity_move_input()
 
+if(is_paused())
+{
+    speed = 0;
+    exit;
+}
+
 var x_dir = 0;
 var y_dir = 0;
 
@@ -49,7 +55,20 @@ if(keymap_check(keycode.hide_inventory))
     hide_inventory = !hide_inventory;
 }
 
+if(keymap_check(keycode.dequeue_message))
+{
+    ds_queue_dequeue(textbox_queue);
+}
 
+if(keyboard_check_pressed(vk_f4))
+{
+    ui_queue_message("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id porttito. `a `s `b `s `x `y `br `l `s `r `s `u `s `d Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id porttito" + 
+    " `a `b `x `y `br `l `r `u `d ");
+    ui_queue_message("Test1");
+    ui_queue_message("Test2");
+    ui_queue_message("Test3");
+    
+}
 
 // Triggers/Shoulder buttons:
 // Left button

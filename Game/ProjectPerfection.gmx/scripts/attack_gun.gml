@@ -5,6 +5,11 @@ var ypos = argument2;
 var dir = argument3;
 var ignore = argument4;
 
+if(is_paused())
+{
+    exit;
+}
+
 switch(weapon[weapon_index.modifier])
 {
     case weapon_modifier.rail:

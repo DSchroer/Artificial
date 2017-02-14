@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>
-var entities = level_stub_find_all(obj_entity);
+var entities = level_stub_find_all(obj_spawn_enemy);
 for(var i = 0; i &lt; array_length_1d(entities); i++)
 {
     with(entities[i])

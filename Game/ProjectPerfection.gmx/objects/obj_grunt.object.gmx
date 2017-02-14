@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_entity</parentName>
+  <parentName>obj_enemy</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -64,6 +64,7 @@ if(player_exists())
     switch(state)
     {
         case "idle":
+        case "paused":
             eg_idle();
             break;
         case "approach":
