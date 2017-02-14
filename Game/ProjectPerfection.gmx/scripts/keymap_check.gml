@@ -82,7 +82,7 @@ if(key == keycode.inventory_down)
 
 if(key == keycode.fire)
 {
-    return mouse_check_button_pressed(mb_left);
+    return mouse_check_button(mb_left);
 }
 
 if(key == keycode.hide_inventory)
