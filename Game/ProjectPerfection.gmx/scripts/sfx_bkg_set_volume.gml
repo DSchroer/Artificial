@@ -1,2 +1,3 @@
 ///sfx_bkg_set_volume(volume)
-audio_sound_gain(1, argument0, 0);
+var vol = argument0;
+audio_sound_gain(1, vol, 0);

@@ -73,6 +73,7 @@
     <sprites name="Spawn">
       <sprite>sprites\spr_spawner</sprite>
       <sprite>sprites\spr_spawn_enemy</sprite>
+      <sprite>sprites\spr_spawn_player</sprite>
     </sprites>
     <sprites name="Walls">
       <sprite>sprites\spr_door</sprite>
@@ -182,6 +183,8 @@
       <script>scripts\save_flush.gml</script>
       <script>scripts\save_create_array.gml</script>
       <script>scripts\save_clear.gml</script>
+      <script>scripts\__jso_gmt_tuple.gml</script>
+      <script>scripts\save_list_from_array.gml</script>
     </scripts>
     <script>scripts\isomorphic_set_depth.gml</script>
     <scripts name="Player">
@@ -369,6 +372,7 @@
     <objects name="Spawners">
       <object>objects\obj_spawn</object>
       <object>objects\obj_spawn_enemy</object>
+      <object>objects\obj_spawn_player</object>
     </objects>
     <objects name="Walls">
       <object>objects\obj_wall</object>
@@ -405,6 +409,10 @@
       <room>rooms\rm_stub_13</room>
     </rooms>
     <room>rooms\rm_empty</room>
+    <rooms name="Boss">
+      <room>rooms\rm_boss_1</room>
+      <room>rooms\rm_boss_final</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

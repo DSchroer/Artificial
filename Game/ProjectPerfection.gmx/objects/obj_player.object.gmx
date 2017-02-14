@@ -229,6 +229,12 @@ room_goto(rm_hub);
           <argument>
             <kind>1</kind>
             <string>room_speed = 60;
+
+if(instance_number(obj_spawn_player) &gt; 0)
+{
+    x = obj_spawn_player.x;
+    y = obj_spawn_player.y;
+}
 </string>
           </argument>
         </arguments>
