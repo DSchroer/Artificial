@@ -351,6 +351,7 @@
     <object>objects\obj_duck</object>
     <objects name="Interact">
       <object>objects\obj_door</object>
+      <object>objects\obj_final_door</object>
       <object>objects\obj_cube</object>
       <object>objects\obj_interact</object>
       <object>objects\obj_interact_solid</object>
