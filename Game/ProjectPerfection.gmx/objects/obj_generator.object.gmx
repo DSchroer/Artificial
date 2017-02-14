@@ -133,6 +133,7 @@ persistent = true;
 custom_room = room_add();
 room_set_background_colour(custom_room, c_black, true);
 generator_spawn_at(0, custom_room, obj_clear_entities);
+generator_spawn_at(0, custom_room, obj_health_can);
 
 var end_key = generator_spawn_exit(custom_room);
 generator_spawn_at(end_key, custom_room, obj_clear_entities);

@@ -406,6 +406,7 @@
       <object>objects\obj_save_data</object>
       <object>objects\obj_game_save</object>
     </objects>
+    <object>objects\obj_health_can</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>
