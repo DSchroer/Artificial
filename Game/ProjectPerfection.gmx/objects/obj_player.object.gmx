@@ -92,8 +92,12 @@ if(obj)
 {
     data = obj.data;
 }
-
 var out = -1;
+
+if(invincible &gt; 0)
+{
+    --invincible;
+}
 
 if(keymap_check(keycode.inv0))
 {

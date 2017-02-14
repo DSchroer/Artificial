@@ -147,6 +147,12 @@ for(var i = 0; i &lt; 3; i++)
     generator_use_room(p);
 }
 
+if(random(2) == 1)
+{
+    var p = generator_random_room();
+    generator_spawn_at(p, custom_room, obj_health_can);
+}
+
 room_set_height(custom_room, height * 64);
 room_set_width(custom_room, width * 64);
 room_set_persistent(custom_room, false);

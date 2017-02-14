@@ -7,6 +7,7 @@ remaining_shield = 0;
 shield_penalty_time = 0;
 previous_shield_penalty_time = 0;
 hide_inventory = false;
+invincible = 0;
 
 // Inventory
 inventory_init();
