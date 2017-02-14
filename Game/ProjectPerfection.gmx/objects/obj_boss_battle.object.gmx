@@ -28,7 +28,7 @@
             <string>alarm[0] = 120;
 drawing = true;
 target = obj_grunt;
-photo = spr_grunt;
+photo = spr_pickle_boss;
 </string>
           </argument>
         </arguments>

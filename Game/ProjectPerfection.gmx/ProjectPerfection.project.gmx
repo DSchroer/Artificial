@@ -90,8 +90,12 @@
       <sprite>sprites\spr_trap_Pitfall</sprite>
       <sprite>sprites\spr_trap_rock</sprite>
       <sprite>sprites\spr_trap_spike</sprite>
+      <sprite>sprites\spr_spike</sprite>
     </sprites>
     <sprite>sprites\spr_healthpack</sprite>
+    <sprites name="Moments">
+      <sprite>sprites\spr_pickle_boss</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -124,6 +128,7 @@
       <script>scripts\level_set_fog.gml</script>
       <script>scripts\level_update_fog.gml</script>
       <script>scripts\level_draw_fog.gml</script>
+      <script>scripts\level_get_spawn_point.gml</script>
     </scripts>
     <scripts name="Entity">
       <script>scripts\entity_init.gml</script>
@@ -207,6 +212,7 @@
       <script>scripts\player_exists.gml</script>
       <script>scripts\player_heal_percent.gml</script>
       <script>scripts\player_update_gun.gml</script>
+      <script>scripts\player_reload.gml</script>
     </scripts>
     <scripts name="Ui">
       <script>scripts\ui_draw_inventory.gml</script>
