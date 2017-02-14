@@ -60,6 +60,16 @@ if(keymap_check(keycode.dequeue_message))
     ds_queue_dequeue(textbox_queue);
 }
 
+if(keymap_check(keycode.healthpack))
+{
+    if(inventory_get_healthpack_count(self) > 0 && current_health < max_health)
+    {
+        inventory_remove_healthpacks(self, 1);
+        player_heal_percent(50);
+    }
+}
+
+
 if(keyboard_check_pressed(vk_f4))
 {
     ui_queue_message("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id porttito. `a `s `b `s `x `y `br `l `s `r `s `u `s `d Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id porttito" + 

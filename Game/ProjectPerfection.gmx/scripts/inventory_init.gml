@@ -69,4 +69,5 @@ inventory[2] = save_get_value(obj_save_data, "inv2", -1);
 inventory[3] = save_get_value(obj_save_data, "inv3", -1);
 inventory[4] = save_get_value(obj_save_data, "inv4", -1);
 
-
+healthpack_cap = 3;
+number_of_healthpacks = 0;

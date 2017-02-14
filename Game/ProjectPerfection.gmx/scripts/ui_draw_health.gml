@@ -40,6 +40,13 @@ if(distance_from_center > rad && distance_from_center < rad + 16)
 }
 
 
+// Draw healthpacks
+var scale = 0.66;
+for(var i = 0; i < inventory_get_healthpack_count(self); i++)
+{
+    draw_sprite_ext(spr_healthpack, -1, width - sprite_get_width(spr_healthpack) * scale * (i + 1) - 5, ry - rad - sprite_get_height(spr_healthpack), scale, scale, 0, c_white, 1);
+}
+
 
 
 
