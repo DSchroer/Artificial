@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>data = inventory_create_weapon();
-data[weapon_index.modifier] = round(random(2));
+            <string>data = inventory_spawn_gun(10);
 </string>
           </argument>
         </arguments>

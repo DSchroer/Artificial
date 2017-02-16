@@ -1,5 +1,4 @@
 ///inventory_create_weapon()
-
 var weapon;
 weapon[weapon_index.item_id] = item_ids.gun;
 weapon[weapon_index.quality] = item_quality.common;

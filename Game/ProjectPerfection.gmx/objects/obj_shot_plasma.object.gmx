@@ -28,6 +28,7 @@
             <string>parent = self;
 damage = 1;
 paused = false;
+cooldown = 0;
 </string>
           </argument>
         </arguments>
@@ -62,14 +63,19 @@ if(!paused &amp;&amp; is_paused())
     paused = false;
 }
 
-var entity = instance_place(x, y, obj_entity);
-if(entity &amp;&amp; entity != parent)
+if(cooldown &gt; 0)
 {
-    with(entity)
+    cooldown--;
+}else{
+var entity = instance_place(x, y, obj_entity);
+    if(entity &amp;&amp; entity != parent)
     {
-        entity_apply_damage(other.damage);
+        with(entity)
+        {
+            entity_apply_damage(other.damage);
+        }
+        cooldown = 30;
     }
-    instance_destroy();
 }
 
 if(place_meeting(x, y, obj_wall))
