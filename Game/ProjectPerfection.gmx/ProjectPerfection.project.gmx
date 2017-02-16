@@ -247,7 +247,7 @@
       <script>scripts\ui_draw_inventory.gml</script>
       <script>scripts\ui_draw_health.gml</script>
       <script>scripts\ui_draw_ring.gml</script>
-      <script>scripts\ui_draw_textbox_pos.gml</script>
+      <script>scripts\ui_draw_textbox_ext.gml</script>
       <script>scripts\ui_draw_weapon_tooltip.gml</script>
       <script>scripts\ui_draw_shield_tooltip.gml</script>
       <script>scripts\ui_draw_health_tooltip.gml</script>
@@ -262,6 +262,7 @@
       <script>scripts\ui_get_quality_string.gml</script>
       <script>scripts\ui_draw_textbox.gml</script>
       <script>scripts\ui_queue_message.gml</script>
+      <script>scripts\ui_draw_textbox_pos.gml</script>
     </scripts>
     <scripts name="Debug">
       <script>scripts\debug_init.gml</script>

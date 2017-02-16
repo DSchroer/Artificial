@@ -61,15 +61,11 @@ if(!hide_inventory)
 }
 ui_check_weapon_slot_tooltip(bx, by + 254, 1, inventory[selected_slot]);
 
-
-
 // Textbox
 if(ds_queue_size(obj_player.textbox_queue) > 0)
 {
     var text = ds_queue_head(obj_player.textbox_queue);
     ui_draw_textbox(text);    
 }
-
-
    
    
