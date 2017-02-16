@@ -15,4 +15,5 @@ inventory_init();
 // UI queue
 textbox_queue = ds_queue_create();
 
-
+// 
+dungeon1_sfx_timer = -1;

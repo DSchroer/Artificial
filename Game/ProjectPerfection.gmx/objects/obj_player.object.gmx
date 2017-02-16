@@ -63,7 +63,7 @@ cursor_sprite = spr_aim;
 isomorphic_set_depth();
 
 entity_dampening();
-entity_move_input();
+entity_move_input();                                                                               
 entity_collision();
 
 if(is_paused())
@@ -327,8 +327,7 @@ if(debug_mode)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sfx_play(snd_gunshot);
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -404,6 +403,7 @@ if(ds_list_size(sfx_list) == 0)
           <argument>
             <kind>1</kind>
             <string>inventory[selected_slot] = player_reload(inventory[selected_slot]);
+
 </string>
           </argument>
         </arguments>
@@ -426,8 +426,7 @@ if(ds_list_size(sfx_list) == 0)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sfx_play(snd_attack);
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>

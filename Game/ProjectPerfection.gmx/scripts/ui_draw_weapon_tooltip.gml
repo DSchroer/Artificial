@@ -5,8 +5,9 @@ var ypos = argument1;
 var weapon = argument2;
 
 var dmg = weapon[weapon_index.damage];
-var fire_rate = 1; //(60 / weapon[weapon_index.fire_timeout]);
+var fire_rate = (60 / weapon[weapon_index.fire_timeout]);
 var dps = dmg * fire_rate;
+var reload_time = weapon[weapon_index.reload_timeout] / 60;
 var quality_colour = ui_get_quality_colour(weapon[weapon_index.quality]);
 var modifier_colour = ui_get_modifier_colour(weapon[weapon_index.modifier]);
 
@@ -23,7 +24,7 @@ scales[c] = 1.25;
 stats[c] = -1;
 c++;
 
-text[c] = ui_get_quality_string(weapon[weapon_index.quality]) + " " + inventory_get_modifier_name(weapon[weapon_index.modifier]);
+text[c] = ui_get_quality_string(weapon[weapon_index.quality]) + " " + inventory_get_modifier_name(weapon[weapon_index.modifier]) + " " + inventory_get_subtype_name(weapon[weapon_index.weapon_subtype]);
 colours[c] = quality_colour;
 scales[c] = 1;
 stats[c] = -1;
@@ -50,6 +51,14 @@ scales[c] = 1;
 stats[c] = string(fire_rate);
 stat_colours[c] = "|white";
 c++;
+
+text[c] = " Second Reload";
+colours[c] = "|tooltip";
+scales[c] = 1;
+stats[c] = string(reload_time);
+stat_colours[c] = "|white";
+c++;
+
 
 if(weapon[weapon_index.modifier] != weapon_modifier.sword)
 {

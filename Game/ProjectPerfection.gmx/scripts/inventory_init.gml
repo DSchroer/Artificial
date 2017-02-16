@@ -37,6 +37,7 @@ enum weapon_index
     quality,
     item_id,
     modifier,
+    weapon_subtype,
     damage,
     capacity,
     remaining,
@@ -61,6 +62,16 @@ enum shield_index
     world_sprite,
 };
 
+enum weapon_subtype 
+{
+    pistol,
+    auto_rifle,
+    heavy_rifle,
+    sniper_rifle,
+    smg,
+    extended_magazine,
+    superfast_reload
+};
 
 selected_slot = inventory_slot.weapon1;
 inventory[0] = save_get_value(obj_save_data, "inv0", -1);
