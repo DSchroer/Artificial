@@ -33,6 +33,9 @@ inventory_swap(self, inventory_slot.shield, inventory_create_shield());
 sfx_bkg_init();
 
 gun_angle = 0;
+
+window_set_cursor(cr_none);
+cursor_sprite = spr_aim;
 </string>
           </argument>
         </arguments>
@@ -85,66 +88,36 @@ debug_show_string("in4: " + string_array(inventory[4]));
 
 debug_show_string("fps: " + string(fps));
 
-var obj = instance_place(x, y, obj_item);
-
-var data = -1;
-if(obj)
+if(keymap_check(keycode.interact))
 {
-    data = obj.data;
+    var inter = interact_any(128);
+    if(inter == noone)
+    {
+        var obj = instance_place(x, y, obj_item);
+        var data = -1;
+        if(obj)
+        {
+            data = obj.data;
+        }
+        var out = inventory_pickup_weapon(data);
+        with(obj)
+        {
+            instance_destroy();
+        }
+        if(out != -1 &amp;&amp; is_array(out))
+        {
+            var item = instance_create(x,y, obj_item);
+            item.data = out;
+        }
+    
+    }else{
+        interact_trigger(inter);
+    }
 }
-var out = -1;
 
 if(invincible &gt; 0)
 {
     --invincible;
-}
-
-if(keymap_check(keycode.inv0))
-{
-    out = inventory_swap(self, 0, data);
-    with(obj)
-    {
-        instance_destroy();
-    }
-}else if(keymap_check(keycode.inv1))
-{
-    out = inventory_swap(self, 1, data);
-    with(obj)
-    {
-        instance_destroy();
-    }
-}else if(keymap_check(keycode.inv2))
-{
-    out = inventory_swap(self, 2, data);
-    with(obj)
-    {
-        instance_destroy();
-    }
-}else if(keymap_check(keycode.inv3))
-{
-    out = inventory_swap(self, 3, data);
-    with(obj)
-    {
-        instance_destroy();
-    }
-}else if(keymap_check(keycode.inv4))
-{
-    out = inventory_swap(self, 4, data);
-    with(obj)
-    {
-        instance_destroy();
-    }
-}
-
-if(out != -1 &amp;&amp; is_array(out))
-{
-    var item = instance_create(x,y, obj_item);
-    item.data = out;
-}
-
-if(keymap_check(keycode.interact))
-{
-    interact_trigger(interact_any(128));
 }
 
 if(keymap_check(keycode.fire))
@@ -305,9 +278,9 @@ if(view_current == 0)
 {
     if(gun_angle &lt; 180)
     {
-        if(is_array(inventory[0]))
+        if(is_array(inventory[selected_slot]))
         {
-            draw_weapon(inventory[0], x, y - 64, 1, yscale, gun_angle, 1);
+            draw_weapon(inventory[selected_slot], x, y - 64, 1, yscale, gun_angle, 1);
         }
     }
 
@@ -315,9 +288,9 @@ if(view_current == 0)
     
     if(gun_angle &gt;= 180)
     {
-        if(is_array(inventory[0]))
+        if(is_array(inventory[selected_slot]))
         {
-            draw_weapon(inventory[0], x, y - 64, 1, yscale, gun_angle, 1);
+            draw_weapon(inventory[selected_slot], x, y - 64, 1, yscale, gun_angle, 1);
         }
     }
     

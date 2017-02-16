@@ -96,6 +96,7 @@
     <sprites name="Moments">
       <sprite>sprites\spr_pickle_boss</sprite>
     </sprites>
+    <sprite>sprites\spr_aim</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -114,6 +115,7 @@
       <script>scripts\inventory_pickup_healthpacks.gml</script>
       <script>scripts\inventory_remove_healthpacks.gml</script>
       <script>scripts\inventory_get_healthpack_count.gml</script>
+      <script>scripts\inventory_pickup_weapon.gml</script>
     </scripts>
     <scripts name="Level">
       <script>scripts\level_create.gml</script>
