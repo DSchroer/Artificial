@@ -26,9 +26,10 @@ enum inventory_slot
 
 enum weapon_modifier
 {
+    normal,
     rail,
     plasma,
-    sword
+    scatter
 };
 
 enum weapon_index

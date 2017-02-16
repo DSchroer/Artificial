@@ -140,7 +140,7 @@ var end_key = generator_spawn_exit(custom_room);
 generator_spawn_at(end_key, custom_room, obj_clear_entities);
 generator_use_room(end_key);
 
-for(var i = 0; i &lt; 3; i++)
+if(random(2) &lt; 1)
 {
     var p = generator_random_room();
     generator_spawn_at(p, custom_room, obj_item);

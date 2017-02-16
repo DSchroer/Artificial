@@ -26,14 +26,17 @@ weapon[weapon_index.fire_cooldown] = weapon[weapon_index.fire_timeout];
 
 switch(weapon[weapon_index.modifier])
 {
-    case weapon_modifier.rail:
-        attack_rail(weapon, xpos, ypos, dir, ignore);
+    case weapon_modifier.normal:
+        attack_normal(weapon, xpos, ypos, dir, ignore);
         break;
     case weapon_modifier.plasma:
         attack_plasma(weapon, xpos, ypos, dir, ignore);
         break;
-    case weapon_modifier.sword:
-        attack_sword(weapon, xpos, ypos, dir, ignore);
+    case weapon_modifier.rail:
+        attack_rail(weapon, xpos, ypos, dir, ignore);
+        break;
+    case weapon_modifier.scatter:
+        attack_scatter(weapon, xpos, ypos, dir, ignore);
         break;
 }
 

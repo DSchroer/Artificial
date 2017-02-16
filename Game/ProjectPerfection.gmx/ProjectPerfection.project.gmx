@@ -67,7 +67,6 @@
       <sprite>sprites\spr_inv_rifle1</sprite>
       <sprite>sprites\spr_world_rifle1</sprite>
     </sprites>
-    <sprite>sprites\spr_bullet</sprite>
     <sprite>sprites\spr_target</sprite>
     <sprite>sprites\spr_sword</sprite>
     <sprite>sprites\spr_dishonDuck</sprite>
@@ -122,6 +121,11 @@
       <sprite>sprites\spr_pickle_boss</sprite>
     </sprites>
     <sprite>sprites\spr_aim</sprite>
+    <sprites name="Shots">
+      <sprite>sprites\spr_bullet</sprite>
+      <sprite>sprites\spr_plasma</sprite>
+      <sprite>sprites\spr_rail</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -142,6 +146,7 @@
       <script>scripts\inventory_get_healthpack_count.gml</script>
       <script>scripts\inventory_pickup_weapon.gml</script>
       <script>scripts\inventory_get_subtype_name.gml</script>
+      <script>scripts\inventory_spawn_gun.gml</script>
     </scripts>
     <scripts name="Level">
       <script>scripts\level_create.gml</script>
@@ -274,6 +279,8 @@
     </scripts>
     <scripts name="Attack">
       <script>scripts\attack_plasma.gml</script>
+      <script>scripts\attack_normal.gml</script>
+      <script>scripts\attack_scatter.gml</script>
       <script>scripts\attack_rail.gml</script>
       <script>scripts\attack_explosive.gml</script>
       <script>scripts\attack_physical.gml</script>
@@ -380,6 +387,7 @@
     <object>objects\obj_item</object>
     <objects name="Attacks">
       <object>objects\obj_shot_plasma</object>
+      <object>objects\obj_shot_normal</object>
       <object>objects\obj_shot_rail</object>
       <object>objects\obj_hit_sword</object>
     </objects>

@@ -60,16 +60,6 @@ stat_colours[c] = "|white";
 c++;
 
 
-if(weapon[weapon_index.modifier] != weapon_modifier.sword)
-{
-    text[c] = " Bullet Capacity";
-    colours[c] = "|tooltip";
-    scales[c] = 1;
-    stats[c] = string(weapon[weapon_index.capacity]);
-    stat_colours[c] = "|white";
-    c++;
-}
-
 ui_draw_tooltip(xpos, ypos, text, colours, scales, stats, stat_colours);
 
 

@@ -4,14 +4,16 @@ var weapon_mod = argument0;
 
 switch(weapon_mod)
 {
-case weapon_modifier.sword:
+case weapon_modifier.normal:
     return "|white";
     break;
 case weapon_modifier.plasma:
     return "|plasma";
     break;
-
 case weapon_modifier.rail:
+    return "|rail";
+    break;
+case weapon_modifier.scatter:
     return "|rail";
     break;
     
