@@ -10,7 +10,11 @@ if(point_distance(x, y, obj_player.x, obj_player.y) < 200)
     sm_set_state("retreat");
 }
 
-speed = 0;
+if(sm_ticks() % 120 == 0)
+{
+    direction = random(360);
+    speed = 1.5;
+}
 
 if(sm_ticks() % 60 == 30 || sm_ticks() % 60 == 35 || sm_ticks() % 60 == 40)
 {

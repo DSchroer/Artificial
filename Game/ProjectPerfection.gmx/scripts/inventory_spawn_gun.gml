@@ -16,10 +16,10 @@ gun[weapon_index.weapon_subtype] = subType;
 
 //Damage Per Shot
 var damages;
-damages[0] = 5 * (pow / 20);
-damages[1] = 6 * (pow / 20);
-damages[2] = 13 * (pow / 20);
-damages[3] = 45 * (pow / 20);
+damages[0] = 5 * (1 + (pow / 20));
+damages[1] = 6 * (1 + (pow / 20));
+damages[2] = 13 * (1 + (pow / 20));
+damages[3] = 45 * (1 + (pow / 20));
 gun[weapon_index.damage] = round(damages[subType]);
 
 //Fire rate (per second)
