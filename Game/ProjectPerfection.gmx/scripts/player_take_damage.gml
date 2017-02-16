@@ -29,7 +29,7 @@ else
 {
     if(invincible == 0)
     {
-        invincible = 30;
+        invincible = 15;
         entity_take_damage(); 
     }  
 }
