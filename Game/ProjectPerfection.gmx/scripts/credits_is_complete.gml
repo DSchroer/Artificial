@@ -1,2 +1,2 @@
 ///credits_is_complete()
-return y + (ds_list_size(names) * line_space) <= 0;
+return y + (ds_list_size(lines) * line_space) <= 0;
