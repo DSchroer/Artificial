@@ -13,4 +13,4 @@ shot.speed = 20;
 shot.parent = self;
 shot.damage = weapon[weapon_index.damage];
 
-sfx_play_volume(snd_fire_laser, true, 0.65);
+sfx_play_volume(snd_fire_laser, true, 0.55);

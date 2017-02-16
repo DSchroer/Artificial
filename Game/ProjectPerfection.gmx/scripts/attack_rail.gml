@@ -11,4 +11,4 @@ shot.direction = dir;
 shot.parent = self;
 shot.damage = weapon[weapon_index.damage];
 
-sfx_play_volume(snd_fire_laser, true, 0.4);
+sfx_play_volume(snd_fire_laser, true, 0.3);

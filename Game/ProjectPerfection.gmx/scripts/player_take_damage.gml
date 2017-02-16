@@ -1,10 +1,12 @@
 ///player_take_damage()
+
 if(shield_active && remaining_shield > 0)
 {
     // Hit shield.
     if(remaining_shield > damage)
     {
         remaining_shield -= damage;
+        sfx_play(snd_shield_hit, false);
     }
     else 
     {
