@@ -1,7 +1,20 @@
-Developer:Dominick Schroer
-Artist:Nick Tremblay
-Producer:Alec Sobeck
-Designer:Spencer Gould
+!Developer
+Dominick Schroer
 
+!Artist 
+Nick Tremblay
 
+!Producer
+Alec Sobeck
+
+!Designer
+Spencer Gould
+
+!Other Code
 https://github.com/dicksonlaw583/jsonion-classic
+
+!Music
+<Insert Here>
+
+!Audio
+<Insert Here>
