@@ -270,7 +270,6 @@
     <instance objName="obj_wall" x="1088" y="1280" name="inst_5B5649A9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1152" y="1088" name="inst_82D17E75" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1152" y="1024" name="inst_3A5AAF2E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_health_can" x="480" y="736" name="inst_472A2E91" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tutorial_trap" x="320" y="960" name="inst_54A4518F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tutorial_trap" x="384" y="960" name="inst_5C651742" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tutorial_trap" x="448" y="960" name="inst_BD55C274" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -280,7 +279,6 @@
     <instance objName="obj_tutorial_text" x="672" y="2016" name="inst_BF322263" locked="0" code="text = &quot;Welcome! `br Use W S A D to move.&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tutorial_text" x="1888" y="1312" name="inst_954BA9E7" locked="0" code="text = &quot;Use E to pick up items.&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tutorial_text" x="192" y="1536" name="inst_2A7C3898" locked="0" code="text = &quot;Space to use shield.&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_health_can" x="256" y="1280" name="inst_0341970E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
