@@ -72,10 +72,21 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(credits_is_complete())
+            <string>if(credits_is_complete() || keyboard_check_pressed(vk_escape))
 {
     room_goto(rm_main_menu);
 }
+
+if(keyboard_check(vk_space))
+{
+    speed = 15;
+}
+else 
+{
+    speed = 1;
+}
+
+
 </string>
           </argument>
         </arguments>

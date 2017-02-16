@@ -1,4 +1,7 @@
-///sfx_play(effect)
+///sfx_play(effect, allow_duplicate)
 var effect = argument0;
-audio_play_sound(effect, 2, false);
+var allow_duplicate = argument1;
+sfx_play_volume(effect, allow_duplicate, 1);
+
+
 

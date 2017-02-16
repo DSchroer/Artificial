@@ -10,3 +10,5 @@ shot.sprite_index = weapon[weapon_index.bullet_sprite];
 shot.direction = dir;
 shot.parent = self;
 shot.damage = weapon[weapon_index.damage];
+
+sfx_play_volume(snd_fire_laser, true, 0.3);
