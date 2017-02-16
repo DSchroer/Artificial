@@ -148,7 +148,7 @@ for(var i = 0; i &lt; 3; i++)
     generator_use_room(p);
 }
 
-if(random(2) == 1)
+if(random(2) &lt; 1)
 {
     var p = generator_random_room();
     generator_spawn_at(p, custom_room, obj_health_can);

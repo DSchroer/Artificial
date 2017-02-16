@@ -288,6 +288,7 @@
         <script>scripts\eg_attack.gml</script>
       </scripts>
       <script>scripts\enemy_target.gml</script>
+      <script>scripts\enemy_dumb.gml</script>
     </scripts>
     <scripts name="Interact">
       <script>scripts\interact_any.gml</script>
@@ -360,6 +361,7 @@
     <object>objects\obj_duck</object>
     <objects name="Interact">
       <object>objects\obj_door</object>
+      <object>objects\obj_tutorial_door</object>
       <object>objects\obj_final_door</object>
       <object>objects\obj_cube</object>
       <object>objects\obj_interact</object>
@@ -380,6 +382,7 @@
     <object>objects\obj_pause</object>
     <objects name="Traps">
       <object>objects\obj_trap</object>
+      <object>objects\obj_tutorial_trap</object>
       <object>objects\obj_trap_stall</object>
       <object>objects\obj_trap_spike</object>
       <object>objects\obj_trap_rock</object>
@@ -414,10 +417,14 @@
       <object>objects\obj_fade_out</object>
       <object>objects\obj_fade_in</object>
     </objects>
+    <objects name="Tutorial">
+      <object>objects\obj_tutorial_text</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>
     <room>rooms\rm_base</room>
+    <room>rooms\rm_tutorial</room>
     <room>rooms\rm_hub</room>
     <room>rooms\rm_dungeon_test</room>
     <room>rooms\rm_sandbox</room>
