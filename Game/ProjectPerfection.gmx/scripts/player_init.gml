@@ -17,3 +17,12 @@ textbox_queue = ds_queue_create();
 
 // 
 dungeon1_sfx_timer = -1;
+
+// sounds
+volume_mod = 1.2;
+ds_list_add(hurt_sounds, snd_hurt1);
+ds_list_add(hurt_sounds, snd_hurt2);
+ds_list_add(hurt_sounds, snd_hurt3);
+ds_list_add(hurt_sounds, snd_hurt4);
+
+

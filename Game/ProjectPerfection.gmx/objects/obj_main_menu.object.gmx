@@ -32,6 +32,8 @@ enum menu_type
     options
 }
 
+audio_stop_all();
+
 draw_set_color(c_white);
 
 menu_stack = ds_stack_create();
