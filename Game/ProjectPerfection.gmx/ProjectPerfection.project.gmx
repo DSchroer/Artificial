@@ -29,6 +29,18 @@
     <sound>sound\snd_music</sound>
     <sound>sound\snd_gunshot</sound>
     <sound>sound\snd_button</sound>
+    <sound>sound\snd_misfire</sound>
+    <sound>sound\snd_reload3</sound>
+    <sound>sound\snd_reload2</sound>
+    <sound>sound\snd_reload1</sound>
+    <sound>sound\snd_reload4</sound>
+    <sound>sound\snd_reload5</sound>
+    <sound>sound\snd_reload6</sound>
+    <sound>sound\snd_reload7</sound>
+    <sound>sound\snd_fire_laser</sound>
+    <sound>sound\snd_wind1</sound>
+    <sound>sound\snd_error_beep</sound>
+    <sound>sound\snd_footsteps_concrete</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="Player">
@@ -116,6 +128,7 @@
       <script>scripts\inventory_remove_healthpacks.gml</script>
       <script>scripts\inventory_get_healthpack_count.gml</script>
       <script>scripts\inventory_pickup_weapon.gml</script>
+      <script>scripts\inventory_get_subtype_name.gml</script>
     </scripts>
     <scripts name="Level">
       <script>scripts\level_create.gml</script>
@@ -131,6 +144,7 @@
       <script>scripts\level_update_fog.gml</script>
       <script>scripts\level_draw_fog.gml</script>
       <script>scripts\level_get_spawn_point.gml</script>
+      <script>scripts\level_generate_environment_sfx.gml</script>
     </scripts>
     <scripts name="Entity">
       <script>scripts\entity_init.gml</script>
@@ -267,6 +281,9 @@
       <script>scripts\sfx_bkg_update.gml</script>
       <script>scripts\sfx_set_volume.gml</script>
       <script>scripts\sfx_bkg_set_volume.gml</script>
+      <script>scripts\sfx_play_volume.gml</script>
+      <script>scripts\sfx_generate_hub_environment.gml</script>
+      <script>scripts\sfx_stop.gml</script>
     </scripts>
     <scripts name="State">
       <script>scripts\sm_init.gml</script>
@@ -414,6 +431,7 @@
       <object>objects\obj_fade_out</object>
       <object>objects\obj_fade_in</object>
     </objects>
+    <object>objects\obj_hub_sound</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>

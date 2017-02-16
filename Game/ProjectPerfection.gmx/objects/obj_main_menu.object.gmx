@@ -261,7 +261,7 @@ sfx_bkg_set_volume(slider_music.percent);
 save_set_value(obj_game_save, "music_volume", slider_music.percent);
 
 save_flush(obj_game_save);
-// Do stuff
+
 </string>
           </argument>
         </arguments>

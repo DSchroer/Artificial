@@ -49,6 +49,7 @@
           <argument>
             <kind>1</kind>
             <string>level_update_fog();
+level_generate_environment_sfx();
 </string>
           </argument>
         </arguments>

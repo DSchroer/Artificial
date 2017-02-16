@@ -68,12 +68,12 @@ if(mouse_check_button_pressed(mb_left))
     if(point_in_rectangle(mx, my, x, y, x + 64, y + 64))
     {
         percent = max(0, percent - 0.05);
-        sfx_play(snd_button);
+        sfx_play(snd_button, false);
     }
     if(point_in_rectangle(mx, my, x + 64 + 256, y, x + 256 + 64 + 64, y + 64))
     {
         percent = min(1, percent + 0.05);
-        sfx_play(snd_button);
+        sfx_play(snd_button, false);
     }
     
     var index = user_event_index;

@@ -76,8 +76,64 @@ if(keyboard_check_pressed(vk_f4))
     ui_queue_message("Test1");
     ui_queue_message("Test2");
     ui_queue_message("Test3");
-    
 }
+
+if(keyboard_check_pressed(vk_numpad1))
+{
+    var weapon = inventory_create_weapon();
+    weapon[weapon_index.weapon_subtype] = weapon_subtype.pistol;
+    inventory[selected_slot] = weapon;
+}
+if(keyboard_check_pressed(vk_numpad2))
+{
+    var weapon = inventory_create_weapon();
+    weapon[weapon_index.weapon_subtype] = weapon_subtype.auto_rifle;
+    inventory[selected_slot] = weapon;
+}
+if(keyboard_check_pressed(vk_numpad3))
+{
+    var weapon = inventory_create_weapon();
+    weapon[weapon_index.weapon_subtype] = weapon_subtype.heavy_rifle;
+    inventory[selected_slot] = weapon;
+}
+if(keyboard_check_pressed(vk_numpad4))
+{
+    var weapon = inventory_create_weapon();
+    weapon[weapon_index.weapon_subtype] = weapon_subtype.sniper_rifle;
+    inventory[selected_slot] = weapon;
+}
+if(keyboard_check_pressed(vk_numpad5))
+{
+    var weapon = inventory_create_weapon();
+    weapon[weapon_index.weapon_subtype] = weapon_subtype.smg;
+    inventory[selected_slot] = weapon;
+}
+if(keyboard_check_pressed(vk_numpad6))
+{
+    var weapon = inventory_create_weapon();
+    weapon[weapon_index.weapon_subtype] = weapon_subtype.extended_magazine;
+    inventory[selected_slot] = weapon;
+}
+if(keyboard_check_pressed(vk_numpad7))
+{
+    var weapon = inventory_create_weapon();
+    weapon[weapon_index.weapon_subtype] = weapon_subtype.superfast_reload;
+    inventory[selected_slot] = weapon;
+}
+if(keyboard_check_pressed(vk_numpad8))
+{
+    var weapon = inventory[selected_slot];
+    weapon[weapon_index.modifier] = weapon_modifier.rail;
+    inventory[selected_slot] = weapon;
+}
+if(keyboard_check_pressed(vk_numpad9))
+{
+    var weapon = inventory[selected_slot];
+    weapon[weapon_index.modifier] = weapon_modifier.plasma;
+    inventory[selected_slot] = weapon;
+}
+
+
 
 // Left analogue stick:
 var haxis_ls = gamepad_axis_value(0, gp_axislh);
