@@ -68,7 +68,7 @@ if(entity &amp;&amp; entity != parent)
 {
     with(entity)
     {
-        entity_apply_damage(damager(other.damage));
+        entity_apply_damage(other.damage);
     }
     instance_destroy();
 }

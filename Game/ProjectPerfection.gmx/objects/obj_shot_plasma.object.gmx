@@ -72,7 +72,7 @@ var entity = instance_place(x, y, obj_entity);
     {
         with(entity)
         {
-            entity_apply_damage(damager(other.damage));
+            entity_apply_damage(other.damage);
         }
         cooldown = 30;
     }
