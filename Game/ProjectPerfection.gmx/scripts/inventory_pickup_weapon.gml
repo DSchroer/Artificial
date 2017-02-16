@@ -6,6 +6,7 @@ if(is_array(item))
     {
         if(inventory[i] == -1)
         {
+            selected_slot = i;
             return inventory_swap(self, i, item);
         }
     }

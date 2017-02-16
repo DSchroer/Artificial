@@ -38,6 +38,11 @@ var doors = 1;
 while(ds_list_size(list) > 0)
 {
     var n = random(len);
+    while(round(n) == previous_room)
+    {
+        n = random(len);
+    }
+    previous_room = round(n);
     var chosen_flags = ds_list_find_value(option_flags, n);
     
     var dir = ds_list_find_value(list, 0);

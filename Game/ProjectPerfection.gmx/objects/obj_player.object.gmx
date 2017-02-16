@@ -159,6 +159,12 @@ if(keyboard_check_pressed(vk_escape))
 x = 1600;
 y = 320;
 
+if(room == rm_tutorial)
+{
+    room_goto(rm_tutorial);
+    exit;
+}
+
 with(obj_level)
 {
     instance_destroy();
