@@ -114,6 +114,7 @@ var my = device_mouse_y_to_gui(0);
 var scale = 1.5;
 var text_width = string_width(text) * scale;
 var text_height = string_height(text) * scale;
+draw_set_colour(c_white);
 draw_text_transformed(x + (width - text_width) / 2, y + (height - text_height) / 2, text, scale, scale, 0);
 
 </string>
