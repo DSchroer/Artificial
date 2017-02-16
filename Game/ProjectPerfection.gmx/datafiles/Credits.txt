@@ -16,5 +16,30 @@ https://github.com/dicksonlaw583/jsonion-classic
 !Music
 <Insert Here>
 
-!Audio
-<Insert Here>
+!Sound Effects
+Fleshstab - BlastwaveFX
+Button - Mike Koenig
+Gun Reload - j1987
+Laser Shot Silenced - bubaproducer
+Rocks4 - tran5ient
+Gun Small Reload - duckduckpony
+Pistol Reload - gfl7
+Metal Flick Reload - Sethroph
+Rocks - adamgryu
+Mag Reload - samsterbirdies
+Machine Gun Reload - samsterbirdies
+Rock on Rock Scrape - Alegemaate
+Dry Fire Gun - Mike Koenig
+Eject Clip and Reload - Mike Koenig
+Energy - fins
+Breaking Small Bone Finger - borralbi
+Medium Wind - kangaroovindaloo
+Access Denied - suntemple
+Inventory Open 01 - littlerobotsoundfactory
+Electric Hum 01 - Joedeshon
+Footsteps Conrete A - inspectorj
+Door Lock Open - Magedu
+Bone Breaking - Mike Koenig
+Leg Breaking - Mike Koenig
+
+
