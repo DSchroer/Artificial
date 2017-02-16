@@ -32,7 +32,7 @@ enum menu_type
     options
 }
 
-audio_stop_all();
+sfx_clear();
 
 draw_set_color(c_white);
 

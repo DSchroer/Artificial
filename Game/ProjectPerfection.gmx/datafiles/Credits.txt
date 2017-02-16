@@ -14,32 +14,33 @@ Spencer Gould
 https://github.com/dicksonlaw583/jsonion-classic
 
 !Music
-<Insert Here>
+Dominus - DL Sounds
+Dark Atmosphere - DL Sounds
 
 !Sound Effects
 Fleshstab - BlastwaveFX
 Button - Mike Koenig
-Gun Reload - j1987
-Laser Shot Silenced - bubaproducer
-Rocks4 - tran5ient
-Gun Small Reload - duckduckpony
-Pistol Reload - gfl7
+Gun Reload - J1987
+Laser Shot Silenced - Bubaproducer
+Rocks4 - Tran5ient
+Gun Small Reload - Duckduckpony
+Pistol Reload - Gfl7
 Metal Flick Reload - Sethroph
-Rocks - adamgryu
-Mag Reload - samsterbirdies
-Machine Gun Reload - samsterbirdies
+Rocks - Adamgryu
+Mag Reload - Samsterbirdies
+Machine Gun Reload - Samsterbirdies
 Rock on Rock Scrape - Alegemaate
 Dry Fire Gun - Mike Koenig
 Eject Clip and Reload - Mike Koenig
-Energy - fins
-Breaking Small Bone Finger - borralbi
-Medium Wind - kangaroovindaloo
-Access Denied - suntemple
-Inventory Open 01 - littlerobotsoundfactory
+Energy - Fins
+Breaking Small Bone Finger - Borralbi
+Medium Wind - Kangaroovindaloo
+Access Denied - Suntemple
+Inventory Open 01 - Littlerobotsoundfactory
 Electric Hum 01 - Joedeshon
-Footsteps Conrete A - inspectorj
+Footsteps Conrete A - Inspectorj
 Door Lock Open - Magedu
 Bone Breaking - Mike Koenig
 Leg Breaking - Mike Koenig
-
+Shaking Vitamin Bottle - Nettimato
 
