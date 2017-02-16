@@ -49,7 +49,7 @@ with(obj_level)
     instance_destroy();
 }
 
-if(prog == 0)
+if(prog == 3)
 {
     room_goto(rm_boss_1)
 }

@@ -150,6 +150,8 @@
       <script>scripts\inventory_pickup_weapon.gml</script>
       <script>scripts\inventory_get_subtype_name.gml</script>
       <script>scripts\inventory_spawn_gun.gml</script>
+      <script>scripts\inventory_scale_stat.gml</script>
+      <script>scripts\inventory_core_table.gml</script>
     </scripts>
     <scripts name="Level">
       <script>scripts\level_create.gml</script>
