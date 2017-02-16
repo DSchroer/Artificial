@@ -3,6 +3,7 @@ width = argument0;
 height = argument1;
 room_number = 0;
 level = -1;
+previous_room = -1;
 
 constructing = false;
 itteration = 0;
