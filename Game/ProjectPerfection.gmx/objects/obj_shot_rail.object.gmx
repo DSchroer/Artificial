@@ -96,7 +96,7 @@ damage = 0;
         hit_instance = instance_nearest(x_end, y_end, obj_entity);
         with(hit_instance)
         {
-            entity_apply_damage(other.damage);
+            entity_apply_damage(damager(other.damage));
         }
     }
     else if(wall_dist != -1)
