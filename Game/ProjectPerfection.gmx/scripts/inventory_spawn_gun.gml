@@ -2,27 +2,7 @@
 var pow = argument0;
 var gun = inventory_create_weapon();
 
-var q;
-var roll = random(1000);
-if(roll < 1)
-{
-    q = item_quality.legendary;
-}else if(roll < 4)
-{
-    q = item_quality.epic;
-}else if(roll < 25)
-{
-    q = item_quality.rare;
-}else if(roll < 115)
-{
-    q = item_quality.uncommon;
-}else{
-    q = item_quality.common;
-}
-
 gun[weapon_index.modifier] = round(random(3));
-gun[weapon_index.name] = "Gun";
-gun[weapon_index.quality] = q;
 
 var shot_sprites;
 shot_sprites[weapon_modifier.normal] = spr_bullet;
@@ -34,41 +14,37 @@ gun[weapon_index.bullet_sprite] = shot_sprites[gun[weapon_index.modifier]];
 var subType = round(random(3));
 gun[weapon_index.weapon_subtype] = subType;
 
-var core = inventory_core_table();
-
-var bases;
-bases[item_quality.common] = 5;
-bases[item_quality.uncommon] = 61;
-bases[item_quality.rare] = 76;
-bases[item_quality.epic] = 86;
-bases[item_quality.legendary] = 96;
-
-var ranges;
-ranges[item_quality.common] = 55;
-ranges[item_quality.uncommon] = 14;
-ranges[item_quality.rare] = 9;
-ranges[item_quality.epic] = 9;
-ranges[item_quality.legendary] = 4;
-
 //Damage Per Shot
-var damages = 8 * (1 + (pow / 20));
-damages = inventory_scale_stat(damages, bases[q] / 100, ranges[q] / 100, core[subType, 0]);
-gun[weapon_index.damage] = round(damages);
+var damages;
+damages[0] = 5 * (1 + (pow / 20));
+damages[1] = 6 * (1 + (pow / 20));
+damages[2] = 13 * (1 + (pow / 20));
+damages[3] = 45 * (1 + (pow / 20));
+gun[weapon_index.damage] = round(damages[subType]);
 
 //Fire rate (per second)
-var rates = 5;
-rates = inventory_scale_stat(rates, bases[q] / 100, ranges[q] / 100, core[subType, 1]);
-gun[weapon_index.fire_timeout] = 30 / rates;
+var rates;
+rates[0] = 5;
+rates[1] = 4;
+rates[2] = 2;
+rates[3] = 0.75;
+gun[weapon_index.fire_timeout] = 60 / rates[subType];
 
 //Magazine Size
-var mag = 20;
-mag = inventory_scale_stat(mag, bases[q] / 100, ranges[q] / 100, core[subType, 2]);
-gun[weapon_index.capacity] = round(mag);
+var mag;
+mag[0] = 20;
+mag[1] = 35;
+mag[2] = 16;
+mag[3] = 10;
+gun[weapon_index.capacity] = mag[subType];
 gun[weapon_index.remaining] = gun[weapon_index.capacity];
 
 //Reload Time (Seconds)
-var reload = 2.0;
-reload = inventory_scale_stat(reload, bases[q] / 100, ranges[q] / 100, core[subType, 3]);
-gun[weapon_index.reload_timeout] = reload * 30;
+var reload;
+reload[0] = 3;
+reload[1] = 4;
+reload[2] = 5;
+reload[3] = 7;
+gun[weapon_index.reload_timeout] = reload[subType] * 60;
 
 return gun;

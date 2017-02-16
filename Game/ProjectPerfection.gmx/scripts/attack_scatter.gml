@@ -15,7 +15,7 @@ for(var i = 0; i < amt; i++)
     shot.direction = enemy_dumb(dir, 30);
     shot.speed = 20;
     shot.parent = self;
-    shot.damage = round(weapon[weapon_index.damage] / amt);
+    shot.damage = weapon[weapon_index.damage] / amt;
 }
 
 
