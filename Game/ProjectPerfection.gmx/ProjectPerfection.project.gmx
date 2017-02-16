@@ -96,6 +96,7 @@
     <sprites name="Moments">
       <sprite>sprites\spr_pickle_boss</sprite>
     </sprites>
+    <sprite>sprites\spr_aim</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -114,6 +115,7 @@
       <script>scripts\inventory_pickup_healthpacks.gml</script>
       <script>scripts\inventory_remove_healthpacks.gml</script>
       <script>scripts\inventory_get_healthpack_count.gml</script>
+      <script>scripts\inventory_pickup_weapon.gml</script>
     </scripts>
     <scripts name="Level">
       <script>scripts\level_create.gml</script>
@@ -368,12 +370,12 @@
       <object>objects\obj_hub_jump</object>
       <object>objects\obj_progress</object>
       <object>objects\obj_boss_battle</object>
+      <object>objects\obj_final_boss</object>
     </objects>
     <objects name="Effects">
       <object>objects\obj_damage_indicator</object>
     </objects>
     <object>objects\obj_clear_entities</object>
-    <object>objects\obj_post_process</object>
     <object>objects\obj_fonts</object>
     <object>objects\obj_pause</object>
     <objects name="Traps">
@@ -407,6 +409,11 @@
       <object>objects\obj_game_save</object>
     </objects>
     <object>objects\obj_health_can</object>
+    <objects name="Transitions">
+      <object>objects\obj_post_process</object>
+      <object>objects\obj_fade_out</object>
+      <object>objects\obj_fade_in</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>

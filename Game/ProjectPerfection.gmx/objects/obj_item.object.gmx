@@ -81,7 +81,7 @@ if(point != noone)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(data != -1 &amp;&amp; data[0] == item_ids.gun)
+            <string>if(is_array(data))
 {
     draw_weapon(data, x, y, 1, 1, 0, 1);
 }else{

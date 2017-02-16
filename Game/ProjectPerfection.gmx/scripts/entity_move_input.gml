@@ -39,15 +39,14 @@ shield_active = keymap_check(keycode.shield);
 
 if(keymap_check(keycode.inventory_up))
 {
-    selected_slot += 1;
-    selected_slot = selected_slot % inventory_slot.shield;
-}
-
-if(keymap_check(keycode.inventory_down))
-{
-    selected_slot -= 1;
-    if(selected_slot < 0)
-        selected_slot += inventory_slot.shield; 
+    for(var i = 0; i < 4; i++)
+    {
+        selected_slot = (selected_slot + 1) % 4;
+        if(inventory[selected_slot] != -1)
+        {
+            break;
+        }
+    }
 }
 
 if(keymap_check(keycode.hide_inventory))
@@ -78,29 +77,6 @@ if(keyboard_check_pressed(vk_f4))
     ui_queue_message("Test2");
     ui_queue_message("Test3");
     
-}
-
-// Triggers/Shoulder buttons:
-// Left button
-if(gamepad_button_check_pressed(0, gp_shoulderl))
-{
-    var item = inventory_create_shield();
-    item[shield_index.recharge_delay] = 5;
-    item[shield_index.recharge_rate] = 40;
-    item[shield_index.max_health] = 100;    
-    item[shield_index.name] = "LT";    
-    inventory_swap(self, inventory_slot.shield, item);
-}
-
-// Right Button
-if(gamepad_button_check_pressed(0, gp_shoulderr))
-{
-    player_levelup();
-}
-
-// Right Trigger
-if(gamepad_button_check(0, gp_shoulderrb))
-{
 }
 
 // Left analogue stick:

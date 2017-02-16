@@ -67,17 +67,14 @@ if(key == keycode.inv4)
 
 if(key == keycode.shield)
 {
-    return keyboard_check(vk_space) || gamepad_button_check(0, gp_shoulderlb);
+    return keyboard_check(vk_space) || 
+    gamepad_button_check(0, gp_shoulderlb) ||
+    mouse_check_button(mb_right);
 }
 
 if(key == keycode.inventory_up)
 {
     return keyboard_check_pressed(ord("q")) | keyboard_check_pressed(ord("Q")) || gamepad_button_check_pressed(0, gp_padu);
-}
-
-if(key == keycode.inventory_down)
-{
-    return keyboard_check_pressed(ord("e")) || keyboard_check_pressed(ord("E")) || gamepad_button_check_pressed(0, gp_padd);
 }
 
 if(key == keycode.fire)
@@ -92,7 +89,7 @@ if(key == keycode.hide_inventory)
 
 if(key == keycode.interact)
 {
-    return keyboard_check_pressed(ord("F"));
+    return keyboard_check_pressed(ord("E"));
 }
 
 if(key == keycode.dequeue_message)
