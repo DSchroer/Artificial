@@ -150,6 +150,14 @@ if(random(2) &lt; 1)
     generator_use_room(p);
 }
 
+if(random(3) &lt; 1 &amp;&amp; book_any())
+{
+    var p = generator_random_room();
+    generator_spawn_at(p, custom_room, obj_book);
+    generator_spawn_at(p, custom_room, obj_clear_entities);
+    generator_use_room(p);
+}
+
 room_set_height(custom_room, height * 64);
 room_set_width(custom_room, width * 64);
 room_set_persistent(custom_room, false);

@@ -273,6 +273,8 @@
       <script>scripts\ui_draw_textbox.gml</script>
       <script>scripts\ui_queue_message.gml</script>
       <script>scripts\ui_draw_textbox_pos.gml</script>
+      <script>scripts\ui_world_to_gui_x.gml</script>
+      <script>scripts\ui_world_to_gui_y.gml</script>
     </scripts>
     <scripts name="Debug">
       <script>scripts\debug_init.gml</script>
@@ -369,6 +371,11 @@
       <script>scripts\is_shield.gml</script>
       <script>scripts\is_gun.gml</script>
     </scripts>
+    <scripts name="Book">
+      <script>scripts\book_get_next.gml</script>
+      <script>scripts\book_text.gml</script>
+      <script>scripts\book_any.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
@@ -419,6 +426,7 @@
       <object>objects\obj_interact</object>
       <object>objects\obj_interact_solid</object>
       <object>objects\obj_prompt</object>
+      <object>objects\obj_book</object>
     </objects>
     <objects name="Control">
       <object>objects\obj_hub_jump</object>
