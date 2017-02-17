@@ -83,6 +83,12 @@ if(point != noone)
             <string>if(is_array(data))
 {
     draw_weapon(data, x, y, 1, 1, 0, 1);
+    
+    if(collision_point(mouse_x, mouse_y, self, false, false))
+    {
+        ui_draw_weapon_tooltip(mouse_x, mouse_y, data);
+    }
+    
 }else{
     draw_self();
 }

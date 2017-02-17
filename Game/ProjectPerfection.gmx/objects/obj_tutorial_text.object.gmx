@@ -48,7 +48,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ui_draw_textbox_pos(x, y, text);
+            <string>ui_draw_textbox_ext(x, y, text, 1, 350, 150);
 </string>
           </argument>
         </arguments>
