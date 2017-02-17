@@ -28,8 +28,6 @@
             <string>event_inherited();
 player_init();
 
-inventory_swap(self, inventory_slot.shield, inventory_create_shield());
-
 sfx_bkg_init();
 
 gun_angle = 0;
@@ -76,7 +74,7 @@ if(inventory[selected_slot] != -1 &amp;&amp; is_array(inventory[selected_slot]))
     inventory[selected_slot] = player_update_gun(inventory[selected_slot]);
 }
 
-gun_angle = point_direction(x, y, mouse_x, mouse_y);
+gun_angle = point_direction(x, y - 64, mouse_x, mouse_y);
 
 player_update_shield();
 
@@ -99,7 +97,15 @@ if(keymap_check(keycode.interact))
         {
             data = obj.data;
         }
-        var out = inventory_pickup_weapon(data);
+        var out = noone;
+        if(is_gun(data))
+        {
+            out = inventory_pickup_weapon(data);
+        }else if(is_shield(data))
+        {
+            out = inventory_swap(self, inventory_slot.shield, data);
+        }
+        
         with(obj)
         {
             instance_destroy();
@@ -164,6 +170,11 @@ if(room == rm_tutorial)
     room_goto(rm_tutorial);
     exit;
 }
+
+inventory_swap(self, inventory_slot.weapon1, -1);
+inventory_swap(self, inventory_slot.weapon2, -1);
+inventory_swap(self, inventory_slot.weapon3, -1);
+inventory_swap(self, inventory_slot.weapon4, -1);
 
 with(obj_level)
 {

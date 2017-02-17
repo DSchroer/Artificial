@@ -3,7 +3,7 @@
 enum item_ids
 {
     gun,
-    sheild
+    shield
 };
 
 enum item_quality
@@ -34,9 +34,9 @@ enum weapon_modifier
 
 enum weapon_index
 {
+    item_id,
     name,
     quality,
-    item_id,
     modifier,
     weapon_subtype,
     damage,

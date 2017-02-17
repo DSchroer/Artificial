@@ -111,7 +111,8 @@ entity_collision();
             <kind>1</kind>
             <string>if(random(3) &lt; 1)
 {
-    instance_create(x, y, obj_item);
+    var gun = instance_create(x, y, obj_item);
+    gun.data = inventory_spawn_gun(obj_progress.progress + 1);
 }
 event_inherited();
 </string>

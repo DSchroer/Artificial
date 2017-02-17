@@ -12,7 +12,12 @@ if(file_exists(file_name))
     }
     file_text_close(file);
     
-    save_data = jso_decode_map(data);
+    if(string_pos("{", data) != 0 && string_pos("}", data) != 0)
+    {
+        save_data = jso_decode_map(data);
+    }else{
+        save_data = jso_new_map();
+    }    
 }else{
     save_data = jso_new_map();
 }
