@@ -238,8 +238,6 @@
     <instance objName="obj_wall" x="1728" y="1920" name="inst_874EF459" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_target" x="1312" y="1120" name="inst_C2D633B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_target" x="1696" y="1120" name="inst_90FCE1AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_target" x="1696" y="1760" name="inst_A54AACAB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_target" x="1280" y="1760" name="inst_AC34C265" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_target" x="1184" y="1376" name="inst_2277FADB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_target" x="1184" y="1440" name="inst_EB82AC6B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_target" x="1184" y="1504" name="inst_4965F9BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -262,9 +260,9 @@
     <instance objName="obj_tutorial_trap" x="512" y="960" name="inst_109CF0C6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tutorial_trap" x="576" y="960" name="inst_124DE8CD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tutorial_trap" x="640" y="960" name="inst_241A8D3A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_tutorial_text" x="672" y="2016" name="inst_BF322263" locked="0" code="text = &quot;Welcome! `br You must be getting used to your new body. &quot;+&#xA;&quot;Let me help you out. `br Use W S A D to move.&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_tutorial_text" x="1888" y="1312" name="inst_954BA9E7" locked="0" code="text = &quot;There is a gun for you over there. `br Dont ask why you need a gun! You will find out. `br Use E to pick up items.&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_tutorial_text" x="192" y="1536" name="inst_2A7C3898" locked="0" code="text = &quot;Space to use shield.&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tutorial_text" x="672" y="2016" name="inst_BF322263" locked="0" code="text = &quot;Welcome! `br You must be getting used to your new body. &quot;+&#xA;&quot;Let me help you out. `br Use |red W S A D |white to move.&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tutorial_text" x="1824" y="1312" name="inst_954BA9E7" locked="0" code="text = &quot;There is a gun for you over there. `br Dont ask why you need a gun! You will find out. `br Use |red E |white to pick up items.&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tutorial_text" x="192" y="1536" name="inst_2A7C3898" locked="0" code="text = &quot;Here is a shield. You can use it if you want. &quot;+&#xA;    &quot;It will protect you from danger. `br Pick it up with |red E |white . `br Use it to protect yourself with |red Space or Right Click |white .&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tutorial_door" x="448" y="64" name="inst_76007B8B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tutorial_door" x="512" y="64" name="inst_6D670D4D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="192" y="64" name="inst_D6C4AF87" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -277,6 +275,7 @@
     <instance objName="obj_wall" x="768" y="64" name="inst_C8C3835D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="1152" y="1280" name="inst_89569866" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="1152" y="1536" name="inst_9FB1C250" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_item" x="512" y="1440" name="inst_3BE4BB5F" locked="0" code="data = inventory_create_shield();&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bkg_hub" x="1152" y="1984" w="64" h="64" xo="384" yo="576" id="10003167" name="inst_D353766C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
