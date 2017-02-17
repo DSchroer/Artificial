@@ -73,7 +73,7 @@ if(keyboard_check_pressed(vk_f4))
 {
     ui_queue_message("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id porttito. `a `s `b `s `x `y `br `l `s `r `s `u `s `d Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id porttito" + 
     " `a `b `x `y `br `l `r `u `d ");
-    ui_queue_message("Test1");
+    ui_queue_message("Test1 |red Test1 |crimson Test1 |yellow Test1 |orange Test1 |teal Test1 |white Test1 |black Test1 |fuchsia Test1");
     ui_queue_message("Test2");
     ui_queue_message("Test3");
 }
