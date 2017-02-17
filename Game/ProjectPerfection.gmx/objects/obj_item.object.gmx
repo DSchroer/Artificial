@@ -63,6 +63,53 @@ if(point != noone)
         </arguments>
       </action>
     </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(collision_point(mouse_x, mouse_y, self, false, false))
+{
+    var uix = ((mouse_x - view_xview[0])/view_wview) * display_get_gui_width();
+    var uiy = ((mouse_y - view_yview[0])/view_hview) * display_get_gui_height();
+    
+    if(is_gun(data))
+    {
+        ui_draw_weapon_tooltip(uix + 16, uiy + 16, data);
+    }else if(is_shield(data))
+    {
+        ui_draw_shield_tooltip(uix + 16, uiy + 16, data);
+    }
+}else if(place_meeting(x, y, obj_player))
+{
+    var uix = ((obj_player.x - view_xview[0])/view_wview) * display_get_gui_width();
+    var uiy = ((obj_player.y - view_yview[0])/view_hview) * display_get_gui_height();
+    
+    if(is_gun(data))
+    {
+        ui_draw_weapon_tooltip(uix + 16, uiy + 16, data);
+    }else if(is_shield(data))
+    {
+        ui_draw_shield_tooltip(uix + 16, uiy + 16, data);
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -83,20 +130,9 @@ if(point != noone)
             <string>if(is_gun(data))
 {
     draw_weapon(data, x, y, 1, 1, 0, 1);
-    
-    if(collision_point(mouse_x, mouse_y, self, false, false))
-    {
-        ui_draw_weapon_tooltip(mouse_x, mouse_y, data);
-    }
-    
 }else if(is_shield(data))
 {
     draw_shield(data, x, y, 1, 1, 0, 1);
-    
-    if(collision_point(mouse_x, mouse_y, self, false, false))
-    {
-        ui_draw_shield_tooltip(mouse_x, mouse_y, data);
-    }
 }else{
     draw_self();
 }
