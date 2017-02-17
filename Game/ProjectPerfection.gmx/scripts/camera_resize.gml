@@ -17,4 +17,3 @@ view_hview[0] = height;
 
 //surface_resize()
 surface_resize(application_surface ,w, h);
-display_reset(0, false);
