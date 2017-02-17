@@ -1,5 +1,5 @@
 ///eg_idle()
-if(sm_ticks() == 0)
+if(!sm_has_var(0))
 {
     sm_set_var(0, 0);
 }
