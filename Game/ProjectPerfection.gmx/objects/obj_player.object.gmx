@@ -74,7 +74,7 @@ if(inventory[selected_slot] != -1 &amp;&amp; is_array(inventory[selected_slot]))
     inventory[selected_slot] = player_update_gun(inventory[selected_slot]);
 }
 
-gun_angle = point_direction(x, y, mouse_x, mouse_y);
+gun_angle = point_direction(x, y - 64, mouse_x, mouse_y);
 
 player_update_shield();
 

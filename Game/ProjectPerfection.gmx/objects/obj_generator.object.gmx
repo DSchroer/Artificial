@@ -133,12 +133,14 @@ persistent = true;
 custom_room = room_add();
 room_set_background_colour(custom_room, c_black, true);
 generator_spawn_at(0, custom_room, obj_clear_entities);
-generator_spawn_at(0, custom_room, obj_health_can);
 generator_spawn_at(0, custom_room, obj_fade_in);
 
 var end_key = generator_spawn_exit(custom_room);
 generator_spawn_at(end_key, custom_room, obj_clear_entities);
 generator_use_room(end_key);
+
+var p = generator_random_room();
+generator_spawn_at(p, custom_room, obj_health_can);
 
 if(random(2) &lt; 1)
 {
@@ -146,12 +148,6 @@ if(random(2) &lt; 1)
     generator_spawn_at(p, custom_room, obj_item);
     generator_spawn_at(p, custom_room, obj_clear_entities);
     generator_use_room(p);
-}
-
-if(random(2) &lt; 1)
-{
-    var p = generator_random_room();
-    generator_spawn_at(p, custom_room, obj_health_can);
 }
 
 room_set_height(custom_room, height * 64);
