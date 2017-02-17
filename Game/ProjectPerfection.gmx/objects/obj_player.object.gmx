@@ -133,7 +133,7 @@ if(keymap_check(keycode.fire))
 
 if(keyboard_check_pressed(vk_escape))
 {
-    if(!is_paused())
+    if(!is_paused() &amp;&amp; room != rm_transition)
     {
         instance_create(0,0,obj_pause);
     }

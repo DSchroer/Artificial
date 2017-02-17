@@ -55,7 +55,7 @@ if(prog &gt;= 3)
 }
 else
 {
-    room_goto(rm_dungeon_test);
+    room_goto(rm_transition);
 }
 
 </string>
