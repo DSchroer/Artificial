@@ -15,4 +15,6 @@ view_hport[0] = h;
 view_wview[0] = width;
 view_hview[0] = height;
 
-surface_resize(application_surface, w, h);
+//surface_resize()
+surface_resize(application_surface ,w, h);
+display_reset(0, false);
