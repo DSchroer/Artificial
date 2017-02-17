@@ -29,9 +29,13 @@ ui_draw_weapon_slot(bx, by + 254, 1, inventory[selected_slot], 65, 25);
 if(is_array(inventory[selected_slot]))
 {
     var gun = inventory[selected_slot];
-    draw_text(bx + 150, by + 290, string(gun[weapon_index.remaining]));
+    if(gun[weapon_index.reload_cooldown] < 1)
+    {
+        draw_text_color(bx + 150, by + 290, string(gun[weapon_index.remaining]), c_white, c_white, c_white, c_white, 1);
+    }else{
+        draw_text_color(bx + 150, by + 290, "R", c_red, c_red, c_red, c_red, 1);
+    }
 }
-
 
 if(!hide_inventory)
 {
