@@ -2,6 +2,8 @@
 var width = argument0;
 var height = argument1;
 
+sfx_bkg_add(bkg_desert1);
+
 var instance = instance_create(0,0, obj_level);
 with(instance)
 {

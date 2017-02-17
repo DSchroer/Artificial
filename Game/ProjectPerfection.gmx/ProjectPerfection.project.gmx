@@ -54,6 +54,9 @@
     <sound>sound\snd_enemy_rock_death1</sound>
     <sound>sound\snd_hurt4</sound>
     <sound>sound\snd_laser2</sound>
+    <sound>sound\snd_healing_pills</sound>
+    <sound>sound\bkg_hub1</sound>
+    <sound>sound\bkg_desert1</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="Player">
@@ -307,6 +310,8 @@
       <script>scripts\sfx_play_volume.gml</script>
       <script>scripts\sfx_generate_hub_environment.gml</script>
       <script>scripts\sfx_stop.gml</script>
+      <script>scripts\sfx_bkg_size.gml</script>
+      <script>scripts\sfx_clear.gml</script>
     </scripts>
     <scripts name="State">
       <script>scripts\sm_init.gml</script>

@@ -1,3 +1,11 @@
 ///sfx_bkg_clear()
-audio_stop_sound(ds_list_find_value(sfx_list, sfx_position));
-ds_list_clear(sfx_list);
+with(obj_player)
+{
+    if(current_sound_id != -1)
+    {
+        audio_stop_sound(current_sound_id);
+    }
+    ds_queue_clear(bkg_queue);
+    current_sound_id = -1;
+}
+

@@ -1,3 +1,8 @@
 ///sfx_bkg_init()
-sfx_list = ds_list_create();
-sfx_position = 0;
+with(obj_player)
+{
+    bkg_queue = ds_queue_create();
+    current_sound_id = -1;
+}
+
+

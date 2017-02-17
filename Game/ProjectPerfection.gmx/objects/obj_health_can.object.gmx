@@ -32,6 +32,7 @@ with(obj_player)
     {
         current_health = max_health;
         used = true;
+        sfx_play(snd_healing_pills, false);
     }
 }
 if(used)
