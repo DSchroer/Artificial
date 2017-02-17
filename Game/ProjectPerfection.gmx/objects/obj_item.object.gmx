@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>data = inventory_spawn_gun(10);
+            <string>data = inventory_spawn_gun(1);
 </string>
           </argument>
         </arguments>
