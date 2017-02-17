@@ -275,6 +275,7 @@
     <instance objName="obj_wall" x="768" y="64" name="inst_C8C3835D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="1152" y="1280" name="inst_89569866" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="1152" y="1536" name="inst_9FB1C250" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_item" x="512" y="1440" name="inst_3BE4BB5F" locked="0" code="data = inventory_create_shield();&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bkg_hub" x="1152" y="1984" w="64" h="64" xo="384" yo="576" id="10003167" name="inst_D353766C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

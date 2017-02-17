@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>event_inherited();
 
+timeout = 5;
 one_shot = false;
 damage = 30;
 wall = noone;
@@ -53,10 +54,12 @@ wall = noone;
           <argument>
             <kind>1</kind>
             <string>event_inherited();
+
 with(wall)
 {
     instance_destroy();
 }
+
 </string>
           </argument>
         </arguments>
@@ -79,9 +82,12 @@ with(wall)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
+            <string>
+damage = min(30, obj_player.current_health - 5);
 
-if(place_meeting(x, y, obj_player) &amp;&amp; !obj_player.shield_active)
+event_inherited();
+
+if(place_meeting(x, y, obj_player) &amp;&amp; (obj_player.inventory[inventory_slot.shield] == -1 || !obj_player.shield_active))
 {
     wall = instance_create(x - 32, y - 32, obj_invisible_wall);
     obj_player.y = min(obj_player.y + 64, y + 90);

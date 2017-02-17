@@ -2,6 +2,7 @@
 
 var shield;
 
+shield[shield_index.item_id] = item_ids.shield;
 shield[shield_index.quality] = item_quality.legendary;
 shield[shield_index.max_health] = 150;
 shield[shield_index.recharge_delay] = 1.5;

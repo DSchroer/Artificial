@@ -297,6 +297,7 @@
     </scripts>
     <scripts name="Draw">
       <script>scripts\draw_weapon.gml</script>
+      <script>scripts\draw_shield.gml</script>
     </scripts>
     <script>scripts\color_random.gml</script>
     <scripts name="Sound">
@@ -364,6 +365,10 @@
       <script>scripts\menu_destroy_pause.gml</script>
     </scripts>
     <script>scripts\damager.gml</script>
+    <scripts name="Is">
+      <script>scripts\is_shield.gml</script>
+      <script>scripts\is_gun.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>

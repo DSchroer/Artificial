@@ -80,7 +80,7 @@ if(point != noone)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(is_array(data))
+            <string>if(is_gun(data))
 {
     draw_weapon(data, x, y, 1, 1, 0, 1);
     
@@ -89,6 +89,14 @@ if(point != noone)
         ui_draw_weapon_tooltip(mouse_x, mouse_y, data);
     }
     
+}else if(is_shield(data))
+{
+    draw_shield(data, x, y, 1, 1, 0, 1);
+    
+    if(collision_point(mouse_x, mouse_y, self, false, false))
+    {
+        ui_draw_shield_tooltip(mouse_x, mouse_y, data);
+    }
 }else{
     draw_self();
 }
