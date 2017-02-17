@@ -327,6 +327,7 @@
       <script>scripts\sm_time.gml</script>
       <script>scripts\sm_ticks.gml</script>
       <script>scripts\sm_state_push.gml</script>
+      <script>scripts\sm_has_var.gml</script>
     </scripts>
     <scripts name="Enemy">
       <scripts name="Grunt">
