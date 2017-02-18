@@ -152,6 +152,8 @@
     <instance objName="obj_invisible_wall" x="1088" y="1312" name="inst_99CF0D8D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="1152" y="1312" name="inst_3CDC7EBE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="1216" y="1312" name="inst_CFC9BD2D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_interact_area" x="1088" y="768" name="inst_DD2193E2" locked="0" code="text = &quot;There is a cube shaped hole in the center.&quot;&#xA;" scaleX="3" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="obj_display_cube" x="1088" y="768" name="inst_BD1E0FF8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bkg_hub" x="512" y="256" w="64" h="64" xo="384" yo="576" id="10002635" name="inst_0CE8EC6E" depth="1000002" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

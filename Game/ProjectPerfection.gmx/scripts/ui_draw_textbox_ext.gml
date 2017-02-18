@@ -34,7 +34,7 @@ var scale_factor_x = 1.2;
 var scale_factor_y = 1.2;
 var border_size_x = 16;
 var border_size_y = 16;
-var space_width = string_width(" ") * text_scale;
+var space_width = string_width(" ") * text_scale * 1.5;
 var textbox_width = width - (2 * border_size_x);
 var textbox_height = height - (2 * border_size_y);
 var text_height = string_height(" ") * text_scale;
@@ -118,7 +118,7 @@ while(word_index < array_length_1d(words))
             remaining_space = textbox_width;
             liney += text_height;
         }
-        draw_text(linex, liney, word);
+        draw_text_transformed(linex, liney, word, text_scale, text_scale, 0);
         linex += word_width;
         remaining_space -= word_width;
     }        

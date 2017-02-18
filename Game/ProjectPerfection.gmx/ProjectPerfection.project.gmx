@@ -106,11 +106,13 @@
     </sprites>
     <sprites name="Walls">
       <sprite>sprites\spr_door</sprite>
+      <sprite>sprites\spr_closed_door</sprite>
       <sprite>sprites\spr_cube</sprite>
       <sprite>sprites\spr_gate</sprite>
       <sprite>sprites\spr_gate_open</sprite>
       <sprite>sprites\spr_wall</sprite>
       <sprite>sprites\spr_invisible_wall</sprite>
+      <sprite>sprites\spr_interact</sprite>
     </sprites>
     <sprites name="Traps">
       <sprite>sprites\spr_trap_stall</sprite>
@@ -428,6 +430,7 @@
       <object>objects\obj_interact_solid</object>
       <object>objects\obj_prompt</object>
       <object>objects\obj_book</object>
+      <object>objects\obj_interact_area</object>
     </objects>
     <objects name="Control">
       <object>objects\obj_hub_jump</object>
@@ -468,6 +471,7 @@
       <object>objects\obj_invisible_wall</object>
       <object>objects\obj_gate</object>
       <object>objects\obj_gate_open</object>
+      <object>objects\obj_display_cube</object>
     </objects>
     <objects name="Save">
       <object>objects\obj_save_data</object>
@@ -483,6 +487,7 @@
     <objects name="Tutorial">
       <object>objects\obj_tutorial_text</object>
     </objects>
+    <object>objects\obj_transition</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>
@@ -513,6 +518,7 @@
       <room>rooms\rm_boss_1</room>
       <room>rooms\rm_boss_final</room>
     </rooms>
+    <room>rooms\rm_transition</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
