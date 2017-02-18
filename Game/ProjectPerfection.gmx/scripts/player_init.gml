@@ -8,7 +8,9 @@ shield_penalty_time = 0;
 previous_shield_penalty_time = 0;
 hide_inventory = false;
 invincible = 0;
-
+movement_this_frame = false;
+friction_coeff = 0.14;
+acceleration_coeff = 0.10;
 // Inventory
 inventory_init();
 

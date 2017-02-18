@@ -5,11 +5,15 @@ if(speed > max_movement_speed)
     speed = max_movement_speed;
 }
 
-if(speed <= 1)
+if(!movement_this_frame)
 {
-    speed = 0;
+    if(speed <= friction_coeff * max_movement_speed)
+    {
+        speed = 0;
+    }
+    else
+    {
+        speed -= friction_coeff * max_movement_speed;
+    }
 }
-else
-{
-    speed -= 1;
-}
+
