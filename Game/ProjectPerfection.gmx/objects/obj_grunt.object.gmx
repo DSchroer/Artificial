@@ -37,8 +37,8 @@ weapon[weapon_index.damage] = 10;
 weapon[weapon_index.bullet_sprite] = spr_plasma;
 
 volume_mod = 1.4;
-ds_list_add(hurt_sounds, snd_enemy_rock1);  
-ds_list_add(hurt_sounds, snd_enemy_rock2);
+//ds_list_add(hurt_sounds, snd_enemy_rock1);  
+//ds_list_add(hurt_sounds, snd_enemy_rock2);
 //ds_list_add(hurt_sounds, snd_enemy_rock3); // &lt;--- death sound?
 </string>
           </argument>

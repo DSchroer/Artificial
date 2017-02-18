@@ -8,6 +8,7 @@ if(is_paused())
 
 var x_dir = 0;
 var y_dir = 0;
+movement_this_frame = false;
 
 if(keymap_check(keycode.up))
 {
@@ -31,8 +32,9 @@ if(keymap_check(keycode.right))
 
 if(x_dir != 0 || y_dir != 0)
 {
+    movement_this_frame = true;
     var new_dir = point_direction(0, 0, x_dir, y_dir);
-    motion_add(new_dir, 3);
+    motion_add(new_dir, max_movement_speed * acceleration_coeff);
 }
 
 shield_active = keymap_check(keycode.shield);
