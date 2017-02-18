@@ -28,6 +28,11 @@
             <string>triggered = false;
 text = -1;
 sprite_index = -1;
+
+if(obj_progress.cube_parts == 1)
+{
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>

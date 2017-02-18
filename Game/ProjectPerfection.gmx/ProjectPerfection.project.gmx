@@ -471,6 +471,7 @@
       <object>objects\obj_invisible_wall</object>
       <object>objects\obj_gate</object>
       <object>objects\obj_gate_open</object>
+      <object>objects\obj_display_cube</object>
     </objects>
     <objects name="Save">
       <object>objects\obj_save_data</object>
