@@ -146,7 +146,7 @@
     <instance objName="obj_wall" x="1792" y="1472" name="inst_BD794A87" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1088" y="1792" name="inst_05BD4EC1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn_player" x="640" y="256" name="inst_80D2DB07" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_grunt" x="960" y="1472" name="inst_E79DF92E" locked="0" code="max_health = 500;&#xA;current_health = 500;" scaleX="3.55555558204651" scaleY="3.19685029983521" colour="4294967295" rotation="0"/>
+    <instance objName="obj_grunt" x="896" y="1472" name="inst_E79DF92E" locked="0" code="max_health = 500;&#xA;current_health = 500;" scaleX="3.55555558204651" scaleY="3.19685029983521" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="896" y="320" name="inst_715E221A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="960" y="320" name="inst_7C6FF8F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1024" y="320" name="inst_A9A0310E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
