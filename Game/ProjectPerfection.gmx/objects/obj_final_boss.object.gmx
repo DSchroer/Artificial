@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>alarm[0] = 120;
 drawing = true;
-target = obj_grunt;
+target = obj_boss;
 photo = spr_pickle_boss;
 </string>
           </argument>
