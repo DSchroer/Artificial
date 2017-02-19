@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>credits_init();
+
+
 </string>
           </argument>
         </arguments>

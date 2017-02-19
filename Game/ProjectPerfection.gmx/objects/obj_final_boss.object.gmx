@@ -29,6 +29,9 @@
 drawing = true;
 target = obj_grunt;
 photo = spr_pickle_boss;
+
+sfx_clear();
+sfx_bkg_add(bkg_final_boss);
 </string>
           </argument>
         </arguments>
