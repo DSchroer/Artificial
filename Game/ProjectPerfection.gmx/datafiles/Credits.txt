@@ -1,14 +1,20 @@
+!Executive Producer
+Jeff Mundee
+
+!Producer
+Alec Sobeck
+
 !Developer
 Dominick Schroer
 
 !Artist 
 Nick Tremblay
 
-!Producer
-Alec Sobeck
-
 !Designer
 Spencer Gould
+
+!Testers
+Nick Hall
 
 !Other Code
 https://github.com/dicksonlaw583/jsonion-classic
