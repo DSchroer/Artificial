@@ -16,5 +16,5 @@ with(obj_player)
 
 if(sfx_bkg_size() == 0)
 {
-    sfx_bkg_add(bkg_hub1);
+    sfx_bkg_add(bkg_hub2);
 }  

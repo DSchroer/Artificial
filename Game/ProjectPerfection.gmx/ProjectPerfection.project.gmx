@@ -56,11 +56,16 @@
     <sound>sound\snd_laser2</sound>
     <sound>sound\snd_healing_pills</sound>
     <sound>sound\bkg_hub1</sound>
-    <sound>sound\bkg_desert1</sound>
+    <sound>sound\bkg_final_boss</sound>
+    <sound>sound\bkg_hub2</sound>
+    <sound>sound\bkg_desert2</sound>
+    <sound>sound\bkg_boss1</sound>
+    <sound>sound\bkg_menu</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="Player">
       <sprite>sprites\spr_player</sprite>
+      <sprite>sprites\spr_player_back</sprite>
     </sprites>
     <sprite>sprites\spr_bush</sprite>
     <sprite>sprites\spr_shield</sprite>
@@ -124,6 +129,8 @@
     <sprite>sprites\spr_healthpack</sprite>
     <sprites name="Moments">
       <sprite>sprites\spr_pickle_boss</sprite>
+      <sprite>sprites\spr_azar_intro</sprite>
+      <sprite>sprites\sprite58</sprite>
     </sprites>
     <sprite>sprites\spr_aim</sprite>
     <sprites name="Shots">
@@ -132,7 +139,7 @@
       <sprite>sprites\spr_rail</sprite>
     </sprites>
     <sprite>sprites\spr_book</sprite>
-    <sprite>sprites\sprite55</sprite>
+    <sprite>sprites\spr_boss</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -421,6 +428,7 @@
       <object>objects\obj_player</object>
       <object>objects\obj_target</object>
       <object>objects\obj_grunt</object>
+      <object>objects\obj_boss</object>
       <object>objects\obj_enemy</object>
     </objects>
     <object>objects\obj_duck</object>

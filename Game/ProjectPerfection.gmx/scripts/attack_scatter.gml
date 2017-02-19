@@ -19,4 +19,4 @@ for(var i = 0; i < amt; i++)
 }
 
 
-sfx_play_volume(snd_fire_laser, true, 0.55);
+sfx_play_volume(snd_fire_laser, true, 0.2);
