@@ -139,6 +139,7 @@
     <background>background\bkg_tmp_tiles</background>
     <background>background\bkg_hub</background>
     <background>background\bkg_desert</background>
+    <background>background\bkg_test</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
