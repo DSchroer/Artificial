@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>alarm[0] = 120;
 drawing = true;
+sfx_clear();
+sfx_bkg_add(bkg_final_boss);
 target = obj_boss;
 photo = spr_azar_intro;
 </string>

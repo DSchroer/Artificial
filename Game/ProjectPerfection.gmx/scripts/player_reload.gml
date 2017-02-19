@@ -14,19 +14,19 @@ if(is_array(weapon))
         
         if(weapon[weapon_index.reload_timeout] < audio_sound_length(snd_reload7) * 60)
         {
-           sfx_play(snd_reload6, false);
+           sfx_play_volume(snd_reload6, false, 0.75);
         }
         else if(weapon[weapon_index.reload_timeout] < audio_sound_length(snd_reload2) * 60)
         {
-           sfx_play(snd_reload7, false);
+           sfx_play_volume(snd_reload7, false, 0.75);
         }
         else if(weapon[weapon_index.reload_timeout] < audio_sound_length(snd_reload3) * 60)
         {
-           sfx_play(snd_reload2, false);
+           sfx_play_volume(snd_reload2, false, 0.75);
         }
         else 
         {
-           sfx_play(snd_reload3, false);
+           sfx_play_volume(snd_reload3, false, 0.75);
         }
     }
 }

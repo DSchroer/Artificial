@@ -56,7 +56,11 @@
     <sound>sound\snd_laser2</sound>
     <sound>sound\snd_healing_pills</sound>
     <sound>sound\bkg_hub1</sound>
-    <sound>sound\bkg_desert1</sound>
+    <sound>sound\bkg_final_boss</sound>
+    <sound>sound\bkg_hub2</sound>
+    <sound>sound\bkg_desert2</sound>
+    <sound>sound\bkg_boss1</sound>
+    <sound>sound\bkg_menu</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="Player">
