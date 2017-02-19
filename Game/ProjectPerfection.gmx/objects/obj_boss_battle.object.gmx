@@ -29,6 +29,7 @@
 drawing = true;
 target = obj_boss;
 photo = spr_azar_intro;
+
 </string>
           </argument>
         </arguments>
@@ -59,6 +60,9 @@ with(target)
     show_debug_message(prev);
     sm_set_state(prev);
 }
+
+sfx_clear();
+sfx_bkg_add(bkg_boss1);
 </string>
           </argument>
         </arguments>

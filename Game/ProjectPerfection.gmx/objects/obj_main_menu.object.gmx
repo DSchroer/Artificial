@@ -32,7 +32,7 @@ enum menu_type
     options
 }
 
-sfx_clear();
+
 
 draw_set_color(c_white);
 
@@ -46,6 +46,10 @@ menu_create_main_menu();
 sfx_set_volume(save_get_value(obj_game_save, "fx_volume", 1));
 sfx_bkg_set_volume(save_get_value(obj_game_save, "music_volume", 1));
 window_set_fullscreen(save_get_value(obj_game_save, "fullscreen", false));
+
+sfx_clear();
+music_id = -1;
+
 </string>
           </argument>
         </arguments>
@@ -68,7 +72,14 @@ window_set_fullscreen(save_get_value(obj_game_save, "fullscreen", false));
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>
+if(music_id == -1 || !audio_is_playing(music_id))
+{
+    music_id = audio_play_sound(bkg_menu, 1, false);
+    audio_sound_gain(music_id, clamp(save_get_value(obj_game_save, "music_volume", 1), 0, 1), 0);
+}
+           
+</string>
           </argument>
         </arguments>
       </action>
