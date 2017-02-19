@@ -131,6 +131,8 @@
       <sprite>sprites\spr_plasma</sprite>
       <sprite>sprites\spr_rail</sprite>
     </sprites>
+    <sprite>sprites\spr_book</sprite>
+    <sprite>sprites\sprite55</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
