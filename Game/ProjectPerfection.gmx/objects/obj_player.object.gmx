@@ -285,10 +285,13 @@ if(instance_number(obj_spawn_player) &gt; 0)
           <argument>
             <kind>1</kind>
             <string>
-var yscale = 1;
+var yscale = 0.75;
 if(gun_angle &gt; 90 &amp;&amp; gun_angle &lt; 270)
 {
-    yscale = -1;
+    image_xscale = -1;
+    yscale = -0.75;
+}else{
+    image_xscale = 1;
 }
 
 if(view_current == 0)
@@ -297,17 +300,18 @@ if(view_current == 0)
     {
         if(is_array(inventory[selected_slot]))
         {
-            draw_weapon(inventory[selected_slot], x, y - 64, 1, yscale, gun_angle, 1);
+            draw_weapon(inventory[selected_slot], x, y - 50, 0.75, yscale, gun_angle, 1);
         }
     }
 
+    
     draw_self()
     
     if(gun_angle &gt;= 180)
     {
         if(is_array(inventory[selected_slot]))
         {
-            draw_weapon(inventory[selected_slot], x, y - 64, 1, yscale, gun_angle, 1);
+            draw_weapon(inventory[selected_slot], x, y - 50, 0.75, yscale, gun_angle, 1);
         }
     }
     
