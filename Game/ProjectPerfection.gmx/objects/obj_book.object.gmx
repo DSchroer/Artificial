@@ -105,7 +105,7 @@ if(text == -1)
             <kind>1</kind>
             <string>if(triggered &amp;&amp; !is_paused())
 {
-    ui_draw_textbox_ext(ui_world_to_gui_x(x - 150), ui_world_to_gui_y(y + 64), text, 1, 300, 150);
+    ui_draw_textbox_ext(ui_world_to_gui_x(x - 150), ui_world_to_gui_y(y + 64), text, 1, 500, 150);
 }
 </string>
           </argument>
