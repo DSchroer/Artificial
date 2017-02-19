@@ -278,7 +278,6 @@
     <instance objName="obj_item" x="512" y="1440" name="inst_3BE4BB5F" locked="0" code="data = inventory_create_shield();&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tutorial_text" x="608" y="2016" name="inst_76EF4958" locked="0" code="text = &quot;Welcome! `br You must be getting used to your new body. &quot;+&#xA;&quot;Let me help you out. `br Use |red W S A D |white to move.&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tutorial_text" x="896" y="224" name="inst_DD33AC18" locked="0" code="text = &quot;Oh! `br Dont forget that |red E |white lets you interact with objects. `br Such as doors&quot;&#xA;+ &quot; and books.&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_book" x="1472" y="2080" name="inst_49004A0A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bkg_hub" x="1152" y="1984" w="64" h="64" xo="384" yo="576" id="10003167" name="inst_D353766C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
