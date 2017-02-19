@@ -294,6 +294,13 @@ if(gun_angle &gt; 90 &amp;&amp; gun_angle &lt; 270)
     image_xscale = 1;
 }
 
+if(gun_angle &lt;= 180)
+{
+    sprite_index = spr_player_back;
+}else{
+    sprite_index = spr_player;
+}
+
 if(view_current == 0)
 {
     if(gun_angle &lt; 180)

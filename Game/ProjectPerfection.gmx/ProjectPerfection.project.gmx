@@ -61,6 +61,7 @@
   <sprites name="sprites">
     <sprites name="Player">
       <sprite>sprites\spr_player</sprite>
+      <sprite>sprites\spr_player_back</sprite>
     </sprites>
     <sprite>sprites\spr_bush</sprite>
     <sprite>sprites\spr_shield</sprite>
@@ -133,6 +134,7 @@
     </sprites>
     <sprite>sprites\spr_book</sprite>
     <sprite>sprites\sprite55</sprite>
+    <sprite>sprites\sprite56</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
