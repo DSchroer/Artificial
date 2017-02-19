@@ -32,6 +32,8 @@ enum menu_type
     options
 }
 
+sfx_clear();
+
 draw_set_color(c_white);
 
 menu_stack = ds_stack_create();
@@ -40,6 +42,10 @@ full_screen = false;
 
 keep_centered = ds_list_create();
 menu_create_main_menu();
+
+sfx_set_volume(save_get_value(obj_game_save, "fx_volume", 1));
+sfx_bkg_set_volume(save_get_value(obj_game_save, "music_volume", 1));
+window_set_fullscreen(save_get_value(obj_game_save, "fullscreen", false));
 </string>
           </argument>
         </arguments>
@@ -224,6 +230,8 @@ room_goto(rm_base);
 
 full_screen = !full_screen;
 window_set_fullscreen(full_screen);
+save_set_value(obj_game_save, "fullscreen", full_screen);
+save_flush(obj_game_save);
 
 </string>
           </argument>
@@ -248,11 +256,39 @@ window_set_fullscreen(full_screen);
           <argument>
             <kind>1</kind>
             <string>// Apply settings
+sfx_set_volume(slider_sound.percent);
+save_set_value(obj_game_save, "fx_volume", slider_sound.percent);
 
-var music_percent = slider_music.percent;
-var sound_effect_percent = slider_sound.percent;
+sfx_bkg_set_volume(slider_music.percent);
+save_set_value(obj_game_save, "music_volume", slider_music.percent);
 
-// Do stuff
+save_flush(obj_game_save);
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="18">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Credits
+
+room_goto(rm_credits);
 </string>
           </argument>
         </arguments>

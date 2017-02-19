@@ -68,10 +68,12 @@ if(mouse_check_button_pressed(mb_left))
     if(point_in_rectangle(mx, my, x, y, x + 64, y + 64))
     {
         percent = max(0, percent - 0.05);
+        sfx_play(snd_button, false);
     }
     if(point_in_rectangle(mx, my, x + 64 + 256, y, x + 256 + 64 + 64, y + 64))
     {
         percent = min(1, percent + 0.05);
+        sfx_play(snd_button, false);
     }
     
     var index = user_event_index;
@@ -116,6 +118,7 @@ draw_rectangle_color(x + width * (1/6), y + padding, x + width * (1/6) + width *
 var scale = 1.5;
 var text_width = string_width(text) * scale;
 var text_height = string_height(text) * scale;
+draw_set_colour(c_white);
 draw_text_transformed(x + (width - text_width) / 2, y + (height - text_height) / 2, text, scale, scale, 0);
 
 

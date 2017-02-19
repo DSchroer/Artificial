@@ -70,7 +70,6 @@ if(point_in_rectangle(mx, my, x, y, x + sprite_width, y + sprite_height))
     if(mouse_check_button_pressed(mb_left))
     {
         var index = user_event_index;
-
         with(obj_menu)
         {
             if(index &gt;= 0)
@@ -78,6 +77,7 @@ if(point_in_rectangle(mx, my, x, y, x + sprite_width, y + sprite_height))
                 event_user(index);
             }
         }
+        sfx_play(snd_button, false);
     }
     sprite_index = spr_button_active;
 }else{
@@ -113,6 +113,7 @@ var my = device_mouse_y_to_gui(0);
 var scale = 1.5;
 var text_width = string_width(text) * scale;
 var text_height = string_height(text) * scale;
+draw_set_colour(c_white);
 draw_text_transformed(x + (width - text_width) / 2, y + (height - text_height) / 2, text, scale, scale, 0);
 
 </string>

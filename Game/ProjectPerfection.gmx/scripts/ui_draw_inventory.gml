@@ -26,6 +26,16 @@ else
 
 // Selected slot
 ui_draw_weapon_slot(bx, by + 254, 1, inventory[selected_slot], 65, 25);
+if(is_array(inventory[selected_slot]))
+{
+    var gun = inventory[selected_slot];
+    if(gun[weapon_index.reload_cooldown] < 1)
+    {
+        draw_text_color(bx + 150, by + 290, string(gun[weapon_index.remaining]), c_white, c_white, c_white, c_white, 1);
+    }else{
+        draw_text_color(bx + 150, by + 290, "R", c_red, c_red, c_red, c_red, 1);
+    }
+}
 
 if(!hide_inventory)
 {
@@ -55,14 +65,11 @@ if(!hide_inventory)
 }
 ui_check_weapon_slot_tooltip(bx, by + 254, 1, inventory[selected_slot]);
 
-
 // Textbox
 if(ds_queue_size(obj_player.textbox_queue) > 0)
 {
     var text = ds_queue_head(obj_player.textbox_queue);
     ui_draw_textbox(text);    
 }
-
-
    
    

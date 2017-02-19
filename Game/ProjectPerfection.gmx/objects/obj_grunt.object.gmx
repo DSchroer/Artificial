@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
+            <string>entity_init();
+event_inherited();
 max_health = 40;
 current_health = 40;
 
@@ -33,6 +34,12 @@ sm_init("idle");
 
 weapon = inventory_create_weapon();
 weapon[weapon_index.damage] = 10;
+weapon[weapon_index.bullet_sprite] = spr_plasma;
+
+volume_mod = 1.4;
+//ds_list_add(hurt_sounds, snd_enemy_rock1);  
+//ds_list_add(hurt_sounds, snd_enemy_rock2);
+//ds_list_add(hurt_sounds, snd_enemy_rock3); // &lt;--- death sound?
 </string>
           </argument>
         </arguments>
@@ -80,6 +87,34 @@ if(player_exists())
 }
 
 entity_collision();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(random(3) &lt; 1)
+{
+    var gun = instance_create(x, y, obj_item);
+    gun.data = inventory_spawn_gun(obj_progress.progress + 1);
+}
+event_inherited();
 </string>
           </argument>
         </arguments>

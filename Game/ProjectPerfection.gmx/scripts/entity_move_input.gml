@@ -8,6 +8,7 @@ if(is_paused())
 
 var x_dir = 0;
 var y_dir = 0;
+movement_this_frame = false;
 
 if(keymap_check(keycode.up))
 {
@@ -31,23 +32,23 @@ if(keymap_check(keycode.right))
 
 if(x_dir != 0 || y_dir != 0)
 {
+    movement_this_frame = true;
     var new_dir = point_direction(0, 0, x_dir, y_dir);
-    motion_add(new_dir, 3);
+    motion_add(new_dir, max_movement_speed * acceleration_coeff);
 }
 
 shield_active = keymap_check(keycode.shield);
 
 if(keymap_check(keycode.inventory_up))
 {
-    selected_slot += 1;
-    selected_slot = selected_slot % inventory_slot.shield;
-}
-
-if(keymap_check(keycode.inventory_down))
-{
-    selected_slot -= 1;
-    if(selected_slot < 0)
-        selected_slot += inventory_slot.shield; 
+    for(var i = 0; i < 4; i++)
+    {
+        selected_slot = (selected_slot + 1) % 4;
+        if(inventory[selected_slot] != -1)
+        {
+            break;
+        }
+    }
 }
 
 if(keymap_check(keycode.hide_inventory))
@@ -60,38 +61,63 @@ if(keymap_check(keycode.dequeue_message))
     ds_queue_dequeue(textbox_queue);
 }
 
+if(keymap_check(keycode.healthpack))
+{
+    if(inventory_get_healthpack_count(self) > 0 && current_health < max_health)
+    {
+        inventory_remove_healthpacks(self, 1);
+        player_heal_percent(50);
+    }
+}
+
+
 if(keyboard_check_pressed(vk_f4))
 {
     ui_queue_message("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id porttito. `a `s `b `s `x `y `br `l `s `r `s `u `s `d Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id porttito" + 
     " `a `b `x `y `br `l `r `u `d ");
-    ui_queue_message("Test1");
+    ui_queue_message("Test1 |red Test1 |crimson Test1 |yellow Test1 |orange Test1 |teal Test1 |white Test1 |black Test1 |fuchsia Test1");
     ui_queue_message("Test2");
     ui_queue_message("Test3");
-    
 }
 
-// Triggers/Shoulder buttons:
-// Left button
-if(gamepad_button_check_pressed(0, gp_shoulderl))
+if(keyboard_check_pressed(vk_numpad1))
 {
-    var item = inventory_create_shield();
-    item[shield_index.recharge_delay] = 5;
-    item[shield_index.recharge_rate] = 40;
-    item[shield_index.max_health] = 100;    
-    item[shield_index.name] = "LT";    
-    inventory_swap(self, inventory_slot.shield, item);
+    inventory[selected_slot] = inventory_spawn_gun(10);
+}
+if(keyboard_check_pressed(vk_numpad2))
+{
+    inventory[selected_slot] = inventory_spawn_gun(20);
+}
+if(keyboard_check_pressed(vk_numpad3))
+{
+    inventory[selected_slot] = inventory_spawn_gun(30);
+}
+if(keyboard_check_pressed(vk_numpad4))
+{
+    inventory[selected_slot] = inventory_spawn_gun(40);
+}
+if(keyboard_check_pressed(vk_numpad5))
+{
+    inventory[selected_slot] = inventory_spawn_gun(50);
+}
+if(keyboard_check_pressed(vk_numpad6))
+{
+    inventory[selected_slot] = inventory_spawn_gun(60);
+}
+if(keyboard_check_pressed(vk_numpad7))
+{
+    inventory[selected_slot] = inventory_spawn_gun(70);
+}
+if(keyboard_check_pressed(vk_numpad8))
+{
+    inventory[selected_slot] = inventory_spawn_gun(80);
+}
+if(keyboard_check_pressed(vk_numpad9))
+{
+    inventory[selected_slot] = inventory_spawn_gun(90);
 }
 
-// Right Button
-if(gamepad_button_check_pressed(0, gp_shoulderr))
-{
-    player_levelup();
-}
 
-// Right Trigger
-if(gamepad_button_check(0, gp_shoulderrb))
-{
-}
 
 // Left analogue stick:
 var haxis_ls = gamepad_axis_value(0, gp_axislh);

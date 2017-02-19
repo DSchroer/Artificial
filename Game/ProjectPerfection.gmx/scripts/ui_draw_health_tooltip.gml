@@ -5,10 +5,10 @@ var ypos = argument1;
 var equipped_shield = player_get_shield();
 
 var lines;
-lines[0] = "Health: " + string(health) /*FIXME*/ + "/" + string(max_health);
+lines[0] = "Health: " + string(current_health) + "/" + string(max_health);
 if(is_array(equipped_shield))
 {
-    lines[1] = "Shield: " + string(remaining_shield) + "/" + string(equipped_shield[shield_index.max_health]);
+    lines[1] = "Shield: " + string(floor(remaining_shield)) + "/" + string(equipped_shield[shield_index.max_health]);
 }
 
 var colours;

@@ -28,6 +28,35 @@
     <sound>sound\snd_not_attack</sound>
     <sound>sound\snd_music</sound>
     <sound>sound\snd_gunshot</sound>
+    <sound>sound\snd_button</sound>
+    <sound>sound\snd_misfire</sound>
+    <sound>sound\snd_reload3</sound>
+    <sound>sound\snd_reload2</sound>
+    <sound>sound\snd_reload1</sound>
+    <sound>sound\snd_reload4</sound>
+    <sound>sound\snd_reload5</sound>
+    <sound>sound\snd_reload6</sound>
+    <sound>sound\snd_reload7</sound>
+    <sound>sound\snd_fire_laser</sound>
+    <sound>sound\snd_wind1</sound>
+    <sound>sound\snd_error_beep</sound>
+    <sound>sound\snd_footsteps_concrete</sound>
+    <sound>sound\snd_door_lock_open</sound>
+    <sound>sound\snd_inventory_rummage</sound>
+    <sound>sound\snd_inventory_rummage2</sound>
+    <sound>sound\snd_hum</sound>
+    <sound>sound\snd_hurt1</sound>
+    <sound>sound\snd_hurt2</sound>
+    <sound>sound\snd_hurt3</sound>
+    <sound>sound\snd_shield_hit</sound>
+    <sound>sound\snd_enemy_rock1</sound>
+    <sound>sound\snd_enemy_rock2</sound>
+    <sound>sound\snd_enemy_rock_death1</sound>
+    <sound>sound\snd_hurt4</sound>
+    <sound>sound\snd_laser2</sound>
+    <sound>sound\snd_healing_pills</sound>
+    <sound>sound\bkg_hub1</sound>
+    <sound>sound\bkg_desert1</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="Player">
@@ -41,7 +70,6 @@
       <sprite>sprites\spr_inv_rifle1</sprite>
       <sprite>sprites\spr_world_rifle1</sprite>
     </sprites>
-    <sprite>sprites\spr_bullet</sprite>
     <sprite>sprites\spr_target</sprite>
     <sprite>sprites\spr_sword</sprite>
     <sprite>sprites\spr_dishonDuck</sprite>
@@ -64,6 +92,7 @@
       <sprite>sprites\spr_button</sprite>
       <sprite>sprites\spr_slider</sprite>
       <sprite>sprites\spr_button_active</sprite>
+      <sprite>sprites\spr_inventory_healthpack</sprite>
     </sprites>
     <sprites name="Fonts">
       <sprite>sprites\spr_base_font</sprite>
@@ -73,19 +102,34 @@
     <sprites name="Spawn">
       <sprite>sprites\spr_spawner</sprite>
       <sprite>sprites\spr_spawn_enemy</sprite>
+      <sprite>sprites\spr_spawn_player</sprite>
     </sprites>
     <sprites name="Walls">
       <sprite>sprites\spr_door</sprite>
+      <sprite>sprites\spr_closed_door</sprite>
+      <sprite>sprites\spr_cube</sprite>
       <sprite>sprites\spr_gate</sprite>
       <sprite>sprites\spr_gate_open</sprite>
       <sprite>sprites\spr_wall</sprite>
       <sprite>sprites\spr_invisible_wall</sprite>
+      <sprite>sprites\spr_interact</sprite>
     </sprites>
     <sprites name="Traps">
       <sprite>sprites\spr_trap_stall</sprite>
       <sprite>sprites\spr_trap_Pitfall</sprite>
       <sprite>sprites\spr_trap_rock</sprite>
       <sprite>sprites\spr_trap_spike</sprite>
+      <sprite>sprites\spr_spike</sprite>
+    </sprites>
+    <sprite>sprites\spr_healthpack</sprite>
+    <sprites name="Moments">
+      <sprite>sprites\spr_pickle_boss</sprite>
+    </sprites>
+    <sprite>sprites\spr_aim</sprite>
+    <sprites name="Shots">
+      <sprite>sprites\spr_bullet</sprite>
+      <sprite>sprites\spr_plasma</sprite>
+      <sprite>sprites\spr_rail</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -102,17 +146,30 @@
       <script>scripts\inventory_create_weapon.gml</script>
       <script>scripts\inventory_init.gml</script>
       <script>scripts\inventory_get_modifier_name.gml</script>
+      <script>scripts\inventory_pickup_healthpacks.gml</script>
+      <script>scripts\inventory_remove_healthpacks.gml</script>
+      <script>scripts\inventory_get_healthpack_count.gml</script>
+      <script>scripts\inventory_pickup_weapon.gml</script>
+      <script>scripts\inventory_get_subtype_name.gml</script>
+      <script>scripts\inventory_spawn_gun.gml</script>
+      <script>scripts\inventory_scale_stat.gml</script>
+      <script>scripts\inventory_core_table.gml</script>
     </scripts>
     <scripts name="Level">
       <script>scripts\level_create.gml</script>
-      <script>scripts\level_init.gml</script>
       <script>scripts\level_destroy.gml</script>
+      <script>scripts\level_init.gml</script>
       <script>scripts\level_position_x.gml</script>
       <script>scripts\level_position_y.gml</script>
       <script>scripts\level_set_room.gml</script>
       <script>scripts\level_grid_value.gml</script>
       <script>scripts\level_stub_find.gml</script>
       <script>scripts\level_stub_find_all.gml</script>
+      <script>scripts\level_set_fog.gml</script>
+      <script>scripts\level_update_fog.gml</script>
+      <script>scripts\level_draw_fog.gml</script>
+      <script>scripts\level_get_spawn_point.gml</script>
+      <script>scripts\level_generate_environment_sfx.gml</script>
     </scripts>
     <scripts name="Entity">
       <script>scripts\entity_init.gml</script>
@@ -182,6 +239,8 @@
       <script>scripts\save_flush.gml</script>
       <script>scripts\save_create_array.gml</script>
       <script>scripts\save_clear.gml</script>
+      <script>scripts\__jso_gmt_tuple.gml</script>
+      <script>scripts\save_list_from_array.gml</script>
     </scripts>
     <script>scripts\isomorphic_set_depth.gml</script>
     <scripts name="Player">
@@ -192,12 +251,15 @@
       <script>scripts\player_take_damage.gml</script>
       <script>scripts\player_fire.gml</script>
       <script>scripts\player_exists.gml</script>
+      <script>scripts\player_heal_percent.gml</script>
+      <script>scripts\player_update_gun.gml</script>
+      <script>scripts\player_reload.gml</script>
     </scripts>
     <scripts name="Ui">
       <script>scripts\ui_draw_inventory.gml</script>
       <script>scripts\ui_draw_health.gml</script>
       <script>scripts\ui_draw_ring.gml</script>
-      <script>scripts\ui_draw_textbox_pos.gml</script>
+      <script>scripts\ui_draw_textbox_ext.gml</script>
       <script>scripts\ui_draw_weapon_tooltip.gml</script>
       <script>scripts\ui_draw_shield_tooltip.gml</script>
       <script>scripts\ui_draw_health_tooltip.gml</script>
@@ -212,6 +274,9 @@
       <script>scripts\ui_get_quality_string.gml</script>
       <script>scripts\ui_draw_textbox.gml</script>
       <script>scripts\ui_queue_message.gml</script>
+      <script>scripts\ui_draw_textbox_pos.gml</script>
+      <script>scripts\ui_world_to_gui_x.gml</script>
+      <script>scripts\ui_world_to_gui_y.gml</script>
     </scripts>
     <scripts name="Debug">
       <script>scripts\debug_init.gml</script>
@@ -223,6 +288,8 @@
     </scripts>
     <scripts name="Attack">
       <script>scripts\attack_plasma.gml</script>
+      <script>scripts\attack_normal.gml</script>
+      <script>scripts\attack_scatter.gml</script>
       <script>scripts\attack_rail.gml</script>
       <script>scripts\attack_explosive.gml</script>
       <script>scripts\attack_physical.gml</script>
@@ -234,6 +301,7 @@
     </scripts>
     <scripts name="Draw">
       <script>scripts\draw_weapon.gml</script>
+      <script>scripts\draw_shield.gml</script>
     </scripts>
     <script>scripts\color_random.gml</script>
     <scripts name="Sound">
@@ -242,6 +310,13 @@
       <script>scripts\sfx_bkg_clear.gml</script>
       <script>scripts\sfx_bkg_init.gml</script>
       <script>scripts\sfx_bkg_update.gml</script>
+      <script>scripts\sfx_set_volume.gml</script>
+      <script>scripts\sfx_bkg_set_volume.gml</script>
+      <script>scripts\sfx_play_volume.gml</script>
+      <script>scripts\sfx_generate_hub_environment.gml</script>
+      <script>scripts\sfx_stop.gml</script>
+      <script>scripts\sfx_bkg_size.gml</script>
+      <script>scripts\sfx_clear.gml</script>
     </scripts>
     <scripts name="State">
       <script>scripts\sm_init.gml</script>
@@ -253,6 +328,8 @@
       <script>scripts\sm_state_pop.gml</script>
       <script>scripts\sm_time.gml</script>
       <script>scripts\sm_ticks.gml</script>
+      <script>scripts\sm_state_push.gml</script>
+      <script>scripts\sm_has_var.gml</script>
     </scripts>
     <scripts name="Enemy">
       <scripts name="Grunt">
@@ -262,6 +339,7 @@
         <script>scripts\eg_attack.gml</script>
       </scripts>
       <script>scripts\enemy_target.gml</script>
+      <script>scripts\enemy_dumb.gml</script>
     </scripts>
     <scripts name="Interact">
       <script>scripts\interact_any.gml</script>
@@ -291,6 +369,16 @@
       <script>scripts\menu_create_pause.gml</script>
       <script>scripts\menu_destroy_pause.gml</script>
     </scripts>
+    <script>scripts\damager.gml</script>
+    <scripts name="Is">
+      <script>scripts\is_shield.gml</script>
+      <script>scripts\is_gun.gml</script>
+    </scripts>
+    <scripts name="Book">
+      <script>scripts\book_get_next.gml</script>
+      <script>scripts\book_text.gml</script>
+      <script>scripts\book_any.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
@@ -319,9 +407,9 @@
       <object>objects\obj_bush</object>
     </objects>
     <object>objects\obj_item</object>
-    <object>objects\obj_save_data</object>
     <objects name="Attacks">
       <object>objects\obj_shot_plasma</object>
+      <object>objects\obj_shot_normal</object>
       <object>objects\obj_shot_rail</object>
       <object>objects\obj_hit_sword</object>
     </objects>
@@ -335,23 +423,30 @@
     <object>objects\obj_duck</object>
     <objects name="Interact">
       <object>objects\obj_door</object>
+      <object>objects\obj_tutorial_door</object>
+      <object>objects\obj_final_door</object>
+      <object>objects\obj_cube</object>
       <object>objects\obj_interact</object>
       <object>objects\obj_interact_solid</object>
       <object>objects\obj_prompt</object>
+      <object>objects\obj_book</object>
+      <object>objects\obj_interact_area</object>
     </objects>
     <objects name="Control">
       <object>objects\obj_hub_jump</object>
       <object>objects\obj_progress</object>
+      <object>objects\obj_boss_battle</object>
+      <object>objects\obj_final_boss</object>
     </objects>
     <objects name="Effects">
       <object>objects\obj_damage_indicator</object>
     </objects>
     <object>objects\obj_clear_entities</object>
-    <object>objects\obj_post_process</object>
     <object>objects\obj_fonts</object>
     <object>objects\obj_pause</object>
     <objects name="Traps">
       <object>objects\obj_trap</object>
+      <object>objects\obj_tutorial_trap</object>
       <object>objects\obj_trap_stall</object>
       <object>objects\obj_trap_spike</object>
       <object>objects\obj_trap_rock</object>
@@ -368,17 +463,36 @@
     <objects name="Spawners">
       <object>objects\obj_spawn</object>
       <object>objects\obj_spawn_enemy</object>
+      <object>objects\obj_spawn_player</object>
+      <object>objects\obj_tutorial_spawn</object>
     </objects>
     <objects name="Walls">
       <object>objects\obj_wall</object>
       <object>objects\obj_invisible_wall</object>
       <object>objects\obj_gate</object>
       <object>objects\obj_gate_open</object>
+      <object>objects\obj_display_cube</object>
     </objects>
+    <objects name="Save">
+      <object>objects\obj_save_data</object>
+      <object>objects\obj_game_save</object>
+    </objects>
+    <object>objects\obj_health_can</object>
+    <objects name="Transitions">
+      <object>objects\obj_post_process</object>
+      <object>objects\obj_fade_out</object>
+      <object>objects\obj_fade_in</object>
+    </objects>
+    <object>objects\obj_hub_sound</object>
+    <objects name="Tutorial">
+      <object>objects\obj_tutorial_text</object>
+    </objects>
+    <object>objects\obj_transition</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>
     <room>rooms\rm_base</room>
+    <room>rooms\rm_tutorial</room>
     <room>rooms\rm_hub</room>
     <room>rooms\rm_dungeon_test</room>
     <room>rooms\rm_sandbox</room>
@@ -397,8 +511,14 @@
       <room>rooms\rm_stub_10</room>
       <room>rooms\rm_stub_11</room>
       <room>rooms\rm_stub_12</room>
+      <room>rooms\rm_stub_13</room>
     </rooms>
     <room>rooms\rm_empty</room>
+    <rooms name="Boss">
+      <room>rooms\rm_boss_1</room>
+      <room>rooms\rm_boss_final</room>
+    </rooms>
+    <room>rooms\rm_transition</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

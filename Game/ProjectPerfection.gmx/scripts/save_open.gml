@@ -12,11 +12,17 @@ if(file_exists(file_name))
     }
     file_text_close(file);
     
-    save_data = json_decode(data);
+    if(string_pos("{", data) != 0 && string_pos("}", data) != 0)
+    {
+        save_data = jso_decode_map(data);
+    }else{
+        save_data = jso_new_map();
+    }    
 }else{
-    save_data = ds_map_create();
+    save_data = jso_new_map();
 }
 
+/*
 var key = ds_map_find_first(save_data);
 for(var i = 0; i < ds_map_size(save_data); i++)
 {
@@ -28,5 +34,5 @@ for(var i = 0; i < ds_map_size(save_data); i++)
     
     key = ds_map_find_next(save_data, key);
 }
-
+*/
 

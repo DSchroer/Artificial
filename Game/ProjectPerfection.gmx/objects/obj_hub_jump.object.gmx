@@ -25,7 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(rm_hub);
+            <string>
+if(!save_get_value(obj_save_data, "tutorial", false))
+{
+    room_goto(rm_tutorial);
+}else{
+    room_goto(rm_hub);
+}
+
 </string>
           </argument>
         </arguments>

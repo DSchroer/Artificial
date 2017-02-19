@@ -7,7 +7,9 @@ var solid_inst = instance_nearest(x, y, obj_interact_solid);
 if(inst == noone)
 {
     inst = solid_inst;
-}else if(solid_inst == noone)
+}
+
+if(solid_inst != noone)
 {
     if(point_distance(x, y, solid_inst.x, solid_inst.y) < point_distance(x, y, inst.x, inst.y))
     {
