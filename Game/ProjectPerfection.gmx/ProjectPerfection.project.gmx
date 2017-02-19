@@ -65,6 +65,7 @@
   <sprites name="sprites">
     <sprites name="Player">
       <sprite>sprites\spr_player</sprite>
+      <sprite>sprites\spr_player_back</sprite>
     </sprites>
     <sprite>sprites\spr_bush</sprite>
     <sprite>sprites\spr_shield</sprite>
@@ -128,6 +129,8 @@
     <sprite>sprites\spr_healthpack</sprite>
     <sprites name="Moments">
       <sprite>sprites\spr_pickle_boss</sprite>
+      <sprite>sprites\spr_azar_intro</sprite>
+      <sprite>sprites\sprite58</sprite>
     </sprites>
     <sprite>sprites\spr_aim</sprite>
     <sprites name="Shots">
@@ -135,12 +138,15 @@
       <sprite>sprites\spr_plasma</sprite>
       <sprite>sprites\spr_rail</sprite>
     </sprites>
+    <sprite>sprites\spr_book</sprite>
+    <sprite>sprites\spr_boss</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
     <background>background\bkg_tmp_tiles</background>
     <background>background\bkg_hub</background>
     <background>background\bkg_desert</background>
+    <background>background\bkg_test</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -422,6 +428,7 @@
       <object>objects\obj_player</object>
       <object>objects\obj_target</object>
       <object>objects\obj_grunt</object>
+      <object>objects\obj_boss</object>
       <object>objects\obj_enemy</object>
     </objects>
     <object>objects\obj_duck</object>
