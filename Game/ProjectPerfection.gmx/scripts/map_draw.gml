@@ -1,4 +1,8 @@
 ///map_draw(x, y)
+if(is_paused())
+{
+    exit;
+}
 
 if(!surface_exists(main_surface))
 {
@@ -7,12 +11,13 @@ if(!surface_exists(main_surface))
 
 surface_set_target(main_surface);
 draw_clear(c_black);
-if(level != -1)
+if(level != -1 && instance_exists(level))
 {
-    if(map_texture == -1)
+    if(map_texture == -1 || level.fog_changed)
     {
         map_render_map_texture();
     }
+    
 
     with(level)
     {
@@ -25,6 +30,7 @@ if(level != -1)
 
     draw_sprite(map_texture, 0, (map_diameter / 2) - (center_x * map_size), (map_diameter / 2) - (center_y * map_size));
 }
+draw_circle_colour((map_diameter / 2), (map_diameter / 2), 3, c_red, c_red, false);
 surface_reset_target();
 
 shader_set(sdr_circle);

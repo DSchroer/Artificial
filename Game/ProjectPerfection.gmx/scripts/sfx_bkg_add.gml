@@ -1,3 +1,7 @@
 ///sfx_bkg_add(sound)
 var sound = argument0;
-ds_list_add(sfx_list, sound);
+with(obj_player)
+{
+    ds_queue_enqueue(bkg_queue, sound);
+}
+

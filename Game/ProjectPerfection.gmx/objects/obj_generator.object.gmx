@@ -27,10 +27,23 @@
             <kind>1</kind>
             <string>generator_init(100, 100);
 
-generator_add_option(rm_stub_1, 15, 15);
+generator_add_option_ext(rm_stub_1, 15, 15, stub_flags.no_door_down);
 generator_add_option(rm_stub_2, 19, 19);
-generator_add_option(rm_stub_3, 23, 23);
+generator_add_option_ext(rm_stub_3, 23, 23, 0);
 
+generator_add_option(rm_stub_4, 15, 15);
+generator_add_option(rm_stub_5, 15, 15);
+generator_add_option(rm_stub_6, 15, 15);
+
+generator_add_option(rm_stub_7, 19, 19);
+generator_add_option(rm_stub_8, 19, 19);
+generator_add_option(rm_stub_9, 19, 19);
+
+generator_add_option(rm_stub_10, 23, 23);
+generator_add_option(rm_stub_11, 23, 23);
+generator_add_option(rm_stub_12, 23, 23);
+
+generator_add_option_ext(rm_stub_13, 23, 23, stub_flags.no_door_down | stub_flags.no_door_right);
 </string>
           </argument>
         </arguments>
@@ -104,26 +117,32 @@ if(itteration &lt; ds_list_size(room_list))
           <argument>
             <kind>1</kind>
             <string>
-while(ds_list_size(room_list) &lt;= 1)
+while(ds_list_size(room_list) &lt;= 5)
 {
     generator_clear();
-    generator_set_room(rm_stub_1, 0, 0, 15, 15, 0);
-    generator_populate(0, 0, 15, 15, 0);
+    generator_set_room(rm_stub_1, 0, 0, 15, 15, 0, 0);
+    generator_populate(0, 0, 15, 15, 0, 0);
 }
 
 generator_add_doors();
 generator_create_spawn_map();
 
-
 constructing = true;
 persistent = true;
 
 custom_room = room_add();
+room_set_background_colour(custom_room, c_black, true);
+generator_spawn_at(0, custom_room, obj_clear_entities);
+generator_spawn_at(0, custom_room, obj_fade_in);
 
 var end_key = generator_spawn_exit(custom_room);
+generator_spawn_at(end_key, custom_room, obj_clear_entities);
 generator_use_room(end_key);
 
-for(var i = 0; i &lt; 3; i++)
+var p = generator_random_room();
+generator_spawn_at(p, custom_room, obj_health_can);
+
+if(random(2) &lt; 1)
 {
     var p = generator_random_room();
     generator_spawn_at(p, custom_room, obj_item);
@@ -131,9 +150,19 @@ for(var i = 0; i &lt; 3; i++)
     generator_use_room(p);
 }
 
+if(random(3) &lt; 1 &amp;&amp; book_any())
+{
+    var p = generator_random_room();
+    generator_spawn_at(p, custom_room, obj_book);
+    generator_spawn_at(p, custom_room, obj_clear_entities);
+    generator_use_room(p);
+}
+
 room_set_height(custom_room, height * 64);
 room_set_width(custom_room, width * 64);
 room_set_persistent(custom_room, false);
+
+instance_create(0,0,obj_cloner);
 
 itteration = 0;
 room_goto(ds_list_find_value(room_list, 0));

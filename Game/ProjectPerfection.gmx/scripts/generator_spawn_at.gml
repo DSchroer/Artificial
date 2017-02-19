@@ -1,5 +1,9 @@
 ///generator_spawn_at(key, room, object)
 var key = argument0;
+if(is_undefined(key))
+{
+    exit;
+}
 var new_room = argument1;
 var obj = argument2;
 

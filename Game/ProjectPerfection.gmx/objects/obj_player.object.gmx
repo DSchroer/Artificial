@@ -28,9 +28,12 @@
             <string>event_inherited();
 player_init();
 
-inventory_swap(self, inventory_slot.shield, inventory_create_shield());
-
 sfx_bkg_init();
+
+gun_angle = 0;
+
+window_set_cursor(cr_none);
+cursor_sprite = spr_aim;
 </string>
           </argument>
         </arguments>
@@ -58,8 +61,20 @@ sfx_bkg_init();
 isomorphic_set_depth();
 
 entity_dampening();
-entity_move_input();
+entity_move_input();                                                                               
 entity_collision();
+
+if(is_paused())
+{
+    exit;
+}
+
+if(inventory[selected_slot] != -1 &amp;&amp; is_array(inventory[selected_slot]))
+{
+    inventory[selected_slot] = player_update_gun(inventory[selected_slot]);
+}
+
+gun_angle = point_direction(x, y - 64, mouse_x, mouse_y);
 
 player_update_shield();
 
@@ -71,67 +86,57 @@ debug_show_string("in4: " + string_array(inventory[4]));
 
 debug_show_string("fps: " + string(fps));
 
-var obj = instance_place(x, y, obj_item);
-
-var data = -1;
-if(obj)
-{
-    data = obj.data;
-}
-
-var out = -1;
-
-if(keymap_check(keycode.inv0))
-{
-    out = inventory_swap(self, 0, data);
-    with(obj)
-    {
-        instance_destroy();
-    }
-}else if(keymap_check(keycode.inv1))
-{
-    out = inventory_swap(self, 1, data);
-    with(obj)
-    {
-        instance_destroy();
-    }
-}else if(keymap_check(keycode.inv2))
-{
-    out = inventory_swap(self, 2, data);
-    with(obj)
-    {
-        instance_destroy();
-    }
-}else if(keymap_check(keycode.inv3))
-{
-    out = inventory_swap(self, 3, data);
-    with(obj)
-    {
-        instance_destroy();
-    }
-}else if(keymap_check(keycode.inv4))
-{
-    out = inventory_swap(self, 4, data);
-    with(obj)
-    {
-        instance_destroy();
-    }
-}
-
-if(out != -1 &amp;&amp; is_array(out))
-{
-    var item = instance_create(x,y, obj_item);
-    item.data = out;
-}
-
 if(keymap_check(keycode.interact))
 {
-    interact_trigger(interact_any(128));
+    var inter = interact_any(128);
+    if(inter == noone)
+    {
+        var obj = instance_place(x, y, obj_item);
+        var data = -1;
+        if(obj)
+        {
+            data = obj.data;
+        }
+        var out = noone;
+        if(is_gun(data))
+        {
+            out = inventory_pickup_weapon(data);
+        }else if(is_shield(data))
+        {
+            out = inventory_swap(self, inventory_slot.shield, data);
+        }
+        
+        with(obj)
+        {
+            instance_destroy();
+        }
+        if(out != -1 &amp;&amp; is_array(out))
+        {
+            var item = instance_create(x,y, obj_item);
+            item.data = out;
+        }
+    
+    }else{
+        interact_trigger(inter);
+    }
+}
+
+if(invincible &gt; 0)
+{
+    --invincible;
 }
 
 if(keymap_check(keycode.fire))
 {
     player_fire();
+}
+
+if(keyboard_check_pressed(vk_escape))
+{
+    if(!is_paused() &amp;&amp; room != rm_transition)
+    {
+        instance_create(0,0,obj_pause);
+    }
 }
 
 </string>
@@ -156,9 +161,20 @@ if(keymap_check(keycode.fire))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>current_health = 100;
-x = 3 * 64;
-y = 4 * 64;
+            <string>current_health = max_health;
+x = 1600;
+y = 320;
+
+if(room == rm_tutorial)
+{
+    room_goto(rm_tutorial);
+    exit;
+}
+
+inventory_swap(self, inventory_slot.weapon1, -1);
+inventory_swap(self, inventory_slot.weapon2, -1);
+inventory_swap(self, inventory_slot.weapon3, -1);
+inventory_swap(self, inventory_slot.weapon4, -1);
 
 with(obj_level)
 {
@@ -212,6 +228,12 @@ room_goto(rm_hub);
           <argument>
             <kind>1</kind>
             <string>room_speed = 60;
+
+if(instance_number(obj_spawn_player) &gt; 0)
+{
+    x = obj_spawn_player.x;
+    y = obj_spawn_player.y;
+}
 </string>
           </argument>
         </arguments>
@@ -234,8 +256,12 @@ room_goto(rm_hub);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ui_draw_inventory();
-ui_draw_health();
+            <string>if(!is_paused())
+{
+    ui_draw_inventory();
+    ui_draw_health();
+}
+
 </string>
           </argument>
         </arguments>
@@ -259,29 +285,29 @@ ui_draw_health();
           <argument>
             <kind>1</kind>
             <string>
-var yscale = -1;
-if(mouse_x - x)
+var yscale = 1;
+if(gun_angle &gt; 90 &amp;&amp; gun_angle &lt; 270)
 {
-    yscale = 1;
+    yscale = -1;
 }
 
 if(view_current == 0)
 {
-    if(mouse_y &lt; y)
+    if(gun_angle &lt; 180)
     {
-        if(is_array(inventory[0]))
+        if(is_array(inventory[selected_slot]))
         {
-            draw_weapon(inventory[0], x, y - 64, 1, yscale, point_direction(x, y, mouse_x, mouse_y), 1);
+            draw_weapon(inventory[selected_slot], x, y - 64, 1, yscale, gun_angle, 1);
         }
     }
 
     draw_self()
     
-    if(mouse_y &gt;= y)
+    if(gun_angle &gt;= 180)
     {
-        if(is_array(inventory[0]))
+        if(is_array(inventory[selected_slot]))
         {
-            draw_weapon(inventory[0], x, y - 64, 1, yscale, point_direction(x, y, mouse_x, mouse_y), 1);
+            draw_weapon(inventory[selected_slot], x, y - 64, 1, yscale, gun_angle, 1);
         }
     }
     
@@ -318,8 +344,7 @@ if(debug_mode)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sfx_play(snd_gunshot);
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -377,6 +402,30 @@ if(ds_list_size(sfx_list) == 0)
         </arguments>
       </action>
     </event>
+    <event eventtype="10" enumb="82">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>inventory[selected_slot] = player_reload(inventory[selected_slot]);
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="10" enumb="71">
       <action>
         <libid>1</libid>
@@ -394,8 +443,7 @@ if(ds_list_size(sfx_list) == 0)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sfx_play(snd_attack);
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>

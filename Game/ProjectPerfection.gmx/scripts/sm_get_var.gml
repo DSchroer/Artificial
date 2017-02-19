@@ -1,2 +1,2 @@
 ///sm_get_var(index)
-return sm_variables[argument0];
+return ds_map_find_value(sm_variables, argument0);

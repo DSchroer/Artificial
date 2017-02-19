@@ -10,7 +10,11 @@ for(var i = 0; i < instance_count; i++)
     {
         var new = room_instance_add(new_room, xpos + instance.x, ypos + instance.y, instance.object_index);
         
-        //clone(new, instance);
+        with(obj_cloner)
+        {
+            clone_register(instance, new);
+            
+        }
     }
 }
 

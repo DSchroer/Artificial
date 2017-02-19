@@ -31,6 +31,7 @@
     {
         with(other)
         {
+            instance_create(x, y, obj_gate);
             instance_destroy();
         }
     }

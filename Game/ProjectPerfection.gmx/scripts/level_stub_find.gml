@@ -7,20 +7,32 @@ var py = level_position_y(y);
 var room_index;
 var grid;
 
-with(obj_level)
+if(instance_number(obj_level) == 0)
 {
-    grid = room_grid;
-    room_index = ds_grid_get(room_grid, px, py);
-}
-
-var t = noone;
-with(target)
-{
-    if(ds_grid_get(grid, level_position_x(x), level_position_y(y)) == room_index)
+    var t = noone;
+    with(target)
     {
         t = self;
     }
+    return t;
+}else{
+    with(obj_level)
+    {
+        grid = room_grid;
+        room_index = ds_grid_get(room_grid, px, py);
+    }
+    
+    var t = noone;
+    with(target)
+    {
+        if(ds_grid_get(grid, level_position_x(x), level_position_y(y)) == room_index)
+        {
+            t = self;
+        }
+    }
+    
+    return t;
 }
 
-return t;
+
 

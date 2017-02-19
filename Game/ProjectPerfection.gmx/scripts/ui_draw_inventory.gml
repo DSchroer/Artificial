@@ -10,7 +10,7 @@ var back_height = sprite_get_height(spr_inventory_background);
 
 // Background
 var bx = 0;
-var by = (height - back_height - 50);
+var by = (height - back_height - 10);
 if(hide_inventory)
 {
     draw_sprite(spr_inventory_background_hide, -1, bx, by);
@@ -26,24 +26,33 @@ else
 
 // Selected slot
 ui_draw_weapon_slot(bx, by + 254, 1, inventory[selected_slot], 65, 25);
-ui_check_weapon_slot_tooltip(bx, by + 254, 1, inventory[selected_slot]);
+if(is_array(inventory[selected_slot]))
+{
+    var gun = inventory[selected_slot];
+    if(gun[weapon_index.reload_cooldown] < 1)
+    {
+        draw_text_color(bx + 150, by + 290, string(gun[weapon_index.remaining]), c_white, c_white, c_white, c_white, 1);
+    }else{
+        draw_text_color(bx + 150, by + 290, "R", c_red, c_red, c_red, c_red, 1);
+    }
+}
 
 if(!hide_inventory)
 {
-    ui_draw_weapon_slot(bx, by + 82, 0.75, inventory[ui_adjust_slot(selected_slot - 3)], 35, 15);
-    ui_draw_weapon_slot(bx, by + 140, 0.75, inventory[ui_adjust_slot(selected_slot - 2)], 35, 15);
-    ui_draw_weapon_slot(bx, by + 197, 0.75, inventory[ui_adjust_slot(selected_slot - 1)], 35, 15);
+    ui_draw_weapon_slot(bx, by + 106, 0.75, inventory[ui_adjust_slot(selected_slot - 3)], 35, 15);
+    ui_draw_weapon_slot(bx, by + 156, 0.75, inventory[ui_adjust_slot(selected_slot - 2)], 35, 15);
+    ui_draw_weapon_slot(bx, by + 205, 0.75, inventory[ui_adjust_slot(selected_slot - 1)], 35, 15);
 
-    ui_check_weapon_slot_tooltip(bx, by + 82, 0.75, inventory[ui_adjust_slot(selected_slot - 3)]);
-    ui_check_weapon_slot_tooltip(bx, by + 140, 0.75, inventory[ui_adjust_slot(selected_slot - 2)]);
-    ui_check_weapon_slot_tooltip(bx, by + 197, 0.75, inventory[ui_adjust_slot(selected_slot - 1)]);
+    ui_check_weapon_slot_tooltip(bx, by + 106, 0.75, inventory[ui_adjust_slot(selected_slot - 3)]);
+    ui_check_weapon_slot_tooltip(bx, by + 156, 0.75, inventory[ui_adjust_slot(selected_slot - 2)]);
+    ui_check_weapon_slot_tooltip(bx, by + 205, 0.75, inventory[ui_adjust_slot(selected_slot - 1)]);
     
     // Shield
     if(is_array(inventory[inventory_slot.shield])) 
     {
         var equipped = inventory[inventory_slot.shield];
-        draw_sprite(equipped[shield_index.inv_sprite], -1, bx + 6, by + 6);
-        if (mx > bx + 6 && mx < bx + 6 + 64 && my > by + 6 && my < by + 6 + 64)
+        draw_sprite(equipped[shield_index.inv_sprite], -1, bx + 6, by + 38);
+        if (mx > bx + 6 && mx < bx + 6 + 64 && my > by + 6 && my < by + 38 + 64)
         {
             ui_draw_shield_tooltip(mx, my, equipped);        
         } 
@@ -51,15 +60,16 @@ if(!hide_inventory)
     else
     {
         draw_set_colour(c_aqua);
-        draw_text_transformed(bx + 6, by + 6 + 25, "(Empty)", 0.9, 0.9, 0);
-    }
-    
-    //ui_draw_textbox(300, 100, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id porttito. `a `s `b `s `x `y `br `l `s `r `s `u `s `d Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id porttito" + 
-    //" `a `b `x `y `br `l `r `u `d ");
-    
+        draw_text_transformed(bx + 6, by + 38 + 25, "(Empty)", 0.9, 0.9, 0);
+    }        
 }
+ui_check_weapon_slot_tooltip(bx, by + 254, 1, inventory[selected_slot]);
 
-
-
+// Textbox
+if(ds_queue_size(obj_player.textbox_queue) > 0)
+{
+    var text = ds_queue_head(obj_player.textbox_queue);
+    ui_draw_textbox(text);    
+}
    
    

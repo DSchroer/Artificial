@@ -5,16 +5,19 @@ var def = argument2;
 
 with(save)
 {
-    if(ds_exists(save_data, ds_type_map))
+    var value = jso_map_get(save_data, name);
+    var type = jso_map_get_type(save_data, name);
+    
+    if(type == jso_type_list)
     {
-        if(ds_map_exists(save_data, name))
-        {
-            return ds_map_find_value(save_data, name);
-        }else{
-            save_set_value(save, name, def);
-            return def;
-        }
+        value = save_create_array(value);
     }
+    
+    if(value == jso_value_of_null || is_undefined(value))
+    {
+        return def;
+    }
+    return value;
 }
 
 

@@ -25,8 +25,86 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>data = inventory_create_weapon();
-data[weapon_index.modifier] = round(random(2));
+            <string>data = inventory_spawn_gun(1);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var point = level_get_spawn_point();
+if(point != noone)
+{
+    x = point.x;
+    y = point.y;
+    with(point)
+    {
+        instance_destroy();
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(collision_point(mouse_x, mouse_y, self, false, false))
+{
+    var uix = ((mouse_x - view_xview[0])/view_wview) * display_get_gui_width();
+    var uiy = ((mouse_y - view_yview[0])/view_hview) * display_get_gui_height();
+    
+    if(is_gun(data))
+    {
+        ui_draw_weapon_tooltip(uix + 16, uiy + 16, data);
+    }else if(is_shield(data))
+    {
+        ui_draw_shield_tooltip(uix + 16, uiy + 16, data);
+    }
+}else if(place_meeting(x, y, obj_player))
+{
+    var uix = ((obj_player.x - view_xview[0])/view_wview) * display_get_gui_width();
+    var uiy = ((obj_player.y - view_yview[0])/view_hview) * display_get_gui_height();
+    
+    if(is_gun(data))
+    {
+        ui_draw_weapon_tooltip(uix + 16, uiy + 16, data);
+    }else if(is_shield(data))
+    {
+        ui_draw_shield_tooltip(uix + 16, uiy + 16, data);
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -49,9 +127,12 @@ data[weapon_index.modifier] = round(random(2));
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(data != -1 &amp;&amp; data[0] == item_ids.gun)
+            <string>if(is_gun(data))
 {
     draw_weapon(data, x, y, 1, 1, 0, 1);
+}else if(is_shield(data))
+{
+    draw_shield(data, x, y, 1, 1, 0, 1);
 }else{
     draw_self();
 }

@@ -38,7 +38,7 @@ case "|lblue":
     draw_set_colour(make_color_rgb(91, 170, 241));
     break;
 case "|tooltip":
-    draw_set_colour(make_color_rgb(128, 128, 128));
+    draw_set_colour(make_color_rgb(80, 79, 145));
     break;
 case "|gray":
     draw_set_colour(make_color_rgb(128, 128, 128));
@@ -49,6 +49,46 @@ case "|green":
 case "|aqua":
     draw_set_colour(c_aqua);
     break;
-
+case "|black":
+    draw_set_color(c_black);
+    break;
+case "|red":
+    draw_set_color(c_red);
+    break;
+case "|crimson":
+    draw_set_colour(make_color_rgb(153, 0, 0));
+    break;
+case "|fuchsia":
+    draw_set_color(c_fuchsia);
+    break;
+case "|blue":
+    draw_set_color(c_blue);
+    break;
+case "|lime":
+    draw_set_color(c_lime);
+    break;
+case "|dkgray":
+    draw_set_color(c_dkgray);
+    break;
+case "|navy":
+    draw_set_color(c_navy);
+    break;
+case "|orange":
+    draw_set_color(c_orange);
+    break;
+case "|purple":
+    draw_set_color(c_purple);
+    break;
+case "|silver":
+    draw_set_color(c_silver);
+    break;
+case "|teal":
+    draw_set_color(c_teal);
+    break;
+case "|yellow":
+    draw_set_color(c_yellow);
+    break;
+ 
+    
 }
 

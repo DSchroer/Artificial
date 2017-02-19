@@ -1,14 +1,17 @@
 ///player_take_damage()
+
 if(shield_active && remaining_shield > 0)
 {
     // Hit shield.
     if(remaining_shield > damage)
     {
         remaining_shield -= damage;
+        sfx_play(snd_shield_hit, false);
     }
     else 
     {
         remaining_shield = 0;
+        invincible = 30;
         var equipped_shield = player_get_shield();
         var overkill_percent = (damage - remaining_shield) / equipped_shield[shield_index.max_health];
         if(overkill_percent > 0.2)
@@ -24,7 +27,11 @@ if(shield_active && remaining_shield > 0)
 } 
 else 
 {
-    entity_take_damage();   
+    if(invincible == 0)
+    {
+        invincible = 15;
+        entity_take_damage(); 
+    }  
 }
 
 damage = 0;

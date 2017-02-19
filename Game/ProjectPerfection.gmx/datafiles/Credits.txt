@@ -1,4 +1,46 @@
-Developer:Dominick Schroer
-Artist:Nick Tremblay
-Producer:Alec Sobeck
-Designer:Spencer Gould
+!Developer
+Dominick Schroer
+
+!Artist 
+Nick Tremblay
+
+!Producer
+Alec Sobeck
+
+!Designer
+Spencer Gould
+
+!Other Code
+https://github.com/dicksonlaw583/jsonion-classic
+
+!Music
+Dominus - DL Sounds
+Dark Atmosphere - DL Sounds
+
+!Sound Effects
+Fleshstab - BlastwaveFX
+Button - Mike Koenig
+Gun Reload - J1987
+Laser Shot Silenced - Bubaproducer
+Rocks4 - Tran5ient
+Gun Small Reload - Duckduckpony
+Pistol Reload - Gfl7
+Metal Flick Reload - Sethroph
+Rocks - Adamgryu
+Mag Reload - Samsterbirdies
+Machine Gun Reload - Samsterbirdies
+Rock on Rock Scrape - Alegemaate
+Dry Fire Gun - Mike Koenig
+Eject Clip and Reload - Mike Koenig
+Energy - Fins
+Breaking Small Bone Finger - Borralbi
+Medium Wind - Kangaroovindaloo
+Access Denied - Suntemple
+Inventory Open 01 - Littlerobotsoundfactory
+Electric Hum 01 - Joedeshon
+Footsteps Conrete A - Inspectorj
+Door Lock Open - Magedu
+Bone Breaking - Mike Koenig
+Leg Breaking - Mike Koenig
+Shaking Vitamin Bottle - Nettimato
+
