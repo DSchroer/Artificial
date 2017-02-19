@@ -133,8 +133,7 @@
       <sprite>sprites\spr_rail</sprite>
     </sprites>
     <sprite>sprites\spr_book</sprite>
-    <sprite>sprites\sprite55</sprite>
-    <sprite>sprites\sprite56</sprite>
+    <sprite>sprites\spr_boss</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -423,6 +422,7 @@
       <object>objects\obj_player</object>
       <object>objects\obj_target</object>
       <object>objects\obj_grunt</object>
+      <object>objects\obj_boss</object>
       <object>objects\obj_enemy</object>
     </objects>
     <object>objects\obj_duck</object>
