@@ -87,7 +87,7 @@ damage = min(30, obj_player.current_health - 5);
 
 event_inherited();
 
-if(place_meeting(x, y, obj_player) &amp;&amp; (obj_player.inventory[inventory_slot.shield] == -1 || !obj_player.shield_active))
+if(place_meeting(x, y, obj_player) &amp;&amp; (obj_player.inventory[inventory_slot.shield] == -1))
 {
     wall = instance_create(x - 32, y - 32, obj_invisible_wall);
     obj_player.y = min(obj_player.y + 64, y + 90);
