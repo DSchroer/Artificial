@@ -40,6 +40,7 @@ enum weapon_index
     modifier,
     weapon_subtype,
     damage,
+    accuracy,
     capacity,
     remaining,
     fire_timeout,
