@@ -176,11 +176,16 @@
       <script>scripts\level_grid_value.gml</script>
       <script>scripts\level_stub_find.gml</script>
       <script>scripts\level_stub_find_all.gml</script>
+      <script>scripts\level_stub_find_all_ds.gml</script>
       <script>scripts\level_set_fog.gml</script>
       <script>scripts\level_update_fog.gml</script>
       <script>scripts\level_draw_fog.gml</script>
       <script>scripts\level_get_spawn_point.gml</script>
       <script>scripts\level_generate_environment_sfx.gml</script>
+      <script>scripts\level_stub_x.gml</script>
+      <script>scripts\level_stub_y.gml</script>
+      <script>scripts\level_stub_w.gml</script>
+      <script>scripts\level_stub_h.gml</script>
     </scripts>
     <scripts name="Entity">
       <script>scripts\entity_init.gml</script>
@@ -353,6 +358,14 @@
       </scripts>
       <script>scripts\enemy_target.gml</script>
       <script>scripts\enemy_dumb.gml</script>
+      <script>scripts\enemy_line_of_sight.gml</script>
+      <scripts name="Navigation">
+        <script>scripts\enemy_navmesh_closest.gml</script>
+        <script>scripts\enemy_navmesh_path.gml</script>
+        <script>scripts\enemy_navmesh_get.gml</script>
+        <script>scripts\enemy_navmesh_move.gml</script>
+        <script>scripts\enemy_navmesh_clear.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Interact">
       <script>scripts\interact_any.gml</script>
@@ -410,6 +423,7 @@
       <object>objects\obj_generator</object>
       <object>objects\obj_level</object>
       <object>objects\obj_cloner</object>
+      <object>objects\obj_navmesh</object>
     </objects>
     <objects name="UI">
       <object>objects\obj_minimap</object>
