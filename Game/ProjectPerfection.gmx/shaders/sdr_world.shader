@@ -23,12 +23,20 @@ void main()
 //
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
-uniform vec2 sprite_size;
+
+uniform vec4 sprite_size;
+uniform vec4 sprite_uvs;
 
 const float alpha_threshold = 0.2;
 
 float outline_pass(float alpha, vec2 offsetx, vec2 offsety)
 {
+    if((v_vTexcoord + offsetx).x < sprite_uvs[0] || (v_vTexcoord + offsetx).x > sprite_uvs[2] || 
+    (v_vTexcoord + offsety).y < sprite_uvs[1] || (v_vTexcoord + offsety).y > sprite_uvs[3] )
+    {
+        return alpha;
+    }
+
     alpha = max(alpha, texture2D( gm_BaseTexture, v_vTexcoord + offsetx ).a);
     alpha = max(alpha, texture2D( gm_BaseTexture, v_vTexcoord - offsetx ).a);
     alpha = max(alpha, texture2D( gm_BaseTexture, v_vTexcoord + offsety ).a);
@@ -61,5 +69,7 @@ void main()
         gl_FragColor = vec4(1,1,1,1);
     }else{
         gl_FragColor = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );
-    }    
+    }
+    
+    //gl_FragColor = vec4(1,1,1,sprite_uvs[3]);
 }

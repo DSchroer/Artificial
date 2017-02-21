@@ -320,6 +320,9 @@
     <scripts name="Draw">
       <script>scripts\draw_weapon.gml</script>
       <script>scripts\draw_shield.gml</script>
+      <script>scripts\draw_outline_begin.gml</script>
+      <script>scripts\draw_outline_update.gml</script>
+      <script>scripts\draw_outline_end.gml</script>
     </scripts>
     <script>scripts\color_random.gml</script>
     <scripts name="Sound">

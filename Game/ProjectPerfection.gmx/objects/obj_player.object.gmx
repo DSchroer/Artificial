@@ -63,7 +63,6 @@ isomorphic_set_depth();
 
 entity_dampening();
 entity_move_input();                                                                               
-entity_collision();
 
 if(is_paused())
 {
@@ -139,6 +138,8 @@ if(keyboard_check_pressed(vk_escape))
         instance_create(0,0,obj_pause);
     }
 }
+
+entity_collision();
 
 </string>
           </argument>
