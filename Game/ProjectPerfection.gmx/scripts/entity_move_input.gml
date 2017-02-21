@@ -37,8 +37,6 @@ if(x_dir != 0 || y_dir != 0)
     motion_add(new_dir, max_movement_speed * acceleration_coeff);
 }
 
-shield_active = keymap_check(keycode.shield);
-
 if(keymap_check(keycode.inventory_up))
 {
     for(var i = 0; i < 4; i++)

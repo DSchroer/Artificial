@@ -39,7 +39,7 @@ stats[c] = string(shield[shield_index.recharge_rate]);
 stat_colours[c] = "|white";
 c++;
 
-lines[c] = " Recharge Delay";
+lines[c] = " Sec Recharge Delay";
 colours[c] = "|tooltip";
 scales[c] = 1;
 stats[c] = string(shield[shield_index.recharge_delay]);

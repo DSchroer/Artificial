@@ -321,11 +321,12 @@ if(view_current == 0)
             draw_weapon(inventory[selected_slot], x, y - 50, 0.75, yscale, gun_angle, 1);
         }
     }
-    
+    /*
     if(shield_active &amp;&amp; remaining_shield &gt; 0) 
     {
         draw_sprite(spr_shield, 0, x - 32, y - 128);
     }
+    */
 }
 
 if(debug_mode)
