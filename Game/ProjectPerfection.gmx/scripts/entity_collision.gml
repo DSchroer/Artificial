@@ -6,7 +6,8 @@ if(speed == 0)
 }
 
 var x_change = lengthdir_x(speed, direction);
-var y_change = lengthdir_y(speed, direction)
+var y_change = lengthdir_y(speed, direction);
+
 if(place_meeting(x + x_change, y, obj_wall) || place_meeting(x + x_change, y, obj_entity))
 {
     move_contact_all(point_direction(0, 0, x_change, 0), speed);
