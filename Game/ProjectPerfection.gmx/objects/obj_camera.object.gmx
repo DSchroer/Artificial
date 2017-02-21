@@ -68,8 +68,8 @@ camera_init();
             <string>
 if(player_exists())
 {
-    x_target = obj_player.x;
-    y_target = obj_player.y;
+    x_target = (obj_player.x * 0.75) + (mouse_x * 0.25);
+    y_target = (obj_player.y * 0.75) + (mouse_y * 0.25);
 }
 
 

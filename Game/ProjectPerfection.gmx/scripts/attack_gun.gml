@@ -24,6 +24,15 @@ if(--weapon[weapon_index.remaining] <= 0)
 
 weapon[weapon_index.fire_cooldown] = weapon[weapon_index.fire_timeout];
 
+if(self.object_index == obj_player)
+{
+    with(obj_camera)
+    {
+        camera_shake(15);
+    }
+}
+
+
 switch(weapon[weapon_index.modifier])
 {
     case weapon_modifier.normal:

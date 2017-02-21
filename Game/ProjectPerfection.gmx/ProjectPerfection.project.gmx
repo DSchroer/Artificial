@@ -140,6 +140,7 @@
     </sprites>
     <sprite>sprites\spr_book</sprite>
     <sprite>sprites\spr_boss</sprite>
+    <sprite>sprites\sprite59</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -193,6 +194,7 @@
       <script>scripts\camera_init.gml</script>
       <script>scripts\camera_update.gml</script>
       <script>scripts\camera_resize.gml</script>
+      <script>scripts\camera_shake.gml</script>
     </scripts>
     <scripts name="Keymap">
       <script>scripts\keymap_check.gml</script>
@@ -305,6 +307,7 @@
       <script>scripts\attack_physical.gml</script>
       <script>scripts\attack_sword.gml</script>
       <script>scripts\attack_gun.gml</script>
+      <script>scripts\attack_accuracy.gml</script>
     </scripts>
     <scripts name="Collision">
       <script>scripts\range_finder.gml</script>
@@ -393,6 +396,7 @@
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
     <shader type="GLSLES">shaders\sdr_pause.shader</shader>
+    <shader type="GLSLES">shaders\sdr_world.shader</shader>
   </shaders>
   <fonts name="fonts">
     <font>fonts\fnt_hit</font>

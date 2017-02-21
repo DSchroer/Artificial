@@ -8,6 +8,9 @@ camera_resize();
 x_target = x;
 y_target = y;
 
+shake_x = 0;
+shake_y = 0;
+
 current_zoom = 1;
 zoom = 1;
 
