@@ -31,9 +31,20 @@ player_init();
 sfx_bkg_init();
 
 gun_angle = 0;
+surface = surface_create(256, 256);
 
 window_set_cursor(cr_none);
 cursor_sprite = spr_aim;
+
+gun_x = -5;
+gun_y = -67;
+gun_dist = 13;
+
+arm_1_x = -10;
+arm_1_y = - 67;
+arm_1_delta_dist = 13;
+arm_1_angle_off = -25;
+
 </string>
           </argument>
         </arguments>
@@ -62,7 +73,6 @@ isomorphic_set_depth();
 
 entity_dampening();
 entity_move_input();                                                                               
-entity_collision();
 
 if(is_paused())
 {
@@ -138,6 +148,8 @@ if(keyboard_check_pressed(vk_escape))
         instance_create(0,0,obj_pause);
     }
 }
+
+entity_collision();
 
 </string>
           </argument>
@@ -285,6 +297,16 @@ if(instance_number(obj_spawn_player) &gt; 0)
           <argument>
             <kind>1</kind>
             <string>
+if(!surface_exists(surface))
+{
+    surface = surface_create(256, 256);
+}
+
+surface_set_target(surface);
+draw_clear_alpha(c_red, 0);
+
+
+
 var yscale = 0.75;
 if(gun_angle &gt; 90 &amp;&amp; gun_angle &lt; 270)
 {
@@ -301,24 +323,27 @@ if(gun_angle &lt;= 180)
     sprite_index = spr_player;
 }
 
+var distance = 13;
+
 if(view_current == 0)
 {
     if(gun_angle &lt; 180)
     {
         if(is_array(inventory[selected_slot]))
         {
-            draw_weapon(inventory[selected_slot], x, y - 50, 0.75, yscale, gun_angle, 1);
+            draw_weapon(inventory[selected_slot], 128 + (distance * dcos(gun_angle)), 128 - 58 - (distance * dsin(gun_angle)), 0.75, yscale, gun_angle, 1);
         }
     }
 
-    
-    draw_self()
+    draw_sprite_ext(sprite_index, image_index, 128, 127, image_xscale, image_yscale, image_angle, c_white, image_alpha);
     
     if(gun_angle &gt;= 180)
     {
         if(is_array(inventory[selected_slot]))
         {
-            draw_weapon(inventory[selected_slot], x, y - 50, 0.75, yscale, gun_angle, 1);
+            draw_weapon(inventory[selected_slot], 128 + (gun_x * image_xscale) + (gun_dist * dcos(gun_angle)), 128 + gun_y - (gun_dist * dsin(gun_angle)), 0.75, yscale, gun_angle, 1);
+        
+            draw_ik(128 + (arm_1_x * image_xscale), 128 + arm_1_y, 128 + (gun_x * image_xscale) + ((gun_dist + arm_1_delta_dist) * dcos(gun_angle + (arm_1_angle_off * image_xscale))), 128 + gun_y - ((gun_dist + arm_1_delta_dist) * dsin(gun_angle + (arm_1_angle_off * image_xscale))), 23-6, 22-5, image_xscale &gt; 0, spr_player_arm, spr_player_arm_bottom);
         }
     }
     /*
@@ -329,34 +354,19 @@ if(view_current == 0)
     */
 }
 
-if(debug_mode)
-{
-    draw_set_color(c_red)
-}
+surface_reset_target();
+
+sprite_scale = shader_get_uniform(sdr_world, "sprite_size");
+tex = surface_get_texture(surface);
+tex_h = texture_get_texel_height(tex);
+tex_w = texture_get_texel_width(tex);
+
+shader_set(sdr_world);
+shader_set_uniform_f(sprite_scale, tex_w, tex_h);
+draw_surface(surface, x - 128, y - 128);
+shader_reset();
 
 </string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="10" enumb="118">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string></string>
           </argument>
         </arguments>
       </action>
@@ -378,14 +388,7 @@ if(debug_mode)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-if(ds_list_size(sfx_list) == 0)
-{
-    sfx_bkg_add(snd_music);
-}else{
-    sfx_bkg_clear();
-}
-
+            <string>room_goto(rm_boss_1);
 </string>
           </argument>
         </arguments>
@@ -408,7 +411,7 @@ if(ds_list_size(sfx_list) == 0)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_user(1)
+            <string>room_goto(rm_sandbox);
 </string>
           </argument>
         </arguments>

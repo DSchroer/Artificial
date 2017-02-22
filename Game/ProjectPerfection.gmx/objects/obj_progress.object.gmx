@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>tutorial =  save_get_value(obj_save_data, "tutorial", false);
 cube_parts =  save_get_value(obj_save_data, "cube", 0);
+progress = 0;
 </string>
           </argument>
         </arguments>

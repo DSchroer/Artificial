@@ -24,6 +24,16 @@ if(--weapon[weapon_index.remaining] <= 0)
 
 weapon[weapon_index.fire_cooldown] = weapon[weapon_index.fire_timeout];
 
+if(self.object_index == obj_player)
+{
+    with(obj_camera)
+    {
+        camera_shake(15);
+    }
+    motion_add(dir, -5);
+}
+
+
 switch(weapon[weapon_index.modifier])
 {
     case weapon_modifier.normal:
@@ -37,6 +47,9 @@ switch(weapon[weapon_index.modifier])
         break;
     case weapon_modifier.scatter:
         attack_scatter(weapon, xpos, ypos, dir, ignore);
+        break;
+    case weapon_modifier.sword:
+        attack_sword(weapon, xpos, ypos, dir, ignore);
         break;
 }
 

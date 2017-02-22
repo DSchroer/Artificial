@@ -109,12 +109,42 @@ entity_collision();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(random(3) &lt; 1)
+            <string>
+if(instance_exists(obj_progress))
 {
-    var gun = instance_create(x, y, obj_item);
-    gun.data = inventory_spawn_gun(obj_progress.progress + 1);
+    if(random(3) &lt; 1)
+    {
+        var gun = instance_create(x, y, obj_item);
+        gun.data = inventory_spawn_gun(obj_progress.progress + 1);
+    }
 }
 event_inherited();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_outline_begin();
+draw_outline_update(sprite_index);
+draw_self();
+draw_outline_end();
 </string>
           </argument>
         </arguments>

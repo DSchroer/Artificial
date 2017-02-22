@@ -4,6 +4,7 @@ weapon[weapon_index.item_id] = item_ids.gun;
 weapon[weapon_index.quality] = item_quality.common;
 weapon[weapon_index.modifier] = weapon_modifier.plasma;
 weapon[weapon_index.damage] = 25;
+weapon[weapon_index.accuracy] = 0;
 weapon[weapon_index.capacity] = 10;
 weapon[weapon_index.remaining] = 10;
 weapon[weapon_index.fire_timeout] = 5;
