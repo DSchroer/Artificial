@@ -538,6 +538,7 @@
       <object>objects\obj_tutorial_text</object>
     </objects>
     <object>objects\obj_transition</object>
+    <object>objects\obj_draw_guns</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>
