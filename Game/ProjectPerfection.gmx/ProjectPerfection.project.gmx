@@ -512,6 +512,7 @@
     <objects name="Spawners">
       <object>objects\obj_spawn</object>
       <object>objects\obj_spawn_enemy</object>
+      <object>objects\obj_spawn_dog</object>
       <object>objects\obj_spawn_player</object>
       <object>objects\obj_tutorial_spawn</object>
     </objects>
