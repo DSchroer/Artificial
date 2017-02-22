@@ -48,6 +48,9 @@ switch(weapon[weapon_index.modifier])
     case weapon_modifier.scatter:
         attack_scatter(weapon, xpos, ypos, dir, ignore);
         break;
+    case weapon_modifier.sword:
+        attack_sword(weapon, xpos, ypos, dir, ignore);
+        break;
 }
 
 return weapon;
