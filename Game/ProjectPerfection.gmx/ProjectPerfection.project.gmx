@@ -65,6 +65,8 @@
   <sprites name="sprites">
     <sprites name="Player">
       <sprite>sprites\spr_player</sprite>
+      <sprite>sprites\spr_player_arm</sprite>
+      <sprite>sprites\spr_player_arm_bottom</sprite>
       <sprite>sprites\spr_player_back</sprite>
     </sprites>
     <sprite>sprites\spr_bush</sprite>
@@ -260,6 +262,7 @@
       <script>scripts\save_list_from_array.gml</script>
     </scripts>
     <script>scripts\isomorphic_set_depth.gml</script>
+    <script>scripts\isomorphic_set_depth_ext.gml</script>
     <scripts name="Player">
       <script>scripts\player_get_shield.gml</script>
       <script>scripts\player_init.gml</script>
@@ -323,6 +326,7 @@
       <script>scripts\draw_outline_begin.gml</script>
       <script>scripts\draw_outline_update.gml</script>
       <script>scripts\draw_outline_end.gml</script>
+      <script>scripts\draw_ik.gml</script>
     </scripts>
     <script>scripts\color_random.gml</script>
     <scripts name="Sound">
@@ -527,6 +531,7 @@
       <object>objects\obj_tutorial_text</object>
     </objects>
     <object>objects\obj_transition</object>
+    <object>objects\obj_ik_test</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>

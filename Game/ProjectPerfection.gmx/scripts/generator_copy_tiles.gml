@@ -25,6 +25,11 @@ for(var i = 0; i < array_length_1d(tiles); i++)
         continue;
     }
     
+    if(dep < 0)
+    {
+        dep = isomorphic_set_depth_ext(yp + ypos);
+    }
+    
     room_tile_add_ext(new_room, back, left, top, width, height, xp + xpos, yp + ypos, dep, x_scale, y_scale, alpha);
 }
 
