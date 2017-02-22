@@ -347,11 +347,12 @@ if(view_current == 0)
             draw_ik(base_x + (arm_1_x * image_xscale), base_y + arm_1_y, base_x + (gun_x * image_xscale) + ((gun_dist + arm_1_delta_dist) * dcos(gun_angle + (arm_1_angle_off * image_xscale))), base_y + gun_y - ((gun_dist + arm_1_delta_dist) * dsin(gun_angle + (arm_1_angle_off * image_xscale))), 23-6, 22-5, image_xscale &gt; 0, spr_player_arm, spr_player_arm_bottom);
         }
     }
-    
+    /*
     if(shield_active &amp;&amp; remaining_shield &gt; 0) 
     {
         draw_sprite(spr_shield, 0, base_x - 32, base_y - 128);
     }
+    */
 }
 
 surface_reset_target();
