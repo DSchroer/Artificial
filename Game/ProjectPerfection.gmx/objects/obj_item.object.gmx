@@ -129,6 +129,7 @@ if(point != noone)
             <kind>1</kind>
             <string>
 draw_outline_begin();
+
 if(is_gun(data))
 {
     draw_outline_update(spr_inv_rifle1);

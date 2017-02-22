@@ -11,9 +11,9 @@ if(surface_exists(spr))
     tex = surface_get_texture(spr);
     uvs[0] = 0.0;
     uvs[1] = 0.0;
-    uvs[2] = 0.5;
-    uvs[3] = 0.5;
-    uvs = sprite_get_uvs(spr, image_index);
+    uvs[2] = 1.0;
+    uvs[3] = 1.0;
+    //uvs = sprite_get_uvs(spr, image_index);
 }else{
     tex = sprite_get_texture(spr, image_index);
     uvs = sprite_get_uvs(spr, image_index);

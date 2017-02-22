@@ -44,6 +44,11 @@ generator_add_option(rm_stub_11, 23, 23);
 generator_add_option(rm_stub_12, 23, 23);
 
 generator_add_option_ext(rm_stub_13, 23, 23, stub_flags.no_door_down | stub_flags.no_door_right);
+
+stubs_load_dom();
+stubs_load_nick();
+stubs_load_alec();
+stubs_load_spencer();
 </string>
           </argument>
         </arguments>
