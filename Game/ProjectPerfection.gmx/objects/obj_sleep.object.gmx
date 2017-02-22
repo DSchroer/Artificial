@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-50000</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,16 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>parent = self;
-damage = 1;
-paused = false;
-cooldown = 0;
+            <string>alarm[0] = 1;
+instance_deactivate_all(true);
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -51,63 +49,7 @@ cooldown = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-if(!paused &amp;&amp; is_paused())
-{
-    old_speed = speed;
-    speed = 0;
-    paused = true;
-}else if(paused &amp;&amp; !is_paused())
-{
-    speed = old_speed;
-    paused = false;
-}
-
-if(cooldown &gt; 0)
-{
-    cooldown--;
-}else{
-var entity = instance_place(x, y, obj_entity);
-    if(entity &amp;&amp; entity != parent)
-    {
-        with(entity)
-        {
-            entity_apply_damage(damager(other.damage));
-        }
-        cooldown = 30;
-    }
-}
-
-if(place_meeting(x, y, obj_wall))
-{
-    instance_destroy();
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>draw_outline_begin();
-draw_outline_update(sprite_index);
-draw_self();
-draw_outline_end();
+            <string>instance_activate_all();
 </string>
           </argument>
         </arguments>

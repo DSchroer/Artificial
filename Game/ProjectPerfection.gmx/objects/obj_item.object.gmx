@@ -127,15 +127,21 @@ if(point != noone)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(is_gun(data))
+            <string>
+draw_outline_begin();
+
+if(is_gun(data))
 {
+    draw_outline_update(spr_inv_rifle1);
     draw_weapon(data, x, y, 1, 1, 0, 1);
 }else if(is_shield(data))
 {
+    draw_outline_update(spr_inv_shield1);
     draw_shield(data, x, y, 1, 1, 0, 1);
 }else{
     draw_self();
 }
+draw_outline_end();
 </string>
           </argument>
         </arguments>

@@ -320,6 +320,9 @@
     <scripts name="Draw">
       <script>scripts\draw_weapon.gml</script>
       <script>scripts\draw_shield.gml</script>
+      <script>scripts\draw_outline_begin.gml</script>
+      <script>scripts\draw_outline_update.gml</script>
+      <script>scripts\draw_outline_end.gml</script>
     </scripts>
     <script>scripts\color_random.gml</script>
     <scripts name="Sound">
@@ -405,11 +408,18 @@
       <script>scripts\book_text.gml</script>
       <script>scripts\book_any.gml</script>
     </scripts>
+    <scripts name="Stubs">
+      <script>scripts\stubs_load_dom.gml</script>
+      <script>scripts\stubs_load_nick.gml</script>
+      <script>scripts\stubs_load_spencer.gml</script>
+      <script>scripts\stubs_load_alec.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
     <shader type="GLSLES">shaders\sdr_pause.shader</shader>
     <shader type="GLSLES">shaders\sdr_world.shader</shader>
+    <shader type="GLSLES">shaders\sdr_normal.shader</shader>
   </shaders>
   <fonts name="fonts">
     <font>fonts\fnt_hit</font>
@@ -541,6 +551,7 @@
       <room>rooms\rm_stub_11</room>
       <room>rooms\rm_stub_12</room>
       <room>rooms\rm_stub_13</room>
+      <room>rooms\rm_stub_d_1</room>
     </rooms>
     <room>rooms\rm_empty</room>
     <rooms name="Boss">
