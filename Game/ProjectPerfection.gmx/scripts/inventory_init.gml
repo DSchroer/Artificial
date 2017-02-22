@@ -29,7 +29,8 @@ enum weapon_modifier
     normal,
     rail,
     plasma,
-    scatter
+    scatter,
+    sword
 };
 
 enum weapon_index
