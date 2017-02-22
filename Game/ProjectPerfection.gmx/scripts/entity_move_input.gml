@@ -112,7 +112,31 @@ if(keyboard_check_pressed(vk_numpad8))
 }
 if(keyboard_check_pressed(vk_numpad9))
 {
-    inventory[selected_slot] = inventory_spawn_gun(90);
+    var rng = inventory_spawn_gun(100);
+    
+    var weapon;
+    weapon[weapon_index.item_id] = item_ids.gun;
+    weapon[weapon_index.quality] = item_quality.legendary;
+    weapon[weapon_index.modifier] = rng[weapon_index.modifier];
+    weapon[weapon_index.damage] = 60;
+    weapon[weapon_index.accuracy] = 100;
+    weapon[weapon_index.capacity] = 76;
+    weapon[weapon_index.remaining] = 76;
+    weapon[weapon_index.fire_timeout] = 3.5;
+    weapon[weapon_index.fire_cooldown] = 0;
+    weapon[weapon_index.reload_timeout] = 1;
+    weapon[weapon_index.reload_cooldown] = 0;
+    weapon[weapon_index.name] = "Developer Gun";
+    weapon[weapon_index.weapon_subtype] = weapon_subtype.pistol;
+    
+    weapon[weapon_index.bullet_sprite] = spr_bullet;
+    weapon[weapon_index.bullet_sprite_speed] = 1;
+    
+    weapon[weapon_index.sprite_count] = 1;
+    weapon[weapon_index.sprite_count + 1] = spr_inv_rifle1;
+    weapon[weapon_index.sprite_count + 2] = color_random();
+
+    inventory[selected_slot] = weapon;
 }
 
 
