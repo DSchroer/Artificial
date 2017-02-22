@@ -65,6 +65,8 @@
   <sprites name="sprites">
     <sprites name="Player">
       <sprite>sprites\spr_player</sprite>
+      <sprite>sprites\spr_player_arm</sprite>
+      <sprite>sprites\spr_player_arm_bottom</sprite>
       <sprite>sprites\spr_player_back</sprite>
     </sprites>
     <sprite>sprites\spr_bush</sprite>
@@ -140,6 +142,8 @@
     </sprites>
     <sprite>sprites\spr_book</sprite>
     <sprite>sprites\spr_boss</sprite>
+    <sprite>sprites\sprite59</sprite>
+    <sprite>sprites\spr_dog</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -175,11 +179,16 @@
       <script>scripts\level_grid_value.gml</script>
       <script>scripts\level_stub_find.gml</script>
       <script>scripts\level_stub_find_all.gml</script>
+      <script>scripts\level_stub_find_all_ds.gml</script>
       <script>scripts\level_set_fog.gml</script>
       <script>scripts\level_update_fog.gml</script>
       <script>scripts\level_draw_fog.gml</script>
       <script>scripts\level_get_spawn_point.gml</script>
       <script>scripts\level_generate_environment_sfx.gml</script>
+      <script>scripts\level_stub_x.gml</script>
+      <script>scripts\level_stub_y.gml</script>
+      <script>scripts\level_stub_w.gml</script>
+      <script>scripts\level_stub_h.gml</script>
     </scripts>
     <scripts name="Entity">
       <script>scripts\entity_init.gml</script>
@@ -193,6 +202,7 @@
       <script>scripts\camera_init.gml</script>
       <script>scripts\camera_update.gml</script>
       <script>scripts\camera_resize.gml</script>
+      <script>scripts\camera_shake.gml</script>
     </scripts>
     <scripts name="Keymap">
       <script>scripts\keymap_check.gml</script>
@@ -253,6 +263,7 @@
       <script>scripts\save_list_from_array.gml</script>
     </scripts>
     <script>scripts\isomorphic_set_depth.gml</script>
+    <script>scripts\isomorphic_set_depth_ext.gml</script>
     <scripts name="Player">
       <script>scripts\player_get_shield.gml</script>
       <script>scripts\player_init.gml</script>
@@ -305,6 +316,7 @@
       <script>scripts\attack_physical.gml</script>
       <script>scripts\attack_sword.gml</script>
       <script>scripts\attack_gun.gml</script>
+      <script>scripts\attack_accuracy.gml</script>
     </scripts>
     <scripts name="Collision">
       <script>scripts\range_finder.gml</script>
@@ -312,6 +324,10 @@
     <scripts name="Draw">
       <script>scripts\draw_weapon.gml</script>
       <script>scripts\draw_shield.gml</script>
+      <script>scripts\draw_outline_begin.gml</script>
+      <script>scripts\draw_outline_update.gml</script>
+      <script>scripts\draw_outline_end.gml</script>
+      <script>scripts\draw_ik.gml</script>
     </scripts>
     <script>scripts\color_random.gml</script>
     <scripts name="Sound">
@@ -350,6 +366,18 @@
       </scripts>
       <script>scripts\enemy_target.gml</script>
       <script>scripts\enemy_dumb.gml</script>
+      <script>scripts\enemy_line_of_sight.gml</script>
+      <scripts name="Navigation">
+        <script>scripts\enemy_navmesh_closest.gml</script>
+        <script>scripts\enemy_navmesh_path.gml</script>
+        <script>scripts\enemy_navmesh_get.gml</script>
+        <script>scripts\enemy_navmesh_move.gml</script>
+        <script>scripts\enemy_navmesh_clear.gml</script>
+      </scripts>
+      <scripts name="Dog">
+        <script>scripts\ed_approach.gml</script>
+        <script>scripts\ed_attack.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Interact">
       <script>scripts\interact_any.gml</script>
@@ -389,10 +417,18 @@
       <script>scripts\book_text.gml</script>
       <script>scripts\book_any.gml</script>
     </scripts>
+    <scripts name="Stubs">
+      <script>scripts\stubs_load_dom.gml</script>
+      <script>scripts\stubs_load_nick.gml</script>
+      <script>scripts\stubs_load_spencer.gml</script>
+      <script>scripts\stubs_load_alec.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
     <shader type="GLSLES">shaders\sdr_pause.shader</shader>
+    <shader type="GLSLES">shaders\sdr_world.shader</shader>
+    <shader type="GLSLES">shaders\sdr_normal.shader</shader>
   </shaders>
   <fonts name="fonts">
     <font>fonts\fnt_hit</font>
@@ -406,6 +442,7 @@
       <object>objects\obj_generator</object>
       <object>objects\obj_level</object>
       <object>objects\obj_cloner</object>
+      <object>objects\obj_navmesh</object>
     </objects>
     <objects name="UI">
       <object>objects\obj_minimap</object>
@@ -428,6 +465,7 @@
       <object>objects\obj_player</object>
       <object>objects\obj_target</object>
       <object>objects\obj_grunt</object>
+      <object>objects\obj_dog</object>
       <object>objects\obj_boss</object>
       <object>objects\obj_enemy</object>
     </objects>
@@ -523,6 +561,7 @@
       <room>rooms\rm_stub_11</room>
       <room>rooms\rm_stub_12</room>
       <room>rooms\rm_stub_13</room>
+      <room>rooms\rm_stub_d_1</room>
     </rooms>
     <room>rooms\rm_empty</room>
     <rooms name="Boss">

@@ -29,7 +29,8 @@ enum weapon_modifier
     normal,
     rail,
     plasma,
-    scatter
+    scatter,
+    sword
 };
 
 enum weapon_index
@@ -40,6 +41,7 @@ enum weapon_index
     modifier,
     weapon_subtype,
     damage,
+    accuracy,
     capacity,
     remaining,
     fire_timeout,

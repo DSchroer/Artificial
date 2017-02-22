@@ -7,6 +7,17 @@ var py = level_position_y(y);
 var room_index;
 var grid;
 
+if(!instance_exists(obj_level))
+{
+    var t;
+    t[0] = noone;
+    for(var i = 0; i < instance_number(target); i++)
+    {
+        t[i] = instance_find(target, i);
+    }
+    return t;
+}
+
 with(obj_level)
 {
     grid = room_grid;

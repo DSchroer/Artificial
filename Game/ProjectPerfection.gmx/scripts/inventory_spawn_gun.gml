@@ -34,6 +34,17 @@ gun[weapon_index.bullet_sprite] = shot_sprites[gun[weapon_index.modifier]];
 var subType = round(random(6));
 gun[weapon_index.weapon_subtype] = subType;
 
+var accuracies;
+accuracies[weapon_subtype.pistol] = 5;
+accuracies[weapon_subtype.auto_rifle] = 10;
+accuracies[weapon_subtype.heavy_rifle] = 15;
+accuracies[weapon_subtype.sniper_rifle] = 1;
+accuracies[weapon_subtype.smg] = 15;
+accuracies[weapon_subtype.extended_magazine] = 5;
+accuracies[weapon_subtype.superfast_reload] = 5;
+
+gun[weapon_index.accuracy] =  accuracies[subType];
+
 var core = inventory_core_table();
 
 var bases;

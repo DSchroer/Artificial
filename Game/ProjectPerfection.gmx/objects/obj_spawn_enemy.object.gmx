@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>data[0] = obj_grunt;
 data[1] = noone;
-data[2] = obj_grunt;
+data[2] = obj_dog;
 </string>
           </argument>
         </arguments>

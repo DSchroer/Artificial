@@ -7,3 +7,5 @@ if(ds_map_exists(sm_variables, index))
 }else{
     ds_map_set(sm_variables, index, val);
 }
+
+return val;
