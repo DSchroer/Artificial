@@ -1,6 +1,6 @@
 ///eg_attack()
 
-if(point_distance(x, y, obj_player.x, obj_player.y) > 576 || !enemy_line_of_sight(64))
+if(point_distance(x, y, obj_player.x, obj_player.y) > 576 || !enemy_line_of_sight(45))
 {
     sm_set_state("approach");
 }
