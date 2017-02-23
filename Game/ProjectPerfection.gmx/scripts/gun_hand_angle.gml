@@ -6,8 +6,9 @@ var angle = argument3;
 var xscale = argument4;
 var yscale = argument5;
 
-var hand_data = gun_hand_lookup(gun[weapon_index.sprite_count + 1]);
-var handx = hand_data[hand+0];
-var handy = hand_data[hand+1];
+var base_sprite = gun[weapon_index.sprite_count + 1];
+var hand_data = gun_hand_lookup(base_sprite);
+var handx = hand_data[(hand*2)+0];
+var handy = hand_data[(hand*2)+1];
 
-return angle + point_direction(0, 0, dist + ((-sprite_get_xoffset(spr_inv_rifle1) + handx) * xscale), (-sprite_get_yoffset(spr_inv_rifle1) + handy) * yscale);
+return angle + point_direction(0, 0, dist + ((-sprite_get_xoffset(base_sprite) + handx) * xscale), (-sprite_get_yoffset(base_sprite) + handy) * yscale);

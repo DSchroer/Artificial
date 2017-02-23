@@ -30,6 +30,7 @@ if(self.object_index == obj_player)
     {
         camera_shake(15);
     }
+    gun_recoil += 10;
     motion_add(dir, -5);
 }
 

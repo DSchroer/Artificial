@@ -82,4 +82,6 @@ var reload = 2.0;
 reload = inventory_scale_stat(reload, bases[q] / 100, ranges[q] / 100, core[subType, 3]);
 gun[weapon_index.reload_timeout] = reload * 30;
 
+gun = inventory_skin_gun(gun);
+
 return gun;

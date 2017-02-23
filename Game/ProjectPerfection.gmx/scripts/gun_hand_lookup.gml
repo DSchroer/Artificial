@@ -15,4 +15,12 @@ if(gun_sprite == spr_inv_rifle1)
     ret[3] = 45;
 }
 
+if(gun_sprite == spr_pistol_base)
+{
+    ret[0] = 55;
+    ret[1] = 35;
+    ret[2] = 55;
+    ret[3] = 35;
+}
+
 return ret;

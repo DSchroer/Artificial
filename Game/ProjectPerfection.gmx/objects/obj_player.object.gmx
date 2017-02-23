@@ -41,7 +41,9 @@ base_y = 200;
 
 gun_x = -15;
 gun_y = -61;
+gun_base_dist = 13;
 gun_dist = 13;
+gun_recoil = 0;
 
 arm_1_x = -20;
 arm_1_y = -61;
@@ -93,6 +95,14 @@ if(inventory[selected_slot] != -1 &amp;&amp; is_array(inventory[selected_slot]))
 }
 
 gun_angle = point_direction(x, y - 64, mouse_x, mouse_y);
+
+gun_recoil = min(gun_recoil, gun_base_dist);
+gun_dist = gun_base_dist - gun_recoil;
+if(gun_recoil &gt; 0)
+{
+    gun_recoil-=5;
+    gun_recoil = max(gun_recoil, 0);
+}
 
 player_update_shield();
 

@@ -78,6 +78,8 @@
     <sprites name="Weapons">
       <sprite>sprites\spr_inv_rifle1</sprite>
       <sprite>sprites\spr_world_rifle1</sprite>
+      <sprite>sprites\spr_pistol_base</sprite>
+      <sprite>sprites\spr_pistol_assault</sprite>
     </sprites>
     <sprite>sprites\spr_target</sprite>
     <sprite>sprites\spr_sword</sprite>
@@ -170,6 +172,7 @@
       <script>scripts\inventory_spawn_gun.gml</script>
       <script>scripts\inventory_scale_stat.gml</script>
       <script>scripts\inventory_core_table.gml</script>
+      <script>scripts\inventory_skin_gun.gml</script>
     </scripts>
     <scripts name="Level">
       <script>scripts\level_create.gml</script>

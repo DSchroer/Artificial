@@ -35,8 +35,9 @@ if(view_current == 0)
     var gx = lengthdir_x(gdist, gangle) + base_x + (gun_x * image_xscale);
     var gy = lengthdir_y(gdist, gangle) + base_y + gun_y;
 
-    draw_ik(base_x + (arm_2_x * image_xscale), base_y + arm_2_y, base_x + (gun_x * image_xscale) + ((gun_dist + arm_2_delta_dist) * dcos(gun_angle + (arm_2_angle_off * image_xscale))), base_y + gun_y - ((gun_dist + arm_2_delta_dist) * dsin(gun_angle + (arm_2_angle_off * image_xscale))), 23-6, 22-5, image_xscale > 0, spr_player_arm_r, spr_player_arm_r_bottom);
-
+    //draw_ik(base_x + (arm_2_x * image_xscale), base_y + arm_2_y, base_x + (gun_x * image_xscale) + ((gun_dist + arm_2_delta_dist) * dcos(gun_angle + (arm_2_angle_off * image_xscale))), base_y + gun_y - ((gun_dist + arm_2_delta_dist) * dsin(gun_angle + (arm_2_angle_off * image_xscale))), 23-6, 22-5, image_xscale > 0, spr_player_arm_r, spr_player_arm_r_bottom);
+    draw_ik(base_x + (arm_2_x * image_xscale), base_y + arm_2_y, gx, gy, 23-6, 22-5, image_xscale > 0, spr_player_arm_r, spr_player_arm_r_bottom);
+    
     draw_sprite_ext(sprite_index, image_index, base_x, base_y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
     
     if(is_array(inventory[selected_slot]))
