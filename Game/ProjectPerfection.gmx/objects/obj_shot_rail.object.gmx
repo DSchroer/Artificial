@@ -132,22 +132,7 @@ damage = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//draw_line(x, y, x_end, y_end);
-
-draw_outline_begin();
-draw_outline_update(sprite_index);
-
-var distance = point_distance(x, y, x_end, y_end);
-
-var w = sprite_get_width(sprite_index);
-var p = w / 2;
-while(p &lt; distance)
-{
-    draw_sprite_ext(sprite_index, image_index, x + lengthdir_x(p, direction), y + lengthdir_y(p, direction), 1, 1, direction, c_white, 255);
-    p += w;
-}
-
-draw_outline_end();
+            <string>//nothing
 </string>
           </argument>
         </arguments>
