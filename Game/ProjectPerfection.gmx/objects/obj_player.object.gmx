@@ -39,14 +39,19 @@ cursor_sprite = spr_aim;
 base_x = 128;
 base_y = 200;
 
-gun_x = -5;
-gun_y = -67;
+gun_x = -15;
+gun_y = -61;
 gun_dist = 13;
 
-arm_1_x = -10;
-arm_1_y = - 67;
-arm_1_delta_dist = 13;
+arm_1_x = -20;
+arm_1_y = -61;
+arm_1_delta_dist = 8;
 arm_1_angle_off = -25;
+
+arm_2_x = 1;
+arm_2_y = -61
+arm_2_delta_dist = 27;
+arm_2_angle_off = -15;
 
 </string>
           </argument>
@@ -328,25 +333,26 @@ var distance = 13;
 
 if(view_current == 0)
 {
-    if(gun_angle &lt; 180)
+
+    draw_ik(base_x + (arm_2_x * image_xscale), base_y + arm_2_y, base_x + (gun_x * image_xscale) + ((gun_dist + arm_2_delta_dist) * dcos(gun_angle + (arm_2_angle_off * image_xscale))), base_y + gun_y - ((gun_dist + arm_2_delta_dist) * dsin(gun_angle + (arm_2_angle_off * image_xscale))), 23-6, 22-5, image_xscale &gt; 0, spr_player_arm_r, spr_player_arm_r_bottom);
+
+    /*if(gun_angle &lt; 180)
     {
         if(is_array(inventory[selected_slot]))
         {
             draw_weapon(inventory[selected_slot], base_x + (gun_x * image_xscale) + (gun_dist * dcos(gun_angle)), base_y + gun_y - (gun_dist * dsin(gun_angle)), 0.75, yscale, gun_angle, 1);
-        }
-    }
+        } 
+    }*/
 
     draw_sprite_ext(sprite_index, image_index, base_x, base_y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
     
-    if(gun_angle &gt;= 180)
+    if(is_array(inventory[selected_slot]))
     {
-        if(is_array(inventory[selected_slot]))
-        {
-            draw_weapon(inventory[selected_slot], base_x + (gun_x * image_xscale) + (gun_dist * dcos(gun_angle)), base_y + gun_y - (gun_dist * dsin(gun_angle)), 0.75, yscale, gun_angle, 1);
-        
-            draw_ik(base_x + (arm_1_x * image_xscale), base_y + arm_1_y, base_x + (gun_x * image_xscale) + ((gun_dist + arm_1_delta_dist) * dcos(gun_angle + (arm_1_angle_off * image_xscale))), base_y + gun_y - ((gun_dist + arm_1_delta_dist) * dsin(gun_angle + (arm_1_angle_off * image_xscale))), 23-6, 22-5, image_xscale &gt; 0, spr_player_arm, spr_player_arm_bottom);
-        }
+        draw_weapon(inventory[selected_slot], base_x + (gun_x * image_xscale) + (gun_dist * dcos(gun_angle)), base_y + gun_y - (gun_dist * dsin(gun_angle)), 0.75, yscale, gun_angle, 1);
     }
+    
+    
+    draw_ik(base_x + (arm_1_x * image_xscale), base_y + arm_1_y, base_x + (gun_x * image_xscale) + ((gun_dist + arm_1_delta_dist) * dcos(gun_angle + (arm_1_angle_off * image_xscale))), base_y + gun_y - ((gun_dist + arm_1_delta_dist) * dsin(gun_angle + (arm_1_angle_off * image_xscale))), 23-6, 22-5, image_xscale &gt; 0, spr_player_arm_l, spr_player_arm_l_bottom);
     /*
     if(shield_active &amp;&amp; remaining_shield &gt; 0) 
     {
@@ -367,6 +373,11 @@ shader_set_uniform_f(sprite_scale, tex_w, tex_h);
 draw_surface(surface, x - base_x, y - base_y);
 shader_reset();
 
+draw_circle(x + (gun_x * image_xscale), y + gun_y, (gun_dist + arm_2_delta_dist), true);
+draw_circle(x + (gun_x * image_xscale), y + gun_y, (gun_dist + arm_1_delta_dist), true);
+
+draw_circle(x +(gun_x * image_xscale) + ((gun_dist + arm_2_delta_dist) * dcos(gun_angle + (arm_2_angle_off * image_xscale))), y + gun_y - ((gun_dist + arm_2_delta_dist) * dsin(gun_angle + (arm_2_angle_off * image_xscale))), 2, false);
+draw_circle(x +(gun_x * image_xscale) + ((gun_dist + arm_1_delta_dist) * dcos(gun_angle + (arm_1_angle_off * image_xscale))), y + gun_y - ((gun_dist + arm_1_delta_dist) * dsin(gun_angle + (arm_1_angle_off * image_xscale))), 2, false);
 </string>
           </argument>
         </arguments>

@@ -65,8 +65,10 @@
   <sprites name="sprites">
     <sprites name="Player">
       <sprite>sprites\spr_player</sprite>
-      <sprite>sprites\spr_player_arm</sprite>
-      <sprite>sprites\spr_player_arm_bottom</sprite>
+      <sprite>sprites\spr_player_arm_l</sprite>
+      <sprite>sprites\spr_player_arm_l_bottom</sprite>
+      <sprite>sprites\spr_player_arm_r</sprite>
+      <sprite>sprites\spr_player_arm_r_bottom</sprite>
       <sprite>sprites\spr_player_back</sprite>
     </sprites>
     <sprite>sprites\spr_bush</sprite>
@@ -564,6 +566,7 @@
       <room>rooms\rm_stub_12</room>
       <room>rooms\rm_stub_13</room>
       <room>rooms\rm_stub_d_1</room>
+      <room>rooms\rm_stub_d_2</room>
     </rooms>
     <room>rooms\rm_empty</room>
     <rooms name="Boss">
