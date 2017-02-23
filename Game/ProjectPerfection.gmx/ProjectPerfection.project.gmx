@@ -277,6 +277,7 @@
       <script>scripts\player_heal_percent.gml</script>
       <script>scripts\player_update_gun.gml</script>
       <script>scripts\player_reload.gml</script>
+      <script>scripts\player_render_self.gml</script>
     </scripts>
     <scripts name="Ui">
       <script>scripts\ui_draw_inventory.gml</script>
@@ -330,6 +331,7 @@
       <script>scripts\draw_outline_update.gml</script>
       <script>scripts\draw_outline_end.gml</script>
       <script>scripts\draw_ik.gml</script>
+      <script>scripts\draw_held_gun.gml</script>
     </scripts>
     <script>scripts\color_random.gml</script>
     <scripts name="Sound">
@@ -425,6 +427,12 @@
       <script>scripts\stubs_load_spencer.gml</script>
       <script>scripts\stubs_load_alec.gml</script>
     </scripts>
+    <scripts name="Gun">
+      <script>scripts\gun_hand_distance.gml</script>
+      <script>scripts\gun_hand_angle.gml</script>
+      <script>scripts\gun_hand_lookup.gml</script>
+    </scripts>
+    <script>scripts\surface_get_scale.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
