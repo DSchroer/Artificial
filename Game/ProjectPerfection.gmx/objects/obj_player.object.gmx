@@ -41,7 +41,9 @@ base_y = 200;
 
 gun_x = -15;
 gun_y = -61;
+gun_base_dist = 13;
 gun_dist = 13;
+gun_recoil = 0;
 
 arm_1_x = -20;
 arm_1_y = -61;
@@ -93,6 +95,14 @@ if(inventory[selected_slot] != -1 &amp;&amp; is_array(inventory[selected_slot]))
 }
 
 gun_angle = point_direction(x, y - 64, mouse_x, mouse_y);
+
+gun_recoil = min(gun_recoil, gun_base_dist);
+gun_dist = gun_base_dist - gun_recoil;
+if(gun_recoil &gt; 0)
+{
+    gun_recoil-=5;
+    gun_recoil = max(gun_recoil, 0);
+}
 
 player_update_shield();
 
@@ -158,6 +168,8 @@ if(keyboard_check_pressed(vk_escape))
 }
 
 entity_collision();
+
+player_render_self();
 
 </string>
           </argument>
@@ -305,63 +317,7 @@ if(instance_number(obj_spawn_player) &gt; 0)
           <argument>
             <kind>1</kind>
             <string>
-if(!surface_exists(surface))
-{
-    surface = surface_create(256, 256);
-}
 
-surface_set_target(surface);
-draw_clear_alpha(c_red, 0);
-
-var yscale = 0.75;
-if(gun_angle &gt; 90 &amp;&amp; gun_angle &lt; 270)
-{
-    image_xscale = -1;
-    yscale = -0.75;
-}else{
-    image_xscale = 1;
-}
-
-if(gun_angle &lt;= 180)
-{
-    sprite_index = spr_player_back;
-}else{
-    sprite_index = spr_player;
-}
-
-var distance = 13;
-
-if(view_current == 0)
-{
-
-    draw_ik(base_x + (arm_2_x * image_xscale), base_y + arm_2_y, base_x + (gun_x * image_xscale) + ((gun_dist + arm_2_delta_dist) * dcos(gun_angle + (arm_2_angle_off * image_xscale))), base_y + gun_y - ((gun_dist + arm_2_delta_dist) * dsin(gun_angle + (arm_2_angle_off * image_xscale))), 23-6, 22-5, image_xscale &gt; 0, spr_player_arm_r, spr_player_arm_r_bottom);
-
-    /*if(gun_angle &lt; 180)
-    {
-        if(is_array(inventory[selected_slot]))
-        {
-            draw_weapon(inventory[selected_slot], base_x + (gun_x * image_xscale) + (gun_dist * dcos(gun_angle)), base_y + gun_y - (gun_dist * dsin(gun_angle)), 0.75, yscale, gun_angle, 1);
-        } 
-    }*/
-
-    draw_sprite_ext(sprite_index, image_index, base_x, base_y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
-    
-    if(is_array(inventory[selected_slot]))
-    {
-        draw_weapon(inventory[selected_slot], base_x + (gun_x * image_xscale) + (gun_dist * dcos(gun_angle)), base_y + gun_y - (gun_dist * dsin(gun_angle)), 0.75, yscale, gun_angle, 1);
-    }
-    
-    
-    draw_ik(base_x + (arm_1_x * image_xscale), base_y + arm_1_y, base_x + (gun_x * image_xscale) + ((gun_dist + arm_1_delta_dist) * dcos(gun_angle + (arm_1_angle_off * image_xscale))), base_y + gun_y - ((gun_dist + arm_1_delta_dist) * dsin(gun_angle + (arm_1_angle_off * image_xscale))), 23-6, 22-5, image_xscale &gt; 0, spr_player_arm_l, spr_player_arm_l_bottom);
-    /*
-    if(shield_active &amp;&amp; remaining_shield &gt; 0) 
-    {
-        draw_sprite(spr_shield, 0, base_x - 32, base_y - 128);
-    }
-    */
-}
-
-surface_reset_target();
 
 sprite_scale = shader_get_uniform(sdr_world, "sprite_size");
 tex = surface_get_texture(surface);
@@ -372,12 +328,6 @@ shader_set(sdr_world);
 shader_set_uniform_f(sprite_scale, tex_w, tex_h);
 draw_surface(surface, x - base_x, y - base_y);
 shader_reset();
-
-draw_circle(x + (gun_x * image_xscale), y + gun_y, (gun_dist + arm_2_delta_dist), true);
-draw_circle(x + (gun_x * image_xscale), y + gun_y, (gun_dist + arm_1_delta_dist), true);
-
-draw_circle(x +(gun_x * image_xscale) + ((gun_dist + arm_2_delta_dist) * dcos(gun_angle + (arm_2_angle_off * image_xscale))), y + gun_y - ((gun_dist + arm_2_delta_dist) * dsin(gun_angle + (arm_2_angle_off * image_xscale))), 2, false);
-draw_circle(x +(gun_x * image_xscale) + ((gun_dist + arm_1_delta_dist) * dcos(gun_angle + (arm_1_angle_off * image_xscale))), y + gun_y - ((gun_dist + arm_1_delta_dist) * dsin(gun_angle + (arm_1_angle_off * image_xscale))), 2, false);
 </string>
           </argument>
         </arguments>
