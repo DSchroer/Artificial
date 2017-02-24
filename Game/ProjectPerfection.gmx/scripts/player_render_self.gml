@@ -8,8 +8,6 @@ if(!surface_exists(surface))
 surface_set_target(surface);
 draw_clear_alpha(c_red, 0);
 
-debug_show_string(string(surface_get_scale()));
-
 var yscale = 0.75;
 if(gun_angle > 90 && gun_angle < 270)
 {

@@ -16,7 +16,9 @@ enum keycode{
     hide_inventory,
     interact, 
     dequeue_message,
-    healthpack
+    healthpack,
+    escape,
+    reload
 }
 
 var key = argument0;
@@ -74,12 +76,13 @@ if(key == keycode.shield)
 
 if(key == keycode.inventory_up)
 {
-    return keyboard_check_pressed(ord("q")) | keyboard_check_pressed(ord("Q")) || gamepad_button_check_pressed(0, gp_padu);
+    return keyboard_check_pressed(ord("q")) 
+    || keymap_gamepad_check_pressed(gp_shoulderr);
 }
 
 if(key == keycode.fire)
 {
-    return mouse_check_button(mb_left);
+    return mouse_check_button(mb_left) || keymap_gamepad_check(gp_shoulderrb);
 }
 
 if(key == keycode.hide_inventory)
@@ -89,7 +92,17 @@ if(key == keycode.hide_inventory)
 
 if(key == keycode.interact)
 {
-    return keyboard_check_pressed(ord("E"));
+    return keyboard_check_pressed(ord("E")) || keymap_gamepad_check_pressed(gp_face1);
+}
+
+if(key == keycode.escape)
+{
+    return keyboard_check_pressed(vk_escape) || keymap_gamepad_check_pressed(gp_start);
+}
+
+if(key == keycode.reload)
+{
+    return keyboard_check_pressed(ord("R")) || keymap_gamepad_check_pressed(gp_face3);
 }
 
 if(key == keycode.dequeue_message)
