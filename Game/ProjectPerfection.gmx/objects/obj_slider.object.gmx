@@ -33,6 +33,7 @@ height = 64;
 user_event_index = -1;
 percent = 0.50;
 center_x = false;
+index = -1;
 </string>
           </argument>
         </arguments>
@@ -63,7 +64,15 @@ center_x = false;
 var mx = device_mouse_x_to_gui(0);
 var my = device_mouse_y_to_gui(0);
 
-if(mouse_check_button_pressed(mb_left))
+if(point_in_rectangle(mx, my, x, y, x + 256 + 64 + 64, y + 64))
+{
+    if(obj_menu.use_mouse)
+    {
+        obj_menu.index = self.index;
+    }
+}
+
+if(mouse_check_button_pressed(mb_left) &amp;&amp; obj_menu.index == self.index)
 {
     if(point_in_rectangle(mx, my, x, y, x + 64, y + 64))
     {

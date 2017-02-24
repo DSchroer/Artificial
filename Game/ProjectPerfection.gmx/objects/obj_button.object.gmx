@@ -33,6 +33,7 @@ height = 64;
 text = "Test";
 user_event_index = -1;
 center_x = false;
+index = 0;
 </string>
           </argument>
         </arguments>
@@ -65,9 +66,14 @@ if(center_x)
 var mx = device_mouse_x_to_gui(0);
 var my = device_mouse_y_to_gui(0);
 
-if(point_in_rectangle(mx, my, x, y, x + sprite_width, y + sprite_height))
+if(point_in_rectangle(mx, my, x, y, x + sprite_width, y + sprite_height) &amp;&amp; obj_menu.use_mouse)
 {
-    if(mouse_check_button_pressed(mb_left))
+    obj_menu.index = self.index
+}
+
+if(obj_menu.index == self.index)
+{
+    if(mouse_check_button_pressed(mb_left) || keyboard_check_pressed(vk_enter) || keymap_gamepad_check(gp_face1))
     {
         var index = user_event_index;
         with(obj_menu)

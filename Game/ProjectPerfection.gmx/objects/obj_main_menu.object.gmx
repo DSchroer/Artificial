@@ -25,14 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>event_inherited();
+index = 0;
+
 enum menu_type
 {
     main,
     options
 }
-
-
 
 draw_set_color(c_white);
 
@@ -73,6 +73,8 @@ music_id = -1;
           <argument>
             <kind>1</kind>
             <string>
+event_inherited();
+
 if(music_id == -1 || !audio_is_playing(music_id))
 {
     music_id = audio_play_sound(bkg_menu, 1, false);
@@ -128,6 +130,7 @@ game_end();
             <kind>1</kind>
             <string>// Open options
 
+index = 0;
 ds_stack_push(menu_stack, menu_type.options);
 menu_destroy_menu(menu_type.main);
 menu_create_options_menu();
@@ -158,6 +161,7 @@ menu_create_options_menu();
             <kind>1</kind>
             <string>// Close current menu
 
+index = 0;
 var closing_menu = ds_stack_pop(menu_stack);
 
 menu_destroy_menu(closing_menu);
