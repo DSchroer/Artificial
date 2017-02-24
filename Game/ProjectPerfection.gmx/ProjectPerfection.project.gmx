@@ -211,6 +211,8 @@
     </scripts>
     <scripts name="Keymap">
       <script>scripts\keymap_check.gml</script>
+      <script>scripts\keymap_gamepad_check.gml</script>
+      <script>scripts\keymap_gamepad_check_pressed.gml</script>
     </scripts>
     <scripts name="Generator">
       <script>scripts\generator_init.gml</script>

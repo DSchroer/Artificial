@@ -156,7 +156,6 @@ if(abs(haxis_ls) > 0.05 || abs(vaxis_ls) > 0.05)
     motion_add(dir, magnitude * 3);
 }
 
-// Right analogue stick:
 var haxis_rs = gamepad_axis_value(0, gp_axisrh);
 var vaxis_rs = gamepad_axis_value(0, gp_axisrv);
 
@@ -167,37 +166,10 @@ if(abs(haxis_rs) > 0.05 || abs(vaxis_rs) > 0.05)
     // Compute the direction and magnitude of the analogue stick press.
     var dir = point_direction(0, 0, haxis_rs, vaxis_rs);
     var magnitude = point_distance(0, 0, haxis_rs, vaxis_rs);
-
-    // TODO: Put code here (rotate player/camera?)
-
-}
-
-// ABXY:
-// (Attacks, interacting with world, etc...)
-
-// A/cross 
-
-if(gamepad_button_check_pressed(0, gp_face1))
-{
-    var ite = inventory_create_weapon();
-    inventory_swap(self, selected_slot, ite);
-}
-/*
-// B/circle
-if(gamepad_button_check_pressed(0, gp_face2))
-{
-    var ite = instance_create(0, 0, obj_shield);
-    inventory_swap(self, inventory_slot.shield, ite);
-
-}*/
-
-
-// Y/triangle
-if(gamepad_button_check_pressed(0, gp_face4))
-{
+ 
+    var px = display_get_gui_width() / 2;
+    var py = display_get_gui_height() / 2;
     
-
+    window_mouse_set( px + lengthdir_x(magnitude * px, dir), py +  lengthdir_y(magnitude * py, dir));
 }
 
-// We can also push the left and right sticks with gp_stickl, gl_stickr
-// Start and select are gp_start, gp_select.
