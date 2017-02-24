@@ -73,7 +73,9 @@ if(point_in_rectangle(mx, my, x, y, x + sprite_width, y + sprite_height) &amp;&a
 
 if(obj_menu.index == self.index)
 {
-    if(mouse_check_button_pressed(mb_left) || keyboard_check_pressed(vk_enter) || keymap_gamepad_check(gp_face1))
+    if(mouse_check_button_pressed(mb_left) || 
+    keyboard_check_pressed(vk_enter) || 
+    keymap_gamepad_check_pressed(gp_face1))
     {
         var index = user_event_index;
         with(obj_menu)

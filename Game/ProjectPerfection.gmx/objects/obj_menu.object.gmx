@@ -29,6 +29,7 @@
 use_mouse = true;
 mouse_prev_x = mouse_x;
 mouse_prev_y = mouse_y;
+tick = false;
 </string>
           </argument>
         </arguments>
@@ -56,6 +57,20 @@ mouse_prev_y = mouse_y;
     use_mouse = true;
     mouse_prev_x = mouse_x;
     mouse_prev_y = mouse_y;
+}
+
+if(abs(gamepad_axis_value(0, gp_axislv)) &lt; 0.2)
+{
+    tick = false;
+}else if(gamepad_axis_value(0, gp_axislv) &gt; 0 &amp;&amp; !tick)
+{
+    tick = true;
+    use_mouse = false;
+    index = min(instance_number(obj_button) + instance_number(obj_slider) - 1, index + 1);
+}else if(!tick){
+    tick = true;
+    use_mouse = false;
+    index = max(0, index - 1);
 }
 
 if(keyboard_check_pressed(ord('S')))
