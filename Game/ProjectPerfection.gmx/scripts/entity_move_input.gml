@@ -1,6 +1,6 @@
 ///entity_move_input()
 
-if(is_paused() || dead)
+if(is_paused() || dead || room == rm_transition)
 {
     speed = 0;
     exit;
