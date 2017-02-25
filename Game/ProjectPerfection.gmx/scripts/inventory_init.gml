@@ -73,7 +73,8 @@ enum weapon_subtype
     sniper_rifle,
     smg,
     extended_magazine,
-    superfast_reload
+    superfast_reload,
+    machine_gun
 };
 
 selected_slot = inventory_slot.weapon1;

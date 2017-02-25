@@ -31,7 +31,7 @@ shot_sprites[weapon_modifier.rail] = spr_rail;
 shot_sprites[weapon_modifier.scatter] = spr_bullet;
 gun[weapon_index.bullet_sprite] = shot_sprites[gun[weapon_index.modifier]];
 
-var subType = round(random(6));
+var subType = round(random(7));
 gun[weapon_index.weapon_subtype] = subType;
 
 var accuracies;
