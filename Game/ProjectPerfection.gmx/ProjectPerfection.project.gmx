@@ -444,6 +444,8 @@
     <shader type="GLSLES">shaders\sdr_pause.shader</shader>
     <shader type="GLSLES">shaders\sdr_world.shader</shader>
     <shader type="GLSLES">shaders\sdr_normal.shader</shader>
+    <shader type="GLSLES">shaders\sdr_fill.shader</shader>
+    <shader type="GLSLES">shaders\sdr_chromatic_ab.shader</shader>
   </shaders>
   <fonts name="fonts">
     <font>fonts\fnt_hit</font>
@@ -545,6 +547,7 @@
     <object>objects\obj_health_can</object>
     <objects name="Transitions">
       <object>objects\obj_post_process</object>
+      <object>objects\obj_ca</object>
       <object>objects\obj_fade_out</object>
       <object>objects\obj_fade_in</object>
     </objects>

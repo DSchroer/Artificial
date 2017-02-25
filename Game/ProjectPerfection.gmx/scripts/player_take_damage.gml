@@ -25,6 +25,15 @@ else
     if(invincible == 0)
     {
         invincible = 15;
+        if(instance_number(obj_ca) == 0)
+        {
+            instance_create(0,0, obj_ca);
+        }
+        with(obj_ca)
+        {
+            obj_ca.cadir = other.damage_dir;
+            obj_ca.calen = 30;
+        }
         entity_take_damage(); 
     }  
 }

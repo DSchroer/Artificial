@@ -1,6 +1,6 @@
 ///entity_move_input()
 
-if(is_paused())
+if(is_paused() || dead)
 {
     speed = 0;
     exit;
