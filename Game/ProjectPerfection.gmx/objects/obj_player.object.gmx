@@ -231,7 +231,7 @@ debug_show_string("in4: " + string_array(inventory[4]));
 
 debug_show_string("fps: " + string(fps));
 
-if(keymap_check(keycode.interact))
+if(keymap_check(keycode.interact) &amp;&amp; !dead)
 {
     var inter = interact_any(128);
     if(inter == noone)
@@ -271,7 +271,7 @@ if(invincible &gt; 0)
     --invincible;
 }
 
-if(keymap_check(keycode.fire))
+if(keymap_check(keycode.fire) &amp;&amp; !dead)
 {
     player_fire();
 }
