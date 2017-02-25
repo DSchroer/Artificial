@@ -42,6 +42,7 @@ accuracies[weapon_subtype.sniper_rifle] = 1;
 accuracies[weapon_subtype.smg] = 15;
 accuracies[weapon_subtype.extended_magazine] = 5;
 accuracies[weapon_subtype.superfast_reload] = 5;
+accuracies[weapon_subtype.machine_gun] = 10;
 
 gun[weapon_index.accuracy] =  accuracies[subType];
 
