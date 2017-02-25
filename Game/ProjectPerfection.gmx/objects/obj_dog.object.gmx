@@ -139,10 +139,7 @@ event_inherited();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_outline_begin();
-draw_outline_update(sprite_index);
-draw_self();
-draw_outline_end();
+            <string>event_inherited();
 </string>
           </argument>
         </arguments>
