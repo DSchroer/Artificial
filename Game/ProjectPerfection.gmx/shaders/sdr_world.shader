@@ -45,20 +45,13 @@ float outline_pass(float alpha, vec2 offsetx, vec2 offsety)
 
 void main()
 {
-    vec2 offsetx;
-    vec2 offsety;
-    offsetx.x = sprite_size.x;
-    offsety.y = sprite_size.y;
-    
+    vec2 offsetx = vec2(sprite_size.x, 0.0);
+    vec2 offsety = vec2(0.0, sprite_size.y);
+  
     float alpha = 0.;
     alpha = outline_pass(alpha, offsetx, offsety);
-    
-    /*
-    offsetx.x += sprite_size.x;
-    offsety.y += sprite_size.y;
-    alpha = outline_pass(alpha, offsetx, offsety);*/
-    
-    if( texture2D( gm_BaseTexture, v_vTexcoord ).a <= alpha_threshold && alpha != 0.)
+
+    if((texture2D( gm_BaseTexture, v_vTexcoord ).a <= alpha_threshold) && alpha != 0.)
     {
         gl_FragColor = vec4(1,1,1,1);
     }else{

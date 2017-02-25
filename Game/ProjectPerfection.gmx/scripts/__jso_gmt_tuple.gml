@@ -1,5 +1,5 @@
 #define __jso_gmt_tuple
-{
+
 
   /**
   tuple(>element_0<, >element_1<, ..., >element_n<): Return an n-tuple
@@ -35,11 +35,11 @@
   //Return the tuple, with size header character, address table and data
   return string_format(argument_count, 3, 0)+addr_table+data;
   
-}
+
 
 
 #define __jso_gmt_elem
-{
+
 
   /**
   elem(tuple_source, n): Return the <n>th element of <tuple_source>
@@ -71,11 +71,11 @@
     return real(string_copy(t, start, afterend-start));
   }
 
-}
+
 
 
 #define __jso_gmt_size
-{
+
   
   /**
   size(tuple_source): Return the size of <tuple_source>
@@ -85,11 +85,11 @@
 
   return real(string_copy(argument0, 1, 3));
 
-}
+
 
 
 #define __jso_gmt_numtostr
-{
+
 
   /**
   __gmt_numtostr(num): Return string representation of <num>. Decimal numbers expressed as scientific notation
@@ -123,11 +123,11 @@
       return mantissa;
     }
 
-}
+
 
 
 #define __jso_gmt_test_all
-{
+
 
   /**
   test_all(): Runs all test suites
@@ -138,11 +138,11 @@
   __jso_gmt_test_size();
   __jso_gmt_test_numtostr();
 
-}
+
 
 
 #define __jso_gmt_test_numtostr
-{
+
 
   var tolerance;
   tolerance = 1/10000000000;
@@ -166,11 +166,11 @@
     show_message("Scientific notation conversion failed for 1/pi! Result: " + __jso_gmt_numtostr(1/pi));
   }
 
-}
+
 
 
 #define __jso_gmt_test_elem
-{
+
 
   if (__jso_gmt_elem(__jso_gmt_tuple("Qblock", "kll"), 0) != "Qblock") {
     show_message("Element retrieval failed for simple string. #Should be:Qblock#Actual:" + __jso_gmt_elem(__jso_gmt_tuple("Qblock"), 0));
@@ -186,11 +186,11 @@
     show_message("Element retrieval failed in nested tuple. #Should be 3#Actual:" + string(__jso_gmt_elem(__jso_gmt_elem(__jso_gmt_tuple("Not this", __jso_gmt_tuple(0, 1, 2, 3), "Waahoo"), 1), 3)));
   }  
 
-}
+
 
 
 #define __jso_gmt_test_size
-{
+
 
   if (__jso_gmt_size(__jso_gmt_tuple("Waahoo", "Negg", 0)) != 3) {
     show_message("Bad size for 3-tuple");
@@ -205,82 +205,82 @@
     show_message("Bad size for 10-tuple");
   }
 
-}
+
 
 
 #define jso_new_map
 ///jso_new_map()
-{
+
     /**
     jso_new_map(): Create a new map.
     */
     return ds_map_create();
-}
+
 
 
 #define jso_new_list
 ///jso_new_list()
-{
+
     /**
     jso_new_list(): Create a new list.
     */
     return ds_list_create();
-}
+
 
 
 #define jso_map_add_real
 ///jso_map_add_real(map, key, val)
-{
+
     /**
     jso_map_add_real(map, key, val): Add the key-value pair <key>:<val> to <map>, where <val> is a real value.
     */
     ds_map_add(argument0, argument1, argument2);
-}
+
 
 
 #define jso_map_add_string
 ///jso_map_add_string(map, key, str)
-{
+
     /**
     jso_map_add_string(map, key, str): Add the key-value pair <key>:<str> to <map>, where <str> is a string value.
     */
     ds_map_add(argument0, argument1, "s" + argument2);
-}
+
 
 
 #define jso_map_add_sublist
 ///jso_map_add_sublist(map, key, sublist)
-{
+
     /**
     jso_map_add_sublist(map, key, sublist): Add the key-value pair <key>:<sublist> to <map>, where <sublist> is a list.
     */
     ds_map_add(argument0, argument1, "l" + string(argument2));
-}
+
 
 
 #define jso_map_add_submap
 ///jso_map_add_submap(map, key, submap)
-{
+
     /**
     jso_map_add_submap(map, key, submap): Add the key-value pair <key>:<submap> to <map>, where <submap> is a map.
     */
     ds_map_add(argument0, argument1, "m" + string(argument2));
-}
+
 
 
 #define jso_map_add_integer
 ///jso_map_add_integer(map, key, int)
-{
+
     /**
     jso_map_add_integer(map, key, int): Add the key-value pair <key>:<int> to <map>, where <int> is a integer value.
     */
     ds_map_add(argument0, argument1, floor(argument2));
-}
+
 
 
 #define jso_map_add_boolean
 ///jso_map_add_boolean(map, key, bool)
-{
+
     /**
     jso_map_add_boolean(map, key, bool): Add the key-value pair <key>:<bool> to <map>, where <bool> is a boolean value.
     */
@@ -289,72 +289,72 @@
     } else {
         ds_map_add(argument0, argument1, "bfalse");
     }
-}
+
 
 
 #define jso_map_add_null
 ///jso_map_add_null(map, key)
-{
+
     /**
     jso_map_add_null(map, key): Add the key-value pair <key>:null to <map>.
     */
     ds_map_add(argument0, argument1, "nnull");
-}
+
 
 
 #define jso_list_add_real
 ///jso_list_add_real(list, val)
-{
+
     /**
     jso_list_add_real(list, val): Append the real value <val> to <list>.
     */
     ds_list_add(argument0, argument1);
-}
+
 
 
 #define jso_list_add_string
 ///jso_list_add_string(list, str)
-{
+
     /**
     jso_list_add_string(list, str): Append the string value <str> to <list>.
     */
     ds_list_add(argument0, "s" + argument1);
-}
+
 
 
 #define jso_list_add_sublist
 ///jso_list_add_sublist(list, sublist)
-{
+
     /**
     jso_list_add_sublist(list, sublist): Append the list <sublist> to <list>.
     */
     ds_list_add(argument0, "l" + string(argument1));
-}
+
 
 
 #define jso_list_add_submap
 ///jso_list_add_submap(list, submap)
-{
+
     /**
     jso_list_add_submap(list, submap): Append the map <submap> to <list>.
     */
     ds_list_add(argument0, "m" + string(argument1));
-}
+
 
 
 #define jso_list_add_integer
 ///jso_list_add_integer(list, int)
-{
+
     /**
     jso_list_add_integer(list, int): Append the integer <int> to <list>.
     */
     ds_list_add(argument0, floor(argument1));
-}
+
 
 
 #define jso_list_add_boolean
 ///jso_list_add_boolean(list, bool)
-{
+
     /**
     jso_list_add_boolean(list, bool): Append the boolean value <bool> to <list>.
     */
@@ -363,22 +363,22 @@
     } else {
         ds_list_add(argument0, "bfalse");
     }
-}
+
 
 
 #define jso_list_add_null
 ///jso_list_add_null(list)
-{
+
     /**
     jso_list_add_null(list): Append the null value to <list>.
     */
     ds_list_add(argument0, "nnull");
-}
+
 
 
 #define jso_map_get
 ///jso_map_get(map, key)
-{
+
     /**
     jso_map_get(map, key): Retrieve the value stored in <map> with the key value <key>, with the correct type.
     */
@@ -423,12 +423,12 @@
     else {
         return v;
     }
-}
+
 
 
 #define jso_map_get_type
 ///jso_map_get_type(map, key)
-{
+
     /**
     jso_map_get_type(map, key): Return the type of value to which the key value <key> is mapped to in <map>.
     */
@@ -463,12 +463,12 @@
     else {
         return jso_type_real;
     }
-}
+
 
 
 #define jso_list_get
 ///jso_list_get(list, index)
-{
+
     /**
     jso_list_get(list, index): Retrieve the value stored in <list> at position <index>, with the correct type.
     */
@@ -513,12 +513,12 @@
     else {
         return v;
     }
-}
+
 
 
 #define jso_list_get_type
 ///jso_list_get_type(list, index)
-{
+
     /**
     jso_list_get_type(list, index): Retrieve the type of value found at position <index> of <list>.
     */
@@ -553,12 +553,12 @@
     else {
         return jso_type_real;
     }
-}
+
 
 
 #define jso_cleanup_map
 ///jso_cleanup_map(map)
-{
+
     /**
     jso_cleanup_map(map): Recursively free up <map>.
     */
@@ -587,12 +587,11 @@
     
     //Done, clean up
     ds_map_destroy(argument0);
-}
 
 
 #define jso_cleanup_list
 ///jso_cleanup_list(list)
-{
+
     /**
     jso_cleanup_list(list): Recursively free up <list>.
     */
@@ -616,12 +615,12 @@
     
     //Done, clean up
     ds_list_destroy(argument0);
-}
+
 
 
 #define jso_encode_real
 ///jso_encode_real(real)
-{
+
     /**
     jso_encode_real(<real>): Return a JSON-encoded version of real value <real>.
     This uses scientific notation with up to 15 significant digits for decimal values.
@@ -630,12 +629,11 @@
     */
     
     return __jso_gmt_numtostr(argument0);
-}
 
 
 #define jso_encode_string
 ///jso_encode_string(str)
-{
+
     /**
     jso_encode_string(str): Return a JSON-encoded version of string <str>.
     */
@@ -674,12 +672,12 @@
 
     //Add quotes
     return '"' + s + '"';
-}
+
 
 
 #define jso_encode_list
 ///jso_encode_list(list)
-{
+
     /**
     jso_encode_list(list): Return a JSON-encoded version of list <list>.
     */
@@ -718,12 +716,12 @@
     
     //Done, add square brackets
     return "[" + s + "]";
-}
+
 
 
 #define jso_encode_map
 ///jso_encode_map(map)
-{
+
     /**
     jso_encode_map(map): Return a JSON-encoded version of map <map>.
     */
@@ -773,22 +771,22 @@
     
     //Done, add braces
     return "{" + s + "}";
-}
+
 
 
 #define jso_encode_integer
 ///jso_encode_integer(int)
-{
+
     /**
     jso_encode_integer(int): Return a JSON-encoded version of the integer value <int>.
     */
     return string(floor(argument0));
-}
+
 
 
 #define jso_encode_boolean
 ///jso_encode_boolean(bool)
-{
+
     /**
     jso_encode_boolean(bool): Return a JSON-encoded version of the boolean value <bool>.
     */
@@ -797,91 +795,90 @@
     } else {
         return "false";
     }
-}
+
 
 
 #define jso_encode_null
 ///jso_encode_null()
-{
+
     /**
     jso_encode_null(): Return a JSON-encoded version of null.
     */
     return "null";
-}
+
 
 
 #define jso_decode_map
 ///jso_decode_map(json)
-{
+
     /**
     jso_decode_map(json): Return a JSOnion-compatible map representing the JSON string <json>.
     */
     return __jso_gmt_elem(_jso_decode_map(argument0, 1), 0);
-}
+
 
 
 #define jso_decode_list
 ///jso_decode_list(json)
-{
+
     /**
     jso_decode_list(json): Return a JSOnion-compatible list representing the JSON string <json>.
     */
     return __jso_gmt_elem(_jso_decode_list(argument0, 1), 0);
-}
+
 
 
 #define jso_decode_string
 ///jso_decode_string(json)
-{
+
     /**
     jso_decode_string(json): Return a string representing the JSON string <json>.
     */
     return __jso_gmt_elem(_jso_decode_string(argument0, 1), 0);
-}
 
 
 #define jso_decode_boolean
 ///jso_decode_boolean(json)
-{
+
     /**
     jso_decode_boolean(json): Return a boolean value representing the JSON string <json>.
     */
     return __jso_gmt_elem(_jso_decode_boolean(argument0, 1), 0);
-}
+
 
 
 #define jso_decode_real
 ///jso_decode_real(json)
-{
+
     /**
     jso_decode_real(json): Return a real value representing the JSON string <json>.
     */
     return __jso_gmt_elem(_jso_decode_real(argument0, 1), 0);
-}
+
 
 
 #define jso_decode_integer
 ///jso_decode_integer(json)
-{
+
     /**
     jso_decode_integer(json): Return an integer value representing the JSON string <json>.
     */
     return __jso_gmt_elem(_jso_decode_integer(argument0, 1), 0);
-}
+
 
 
 #define jso_decode_null
 ///jso_decode_null(json)
-{
+
     /**
     jso_decode_null(json): Return null representing the JSON string <json>.
     */
     return __jso_gmt_elem(_jso_decode_null(argument0, 1), 0);
-}
+
 
 
 #define _jso_decode_map
-{
+
     /**
     _jso_decode_map(json, startindex): Extract a map from JSON string <json> starting at position <startindex>.
     Return a 2-tuple of the extracted map handle and the position after the ending }.
@@ -1023,11 +1020,11 @@
     else {
         show_error("Unexpected end of map in JSON string.", true);
     }
-}
+
 
 
 #define _jso_decode_list
-{
+
     /**
     _jso_decode_list(json, startindex): Extract a list from JSON string <json> starting at position <startindex>.
     Return a 2-tuple of the extracted list handle and the position after the ending ].
@@ -1134,11 +1131,11 @@
     else {
         show_error("Unexpected end of list in JSON string.", true);
     }
-}
+
 
 
 #define _jso_decode_string
-{
+
     /**
     _jso_decode_string(json, startindex): Extract a string from JSON string <json> starting at position <startindex>.
     Return a 2-tuple of the extracted string and the position after the ending double quote.
@@ -1225,11 +1222,11 @@
     else {
         show_error("Unexpected end of string in JSON string.", true);
     }
-}
+
 
 
 #define _jso_decode_boolean
-{
+
     /**
     _jso_decode_boolean(json, startindex): Extract a boolean from JSON string <json> starting at position <startindex>.
     Return a 2-tuple of the extracted boolean and the position after the last e.
@@ -1263,11 +1260,11 @@
     else {
         show_error("Unexpected end of boolean in JSON string.", true);
     }
-}
+
 
 
 #define _jso_decode_real
-{
+
     /**
     _jso_decode_real(json, startindex): Extract a real value from JSON string <json> starting at position <startindex>.
     Return a 2-tuple of the extracted real value and the position after the real value.
@@ -1433,11 +1430,11 @@
     else {
         show_error("Unexpected end of real in JSON string.", true);
     }
-}
+
 
 
 #define _jso_decode_integer
-{
+
     /**
     _jso_decode_real(json, startindex): Extract a real value from JSON string <json> starting at position <startindex>.
     Return a 2-tuple of the extracted integer value (with leading i) and the position after the real value.
@@ -1518,11 +1515,11 @@
     else {
         show_error("Unexpected end of integer in JSON string.", true);
     }
-}
+
 
 
 #define _jso_decode_null
-{
+
     /**
     _jso_decode_null(json, startindex): Extract a null from JSON string <json> starting at position <startindex>.
     Return a 2-tuple of the extracted null and the position after the last l.
@@ -1552,12 +1549,12 @@
     else {
         show_error("Unexpected end of null in JSON string.", true);
     }
-}
+
 
 
 #define jso_compare_maps
 ///jso_compare_maps(map1, map2)
-{
+
     /**
     jso_compare_maps(map1, map2): Return whether the contents of JSOnion-compatible maps <map1> and <map2> are the same.
     */
@@ -1608,12 +1605,12 @@
     
     //No mismatches, return true
     return true;
-}
+
 
 
 #define jso_compare_lists
 ///jso_compare_lists(list1, list2)
-{
+
     /**
     jso_compare_lists(list1, list2): Return whether the contents of JSOnion-compatible lists <list1> and <list2> are the same.
     */
@@ -1657,12 +1654,12 @@
     
     //No mismatches, return true
     return true;
-}
+
 
 
 #define jso_map_check
 ///jso_map_check(map, key1, [key2], [...])
-{
+
     /**
     jso_map_check(map, key1, key2, ...): Recursively look up keys/indices in the top-level map <map>, return whether a value exists there.
     */
@@ -1686,12 +1683,12 @@
     
     //Done
     return result;
-}
+
 
 
 #define jso_list_check
 ///jso_list_check(list, key1, [key2], [...])
-{
+
     /**
     jso_list_check(list, key1, key2, ...): Recursively look up keys/indices in the top-level list <list>, return whether a value exists there.
     */
@@ -1715,12 +1712,12 @@
     
     //Done
     return result;
-}
+
 
 
 #define jso_map_lookup
 ///jso_map_lookup(map, key1, [key2], [...])
-{
+
     /**
     jso_map_lookup(map, key1, key2, ...): Recursively look up keys/indices in the top-level map <map>, return the value that exists there.
     */
@@ -1744,12 +1741,12 @@
     
     //Done
     return result;
-}
+
 
 
 #define jso_map_lookup_type
 ///jso_map_lookup_type(map, key1, [key2], [...])
-{
+
     /**
     jso_map_lookup_type(map, key1, key2, ...): Recursively look up keys/indices in the top-level map <map>, return the type of value that exists there.
     */
@@ -1773,12 +1770,12 @@
     
     //Done
     return result;
-}
+
 
 
 #define jso_list_lookup
 ///jso_list_lookup(list, key1, [key2], [...])
-{
+
     /**
     jso_list_lookup(list, key1, key2, ...): Recursively look up keys/indices in the top-level list <list>, return the value that exists there.
     */
@@ -1802,12 +1799,12 @@
     
     //Done
     return result;
-}
+
 
 
 #define jso_list_lookup_type
 ///jso_list_lookup_type(list, key1, [key2], [...])
-{
+
     /**
     jso_list_lookup_type(list, key1, key2, ...): Recursively look up keys/indices in the top-level list <list>, return the type of value that exists there.
     */
@@ -1831,12 +1828,12 @@
     
     //Done
     return result;
-}
+
 
 
 #define jso_clone_map
 ///jso_clone_map(map)
-{
+
     /**
     jso_clone_map(map): Return a deep copy of JSOnion-compatible map <map>.
     JSOnion version: 1.1.0
@@ -1867,12 +1864,12 @@
     
     //Done
     return clone;
-}
+
 
 
 #define jso_clone_list
 ///jso_clone_list(list)
-{
+
     /**
     jso_clone_list(list): Return a deep copy of JSOnion-compatible list <list>.
     JSOnion version: 1.1.0
@@ -1901,11 +1898,11 @@
     
     //Done
     return clone;
-}
+
 
 
 #define _jso_lookup_kernel
-{
+
     /**
     _jso_lookup_kernel(jso_ds, jso_type, task_type, ds_args_list): Kernel of the check and lookup functions.
     - jso_ds: The JSOnion-compatible data structure handle.
@@ -1998,11 +1995,11 @@
             return type;
         break;
     }
-}
+
 
 
 #define _jso_is_whitespace_char
-{
+
     /**
     _jso_is_whitespace_char(char): Return whether <char> is a whitespace character.
     Definition of whitespace is given by Unicode 6.0, Chapter 4.6.
@@ -2037,11 +2034,11 @@
             return true;
     }
     return false;
-}
+
 
 
 #define _jso_hex_to_decimal
-{
+
     /**
     _jso_hex_to_decimal(hex_string): Return the decimal value of the hex number represented by <hex_string>
     */
@@ -2065,4 +2062,4 @@
         }
     }
     return num;
-}
+

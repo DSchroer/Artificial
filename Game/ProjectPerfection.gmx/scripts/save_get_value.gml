@@ -5,19 +5,19 @@ var def = argument2;
 
 with(save)
 {
-    var value = jso_map_get(save_data, name);
+    var value1 = jso_map_get(save_data, name);
     var type = jso_map_get_type(save_data, name);
     
     if(type == jso_type_list)
     {
-        value = save_create_array(value);
+        value1 = save_create_array(value1);
     }
     
-    if(value == jso_value_of_null || is_undefined(value))
+    if(value1 == jso_value_of_null || is_undefined(value1))
     {
         return def;
     }
-    return value;
+    return value1;
 }
 
 
