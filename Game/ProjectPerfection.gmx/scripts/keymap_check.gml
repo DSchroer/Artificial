@@ -76,7 +76,7 @@ if(key == keycode.shield)
 
 if(key == keycode.inventory_up)
 {
-    return keyboard_check_pressed(ord("q")) 
+    return keyboard_check_pressed(ord("Q")) 
     || keymap_gamepad_check_pressed(gp_shoulderr);
 }
 
@@ -87,7 +87,7 @@ if(key == keycode.fire)
 
 if(key == keycode.hide_inventory)
 {
-    return keyboard_check_pressed(ord("i")) || keyboard_check_pressed(ord("I")) || gamepad_button_check_pressed(0, gp_face4); 
+    return keyboard_check_pressed(ord("I")) || gamepad_button_check_pressed(0, gp_face4); 
 }
 
 if(key == keycode.interact)

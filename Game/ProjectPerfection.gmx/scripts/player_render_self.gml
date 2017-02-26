@@ -17,13 +17,6 @@ if(gun_angle > 90 && gun_angle < 270)
     image_xscale = 1;
 }
 
-if(gun_angle <= 180)
-{
-    sprite_index = spr_player_back;
-}else{
-    sprite_index = spr_player;
-}
-
 var distance = 13;
 
 if(view_current == 0)
