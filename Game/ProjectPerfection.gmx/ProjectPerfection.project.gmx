@@ -396,6 +396,7 @@
         <script>scripts\ed_approach.gml</script>
         <script>scripts\ed_attack.gml</script>
       </scripts>
+      <script>scripts\enemy_scale_gun.gml</script>
     </scripts>
     <scripts name="Interact">
       <script>scripts\interact_any.gml</script>
