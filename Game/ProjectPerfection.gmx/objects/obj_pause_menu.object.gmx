@@ -54,6 +54,7 @@ index = 0;
     instance_destroy();
 }
 
+save_flush(obj_save_data);
 room_goto(rm_main_menu);
 </string>
           </argument>
