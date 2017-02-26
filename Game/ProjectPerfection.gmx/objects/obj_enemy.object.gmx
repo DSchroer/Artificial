@@ -77,9 +77,7 @@ event_inherited();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_ellipse(x + hbox_x1, y + hbox_y1, x + hbox_x2, y + hbox_y2 , true);
-
-switch(hit_stage)
+            <string>switch(hit_stage)
 {
     case 0:
         draw_outline_begin();
