@@ -28,6 +28,7 @@
             <string>parent = self;
 damage = 1;
 paused = false;
+y_off = 45;
 </string>
           </argument>
         </arguments>
@@ -63,17 +64,25 @@ if(!paused &amp;&amp; is_paused())
     paused = false;
 }
 
-var entity = instance_place(x, y, obj_entity);
-if(entity &amp;&amp; entity != parent)
+var hit = false;
+with(obj_entity)
 {
-    with(entity)
+    if(self != other.parent)
     {
-        entity_apply_damage(damager(other.damage));
+        if(point_in_ellipse(other.x, other.y, x + hbox_x1, y + hbox_y1, x + hbox_x2, y + hbox_y2))
+        {
+            hit = true;
+            entity_apply_damage(damager(other.damage));
+        }
     }
+}
+if(hit)
+{
     instance_destroy();
 }
 
-if(place_meeting(x, y, obj_wall))
+
+if(collision_point(x, y + y_off, obj_wall, false, false))
 {
     instance_destroy();
 }

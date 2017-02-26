@@ -8,7 +8,7 @@ if(speed == 0)
 var col_entity = instance_place(x, y, obj_entity);
 if(col_entity)
 {
-    motion_add(point_direction(col_entity.x, col_entity.y, x, y), entity_repulsion_force);
+    motion_add(point_direction(col_entity.x, col_entity.y, x, y), repulsion_force);
 }
 
 var x_change = lengthdir_x(speed, direction);

@@ -328,6 +328,10 @@
     </scripts>
     <scripts name="Collision">
       <script>scripts\range_finder.gml</script>
+      <script>scripts\range_finder_ellipse.gml</script>
+      <script>scripts\point_in_ellipse.gml</script>
+      <script>scripts\line_in_ellipse.gml</script>
+      <script>scripts\collision_line_entity_ellipse.gml</script>
     </scripts>
     <scripts name="Draw">
       <script>scripts\draw_weapon.gml</script>
@@ -459,6 +463,7 @@
       <object>objects\obj_shot_normal</object>
       <object>objects\obj_shot_rail</object>
       <object>objects\obj_hit_sword</object>
+      <object>objects\obj_shot</object>
     </objects>
     <objects name="Audio">
       <object>objects\obj_hub_sound</object>
@@ -487,6 +492,7 @@
       <object>objects\obj_entity</object>
       <object>objects\obj_player</object>
       <object>objects\obj_target</object>
+      <object>objects\obj_boss_target</object>
       <object>objects\obj_grunt</object>
       <object>objects\obj_dog</object>
       <object>objects\obj_boss</object>
