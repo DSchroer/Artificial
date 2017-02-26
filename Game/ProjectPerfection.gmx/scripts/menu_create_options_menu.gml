@@ -32,6 +32,7 @@ button_back.text = "Back";
 button_back.center_x = true;
 button_back.index = 3;
 
+index = -1;
 
 
 

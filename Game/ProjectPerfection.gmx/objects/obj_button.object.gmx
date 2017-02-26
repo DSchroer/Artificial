@@ -113,7 +113,11 @@ if(obj_menu.index == self.index)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>if(center_x)
+{
+    x = (display_get_gui_width() / 2 - (bbox_right - bbox_left) / 2);
+}
+draw_self();
 
 var mx = device_mouse_x_to_gui(0);
 var my = device_mouse_y_to_gui(0);

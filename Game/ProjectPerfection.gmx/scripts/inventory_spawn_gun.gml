@@ -31,7 +31,7 @@ shot_sprites[weapon_modifier.rail] = spr_rail;
 shot_sprites[weapon_modifier.scatter] = spr_bullet;
 gun[weapon_index.bullet_sprite] = shot_sprites[gun[weapon_index.modifier]];
 
-var subType = round(random(6));
+var subType = round(random(7));
 gun[weapon_index.weapon_subtype] = subType;
 
 var accuracies;
@@ -42,6 +42,7 @@ accuracies[weapon_subtype.sniper_rifle] = 1;
 accuracies[weapon_subtype.smg] = 15;
 accuracies[weapon_subtype.extended_magazine] = 5;
 accuracies[weapon_subtype.superfast_reload] = 5;
+accuracies[weapon_subtype.machine_gun] = 10;
 
 gun[weapon_index.accuracy] =  accuracies[subType];
 

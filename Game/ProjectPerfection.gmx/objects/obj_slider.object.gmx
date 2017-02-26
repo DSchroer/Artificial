@@ -159,7 +159,11 @@ if(mouse_check_button_pressed(mb_left) &amp;&amp; obj_menu.index == self.index)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>if(center_x)
+{
+    x = (display_get_gui_width() / 2 - (bbox_right - bbox_left) / 2);
+}
+draw_self();
 draw_rectangle_color(x + width * (1/6), y + padding, x + width * (1/6) + width * (4/6) * percent, y + height - padding, fill_colour, fill_colour, fill_colour, fill_colour, false);
 
 var scale = 1.5;

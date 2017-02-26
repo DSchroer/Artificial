@@ -18,6 +18,8 @@ case weapon_subtype.extended_magazine:
     return "Extended Magazine";
 case weapon_subtype.superfast_reload:
     return "Quickload";
+case weapon_subtype.machine_gun:
+    return "Machine Gun";
 default:
     return "Error";
 }
