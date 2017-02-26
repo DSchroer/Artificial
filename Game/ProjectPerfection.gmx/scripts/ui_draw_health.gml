@@ -1,5 +1,5 @@
 ///ui_draw_health()
-exit;
+
 var width = display_get_gui_width();
 var height = display_get_gui_height();
 var mx = device_mouse_x_to_gui(0);
