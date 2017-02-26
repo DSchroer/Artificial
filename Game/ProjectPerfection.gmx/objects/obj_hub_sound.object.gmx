@@ -25,9 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sfx_clear();
-
-sfx_generate_hub_environment();
+            <string>
+sfx_bkg_add_without_reset(bkg_hub2);
 </string>
           </argument>
         </arguments>

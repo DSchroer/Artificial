@@ -27,8 +27,7 @@
             <kind>1</kind>
             <string>alarm[0] = 120;
 drawing = true;
-sfx_clear();
-sfx_bkg_add(bkg_final_boss);
+sfx_bkg_add_without_reset(bkg_final_boss);
 target = obj_boss;
 photo = spr_azar_intro;
 </string>
@@ -53,7 +52,8 @@ photo = spr_azar_intro;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with(all)
+            <string>
+with(all)
 {
     instance_destroy();
 }

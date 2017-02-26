@@ -28,7 +28,6 @@
             <string>event_inherited();
 player_init();
 
-sfx_bkg_init();
 
 gun_angle = 0;
 surface = surface_create(256, 256);
@@ -191,9 +190,7 @@ room_goto(rm_hub);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sfx_bkg_update();
-
-isomorphic_set_depth();
+            <string>isomorphic_set_depth();
 
 entity_dampening();
 entity_move_input();                                                                               
