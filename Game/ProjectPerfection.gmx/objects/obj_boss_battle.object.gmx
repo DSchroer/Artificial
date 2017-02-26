@@ -61,8 +61,7 @@ with(target)
     sm_set_state(prev);
 }
 
-sfx_clear();
-sfx_bkg_add(bkg_boss1);
+sfx_bkg_add_without_reset(bkg_boss1);
 </string>
           </argument>
         </arguments>

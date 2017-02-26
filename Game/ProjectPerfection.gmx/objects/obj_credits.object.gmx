@@ -26,8 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>credits_init();
-music_id = -1;
-sfx_clear();
+
+if(!instance_exists(obj_sound))
+{
+    instance_create(0,0,obj_sound);
+}
+
+sfx_bkg_add_without_reset(bkg_menu);
 
 </string>
           </argument>
@@ -89,11 +94,7 @@ else
     speed = 1;
 }
 
-if(music_id == -1 || !audio_is_playing(music_id))
-{
-    music_id = audio_play_sound(bkg_menu, 1, false);
-    audio_sound_gain(music_id, clamp(save_get_value(obj_game_save, "music_volume", 1), 0, 1), 0);
-}
+sfx_bkg_add_without_reset(bkg_menu);
 </string>
           </argument>
         </arguments>
