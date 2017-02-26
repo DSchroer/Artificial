@@ -30,6 +30,7 @@ damage = 1;
 paused = false;
 cooldown = 0;
 y_off = 45;
+last_hit = noone;
 </string>
           </argument>
         </arguments>
@@ -64,22 +65,19 @@ if(!paused &amp;&amp; is_paused())
     paused = false;
 }
 
-if(cooldown &gt; 0)
+
+with(obj_entity)
 {
-    cooldown--;
-}else{
-    with(obj_entity)
+    if(self != other.parent &amp;&amp; self != other.last_hit)
     {
-        if(self != other.parent)
+        if(point_in_ellipse(other.x, other.y, x + hbox_x1, y + hbox_y1, x + hbox_x2, y + hbox_y2))
         {
-            if(point_in_ellipse(other.x, other.y, x + hbox_x1, y + hbox_y1, x + hbox_x2, y + hbox_y2))
-            {
-                entity_apply_damage(damager(other.damage));
-                other.cooldown = 10;
-            }
+            entity_apply_damage(damager(other.damage));
+            other.last_hit = self;
         }
     }
 }
+
 
 if(collision_point(x, y + y_off, obj_wall, false, false))
 {
