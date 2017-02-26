@@ -99,10 +99,7 @@ if(place_meeting(x, y, obj_wall))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_outline_begin();
-draw_outline_update(sprite_index);
-draw_self();
-draw_outline_end();
+            <string>//nothing
 </string>
           </argument>
         </arguments>
