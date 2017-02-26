@@ -280,6 +280,9 @@ save_set_value(obj_game_save, "music_volume", slider_music.percent);
 
 save_flush(obj_game_save);
 
+sfx_set_volume(slider_sound.percent);
+sfx_bkg_set_volume(slider_music.percent);
+
 </string>
           </argument>
         </arguments>

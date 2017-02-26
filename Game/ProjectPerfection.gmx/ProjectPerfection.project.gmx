@@ -506,22 +506,22 @@
       <object>objects\obj_book</object>
       <object>objects\obj_interact_area</object>
     </objects>
-    <objects name="menu">
+    <objects name="Menus">
       <object>objects\obj_main_menu</object>
       <object>objects\obj_button</object>
       <object>objects\obj_logo</object>
       <object>objects\obj_slider</object>
       <object>objects\obj_pause_menu</object>
       <object>objects\obj_menu</object>
+      <object>objects\obj_pause</object>
+      <object>objects\obj_credits</object>
     </objects>
     <object>objects\obj_clear_entities</object>
-    <object>objects\obj_credits</object>
     <object>objects\obj_draw_guns</object>
     <object>objects\obj_duck</object>
     <object>objects\obj_fonts</object>
     <object>objects\obj_health_can</object>
     <object>objects\obj_item</object>
-    <object>objects\obj_pause</object>
     <object>objects\obj_transition</object>
     <objects name="Save">
       <object>objects\obj_save_data</object>
