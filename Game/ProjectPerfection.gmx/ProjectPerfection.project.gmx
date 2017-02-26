@@ -163,6 +163,7 @@
     <sprite>sprites\spr_boss</sprite>
     <sprite>sprites\sprite59</sprite>
     <sprite>sprites\spr_dog</sprite>
+    <sprite>sprites\spr_map_border</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>

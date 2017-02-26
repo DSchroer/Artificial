@@ -68,9 +68,9 @@ damages = inventory_scale_stat(damages, bases[q] / 100, ranges[q] / 100, core[su
 gun[weapon_index.damage] = round(damages);
 
 //Fire rate (per second)
-var rates = 5;
+var rates = 10;
 rates = inventory_scale_stat(rates, bases[q] / 100, ranges[q] / 100, core[subType, 1]);
-gun[weapon_index.fire_timeout] = 30 / rates;
+gun[weapon_index.fire_timeout] = 60 / rates;
 
 //Magazine Size
 var mag = 20;
@@ -79,9 +79,9 @@ gun[weapon_index.capacity] = round(mag);
 gun[weapon_index.remaining] = gun[weapon_index.capacity];
 
 //Reload Time (Seconds)
-var reload = 2.0;
+var reload = 1.0;
 reload = inventory_scale_stat(reload, bases[q] / 100, ranges[q] / 100, core[subType, 3]);
-gun[weapon_index.reload_timeout] = reload * 30;
+gun[weapon_index.reload_timeout] = reload * 60;
 
 gun = inventory_skin_gun(gun);
 
