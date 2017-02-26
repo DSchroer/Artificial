@@ -8,3 +8,5 @@ damage = 0;
 damage_dir = 0;
 hurt_sounds = ds_list_create();
 volume_mod = 1.2;
+
+entity_repulsion_force = 0.5;
