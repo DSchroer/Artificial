@@ -41,5 +41,6 @@ button_exit.text = "Exit";
 button_exit.center_x = true;
 button_exit.index = 4;
 
+index = -1;
 
 
