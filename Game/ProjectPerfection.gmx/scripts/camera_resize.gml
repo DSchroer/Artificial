@@ -16,4 +16,10 @@ view_wview[0] = width;
 view_hview[0] = height;
 
 //surface_resize()
-surface_resize(application_surface ,w, h);
+if(w != 0 && h != 0)
+{
+    surface_resize(application_surface ,w, h);
+    x = x_target;
+    y = y_target;
+    current_zoom = zoom;
+}
