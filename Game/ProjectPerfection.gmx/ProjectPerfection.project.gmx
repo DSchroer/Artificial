@@ -595,8 +595,15 @@
       <room>rooms\rm_stub_11</room>
       <room>rooms\rm_stub_12</room>
       <room>rooms\rm_stub_13</room>
-      <room>rooms\rm_stub_d_1</room>
-      <room>rooms\rm_stub_d_2</room>
+      <rooms name="Dom">
+        <room>rooms\rm_stub_d_1</room>
+        <room>rooms\rm_stub_d_2</room>
+        <room>rooms\rm_stub_d_3</room>
+        <room>rooms\rm_stub_d_4</room>
+        <room>rooms\rm_stub_d_5</room>
+        <room>rooms\rm_stub_d_6</room>
+        <room>rooms\rm_stub_d_7</room>
+      </rooms>
     </rooms>
     <room>rooms\rm_empty</room>
     <rooms name="Boss">
