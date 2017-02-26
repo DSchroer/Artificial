@@ -72,4 +72,6 @@ if(ds_queue_size(obj_player.textbox_queue) > 0)
     ui_draw_textbox(text);    
 }
    
+ui_draw_boss_health();
+
    
