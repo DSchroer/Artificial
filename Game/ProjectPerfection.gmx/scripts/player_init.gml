@@ -9,7 +9,11 @@ shield_penalty_time = 0;
 previous_shield_penalty_time = 0;
 shield_recharge_delay = 5;
 shield_recharge_rate = 12;
-is_shield_active = false;
+is_shield_active = save_get_value(obj_save_data, "shield", false);
+if(is_shield_active)
+{
+    remaining_shield = shield_max_health;
+}
 hide_inventory = false;
 invincible = 0;
 movement_this_frame = false;

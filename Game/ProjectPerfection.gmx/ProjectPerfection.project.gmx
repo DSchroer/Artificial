@@ -300,7 +300,6 @@
       <script>scripts\player_set_sprite.gml</script>
     </scripts>
     <scripts name="Ui">
-      <script>scripts\ui_adjust_slot.gml</script>
       <script>scripts\ui_check_weapon_slot_tooltip.gml</script>
       <script>scripts\ui_draw.gml</script>
       <script>scripts\ui_draw_health.gml</script>

@@ -39,8 +39,13 @@ if(!hide_inventory)
     }
     
     // Other slots
-    ui_draw_weapon_slot(bx, by + 205, 0.75, inventory[ui_adjust_slot(selected_slot - 1)], 35, 15);
-    ui_check_weapon_slot_tooltip(bx, by + 205, 0.75, inventory[ui_adjust_slot(selected_slot - 1)]);   
+    var other_slot = 0;
+    if(selected_slot == 0)
+    {
+        other_slot = 1;
+    }
+    ui_draw_weapon_slot(bx, by + 205, 0.75, inventory[other_slot], 35, 15);
+    ui_check_weapon_slot_tooltip(bx, by + 205, 0.75, inventory[other_slot]);   
 }
 ui_check_weapon_slot_tooltip(bx, by + 254, 1, inventory[selected_slot]);
 

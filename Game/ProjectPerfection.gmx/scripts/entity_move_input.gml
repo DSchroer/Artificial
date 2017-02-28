@@ -39,9 +39,9 @@ if(x_dir != 0 || y_dir != 0)
 
 if(keymap_check(keycode.inventory_up))
 {
-    for(var i = 0; i < 4; i++)
+    for(var i = 0; i < 2; i++)
     {
-        selected_slot = (selected_slot + 1) % 4;
+        selected_slot = (selected_slot + 1) % 2;
         if(inventory[selected_slot] != -1)
         {
             break;
