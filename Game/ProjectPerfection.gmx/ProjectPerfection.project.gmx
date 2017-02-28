@@ -88,22 +88,11 @@
     <sprite>sprites\spr_grunt</sprite>
     <sprites name="Ui">
       <sprite>sprites\spr_textback</sprite>
-      <sprite>sprites\spr_tooltip_top</sprite>
       <sprite>sprites\spr_inventory_background</sprite>
-      <sprite>sprites\spr_controller_a</sprite>
-      <sprite>sprites\spr_controller_b</sprite>
-      <sprite>sprites\spr_controller_y</sprite>
-      <sprite>sprites\spr_controller_x</sprite>
-      <sprite>sprites\spr_controller_ddown</sprite>
-      <sprite>sprites\spr_controller_dup</sprite>
-      <sprite>sprites\spr_controller_dright</sprite>
-      <sprite>sprites\spr_controller_dleft</sprite>
-      <sprite>sprites\sprite27</sprite>
       <sprite>sprites\spr_logo</sprite>
       <sprite>sprites\spr_button</sprite>
       <sprite>sprites\spr_slider</sprite>
       <sprite>sprites\spr_button_active</sprite>
-      <sprite>sprites\spr_inventory_healthpack</sprite>
       <sprites name="HUD">
         <sprite>sprites\spr_laser_full</sprite>
         <sprite>sprites\spr_laser_empty</sprite>
@@ -119,8 +108,26 @@
         <sprite>sprites\spr_bossfront</sprite>
         <sprite>sprites\spr_bosshealth</sprite>
       </sprites>
-      <sprite>sprites\spr_health_tooltip_back</sprite>
-      <sprite>sprites\spr_tooltip_body</sprite>
+      <sprites name="tooltip">
+        <sprite>sprites\spr_tooltip_top_unique</sprite>
+        <sprite>sprites\spr_tooltip_body</sprite>
+        <sprite>sprites\spr_health_tooltip_back</sprite>
+        <sprite>sprites\spr_tooltip_top_legendary</sprite>
+        <sprite>sprites\spr_tooltip_top_epic</sprite>
+        <sprite>sprites\spr_tooltip_top_rare</sprite>
+        <sprite>sprites\spr_tooltip_top_uncommon</sprite>
+        <sprite>sprites\spr_tooltip_top_common</sprite>
+      </sprites>
+      <sprites name="textbox_img">
+        <sprite>sprites\spr_controller_a</sprite>
+        <sprite>sprites\spr_controller_x</sprite>
+        <sprite>sprites\spr_controller_b</sprite>
+        <sprite>sprites\spr_controller_y</sprite>
+        <sprite>sprites\spr_controller_ddown</sprite>
+        <sprite>sprites\spr_controller_dright</sprite>
+        <sprite>sprites\spr_controller_dleft</sprite>
+        <sprite>sprites\spr_controller_dup</sprite>
+      </sprites>
     </sprites>
     <sprites name="Fonts">
       <sprite>sprites\spr_base_font</sprite>
@@ -304,6 +311,8 @@
     <scripts name="Ui">
       <script>scripts\ui_check_weapon_slot_tooltip.gml</script>
       <script>scripts\ui_draw.gml</script>
+      <script>scripts\ui_draw_action_indicators.gml</script>
+      <script>scripts\ui_draw_boss_health.gml</script>
       <script>scripts\ui_draw_health.gml</script>
       <script>scripts\ui_draw_health_tooltip.gml</script>
       <script>scripts\ui_draw_icon.gml</script>
@@ -311,11 +320,13 @@
       <script>scripts\ui_draw_ring.gml</script>
       <script>scripts\ui_draw_shield_tooltip.gml</script>
       <script>scripts\ui_draw_textbox.gml</script>
+      <script>scripts\ui_draw_textbox_element.gml</script>
       <script>scripts\ui_draw_textbox_ext.gml</script>
       <script>scripts\ui_draw_textbox_pos.gml</script>
       <script>scripts\ui_draw_tooltip.gml</script>
       <script>scripts\ui_draw_weapon_slot.gml</script>
       <script>scripts\ui_draw_weapon_tooltip1.gml</script>
+      <script>scripts\ui_draw_weapon_tooltip2.gml</script>
       <script>scripts\ui_get_modifier_colour.gml</script>
       <script>scripts\ui_get_quality_colour.gml</script>
       <script>scripts\ui_get_quality_string.gml</script>
@@ -323,10 +334,6 @@
       <script>scripts\ui_set_colour.gml</script>
       <script>scripts\ui_world_to_gui_x.gml</script>
       <script>scripts\ui_world_to_gui_y.gml</script>
-      <script>scripts\ui_draw_boss_health.gml</script>
-      <script>scripts\ui_draw_action_indicators.gml</script>
-      <script>scripts\ui_draw_weapon_tooltip2.gml</script>
-      <script>scripts\ui_draw_textbox_element.gml</script>
     </scripts>
     <scripts name="Debug">
       <script>scripts\debug_init.gml</script>
