@@ -216,10 +216,6 @@ if(gun_recoil &gt; 0)
 }
 
 player_update_shield();
-
-debug_show_string("in0: " + string_array(inventory[0]));
-debug_show_string("in1: " + string_array(inventory[1]));
-
 debug_show_string("fps: " + string(fps));
 
 if(keymap_check(keycode.interact) &amp;&amp; !dead)
@@ -422,17 +418,12 @@ if(instance_number(obj_spawn_player) &gt; 0)
           <argument>
             <kind>1</kind>
             <string>
+draw_outline_begin();
+draw_outline_update(surface);
 
 
-sprite_scale = shader_get_uniform(sdr_world, "sprite_size");
-tex = surface_get_texture(surface);
-tex_h = texture_get_texel_height(tex);
-tex_w = texture_get_texel_width(tex);
-
-shader_set(sdr_world);
-shader_set_uniform_f(sprite_scale, tex_w, tex_h);
 draw_surface(surface, x - base_x, y - base_y);
-shader_reset();
+draw_outline_end();
 </string>
           </argument>
         </arguments>

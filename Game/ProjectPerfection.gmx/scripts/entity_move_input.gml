@@ -142,7 +142,7 @@ var vaxis_ls = gamepad_axis_value(0, gp_axislv);
 
 // Analogue sticks typically have a small set value even when untouched.
 // This causes the player to move slightly when they shouldn't.
-if(abs(haxis_ls) > 0.05 || abs(vaxis_ls) > 0.05) 
+if(abs(haxis_ls) > 0.35 || abs(vaxis_ls) > 0.35) 
 {
     // Compute the direction and magnitude of the analogue stick press.
     var dir = point_direction(0, 0, haxis_ls, vaxis_ls);
@@ -156,7 +156,7 @@ var vaxis_rs = gamepad_axis_value(0, gp_axisrv);
 
 // Analogue sticks typically have a small set value even when untouched.
 // This causes the player to move slightly when they shouldn't.
-if(abs(haxis_rs) > 0.05 || abs(vaxis_rs) > 0.05) 
+if(abs(haxis_rs) > 0.35 || abs(vaxis_rs) > 0.35) 
 {
     // Compute the direction and magnitude of the analogue stick press.
     var dir = point_direction(0, 0, haxis_rs, vaxis_rs);

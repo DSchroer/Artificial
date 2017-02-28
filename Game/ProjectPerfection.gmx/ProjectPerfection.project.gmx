@@ -145,6 +145,7 @@
       <sprite>sprites\spr_cube</sprite>
       <sprite>sprites\spr_gate</sprite>
       <sprite>sprites\spr_gate_open</sprite>
+      <sprite>sprites\spr_area</sprite>
       <sprite>sprites\spr_wall</sprite>
       <sprite>sprites\spr_invisible_wall</sprite>
       <sprite>sprites\spr_interact</sprite>
@@ -167,6 +168,7 @@
       <sprite>sprites\spr_bullet</sprite>
       <sprite>sprites\spr_plasma</sprite>
       <sprite>sprites\spr_rail</sprite>
+      <sprite>sprites\spr_azar_rock</sprite>
     </sprites>
     <sprite>sprites\spr_book</sprite>
     <sprite>sprites\spr_boss</sprite>
@@ -424,6 +426,11 @@
         <script>scripts\ed_attack.gml</script>
       </scripts>
       <script>scripts\enemy_scale_gun.gml</script>
+      <scripts name="Azar">
+        <script>scripts\azar_idle.gml</script>
+        <script>scripts\azar_move.gml</script>
+        <script>scripts\azar_attack.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Interact">
       <script>scripts\interact_any.gml</script>
@@ -475,11 +482,22 @@
       <script>scripts\gun_hand_lookup.gml</script>
     </scripts>
     <script>scripts\surface_get_scale.gml</script>
+    <scripts name="CGrid">
+      <script>scripts\cgrid_init.gml</script>
+      <script>scripts\cgrid_load_collisions.gml</script>
+      <script>scripts\cgrid_set_collision.gml</script>
+      <script>scripts\cgrid_draw.gml</script>
+      <script>scripts\cgrid_collision_point.gml</script>
+      <script>scripts\cgrid_place_meeting.gml</script>
+      <script>scripts\cgrid_force.gml</script>
+      <script>scripts\cgrid_collision_line.gml</script>
+    </scripts>
+    <script>scripts\area_contains.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
     <shader type="GLSLES">shaders\sdr_pause.shader</shader>
-    <shader type="GLSLES">shaders\sdr_world.shader</shader>
+    <shader type="GLSLES">shaders\sdr_outline.shader</shader>
     <shader type="GLSLES">shaders\sdr_normal.shader</shader>
     <shader type="GLSLES">shaders\sdr_fill.shader</shader>
     <shader type="GLSLES">shaders\sdr_chromatic_ab.shader</shader>
@@ -525,8 +543,14 @@
       <object>objects\obj_boss_target</object>
       <object>objects\obj_grunt</object>
       <object>objects\obj_dog</object>
-      <object>objects\obj_boss</object>
       <object>objects\obj_enemy</object>
+      <objects name="Boss1">
+        <object>objects\obj_azar</object>
+        <object>objects\obj_move_point</object>
+        <object>objects\obj_azar_rock</object>
+        <object>objects\obj_azar_wall</object>
+        <object>objects\obj_azar_area</object>
+      </objects>
     </objects>
     <objects name="Environment">
       <object>objects\obj_bush</object>
@@ -598,6 +622,7 @@
       <object>objects\obj_gate_open</object>
       <object>objects\obj_display_cube</object>
     </objects>
+    <object>objects\obj_cgrid</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>
