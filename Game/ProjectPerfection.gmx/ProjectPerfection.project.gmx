@@ -122,6 +122,7 @@
       <sprite>sprites\spr_cube</sprite>
       <sprite>sprites\spr_gate</sprite>
       <sprite>sprites\spr_gate_open</sprite>
+      <sprite>sprites\spr_area</sprite>
       <sprite>sprites\spr_wall</sprite>
       <sprite>sprites\spr_invisible_wall</sprite>
       <sprite>sprites\spr_interact</sprite>
@@ -144,6 +145,7 @@
       <sprite>sprites\spr_bullet</sprite>
       <sprite>sprites\spr_plasma</sprite>
       <sprite>sprites\spr_rail</sprite>
+      <sprite>sprites\spr_azar_rock</sprite>
     </sprites>
     <sprite>sprites\spr_book</sprite>
     <sprite>sprites\spr_boss</sprite>
@@ -397,6 +399,11 @@
         <script>scripts\ed_attack.gml</script>
       </scripts>
       <script>scripts\enemy_scale_gun.gml</script>
+      <scripts name="Azar">
+        <script>scripts\azar_idle.gml</script>
+        <script>scripts\azar_move.gml</script>
+        <script>scripts\azar_attack.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Interact">
       <script>scripts\interact_any.gml</script>
@@ -458,6 +465,7 @@
       <script>scripts\cgrid_force.gml</script>
       <script>scripts\cgrid_collision_line.gml</script>
     </scripts>
+    <script>scripts\area_contains.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
@@ -508,8 +516,14 @@
       <object>objects\obj_boss_target</object>
       <object>objects\obj_grunt</object>
       <object>objects\obj_dog</object>
-      <object>objects\obj_boss</object>
       <object>objects\obj_enemy</object>
+      <objects name="Boss1">
+        <object>objects\obj_azar</object>
+        <object>objects\obj_move_point</object>
+        <object>objects\obj_azar_rock</object>
+        <object>objects\obj_azar_wall</object>
+        <object>objects\obj_azar_area</object>
+      </objects>
     </objects>
     <objects name="Environment">
       <object>objects\obj_bush</object>

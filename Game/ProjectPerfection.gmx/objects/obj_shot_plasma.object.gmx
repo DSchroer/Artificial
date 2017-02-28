@@ -68,7 +68,7 @@ if(!paused &amp;&amp; is_paused())
 
 with(obj_entity)
 {
-    if(self != other.parent &amp;&amp; self != other.last_hit)
+    if(self != other.parent &amp;&amp; self != other.last_hit &amp;&amp; visible)
     {
         if(point_in_ellipse(other.x, other.y, x + hbox_x1, y + hbox_y1, x + hbox_x2, y + hbox_y2))
         {
