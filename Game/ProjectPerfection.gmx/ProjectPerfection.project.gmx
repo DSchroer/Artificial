@@ -334,6 +334,7 @@
       <script>scripts\ui_set_colour.gml</script>
       <script>scripts\ui_world_to_gui_x.gml</script>
       <script>scripts\ui_world_to_gui_y.gml</script>
+      <script>scripts\ui_get_boss_health_percent.gml</script>
     </scripts>
     <scripts name="Debug">
       <script>scripts\debug_init.gml</script>
