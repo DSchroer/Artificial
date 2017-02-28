@@ -21,8 +21,8 @@ var distance = 13;
 
 if(view_current == 0)
 {
-    var gangle = 270;
-    var gdist = 10;
+    var gangle = 290;
+    var gdist = 100;
     if(is_array(inventory[selected_slot]))
     {
         gangle = gun_hand_angle(inventory[selected_slot], 1, gun_dist, gun_angle, 0.75, yscale);

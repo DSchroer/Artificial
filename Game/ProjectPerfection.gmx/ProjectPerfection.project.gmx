@@ -448,11 +448,21 @@
       <script>scripts\gun_hand_lookup.gml</script>
     </scripts>
     <script>scripts\surface_get_scale.gml</script>
+    <scripts name="CGrid">
+      <script>scripts\cgrid_init.gml</script>
+      <script>scripts\cgrid_load_collisions.gml</script>
+      <script>scripts\cgrid_set_collision.gml</script>
+      <script>scripts\cgrid_draw.gml</script>
+      <script>scripts\cgrid_collision_point.gml</script>
+      <script>scripts\cgrid_place_meeting.gml</script>
+      <script>scripts\cgrid_force.gml</script>
+      <script>scripts\cgrid_collision_line.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
     <shader type="GLSLES">shaders\sdr_pause.shader</shader>
-    <shader type="GLSLES">shaders\sdr_world.shader</shader>
+    <shader type="GLSLES">shaders\sdr_outline.shader</shader>
     <shader type="GLSLES">shaders\sdr_normal.shader</shader>
     <shader type="GLSLES">shaders\sdr_fill.shader</shader>
     <shader type="GLSLES">shaders\sdr_chromatic_ab.shader</shader>
@@ -572,6 +582,7 @@
       <object>objects\obj_gate_open</object>
       <object>objects\obj_display_cube</object>
     </objects>
+    <object>objects\obj_cgrid</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>

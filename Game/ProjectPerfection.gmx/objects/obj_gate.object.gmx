@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>event_inherited();
+</string>
           </argument>
         </arguments>
       </action>
@@ -95,6 +96,10 @@ if(level_stub_find(obj_player) &amp;&amp; level_stub_find(obj_enemy))
     
     if(point_distance(x + 32, y + 32, obj_player.x, obj_player.y) &lt; 128)
     {
+        if(instance_exists(obj_cgrid))
+        {
+            cgrid_set_collision(0);
+        }
         instance_create(x, y, obj_gate_open);
         instance_destroy();
     }
