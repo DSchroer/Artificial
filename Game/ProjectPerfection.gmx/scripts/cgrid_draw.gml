@@ -1,7 +1,8 @@
 ///cgrid_draw()
-var w = room_width/64;
-var h = room_height/64;
+var w = room_width/cgrid_size;
+var h = room_height/cgrid_size;
 var s = 5;
+draw_set_alpha(0.5);
 for(var i = 0; i < w; i++)
 {
     for(var j = 0; j < h; j++)
@@ -15,3 +16,4 @@ for(var i = 0; i < w; i++)
         draw_rectangle(i * s, j * s, (i * s)+s, (j * s)+s, false);
     }
 }
+draw_set_alpha(1);

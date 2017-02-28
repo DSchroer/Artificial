@@ -33,7 +33,7 @@ if(invincible == 0)
         with(obj_ca)
         {
             obj_ca.cadir = other.damage_dir;
-            obj_ca.calen = 300;
+            obj_ca.calen = 30;
         }
         entity_take_damage(); 
     }
