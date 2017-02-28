@@ -20,8 +20,11 @@ if(!hide_inventory)
     // Selected slot
     var selected = inventory[selected_slot];
         
-    ui_draw_weapon_slot(bx + sprite_get_xoffset(selected[weapon_index.sprite_count + 1]), by + 254 + sprite_get_yoffset(selected[weapon_index.sprite_count + 1]), 1, selected, 65, 25);
-   
+    if(is_array(selected))
+    {
+        ui_draw_weapon_slot(bx + sprite_get_xoffset(selected[weapon_index.sprite_count + 1]), by + 254 + sprite_get_yoffset(selected[weapon_index.sprite_count + 1]), 1, selected, 65, 25);
+    }   
+    
     // Other slots
     var other_slot_index = 0;
     if(selected_slot == 0)
@@ -30,9 +33,15 @@ if(!hide_inventory)
     }
     var other_slot = inventory[other_slot_index];
     var other_item_scale = 0.75;
-    ui_draw_weapon_slot(bx + 39 + sprite_get_xoffset(other_slot[weapon_index.sprite_count + 1]) * other_item_scale, by + 202 + sprite_get_yoffset(other_slot[weapon_index.sprite_count + 1]) * other_item_scale, other_item_scale, other_slot, 35, 15);
-    ui_check_weapon_slot_tooltip(bx + 39, by + 202, other_item_scale, other_slot);  
-    ui_check_weapon_slot_tooltip(bx, by + 254, 1, selected);
+    if(is_array(other_slot))
+    {
+        ui_draw_weapon_slot(bx + 39 + sprite_get_xoffset(other_slot[weapon_index.sprite_count + 1]) * other_item_scale, by + 202 + sprite_get_yoffset(other_slot[weapon_index.sprite_count + 1]) * other_item_scale, other_item_scale, other_slot, 35, 15);
+        ui_check_weapon_slot_tooltip(bx + 39, by + 202, other_item_scale, other_slot);  
+    }
+    if(is_array(selected))
+    {
+        ui_check_weapon_slot_tooltip(bx, by + 254, 1, selected);
+    }
 }
 
 

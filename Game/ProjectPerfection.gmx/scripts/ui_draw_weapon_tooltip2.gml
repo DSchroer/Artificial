@@ -32,7 +32,7 @@ case item_quality.unique:
 }
 
 var background2 = spr_tooltip_body;
-var bscale_x = 1.2;
+var bscale_x = 1.3;
 var bscale_top_y = 2;
 var bscale_bottom_y = 1;
 var screen_width = display_get_gui_width();
@@ -73,26 +73,26 @@ ypos += 3 + string_height(line);
 
 // Rarity
 line = ui_get_quality_string(weapon[weapon_index.quality]);
-draw_text_transformed_color(xpos + sprite_get_width(background) * 1.2 - string_width(line) - 10, ypos - 12, line, stat_scale, stat_scale, 0, top_render_color, top_render_color, top_render_color, top_render_color, 1);
+draw_text_transformed_color(xpos + sprite_get_width(background) * bscale_x - string_width(line) - 10, ypos - 12, line, stat_scale, stat_scale, 0, top_render_color, top_render_color, top_render_color, top_render_color, 1);
 ypos += 3 + string_height(line);
 
 ui_set_colour(c_white);
 // Other stats
 // Damage
 var line = string(dmg) + " Damage";
-draw_text_transformed(xpos, ypos, line, stat_scale, stat_scale, 0);
+draw_text_transformed_color(xpos, ypos, line, stat_scale, stat_scale, 0, c_white, c_white, c_white, c_white, 1);
 ypos += string_height(line) * stat_scale;
 // ROF
 line = string(fire_rate) + " Rate of Fire";
-draw_text_transformed(xpos, ypos, line, stat_scale, stat_scale, 0);
+draw_text_transformed_color(xpos, ypos, line, stat_scale, stat_scale, 0, c_white, c_white, c_white, c_white, 1);
 ypos += 3 + string_height(line);
 // Reload
 line = string(reload_time) + " Second Reload";
-draw_text_transformed(xpos, ypos, line, stat_scale, stat_scale, 0);
+draw_text_transformed_color(xpos, ypos, line, stat_scale, stat_scale, 0, c_white, c_white, c_white, c_white, 1);
 ypos += 3 + string_height(line);
 //Capacity
 line = string(bullet_capacity) + " Bullet Capacity";
-draw_text_transformed(xpos, ypos, line, stat_scale, stat_scale, 0);
+draw_text_transformed_color(xpos, ypos, line, stat_scale, stat_scale, 0, c_white, c_white, c_white, c_white, 1);
 ypos += 3 + string_height(line);
 
 
