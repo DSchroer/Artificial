@@ -65,7 +65,6 @@ if(!paused &amp;&amp; is_paused())
     paused = false;
 }
 
-
 with(obj_entity)
 {
     if(self != other.parent &amp;&amp; self != other.last_hit &amp;&amp; visible)
