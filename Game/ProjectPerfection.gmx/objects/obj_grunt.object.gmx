@@ -36,6 +36,8 @@ weapon = inventory_create_weapon();
 weapon[weapon_index.damage] = 10;
 weapon[weapon_index.bullet_sprite] = spr_plasma;
 
+weapon = enemy_scale_gun(weapon);
+
 volume_mod = 1.4;
 //ds_list_add(hurt_sounds, snd_enemy_rock1);  
 //ds_list_add(hurt_sounds, snd_enemy_rock2);

@@ -70,6 +70,7 @@
       <sprite>sprites\spr_player_arm_r</sprite>
       <sprite>sprites\spr_player_arm_r_bottom</sprite>
       <sprite>sprites\spr_player_back</sprite>
+      <sprite>sprites\spr_player_walk</sprite>
     </sprites>
     <sprite>sprites\spr_bush</sprite>
     <sprite>sprites\spr_shield</sprite>
@@ -296,6 +297,7 @@
       <script>scripts\player_render_self.gml</script>
       <script>scripts\player_activate_shield.gml</script>
       <script>scripts\player_shield_percent.gml</script>
+      <script>scripts\player_set_sprite.gml</script>
     </scripts>
     <scripts name="Ui">
       <script>scripts\ui_adjust_slot.gml</script>
@@ -344,6 +346,10 @@
     </scripts>
     <scripts name="Collision">
       <script>scripts\range_finder.gml</script>
+      <script>scripts\range_finder_ellipse.gml</script>
+      <script>scripts\point_in_ellipse.gml</script>
+      <script>scripts\line_in_ellipse.gml</script>
+      <script>scripts\collision_line_entity_ellipse.gml</script>
     </scripts>
     <scripts name="Draw">
       <script>scripts\draw_weapon.gml</script>
@@ -406,6 +412,7 @@
         <script>scripts\ed_approach.gml</script>
         <script>scripts\ed_attack.gml</script>
       </scripts>
+      <script>scripts\enemy_scale_gun.gml</script>
     </scripts>
     <scripts name="Interact">
       <script>scripts\interact_any.gml</script>
@@ -475,6 +482,7 @@
       <object>objects\obj_shot_normal</object>
       <object>objects\obj_shot_rail</object>
       <object>objects\obj_hit_sword</object>
+      <object>objects\obj_shot</object>
     </objects>
     <objects name="Audio">
       <object>objects\obj_hub_sound</object>
@@ -503,6 +511,7 @@
       <object>objects\obj_entity</object>
       <object>objects\obj_player</object>
       <object>objects\obj_target</object>
+      <object>objects\obj_boss_target</object>
       <object>objects\obj_grunt</object>
       <object>objects\obj_dog</object>
       <object>objects\obj_boss</object>
@@ -602,8 +611,15 @@
       <room>rooms\rm_stub_11</room>
       <room>rooms\rm_stub_12</room>
       <room>rooms\rm_stub_13</room>
-      <room>rooms\rm_stub_d_1</room>
-      <room>rooms\rm_stub_d_2</room>
+      <rooms name="Dom">
+        <room>rooms\rm_stub_d_1</room>
+        <room>rooms\rm_stub_d_2</room>
+        <room>rooms\rm_stub_d_3</room>
+        <room>rooms\rm_stub_d_4</room>
+        <room>rooms\rm_stub_d_5</room>
+        <room>rooms\rm_stub_d_6</room>
+        <room>rooms\rm_stub_d_7</room>
+      </rooms>
     </rooms>
     <room>rooms\rm_empty</room>
     <rooms name="Boss">
