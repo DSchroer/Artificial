@@ -31,6 +31,12 @@ floor_y = y;
 pos = 0;
 end_pos = 60;
 alarm[0] = 60;
+
+angle = random(30);
+if(random(2) &lt; 1)
+{
+    angle = -angle;
+}
 </string>
           </argument>
         </arguments>
@@ -79,7 +85,9 @@ end_pos = 120;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = lerp(x, floor_x, pos/end_pos);
+            <string>image_angle += angle;
+
+x = lerp(x, floor_x, pos/end_pos);
 y = lerp(y, floor_y, pos/end_pos);
 pos++;
 

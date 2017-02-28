@@ -33,7 +33,7 @@ current_health = 2000;
 sm_init("idle");
 
 basic = inventory_create_weapon();
-basic[weapon_index.modifier] = weapon_modifier.normal;
+basic[weapon_index.modifier] = weapon_modifier.plasma;
 basic[weapon_index.damage] = 50;
 basic[weapon_index.bullet_sprite] = spr_azar_rock;
 
@@ -48,7 +48,7 @@ wave[weapon_index.damage] = 75;
 wave[weapon_index.bullet_sprite] = spr_azar_rock;
 
 rock = inventory_create_weapon();
-rock[weapon_index.modifier] = weapon_modifier.normal;
+rock[weapon_index.modifier] = weapon_modifier.plasma;
 rock[weapon_index.damage] = 150;
 rock[weapon_index.bullet_sprite] = spr_azar_rock;
 
