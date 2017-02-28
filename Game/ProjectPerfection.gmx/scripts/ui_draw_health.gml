@@ -8,13 +8,7 @@ var xp = (width - sprite_get_width(spr_statusback)) / 2;
 var yp = (height - sprite_get_height(spr_statusback) - 50);
 
 var health_percent = current_health / max_health;
-
-var equipped_shield = player_get_shield();
-var shield_percent = 0;
-if(is_array(equipped_shield))
-{
-    shield_percent = remaining_shield / equipped_shield[shield_index.max_health];
-}
+var shield_percent = player_shield_percent();
 
 // Health + Shield
 draw_sprite(spr_statusback, -1, xp, yp);

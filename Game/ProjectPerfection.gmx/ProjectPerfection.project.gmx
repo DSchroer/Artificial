@@ -86,7 +86,6 @@
     <sprite>sprites\spr_dishonDuck</sprite>
     <sprite>sprites\spr_grunt</sprite>
     <sprites name="Ui">
-      <sprite>sprites\spr_inventory_background_hide</sprite>
       <sprite>sprites\spr_textback</sprite>
       <sprite>sprites\spr_tooltip</sprite>
       <sprite>sprites\spr_inventory_background</sprite>
@@ -175,20 +174,17 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="Inventory">
-      <script>scripts\inventory_create_shield.gml</script>
       <script>scripts\inventory_swap.gml</script>
       <script>scripts\inventory_create_weapon.gml</script>
       <script>scripts\inventory_init.gml</script>
       <script>scripts\inventory_get_modifier_name.gml</script>
-      <script>scripts\inventory_pickup_healthpacks.gml</script>
-      <script>scripts\inventory_remove_healthpacks.gml</script>
-      <script>scripts\inventory_get_healthpack_count.gml</script>
       <script>scripts\inventory_pickup_weapon.gml</script>
       <script>scripts\inventory_get_subtype_name.gml</script>
       <script>scripts\inventory_spawn_gun.gml</script>
       <script>scripts\inventory_scale_stat.gml</script>
       <script>scripts\inventory_core_table.gml</script>
       <script>scripts\inventory_skin_gun.gml</script>
+      <script>scripts\inventory_create_shield.gml</script>
     </scripts>
     <scripts name="Level">
       <script>scripts\level_create.gml</script>
@@ -288,7 +284,6 @@
     <script>scripts\isomorphic_set_depth.gml</script>
     <script>scripts\isomorphic_set_depth_ext.gml</script>
     <scripts name="Player">
-      <script>scripts\player_get_shield.gml</script>
       <script>scripts\player_init.gml</script>
       <script>scripts\player_levelup.gml</script>
       <script>scripts\player_update_shield.gml</script>
@@ -299,6 +294,8 @@
       <script>scripts\player_update_gun.gml</script>
       <script>scripts\player_reload.gml</script>
       <script>scripts\player_render_self.gml</script>
+      <script>scripts\player_activate_shield.gml</script>
+      <script>scripts\player_shield_percent.gml</script>
     </scripts>
     <scripts name="Ui">
       <script>scripts\ui_adjust_slot.gml</script>
@@ -324,6 +321,7 @@
       <script>scripts\ui_world_to_gui_x.gml</script>
       <script>scripts\ui_world_to_gui_y.gml</script>
       <script>scripts\ui_draw_boss_health.gml</script>
+      <script>scripts\ui_draw_action_indicators.gml</script>
     </scripts>
     <scripts name="Debug">
       <script>scripts\debug_init.gml</script>
@@ -560,7 +558,6 @@
     </objects>
     <objects name="Traps">
       <object>objects\obj_trap</object>
-      <object>objects\obj_tutorial_trap</object>
       <object>objects\obj_trap_stall</object>
       <object>objects\obj_trap_spike</object>
       <object>objects\obj_trap_rock</object>

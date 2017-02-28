@@ -88,9 +88,6 @@ if(point != noone)
     if(is_gun(data))
     {
         ui_draw_weapon_tooltip(uix + 16, uiy + 16, data);
-    }else if(is_shield(data))
-    {
-        ui_draw_shield_tooltip(uix + 16, uiy + 16, data);
     }
 }else if(place_meeting(x, y, obj_player))
 {
@@ -100,9 +97,6 @@ if(point != noone)
     if(is_gun(data))
     {
         ui_draw_weapon_tooltip(uix + 16, uiy + 16, data);
-    }else if(is_shield(data))
-    {
-        ui_draw_shield_tooltip(uix + 16, uiy + 16, data);
     }
 }
 </string>
