@@ -9,6 +9,10 @@ if(is_shield_active)
 {
     lines[1] = "Shield: " + string(floor(remaining_shield)) + "/" + string(shield_max_health);
 }
+else
+{
+    lines[1] = "Shield Deactivated";
+}
 
 var colours;
 colours[0] = "|health";

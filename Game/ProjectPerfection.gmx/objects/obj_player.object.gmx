@@ -396,8 +396,7 @@ if(instance_number(obj_spawn_player) &gt; 0)
             <kind>1</kind>
             <string>if(!is_paused())
 {
-    ui_draw_inventory();
-    ui_draw_health();
+    ui_draw();
 }
 
 </string>

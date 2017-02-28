@@ -11,13 +11,14 @@ var percent_remaining = current_boss_health / max_boss_health;
 
 var current_text = string(current_boss_health);
 var max_text = string(max_boss_health);
-var combined = current_text + '/' + max_text;
+var combined = "Azar, The Unbreakable";//current_text + '/' + max_text;
 
 draw_sprite(spr_bossback, -1, xp, yp);
 draw_sprite_part(spr_bosshealth, -1, 0, 0, sprite_get_width(spr_bosshealth) * percent_remaining - 7, sprite_get_height(spr_bosshealth), xp, yp);
 draw_sprite(spr_bossfront, -1, xp, yp);
 
 draw_set_color(c_white);
-draw_text((width - string_width(combined)) / 2, yp + (sprite_get_height(spr_bossback) - string_height(combined)) / 2, combined);
+//draw_text((width - string_width(combined)) / 2, yp + (sprite_get_height(spr_bossback) - string_height(combined)) / 2, combined);
+draw_text((width - string_width(combined)) / 2, yp + (sprite_get_height(spr_bossback) - string_height(combined)) / 2, "Azar, The Unbreakable");
 
 

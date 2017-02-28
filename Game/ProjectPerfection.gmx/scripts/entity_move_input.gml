@@ -67,6 +67,11 @@ if(keyboard_check_pressed(vk_f4))
     ui_queue_message("Test2");
     ui_queue_message("Test3");
 }
+if(keyboard_check_pressed(vk_f12))
+{
+    old_tooltips = !old_tooltips;
+}
+
 
 if(keyboard_check_pressed(vk_numpad1))
 {

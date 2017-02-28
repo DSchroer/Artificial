@@ -32,6 +32,8 @@ ds_list_add(hurt_sounds, snd_hurt2);
 ds_list_add(hurt_sounds, snd_hurt3);
 //ds_list_add(hurt_sounds, snd_hurt4);
 
+old_tooltips = false;
+
 //animation
 image_speed = 0.25;
 

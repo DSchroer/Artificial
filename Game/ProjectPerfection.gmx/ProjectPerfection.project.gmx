@@ -88,7 +88,7 @@
     <sprite>sprites\spr_grunt</sprite>
     <sprites name="Ui">
       <sprite>sprites\spr_textback</sprite>
-      <sprite>sprites\spr_tooltip</sprite>
+      <sprite>sprites\spr_tooltip_top</sprite>
       <sprite>sprites\spr_inventory_background</sprite>
       <sprite>sprites\spr_controller_a</sprite>
       <sprite>sprites\spr_controller_b</sprite>
@@ -119,6 +119,8 @@
         <sprite>sprites\spr_bossfront</sprite>
         <sprite>sprites\spr_bosshealth</sprite>
       </sprites>
+      <sprite>sprites\spr_health_tooltip_back</sprite>
+      <sprite>sprites\spr_tooltip_body</sprite>
     </sprites>
     <sprites name="Fonts">
       <sprite>sprites\spr_base_font</sprite>
@@ -313,7 +315,7 @@
       <script>scripts\ui_draw_textbox_pos.gml</script>
       <script>scripts\ui_draw_tooltip.gml</script>
       <script>scripts\ui_draw_weapon_slot.gml</script>
-      <script>scripts\ui_draw_weapon_tooltip.gml</script>
+      <script>scripts\ui_draw_weapon_tooltip1.gml</script>
       <script>scripts\ui_get_modifier_colour.gml</script>
       <script>scripts\ui_get_quality_colour.gml</script>
       <script>scripts\ui_get_quality_string.gml</script>
@@ -323,6 +325,8 @@
       <script>scripts\ui_world_to_gui_y.gml</script>
       <script>scripts\ui_draw_boss_health.gml</script>
       <script>scripts\ui_draw_action_indicators.gml</script>
+      <script>scripts\ui_draw_weapon_tooltip2.gml</script>
+      <script>scripts\ui_draw_textbox_element.gml</script>
     </scripts>
     <scripts name="Debug">
       <script>scripts\debug_init.gml</script>

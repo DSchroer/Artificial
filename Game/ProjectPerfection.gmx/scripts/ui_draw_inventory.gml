@@ -14,48 +14,28 @@ var by = (height - back_height - 10);
 if(!hide_inventory)
 {
     draw_sprite(spr_inventory_background, -1, bx, by);
-}
+    // Weapons
+    bx += 6;
 
-// Weapons
-// Do some math on the exact slot because we have to account for 
-// the selected_slot always being at the bottom.
-
-
-if(!hide_inventory)
-{
     // Selected slot
-    ui_draw_weapon_slot(bx, by + 254, 1, inventory[selected_slot], 65, 25);
-    if(is_array(inventory[selected_slot]))
-    {
-        var gun = inventory[selected_slot];
-        if(gun[weapon_index.reload_cooldown] < 1)
-        {
-            draw_text_color(bx + 150, by + 290, string(gun[weapon_index.remaining]), c_white, c_white, c_white, c_white, 1);
-        }
-        else
-        {
-            draw_text_color(bx + 150, by + 290, "R", c_red, c_red, c_red, c_red, 1);
-        }
-    }
-    
+    var selected = inventory[selected_slot];
+        
+    ui_draw_weapon_slot(bx + sprite_get_xoffset(selected[weapon_index.sprite_count + 1]), by + 254 + sprite_get_yoffset(selected[weapon_index.sprite_count + 1]), 1, selected, 65, 25);
+   
     // Other slots
-    var other_slot = 0;
+    var other_slot_index = 0;
     if(selected_slot == 0)
     {
-        other_slot = 1;
+        other_slot_index = 1;
     }
-    ui_draw_weapon_slot(bx, by + 205, 0.75, inventory[other_slot], 35, 15);
-    ui_check_weapon_slot_tooltip(bx, by + 205, 0.75, inventory[other_slot]);   
+    var other_slot = inventory[other_slot_index];
+    var other_item_scale = 0.75;
+    ui_draw_weapon_slot(bx + sprite_get_xoffset(other_slot[weapon_index.sprite_count + 1]) * other_item_scale, by + 202 + sprite_get_yoffset(other_slot[weapon_index.sprite_count + 1]) * other_item_scale, other_item_scale, other_slot, 35, 15);
+    ui_check_weapon_slot_tooltip(bx, by + 202, other_item_scale, other_slot);  
+    ui_check_weapon_slot_tooltip(bx, by + 254, 1, selected);
 }
-ui_check_weapon_slot_tooltip(bx, by + 254, 1, inventory[selected_slot]);
 
-// Textbox
-if(ds_queue_size(obj_player.textbox_queue) > 0)
-{
-    var text = ds_queue_head(obj_player.textbox_queue);
-    ui_draw_textbox(text);    
-}
+
+
    
-ui_draw_boss_health();
-
    
