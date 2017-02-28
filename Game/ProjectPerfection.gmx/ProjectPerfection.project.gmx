@@ -85,7 +85,6 @@
       <sprite>sprites\spr_rifle_reflex</sprite>
     </sprites>
     <sprite>sprites\spr_target</sprite>
-    <sprite>sprites\spr_sword</sprite>
     <sprite>sprites\spr_dishonDuck</sprite>
     <sprite>sprites\spr_grunt</sprite>
     <sprites name="Ui">
@@ -148,6 +147,8 @@
       <sprite>sprites\spr_plasma</sprite>
       <sprite>sprites\spr_rail</sprite>
       <sprite>sprites\spr_azar_rock</sprite>
+      <sprite>sprites\spr_sword</sprite>
+      <sprite>sprites\spr_wave</sprite>
     </sprites>
     <sprite>sprites\spr_book</sprite>
     <sprite>sprites\spr_boss</sprite>

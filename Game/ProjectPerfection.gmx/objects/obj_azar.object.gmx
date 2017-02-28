@@ -40,11 +40,11 @@ basic[weapon_index.bullet_sprite] = spr_azar_rock;
 slam = inventory_create_weapon();
 slam[weapon_index.modifier] = weapon_modifier.sword;
 slam[weapon_index.damage] = 75;
-slam[weapon_index.bullet_sprite] = spr_azar_rock;
+slam[weapon_index.bullet_sprite] = spr_wave;
 
 wave = inventory_create_weapon();
 wave[weapon_index.modifier] = weapon_modifier.scatter;
-wave[weapon_index.damage] = 75 * 5;
+wave[weapon_index.damage] = 75;
 wave[weapon_index.bullet_sprite] = spr_azar_rock;
 
 rock = inventory_create_weapon();

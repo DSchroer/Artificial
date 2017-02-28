@@ -10,8 +10,6 @@ shot.sprite_index = weapon[weapon_index.bullet_sprite];
 shot.mask_index = weapon[weapon_index.bullet_sprite];
 shot.image_angle = dir;
 shot.direction = dir;
-shot.image_xscale = 2;
-shot.image_yscale = 2;
 
 shot.parent = self;
 shot.damage = weapon[weapon_index.damage];
