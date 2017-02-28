@@ -2,7 +2,7 @@
 var item = argument0;
 if(is_array(item))
 {
-    for(var i = 0; i < 4; i++)
+    for(var i = 0; i < 2; i++)
     {
         if(inventory[i] == -1)
         {

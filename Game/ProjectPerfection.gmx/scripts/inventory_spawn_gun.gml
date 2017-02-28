@@ -65,23 +65,23 @@ ranges[item_quality.legendary] = 4;
 //Damage Per Shot
 var damages = 8 * (1 + (pow / 20));
 damages = inventory_scale_stat(damages, bases[q] / 100, ranges[q] / 100, core[subType, 0]);
-gun[weapon_index.damage] = round(damages);
+gun[weapon_index.damage] = max(1, round(damages));
 
 //Fire rate (per second)
-var rates = 5;
+var rates = 10;
 rates = inventory_scale_stat(rates, bases[q] / 100, ranges[q] / 100, core[subType, 1]);
-gun[weapon_index.fire_timeout] = 30 / rates;
+gun[weapon_index.fire_timeout] = 60 / rates;
 
 //Magazine Size
 var mag = 20;
 mag = inventory_scale_stat(mag, bases[q] / 100, ranges[q] / 100, core[subType, 2]);
 gun[weapon_index.capacity] = round(mag);
-gun[weapon_index.remaining] = gun[weapon_index.capacity];
+gun[weapon_index.remaining] = min(60, gun[weapon_index.capacity]);
 
 //Reload Time (Seconds)
-var reload = 2.0;
+var reload = 1.0;
 reload = inventory_scale_stat(reload, bases[q] / 100, ranges[q] / 100, core[subType, 3]);
-gun[weapon_index.reload_timeout] = reload * 30;
+gun[weapon_index.reload_timeout] = reload * 60;
 
 gun = inventory_skin_gun(gun);
 

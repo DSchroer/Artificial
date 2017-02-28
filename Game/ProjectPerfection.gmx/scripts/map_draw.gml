@@ -30,11 +30,12 @@ if(level != -1 && instance_exists(level))
 
     draw_sprite(map_texture, 0, (map_diameter / 2) - (center_x * map_size), (map_diameter / 2) - (center_y * map_size));
 }
-draw_circle_colour((map_diameter / 2), (map_diameter / 2), 3, c_red, c_red, false);
+//draw_circle_colour((map_diameter / 2), (map_diameter / 2), 3, c_red, c_red, false);
 surface_reset_target();
 
-shader_set(sdr_circle);
-draw_surface(main_surface, display_get_gui_width() - 20 - map_diameter, display_get_gui_height() - 20 - map_diameter);
+//shader_set(sdr_circle);
+draw_sprite(spr_map_border, -1, display_get_gui_width() - 30 - map_diameter, 10);
+draw_surface(main_surface, display_get_gui_width() - 22 - map_diameter, 18);
 shader_reset();
 
 

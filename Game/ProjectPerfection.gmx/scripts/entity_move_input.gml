@@ -39,9 +39,9 @@ if(x_dir != 0 || y_dir != 0)
 
 if(keymap_check(keycode.inventory_up))
 {
-    for(var i = 0; i < 4; i++)
+    for(var i = 0; i < 2; i++)
     {
-        selected_slot = (selected_slot + 1) % 4;
+        selected_slot = (selected_slot + 1) % 2;
         if(inventory[selected_slot] != -1)
         {
             break;
@@ -59,16 +59,6 @@ if(keymap_check(keycode.dequeue_message))
     ds_queue_dequeue(textbox_queue);
 }
 
-if(keymap_check(keycode.healthpack))
-{
-    if(inventory_get_healthpack_count(self) > 0 && current_health < max_health)
-    {
-        inventory_remove_healthpacks(self, 1);
-        player_heal_percent(50);
-    }
-}
-
-
 if(keyboard_check_pressed(vk_f4))
 {
     ui_queue_message("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id porttito. `a `s `b `s `x `y `br `l `s `r `s `u `s `d Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id porttito" + 
@@ -77,6 +67,11 @@ if(keyboard_check_pressed(vk_f4))
     ui_queue_message("Test2");
     ui_queue_message("Test3");
 }
+if(keyboard_check_pressed(vk_f12))
+{
+    old_tooltips = !old_tooltips;
+}
+
 
 if(keyboard_check_pressed(vk_numpad1))
 {

@@ -12,7 +12,7 @@ var stat_colours = argument6;
 // Bookkeeping for background things
 var screen_width = display_get_gui_width();
 var screen_height = display_get_gui_height();
-var background = spr_tooltip;
+var background = spr_health_tooltip_back;
 var scale_factor_x = 2;
 var scale_factor_y = 1;
 var border_size_x = 32;
@@ -33,7 +33,7 @@ for(var i = 0; i < array_length_1d(descriptions); i++)
 }
 var contents_height = (array_length_1d(descriptions) + 1) * text_height;    
 scale_factor_x = (contents_width + border_size_x * 2) / sprite_get_width(background);
-scale_factor_y = (contents_height + border_size_y * 2) / sprite_get_height(background);
+scale_factor_y = 1;//(contents_height + border_size_y * 2) / sprite_get_height(background);
 
 // Force the tooltip fully on screen, if applicable
 if(xpos + contents_width + border_size_x * 2 > screen_width)
