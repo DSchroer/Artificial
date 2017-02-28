@@ -30,10 +30,5 @@ var angle_2 = radtodeg(-arctan2(target_y - b2_y, target_x - b2_x));
 
 draw_sprite_ext(sprite1, 0, orig_x, orig_y, 1, 1, angle_1, c_white, 1);
 draw_sprite_ext(sprite2, 0, b2_x, b2_y, 1, 1, angle_2, c_white, 1);
-/*draw_line(orig_x, orig_y, b2_x, b2_y);
-
-var b2_x1 = lengthdir_x(length2, angle_2);
-var b2_y1 = lengthdir_y(length2, angle_2);
-draw_line(b2_x, b2_y, b2_x + b2_x1, b2_y + b2_y1);*/
 
 return false;

@@ -78,8 +78,7 @@ with(obj_entity)
     }
 }
 
-
-if(collision_point(x, y + y_off, obj_wall, false, false))
+if(cgrid_collision_point(x, y + y_off))
 {
     instance_destroy();
 }

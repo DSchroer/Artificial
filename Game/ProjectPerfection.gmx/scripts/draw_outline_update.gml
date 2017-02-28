@@ -1,8 +1,8 @@
 ///draw_outline_update(sprite)
 var spr = argument0;
 
-var sprite_scale = shader_get_uniform(sdr_world, "sprite_size");
-var sprite_uvs = shader_get_uniform(sdr_world, "sprite_uvs");
+var sprite_scale = shader_get_uniform(sdr_outline, "sprite_size");
+var sprite_uvs = shader_get_uniform(sdr_outline, "sprite_uvs");
 
 var tex;
 var uvs;
@@ -19,9 +19,7 @@ if(surface_exists(spr))
     uvs = sprite_get_uvs(spr, image_index);
 }
 
-shader_set_uniform_f_array(sprite_uvs, uvs);
-
 tex_h = texture_get_texel_height(tex);
 tex_w = texture_get_texel_width(tex);
 
-shader_set_uniform_f(sprite_scale, tex_w, tex_h);
+shader_set_uniform_f(sprite_scale, tex_w, tex_h, 1.0);

@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>event_inherited();
+</string>
           </argument>
         </arguments>
       </action>

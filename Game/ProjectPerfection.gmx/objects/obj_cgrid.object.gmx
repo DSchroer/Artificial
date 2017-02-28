@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-50000</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,16 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>parent = self;
-damage = 1;
-paused = false;
-y_off = 45;
+            <string>cgrid_init()
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -51,63 +48,7 @@ y_off = 45;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle = direction;
-
-if(!paused &amp;&amp; is_paused())
-{
-    old_speed = speed;
-    speed = 0;
-    paused = true;
-}else if(paused &amp;&amp; !is_paused())
-{
-    speed = old_speed;
-    paused = false;
-}
-
-var hit = false;
-with(obj_entity)
-{
-    if(self != other.parent)
-    {
-        if(point_in_ellipse(other.x, other.y, x + hbox_x1, y + hbox_y1, x + hbox_x2, y + hbox_y2))
-        {
-            hit = true;
-            entity_apply_damage(damager(other.damage));
-        }
-    }
-}
-if(hit)
-{
-    instance_destroy();
-}
-
-if(cgrid_collision_point(x, y + y_off))
-{
-    instance_destroy();
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//nothing
+            <string>//cgrid_draw()
 </string>
           </argument>
         </arguments>

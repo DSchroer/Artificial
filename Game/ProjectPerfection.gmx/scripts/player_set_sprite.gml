@@ -7,8 +7,8 @@ if(speed != 0 &&
     keymap_check(keycode.down) || 
     keymap_check(keycode.left) || 
     keymap_check(keycode.right) || 
-    abs(haxis_ls) > 0.05 || 
-    abs(vaxis_ls) > 0.05))
+    abs(haxis_ls) > 0.35 || 
+    abs(vaxis_ls) > 0.35))
 {
     sprite_index = spr_player_walk;
 }else{
