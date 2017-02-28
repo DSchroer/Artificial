@@ -1,4 +1,9 @@
 ///entity_take_damage()
+if(!visible)
+{
+    exit;
+}
+
 current_health -= damage;
 
 if(damage > 0)

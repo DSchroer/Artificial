@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>alarm[0] = 120;
 drawing = true;
-target = obj_boss;
+target = obj_azar;
 photo = spr_azar_intro;
 
 </string>

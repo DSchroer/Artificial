@@ -6,14 +6,13 @@ if(speed == 0)
 }
 
 var col_entity = instance_place(x, y, obj_entity);
-if(col_entity)
+if(col_entity && col_entity != self)
 {
     motion_add(point_direction(col_entity.x, col_entity.y, x, y), repulsion_force);
 }
 
 var x_change = lengthdir_x(speed, direction);
 var y_change = lengthdir_y(speed, direction);
-
 
 if(cgrid_place_meeting(x + x_change, y))
 {
