@@ -77,10 +77,12 @@
     <sprite>sprites\spr_item</sprite>
     <sprite>sprites\spr_inv_shield1</sprite>
     <sprites name="Weapons">
-      <sprite>sprites\spr_inv_rifle1</sprite>
-      <sprite>sprites\spr_world_rifle1</sprite>
       <sprite>sprites\spr_pistol_base</sprite>
       <sprite>sprites\spr_pistol_assault</sprite>
+      <sprite>sprites\spr_rifle_base</sprite>
+      <sprite>sprites\spr_rifle_assault</sprite>
+      <sprite>sprites\spr_rifle_doku</sprite>
+      <sprite>sprites\spr_rifle_reflex</sprite>
     </sprites>
     <sprite>sprites\spr_target</sprite>
     <sprite>sprites\spr_sword</sprite>

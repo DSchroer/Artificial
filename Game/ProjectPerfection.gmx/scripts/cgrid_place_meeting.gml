@@ -20,11 +20,11 @@ with(obj_cgrid)
         for(var j = box_top; j <= box_bottom; j++)
         {
             var inst = ds_grid_get(cgrid, i, j);
-            if(!is_undefined(inst))
+            if(inst != 0 && !is_undefined(inst))
             {
                 with(other)
                 {
-                    if( place_meeting(xp, yp, inst))
+                    if(place_meeting(xp, yp, inst))
                     {
                         return true;
                     }

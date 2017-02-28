@@ -18,7 +18,7 @@ weapon[weapon_index.bullet_sprite] = spr_bullet;
 weapon[weapon_index.bullet_sprite_speed] = 1;
 
 weapon[weapon_index.sprite_count] = 1;
-weapon[weapon_index.sprite_count + 1] = spr_inv_rifle1;
+weapon[weapon_index.sprite_count + 1] = spr_rifle_base;
 weapon[weapon_index.sprite_count + 2] = color_random();
 
 return weapon;

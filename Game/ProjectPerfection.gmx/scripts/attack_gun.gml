@@ -34,7 +34,6 @@ if(self.object_index == obj_player)
     motion_add(dir, -5);
 }
 
-
 switch(weapon[weapon_index.modifier])
 {
     case weapon_modifier.normal:

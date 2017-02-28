@@ -5,6 +5,7 @@ if(speed == 0)
     exit;
 }
 
+
 var col_entity = instance_place(x, y, obj_entity);
 if(col_entity && col_entity != self)
 {
@@ -35,3 +36,4 @@ if(cgrid_place_meeting(x + x_change, y + y_change))
 
 speed = point_distance(0, 0, x_change, y_change);
 direction = point_direction(0, 0, x_change, y_change);
+
