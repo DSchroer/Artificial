@@ -12,7 +12,8 @@ enum item_quality
     uncommon = 1,
     rare = 2,
     epic = 3,
-    legendary = 4
+    legendary = 4,
+    unique = 5
 }
 
 enum inventory_slot

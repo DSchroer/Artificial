@@ -26,6 +26,9 @@ case item_quality.epic:
 case item_quality.legendary:
     background = spr_tooltip_top_legendary;
     break;
+case item_quality.unique:
+    background = spr_tooltip_top_unique;
+    break;
 }
 
 var background2 = spr_tooltip_body;
@@ -35,13 +38,13 @@ var bscale_bottom_y = 1;
 var screen_width = display_get_gui_width();
 var screen_height = display_get_gui_height();
 // Force the tooltip fully on screen, if applicable
-if(xpos + (sprite_get_width(background) + sprite_get_width(background2)) * bscale_x > screen_width)
+if(xpos + sprite_get_width(background) * bscale_x + 10 > screen_width)
 {
-    xpos = screen_width - (sprite_get_width(background) + sprite_get_width(background2)) * bscale_x;
+    xpos = screen_width - sprite_get_width(background) * bscale_x - 10;
 }
-if(ypos + sprite_get_height(background) * bscale_top_y + sprite_get_height(background2) * bscale_bottom_y > screen_height)
+if(ypos + sprite_get_height(background) * bscale_top_y + sprite_get_height(background2) * bscale_bottom_y + 10 > screen_height)
 {
-    ypos = screen_height - (sprite_get_height(background) * bscale_top_y + sprite_get_height(background2) * bscale_bottom_y);
+    ypos = screen_height - (sprite_get_height(background) * bscale_top_y + sprite_get_height(background2) * bscale_bottom_y + 10 );
 }
 
 var border_size = 10;

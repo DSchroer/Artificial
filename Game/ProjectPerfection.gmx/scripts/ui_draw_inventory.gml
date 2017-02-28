@@ -9,7 +9,7 @@ var back_width = sprite_get_width(spr_inventory_background);
 var back_height = sprite_get_height(spr_inventory_background);
 
 // Background
-var bx = 0;
+var bx = width - back_width - 10;
 var by = (height - back_height - 10);
 if(!hide_inventory)
 {
@@ -30,8 +30,8 @@ if(!hide_inventory)
     }
     var other_slot = inventory[other_slot_index];
     var other_item_scale = 0.75;
-    ui_draw_weapon_slot(bx + sprite_get_xoffset(other_slot[weapon_index.sprite_count + 1]) * other_item_scale, by + 202 + sprite_get_yoffset(other_slot[weapon_index.sprite_count + 1]) * other_item_scale, other_item_scale, other_slot, 35, 15);
-    ui_check_weapon_slot_tooltip(bx, by + 202, other_item_scale, other_slot);  
+    ui_draw_weapon_slot(bx + 39 + sprite_get_xoffset(other_slot[weapon_index.sprite_count + 1]) * other_item_scale, by + 202 + sprite_get_yoffset(other_slot[weapon_index.sprite_count + 1]) * other_item_scale, other_item_scale, other_slot, 35, 15);
+    ui_check_weapon_slot_tooltip(bx + 39, by + 202, other_item_scale, other_slot);  
     ui_check_weapon_slot_tooltip(bx, by + 254, 1, selected);
 }
 

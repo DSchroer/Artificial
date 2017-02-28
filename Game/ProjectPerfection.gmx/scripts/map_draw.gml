@@ -34,8 +34,8 @@ if(level != -1 && instance_exists(level))
 surface_reset_target();
 
 //shader_set(sdr_circle);
-draw_sprite(spr_map_border, -1, display_get_gui_width() - 30 - map_diameter, display_get_gui_height() - 30 - map_diameter);
-draw_surface(main_surface, display_get_gui_width() - 22 - map_diameter, display_get_gui_height() - 22 - map_diameter);
+draw_sprite(spr_map_border, -1, display_get_gui_width() - 30 - map_diameter, 10);
+draw_surface(main_surface, display_get_gui_width() - 22 - map_diameter, 18);
 shader_reset();
 
 

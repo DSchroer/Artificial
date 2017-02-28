@@ -4,7 +4,7 @@ var width = display_get_gui_width();
 var height = display_get_gui_height();
 var mx = device_mouse_x_to_gui(0);
 var my = device_mouse_y_to_gui(0);
-var xp = (width - sprite_get_width(spr_statusback)) / 2;
+var xp = 10;//(width - sprite_get_width(spr_statusback)) / 2;
 var yp = (height - sprite_get_height(spr_statusback) - 50);
 
 var health_percent = current_health / max_health;
