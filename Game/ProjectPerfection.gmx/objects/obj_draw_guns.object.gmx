@@ -40,11 +40,6 @@ with(obj_shot_normal)
     draw_sprite_ext(sprite_index, image_index, x, y - yoffset, 1, 1, image_angle, c_white, 1);
 }
 
-with(obj_hit_sword)
-{
-    draw_sprite_ext(sprite_index, image_index, x, y - yoffset, 1, 1, image_angle, c_white, 1);
-}
-
 with(obj_shot_rail)
 {
     var distance = point_distance(x, y, x_end, y_end);

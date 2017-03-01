@@ -157,8 +157,8 @@ if(room == rm_tutorial)
     exit;
 }
 
-//inventory_swap(self, inventory_slot.weapon1, -1);
-//inventory_swap(self, inventory_slot.weapon2, -1);
+inventory_swap(self, inventory_slot.weapon1, -1);
+inventory_swap(self, inventory_slot.weapon2, -1);
 
 with(obj_level)
 {

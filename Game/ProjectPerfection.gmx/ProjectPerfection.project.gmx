@@ -481,6 +481,18 @@
         <script>scripts\azar_move.gml</script>
         <script>scripts\azar_attack.gml</script>
       </scripts>
+      <scripts name="Captain">
+        <script>scripts\cap_shoot.gml</script>
+        <script>scripts\cap_approach.gml</script>
+        <script>scripts\cap_mele.gml</script>
+      </scripts>
+      <scripts name="Turret">
+        <script>scripts\turret_attack.gml</script>
+      </scripts>
+      <scripts name="Brute">
+        <script>scripts\brute_attack.gml</script>
+        <script>scripts\brute_approach.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Interact">
       <script>scripts\interact_any.gml</script>
@@ -593,6 +605,9 @@
       <object>objects\obj_target</object>
       <object>objects\obj_boss_target</object>
       <object>objects\obj_grunt</object>
+      <object>objects\obj_turret</object>
+      <object>objects\obj_captain</object>
+      <object>objects\obj_brute</object>
       <object>objects\obj_dog</object>
       <object>objects\obj_enemy</object>
       <objects name="Boss1">

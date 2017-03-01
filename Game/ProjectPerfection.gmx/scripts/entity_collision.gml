@@ -1,15 +1,13 @@
 ///entity_collision()
-
-if(speed == 0)
-{
-    exit;
-}
-
-
 var col_entity = instance_place(x, y, obj_entity);
 if(col_entity && col_entity != self)
 {
     motion_add(point_direction(col_entity.x, col_entity.y, x, y), repulsion_force);
+}
+
+if(speed == 0)
+{
+    exit;
 }
 
 var x_change = lengthdir_x(speed, direction);

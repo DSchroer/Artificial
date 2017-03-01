@@ -29,7 +29,6 @@
 
 parent = self;
 damage = 0;
-speed = 3;
 hit = false;
 </string>
           </argument>
@@ -86,7 +85,7 @@ if(!hit)
         {
             if(instance_place(x, y, other))
             {
-                hit = true;
+                other.hit = true;
                 entity_apply_damage(damager(other.damage));
             }
         }
@@ -115,6 +114,7 @@ if(!hit)
           <argument>
             <kind>1</kind>
             <string>//nothing
+draw_sprite_ext(sprite_index, image_index, x, y, 1, 1, image_angle, c_white, 1);
 </string>
           </argument>
         </arguments>
