@@ -37,7 +37,7 @@ if(x_dir != 0 || y_dir != 0)
     motion_add(new_dir, max_movement_speed * acceleration_coeff);
 }
 
-if(keymap_check(keycode.inventory_up))
+if(keymap_check(keycode.inventory_move) && inv_change_cd <= 0)
 {
     for(var i = 0; i < 2; i++)
     {
@@ -47,6 +47,11 @@ if(keymap_check(keycode.inventory_up))
             break;
         }
     }
+    inv_change_cd = 6;
+}
+else if(inv_change_cd > 0)
+{
+    inv_change_cd--;
 }
 
 if(keymap_check(keycode.hide_inventory))
@@ -71,7 +76,15 @@ if(keyboard_check_pressed(vk_f12))
 {
     old_tooltips = !old_tooltips;
 }
-
+if(keyboard_check_pressed(vk_f10))
+{
+    player_level_up();
+}
+if(keyboard_check_pressed(vk_f9))
+{
+    current_health = 1;
+    remaining_shield = 1;
+}
 
 if(keyboard_check_pressed(vk_numpad1))
 {
@@ -134,7 +147,10 @@ if(keyboard_check_pressed(vk_numpad9))
     inventory[selected_slot] = weapon;
 }
 
-
+if(keyboard_check_pressed(vk_f10))
+{
+    player_level_up();
+}
 
 // Left analogue stick:
 var haxis_ls = gamepad_axis_value(0, gp_axislh);

@@ -11,4 +11,27 @@ shot.direction = attack_accuracy(dir, weapon[weapon_index.accuracy]);
 shot.parent = self;
 shot.damage = weapon[weapon_index.damage];
 
-sfx_play_volume(snd_fire_laser, true, 0.2);
+switch(weapon[weapon_index.weapon_subtype])
+{
+case weapon_subtype.pistol:
+    sfx_play_volume(snd_pistol_laser, true, 0.2);
+    break;
+case weapon_subtype.auto_rifle:
+    sfx_play_volume(snd_assault_laser, true, 0.2);
+    break;
+case weapon_subtype.heavy_rifle:
+    sfx_play_volume(snd_heavy_laser, true, 0.2);
+    break;
+case weapon_subtype.sniper_rifle:
+    sfx_play_volume(snd_sniper_laser, true, 0.2);
+    break;
+case weapon_subtype.smg:
+    sfx_play_volume(snd_smg_laser, true, 0.2);
+    break;
+case weapon_subtype.machine_gun:
+    sfx_play_volume(snd_mg_laser, true, 0.2);
+    break;
+
+}
+
+

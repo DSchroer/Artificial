@@ -44,6 +44,7 @@ enum weapon_index
     remaining,
     fire_timeout,
     fire_cooldown,
+    recoil_modifier, 
     reload_timeout,
     reload_cooldown,
     bullet_sprite,

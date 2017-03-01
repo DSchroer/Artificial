@@ -8,7 +8,8 @@ if(is_shield_active)
     }
     else
     {
-        remaining_shield += shield_recharge_rate * (delta_time / 1000000);
+        var val = shield_max_health * shield_recharge_rate * (delta_time / 1000000);
+        remaining_shield += shield_max_health * shield_recharge_rate * (delta_time / 1000000);
         remaining_shield = min(remaining_shield, shield_max_health);
     } 
 }

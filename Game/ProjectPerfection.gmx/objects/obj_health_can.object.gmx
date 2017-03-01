@@ -30,7 +30,7 @@ with(obj_player)
 {
     if(current_health != max_health)
     {
-        current_health = max_health;
+        player_heal_percent(10);
         used = true;
         sfx_play(snd_healing_pills, false);
     }
