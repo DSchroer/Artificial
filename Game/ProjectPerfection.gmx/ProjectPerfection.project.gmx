@@ -61,6 +61,38 @@
     <sound>sound\bkg_desert2</sound>
     <sound>sound\bkg_boss1</sound>
     <sound>sound\bkg_menu</sound>
+    <sounds name="guns">
+      <sound>sound\snd_heavy_scatter</sound>
+      <sound>sound\snd_assault_explosive</sound>
+      <sound>sound\snd_assault_laser</sound>
+      <sound>sound\snd_assault_plasma</sound>
+      <sound>sound\snd_assault_regular</sound>
+      <sound>sound\snd_assault_scatter</sound>
+      <sound>sound\snd_heavy_explosive</sound>
+      <sound>sound\snd_heavy_laser</sound>
+      <sound>sound\snd_heavy_plasma</sound>
+      <sound>sound\snd_heavy_regular</sound>
+      <sound>sound\snd_mg_explosive</sound>
+      <sound>sound\snd_mg_laser</sound>
+      <sound>sound\snd_mg_plasma</sound>
+      <sound>sound\snd_mg_regular</sound>
+      <sound>sound\snd_mg_scatter</sound>
+      <sound>sound\snd_pistol_explosive</sound>
+      <sound>sound\snd_pistol_laser</sound>
+      <sound>sound\snd_pistol_plasma</sound>
+      <sound>sound\snd_pistol_regular</sound>
+      <sound>sound\snd_pistol_scatter</sound>
+      <sound>sound\snd_smg_explosive</sound>
+      <sound>sound\snd_smg_laser</sound>
+      <sound>sound\snd_smg_plasma</sound>
+      <sound>sound\snd_smg_regular</sound>
+      <sound>sound\snd_smg_scatter</sound>
+      <sound>sound\snd_sniper_explosive</sound>
+      <sound>sound\snd_sniper_plasma</sound>
+      <sound>sound\snd_sniper_laser</sound>
+      <sound>sound\snd_sniper_regular</sound>
+      <sound>sound\snd_sniper_scatter</sound>
+    </sounds>
   </sounds>
   <sprites name="sprites">
     <sprites name="Player">
