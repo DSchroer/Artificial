@@ -84,19 +84,40 @@ if(point != noone)
 {
     var uix = ((mouse_x - view_xview[0])/view_wview) * display_get_gui_width();
     var uiy = ((mouse_y - view_yview[0])/view_hview) * display_get_gui_height();
-    
+    var gun_data = data;      
     if(is_gun(data))
     {
-        ui_draw_weapon_tooltip2(uix + 16, uiy + 16, data);
+        with(obj_player)
+        {   
+            if(is_gun(inventory[selected_slot]))
+            {
+                ui_draw_weapon_comparison(uix + 16, uiy + 16, inventory[selected_slot], gun_data);
+            }
+            else
+            {
+                ui_draw_weapon_tooltip2(uix + 16, uiy + 16, gun_data);
+            }
+        }
     }
-}else if(place_meeting(x, y, obj_player))
+}
+else if(place_meeting(x, y, obj_player))
 {
     var uix = ((obj_player.x - view_xview[0])/view_wview) * display_get_gui_width();
     var uiy = ((obj_player.y - view_yview[0])/view_hview) * display_get_gui_height();
-    
+    var gun_data = data;    
     if(is_gun(data))
     {
-        ui_draw_weapon_tooltip2(uix + 16, uiy + 16, data);
+        with(obj_player)
+        {   
+            if(is_gun(inventory[selected_slot]))
+            {
+                ui_draw_weapon_comparison(uix + 16, uiy + 16, inventory[selected_slot], gun_data);
+            }
+            else
+            {
+                ui_draw_weapon_tooltip2(uix + 16, uiy + 16, gun_data);
+            }
+        }
     }
 }
 </string>
