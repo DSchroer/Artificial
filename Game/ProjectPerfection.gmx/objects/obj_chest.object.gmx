@@ -8,6 +8,29 @@
   <parentName>obj_interact_solid</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>triggered = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="10">
       <action>
         <libid>1</libid>
@@ -25,12 +48,25 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with(obj_player)
+            <string>if(triggered)
 {
-player_take_damage(100);
-
+    exit;
 }
+triggered = true;
+sprite_index = spr_chest_open;
 
+if(instance_exists(obj_progress))
+{
+    var number_drops = irandom_range(1, 2);
+    for(var i = 0; i &lt; number_drops; i++)
+    {
+        var gun = instance_create(x + i * 96, y + 96, obj_item);
+        gun.data = inventory_spawn_gun_ext(obj_progress.progress + 10, item_quality.uncommon);
+    }
+    instance_create(x - 64, y, obj_health_can);
+    instance_create(x + 128, y, obj_health_can);
+}
+event_inherited();
 </string>
           </argument>
         </arguments>
