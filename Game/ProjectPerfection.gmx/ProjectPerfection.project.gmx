@@ -107,6 +107,7 @@
         <sprite>sprites\spr_bossback</sprite>
         <sprite>sprites\spr_bossfront</sprite>
         <sprite>sprites\spr_bosshealth</sprite>
+        <sprite>sprites\spr_reload_middle</sprite>
       </sprites>
       <sprites name="tooltip">
         <sprite>sprites\spr_tooltip_top_unique</sprite>
@@ -338,6 +339,7 @@
       <script>scripts\ui_world_to_gui_x.gml</script>
       <script>scripts\ui_world_to_gui_y.gml</script>
       <script>scripts\ui_get_boss_health_percent.gml</script>
+      <script>scripts\ui_draw_reload_bar.gml</script>
     </scripts>
     <scripts name="Debug">
       <script>scripts\debug_init.gml</script>
