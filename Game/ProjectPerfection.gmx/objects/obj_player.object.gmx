@@ -78,20 +78,21 @@ arm_2_angle_off = -15;
           <argument>
             <kind>1</kind>
             <string>///Drop weapons
-for(var i = 0; i &lt; 4; i++)
+/*
+for(var i = 0; i &lt; 2; i++)
 {
-        var out = inventory_swap(self, i, -1);
-        
-        if(out != -1 &amp;&amp; is_array(out))
-        {
-            var dx = random(64) - 32;
-            var dy = random(64) - 32;
-        
-            var item = instance_create(x + dx, y + dy, obj_item);
-            item.data = out;
-        }
-
+    var out = inventory_swap(self, i, -1);
+    
+    if(out != -1 &amp;&amp; is_array(out))
+    {
+        var dx = random(64) - 32;
+        var dy = random(64) - 32;
+    
+        var item = instance_create(x + dx, y + dy, obj_item);
+        item.data = out;
+    }
 }
+*/
 </string>
           </argument>
         </arguments>
@@ -156,10 +157,8 @@ if(room == rm_tutorial)
     exit;
 }
 
-inventory_swap(self, inventory_slot.weapon1, -1);
-inventory_swap(self, inventory_slot.weapon2, -1);
-inventory_swap(self, inventory_slot.weapon3, -1);
-inventory_swap(self, inventory_slot.weapon4, -1);
+//inventory_swap(self, inventory_slot.weapon1, -1);
+//inventory_swap(self, inventory_slot.weapon2, -1);
 
 with(obj_level)
 {
@@ -218,7 +217,6 @@ if(gun_recoil &gt; 0)
 }
 
 player_update_shield();
-
 debug_show_string("fps: " + string(fps));
 
 if(keymap_check(keycode.interact) &amp;&amp; !dead)
@@ -238,7 +236,8 @@ if(keymap_check(keycode.interact) &amp;&amp; !dead)
             out = inventory_pickup_weapon(data);
         }else if(is_shield(data))
         {
-            out = inventory_swap(self, inventory_slot.shield, data);
+            out = -1;
+            player_activate_shield();
         }
         
         with(obj)
@@ -394,8 +393,7 @@ if(instance_number(obj_spawn_player) &gt; 0)
             <kind>1</kind>
             <string>if(!is_paused())
 {
-    ui_draw_inventory();
-    ui_draw_health();
+    ui_draw();
 }
 
 </string>

@@ -5,10 +5,9 @@ if(invincible == 0)
     invincible = 15;
 
     // Put shield on cooldown
-    var equipped_shield = player_get_shield();
-    if(is_array(equipped_shield))
+    if(is_shield_active)
     {
-        shield_penalty_time = max(shield_penalty_time, equipped_shield[shield_index.recharge_delay]);
+        shield_penalty_time = max(shield_penalty_time, shield_recharge_delay);
         previous_shield_penalty_time = shield_penalty_time;
     }
     

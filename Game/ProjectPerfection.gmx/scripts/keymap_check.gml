@@ -10,8 +10,7 @@ enum keycode{
     inv3,
     inv4,
     shield,
-    inventory_up,
-    inventory_down,
+    inventory_move,
     fire,
     hide_inventory,
     interact, 
@@ -74,10 +73,9 @@ if(key == keycode.shield)
     mouse_check_button(mb_right);
 }
 
-if(key == keycode.inventory_up)
+if(key == keycode.inventory_move)
 {
-    return keyboard_check_pressed(ord("Q")) 
-    || keymap_gamepad_check_pressed(gp_shoulderr);
+    return keyboard_check_pressed(ord("Q")) || keymap_gamepad_check_pressed(gp_shoulderr) || mouse_wheel_up() || mouse_wheel_down();
 }
 
 if(key == keycode.fire)
@@ -92,7 +90,7 @@ if(key == keycode.hide_inventory)
 
 if(key == keycode.interact)
 {
-    return keyboard_check_pressed(ord("E")) || keymap_gamepad_check_pressed(gp_face1);
+    return keyboard_check_pressed(ord("E")) || keymap_gamepad_check_pressed(gp_face1) || mouse_check_button_pressed(mb_right);
 }
 
 if(key == keycode.escape)

@@ -61,6 +61,38 @@
     <sound>sound\bkg_desert2</sound>
     <sound>sound\bkg_boss1</sound>
     <sound>sound\bkg_menu</sound>
+    <sounds name="guns">
+      <sound>sound\snd_heavy_scatter</sound>
+      <sound>sound\snd_assault_explosive</sound>
+      <sound>sound\snd_assault_laser</sound>
+      <sound>sound\snd_assault_plasma</sound>
+      <sound>sound\snd_assault_regular</sound>
+      <sound>sound\snd_assault_scatter</sound>
+      <sound>sound\snd_heavy_explosive</sound>
+      <sound>sound\snd_heavy_laser</sound>
+      <sound>sound\snd_heavy_plasma</sound>
+      <sound>sound\snd_heavy_regular</sound>
+      <sound>sound\snd_mg_explosive</sound>
+      <sound>sound\snd_mg_laser</sound>
+      <sound>sound\snd_mg_plasma</sound>
+      <sound>sound\snd_mg_regular</sound>
+      <sound>sound\snd_mg_scatter</sound>
+      <sound>sound\snd_pistol_explosive</sound>
+      <sound>sound\snd_pistol_laser</sound>
+      <sound>sound\snd_pistol_plasma</sound>
+      <sound>sound\snd_pistol_regular</sound>
+      <sound>sound\snd_pistol_scatter</sound>
+      <sound>sound\snd_smg_explosive</sound>
+      <sound>sound\snd_smg_laser</sound>
+      <sound>sound\snd_smg_plasma</sound>
+      <sound>sound\snd_smg_regular</sound>
+      <sound>sound\snd_smg_scatter</sound>
+      <sound>sound\snd_sniper_explosive</sound>
+      <sound>sound\snd_sniper_plasma</sound>
+      <sound>sound\snd_sniper_laser</sound>
+      <sound>sound\snd_sniper_regular</sound>
+      <sound>sound\snd_sniper_scatter</sound>
+    </sounds>
   </sounds>
   <sprites name="sprites">
     <sprites name="Player">
@@ -88,24 +120,48 @@
     <sprite>sprites\spr_dishonDuck</sprite>
     <sprite>sprites\spr_grunt</sprite>
     <sprites name="Ui">
-      <sprite>sprites\spr_inventory_background_hide</sprite>
       <sprite>sprites\spr_textback</sprite>
-      <sprite>sprites\spr_tooltip</sprite>
       <sprite>sprites\spr_inventory_background</sprite>
-      <sprite>sprites\spr_controller_a</sprite>
-      <sprite>sprites\spr_controller_b</sprite>
-      <sprite>sprites\spr_controller_y</sprite>
-      <sprite>sprites\spr_controller_x</sprite>
-      <sprite>sprites\spr_controller_ddown</sprite>
-      <sprite>sprites\spr_controller_dup</sprite>
-      <sprite>sprites\spr_controller_dright</sprite>
-      <sprite>sprites\spr_controller_dleft</sprite>
-      <sprite>sprites\sprite27</sprite>
       <sprite>sprites\spr_logo</sprite>
       <sprite>sprites\spr_button</sprite>
       <sprite>sprites\spr_slider</sprite>
       <sprite>sprites\spr_button_active</sprite>
-      <sprite>sprites\spr_inventory_healthpack</sprite>
+      <sprites name="HUD">
+        <sprite>sprites\spr_laser_full</sprite>
+        <sprite>sprites\spr_laser_empty</sprite>
+        <sprite>sprites\spr_plasma_full</sprite>
+        <sprite>sprites\spr_plasma_empty</sprite>
+        <sprite>sprites\spr_ammo_empty</sprite>
+        <sprite>sprites\spr_ammo_full</sprite>
+        <sprite>sprites\spr_shieldbar</sprite>
+        <sprite>sprites\spr_healthbar</sprite>
+        <sprite>sprites\spr_statusback</sprite>
+        <sprite>sprites\spr_statusfront</sprite>
+        <sprite>sprites\spr_bossback</sprite>
+        <sprite>sprites\spr_bossfront</sprite>
+        <sprite>sprites\spr_bosshealth</sprite>
+        <sprite>sprites\spr_reload_middle</sprite>
+      </sprites>
+      <sprites name="tooltip">
+        <sprite>sprites\spr_tooltip_top_unique</sprite>
+        <sprite>sprites\spr_tooltip_body</sprite>
+        <sprite>sprites\spr_health_tooltip_back</sprite>
+        <sprite>sprites\spr_tooltip_top_legendary</sprite>
+        <sprite>sprites\spr_tooltip_top_epic</sprite>
+        <sprite>sprites\spr_tooltip_top_rare</sprite>
+        <sprite>sprites\spr_tooltip_top_uncommon</sprite>
+        <sprite>sprites\spr_tooltip_top_common</sprite>
+      </sprites>
+      <sprites name="textbox_img">
+        <sprite>sprites\spr_controller_a</sprite>
+        <sprite>sprites\spr_controller_x</sprite>
+        <sprite>sprites\spr_controller_b</sprite>
+        <sprite>sprites\spr_controller_y</sprite>
+        <sprite>sprites\spr_controller_ddown</sprite>
+        <sprite>sprites\spr_controller_dright</sprite>
+        <sprite>sprites\spr_controller_dleft</sprite>
+        <sprite>sprites\spr_controller_dup</sprite>
+      </sprites>
     </sprites>
     <sprites name="Fonts">
       <sprite>sprites\spr_base_font</sprite>
@@ -154,6 +210,9 @@
     <sprite>sprites\spr_boss</sprite>
     <sprite>sprites\sprite59</sprite>
     <sprite>sprites\spr_dog</sprite>
+    <sprite>sprites\spr_map_border</sprite>
+    <sprite>sprites\spr_chest_closed</sprite>
+    <sprite>sprites\spr_chest_open</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -164,21 +223,24 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\choose_weighted.gml</script>
     <scripts name="Inventory">
-      <script>scripts\inventory_create_shield.gml</script>
       <script>scripts\inventory_swap.gml</script>
       <script>scripts\inventory_create_weapon.gml</script>
       <script>scripts\inventory_init.gml</script>
       <script>scripts\inventory_get_modifier_name.gml</script>
-      <script>scripts\inventory_pickup_healthpacks.gml</script>
-      <script>scripts\inventory_remove_healthpacks.gml</script>
-      <script>scripts\inventory_get_healthpack_count.gml</script>
       <script>scripts\inventory_pickup_weapon.gml</script>
       <script>scripts\inventory_get_subtype_name.gml</script>
       <script>scripts\inventory_spawn_gun.gml</script>
       <script>scripts\inventory_scale_stat.gml</script>
       <script>scripts\inventory_core_table.gml</script>
       <script>scripts\inventory_skin_gun.gml</script>
+      <script>scripts\inventory_create_shield.gml</script>
+      <script>scripts\inventory_get_modifier_weights.gml</script>
+      <script>scripts\inventory_spawn_gun_ext.gml</script>
+      <script>scripts\inventory_generate_quality_weights.gml</script>
+      <script>scripts\inventory_get_qualities.gml</script>
+      <script>scripts\inventory_get_subtype_weights.gml</script>
     </scripts>
     <scripts name="Level">
       <script>scripts\level_create.gml</script>
@@ -278,9 +340,7 @@
     <script>scripts\isomorphic_set_depth.gml</script>
     <script>scripts\isomorphic_set_depth_ext.gml</script>
     <scripts name="Player">
-      <script>scripts\player_get_shield.gml</script>
       <script>scripts\player_init.gml</script>
-      <script>scripts\player_levelup.gml</script>
       <script>scripts\player_update_shield.gml</script>
       <script>scripts\player_take_damage.gml</script>
       <script>scripts\player_fire.gml</script>
@@ -289,30 +349,44 @@
       <script>scripts\player_update_gun.gml</script>
       <script>scripts\player_reload.gml</script>
       <script>scripts\player_render_self.gml</script>
+      <script>scripts\player_activate_shield.gml</script>
+      <script>scripts\player_shield_percent.gml</script>
       <script>scripts\player_set_sprite.gml</script>
+      <script>scripts\player_level_up.gml</script>
+      <script>scripts\player_compute_stats.gml</script>
+      <script>scripts\player_levelup_shield.gml</script>
     </scripts>
     <scripts name="Ui">
-      <script>scripts\ui_draw_inventory.gml</script>
-      <script>scripts\ui_draw_health.gml</script>
-      <script>scripts\ui_draw_ring.gml</script>
-      <script>scripts\ui_draw_textbox_ext.gml</script>
-      <script>scripts\ui_draw_weapon_tooltip.gml</script>
-      <script>scripts\ui_draw_shield_tooltip.gml</script>
-      <script>scripts\ui_draw_health_tooltip.gml</script>
-      <script>scripts\ui_draw_weapon_slot.gml</script>
-      <script>scripts\ui_adjust_slot.gml</script>
-      <script>scripts\ui_draw_tooltip.gml</script>
-      <script>scripts\ui_set_colour.gml</script>
       <script>scripts\ui_check_weapon_slot_tooltip.gml</script>
+      <script>scripts\ui_draw.gml</script>
+      <script>scripts\ui_draw_action_indicators.gml</script>
+      <script>scripts\ui_draw_boss_health.gml</script>
+      <script>scripts\ui_draw_health.gml</script>
+      <script>scripts\ui_draw_health_tooltip.gml</script>
       <script>scripts\ui_draw_icon.gml</script>
-      <script>scripts\ui_get_quality_colour.gml</script>
-      <script>scripts\ui_get_modifier_colour.gml</script>
-      <script>scripts\ui_get_quality_string.gml</script>
+      <script>scripts\ui_draw_inventory.gml</script>
+      <script>scripts\ui_draw_ring.gml</script>
+      <script>scripts\ui_draw_shield_tooltip.gml</script>
       <script>scripts\ui_draw_textbox.gml</script>
-      <script>scripts\ui_queue_message.gml</script>
+      <script>scripts\ui_draw_textbox_element.gml</script>
+      <script>scripts\ui_draw_textbox_ext.gml</script>
       <script>scripts\ui_draw_textbox_pos.gml</script>
+      <script>scripts\ui_draw_tooltip.gml</script>
+      <script>scripts\ui_draw_weapon_slot.gml</script>
+      <script>scripts\ui_draw_weapon_tooltip1.gml</script>
+      <script>scripts\ui_draw_weapon_tooltip2.gml</script>
+      <script>scripts\ui_get_modifier_colour.gml</script>
+      <script>scripts\ui_get_quality_colour.gml</script>
+      <script>scripts\ui_get_quality_string.gml</script>
+      <script>scripts\ui_queue_message.gml</script>
+      <script>scripts\ui_set_colour.gml</script>
       <script>scripts\ui_world_to_gui_x.gml</script>
       <script>scripts\ui_world_to_gui_y.gml</script>
+      <script>scripts\ui_get_boss_health_percent.gml</script>
+      <script>scripts\ui_draw_reload_bar.gml</script>
+      <script>scripts\ui_draw_death_text.gml</script>
+      <script>scripts\ui_draw_weapon_tooltip_comparison.gml</script>
+      <script>scripts\ui_draw_weapon_comparison.gml</script>
     </scripts>
     <scripts name="Debug">
       <script>scripts\debug_init.gml</script>
@@ -469,6 +543,7 @@
       <script>scripts\cgrid_collision_line.gml</script>
     </scripts>
     <script>scripts\area_contains.gml</script>
+    <script>scripts\array.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
@@ -541,6 +616,7 @@
       <object>objects\obj_prompt</object>
       <object>objects\obj_book</object>
       <object>objects\obj_interact_area</object>
+      <object>objects\obj_chest</object>
     </objects>
     <objects name="Menus">
       <object>objects\obj_main_menu</object>
@@ -578,7 +654,6 @@
     </objects>
     <objects name="Traps">
       <object>objects\obj_trap</object>
-      <object>objects\obj_tutorial_trap</object>
       <object>objects\obj_trap_stall</object>
       <object>objects\obj_trap_spike</object>
       <object>objects\obj_trap_rock</object>
@@ -600,6 +675,7 @@
       <object>objects\obj_display_cube</object>
     </objects>
     <object>objects\obj_cgrid</object>
+    <object>objects\obj_hub</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>

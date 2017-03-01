@@ -7,7 +7,7 @@ switch(weapon_modifier_enum)
     case weapon_modifier.normal:
         return "Regular";
     case weapon_modifier.rail:
-        return "Rail";
+        return "Laser";
     case weapon_modifier.plasma:
         return "Plasma";
     case weapon_modifier.scatter:

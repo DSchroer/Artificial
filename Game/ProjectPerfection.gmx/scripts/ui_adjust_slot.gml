@@ -3,6 +3,6 @@
 var value = argument0;
 if(value < 0) 
 {
-    value += inventory_slot.shield;
+    value += inventory_slot.weapon2;
 }
 return value;

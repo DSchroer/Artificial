@@ -37,16 +37,21 @@ if(x_dir != 0 || y_dir != 0)
     motion_add(new_dir, max_movement_speed * acceleration_coeff);
 }
 
-if(keymap_check(keycode.inventory_up))
+if(keymap_check(keycode.inventory_move) && inv_change_cd <= 0)
 {
-    for(var i = 0; i < 4; i++)
+    for(var i = 0; i < 2; i++)
     {
-        selected_slot = (selected_slot + 1) % 4;
+        selected_slot = (selected_slot + 1) % 2;
         if(inventory[selected_slot] != -1)
         {
             break;
         }
     }
+    inv_change_cd = 6;
+}
+else if(inv_change_cd > 0)
+{
+    inv_change_cd--;
 }
 
 if(keymap_check(keycode.hide_inventory))
@@ -59,16 +64,6 @@ if(keymap_check(keycode.dequeue_message))
     ds_queue_dequeue(textbox_queue);
 }
 
-if(keymap_check(keycode.healthpack))
-{
-    if(inventory_get_healthpack_count(self) > 0 && current_health < max_health)
-    {
-        inventory_remove_healthpacks(self, 1);
-        player_heal_percent(50);
-    }
-}
-
-
 if(keyboard_check_pressed(vk_f4))
 {
     ui_queue_message("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id porttito. `a `s `b `s `x `y `br `l `s `r `s `u `s `d Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id porttito" + 
@@ -76,6 +71,19 @@ if(keyboard_check_pressed(vk_f4))
     ui_queue_message("Test1 |red Test1 |crimson Test1 |yellow Test1 |orange Test1 |teal Test1 |white Test1 |black Test1 |fuchsia Test1");
     ui_queue_message("Test2");
     ui_queue_message("Test3");
+}
+if(keyboard_check_pressed(vk_f12))
+{
+    old_tooltips = !old_tooltips;
+}
+if(keyboard_check_pressed(vk_f10))
+{
+    player_level_up();
+}
+if(keyboard_check_pressed(vk_f9))
+{
+    current_health = 1;
+    remaining_shield = 1;
 }
 
 if(keyboard_check_pressed(vk_numpad1))
@@ -139,7 +147,10 @@ if(keyboard_check_pressed(vk_numpad9))
     inventory[selected_slot] = weapon;
 }
 
-
+if(keyboard_check_pressed(vk_f10))
+{
+    player_level_up();
+}
 
 // Left analogue stick:
 var haxis_ls = gamepad_axis_value(0, gp_axislh);
