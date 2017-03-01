@@ -3,24 +3,13 @@ var pow = argument0;
 var gun = inventory_create_weapon();
 
 var q;
-var roll = random(1000);
-if(roll < 1)
-{
-    q = item_quality.legendary;
-}else if(roll < 4)
-{
-    q = item_quality.epic;
-}else if(roll < 25)
-{
-    q = item_quality.rare;
-}else if(roll < 115)
-{
-    q = item_quality.uncommon;
-}else{
-    q = item_quality.common;
-}
+var weights = array(1, 3, 21, 90, 885);
+var types = array(item_quality.legendary, item_quality.epic, item_quality.rare, item_quality.uncommon, item_quality.common);
+q = choose_weighted(types, weights);
 
-gun[weapon_index.modifier] = round(random(3));
+weights = array(10, 10, 10, 10);
+types = array(weapon_modifier.normal, weapon_modifier.rail, weapon_modifier.plasma, weapon_modifier.scatter);
+gun[weapon_index.modifier] = choose_weighted(types, weights); 
 gun[weapon_index.name] = "Gun";
 gun[weapon_index.quality] = q;
 
@@ -31,7 +20,9 @@ shot_sprites[weapon_modifier.rail] = spr_rail;
 shot_sprites[weapon_modifier.scatter] = spr_bullet;
 gun[weapon_index.bullet_sprite] = shot_sprites[gun[weapon_index.modifier]];
 
-var subType = round(random(7));
+var weights = array(10, 10, 10, 10, 10, 10, 10, 10);
+types = array(weapon_subtype.pistol, weapon_subtype.auto_rifle, weapon_subtype.heavy_rifle, weapon_subtype.sniper_rifle, weapon_subtype.smg, weapon_subtype.extended_magazine, weapon_subtype.superfast_reload, weapon_subtype.machine_gun);
+subType = choose_weighted(types, weights);
 gun[weapon_index.weapon_subtype] = subType;
 
 var accuracies;
@@ -47,6 +38,7 @@ accuracies[weapon_subtype.machine_gun] = 10;
 gun[weapon_index.accuracy] =  accuracies[subType];
 
 var core = inventory_core_table();
+gun[weapon_index.recoil_modifier] = core[subType, 4];
 
 var bases;
 bases[item_quality.common] = 5;

@@ -1,10 +1,10 @@
 ///string_array(array)
-var array = argument0;
+var arr = argument0;
 
 var str = "[";
-for(var i = 0; i < array_length_1d(array); i++)
+for(var i = 0; i < array_length_1d(arr); i++)
 {
-    str += string(array[i]) + ", ";
+    str += string(arr[i]) + ", ";
 }
 str += "]";
 return str;

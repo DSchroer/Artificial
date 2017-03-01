@@ -30,8 +30,9 @@ if(self.object_index == obj_player)
     {
         camera_shake(15);
     }
-    gun_recoil += 10;
-    motion_add(dir, -5);
+    gun_recoil += 10 * weapon[weapon_index.recoil_modifier];
+    var base = -32;
+    motion_add(dir, base * (1 / 60 * weapon[weapon_index.fire_timeout]) * weapon[weapon_index.recoil_modifier]);
 }
 
 
