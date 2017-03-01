@@ -18,5 +18,5 @@ if(sm_ticks() % 120 == 0)
 
 if(sm_ticks() % 60 == 30 || sm_ticks() % 60 == 35 || sm_ticks() % 60 == 40)
 {
-    attack_gun(weapon, x, y, enemy_dumb(enemy_target(obj_player, 20), 30), self);
+    enemy_attack(obj_player, weapon);
 }

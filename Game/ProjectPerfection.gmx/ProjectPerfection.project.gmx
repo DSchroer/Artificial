@@ -491,8 +491,10 @@
       </scripts>
       <scripts name="Brute">
         <script>scripts\brute_attack.gml</script>
+        <script>scripts\brute_mele.gml</script>
         <script>scripts\brute_approach.gml</script>
       </scripts>
+      <script>scripts\enemy_attack.gml</script>
     </scripts>
     <scripts name="Interact">
       <script>scripts\interact_any.gml</script>

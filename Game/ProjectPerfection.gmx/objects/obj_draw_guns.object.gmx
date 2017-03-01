@@ -32,12 +32,12 @@ var yoffset = 0;
 
 with(obj_shot_plasma)
 {
-    draw_sprite_ext(sprite_index, image_index, x, y - yoffset, 1, 1, image_angle, c_white, 1);
+    draw_sprite_ext(sprite_index, image_index, x, y - yoffset, image_xscale, image_yscale, image_angle, c_white, 1);
 }
 
 with(obj_shot_normal)
 {
-    draw_sprite_ext(sprite_index, image_index, x, y - yoffset, 1, 1, image_angle, c_white, 1);
+    draw_sprite_ext(sprite_index, image_index, x, y - yoffset, image_xscale, image_yscale, image_angle, c_white, 1);
 }
 
 with(obj_shot_rail)
@@ -47,7 +47,7 @@ with(obj_shot_rail)
     var p = w / 2;
     while(p &lt; distance)
     {
-        draw_sprite_ext(sprite_index, image_index, x + lengthdir_x(p, direction), y - yoffset + lengthdir_y(p, direction), 1, 1, direction, c_white, 255);
+        draw_sprite_ext(sprite_index, image_index, x + lengthdir_x(p, direction), y - yoffset + lengthdir_y(p, direction), image_xscale, image_yscale, direction, c_white, 255);
         p += w;
     }
 }

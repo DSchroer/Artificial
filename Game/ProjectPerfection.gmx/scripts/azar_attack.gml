@@ -6,13 +6,13 @@ if(pdist < 400)
 {
     if(random(2) < 1)
     {
-        attack_gun(basic, x, y, enemy_dumb(enemy_target(obj_player, 20), 10), self);
+        enemy_attack(obj_player, basic);
     }else{
-        attack_gun(slam, x, y, enemy_dumb(enemy_target(obj_player, 20), 0), self);
+        enemy_attack(obj_player, slam);
     }
 }else if(pdist < 900)
 {
-    attack_gun(wave, x, y, enemy_dumb(enemy_target(obj_player, 20), 0), self);
+    enemy_attack(obj_player, wave);
 }else{
-    attack_gun(rock, x, y, enemy_dumb(enemy_target(obj_player, 20), 0), self);
+    enemy_attack(obj_player, rock);
 }

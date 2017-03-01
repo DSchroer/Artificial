@@ -32,14 +32,14 @@ pos = 0;
 end_pos = 60;
 alarm[0] = 60;
 
-angle = random(30);
+angle = random(15);
 if(random(2) &lt; 1)
 {
     angle = -angle;
 }
 
 image_xscale = random(2) + 0.5;
-image_yscale = random(2) + 0.5;
+image_yscale = image_xscale;
 </string>
           </argument>
         </arguments>

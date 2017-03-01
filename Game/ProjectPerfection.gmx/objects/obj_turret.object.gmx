@@ -34,9 +34,11 @@ sm_init("idle");
 
 weapon = inventory_create_weapon();
 weapon[weapon_index.modifier] = weapon_modifier.sword;
-weapon[weapon_index.damage] = 75;
+weapon[weapon_index.damage] = 100;
 weapon[weapon_index.bullet_sprite] = spr_wave;
-
+weapon[weapon_index.bullet_sprite_xscale] = 0.5;
+weapon[weapon_index.bullet_sprite_yscale] = 0.5;
+weapon[weapon_index.bullet_speed] = 0;
 weapon = enemy_scale_gun(weapon);
 
 volume_mod = 1.4;

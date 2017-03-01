@@ -75,19 +75,14 @@ hit = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var entity = instance_place(x, y, obj_entity);
-
-if(!hit)
+            <string>if(!hit)
 {
     with(obj_entity)
     {
-        if(self != other.parent)
+        if(other.parent != self.id &amp;&amp; place_meeting(x, y, other.id))
         {
-            if(instance_place(x, y, other))
-            {
-                other.hit = true;
-                entity_apply_damage(damager(other.damage));
-            }
+            other.hit = true;
+            entity_apply_damage(damager(other.damage));
         }
     }
 }
@@ -114,7 +109,7 @@ if(!hit)
           <argument>
             <kind>1</kind>
             <string>//nothing
-draw_sprite_ext(sprite_index, image_index, x, y, 1, 1, image_angle, c_white, 1);
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_white, 1);
 </string>
           </argument>
         </arguments>

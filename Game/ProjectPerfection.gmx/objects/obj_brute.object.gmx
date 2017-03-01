@@ -36,13 +36,30 @@ weapon = inventory_create_weapon();
 weapon[weapon_index.modifier] = weapon_modifier.plasma;
 weapon[weapon_index.damage] = 150;
 weapon[weapon_index.bullet_sprite] = spr_azar_rock;
+weapon[weapon_index.bullet_speed] = 10;
+weapon[weapon_index.bullet_sprite_xscale] = 3;
+weapon[weapon_index.bullet_sprite_yscale] = 3;
+weapon[weapon_index.accuracy] = 10;
 weapon = enemy_scale_gun(weapon);
 
 sword = inventory_create_weapon();
 sword[weapon_index.modifier] = weapon_modifier.sword;
-sword[weapon_index.damage] = 20;
+sword[weapon_index.damage] = 100;
 sword[weapon_index.bullet_sprite] = spr_sword;
+sword[weapon_index.bullet_sprite_xscale] = 3;
+sword[weapon_index.bullet_sprite_yscale] = 3;
+sword[weapon_index.bullet_speed] = 0;
+sword[weapon_index.accuracy] = 40;
 sword = enemy_scale_gun(sword);
+
+pound = inventory_create_weapon();
+pound[weapon_index.modifier] = weapon_modifier.sword;
+pound[weapon_index.damage] = 50;
+pound[weapon_index.bullet_sprite] = spr_wave;
+pound[weapon_index.bullet_sprite_xscale] = 0.5;
+pound[weapon_index.bullet_sprite_yscale] = 0.5;
+pound[weapon_index.bullet_speed] = 0;
+pound = enemy_scale_gun(pound);
 
 volume_mod = 1.4;
 //ds_list_add(hurt_sounds, snd_enemy_rock1);  
@@ -87,6 +104,9 @@ if(player_exists())
             break;
         case "attack":
             brute_attack();
+            break;
+        case "mele":
+            brute_mele();
             break;
     }
 }

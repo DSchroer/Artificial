@@ -8,5 +8,5 @@ if(!enemy_line_of_sight(45) || point_distance(x, y, obj_player.x, obj_player.y) 
 speed = 0;
 if(sm_ticks() % 10 == 0)
 {
-    attack_gun(sword, x, y, enemy_dumb(enemy_target(obj_player, 20), 5), self);
+    enemy_attack(obj_player, sword);
 }

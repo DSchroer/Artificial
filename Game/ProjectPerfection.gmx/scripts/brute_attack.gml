@@ -3,6 +3,6 @@ speed = 0;
 
 if(sm_ticks() > 10)
 {
-    attack_gun(weapon, x, y, enemy_dumb(enemy_target(obj_player, 20), 10), self);
+    enemy_attack(obj_player, weapon);
     sm_set_state("approach");
 }

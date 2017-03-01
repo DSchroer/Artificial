@@ -14,5 +14,5 @@ speed = 0;
 
 if(sm_ticks() % 60 > 30 && sm_ticks() % 5 == 0)
 {
-    attack_gun(weapon, x, y, enemy_dumb(enemy_target(obj_player, 20), 5), self);
+    enemy_attack(obj_player, weapon);
 }
