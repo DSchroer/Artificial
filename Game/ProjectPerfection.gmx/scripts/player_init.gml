@@ -21,6 +21,7 @@ friction_coeff = 0.14;
 acceleration_coeff = 0.10;
 // Inventory
 inventory_init();
+inv_change_cd = 0;
 
 // UI queue
 textbox_queue = ds_queue_create();

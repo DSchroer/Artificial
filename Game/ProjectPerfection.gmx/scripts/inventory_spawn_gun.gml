@@ -41,14 +41,14 @@ var core = inventory_core_table();
 gun[weapon_index.recoil_modifier] = core[subType, 4];
 
 var bases;
-bases[item_quality.common] = 5;
+bases[item_quality.common] = 20;
 bases[item_quality.uncommon] = 61;
 bases[item_quality.rare] = 76;
 bases[item_quality.epic] = 86;
 bases[item_quality.legendary] = 96;
 
 var ranges;
-ranges[item_quality.common] = 55;
+ranges[item_quality.common] = 40;
 ranges[item_quality.uncommon] = 14;
 ranges[item_quality.rare] = 9;
 ranges[item_quality.epic] = 9;

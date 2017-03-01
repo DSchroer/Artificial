@@ -37,7 +37,7 @@ if(x_dir != 0 || y_dir != 0)
     motion_add(new_dir, max_movement_speed * acceleration_coeff);
 }
 
-if(keymap_check(keycode.inventory_up))
+if(keymap_check(keycode.inventory_move) && inv_change_cd <= 0)
 {
     for(var i = 0; i < 2; i++)
     {
@@ -47,6 +47,11 @@ if(keymap_check(keycode.inventory_up))
             break;
         }
     }
+    inv_change_cd = 6;
+}
+else if(inv_change_cd > 0)
+{
+    inv_change_cd--;
 }
 
 if(keymap_check(keycode.hide_inventory))
