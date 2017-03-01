@@ -90,7 +90,7 @@ if(key == keycode.hide_inventory)
 
 if(key == keycode.interact)
 {
-    return keyboard_check_pressed(ord("E")) || keymap_gamepad_check_pressed(gp_face1);
+    return keyboard_check_pressed(ord("E")) || keymap_gamepad_check_pressed(gp_face1) || mouse_check_button_pressed(mb_right);
 }
 
 if(key == keycode.escape)

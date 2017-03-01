@@ -176,6 +176,8 @@
     <sprite>sprites\sprite59</sprite>
     <sprite>sprites\spr_dog</sprite>
     <sprite>sprites\spr_map_border</sprite>
+    <sprite>sprites\spr_chest_closed</sprite>
+    <sprite>sprites\spr_chest_open</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -199,6 +201,11 @@
       <script>scripts\inventory_core_table.gml</script>
       <script>scripts\inventory_skin_gun.gml</script>
       <script>scripts\inventory_create_shield.gml</script>
+      <script>scripts\inventory_get_modifier_weights.gml</script>
+      <script>scripts\inventory_spawn_gun_ext.gml</script>
+      <script>scripts\inventory_generate_quality_weights.gml</script>
+      <script>scripts\inventory_get_qualities.gml</script>
+      <script>scripts\inventory_get_subtype_weights.gml</script>
     </scripts>
     <scripts name="Level">
       <script>scripts\level_create.gml</script>
@@ -299,7 +306,6 @@
     <script>scripts\isomorphic_set_depth_ext.gml</script>
     <scripts name="Player">
       <script>scripts\player_init.gml</script>
-      <script>scripts\player_levelup.gml</script>
       <script>scripts\player_update_shield.gml</script>
       <script>scripts\player_take_damage.gml</script>
       <script>scripts\player_fire.gml</script>
@@ -311,6 +317,9 @@
       <script>scripts\player_activate_shield.gml</script>
       <script>scripts\player_shield_percent.gml</script>
       <script>scripts\player_set_sprite.gml</script>
+      <script>scripts\player_level_up.gml</script>
+      <script>scripts\player_compute_stats.gml</script>
+      <script>scripts\player_levelup_shield.gml</script>
     </scripts>
     <scripts name="Ui">
       <script>scripts\ui_check_weapon_slot_tooltip.gml</script>
@@ -569,6 +578,7 @@
       <object>objects\obj_prompt</object>
       <object>objects\obj_book</object>
       <object>objects\obj_interact_area</object>
+      <object>objects\obj_chest</object>
     </objects>
     <objects name="Menus">
       <object>objects\obj_main_menu</object>
@@ -627,6 +637,7 @@
       <object>objects\obj_display_cube</object>
     </objects>
     <object>objects\obj_cgrid</object>
+    <object>objects\obj_hub</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>
