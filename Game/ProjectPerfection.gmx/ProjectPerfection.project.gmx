@@ -518,6 +518,10 @@
         <script>scripts\final_mele.gml</script>
         <script>scripts\final_jump.gml</script>
       </scripts>
+      <scripts name="Shud">
+        <script>scripts\shud_approach.gml</script>
+        <script>scripts\shud_retreat.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Interact">
       <script>scripts\interact_any.gml</script>
@@ -650,6 +654,10 @@
         <object>objects\obj_boss_final</object>
         <object>objects\obj_boss_jump</object>
       </objects>
+      <objects name="Boss4">
+        <object>objects\obj_shuud</object>
+        <object>objects\obj_shuud_body</object>
+      </objects>
     </objects>
     <objects name="Environment">
       <object>objects\obj_bush</object>
@@ -761,6 +769,7 @@
     <room>rooms\rm_empty</room>
     <rooms name="Boss">
       <room>rooms\rm_boss_1</room>
+      <room>rooms\rm_boss_4</room>
       <room>rooms\rm_boss_final</room>
     </rooms>
     <room>rooms\rm_transition</room>
