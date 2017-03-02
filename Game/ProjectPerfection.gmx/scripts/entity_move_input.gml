@@ -1,6 +1,6 @@
 ///entity_move_input()
 
-if(is_paused() || dead || room == rm_transition)
+if(is_paused() || dead || room == rm_transition || open_workbench)
 {
     speed = 0;
     exit;

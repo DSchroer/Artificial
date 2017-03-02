@@ -158,6 +158,8 @@
     <instance objName="obj_book" x="1600" y="736" name="inst_9F0F48B6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_hub" x="192" y="224" name="inst_FE8E36AE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_chest" x="480" y="512" name="inst_DE3979DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_menu_workbench" x="96" y="320" name="inst_0C172299" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_workbench" x="1664" y="640" name="inst_D7B3D20F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bkg_hub" x="512" y="256" w="64" h="64" xo="384" yo="576" id="10002635" name="inst_0CE8EC6E" depth="1000002" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

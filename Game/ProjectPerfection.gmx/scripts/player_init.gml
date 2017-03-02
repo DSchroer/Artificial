@@ -1,5 +1,6 @@
 ///player_init()
 entity_init();
+open_workbench = false;
 max_health = 200;
 current_health = max_health;
 remaining_shield = 0;
