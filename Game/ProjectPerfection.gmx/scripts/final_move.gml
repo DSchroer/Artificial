@@ -1,14 +1,18 @@
 
+var healthPct = current_health / max_health;
 if(sm_ticks() == 0)
 {
     sm_pop_var("path_index");
+    if(healthPct < 0.4)
+    {
+        sm_set_var("path_index", enemy_path_closest_index(pth_final));
+    }
 }
 
 enemy_path_move(pth_final, 6);
 
 if(sm_ticks() > 120)
 {
-    var healthPct = current_health / max_health;
     sm_push_var("path_index");
     if(healthPct < 0.05)
     {

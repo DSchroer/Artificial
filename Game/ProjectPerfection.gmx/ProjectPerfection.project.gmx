@@ -478,6 +478,7 @@
         <script>scripts\enemy_navmesh_get.gml</script>
         <script>scripts\enemy_navmesh_move.gml</script>
         <script>scripts\enemy_path_move.gml</script>
+        <script>scripts\enemy_path_closest_index.gml</script>
         <script>scripts\enemy_navmesh_clear.gml</script>
       </scripts>
       <scripts name="Dog">
