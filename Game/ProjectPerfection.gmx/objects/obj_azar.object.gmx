@@ -33,24 +33,33 @@ current_health = 2000;
 sm_init("idle");
 
 basic = inventory_create_weapon();
-basic[weapon_index.modifier] = weapon_modifier.normal;
+basic[weapon_index.modifier] = weapon_modifier.plasma;
 basic[weapon_index.damage] = 50;
+basic[weapon_index.accuracy] = 30;
 basic[weapon_index.bullet_sprite] = spr_azar_rock;
 
 slam = inventory_create_weapon();
 slam[weapon_index.modifier] = weapon_modifier.sword;
 slam[weapon_index.damage] = 75;
-slam[weapon_index.bullet_sprite] = spr_azar_rock;
+slam[weapon_index.bullet_sprite] = spr_wave;
+slam[weapon_index.bullet_speed] = 0;
 
 wave = inventory_create_weapon();
 wave[weapon_index.modifier] = weapon_modifier.scatter;
-wave[weapon_index.damage] = 75 * 5;
+wave[weapon_index.damage] = 75;
+wave[weapon_index.bullet_sprite_xscale] = 2;
+wave[weapon_index.bullet_sprite_yscale] = 2;
 wave[weapon_index.bullet_sprite] = spr_azar_rock;
+wave[weapon_index.accuracy] = 10;
 
 rock = inventory_create_weapon();
-rock[weapon_index.modifier] = weapon_modifier.normal;
+rock[weapon_index.modifier] = weapon_modifier.plasma;
 rock[weapon_index.damage] = 150;
+rock[weapon_index.bullet_sprite_xscale] = 3;
+rock[weapon_index.bullet_sprite_yscale] = 3;
 rock[weapon_index.bullet_sprite] = spr_azar_rock;
+rock[weapon_index.accuracy] = 0;
+
 
 stage = 1;
 
