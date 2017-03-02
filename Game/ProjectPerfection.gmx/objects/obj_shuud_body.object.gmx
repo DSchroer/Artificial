@@ -61,7 +61,6 @@ if(point_distance(x, y, target.x, target.y) &gt;= sprite_width / 2)
     speed = 0;
 }
 
-
 </string>
           </argument>
         </arguments>
@@ -84,7 +83,13 @@ if(point_distance(x, y, target.x, target.y) &gt;= sprite_width / 2)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with(obj_shuud)
+            <string>if(damage_from.object_index == obj_shuud)
+{
+    damage = 0;
+    exit;
+}
+
+with(obj_shuud)
 {
     if(damage == 0)
     {

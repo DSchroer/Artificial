@@ -17,7 +17,7 @@ if(!sm_has_var("tmr"))
             sm_set_var("dir", 0);
         }
     }else{
-        sm_set_var("tmr", 30);
+        sm_set_var("tmr", 60);
     }
 }else{
     sm_set_var("tmr", sm_get_var("tmr") - 1);
@@ -28,3 +28,5 @@ if(!sm_has_var("tmr"))
 }
 
 direction += sm_get_var("dir");
+attack_gun(mele, x, y, 0, self);
+

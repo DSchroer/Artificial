@@ -43,6 +43,15 @@ for(var i = 0; i &lt; 5; i++)
     inst.image_yscale = image_yscale;
     body = inst;
 }
+
+mele = inventory_create_weapon();
+mele[weapon_index.modifier] = weapon_modifier.sword;
+mele[weapon_index.bullet_sprite] = sprite_index;
+mele[weapon_index.bullet_sprite_xscale] = image_xscale;
+mele[weapon_index.bullet_sprite_yscale] = image_yscale;
+mele[weapon_index.bullet_sprite_alpha] = 0;
+mele[weapon_index.damage] = 200;
+mele[weapon_index.bullet_speed] = 0;
 </string>
           </argument>
         </arguments>
