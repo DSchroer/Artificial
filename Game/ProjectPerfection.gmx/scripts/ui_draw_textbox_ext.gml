@@ -30,6 +30,15 @@ for (var i = 1; i < (string_length(text) + 1); i++)
 
 // Bookkeeping for background things
 var background = spr_textback;
+with(obj_player)
+{
+    if((animation_timer % 30) >= 15)
+    {
+        background = spr_textback_flash;   
+    }
+    animation_timer--;
+}
+
 var scale_factor_x = 1.2;
 var scale_factor_y = 1.2;
 var border_size_x = 16;

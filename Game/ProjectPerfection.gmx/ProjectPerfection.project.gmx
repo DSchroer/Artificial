@@ -165,6 +165,7 @@
         <sprite>sprites\spr_controller_dleft</sprite>
         <sprite>sprites\spr_controller_dup</sprite>
       </sprites>
+      <sprite>sprites\spr_textback_flash</sprite>
     </sprites>
     <sprites name="Fonts">
       <sprite>sprites\spr_base_font</sprite>

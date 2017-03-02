@@ -28,6 +28,7 @@ inv_change_cd = 0;
 
 // UI queue
 textbox_queue = ds_queue_create();
+animation_timer = 0;
 
 // sounds
 volume_mod = 1;
