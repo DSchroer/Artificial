@@ -215,6 +215,7 @@
     <sprites name="Boss">
       <sprite>sprites\spr_boss</sprite>
       <sprite>sprites\spr_final_boss</sprite>
+      <sprite>sprites\spr_final_boss_hit</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
