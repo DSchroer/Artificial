@@ -42,6 +42,11 @@ if(!hide_inventory)
     {
         ui_check_weapon_slot_tooltip(bx, by + 254, 1, selected);
     }
+    
+    // Components
+    var text_out = string(save_get_value(obj_save_data, "components", 0));
+    draw_text_transformed_color(bx + 120 - string_width(text_out), by + 180, text_out, 1, 1, 0, c_white, c_white, c_white, c_white, 1); 
+    draw_sprite_ext(spr_component, -1, bx + 125, by + 170, 0.5, 0.5, 0, c_white, 1);
 }
 
 
