@@ -41,6 +41,14 @@ gun[weapon_index.accuracy] =  accuracies[subType];
 var core = inventory_core_table();
 gun[weapon_index.recoil_modifier] = core[subType, 4];
 
+var speeds;
+speeds[weapon_modifier.normal] = 20;
+speeds[weapon_modifier.plasma] = 15;
+speeds[weapon_modifier.rail] = 20;
+speeds[weapon_modifier.scatter] = 20;
+
+gun[weapon_index.bullet_speed] = speeds[gun[weapon_index.modifier]];
+
 var bases;
 bases[item_quality.common] = 20;
 bases[item_quality.uncommon] = 61;

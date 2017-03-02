@@ -1,2 +1,6 @@
 ///sm_set_state(state)
-sm_next = argument0;
+if(sm_next == sm_current_state)
+{
+    sm_next = argument0;
+}
+

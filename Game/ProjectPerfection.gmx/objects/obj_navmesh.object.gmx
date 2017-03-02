@@ -42,6 +42,18 @@ for(var i = 0; i &lt; array_length_1d(walls); i++)
     var wall = walls[i];
     mp_grid_add_rectangle(nav, wall.x - 32, wall.y - 32, wall.x + 64, wall.y + 64);
 }
+
+walls = level_stub_find_all(obj_ai_wall);
+for(var i = 0; i &lt; array_length_1d(walls); i++)
+{
+    var wall = walls[i];
+    mp_grid_add_rectangle(nav, wall.x - 32, wall.y - 32, wall.x + 64, wall.y + 64);
+}
+
+with(obj_ai_wall)
+{
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
