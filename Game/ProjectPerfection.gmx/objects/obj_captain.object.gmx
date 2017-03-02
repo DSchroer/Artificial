@@ -74,7 +74,6 @@ volume_mod = 1.4;
             <string>isomorphic_set_depth();
 
 var state = sm_get_state();
-
 if(player_exists())
 {
     switch(state)

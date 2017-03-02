@@ -19,7 +19,7 @@ if(surface_exists(spr))
     uvs = sprite_get_uvs(spr, image_index);
 }
 
-tex_h = texture_get_texel_height(tex) * image_yscale;
-tex_w = texture_get_texel_width(tex) * image_xscale;
+tex_h = texture_get_texel_height(tex);
+tex_w = texture_get_texel_width(tex);
 
 shader_set_uniform_f(sprite_scale, tex_w, tex_h, 1.0);

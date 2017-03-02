@@ -213,7 +213,6 @@
       <sprite>sprites\spr_wave</sprite>
     </sprites>
     <sprite>sprites\spr_book</sprite>
-    <sprite>sprites\spr_boss</sprite>
     <sprite>sprites\sprite59</sprite>
     <sprite>sprites\spr_dog</sprite>
     <sprite>sprites\spr_map_border</sprite>
@@ -222,6 +221,11 @@
     <sprite>sprites\spr_component</sprite>
     <sprite>sprites\sprite101</sprite>
     <sprite>sprites\spr_workbench</sprite>
+    <sprites name="Boss">
+      <sprite>sprites\spr_boss</sprite>
+      <sprite>sprites\spr_final_boss</sprite>
+      <sprite>sprites\spr_final_boss_hit</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -230,7 +234,9 @@
     <background>background\bkg_desert</background>
     <background>background\bkg_test</background>
   </backgrounds>
-  <paths name="paths"/>
+  <paths name="paths">
+    <path>paths\pth_final</path>
+  </paths>
   <scripts name="scripts">
     <script>scripts\choose_weighted.gml</script>
     <scripts name="Inventory">
@@ -462,8 +468,10 @@
       <script>scripts\sm_state_pop.gml</script>
       <script>scripts\sm_time.gml</script>
       <script>scripts\sm_ticks.gml</script>
-      <script>scripts\sm_state_push.gml</script>
+      <script>scripts\sm_state_force_push.gml</script>
       <script>scripts\sm_has_var.gml</script>
+      <script>scripts\sm_push_var.gml</script>
+      <script>scripts\sm_pop_var.gml</script>
     </scripts>
     <scripts name="Enemy">
       <scripts name="Grunt">
@@ -480,6 +488,7 @@
         <script>scripts\enemy_navmesh_path.gml</script>
         <script>scripts\enemy_navmesh_get.gml</script>
         <script>scripts\enemy_navmesh_move.gml</script>
+        <script>scripts\enemy_path_move.gml</script>
         <script>scripts\enemy_navmesh_clear.gml</script>
       </scripts>
       <scripts name="Dog">
@@ -508,6 +517,16 @@
       <script>scripts\enemy_attack.gml</script>
       <scripts name="Clone">
         <script>scripts\clone_shoot.gml</script>
+      </scripts>
+      <scripts name="Final">
+        <script>scripts\final_idle.gml</script>
+        <script>scripts\final_spawn.gml</script>
+        <script>scripts\final_lazer.gml</script>
+        <script>scripts\final_bolt.gml</script>
+        <script>scripts\final_kill.gml</script>
+        <script>scripts\final_move.gml</script>
+        <script>scripts\final_mele.gml</script>
+        <script>scripts\final_jump.gml</script>
       </scripts>
     </scripts>
     <scripts name="Interact">
@@ -596,6 +615,7 @@
       <object>objects\obj_shot_rail</object>
       <object>objects\obj_hit_sword</object>
       <object>objects\obj_shot</object>
+      <object>objects\obj_draw_guns</object>
     </objects>
     <objects name="Audio">
       <object>objects\obj_hub_sound</object>
@@ -641,6 +661,10 @@
         <object>objects\obj_brute</object>
         <object>objects\obj_dog</object>
       </objects>
+      <objects name="FinalBoss">
+        <object>objects\obj_boss_final</object>
+        <object>objects\obj_boss_jump</object>
+      </objects>
     </objects>
     <objects name="Environment">
       <object>objects\obj_bush</object>
@@ -670,7 +694,6 @@
       <object>objects\obj_menu_workbench</object>
     </objects>
     <object>objects\obj_clear_entities</object>
-    <object>objects\obj_draw_guns</object>
     <object>objects\obj_duck</object>
     <object>objects\obj_fonts</object>
     <object>objects\obj_health_can</object>
@@ -715,6 +738,7 @@
       <object>objects\obj_gate</object>
       <object>objects\obj_gate_open</object>
       <object>objects\obj_display_cube</object>
+      <object>objects\obj_ai_wall</object>
     </objects>
     <object>objects\obj_cgrid</object>
     <object>objects\obj_hub</object>
