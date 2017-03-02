@@ -52,7 +52,12 @@ created = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>workbench_destroy_menu();
+            <string>
+if(created)
+{
+    workbench_destroy_menu();
+}
+
 </string>
           </argument>
         </arguments>
