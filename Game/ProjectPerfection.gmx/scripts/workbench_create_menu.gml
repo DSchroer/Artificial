@@ -4,8 +4,8 @@ var width = display_get_gui_width();
 var height = display_get_gui_height();
 
 created = true;
-background_pos_x = (width - sprite_get_width(spr_workbench)) / 2;
-background_pos_y = (height - sprite_get_height(spr_workbench)) / 2;
+background_pos_x = (width - sprite_get_width(spr_workbench_ui)) / 2;
+background_pos_y = (height - sprite_get_height(spr_workbench_ui)) / 2;
 var padding = 10;
 
 with(obj_player)

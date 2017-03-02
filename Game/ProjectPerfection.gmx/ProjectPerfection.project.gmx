@@ -167,7 +167,7 @@
       </sprites>
       <sprite>sprites\spr_textback_flash</sprite>
       <sprite>sprites\spr_button_gray</sprite>
-      <sprite>sprites\spr_workbench</sprite>
+      <sprite>sprites\spr_workbench_ui</sprite>
     </sprites>
     <sprites name="Fonts">
       <sprite>sprites\spr_base_font</sprite>
@@ -219,6 +219,9 @@
     <sprite>sprites\spr_map_border</sprite>
     <sprite>sprites\spr_chest_closed</sprite>
     <sprite>sprites\spr_chest_open</sprite>
+    <sprite>sprites\spr_component</sprite>
+    <sprite>sprites\sprite101</sprite>
+    <sprite>sprites\spr_workbench</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -671,6 +674,7 @@
     <object>objects\obj_duck</object>
     <object>objects\obj_fonts</object>
     <object>objects\obj_health_can</object>
+    <object>objects\obj_component</object>
     <object>objects\obj_item</object>
     <object>objects\obj_transition</object>
     <objects name="Save">

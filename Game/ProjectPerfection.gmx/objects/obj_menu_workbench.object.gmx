@@ -281,7 +281,7 @@ if(num_components &lt; 3 || save_get_value(obj_save_data, "shield_delay_powerup"
 var width = display_get_gui_width();
 var height = display_get_gui_height();
 // Background
-draw_sprite(spr_workbench, -1, background_pos_x, background_pos_y);
+draw_sprite(spr_workbench_ui, -1, background_pos_x, background_pos_y);
 
 // Title
 var scale = 2.5;
