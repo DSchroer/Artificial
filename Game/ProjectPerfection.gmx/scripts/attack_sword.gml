@@ -13,6 +13,7 @@ shot.image_speed = weapon[weapon_index.bullet_sprite_speed];
 shot.image_angle = dir;
 shot.image_xscale = weapon[weapon_index.bullet_sprite_xscale];
 shot.image_yscale = weapon[weapon_index.bullet_sprite_yscale];
+shot.image_alpha = weapon[weapon_index.bullet_sprite_alpha];
 
 shot.direction = dir;
 shot.speed = weapon[weapon_index.bullet_speed];

@@ -12,6 +12,7 @@ shot.mask_index = weapon[weapon_index.bullet_sprite];
 shot.image_speed = weapon[weapon_index.bullet_sprite_speed];
 shot.image_xscale = weapon[weapon_index.bullet_sprite_xscale];
 shot.image_yscale = weapon[weapon_index.bullet_sprite_yscale];
+shot.image_alpha = weapon[weapon_index.bullet_sprite_alpha];
 
 shot.direction = attack_accuracy(dir, weapon[weapon_index.accuracy]);
 shot.speed = weapon[weapon_index.bullet_speed];
