@@ -9,27 +9,22 @@ if(is_paused() || dead || room == rm_transition)
 var x_dir = 0;
 var y_dir = 0;
 movement_this_frame = false;
-
 if(keymap_check(keycode.up))
 {
     y_dir -= 1;
 }
-
 if(keymap_check(keycode.down))
 {
     y_dir += 1;
 }
-
 if(keymap_check(keycode.left))
 {
     x_dir -= 1;
 }
-
 if(keymap_check(keycode.right))
 {
     x_dir += 1;
 }
-
 if(x_dir != 0 || y_dir != 0)
 {
     movement_this_frame = true;
@@ -59,7 +54,7 @@ if(keymap_check(keycode.hide_inventory))
     hide_inventory = !hide_inventory;
 }
 
-if(keymap_check(keycode.dequeue_message))
+if(keymap_check(keycode.interact))
 {
     ds_queue_dequeue(textbox_queue);
 }
@@ -122,7 +117,7 @@ if(keyboard_check_pressed(vk_numpad9))
 {
     var rng = inventory_spawn_gun(100);
     
-    var weapon;
+    var weapon = inventory_create_weapon();
     weapon[weapon_index.item_id] = item_ids.gun;
     weapon[weapon_index.quality] = item_quality.legendary;
     weapon[weapon_index.modifier] = rng[weapon_index.modifier];
