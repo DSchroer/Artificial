@@ -87,74 +87,77 @@ ui_set_colour(c_white);
 
 // Equipped 
 line = "Equipped";
-draw_text_transformed_color(xpos, ypos, line, stat_scale, stat_scale, 0, c_aqua, c_aqua, c_aqua, c_aqua, 1);
+var equipped_colour = make_color_rgb(255, 200, 111);
+draw_text_transformed_color(xpos, ypos, line, stat_scale, stat_scale, 0, equipped_colour, equipped_colour, equipped_colour, equipped_colour, 1);
 ypos += string_height(line) * stat_scale;
 
 // Damage
-var draw_color = c_green;
+var draw_img = spr_arrow_equal;
+var draw_color = c_white;
 var line = string(dmg) + " Damage";
 if(dmg > other_dmg)
 {
-    draw_color = c_green;
+    draw_img = spr_arrow_up;
 }
 else if(dmg == other_dmg)
 {
-    draw_color = c_white;
+    draw_img = spr_arrow_equal;
 }
 else 
 {
-    draw_color = c_red;
+    draw_img = spr_arrow_down;
 }
-draw_text_transformed_color(xpos, ypos, line, stat_scale, stat_scale, 0, draw_color, draw_color, draw_color, draw_color, 1);
+draw_sprite(draw_img, -1, xpos, ypos);
+draw_text_transformed_color(xpos + sprite_get_width(draw_img) + 4, ypos, line, stat_scale, stat_scale, 0, draw_color, draw_color, draw_color, draw_color, 1);
 ypos += string_height(line) * stat_scale;
 // ROF
 line = string(fire_rate) + " Rate of Fire";
 if(fire_rate > other_fire_rate)
 {
-    draw_color = c_green;
+    draw_img = spr_arrow_up;
 }
 else if(fire_rate == other_fire_rate)
 {
-    draw_color = c_white;
+    draw_img = spr_arrow_equal;
 }
 else 
 {
-    draw_color = c_red;
+    draw_img = spr_arrow_down;
 }
-draw_text_transformed_color(xpos, ypos, line, stat_scale, stat_scale, 0, draw_color, draw_color, draw_color, draw_color, 1);
+draw_sprite(draw_img, -1, xpos, ypos);
+draw_text_transformed_color(xpos + sprite_get_width(draw_img) + 4, ypos, line, stat_scale, stat_scale, 0, draw_color, draw_color, draw_color, draw_color, 1);
 ypos += 3 + string_height(line);
 // Reload
 line = string(reload_time) + " Second Reload";
-if(reload_time < other_reload_time)
+if(reload_time > other_reload_time)
 {
-    draw_color = c_green;
+    draw_img = spr_arrow_up;
 }
 else if(reload_time == other_reload_time)
 {
-    draw_color = c_white;
+    draw_img = spr_arrow_equal;
 }
 else 
 {
-    draw_color = c_red;
+    draw_img = spr_arrow_down;
 }
-draw_text_transformed_color(xpos, ypos, line, stat_scale, stat_scale, 0, draw_color, draw_color, draw_color, draw_color, 1);
+draw_sprite(draw_img, -1, xpos, ypos);
+draw_text_transformed_color(xpos + sprite_get_width(draw_img) + 4, ypos, line, stat_scale, stat_scale, 0, draw_color, draw_color, draw_color, draw_color, 1);
 ypos += 3 + string_height(line);
 //Capacity
 line = string(bullet_capacity) + " Bullet Capacity";
 if(bullet_capacity > other_bullet_capacity)
 {
-    draw_color = c_green;
+    draw_img = spr_arrow_up;
 }
 else if(bullet_capacity == other_bullet_capacity)
 {
-    draw_color = c_white;
+    draw_img = spr_arrow_equal;
 }
 else 
 {
-    draw_color = c_red;
+    draw_img = spr_arrow_down;
 }
-draw_text_transformed_color(xpos, ypos, line, stat_scale, stat_scale, 0, draw_color, draw_color, draw_color, draw_color, 1);
+draw_sprite(draw_img, -1, xpos, ypos);
+draw_text_transformed_color(xpos + sprite_get_width(draw_img) + 4, ypos, line, stat_scale, stat_scale, 0, draw_color, draw_color, draw_color, draw_color, 1);
 ypos += 3 + string_height(line);
-
-
-

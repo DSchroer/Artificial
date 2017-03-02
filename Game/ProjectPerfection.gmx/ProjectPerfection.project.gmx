@@ -151,6 +151,9 @@
         <sprite>sprites\spr_tooltip_top_rare</sprite>
         <sprite>sprites\spr_tooltip_top_uncommon</sprite>
         <sprite>sprites\spr_tooltip_top_common</sprite>
+        <sprite>sprites\spr_arrow_up</sprite>
+        <sprite>sprites\spr_arrow_down</sprite>
+        <sprite>sprites\spr_arrow_equal</sprite>
       </sprites>
       <sprites name="textbox_img">
         <sprite>sprites\spr_controller_a</sprite>
@@ -162,6 +165,9 @@
         <sprite>sprites\spr_controller_dleft</sprite>
         <sprite>sprites\spr_controller_dup</sprite>
       </sprites>
+      <sprite>sprites\spr_textback_flash</sprite>
+      <sprite>sprites\spr_button_gray</sprite>
+      <sprite>sprites\spr_workbench_ui</sprite>
     </sprites>
     <sprites name="Fonts">
       <sprite>sprites\spr_base_font</sprite>
@@ -212,6 +218,9 @@
     <sprite>sprites\spr_map_border</sprite>
     <sprite>sprites\spr_chest_closed</sprite>
     <sprite>sprites\spr_chest_open</sprite>
+    <sprite>sprites\spr_component</sprite>
+    <sprite>sprites\sprite101</sprite>
+    <sprite>sprites\spr_workbench</sprite>
     <sprites name="Boss">
       <sprite>sprites\spr_boss</sprite>
       <sprite>sprites\spr_final_boss</sprite>
@@ -393,6 +402,7 @@
       <script>scripts\ui_draw_death_text.gml</script>
       <script>scripts\ui_draw_weapon_tooltip_comparison.gml</script>
       <script>scripts\ui_draw_weapon_comparison.gml</script>
+      <script>scripts\script263.gml</script>
     </scripts>
     <scripts name="Debug">
       <script>scripts\debug_init.gml</script>
@@ -446,6 +456,7 @@
       <script>scripts\sfx_normal_update.gml</script>
       <script>scripts\sfx_bkg_add_without_reset.gml</script>
       <script>scripts\script219.gml</script>
+      <script>scripts\sfx_play_gun.gml</script>
     </scripts>
     <scripts name="State">
       <script>scripts\sm_init.gml</script>
@@ -585,6 +596,11 @@
     </scripts>
     <script>scripts\area_contains.gml</script>
     <script>scripts\array.gml</script>
+    <scripts name="Workbench">
+      <script>scripts\workbench_create_menu.gml</script>
+      <script>scripts\workbench_destroy_menu.gml</script>
+      <script>scripts\workbench_update_tooltips.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
@@ -673,6 +689,7 @@
       <object>objects\obj_book</object>
       <object>objects\obj_interact_area</object>
       <object>objects\obj_chest</object>
+      <object>objects\obj_workbench</object>
     </objects>
     <objects name="Menus">
       <object>objects\obj_main_menu</object>
@@ -683,11 +700,13 @@
       <object>objects\obj_menu</object>
       <object>objects\obj_pause</object>
       <object>objects\obj_credits</object>
+      <object>objects\obj_menu_workbench</object>
     </objects>
     <object>objects\obj_clear_entities</object>
     <object>objects\obj_duck</object>
     <object>objects\obj_fonts</object>
     <object>objects\obj_health_can</object>
+    <object>objects\obj_component</object>
     <object>objects\obj_item</object>
     <object>objects\obj_transition</object>
     <objects name="Save">

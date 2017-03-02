@@ -40,7 +40,6 @@ menu_stack = ds_stack_create();
 ds_stack_push(menu_stack, menu_type.main);
 full_screen = false;
 
-keep_centered = ds_list_create();
 menu_create_main_menu();
 
 window_set_fullscreen(save_get_value(obj_game_save, "fullscreen", false));

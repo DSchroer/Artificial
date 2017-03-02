@@ -1,7 +1,5 @@
 ///menu_draw_options_menu()
 
-ds_list_clear(keep_centered);
-
 with(button_fullscreen)
 {
     instance_destroy();

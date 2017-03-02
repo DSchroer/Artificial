@@ -1,5 +1,6 @@
 ///player_init()
 entity_init();
+open_workbench = false;
 max_health = 200;
 current_health = max_health;
 remaining_shield = 0;
@@ -28,6 +29,7 @@ inv_change_cd = 0;
 
 // UI queue
 textbox_queue = ds_queue_create();
+animation_timer = 0;
 
 // sounds
 volume_mod = 1;
