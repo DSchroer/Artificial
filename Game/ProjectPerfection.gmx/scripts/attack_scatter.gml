@@ -21,22 +21,22 @@ for(var i = 0; i < amt; i++)
 switch(weapon[weapon_index.weapon_subtype])
 {
 case weapon_subtype.pistol:
-    sfx_play_volume(snd_pistol_scatter, true, 0.2); 
+    sfx_play_gun(snd_pistol_scatter, true, 0.2); 
     break;
 case weapon_subtype.auto_rifle:
-    sfx_play_volume(snd_assault_scatter, true, 0.2);    
+    sfx_play_gun(snd_assault_scatter, true, 0.2);    
     break;
 case weapon_subtype.heavy_rifle:
-    sfx_play_volume(snd_heavy_scatter, true, 0.2);    
+    sfx_play_gun(snd_heavy_scatter, true, 0.2);    
     break;
 case weapon_subtype.sniper_rifle:
-    sfx_play_volume(snd_sniper_scatter, true, 0.2); 
+    sfx_play_gun(snd_sniper_scatter, true, 0.2); 
     break;
 case weapon_subtype.smg:
-    sfx_play_volume(snd_smg_scatter, true, 0.2); 
+    sfx_play_gun(snd_smg_scatter, true, 0.2); 
     break;
 case weapon_subtype.machine_gun:
-    sfx_play_volume(snd_mg_scatter, true, 0.2); 
+    sfx_play_gun(snd_mg_scatter, true, 0.2); 
     break;
 
 }

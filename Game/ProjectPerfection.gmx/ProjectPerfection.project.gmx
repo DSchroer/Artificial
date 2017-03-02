@@ -440,6 +440,7 @@
       <script>scripts\sfx_normal_update.gml</script>
       <script>scripts\sfx_bkg_add_without_reset.gml</script>
       <script>scripts\script219.gml</script>
+      <script>scripts\sfx_play_gun.gml</script>
     </scripts>
     <scripts name="State">
       <script>scripts\sm_init.gml</script>
