@@ -147,11 +147,6 @@ if(keyboard_check_pressed(vk_numpad9))
     inventory[selected_slot] = weapon;
 }
 
-if(keyboard_check_pressed(vk_f10))
-{
-    player_level_up();
-}
-
 // Left analogue stick:
 var haxis_ls = gamepad_axis_value(0, gp_axislh);
 var vaxis_ls = gamepad_axis_value(0, gp_axislv);
