@@ -495,6 +495,9 @@
         <script>scripts\brute_approach.gml</script>
       </scripts>
       <script>scripts\enemy_attack.gml</script>
+      <scripts name="Clone">
+        <script>scripts\clone_shoot.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Interact">
       <script>scripts\interact_any.gml</script>
@@ -606,11 +609,7 @@
       <object>objects\obj_player</object>
       <object>objects\obj_target</object>
       <object>objects\obj_boss_target</object>
-      <object>objects\obj_grunt</object>
       <object>objects\obj_turret</object>
-      <object>objects\obj_captain</object>
-      <object>objects\obj_brute</object>
-      <object>objects\obj_dog</object>
       <object>objects\obj_enemy</object>
       <objects name="Boss1">
         <object>objects\obj_azar</object>
@@ -618,6 +617,13 @@
         <object>objects\obj_azar_rock</object>
         <object>objects\obj_azar_wall</object>
         <object>objects\obj_azar_area</object>
+      </objects>
+      <objects name="Enemies">
+        <object>objects\obj_captain</object>
+        <object>objects\obj_clone</object>
+        <object>objects\obj_grunt</object>
+        <object>objects\obj_brute</object>
+        <object>objects\obj_dog</object>
       </objects>
     </objects>
     <objects name="Environment">

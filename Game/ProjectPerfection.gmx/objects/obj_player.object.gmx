@@ -27,33 +27,10 @@
             <kind>1</kind>
             <string>event_inherited();
 player_init();
-
-gun_angle = 0;
-surface = surface_create(256, 256);
+inventory_init();
 
 window_set_cursor(cr_none);
 cursor_sprite = spr_aim;
-
-dead = false;
-
-base_x = 128;
-base_y = 200;
-
-gun_x = -15;
-gun_y = -61;
-gun_base_dist = 13;
-gun_dist = 13;
-gun_recoil = 0;
-
-arm_1_x = -20;
-arm_1_y = -61;
-arm_1_delta_dist = 8;
-arm_1_angle_off = -25;
-
-arm_2_x = 1;
-arm_2_y = -61
-arm_2_delta_dist = 27;
-arm_2_angle_off = -15;
 
 </string>
           </argument>

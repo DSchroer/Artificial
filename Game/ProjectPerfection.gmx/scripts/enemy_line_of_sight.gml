@@ -13,4 +13,6 @@ var yoff = lengthdir_y(width, dir - 90);
 var los = !collision_line(x + xoff, y + yoff, obj_player.x, obj_player.y, obj_wall, false, false);
 los = los && !collision_line(x - xoff, y - yoff, obj_player.x, obj_player.y, obj_wall, false, false);
 
+los = los && !collision_line(x, y, obj_player.x, obj_player.y, obj_enemy, false, true);
+
 return los;
