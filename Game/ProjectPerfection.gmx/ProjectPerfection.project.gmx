@@ -150,6 +150,9 @@
         <sprite>sprites\spr_tooltip_top_rare</sprite>
         <sprite>sprites\spr_tooltip_top_uncommon</sprite>
         <sprite>sprites\spr_tooltip_top_common</sprite>
+        <sprite>sprites\spr_arrow_up</sprite>
+        <sprite>sprites\spr_arrow_down</sprite>
+        <sprite>sprites\spr_arrow_equal</sprite>
       </sprites>
       <sprites name="textbox_img">
         <sprite>sprites\spr_controller_a</sprite>
