@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ///ui_draw_weapon_tooltip_comparison(x, y, weapon, weapon_to_compare_to)
 
 var xpos = argument0;
