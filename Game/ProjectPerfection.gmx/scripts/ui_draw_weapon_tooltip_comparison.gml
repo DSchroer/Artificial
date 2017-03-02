@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ///ui_draw_weapon_tooltip_comparison(x, y, weapon, weapon_to_compare_to)
 
 var xpos = argument0;
@@ -161,6 +162,3 @@ else
 draw_sprite(draw_img, -1, xpos, ypos);
 draw_text_transformed_color(xpos + sprite_get_width(draw_img) + 4, ypos, line, stat_scale, stat_scale, 0, draw_color, draw_color, draw_color, draw_color, 1);
 ypos += 3 + string_height(line);
-
-
-

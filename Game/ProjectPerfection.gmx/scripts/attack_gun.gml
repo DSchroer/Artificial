@@ -35,7 +35,6 @@ if(self.object_index == obj_player)
     motion_add(dir, base * (1 / 60 * weapon[weapon_index.fire_timeout]) * weapon[weapon_index.recoil_modifier]);
 }
 
-
 switch(weapon[weapon_index.modifier])
 {
     case weapon_modifier.normal:

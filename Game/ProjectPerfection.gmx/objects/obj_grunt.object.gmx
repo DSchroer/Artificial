@@ -35,6 +35,7 @@ sm_init("idle");
 weapon = inventory_create_weapon();
 weapon[weapon_index.damage] = 10;
 weapon[weapon_index.bullet_sprite] = spr_plasma;
+weapon[weapon_index.accuracy] = 30;
 
 weapon = enemy_scale_gun(weapon);
 

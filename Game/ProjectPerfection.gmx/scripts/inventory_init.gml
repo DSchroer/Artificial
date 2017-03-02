@@ -48,7 +48,10 @@ enum weapon_index
     reload_timeout,
     reload_cooldown,
     bullet_sprite,
+    bullet_speed,
     bullet_sprite_speed,
+    bullet_sprite_xscale,
+    bullet_sprite_yscale,
     sprite_count
 };
 

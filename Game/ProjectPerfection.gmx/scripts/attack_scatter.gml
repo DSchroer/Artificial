@@ -12,8 +12,13 @@ for(var i = 0; i < amt; i++)
     var shot = instance_create(xpos, ypos, obj_shot_normal);
     shot.sprite_index = weapon[weapon_index.bullet_sprite];
     shot.mask_index = weapon[weapon_index.bullet_sprite];
+    
+    shot.image_speed = weapon[weapon_index.bullet_sprite_speed];
+    shot.image_xscale = weapon[weapon_index.bullet_sprite_xscale];
+    shot.image_yscale = weapon[weapon_index.bullet_sprite_yscale];
+    
     shot.direction = attack_accuracy(attack_accuracy(dir, weapon[weapon_index.accuracy]), 30);
-    shot.speed = 20;
+    shot.speed = weapon[weapon_index.bullet_speed];
     shot.parent = self;
     shot.damage = round(weapon[weapon_index.damage] / amt);
 }

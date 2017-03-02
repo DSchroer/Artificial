@@ -15,7 +15,7 @@ var c = dot_product(totarget_x, totarget_y, totarget_x, totarget_y);
 var p = -b / (2 * a);
 
 var sqrt_attempt = (b * b) - 4 * a * c;
-if(sqrt_attempt < 0)
+if(sqrt_attempt <= 0)
 {
     return point_direction(x, y, target.x, target.y);
 }

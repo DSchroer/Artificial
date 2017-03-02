@@ -109,13 +109,14 @@
     <sprite>sprites\spr_item</sprite>
     <sprite>sprites\spr_inv_shield1</sprite>
     <sprites name="Weapons">
-      <sprite>sprites\spr_inv_rifle1</sprite>
-      <sprite>sprites\spr_world_rifle1</sprite>
       <sprite>sprites\spr_pistol_base</sprite>
       <sprite>sprites\spr_pistol_assault</sprite>
+      <sprite>sprites\spr_rifle_base</sprite>
+      <sprite>sprites\spr_rifle_assault</sprite>
+      <sprite>sprites\spr_rifle_doku</sprite>
+      <sprite>sprites\spr_rifle_reflex</sprite>
     </sprites>
     <sprite>sprites\spr_target</sprite>
-    <sprite>sprites\spr_sword</sprite>
     <sprite>sprites\spr_dishonDuck</sprite>
     <sprite>sprites\spr_grunt</sprite>
     <sprites name="Ui">
@@ -205,6 +206,8 @@
       <sprite>sprites\spr_plasma</sprite>
       <sprite>sprites\spr_rail</sprite>
       <sprite>sprites\spr_azar_rock</sprite>
+      <sprite>sprites\spr_sword</sprite>
+      <sprite>sprites\spr_wave</sprite>
     </sprites>
     <sprite>sprites\spr_book</sprite>
     <sprite>sprites\spr_boss</sprite>
@@ -482,6 +485,23 @@
         <script>scripts\azar_move.gml</script>
         <script>scripts\azar_attack.gml</script>
       </scripts>
+      <scripts name="Captain">
+        <script>scripts\cap_shoot.gml</script>
+        <script>scripts\cap_approach.gml</script>
+        <script>scripts\cap_mele.gml</script>
+      </scripts>
+      <scripts name="Turret">
+        <script>scripts\turret_attack.gml</script>
+      </scripts>
+      <scripts name="Brute">
+        <script>scripts\brute_attack.gml</script>
+        <script>scripts\brute_mele.gml</script>
+        <script>scripts\brute_approach.gml</script>
+      </scripts>
+      <script>scripts\enemy_attack.gml</script>
+      <scripts name="Clone">
+        <script>scripts\clone_shoot.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Interact">
       <script>scripts\interact_any.gml</script>
@@ -593,8 +613,7 @@
       <object>objects\obj_player</object>
       <object>objects\obj_target</object>
       <object>objects\obj_boss_target</object>
-      <object>objects\obj_grunt</object>
-      <object>objects\obj_dog</object>
+      <object>objects\obj_turret</object>
       <object>objects\obj_enemy</object>
       <objects name="Boss1">
         <object>objects\obj_azar</object>
@@ -602,6 +621,13 @@
         <object>objects\obj_azar_rock</object>
         <object>objects\obj_azar_wall</object>
         <object>objects\obj_azar_area</object>
+      </objects>
+      <objects name="Enemies">
+        <object>objects\obj_captain</object>
+        <object>objects\obj_clone</object>
+        <object>objects\obj_grunt</object>
+        <object>objects\obj_brute</object>
+        <object>objects\obj_dog</object>
       </objects>
     </objects>
     <objects name="Environment">

@@ -28,6 +28,8 @@
             <string>data[0] = obj_grunt;
 data[1] = noone;
 data[2] = obj_spawn_dog;
+data[3] = obj_captain;
+data[4] = obj_brute;
 </string>
           </argument>
         </arguments>
