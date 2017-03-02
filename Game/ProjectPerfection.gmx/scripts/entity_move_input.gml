@@ -130,13 +130,17 @@ if(keyboard_check_pressed(vk_numpad9))
     weapon[weapon_index.reload_timeout] = 1;
     weapon[weapon_index.reload_cooldown] = 0;
     weapon[weapon_index.name] = "Developer Gun";
-    weapon[weapon_index.weapon_subtype] = weapon_subtype.sniper_rifle;
+    weapon[weapon_index.weapon_subtype] = weapon_subtype.pistol;
     
     weapon[weapon_index.bullet_sprite] = spr_bullet;
+    weapon[weapon_index.bullet_speed] = 20;
     weapon[weapon_index.bullet_sprite_speed] = 1;
+    weapon[weapon_index.bullet_sprite_xscale] = 1;
+    weapon[weapon_index.bullet_sprite_yscale] = 1;
+
     
     weapon[weapon_index.sprite_count] = 1;
-    weapon[weapon_index.sprite_count + 1] = spr_inv_rifle1;
+    weapon[weapon_index.sprite_count + 1] = spr_rifle_base;
     weapon[weapon_index.sprite_count + 2] = color_random();
 
     inventory[selected_slot] = weapon;
