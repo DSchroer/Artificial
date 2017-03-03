@@ -82,7 +82,7 @@ hit = false;
         if(other.parent != self.id &amp;&amp; place_meeting(x, y, other.id))
         {
             other.hit = true;
-            entity_apply_damage(damager(other.damage));
+            entity_apply_damage(damager(other.damage), other.parent);
         }
     }
 }

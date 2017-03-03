@@ -165,7 +165,7 @@ if(!one_shot)
 {
     with(obj_player)
     {
-        entity_apply_damage(damager(other.damage));
+        entity_apply_damage(damager(other.damage), other);
     }
 }
 </string>
