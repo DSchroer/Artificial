@@ -23,7 +23,6 @@ if(surface_exists(self.back))
     draw_surface_ext(redraw,x + (s * 3),y ,0.25,0.25,0,c_white,alpha);
 }
 
-draw_set_font(fnt_default);
 draw_set_color(c_white);
 draw_text(x,y + s,"Red: " + string(color_get_red(self.shadow_color)));
 draw_text(x,y + s + 15,"Green: " + string(color_get_green(self.shadow_color)));
