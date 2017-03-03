@@ -52,6 +52,18 @@ mele[weapon_index.bullet_sprite_yscale] = image_yscale;
 mele[weapon_index.bullet_sprite_alpha] = 0;
 mele[weapon_index.damage] = 200;
 mele[weapon_index.bullet_speed] = 0;
+
+scream = inventory_create_weapon();
+scream[weapon_index.modifier] = weapon_modifier.scatter;
+scream[weapon_index.bullet_sprite] = spr_bullet;
+scream[weapon_index.damage] = 50;
+scream[weapon_index.accuracy] = 45;
+
+beam = inventory_create_weapon();
+beam[weapon_index.modifier] = weapon_modifier.rail;
+beam[weapon_index.bullet_sprite] = spr_rail;
+beam[weapon_index.damage] = 50;
+beam[weapon_index.accuracy] = 0;
 </string>
           </argument>
         </arguments>
@@ -95,6 +107,15 @@ if(player_exists())
             break;
         case "retreat":
             shud_retreat();
+            break;
+        case "scream":
+            shud_scream();
+            break;
+        case "beam":
+            shud_beam();
+            break;
+        case "turn":
+            shud_turn();
             break;
     }
 }
