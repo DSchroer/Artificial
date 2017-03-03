@@ -540,6 +540,15 @@
         <script>scripts\shud_beam.gml</script>
         <script>scripts\shud_turn_dir.gml</script>
       </scripts>
+      <scripts name="Dym">
+        <script>scripts\dym_idle.gml</script>
+        <script>scripts\dym_regen.gml</script>
+        <script>scripts\dym_shoot.gml</script>
+        <script>scripts\dym_explode.gml</script>
+        <script>scripts\dym_grab.gml</script>
+        <script>scripts\dym_expand.gml</script>
+        <script>scripts\dym_port.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Interact">
       <script>scripts\interact_any.gml</script>
@@ -602,6 +611,7 @@
       <script>scripts\cgrid_collision_line.gml</script>
     </scripts>
     <script>scripts\area_contains.gml</script>
+    <script>scripts\area_contains_point.gml</script>
     <script>scripts\array.gml</script>
     <scripts name="Workbench">
       <script>scripts\workbench_create_menu.gml</script>
@@ -711,6 +721,17 @@
         <object>objects\obj_azar_wall</object>
         <object>objects\obj_azar_area</object>
       </objects>
+      <objects name="Boss2">
+        <object>objects\obj_dym</object>
+        <object>objects\obj_dym_part</object>
+        <object>objects\obj_dym_area</object>
+      </objects>
+      <objects name="Boss4">
+        <object>objects\obj_shuud</object>
+        <object>objects\obj_shuud_body</object>
+        <object>objects\obj_shuud_attack_area</object>
+        <object>objects\obj_shuud_light</object>
+      </objects>
       <objects name="Enemies">
         <object>objects\obj_captain</object>
         <object>objects\obj_clone</object>
@@ -721,12 +742,6 @@
       <objects name="FinalBoss">
         <object>objects\obj_boss_final</object>
         <object>objects\obj_boss_jump</object>
-      </objects>
-      <objects name="Boss4">
-        <object>objects\obj_shuud</object>
-        <object>objects\obj_shuud_body</object>
-        <object>objects\obj_shuud_attack_area</object>
-        <object>objects\obj_shuud_light</object>
       </objects>
     </objects>
     <objects name="Environment">
@@ -850,6 +865,7 @@
     <room>rooms\rm_empty</room>
     <rooms name="Boss">
       <room>rooms\rm_boss_1</room>
+      <room>rooms\rm_boss_2</room>
       <room>rooms\rm_boss_4</room>
       <room>rooms\rm_boss_final</room>
     </rooms>
