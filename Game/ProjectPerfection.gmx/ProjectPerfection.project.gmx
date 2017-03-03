@@ -22,7 +22,9 @@
       <filename>Credits.txt</filename>
     </datafile>
   </datafiles>
-  <NewExtensions/>
+  <NewExtensions>
+    <extension index="0">extensions\Shadows</extension>
+  </NewExtensions>
   <sounds name="sound">
     <sound>sound\snd_attack</sound>
     <sound>sound\snd_not_attack</sound>
@@ -323,10 +325,10 @@
       </scripts>
     </scripts>
     <scripts name="Map">
-      <script>scripts\map_init.gml</script>
-      <script>scripts\map_set_level.gml</script>
-      <script>scripts\map_draw.gml</script>
-      <script>scripts\map_render_map_texture.gml</script>
+      <script>scripts\minimap_init.gml</script>
+      <script>scripts\minimap_set_level.gml</script>
+      <script>scripts\minimap_draw.gml</script>
+      <script>scripts\minimap_render_map_texture.gml</script>
     </scripts>
     <scripts name="Overlay">
       <script>scripts\overlay_init.gml</script>
@@ -605,6 +607,42 @@
       <script>scripts\workbench_destroy_menu.gml</script>
       <script>scripts\workbench_update_tooltips.gml</script>
     </scripts>
+    <scripts name="Shadows">
+      <scripts name="Light">
+        <script>scripts\light_set_intensity_power.gml</script>
+        <script>scripts\light_create.gml</script>
+        <script>scripts\light_set_dynamic.gml</script>
+        <script>scripts\light_draw_debug.gml</script>
+        <script>scripts\light_set_color.gml</script>
+        <script>scripts\light_set_intensity.gml</script>
+        <script>scripts\light_get_color.gml</script>
+        <script>scripts\light_get_intensity.gml</script>
+        <script>scripts\light_set_cast_shadows.gml</script>
+        <script>scripts\light_get_cast_shadows.gml</script>
+        <script>scripts\light_set_size.gml</script>
+        <script>scripts\light_get_size.gml</script>
+        <script>scripts\light_destroy.gml</script>
+      </scripts>
+      <scripts name="Map">
+        <script>scripts\map_create.gml</script>
+        <script>scripts\map_set_color.gml</script>
+        <script>scripts\map_draw.gml</script>
+        <script>scripts\map_calculate_culling.gml</script>
+      </scripts>
+      <scripts name="Cast">
+        <script>scripts\cast_create.gml</script>
+        <script>scripts\cast_set_dynamic.gml</script>
+        <script>scripts\cast_set_image.gml</script>
+        <script>scripts\cast_destroy.gml</script>
+      </scripts>
+      <scripts name="Core">
+        <script>scripts\core_shadow.gml</script>
+        <script>scripts\core_distance.gml</script>
+        <script>scripts\core_caster.gml</script>
+        <script>scripts\core_postprocess.gml</script>
+        <script>scripts\core_reductions.gml</script>
+      </scripts>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
@@ -613,6 +651,15 @@
     <shader type="GLSLES">shaders\sdr_normal.shader</shader>
     <shader type="GLSLES">shaders\sdr_fill.shader</shader>
     <shader type="GLSLES">shaders\sdr_chromatic_ab.shader</shader>
+    <shaders name="Shadows">
+      <shader type="GLSLES">shaders\sdr_dist.shader</shader>
+      <shader type="GLSLES">shaders\sdr_blend_shadow.shader</shader>
+      <shader type="GLSLES">shaders\sdr_shadow.shader</shader>
+      <shader type="GLSLES">shaders\sdr_post.shader</shader>
+      <shader type="GLSLES">shaders\sdr_reduce_linear.shader</shader>
+      <shader type="GLSLES">shaders\sdr_caster_outline.shader</shader>
+      <shader type="GLSLES">shaders\sdr_post2.shader</shader>
+    </shaders>
   </shaders>
   <fonts name="fonts">
     <font>fonts\fnt_hit</font>
@@ -678,6 +725,7 @@
         <object>objects\obj_shuud</object>
         <object>objects\obj_shuud_body</object>
         <object>objects\obj_shuud_attack_area</object>
+        <object>objects\obj_shuud_light</object>
       </objects>
     </objects>
     <objects name="Environment">
@@ -756,6 +804,13 @@
     </objects>
     <object>objects\obj_cgrid</object>
     <object>objects\obj_hub</object>
+    <objects name="Shadows">
+      <object>objects\obj_light_var</object>
+    </objects>
+    <objects name="Lighting">
+      <object>objects\obj_light_map</object>
+      <object>objects\obj_point_light</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>

@@ -1,4 +1,4 @@
-///map_render_map_texture()
+///minimap_render_map_texture()
 if(level != -1)
 {    
     var surface = surface_create(level.width * map_size, level.height * map_size);

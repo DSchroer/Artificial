@@ -29,6 +29,12 @@
 {
     cgrid_set_collision(id);
 }
+
+if(instance_exists(obj_light_map))
+{
+    cast_create(0);
+    cast_set_dynamic(false);
+}
 </string>
           </argument>
         </arguments>

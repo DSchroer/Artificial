@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,13 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>minimap_init()
+            <string>light_create(1024, 512, 0);
+light_set_intensity(0.7);
+light_set_dynamic(true);
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="64">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -48,7 +50,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>minimap_draw(100, 100)
+            <string>with(obj_shuud)
+{
+    other.x = x - 512;
+    other.y = y - 512;
+}
 </string>
           </argument>
         </arguments>
