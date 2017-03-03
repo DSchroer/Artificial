@@ -10,7 +10,7 @@ var grid;
 if(!instance_exists(obj_level))
 {
     var t;
-    t[0] = noone;
+    t = noone;
     for(var i = 0; i < instance_number(target); i++)
     {
         t[i] = instance_find(target, i);
@@ -25,7 +25,7 @@ with(obj_level)
 }
 
 var t;
-t[0] = noone;
+t = noone;
 
 var p = 0;
 for(var i = 0; i < instance_number(target); i++)

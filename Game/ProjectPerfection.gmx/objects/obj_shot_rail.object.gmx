@@ -100,7 +100,7 @@ y_off = 45;
         
         with(parent.last_object)
         {
-            entity_apply_damage(damager(other.damage));
+            entity_apply_damage(damager(other.damage), other.parent);
         }
         parent.last_object = noone;
     }

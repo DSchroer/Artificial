@@ -55,6 +55,11 @@ data[4] = obj_brute;
             <string>var spawn_points = level_stub_find_all(obj_spawn);
 
 var point = array_length_1d(spawn_points);
+if(point == 0)
+{
+    exit;
+}
+
 var inst = spawn_points[random(point)];
 
 var items = array_length_1d(data);

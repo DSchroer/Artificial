@@ -72,7 +72,7 @@ with(obj_entity)
         if(point_in_ellipse(other.x, other.y, x + hbox_x1, y + hbox_y1, x + hbox_x2, y + hbox_y2))
         {
             hit = true;
-            entity_apply_damage(damager(other.damage));
+            entity_apply_damage(damager(other.damage), other.parent);
         }
     }
 }
