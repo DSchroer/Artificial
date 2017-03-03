@@ -532,6 +532,10 @@
       <scripts name="Shud">
         <script>scripts\shud_approach.gml</script>
         <script>scripts\shud_retreat.gml</script>
+        <script>scripts\shud_turn.gml</script>
+        <script>scripts\shud_scream.gml</script>
+        <script>scripts\shud_beam.gml</script>
+        <script>scripts\shud_turn_dir.gml</script>
       </scripts>
     </scripts>
     <scripts name="Interact">
@@ -673,6 +677,7 @@
       <objects name="Boss4">
         <object>objects\obj_shuud</object>
         <object>objects\obj_shuud_body</object>
+        <object>objects\obj_shuud_attack_area</object>
       </objects>
     </objects>
     <objects name="Environment">

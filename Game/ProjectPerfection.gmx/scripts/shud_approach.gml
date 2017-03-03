@@ -1,10 +1,30 @@
 ///shud_approach()
 
-speed = 15;
+speed = 10;
+
+if(sm_ticks() == 0)
+{
+    sm_set_var("attack", random(4));
+}
+
+var player_distance = point_distance(x, y, obj_player.x, obj_player.y);
+var attack = sm_get_var("attack");
+if(player_distance < 600 && area_contains(obj_shuud_attack_area, self))
+{
+    if(attack < 1)
+    {
+        sm_set_state("scream");
+    }else if(attack < 2)
+    {
+        sm_set_state("beam");
+    }else{
+        speed = 15;
+    }
+}
 
 if(!sm_has_var("tmr"))
 {
-    if(point_distance(x, y, obj_player.x, obj_player.y) > 200)
+    if(player_distance > 200)
     {
         var t_dir = point_direction(x, y, obj_player.x, obj_player.y);
         if(angle_difference(direction, t_dir) > 0)
