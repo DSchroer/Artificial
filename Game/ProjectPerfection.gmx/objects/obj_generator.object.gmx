@@ -77,6 +77,7 @@ var y_off = ds_list_find_value(room_y_list, itteration);
 
 generator_copy_instances(custom_room, x_off * 64, y_off * 64);
 generator_copy_tiles(custom_room, x_off * 64, y_off * 64);
+room_instance_add(custom_room, x_off * 64, y_off * 64, obj_navmesh);
 
 itteration += 1;
 
