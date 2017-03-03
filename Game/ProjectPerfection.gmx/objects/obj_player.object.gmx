@@ -424,7 +424,7 @@ draw_outline_end();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(rm_boss_4);
+            <string>room_goto(rm_boss_2);
 </string>
           </argument>
         </arguments>
