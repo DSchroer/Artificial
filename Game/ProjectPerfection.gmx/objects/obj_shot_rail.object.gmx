@@ -85,7 +85,7 @@ y_off = 45;
             <string>if(x_end == x &amp;&amp; y_end == y)
 {
     var hit = false;
-    var entity_dist, wall_dist;
+    var entity_dist = -1, wall_dist = -1;
     
     with(parent)
     {

@@ -59,7 +59,7 @@ with(obj_ai_wall)
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="1" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -76,11 +76,7 @@ with(obj_ai_wall)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!level_stub_find(obj_player))
-{
-    mp_grid_destroy(nav);
-    instance_destroy();
-}
+            <string>mp_grid_destroy(nav);
 </string>
           </argument>
         </arguments>

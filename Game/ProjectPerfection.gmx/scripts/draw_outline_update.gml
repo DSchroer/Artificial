@@ -1,5 +1,9 @@
 ///draw_outline_update(sprite)
 var spr = argument0;
+if(spr == noone)
+{
+    exit;
+}
 
 var sprite_scale = shader_get_uniform(sdr_outline, "sprite_size");
 var sprite_uvs = shader_get_uniform(sdr_outline, "sprite_uvs");

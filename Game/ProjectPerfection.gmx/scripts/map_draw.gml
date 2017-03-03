@@ -1,42 +1,64 @@
-///map_draw(x, y)
-if(is_paused())
+////map_draw()
+if(!surface_exists(lightSurface))
 {
-    exit;
+    lightSurface = surface_create(view_wport, view_hport);
 }
 
-if(!surface_exists(main_surface))
+if(surface_get_height(lightSurface) != surface_get_height(application_surface) || surface_get_width(lightSurface) != surface_get_width(application_surface))
 {
-    main_surface = surface_create(map_diameter, map_diameter);
-}
+    surface_resize(lightSurface, surface_get_width(application_surface), surface_get_height(application_surface));
+} 
 
-surface_set_target(main_surface);
-draw_clear(c_black);
-if(level != -1 && instance_exists(level))
+surface_set_target(lightSurface);
+draw_clear(self.color);
+
+var l;
+l = ds_map_find_value(instance_find(obj_light_var,0).map_layer,string(layer));
+
+var xscale = view_wview / view_wport;
+var yscale = view_hview / view_hport;
+
+for(i = 0; i < ds_list_size(l); i++)
 {
-    if(map_texture == -1 || level.fog_changed)
+    var obj;
+    obj = ds_list_find_value(l, i);
+    
+    if(!obj.in_view)
     {
-        map_render_map_texture();
+        continue;
     }
     
-
-    with(level)
+    with(obj)
     {
-        if(player_exists())
+        if(self.layer == other.layer)
         {
-            other.center_x = level_position_x(obj_player.x);
-            other.center_y = level_position_y(obj_player.y);
+            if(!surface_exists(self.redraw))
+            {
+                self.redraw = surface_create(l_width, l_height);
+                self.rendered = false;
+            }
+            
+            if(!self.rendered || self.collision || self.dynamic)
+            {
+                core_caster();
+                core_distance();
+                core_reductions();
+                core_shadow();
+                core_postprocess();
+                self.rendered = true;
+            }
+             
+            draw_set_blend_mode( bm_add );
+            draw_surface_ext(self.redraw,(self.x-view_xview) / xscale,(self.y-view_yview) / yscale,self.scale / xscale,self.scale / yscale,0,c_white,1.0);
         }
     }
-
-    draw_sprite(map_texture, 0, (map_diameter / 2) - (center_x * map_size), (map_diameter / 2) - (center_y * map_size));
 }
-//draw_circle_colour((map_diameter / 2), (map_diameter / 2), 3, c_red, c_red, false);
 surface_reset_target();
 
-//shader_set(sdr_circle);
-draw_sprite(spr_map_border, -1, display_get_gui_width() - 30 - map_diameter, 10);
-draw_surface(main_surface, display_get_gui_width() - 22 - map_diameter, 18);
+shader_set(sdr_blend_shadow);
+draw_set_blend_mode_ext( bm_dest_color, bm_src_color );
+draw_surface_ext(lightSurface,view_xview,view_yview, xscale, yscale, 0, c_white, 1);
+draw_set_blend_mode( bm_normal );
 shader_reset();
-
 
 
