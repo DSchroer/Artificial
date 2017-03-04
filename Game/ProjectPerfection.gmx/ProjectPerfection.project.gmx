@@ -324,6 +324,8 @@
         <script>scripts\generator_populate.gml</script>
         <script>scripts\generator_set_room.gml</script>
       </scripts>
+      <script>scripts\generator_register_items.gml</script>
+      <script>scripts\generator_spawn_item.gml</script>
     </scripts>
     <scripts name="Map">
       <script>scripts\minimap_init.gml</script>
@@ -549,6 +551,9 @@
         <script>scripts\dym_expand.gml</script>
         <script>scripts\dym_port.gml</script>
       </scripts>
+      <scripts name="Twan">
+        <script>scripts\twan_idle.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Interact">
       <script>scripts\interact_any.gml</script>
@@ -726,6 +731,9 @@
         <object>objects\obj_dym_part</object>
         <object>objects\obj_dym_area</object>
       </objects>
+      <objects name="Boss3">
+        <object>objects\obj_twan</object>
+      </objects>
       <objects name="Boss4">
         <object>objects\obj_shuud</object>
         <object>objects\obj_shuud_body</object>
@@ -866,6 +874,7 @@
     <rooms name="Boss">
       <room>rooms\rm_boss_1</room>
       <room>rooms\rm_boss_2</room>
+      <room>rooms\rm_boss_3</room>
       <room>rooms\rm_boss_4</room>
       <room>rooms\rm_boss_final</room>
     </rooms>
