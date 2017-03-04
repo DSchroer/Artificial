@@ -75,10 +75,9 @@ if(keyboard_check_pressed(vk_f10))
 {
     player_level_up();
 }
-if(keyboard_check_pressed(vk_f9))
+if(keyboard_check_pressed(ord("G")))
 {
-    current_health = 1;
-    remaining_shield = 1;
+    room_goto(rm_tutorial_beta);
 }
 
 if(keyboard_check_pressed(vk_numpad1))

@@ -7,3 +7,6 @@ if(book_any())
 {
     generator_spawn_item(obj_book, 3, true, true); 
 }
+
+generator_spawn_item(obj_chest, 2, false, false);
+
