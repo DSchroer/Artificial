@@ -231,6 +231,7 @@
       <sprite>sprites\spr_final_boss</sprite>
       <sprite>sprites\spr_final_boss_hit</sprite>
     </sprites>
+    <sprite>sprites\spr_env_rock</sprite>
     <sprite>sprites\spr_light</sprite>
   </sprites>
   <backgrounds name="background">
@@ -239,6 +240,8 @@
     <background>background\bkg_hub</background>
     <background>background\bkg_desert</background>
     <background>background\bkg_test</background>
+    <background>background\bkg_desert_new</background>
+    <background>background\bkg_hub_new</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\pth_final</path>
@@ -769,6 +772,7 @@
     </objects>
     <objects name="Environment">
       <object>objects\obj_bush</object>
+      <object>objects\obj_rock</object>
     </objects>
     <objects name="Interact">
       <object>objects\obj_door</object>
@@ -885,6 +889,11 @@
         <room>rooms\rm_stub_d_6</room>
         <room>rooms\rm_stub_d_7</room>
       </rooms>
+      <rooms name="Alec">
+        <room>rooms\rm_stub_a_1</room>
+        <room>rooms\rm_stub_a_2</room>
+        <room>rooms\rm_stub_a_3</room>
+      </rooms>
     </rooms>
     <room>rooms\rm_empty</room>
     <rooms name="Boss">
@@ -895,6 +904,7 @@
       <room>rooms\rm_boss_final</room>
     </rooms>
     <room>rooms\rm_transition</room>
+    <room>rooms\rm_tutorial_beta</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
