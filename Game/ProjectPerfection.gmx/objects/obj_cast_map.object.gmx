@@ -2,8 +2,8 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
-  <depth>-50000</depth>
+  <visible>0</visible>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,13 +25,26 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0] = 120;
+            <string>cast = surface_create(room_width / 34, room_height/34);
+surface_set_target(cast);
+draw_clear_alpha(c_white, 0);
+surface_reset_target();
+dirty = true;
+
+x = 0;
+y = 0;
+image_xscale = 32;
+image_yscale = 32;
+sprite_index = sprite_create_from_surface(cast, 0, 0, room_width / 34, room_height/34, false, false, 0, 0);
+cast_create(0);
+cast_set_dynamic(false);
+
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -48,13 +61,30 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(rm_dungeon_test);
+            <string>if(!surface_exists(cast) || dirty)
+{
+    if(dirty)
+    {
+        surface_free(cast);
+        dirty = false;
+    }
+    cast = surface_create(room_width / 34, room_height/34);
+    surface_set_target(cast);
+    draw_clear_alpha(c_white, 0);
+    surface_reset_target();
+
+    with(obj_caster)
+    {
+        event_user(0);
+    }
+    event_user(0);
+}
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="64">
+    <event eventtype="7" enumb="10">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -71,15 +101,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_color(c_black);
-draw_rectangle(0, 0, display_get_gui_width(), display_get_gui_height(), false);
-
-draw_set_color(c_white);
-draw_set_halign(fa_center);
-
-draw_text(display_get_gui_width() / 2, display_get_gui_height() - 50, "Generating Level!");
-
-draw_set_halign(fa_left);
+            <string>
+sprite_index = sprite_create_from_surface(cast, 0, 0, room_width / 34, room_height/34, false, false, 0, 0)
+cast_set_image(sprite_index, 0);
 </string>
           </argument>
         </arguments>

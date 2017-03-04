@@ -59,6 +59,7 @@
     <instance objName="obj_hub_sound" x="416" y="288" name="inst_76BE074B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_debug" x="256" y="320" name="inst_46D695FD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_draw_guns" x="320" y="320" name="inst_E1BBB92D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player_light" x="512" y="448" name="inst_5B3C085B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

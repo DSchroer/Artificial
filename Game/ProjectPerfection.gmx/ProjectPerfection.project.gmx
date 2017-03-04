@@ -170,6 +170,8 @@
       <sprite>sprites\spr_textback_flash</sprite>
       <sprite>sprites\spr_button_gray</sprite>
       <sprite>sprites\spr_workbench_ui</sprite>
+      <sprite>sprites\spr_progress</sprite>
+      <sprite>sprites\spr_prog_pos</sprite>
     </sprites>
     <sprites name="Fonts">
       <sprite>sprites\spr_base_font</sprite>
@@ -664,6 +666,7 @@
         <script>scripts\core_reductions.gml</script>
       </scripts>
     </scripts>
+    <script>scripts\wall_casts_shadow.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
@@ -713,6 +716,8 @@
       <object>objects\obj_level</object>
       <object>objects\obj_cloner</object>
       <object>objects\obj_navmesh</object>
+      <object>objects\obj_progress_bar</object>
+      <object>objects\obj_transition</object>
     </objects>
     <objects name="Effects">
       <object>objects\obj_damage_indicator</object>
@@ -794,7 +799,6 @@
     <object>objects\obj_health_can</object>
     <object>objects\obj_component</object>
     <object>objects\obj_item</object>
-    <object>objects\obj_transition</object>
     <objects name="Save">
       <object>objects\obj_save_data</object>
       <object>objects\obj_game_save</object>
@@ -843,7 +847,9 @@
     <objects name="Lighting">
       <object>objects\obj_light_map</object>
       <object>objects\obj_point_light</object>
+      <object>objects\obj_player_light</object>
       <object>objects\obj_caster</object>
+      <object>objects\obj_cast_map</object>
     </objects>
   </objects>
   <rooms name="rooms">

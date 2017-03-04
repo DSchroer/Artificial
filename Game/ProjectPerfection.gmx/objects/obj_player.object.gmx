@@ -346,6 +346,8 @@ if(instance_number(obj_spawn_player) &gt; 0)
     x = obj_spawn_player.x;
     y = obj_spawn_player.y;
 }
+
+instance_create(x, y, obj_player_light);
 </string>
           </argument>
         </arguments>
