@@ -22,7 +22,9 @@
       <filename>Credits.txt</filename>
     </datafile>
   </datafiles>
-  <NewExtensions/>
+  <NewExtensions>
+    <extension index="0">extensions\Shadows</extension>
+  </NewExtensions>
   <sounds name="sound">
     <sound>sound\snd_attack</sound>
     <sound>sound\snd_not_attack</sound>
@@ -227,6 +229,7 @@
       <sprite>sprites\spr_final_boss_hit</sprite>
     </sprites>
     <sprite>sprites\spr_env_rock</sprite>
+    <sprite>sprites\spr_light</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -325,10 +328,10 @@
       </scripts>
     </scripts>
     <scripts name="Map">
-      <script>scripts\map_init.gml</script>
-      <script>scripts\map_set_level.gml</script>
-      <script>scripts\map_draw.gml</script>
-      <script>scripts\map_render_map_texture.gml</script>
+      <script>scripts\minimap_init.gml</script>
+      <script>scripts\minimap_set_level.gml</script>
+      <script>scripts\minimap_draw.gml</script>
+      <script>scripts\minimap_render_map_texture.gml</script>
     </scripts>
     <scripts name="Overlay">
       <script>scripts\overlay_init.gml</script>
@@ -534,6 +537,19 @@
       <scripts name="Shud">
         <script>scripts\shud_approach.gml</script>
         <script>scripts\shud_retreat.gml</script>
+        <script>scripts\shud_turn.gml</script>
+        <script>scripts\shud_scream.gml</script>
+        <script>scripts\shud_beam.gml</script>
+        <script>scripts\shud_turn_dir.gml</script>
+      </scripts>
+      <scripts name="Dym">
+        <script>scripts\dym_idle.gml</script>
+        <script>scripts\dym_regen.gml</script>
+        <script>scripts\dym_shoot.gml</script>
+        <script>scripts\dym_explode.gml</script>
+        <script>scripts\dym_grab.gml</script>
+        <script>scripts\dym_expand.gml</script>
+        <script>scripts\dym_port.gml</script>
       </scripts>
     </scripts>
     <scripts name="Interact">
@@ -597,11 +613,48 @@
       <script>scripts\cgrid_collision_line.gml</script>
     </scripts>
     <script>scripts\area_contains.gml</script>
+    <script>scripts\area_contains_point.gml</script>
     <script>scripts\array.gml</script>
     <scripts name="Workbench">
       <script>scripts\workbench_create_menu.gml</script>
       <script>scripts\workbench_destroy_menu.gml</script>
       <script>scripts\workbench_update_tooltips.gml</script>
+    </scripts>
+    <scripts name="Shadows">
+      <scripts name="Light">
+        <script>scripts\light_set_intensity_power.gml</script>
+        <script>scripts\light_create.gml</script>
+        <script>scripts\light_set_dynamic.gml</script>
+        <script>scripts\light_draw_debug.gml</script>
+        <script>scripts\light_set_color.gml</script>
+        <script>scripts\light_set_intensity.gml</script>
+        <script>scripts\light_get_color.gml</script>
+        <script>scripts\light_get_intensity.gml</script>
+        <script>scripts\light_set_cast_shadows.gml</script>
+        <script>scripts\light_get_cast_shadows.gml</script>
+        <script>scripts\light_set_size.gml</script>
+        <script>scripts\light_get_size.gml</script>
+        <script>scripts\light_destroy.gml</script>
+      </scripts>
+      <scripts name="Map">
+        <script>scripts\map_create.gml</script>
+        <script>scripts\map_set_color.gml</script>
+        <script>scripts\map_draw.gml</script>
+        <script>scripts\map_calculate_culling.gml</script>
+      </scripts>
+      <scripts name="Cast">
+        <script>scripts\cast_create.gml</script>
+        <script>scripts\cast_set_dynamic.gml</script>
+        <script>scripts\cast_set_image.gml</script>
+        <script>scripts\cast_destroy.gml</script>
+      </scripts>
+      <scripts name="Core">
+        <script>scripts\core_shadow.gml</script>
+        <script>scripts\core_distance.gml</script>
+        <script>scripts\core_caster.gml</script>
+        <script>scripts\core_postprocess.gml</script>
+        <script>scripts\core_reductions.gml</script>
+      </scripts>
     </scripts>
   </scripts>
   <shaders name="shaders">
@@ -611,6 +664,15 @@
     <shader type="GLSLES">shaders\sdr_normal.shader</shader>
     <shader type="GLSLES">shaders\sdr_fill.shader</shader>
     <shader type="GLSLES">shaders\sdr_chromatic_ab.shader</shader>
+    <shaders name="Shadows">
+      <shader type="GLSLES">shaders\sdr_dist.shader</shader>
+      <shader type="GLSLES">shaders\sdr_blend_shadow.shader</shader>
+      <shader type="GLSLES">shaders\sdr_shadow.shader</shader>
+      <shader type="GLSLES">shaders\sdr_post.shader</shader>
+      <shader type="GLSLES">shaders\sdr_reduce_linear.shader</shader>
+      <shader type="GLSLES">shaders\sdr_caster_outline.shader</shader>
+      <shader type="GLSLES">shaders\sdr_post2.shader</shader>
+    </shaders>
   </shaders>
   <fonts name="fonts">
     <font>fonts\fnt_hit</font>
@@ -661,6 +723,17 @@
         <object>objects\obj_azar_wall</object>
         <object>objects\obj_azar_area</object>
       </objects>
+      <objects name="Boss2">
+        <object>objects\obj_dym</object>
+        <object>objects\obj_dym_part</object>
+        <object>objects\obj_dym_area</object>
+      </objects>
+      <objects name="Boss4">
+        <object>objects\obj_shuud</object>
+        <object>objects\obj_shuud_body</object>
+        <object>objects\obj_shuud_attack_area</object>
+        <object>objects\obj_shuud_light</object>
+      </objects>
       <objects name="Enemies">
         <object>objects\obj_captain</object>
         <object>objects\obj_clone</object>
@@ -671,10 +744,6 @@
       <objects name="FinalBoss">
         <object>objects\obj_boss_final</object>
         <object>objects\obj_boss_jump</object>
-      </objects>
-      <objects name="Boss4">
-        <object>objects\obj_shuud</object>
-        <object>objects\obj_shuud_body</object>
       </objects>
     </objects>
     <objects name="Environment">
@@ -754,6 +823,14 @@
     </objects>
     <object>objects\obj_cgrid</object>
     <object>objects\obj_hub</object>
+    <objects name="Shadows">
+      <object>objects\obj_light_var</object>
+    </objects>
+    <objects name="Lighting">
+      <object>objects\obj_light_map</object>
+      <object>objects\obj_point_light</object>
+      <object>objects\obj_caster</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>
@@ -796,6 +873,7 @@
     <room>rooms\rm_empty</room>
     <rooms name="Boss">
       <room>rooms\rm_boss_1</room>
+      <room>rooms\rm_boss_2</room>
       <room>rooms\rm_boss_4</room>
       <room>rooms\rm_boss_final</room>
     </rooms>
