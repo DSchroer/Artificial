@@ -191,6 +191,7 @@
       <sprite>sprites\spr_gate_open</sprite>
       <sprite>sprites\spr_area</sprite>
       <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_cast_wall</sprite>
       <sprite>sprites\spr_invisible_wall</sprite>
       <sprite>sprites\spr_interact</sprite>
     </sprites>
@@ -833,6 +834,7 @@
     </objects>
     <objects name="Walls">
       <object>objects\obj_wall</object>
+      <object>objects\obj_cast_wall</object>
       <object>objects\obj_invisible_wall</object>
       <object>objects\obj_gate</object>
       <object>objects\obj_gate_open</object>
@@ -847,7 +849,6 @@
     <objects name="Lighting">
       <object>objects\obj_light_map</object>
       <object>objects\obj_point_light</object>
-      <object>objects\obj_player_light</object>
       <object>objects\obj_caster</object>
       <object>objects\obj_cast_map</object>
     </objects>
