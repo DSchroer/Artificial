@@ -488,11 +488,13 @@
       <script>scripts\enemy_target.gml</script>
       <script>scripts\enemy_dumb.gml</script>
       <script>scripts\enemy_line_of_sight.gml</script>
+      <script>scripts\enemy_line_of_sight_ext.gml</script>
       <scripts name="Navigation">
         <script>scripts\enemy_navmesh_closest.gml</script>
         <script>scripts\enemy_navmesh_path.gml</script>
         <script>scripts\enemy_navmesh_get.gml</script>
         <script>scripts\enemy_navmesh_move.gml</script>
+        <script>scripts\enemy_navmesh_move_nowall.gml</script>
         <script>scripts\enemy_path_move.gml</script>
         <script>scripts\enemy_path_closest_index.gml</script>
         <script>scripts\enemy_navmesh_clear.gml</script>
@@ -553,6 +555,9 @@
       </scripts>
       <scripts name="Twan">
         <script>scripts\twan_idle.gml</script>
+        <script>scripts\twan_find_point.gml</script>
+        <script>scripts\twan_fire_shot.gml</script>
+        <script>scripts\twan_mine.gml</script>
       </scripts>
     </scripts>
     <scripts name="Interact">
@@ -733,6 +738,10 @@
       </objects>
       <objects name="Boss3">
         <object>objects\obj_twan</object>
+        <object>objects\obj_twan_point</object>
+        <object>objects\obj_twan_mine</object>
+        <object>objects\obj_twan_stasis</object>
+        <object>objects\obj_twan_turret</object>
       </objects>
       <objects name="Boss4">
         <object>objects\obj_shuud</object>
