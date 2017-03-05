@@ -893,6 +893,13 @@
         <room>rooms\rm_stub_d_5</room>
         <room>rooms\rm_stub_d_6</room>
         <room>rooms\rm_stub_d_7</room>
+        <room>rooms\rm_stub_d_8</room>
+        <room>rooms\rm_stub_d_9</room>
+        <room>rooms\rm_stub_d_10</room>
+        <room>rooms\rm_stub_d_11</room>
+        <room>rooms\rm_stub_d_12</room>
+        <room>rooms\rm_stub_d_13</room>
+        <room>rooms\rm_stub_d_14</room>
       </rooms>
       <rooms name="Alec">
         <room>rooms\rm_stub_a_1</room>
