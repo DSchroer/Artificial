@@ -25,12 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>data[0] = obj_grunt;
-data[1] = noone;
-data[2] = obj_spawn_dog;
-data[3] = obj_captain;
-data[4] = obj_brute;
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -52,18 +47,86 @@ data[4] = obj_brute;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var spawn_points = level_stub_find_all(obj_spawn);
+            <string>
+var spawn_points = level_stub_find_all(obj_spawn);
 
 var point = array_length_1d(spawn_points);
 if(point == 0)
 {
     exit;
 }
-
 var inst = spawn_points[random(point)];
 
-var items = array_length_1d(data);
-var item = data[random(items)];
+var data;
+
+//var weights = generate_spawn_weights(obj_progress.progress);
+data[1] = noone;
+data[0] = obj_grunt;
+data[2] = obj_spawn_dog;
+data[3] = obj_captain;
+data[4] = obj_brute;
+
+var spawn_values = array(noone, obj_grunt, obj_spawn_dog, obj_captain, obj_brute);
+var weight_table;
+
+var weight_table_p0 = array(10, 20, 0, 0, 0);
+var weight_table_p1 = array(30, 50, 5, 0, 0);
+var weight_table_p2 = array(20, 50, 10, 1, 1);
+
+var weight_table_p4 = array(15, 50, 12, 1, 1);
+var weight_table_p5 = array(15, 50, 15, 2, 1);
+var weight_table_p6 = array(15, 40, 20, 2, 2);
+
+var weight_table_p8 = array(10, 40, 20, 3, 2);
+var weight_table_p9 = array(8, 35, 20, 4, 2);
+var weight_table_p10 = array(8, 30, 20, 5, 2);
+
+var weight_table_p12 = array(0, 28, 20, 5, 3);
+var weight_table_p13 = array(0, 20, 20, 6, 4);
+var weight_table_p14 = array(0, 15, 15, 7, 5);
+
+switch(obj_progress.progress)
+{
+case 0:
+    weight_table = weight_table_p0;
+    break;
+case 1:
+    weight_table = weight_table_p1;
+    break;
+case 2:
+    weight_table = weight_table_p2;
+    break;
+case 4:
+    weight_table = weight_table_p4;
+    break;
+case 5:
+    weight_table = weight_table_p5;
+    break;
+case 6:
+    weight_table = weight_table_p6;
+    break;
+case 8:
+    weight_table = weight_table_p8;
+    break;
+case 9:
+    weight_table = weight_table_p9;
+    break;
+case 10:
+    weight_table = weight_table_p10;
+    break;
+case 12:
+    weight_table = weight_table_p12;
+    break;
+case 13:
+    weight_table = weight_table_p13;
+    break;
+case 14:
+    weight_table = weight_table_p14;
+    break;
+}
+
+var num_items = array_length_1d(data);
+var item = choose_weighted(spawn_values, weight_table);
 
 if(inst != noone &amp;&amp; item != noone)
 {
@@ -76,7 +139,10 @@ if(inst != noone &amp;&amp; item != noone)
         instance_destroy();
     }
     
-    instance_create(xp, yp, item);
+    var monster = instance_create(xp, yp, item);
+    monster.pow = (obj_progress.progress - 1) * 10 + random_range(0, 9);
+    monster.alarm[0] = 1;
+   
 }
 
 instance_destroy();

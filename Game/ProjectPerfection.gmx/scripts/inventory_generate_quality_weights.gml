@@ -2,7 +2,7 @@
 var min_quality = argument0;
 var weights = array(885, 90, 21, 3, 1);
 var qualities = inventory_get_qualities();
-for(var i = 0; i < item_quality.unique; i++)
+for(var i = 0; i <= item_quality.legendary; i++)
 {
     if(min_quality > qualities[i])
     {

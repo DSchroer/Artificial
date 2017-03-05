@@ -71,7 +71,7 @@ ranges[item_quality.epic] = 18;
 ranges[item_quality.legendary] = 2;
 
 //Damage Per Shot
-var damages = 8 * (1 + (pow / 20));
+var damages = 8 * get_scaling_coefficient(pow);
 damages = inventory_scale_stat(damages, bases[q] / 100, ranges[q] / 100, core[subType, 0]);
 gun[weapon_index.damage] = max(1, round(damages));
 
