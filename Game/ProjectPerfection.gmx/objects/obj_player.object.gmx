@@ -116,6 +116,10 @@ for(var i = 0; i &lt; 2; i++)
           <argument>
             <kind>1</kind>
             <string>current_health = max_health;
+with(obj_progress)
+{
+    progress = 0;
+}
 x = 1600;
 y = 320;
 

@@ -64,6 +64,14 @@ else if(prog == 15)
 {
     room_goto(rm_boss_4)
 }
+else if(prog &gt;= 16)
+{
+    with(obj_progress)
+    {
+        progress = 0;
+    }
+    room_goto(rm_hub);
+}
 else
 {
     room_goto(rm_transition);

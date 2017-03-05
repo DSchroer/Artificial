@@ -159,6 +159,8 @@ if(random(3) &lt; 1)
     var gun = instance_create(x, y, obj_item);
     gun.data = inventory_spawn_gun(obj_progress.progress + 1);
 }
+kill_boss(2);
+instance_create(x, y, obj_cube);
 event_inherited();
 </string>
           </argument>

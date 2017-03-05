@@ -27,16 +27,13 @@
             <kind>1</kind>
             <string>
 enabled = false;
-var parts = 0;
+parts = 0;
+target = 1;
 with(obj_progress)
 {
-    parts = cube_parts;
+    other.parts = floor(boss / 2);
 }
 
-if(parts &lt; 1)
-{
-    instance_destroy();
-}
 </string>
           </argument>
         </arguments>
@@ -59,11 +56,9 @@ if(parts &lt; 1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var prog;
-with(obj_progress)
+            <string>with(obj_progress)
 {
-    progress = 5;
-    prog = progress;
+    progress = other.target * 4;
 }
 
 with(obj_level)
@@ -125,15 +120,9 @@ room_goto(rm_transition);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var point = level_get_spawn_point();
-if(point != noone)
+            <string>if(parts &lt; target)
 {
-    x = point.x;
-    y = point.y;
-    with(point)
-    {
-        instance_destroy();
-    }
+    instance_destroy();
 }
 </string>
           </argument>
