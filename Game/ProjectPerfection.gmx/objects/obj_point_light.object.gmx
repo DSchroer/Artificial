@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>if(instance_exists(obj_light_map))
 {
-    light_create(2048, 512, 0);
+    light_create(2048, 1024, 0);
     light_set_intensity(0.8);
     light_set_dynamic(false);
 }

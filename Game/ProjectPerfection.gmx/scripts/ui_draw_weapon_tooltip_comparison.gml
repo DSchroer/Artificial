@@ -1,5 +1,10 @@
 ///ui_draw_weapon_tooltip_comparison(x, y, weapon, weapon_to_compare_to)
 
+if(!ui_can_render_tooltips())
+{
+    exit;
+}
+
 var xpos = argument0;
 var ypos = argument1;
 var weapon = argument2;

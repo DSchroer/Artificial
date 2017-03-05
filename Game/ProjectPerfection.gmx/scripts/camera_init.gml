@@ -14,5 +14,6 @@ current_zoom = 1;
 zoom = 1;
 
 camera_resize();
+texture_set_interpolation(false);
 
 

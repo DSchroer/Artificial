@@ -170,6 +170,8 @@
       <sprite>sprites\spr_textback_flash</sprite>
       <sprite>sprites\spr_button_gray</sprite>
       <sprite>sprites\spr_workbench_ui</sprite>
+      <sprite>sprites\spr_progress</sprite>
+      <sprite>sprites\spr_prog_pos</sprite>
     </sprites>
     <sprites name="Fonts">
       <sprite>sprites\spr_base_font</sprite>
@@ -189,6 +191,7 @@
       <sprite>sprites\spr_gate_open</sprite>
       <sprite>sprites\spr_area</sprite>
       <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_cast_wall</sprite>
       <sprite>sprites\spr_invisible_wall</sprite>
       <sprite>sprites\spr_interact</sprite>
     </sprites>
@@ -335,6 +338,7 @@
       <script>scripts\minimap_set_level.gml</script>
       <script>scripts\minimap_draw.gml</script>
       <script>scripts\minimap_render_map_texture.gml</script>
+      <script>scripts\map_should_draw.gml</script>
     </scripts>
     <scripts name="Overlay">
       <script>scripts\overlay_init.gml</script>
@@ -381,13 +385,16 @@
     </scripts>
     <scripts name="Ui">
       <script>scripts\ui_check_weapon_slot_tooltip.gml</script>
+      <script>scripts\ui_clear_textbox_queue.gml</script>
       <script>scripts\ui_draw.gml</script>
       <script>scripts\ui_draw_action_indicators.gml</script>
       <script>scripts\ui_draw_boss_health.gml</script>
+      <script>scripts\ui_draw_death_text.gml</script>
       <script>scripts\ui_draw_health.gml</script>
       <script>scripts\ui_draw_health_tooltip.gml</script>
       <script>scripts\ui_draw_icon.gml</script>
       <script>scripts\ui_draw_inventory.gml</script>
+      <script>scripts\ui_draw_reload_bar.gml</script>
       <script>scripts\ui_draw_ring.gml</script>
       <script>scripts\ui_draw_shield_tooltip.gml</script>
       <script>scripts\ui_draw_textbox.gml</script>
@@ -395,9 +402,13 @@
       <script>scripts\ui_draw_textbox_ext.gml</script>
       <script>scripts\ui_draw_textbox_pos.gml</script>
       <script>scripts\ui_draw_tooltip.gml</script>
+      <script>scripts\ui_draw_tooltips.gml</script>
+      <script>scripts\ui_draw_weapon_comparison.gml</script>
       <script>scripts\ui_draw_weapon_slot.gml</script>
+      <script>scripts\ui_draw_weapon_tooltip_comparison.gml</script>
       <script>scripts\ui_draw_weapon_tooltip1.gml</script>
       <script>scripts\ui_draw_weapon_tooltip2.gml</script>
+      <script>scripts\ui_get_boss_health_percent.gml</script>
       <script>scripts\ui_get_modifier_colour.gml</script>
       <script>scripts\ui_get_quality_colour.gml</script>
       <script>scripts\ui_get_quality_string.gml</script>
@@ -405,12 +416,7 @@
       <script>scripts\ui_set_colour.gml</script>
       <script>scripts\ui_world_to_gui_x.gml</script>
       <script>scripts\ui_world_to_gui_y.gml</script>
-      <script>scripts\ui_get_boss_health_percent.gml</script>
-      <script>scripts\ui_draw_reload_bar.gml</script>
-      <script>scripts\ui_draw_death_text.gml</script>
-      <script>scripts\ui_draw_weapon_tooltip_comparison.gml</script>
-      <script>scripts\ui_draw_weapon_comparison.gml</script>
-      <script>scripts\script263.gml</script>
+      <script>scripts\ui_can_render_tooltips.gml</script>
     </scripts>
     <scripts name="Debug">
       <script>scripts\debug_init.gml</script>
@@ -491,11 +497,13 @@
       <script>scripts\enemy_target.gml</script>
       <script>scripts\enemy_dumb.gml</script>
       <script>scripts\enemy_line_of_sight.gml</script>
+      <script>scripts\enemy_line_of_sight_ext.gml</script>
       <scripts name="Navigation">
         <script>scripts\enemy_navmesh_closest.gml</script>
         <script>scripts\enemy_navmesh_path.gml</script>
         <script>scripts\enemy_navmesh_get.gml</script>
         <script>scripts\enemy_navmesh_move.gml</script>
+        <script>scripts\enemy_navmesh_move_nowall.gml</script>
         <script>scripts\enemy_path_move.gml</script>
         <script>scripts\enemy_path_closest_index.gml</script>
         <script>scripts\enemy_navmesh_clear.gml</script>
@@ -556,6 +564,9 @@
       </scripts>
       <scripts name="Twan">
         <script>scripts\twan_idle.gml</script>
+        <script>scripts\twan_find_point.gml</script>
+        <script>scripts\twan_fire_shot.gml</script>
+        <script>scripts\twan_mine.gml</script>
       </scripts>
     </scripts>
     <scripts name="Interact">
@@ -662,6 +673,7 @@
         <script>scripts\core_reductions.gml</script>
       </scripts>
     </scripts>
+    <script>scripts\wall_casts_shadow.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
@@ -711,6 +723,8 @@
       <object>objects\obj_level</object>
       <object>objects\obj_cloner</object>
       <object>objects\obj_navmesh</object>
+      <object>objects\obj_progress_bar</object>
+      <object>objects\obj_transition</object>
     </objects>
     <objects name="Effects">
       <object>objects\obj_damage_indicator</object>
@@ -736,6 +750,10 @@
       </objects>
       <objects name="Boss3">
         <object>objects\obj_twan</object>
+        <object>objects\obj_twan_point</object>
+        <object>objects\obj_twan_mine</object>
+        <object>objects\obj_twan_stasis</object>
+        <object>objects\obj_twan_turret</object>
       </objects>
       <objects name="Boss4">
         <object>objects\obj_shuud</object>
@@ -789,7 +807,6 @@
     <object>objects\obj_health_can</object>
     <object>objects\obj_component</object>
     <object>objects\obj_item</object>
-    <object>objects\obj_transition</object>
     <objects name="Save">
       <object>objects\obj_save_data</object>
       <object>objects\obj_game_save</object>
@@ -824,6 +841,7 @@
     </objects>
     <objects name="Walls">
       <object>objects\obj_wall</object>
+      <object>objects\obj_cast_wall</object>
       <object>objects\obj_invisible_wall</object>
       <object>objects\obj_gate</object>
       <object>objects\obj_gate_open</object>
@@ -839,6 +857,7 @@
       <object>objects\obj_light_map</object>
       <object>objects\obj_point_light</object>
       <object>objects\obj_caster</object>
+      <object>objects\obj_cast_map</object>
     </objects>
   </objects>
   <rooms name="rooms">

@@ -28,6 +28,7 @@
             <string>with(obj_player)
 {
     open_workbench = true;
+    ui_clear_textbox_queue();
 }
 </string>
           </argument>

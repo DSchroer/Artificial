@@ -1,5 +1,5 @@
 ///minimap_draw(x, y)
-if(is_paused())
+if(is_paused() || !map_should_draw())
 {
     exit;
 }

@@ -35,6 +35,16 @@ sm_init("idle");
 stage = 1;
 
 volume_mod = 1.4;
+
+shots = 0;
+
+sniper = inventory_create_weapon();
+sniper[weapon_index.modifier] = weapon_modifier.normal;
+sniper[weapon_index.damage] = 50;
+sniper[weapon_index.bullet_sprite] = spr_bullet;
+sniper[weapon_index.bullet_speed] = 30;
+sniper[weapon_index.accuracy] = 10;
+
 //ds_list_add(hurt_sounds, snd_enemy_rock1);  
 //ds_list_add(hurt_sounds, snd_enemy_rock2);
 //ds_list_add(hurt_sounds, snd_enemy_rock3); // &lt;--- death sound?
@@ -72,6 +82,15 @@ if(player_exists())
             break;
         case "idle":
             twan_idle();
+            break;
+        case "relocate":
+            twan_find_point();
+            break;
+        case "fire":
+            twan_fire_shot();
+            break;
+        case "mine":
+            twan_mine();
             break;
     }
 }
