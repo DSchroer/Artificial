@@ -13,3 +13,8 @@ with(button_main)
 {
     instance_destroy();
 }
+
+with(button_hub)
+{
+    instance_destroy();
+}

@@ -13,6 +13,8 @@ with(level)
     ds_list_copy(room_y_list, other.room_y_list);
     ds_list_copy(room_w_list, other.room_w_list);
     ds_list_copy(room_h_list, other.room_h_list);
+    
+    ds_list_copy(room_flag_list, other.room_flags);
 }
 
 return level;

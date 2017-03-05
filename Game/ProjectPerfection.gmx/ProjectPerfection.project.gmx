@@ -278,7 +278,6 @@
       <script>scripts\level_stub_find_all.gml</script>
       <script>scripts\level_stub_find_all_ds.gml</script>
       <script>scripts\level_set_fog.gml</script>
-      <script>scripts\level_update_fog.gml</script>
       <script>scripts\level_draw_fog.gml</script>
       <script>scripts\level_get_spawn_point.gml</script>
       <script>scripts\level_generate_environment_sfx.gml</script>
@@ -286,6 +285,8 @@
       <script>scripts\level_stub_y.gml</script>
       <script>scripts\level_stub_w.gml</script>
       <script>scripts\level_stub_h.gml</script>
+      <script>scripts\level_render_fog.gml</script>
+      <script>scripts\level_update_fog.gml</script>
     </scripts>
     <scripts name="Entity">
       <script>scripts\entity_init.gml</script>
@@ -338,6 +339,7 @@
       <script>scripts\minimap_set_level.gml</script>
       <script>scripts\minimap_draw.gml</script>
       <script>scripts\minimap_render_map_texture.gml</script>
+      <script>scripts\minimap_render_fog.gml</script>
     </scripts>
     <scripts name="Overlay">
       <script>scripts\overlay_init.gml</script>
@@ -655,6 +657,7 @@
         <script>scripts\map_set_color.gml</script>
         <script>scripts\map_draw.gml</script>
         <script>scripts\map_calculate_culling.gml</script>
+        <script>scripts\map_render.gml</script>
       </scripts>
       <scripts name="Cast">
         <script>scripts\cast_create.gml</script>
@@ -776,6 +779,7 @@
     </objects>
     <objects name="Interact">
       <object>objects\obj_door</object>
+      <object>objects\obj_teleport</object>
       <object>objects\obj_tutorial_door</object>
       <object>objects\obj_final_door</object>
       <object>objects\obj_cube</object>

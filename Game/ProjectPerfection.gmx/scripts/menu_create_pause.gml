@@ -11,9 +11,16 @@ button_resume.text = "Resume";
 button_resume.center_x = true;
 button_resume.index = 0;
 
+button_hub = instance_create(0, 0, obj_button);
+button_hub.user_event_index = 2;
+button_hub.y =  button_resume.y + button_resume.sprite_height + 10;
+button_hub.text = "Go To Hub";
+button_hub.center_x = true;
+button_hub.index = 1;
+
 button_main = instance_create(0, 0, obj_button);
 button_main.user_event_index = 1;
-button_main.y = button_resume.y + button_resume.sprite_height + 10;
+button_main.y = button_hub.y + button_hub.sprite_height + 10;
 button_main.text = "Main Menu";
 button_main.center_x = true;
-button_main.index = 1;
+button_main.index = 2;
