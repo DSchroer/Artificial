@@ -338,6 +338,7 @@
       <script>scripts\minimap_set_level.gml</script>
       <script>scripts\minimap_draw.gml</script>
       <script>scripts\minimap_render_map_texture.gml</script>
+      <script>scripts\map_should_draw.gml</script>
     </scripts>
     <scripts name="Overlay">
       <script>scripts\overlay_init.gml</script>
@@ -384,13 +385,16 @@
     </scripts>
     <scripts name="Ui">
       <script>scripts\ui_check_weapon_slot_tooltip.gml</script>
+      <script>scripts\ui_clear_textbox_queue.gml</script>
       <script>scripts\ui_draw.gml</script>
       <script>scripts\ui_draw_action_indicators.gml</script>
       <script>scripts\ui_draw_boss_health.gml</script>
+      <script>scripts\ui_draw_death_text.gml</script>
       <script>scripts\ui_draw_health.gml</script>
       <script>scripts\ui_draw_health_tooltip.gml</script>
       <script>scripts\ui_draw_icon.gml</script>
       <script>scripts\ui_draw_inventory.gml</script>
+      <script>scripts\ui_draw_reload_bar.gml</script>
       <script>scripts\ui_draw_ring.gml</script>
       <script>scripts\ui_draw_shield_tooltip.gml</script>
       <script>scripts\ui_draw_textbox.gml</script>
@@ -398,9 +402,13 @@
       <script>scripts\ui_draw_textbox_ext.gml</script>
       <script>scripts\ui_draw_textbox_pos.gml</script>
       <script>scripts\ui_draw_tooltip.gml</script>
+      <script>scripts\ui_draw_tooltips.gml</script>
+      <script>scripts\ui_draw_weapon_comparison.gml</script>
       <script>scripts\ui_draw_weapon_slot.gml</script>
+      <script>scripts\ui_draw_weapon_tooltip_comparison.gml</script>
       <script>scripts\ui_draw_weapon_tooltip1.gml</script>
       <script>scripts\ui_draw_weapon_tooltip2.gml</script>
+      <script>scripts\ui_get_boss_health_percent.gml</script>
       <script>scripts\ui_get_modifier_colour.gml</script>
       <script>scripts\ui_get_quality_colour.gml</script>
       <script>scripts\ui_get_quality_string.gml</script>
@@ -408,12 +416,7 @@
       <script>scripts\ui_set_colour.gml</script>
       <script>scripts\ui_world_to_gui_x.gml</script>
       <script>scripts\ui_world_to_gui_y.gml</script>
-      <script>scripts\ui_get_boss_health_percent.gml</script>
-      <script>scripts\ui_draw_reload_bar.gml</script>
-      <script>scripts\ui_draw_death_text.gml</script>
-      <script>scripts\ui_draw_weapon_tooltip_comparison.gml</script>
-      <script>scripts\ui_draw_weapon_comparison.gml</script>
-      <script>scripts\script263.gml</script>
+      <script>scripts\ui_can_render_tooltips.gml</script>
     </scripts>
     <scripts name="Debug">
       <script>scripts\debug_init.gml</script>

@@ -1,5 +1,10 @@
 ///ui_draw_weapon_tooltip2(x, y, weapon)
 
+if(!ui_can_render_tooltips())
+{
+    exit;
+}
+
 var xpos = argument0;
 var ypos = argument1;
 var weapon = argument2;

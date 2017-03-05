@@ -36,11 +36,11 @@ if(!hide_inventory)
     if(is_array(other_slot))
     {
         ui_draw_weapon_slot(bx + 39 + sprite_get_xoffset(other_slot[weapon_index.sprite_count + 1]) * other_item_scale, by + 202 + sprite_get_yoffset(other_slot[weapon_index.sprite_count + 1]) * other_item_scale, other_item_scale, other_slot, 35, 15);
-        ui_check_weapon_slot_tooltip(bx + 39, by + 202, other_item_scale, other_slot);  
+     //   ui_check_weapon_slot_tooltip(bx + 39, by + 202, other_item_scale, other_slot);  
     }
     if(is_array(selected))
     {
-        ui_check_weapon_slot_tooltip(bx, by + 254, 1, selected);
+    //    ui_check_weapon_slot_tooltip(bx, by + 254, 1, selected);
     }
     
     // Components
