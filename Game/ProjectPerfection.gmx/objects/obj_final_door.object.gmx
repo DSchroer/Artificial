@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(obj_progress.cube_parts != 1)
+            <string>if(obj_progress.cube_parts &lt; 4)
 {
     sprite_index = spr_closed_door;
     var area = instance_create(x + 32, y + 32, obj_interact_area);
@@ -54,7 +54,7 @@
           <argument>
             <kind>1</kind>
             <string>
-if(obj_progress.cube_parts == 1)
+if(obj_progress.cube_parts &gt;= 4)
 {
     obj_player.x = 4.5 * 64;
     obj_player.y = 4.5 * 64;

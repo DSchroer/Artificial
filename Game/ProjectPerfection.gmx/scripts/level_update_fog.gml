@@ -21,3 +21,5 @@ if(ds_list_find_value(fog_list, index - 1) == 0)
     fog_changed = false;
 }
 
+level_render_fog();
+

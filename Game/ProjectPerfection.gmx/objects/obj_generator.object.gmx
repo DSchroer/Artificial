@@ -141,10 +141,6 @@ room_set_background_colour(custom_room, c_black, true);
 generator_spawn_at(0, custom_room, obj_clear_entities);
 generator_spawn_at(0, custom_room, obj_fade_in);
 
-generator_spawn_at(0, custom_room, obj_cast_map);
-generator_spawn_at(0, custom_room, obj_light_map);
-generator_spawn_at(0, custom_room, obj_point_light);
-
 var end_key = generator_spawn_exit(custom_room);
 generator_spawn_at(end_key, custom_room, obj_clear_entities);
 generator_use_room(end_key);

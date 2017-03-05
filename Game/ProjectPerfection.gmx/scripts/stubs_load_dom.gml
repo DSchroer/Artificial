@@ -6,3 +6,12 @@ generator_add_option(rm_stub_d_4, 19, 19);
 generator_add_option_ext(rm_stub_d_5, 23, 23, stub_flags.no_door_left);
 generator_add_option_ext(rm_stub_d_6, 23, 23, stub_flags.no_door_right);
 generator_add_option_ext(rm_stub_d_7, 23, 23, stub_flags.no_door_right | stub_flags.no_door_left);
+
+generator_add_option(rm_stub_d_8, 23, 23);
+generator_add_option(rm_stub_d_9, 15, 15);
+generator_add_option(rm_stub_d_10, 19, 19);
+generator_add_option(rm_stub_d_11, 19, 19);
+generator_add_option(rm_stub_d_12, 19, 13);
+generator_add_option(rm_stub_d_13, 13, 19);
+generator_add_option_ext(rm_stub_d_14, 23, 23, stub_flags.no_door_down | stub_flags.no_door_left);
+

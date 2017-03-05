@@ -29,7 +29,7 @@
 text = -1;
 sprite_index = -1;
 
-if(obj_progress.cube_parts == 1)
+if(obj_progress.cube_parts &gt;= 4)
 {
     instance_destroy();
 }
