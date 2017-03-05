@@ -56,7 +56,7 @@ if(keymap_check(keycode.hide_inventory))
 
 if(keymap_check(keycode.interact))
 {
-    ds_queue_dequeue(textbox_queue);
+    ui_unqueue_textbox();
 }
 
 if(keyboard_check_pressed(vk_f4))

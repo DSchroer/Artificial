@@ -1,5 +1,12 @@
 ///ui_queue_message(text)
 
 var text = argument0;
+with(obj_player)
+{
+    ds_queue_enqueue(textbox_queue, text);
+    if(textbox_cooldown > 0)
+    {
+        textbox_cooldown = 30;
+    }
+}
 
-ds_queue_enqueue(obj_player.textbox_queue, text);

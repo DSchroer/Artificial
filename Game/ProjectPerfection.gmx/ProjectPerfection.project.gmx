@@ -419,6 +419,7 @@
       <script>scripts\ui_world_to_gui_x.gml</script>
       <script>scripts\ui_world_to_gui_y.gml</script>
       <script>scripts\ui_can_render_tooltips.gml</script>
+      <script>scripts\ui_unqueue_textbox.gml</script>
     </scripts>
     <scripts name="Debug">
       <script>scripts\debug_init.gml</script>
