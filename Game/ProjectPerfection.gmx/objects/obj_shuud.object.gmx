@@ -145,6 +145,8 @@ if(player_exists())
 {
     instance_destroy();
 }
+kill_boss(4);
+instance_create(x, y, obj_cube);
 event_inherited();
 </string>
           </argument>

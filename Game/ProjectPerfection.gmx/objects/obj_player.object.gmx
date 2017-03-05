@@ -116,6 +116,10 @@ for(var i = 0; i &lt; 2; i++)
           <argument>
             <kind>1</kind>
             <string>current_health = max_health;
+with(obj_progress)
+{
+    progress = 0;
+}
 x = 1600;
 y = 320;
 
@@ -346,6 +350,16 @@ if(instance_number(obj_spawn_player) &gt; 0)
     x = obj_spawn_player.x;
     y = obj_spawn_player.y;
 }
+
+with(obj_camera)
+{
+    x_target = other.x;
+    y_target = other.y;
+    x = other.x;
+    y = other.y
+    zoom = 0.7;
+    current_zoom = 0.7;
+}
 </string>
           </argument>
         </arguments>
@@ -402,29 +416,6 @@ draw_outline_update(surface);
 
 draw_surface(surface, x - base_x, y - base_y);
 draw_outline_end();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="10" enumb="117">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>room_goto(rm_boss_3);
 </string>
           </argument>
         </arguments>

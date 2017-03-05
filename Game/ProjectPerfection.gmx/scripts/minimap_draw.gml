@@ -4,21 +4,13 @@ if(is_paused())
     exit;
 }
 
-if(!surface_exists(main_surface))
-{
-    main_surface = surface_create(map_diameter, map_diameter);
-}
-
-surface_set_target(main_surface);
-draw_clear(c_black);
 if(level != -1 && instance_exists(level))
 {
-    if(map_texture == -1 || level.fog_changed)
+    if(map_texture == -1)
     {
         minimap_render_map_texture();
     }
     
-
     with(level)
     {
         if(player_exists())
@@ -27,16 +19,42 @@ if(level != -1 && instance_exists(level))
             other.center_y = level_position_y(obj_player.y);
         }
     }
-
-    draw_sprite(map_texture, 0, (map_diameter / 2) - (center_x * map_size), (map_diameter / 2) - (center_y * map_size));
+}else{
+    exit;
 }
-//draw_circle_colour((map_diameter / 2), (map_diameter / 2), 3, c_red, c_red, false);
-surface_reset_target();
 
-//shader_set(sdr_circle);
-draw_sprite(spr_map_border, -1, display_get_gui_width() - 30 - map_diameter, 10);
-draw_surface(main_surface, display_get_gui_width() - 22 - map_diameter, 18);
-shader_reset();
+var xp = display_get_gui_width() - 30 - map_diameter;
+var yp = 10;
+
+draw_rectangle_color(xp, yp, xp + sprite_get_width(spr_map_border), yp + sprite_get_height(spr_map_border), c_black, c_black, c_black, c_black, false);
+
+var play_x = (map_diameter / 2) - (center_x * map_size);
+var play_y = (map_diameter / 2) - (center_y * map_size);
+if(map_texture != -1)
+{
+    draw_sprite_part(map_texture, 0, -play_x, -play_y, sprite_get_width(spr_map_border) - 10, sprite_get_height(spr_map_border) - 10, xp + 5, yp + 5);
+}
+
+var fog = -1;
+if(level != -1 && instance_exists(level))
+{
+    with(level)
+    {
+        fog = fog_surface;
+    }
+}
+
+if(fog != -1 && surface_exists(fog))
+{
+    draw_surface_part_ext(fog, -play_x / map_size, -play_y / map_size, (sprite_get_width(spr_map_border) - 10) / map_size, (sprite_get_height(spr_map_border) - 10) / map_size, xp + 5, yp + 5, map_size, map_size, c_white, 1);
+}
+
+if(player_exists())
+{
+    draw_rectangle_color(xp + (map_diameter / 2) + 4, yp + (map_diameter / 2) + 4, xp + (map_diameter / 2) + 6, yp + (map_diameter / 2) + 6, c_red, c_red, c_red, c_red, false)
+}
+
+draw_sprite(spr_map_border, -1, xp, yp);
 
 
 

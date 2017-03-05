@@ -44,7 +44,7 @@ for(i = 0; i < ds_list_size(l); i++)
             self.lastCol = self.collision;
             if(!self.castsShadows)
             {
-               // self.collision = false;
+                self.collision = false;
             }
             
             if(self.in_view && self.castsShadows)

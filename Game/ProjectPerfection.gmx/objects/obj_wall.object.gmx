@@ -60,6 +60,15 @@
             instance_create(x, y, obj_gate);
             instance_destroy();
         }
+    }else
+    {
+        with(other)
+        {
+            if(wall_casts_shadow())
+            {
+                instance_create(x, y, obj_caster);
+            }
+        }
     }
 }
 </string>

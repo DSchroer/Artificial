@@ -129,6 +129,8 @@
     <instance objName="obj_wall" x="128" y="64" name="inst_293E5EEC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="64" y="0" name="inst_293090A3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="64" y="64" name="inst_BCC129B3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_spawn_player" x="448" y="384" name="inst_80784765" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_cast_wall" x="704" y="448" name="inst_9357A41D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bkg_desert" x="256" y="0" w="128" h="128" xo="32" yo="32" id="10001892" name="inst_36EDB9CE" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

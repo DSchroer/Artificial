@@ -25,12 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-if(instance_exists(obj_light_map))
-{
-    cast_create(0);
-    cast_set_dynamic(false);
-}
+            <string>cast_create(0);
+cast_set_dynamic(false);
 </string>
           </argument>
         </arguments>

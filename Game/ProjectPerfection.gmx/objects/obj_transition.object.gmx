@@ -77,9 +77,6 @@ draw_rectangle(0, 0, display_get_gui_width(), display_get_gui_height(), false);
 draw_set_color(c_white);
 draw_set_halign(fa_center);
 
-
-draw_text_transformed(display_get_gui_width() / 2, display_get_gui_height() / 2,"Depth " + string(obj_progress.progress + 1) + " of 3.", 3, 3, 0);
-
 draw_text(display_get_gui_width() / 2, display_get_gui_height() - 50, "Generating Level!");
 
 draw_set_halign(fa_left);

@@ -1,18 +1,9 @@
 ///level_draw_fog
-var col = draw_get_color();
-draw_set_color(c_black);
-for(var i = 0; i < ds_list_size(room_list); i++)
+
+if(surface_exists(fog_surface))
 {
-    var fog = ds_list_find_value(fog_list, i);
-    if(fog == 1)
-    {
-        continue;
-    }
-    var rx = ds_list_find_value(room_x_list, i) * 64;
-    var ry = ds_list_find_value(room_y_list, i) * 64;
-    var rw = ds_list_find_value(room_w_list, i) * 64;
-    var rh = ds_list_find_value(room_h_list, i) * 64;
-    
-    draw_rectangle(rx, ry, rx + rw, ry + rh, false);
+    texture_set_interpolation(false);
+    draw_surface_ext(fog_surface, 0, 0, 64, 64, 0, c_white, 1);
 }
-draw_set_color(col);
+
+
