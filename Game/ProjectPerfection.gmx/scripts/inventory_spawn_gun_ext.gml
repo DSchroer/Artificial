@@ -49,19 +49,26 @@ speeds[weapon_modifier.scatter] = 20;
 
 gun[weapon_index.bullet_speed] = speeds[gun[weapon_index.modifier]];
 
+// Loot ranges:
+// Common 15 - 70
+// Uncommon 50 - 80
+// Rare 70 - 90
+// Epic 80 - 98
+// Legendary 98 - 100
+
 var bases;
-bases[item_quality.common] = 20;
-bases[item_quality.uncommon] = 61;
-bases[item_quality.rare] = 76;
-bases[item_quality.epic] = 86;
-bases[item_quality.legendary] = 96;
+bases[item_quality.common] = 15;
+bases[item_quality.uncommon] = 50;
+bases[item_quality.rare] = 70;
+bases[item_quality.epic] = 80;
+bases[item_quality.legendary] = 98;
 
 var ranges;
-ranges[item_quality.common] = 40;
-ranges[item_quality.uncommon] = 14;
-ranges[item_quality.rare] = 9;
-ranges[item_quality.epic] = 9;
-ranges[item_quality.legendary] = 4;
+ranges[item_quality.common] = 55;
+ranges[item_quality.uncommon] = 30;
+ranges[item_quality.rare] = 20;
+ranges[item_quality.epic] = 18;
+ranges[item_quality.legendary] = 2;
 
 //Damage Per Shot
 var damages = 8 * (1 + (pow / 20));

@@ -776,6 +776,7 @@
     <objects name="Environment">
       <object>objects\obj_bush</object>
       <object>objects\obj_rock</object>
+      <object>objects\obj_story</object>
     </objects>
     <objects name="Interact">
       <object>objects\obj_door</object>
