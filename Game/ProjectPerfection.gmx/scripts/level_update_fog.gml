@@ -8,7 +8,7 @@ var px = obj_player.x / 64;
 var py = obj_player.y / 64;
 
 var index = ds_grid_get(room_grid, px, py);
-if(index == 0)
+if(index == 0 || is_undefined(index))
 {
     exit;
 }
@@ -20,4 +20,6 @@ if(ds_list_find_value(fog_list, index - 1) == 0)
 }else{
     fog_changed = false;
 }
+
+level_render_fog();
 

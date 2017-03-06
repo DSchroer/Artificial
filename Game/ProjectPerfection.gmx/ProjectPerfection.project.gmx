@@ -22,7 +22,9 @@
       <filename>Credits.txt</filename>
     </datafile>
   </datafiles>
-  <NewExtensions/>
+  <NewExtensions>
+    <extension index="0">extensions\Shadows</extension>
+  </NewExtensions>
   <sounds name="sound">
     <sound>sound\snd_attack</sound>
     <sound>sound\snd_not_attack</sound>
@@ -61,6 +63,38 @@
     <sound>sound\bkg_desert2</sound>
     <sound>sound\bkg_boss1</sound>
     <sound>sound\bkg_menu</sound>
+    <sounds name="guns">
+      <sound>sound\snd_heavy_scatter</sound>
+      <sound>sound\snd_assault_explosive</sound>
+      <sound>sound\snd_assault_laser</sound>
+      <sound>sound\snd_assault_plasma</sound>
+      <sound>sound\snd_assault_regular</sound>
+      <sound>sound\snd_assault_scatter</sound>
+      <sound>sound\snd_heavy_explosive</sound>
+      <sound>sound\snd_heavy_laser</sound>
+      <sound>sound\snd_heavy_plasma</sound>
+      <sound>sound\snd_heavy_regular</sound>
+      <sound>sound\snd_mg_explosive</sound>
+      <sound>sound\snd_mg_laser</sound>
+      <sound>sound\snd_mg_plasma</sound>
+      <sound>sound\snd_mg_regular</sound>
+      <sound>sound\snd_mg_scatter</sound>
+      <sound>sound\snd_pistol_explosive</sound>
+      <sound>sound\snd_pistol_laser</sound>
+      <sound>sound\snd_pistol_plasma</sound>
+      <sound>sound\snd_pistol_regular</sound>
+      <sound>sound\snd_pistol_scatter</sound>
+      <sound>sound\snd_smg_explosive</sound>
+      <sound>sound\snd_smg_laser</sound>
+      <sound>sound\snd_smg_plasma</sound>
+      <sound>sound\snd_smg_regular</sound>
+      <sound>sound\snd_smg_scatter</sound>
+      <sound>sound\snd_sniper_explosive</sound>
+      <sound>sound\snd_sniper_plasma</sound>
+      <sound>sound\snd_sniper_laser</sound>
+      <sound>sound\snd_sniper_regular</sound>
+      <sound>sound\snd_sniper_scatter</sound>
+    </sounds>
   </sounds>
   <sprites name="sprites">
     <sprites name="Player">
@@ -70,40 +104,74 @@
       <sprite>sprites\spr_player_arm_r</sprite>
       <sprite>sprites\spr_player_arm_r_bottom</sprite>
       <sprite>sprites\spr_player_back</sprite>
+      <sprite>sprites\spr_player_walk</sprite>
     </sprites>
     <sprite>sprites\spr_bush</sprite>
     <sprite>sprites\spr_shield</sprite>
     <sprite>sprites\spr_item</sprite>
     <sprite>sprites\spr_inv_shield1</sprite>
     <sprites name="Weapons">
-      <sprite>sprites\spr_inv_rifle1</sprite>
-      <sprite>sprites\spr_world_rifle1</sprite>
       <sprite>sprites\spr_pistol_base</sprite>
       <sprite>sprites\spr_pistol_assault</sprite>
+      <sprite>sprites\spr_rifle_base</sprite>
+      <sprite>sprites\spr_rifle_assault</sprite>
+      <sprite>sprites\spr_rifle_doku</sprite>
+      <sprite>sprites\spr_rifle_reflex</sprite>
     </sprites>
     <sprite>sprites\spr_target</sprite>
-    <sprite>sprites\spr_sword</sprite>
     <sprite>sprites\spr_dishonDuck</sprite>
     <sprite>sprites\spr_grunt</sprite>
     <sprites name="Ui">
-      <sprite>sprites\spr_inventory_background_hide</sprite>
       <sprite>sprites\spr_textback</sprite>
-      <sprite>sprites\spr_tooltip</sprite>
       <sprite>sprites\spr_inventory_background</sprite>
-      <sprite>sprites\spr_controller_a</sprite>
-      <sprite>sprites\spr_controller_b</sprite>
-      <sprite>sprites\spr_controller_y</sprite>
-      <sprite>sprites\spr_controller_x</sprite>
-      <sprite>sprites\spr_controller_ddown</sprite>
-      <sprite>sprites\spr_controller_dup</sprite>
-      <sprite>sprites\spr_controller_dright</sprite>
-      <sprite>sprites\spr_controller_dleft</sprite>
-      <sprite>sprites\sprite27</sprite>
       <sprite>sprites\spr_logo</sprite>
       <sprite>sprites\spr_button</sprite>
       <sprite>sprites\spr_slider</sprite>
       <sprite>sprites\spr_button_active</sprite>
-      <sprite>sprites\spr_inventory_healthpack</sprite>
+      <sprites name="HUD">
+        <sprite>sprites\spr_laser_full</sprite>
+        <sprite>sprites\spr_laser_empty</sprite>
+        <sprite>sprites\spr_plasma_full</sprite>
+        <sprite>sprites\spr_plasma_empty</sprite>
+        <sprite>sprites\spr_ammo_empty</sprite>
+        <sprite>sprites\spr_ammo_full</sprite>
+        <sprite>sprites\spr_shieldbar</sprite>
+        <sprite>sprites\spr_healthbar</sprite>
+        <sprite>sprites\spr_statusback</sprite>
+        <sprite>sprites\spr_statusfront</sprite>
+        <sprite>sprites\spr_bossback</sprite>
+        <sprite>sprites\spr_bossfront</sprite>
+        <sprite>sprites\spr_bosshealth</sprite>
+        <sprite>sprites\spr_reload_middle</sprite>
+      </sprites>
+      <sprites name="tooltip">
+        <sprite>sprites\spr_tooltip_top_unique</sprite>
+        <sprite>sprites\spr_tooltip_body</sprite>
+        <sprite>sprites\spr_health_tooltip_back</sprite>
+        <sprite>sprites\spr_tooltip_top_legendary</sprite>
+        <sprite>sprites\spr_tooltip_top_epic</sprite>
+        <sprite>sprites\spr_tooltip_top_rare</sprite>
+        <sprite>sprites\spr_tooltip_top_uncommon</sprite>
+        <sprite>sprites\spr_tooltip_top_common</sprite>
+        <sprite>sprites\spr_arrow_up</sprite>
+        <sprite>sprites\spr_arrow_down</sprite>
+        <sprite>sprites\spr_arrow_equal</sprite>
+      </sprites>
+      <sprites name="textbox_img">
+        <sprite>sprites\spr_controller_a</sprite>
+        <sprite>sprites\spr_controller_x</sprite>
+        <sprite>sprites\spr_controller_b</sprite>
+        <sprite>sprites\spr_controller_y</sprite>
+        <sprite>sprites\spr_controller_ddown</sprite>
+        <sprite>sprites\spr_controller_dright</sprite>
+        <sprite>sprites\spr_controller_dleft</sprite>
+        <sprite>sprites\spr_controller_dup</sprite>
+      </sprites>
+      <sprite>sprites\spr_textback_flash</sprite>
+      <sprite>sprites\spr_button_gray</sprite>
+      <sprite>sprites\spr_workbench_ui</sprite>
+      <sprite>sprites\spr_progress</sprite>
+      <sprite>sprites\spr_prog_pos</sprite>
     </sprites>
     <sprites name="Fonts">
       <sprite>sprites\spr_base_font</sprite>
@@ -121,7 +189,9 @@
       <sprite>sprites\spr_cube</sprite>
       <sprite>sprites\spr_gate</sprite>
       <sprite>sprites\spr_gate_open</sprite>
+      <sprite>sprites\spr_area</sprite>
       <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_cast_wall</sprite>
       <sprite>sprites\spr_invisible_wall</sprite>
       <sprite>sprites\spr_interact</sprite>
     </sprites>
@@ -143,11 +213,26 @@
       <sprite>sprites\spr_bullet</sprite>
       <sprite>sprites\spr_plasma</sprite>
       <sprite>sprites\spr_rail</sprite>
+      <sprite>sprites\spr_azar_rock</sprite>
+      <sprite>sprites\spr_sword</sprite>
+      <sprite>sprites\spr_wave</sprite>
     </sprites>
     <sprite>sprites\spr_book</sprite>
-    <sprite>sprites\spr_boss</sprite>
     <sprite>sprites\sprite59</sprite>
     <sprite>sprites\spr_dog</sprite>
+    <sprite>sprites\spr_map_border</sprite>
+    <sprite>sprites\spr_chest_closed</sprite>
+    <sprite>sprites\spr_chest_open</sprite>
+    <sprite>sprites\spr_component</sprite>
+    <sprite>sprites\sprite101</sprite>
+    <sprite>sprites\spr_workbench</sprite>
+    <sprites name="Boss">
+      <sprite>sprites\spr_boss</sprite>
+      <sprite>sprites\spr_final_boss</sprite>
+      <sprite>sprites\spr_final_boss_hit</sprite>
+    </sprites>
+    <sprite>sprites\spr_env_rock</sprite>
+    <sprite>sprites\spr_light</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -155,45 +240,165 @@
     <background>background\bkg_hub</background>
     <background>background\bkg_desert</background>
     <background>background\bkg_test</background>
+    <background>background\bkg_desert_new</background>
+    <background>background\bkg_hub_new</background>
   </backgrounds>
-  <paths name="paths"/>
+  <paths name="paths">
+    <path>paths\pth_final</path>
+  </paths>
   <scripts name="scripts">
-    <scripts name="Inventory">
-      <script>scripts\inventory_create_shield.gml</script>
-      <script>scripts\inventory_swap.gml</script>
-      <script>scripts\inventory_create_weapon.gml</script>
-      <script>scripts\inventory_init.gml</script>
-      <script>scripts\inventory_get_modifier_name.gml</script>
-      <script>scripts\inventory_pickup_healthpacks.gml</script>
-      <script>scripts\inventory_remove_healthpacks.gml</script>
-      <script>scripts\inventory_get_healthpack_count.gml</script>
-      <script>scripts\inventory_pickup_weapon.gml</script>
-      <script>scripts\inventory_get_subtype_name.gml</script>
-      <script>scripts\inventory_spawn_gun.gml</script>
-      <script>scripts\inventory_scale_stat.gml</script>
-      <script>scripts\inventory_core_table.gml</script>
-      <script>scripts\inventory_skin_gun.gml</script>
+    <script>scripts\area_contains.gml</script>
+    <script>scripts\area_contains_point.gml</script>
+    <script>scripts\array.gml</script>
+    <scripts name="Attack">
+      <script>scripts\attack_plasma.gml</script>
+      <script>scripts\attack_normal.gml</script>
+      <script>scripts\attack_scatter.gml</script>
+      <script>scripts\attack_rail.gml</script>
+      <script>scripts\attack_explosive.gml</script>
+      <script>scripts\attack_physical.gml</script>
+      <script>scripts\attack_sword.gml</script>
+      <script>scripts\attack_gun.gml</script>
+      <script>scripts\attack_accuracy.gml</script>
     </scripts>
-    <scripts name="Level">
-      <script>scripts\level_create.gml</script>
-      <script>scripts\level_destroy.gml</script>
-      <script>scripts\level_init.gml</script>
-      <script>scripts\level_position_x.gml</script>
-      <script>scripts\level_position_y.gml</script>
-      <script>scripts\level_set_room.gml</script>
-      <script>scripts\level_grid_value.gml</script>
-      <script>scripts\level_stub_find.gml</script>
-      <script>scripts\level_stub_find_all.gml</script>
-      <script>scripts\level_stub_find_all_ds.gml</script>
-      <script>scripts\level_set_fog.gml</script>
-      <script>scripts\level_update_fog.gml</script>
-      <script>scripts\level_draw_fog.gml</script>
-      <script>scripts\level_get_spawn_point.gml</script>
-      <script>scripts\level_generate_environment_sfx.gml</script>
-      <script>scripts\level_stub_x.gml</script>
-      <script>scripts\level_stub_y.gml</script>
-      <script>scripts\level_stub_w.gml</script>
-      <script>scripts\level_stub_h.gml</script>
+    <scripts name="Book">
+      <script>scripts\book_get_next.gml</script>
+      <script>scripts\book_text.gml</script>
+      <script>scripts\book_any.gml</script>
+    </scripts>
+    <scripts name="Camera">
+      <script>scripts\camera_init.gml</script>
+      <script>scripts\camera_update.gml</script>
+      <script>scripts\camera_resize.gml</script>
+      <script>scripts\camera_shake.gml</script>
+    </scripts>
+    <scripts name="CGrid">
+      <script>scripts\cgrid_init.gml</script>
+      <script>scripts\cgrid_load_collisions.gml</script>
+      <script>scripts\cgrid_set_collision.gml</script>
+      <script>scripts\cgrid_draw.gml</script>
+      <script>scripts\cgrid_collision_point.gml</script>
+      <script>scripts\cgrid_place_meeting.gml</script>
+      <script>scripts\cgrid_force.gml</script>
+      <script>scripts\cgrid_collision_line.gml</script>
+    </scripts>
+    <script>scripts\choose_weighted.gml</script>
+    <scripts name="Clone">
+      <script>scripts\clone_init.gml</script>
+      <script>scripts\clone_register.gml</script>
+      <script>scripts\clone_apply.gml</script>
+      <script>scripts\clone_set_inst.gml</script>
+      <script>scripts\clone_is_type.gml</script>
+    </scripts>
+    <scripts name="Collision">
+      <script>scripts\range_finder.gml</script>
+      <script>scripts\range_finder_ellipse.gml</script>
+      <script>scripts\point_in_ellipse.gml</script>
+      <script>scripts\line_in_ellipse.gml</script>
+      <script>scripts\collision_line_entity_ellipse.gml</script>
+    </scripts>
+    <script>scripts\color_random.gml</script>
+    <scripts name="Credits">
+      <script>scripts\credits_init.gml</script>
+      <script>scripts\credits_draw.gml</script>
+      <script>scripts\credits_is_complete.gml</script>
+    </scripts>
+    <script>scripts\damager.gml</script>
+    <scripts name="Debug">
+      <script>scripts\debug_init.gml</script>
+      <script>scripts\debug_show_string.gml</script>
+      <script>scripts\debug_draw.gml</script>
+    </scripts>
+    <scripts name="Draw">
+      <script>scripts\draw_weapon.gml</script>
+      <script>scripts\draw_shield.gml</script>
+      <script>scripts\draw_outline_begin.gml</script>
+      <script>scripts\draw_outline_update.gml</script>
+      <script>scripts\draw_outline_end.gml</script>
+      <script>scripts\draw_ik.gml</script>
+      <script>scripts\draw_held_gun.gml</script>
+    </scripts>
+    <scripts name="Enemy">
+      <scripts name="Grunt">
+        <script>scripts\eg_idle.gml</script>
+        <script>scripts\eg_approach.gml</script>
+        <script>scripts\eg_retreat.gml</script>
+        <script>scripts\eg_attack.gml</script>
+      </scripts>
+      <script>scripts\enemy_target.gml</script>
+      <script>scripts\enemy_dumb.gml</script>
+      <script>scripts\enemy_line_of_sight.gml</script>
+      <script>scripts\enemy_line_of_sight_ext.gml</script>
+      <scripts name="Navigation">
+        <script>scripts\enemy_navmesh_closest.gml</script>
+        <script>scripts\enemy_navmesh_path.gml</script>
+        <script>scripts\enemy_navmesh_get.gml</script>
+        <script>scripts\enemy_navmesh_move.gml</script>
+        <script>scripts\enemy_navmesh_move_nowall.gml</script>
+        <script>scripts\enemy_path_move.gml</script>
+        <script>scripts\enemy_path_closest_index.gml</script>
+        <script>scripts\enemy_navmesh_clear.gml</script>
+      </scripts>
+      <scripts name="Dog">
+        <script>scripts\ed_approach.gml</script>
+        <script>scripts\ed_attack.gml</script>
+      </scripts>
+      <script>scripts\enemy_scale_gun.gml</script>
+      <scripts name="Azar">
+        <script>scripts\azar_idle.gml</script>
+        <script>scripts\azar_move.gml</script>
+        <script>scripts\azar_attack.gml</script>
+      </scripts>
+      <scripts name="Captain">
+        <script>scripts\cap_shoot.gml</script>
+        <script>scripts\cap_approach.gml</script>
+        <script>scripts\cap_mele.gml</script>
+      </scripts>
+      <scripts name="Turret">
+        <script>scripts\turret_attack.gml</script>
+      </scripts>
+      <scripts name="Brute">
+        <script>scripts\brute_attack.gml</script>
+        <script>scripts\brute_mele.gml</script>
+        <script>scripts\brute_approach.gml</script>
+      </scripts>
+      <script>scripts\enemy_attack.gml</script>
+      <scripts name="Clone">
+        <script>scripts\clone_shoot.gml</script>
+      </scripts>
+      <scripts name="Final">
+        <script>scripts\final_idle.gml</script>
+        <script>scripts\final_spawn.gml</script>
+        <script>scripts\final_lazer.gml</script>
+        <script>scripts\final_bolt.gml</script>
+        <script>scripts\final_kill.gml</script>
+        <script>scripts\final_move.gml</script>
+        <script>scripts\final_mele.gml</script>
+        <script>scripts\final_jump.gml</script>
+      </scripts>
+      <scripts name="Shud">
+        <script>scripts\shud_approach.gml</script>
+        <script>scripts\shud_retreat.gml</script>
+        <script>scripts\shud_turn.gml</script>
+        <script>scripts\shud_scream.gml</script>
+        <script>scripts\shud_beam.gml</script>
+        <script>scripts\shud_turn_dir.gml</script>
+      </scripts>
+      <scripts name="Dym">
+        <script>scripts\dym_idle.gml</script>
+        <script>scripts\dym_regen.gml</script>
+        <script>scripts\dym_shoot.gml</script>
+        <script>scripts\dym_explode.gml</script>
+        <script>scripts\dym_grab.gml</script>
+        <script>scripts\dym_expand.gml</script>
+        <script>scripts\dym_port.gml</script>
+      </scripts>
+      <scripts name="Twan">
+        <script>scripts\twan_idle.gml</script>
+        <script>scripts\twan_find_point.gml</script>
+        <script>scripts\twan_fire_shot.gml</script>
+        <script>scripts\twan_mine.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Entity">
       <script>scripts\entity_init.gml</script>
@@ -203,14 +408,9 @@
       <script>scripts\entity_apply_damage.gml</script>
       <script>scripts\entity_take_damage.gml</script>
     </scripts>
-    <scripts name="Camera">
-      <script>scripts\camera_init.gml</script>
-      <script>scripts\camera_update.gml</script>
-      <script>scripts\camera_resize.gml</script>
-      <script>scripts\camera_shake.gml</script>
-    </scripts>
-    <scripts name="Keymap">
-      <script>scripts\keymap_check.gml</script>
+    <scripts name="Fonts">
+      <script>scripts\fonts_init.gml</script>
+      <script>scripts\fonts_get.gml</script>
     </scripts>
     <scripts name="Generator">
       <script>scripts\generator_init.gml</script>
@@ -236,12 +436,89 @@
         <script>scripts\generator_populate.gml</script>
         <script>scripts\generator_set_room.gml</script>
       </scripts>
+      <script>scripts\generator_register_items.gml</script>
+      <script>scripts\generator_spawn_item.gml</script>
+    </scripts>
+    <scripts name="Gun">
+      <script>scripts\gun_hand_distance.gml</script>
+      <script>scripts\gun_hand_angle.gml</script>
+      <script>scripts\gun_hand_lookup.gml</script>
+    </scripts>
+    <scripts name="Helper">
+      <script>scripts\string_array.gml</script>
+    </scripts>
+    <scripts name="Interact">
+      <script>scripts\interact_any.gml</script>
+      <script>scripts\interact_trigger.gml</script>
+    </scripts>
+    <scripts name="Inventory">
+      <script>scripts\inventory_swap.gml</script>
+      <script>scripts\inventory_create_weapon.gml</script>
+      <script>scripts\inventory_init.gml</script>
+      <script>scripts\inventory_get_modifier_name.gml</script>
+      <script>scripts\inventory_pickup_weapon.gml</script>
+      <script>scripts\inventory_get_subtype_name.gml</script>
+      <script>scripts\inventory_spawn_gun.gml</script>
+      <script>scripts\inventory_scale_stat.gml</script>
+      <script>scripts\inventory_core_table.gml</script>
+      <script>scripts\inventory_skin_gun.gml</script>
+      <script>scripts\inventory_create_shield.gml</script>
+      <script>scripts\inventory_get_modifier_weights.gml</script>
+      <script>scripts\inventory_spawn_gun_ext.gml</script>
+      <script>scripts\inventory_generate_quality_weights.gml</script>
+      <script>scripts\inventory_get_qualities.gml</script>
+      <script>scripts\inventory_get_subtype_weights.gml</script>
+    </scripts>
+    <scripts name="Is">
+      <script>scripts\is_shield.gml</script>
+      <script>scripts\is_gun.gml</script>
+    </scripts>
+    <script>scripts\is_paused.gml</script>
+    <script>scripts\isomorphic_set_depth.gml</script>
+    <script>scripts\isomorphic_set_depth_ext.gml</script>
+    <scripts name="Keymap">
+      <script>scripts\keymap_check.gml</script>
+      <script>scripts\keymap_gamepad_check.gml</script>
+      <script>scripts\keymap_gamepad_check_pressed.gml</script>
+    </scripts>
+    <script>scripts\kill_boss.gml</script>
+    <scripts name="Level">
+      <script>scripts\level_create.gml</script>
+      <script>scripts\level_destroy.gml</script>
+      <script>scripts\level_init.gml</script>
+      <script>scripts\level_position_x.gml</script>
+      <script>scripts\level_position_y.gml</script>
+      <script>scripts\level_set_room.gml</script>
+      <script>scripts\level_grid_value.gml</script>
+      <script>scripts\level_stub_find.gml</script>
+      <script>scripts\level_stub_find_all.gml</script>
+      <script>scripts\level_stub_find_all_ds.gml</script>
+      <script>scripts\level_set_fog.gml</script>
+      <script>scripts\level_draw_fog.gml</script>
+      <script>scripts\level_get_spawn_point.gml</script>
+      <script>scripts\level_generate_environment_sfx.gml</script>
+      <script>scripts\level_stub_x.gml</script>
+      <script>scripts\level_stub_y.gml</script>
+      <script>scripts\level_stub_w.gml</script>
+      <script>scripts\level_stub_h.gml</script>
+      <script>scripts\level_render_fog.gml</script>
+      <script>scripts\level_update_fog.gml</script>
+    </scripts>
+    <scripts name="MainMenu">
+      <script>scripts\menu_destroy_main_menu.gml</script>
+      <script>scripts\menu_destroy_options_menu.gml</script>
+      <script>scripts\menu_create_main_menu.gml</script>
+      <script>scripts\menu_create_options_menu.gml</script>
+      <script>scripts\menu_destroy_menu.gml</script>
+      <script>scripts\menu_create_menu.gml</script>
     </scripts>
     <scripts name="Map">
-      <script>scripts\map_init.gml</script>
-      <script>scripts\map_set_level.gml</script>
-      <script>scripts\map_draw.gml</script>
-      <script>scripts\map_render_map_texture.gml</script>
+      <script>scripts\minimap_init.gml</script>
+      <script>scripts\minimap_set_level.gml</script>
+      <script>scripts\minimap_draw.gml</script>
+      <script>scripts\minimap_render_map_texture.gml</script>
+      <script>scripts\map_should_draw.gml</script>
+      <script>scripts\minimap_render_fog.gml</script>
     </scripts>
     <scripts name="Overlay">
       <script>scripts\overlay_init.gml</script>
@@ -251,10 +528,26 @@
       <script>scripts\overlay_save.gml</script>
       <script>scripts\overlay_set_draw.gml</script>
     </scripts>
-    <scripts name="Credits">
-      <script>scripts\credits_init.gml</script>
-      <script>scripts\credits_draw.gml</script>
-      <script>scripts\credits_is_complete.gml</script>
+    <scripts name="PauseMenu">
+      <script>scripts\menu_create_pause.gml</script>
+      <script>scripts\menu_destroy_pause.gml</script>
+    </scripts>
+    <scripts name="Player">
+      <script>scripts\player_init.gml</script>
+      <script>scripts\player_update_shield.gml</script>
+      <script>scripts\player_take_damage.gml</script>
+      <script>scripts\player_fire.gml</script>
+      <script>scripts\player_exists.gml</script>
+      <script>scripts\player_heal_percent.gml</script>
+      <script>scripts\player_update_gun.gml</script>
+      <script>scripts\player_reload.gml</script>
+      <script>scripts\player_render_self.gml</script>
+      <script>scripts\player_activate_shield.gml</script>
+      <script>scripts\player_shield_percent.gml</script>
+      <script>scripts\player_set_sprite.gml</script>
+      <script>scripts\player_level_up.gml</script>
+      <script>scripts\player_compute_stats.gml</script>
+      <script>scripts\player_levelup_shield.gml</script>
     </scripts>
     <scripts name="Save">
       <script>scripts\save_open.gml</script>
@@ -267,89 +560,60 @@
       <script>scripts\__jso_gmt_tuple.gml</script>
       <script>scripts\save_list_from_array.gml</script>
     </scripts>
-    <script>scripts\isomorphic_set_depth.gml</script>
-    <script>scripts\isomorphic_set_depth_ext.gml</script>
-    <scripts name="Player">
-      <script>scripts\player_get_shield.gml</script>
-      <script>scripts\player_init.gml</script>
-      <script>scripts\player_levelup.gml</script>
-      <script>scripts\player_update_shield.gml</script>
-      <script>scripts\player_take_damage.gml</script>
-      <script>scripts\player_fire.gml</script>
-      <script>scripts\player_exists.gml</script>
-      <script>scripts\player_heal_percent.gml</script>
-      <script>scripts\player_update_gun.gml</script>
-      <script>scripts\player_reload.gml</script>
-      <script>scripts\player_render_self.gml</script>
+    <scripts name="Shadows">
+      <scripts name="Light">
+        <script>scripts\light_set_intensity_power.gml</script>
+        <script>scripts\light_create.gml</script>
+        <script>scripts\light_set_dynamic.gml</script>
+        <script>scripts\light_draw_debug.gml</script>
+        <script>scripts\light_set_color.gml</script>
+        <script>scripts\light_set_intensity.gml</script>
+        <script>scripts\light_get_color.gml</script>
+        <script>scripts\light_get_intensity.gml</script>
+        <script>scripts\light_set_cast_shadows.gml</script>
+        <script>scripts\light_get_cast_shadows.gml</script>
+        <script>scripts\light_set_size.gml</script>
+        <script>scripts\light_get_size.gml</script>
+        <script>scripts\light_destroy.gml</script>
+      </scripts>
+      <scripts name="Map">
+        <script>scripts\map_create.gml</script>
+        <script>scripts\map_set_color.gml</script>
+        <script>scripts\map_draw.gml</script>
+        <script>scripts\map_calculate_culling.gml</script>
+        <script>scripts\map_render.gml</script>
+      </scripts>
+      <scripts name="Cast">
+        <script>scripts\cast_create.gml</script>
+        <script>scripts\cast_set_dynamic.gml</script>
+        <script>scripts\cast_set_image.gml</script>
+        <script>scripts\cast_destroy.gml</script>
+      </scripts>
+      <scripts name="Core">
+        <script>scripts\core_shadow.gml</script>
+        <script>scripts\core_distance.gml</script>
+        <script>scripts\core_caster.gml</script>
+        <script>scripts\core_postprocess.gml</script>
+        <script>scripts\core_reductions.gml</script>
+      </scripts>
     </scripts>
-    <scripts name="Ui">
-      <script>scripts\ui_draw_inventory.gml</script>
-      <script>scripts\ui_draw_health.gml</script>
-      <script>scripts\ui_draw_ring.gml</script>
-      <script>scripts\ui_draw_textbox_ext.gml</script>
-      <script>scripts\ui_draw_weapon_tooltip.gml</script>
-      <script>scripts\ui_draw_shield_tooltip.gml</script>
-      <script>scripts\ui_draw_health_tooltip.gml</script>
-      <script>scripts\ui_draw_weapon_slot.gml</script>
-      <script>scripts\ui_adjust_slot.gml</script>
-      <script>scripts\ui_draw_tooltip.gml</script>
-      <script>scripts\ui_set_colour.gml</script>
-      <script>scripts\ui_check_weapon_slot_tooltip.gml</script>
-      <script>scripts\ui_draw_icon.gml</script>
-      <script>scripts\ui_get_quality_colour.gml</script>
-      <script>scripts\ui_get_modifier_colour.gml</script>
-      <script>scripts\ui_get_quality_string.gml</script>
-      <script>scripts\ui_draw_textbox.gml</script>
-      <script>scripts\ui_queue_message.gml</script>
-      <script>scripts\ui_draw_textbox_pos.gml</script>
-      <script>scripts\ui_world_to_gui_x.gml</script>
-      <script>scripts\ui_world_to_gui_y.gml</script>
-    </scripts>
-    <scripts name="Debug">
-      <script>scripts\debug_init.gml</script>
-      <script>scripts\debug_show_string.gml</script>
-      <script>scripts\debug_draw.gml</script>
-    </scripts>
-    <scripts name="Helper">
-      <script>scripts\string_array.gml</script>
-    </scripts>
-    <scripts name="Attack">
-      <script>scripts\attack_plasma.gml</script>
-      <script>scripts\attack_normal.gml</script>
-      <script>scripts\attack_scatter.gml</script>
-      <script>scripts\attack_rail.gml</script>
-      <script>scripts\attack_explosive.gml</script>
-      <script>scripts\attack_physical.gml</script>
-      <script>scripts\attack_sword.gml</script>
-      <script>scripts\attack_gun.gml</script>
-      <script>scripts\attack_accuracy.gml</script>
-    </scripts>
-    <scripts name="Collision">
-      <script>scripts\range_finder.gml</script>
-    </scripts>
-    <scripts name="Draw">
-      <script>scripts\draw_weapon.gml</script>
-      <script>scripts\draw_shield.gml</script>
-      <script>scripts\draw_outline_begin.gml</script>
-      <script>scripts\draw_outline_update.gml</script>
-      <script>scripts\draw_outline_end.gml</script>
-      <script>scripts\draw_ik.gml</script>
-      <script>scripts\draw_held_gun.gml</script>
-    </scripts>
-    <script>scripts\color_random.gml</script>
     <scripts name="Sound">
-      <script>scripts\sfx_play.gml</script>
       <script>scripts\sfx_bkg_add.gml</script>
-      <script>scripts\sfx_bkg_clear.gml</script>
-      <script>scripts\sfx_bkg_init.gml</script>
-      <script>scripts\sfx_bkg_update.gml</script>
-      <script>scripts\sfx_set_volume.gml</script>
+      <script>scripts\sfx_bkg_stop.gml</script>
       <script>scripts\sfx_bkg_set_volume.gml</script>
-      <script>scripts\sfx_play_volume.gml</script>
-      <script>scripts\sfx_generate_hub_environment.gml</script>
-      <script>scripts\sfx_stop.gml</script>
       <script>scripts\sfx_bkg_size.gml</script>
+      <script>scripts\sfx_bkg_update.gml</script>
       <script>scripts\sfx_clear.gml</script>
+      <script>scripts\sfx_init.gml</script>
+      <script>scripts\sfx_play.gml</script>
+      <script>scripts\sfx_play_volume.gml</script>
+      <script>scripts\sfx_set_volume.gml</script>
+      <script>scripts\sfx_stop.gml</script>
+      <script>scripts\sfx_update.gml</script>
+      <script>scripts\sfx_normal_update.gml</script>
+      <script>scripts\sfx_bkg_add_without_reset.gml</script>
+      <script>scripts\script219.gml</script>
+      <script>scripts\sfx_play_gun.gml</script>
     </scripts>
     <scripts name="State">
       <script>scripts\sm_init.gml</script>
@@ -361,68 +625,10 @@
       <script>scripts\sm_state_pop.gml</script>
       <script>scripts\sm_time.gml</script>
       <script>scripts\sm_ticks.gml</script>
-      <script>scripts\sm_state_push.gml</script>
+      <script>scripts\sm_state_force_push.gml</script>
       <script>scripts\sm_has_var.gml</script>
-    </scripts>
-    <scripts name="Enemy">
-      <scripts name="Grunt">
-        <script>scripts\eg_idle.gml</script>
-        <script>scripts\eg_approach.gml</script>
-        <script>scripts\eg_retreat.gml</script>
-        <script>scripts\eg_attack.gml</script>
-      </scripts>
-      <script>scripts\enemy_target.gml</script>
-      <script>scripts\enemy_dumb.gml</script>
-      <script>scripts\enemy_line_of_sight.gml</script>
-      <scripts name="Navigation">
-        <script>scripts\enemy_navmesh_closest.gml</script>
-        <script>scripts\enemy_navmesh_path.gml</script>
-        <script>scripts\enemy_navmesh_get.gml</script>
-        <script>scripts\enemy_navmesh_move.gml</script>
-        <script>scripts\enemy_navmesh_clear.gml</script>
-      </scripts>
-      <scripts name="Dog">
-        <script>scripts\ed_approach.gml</script>
-        <script>scripts\ed_attack.gml</script>
-      </scripts>
-    </scripts>
-    <scripts name="Interact">
-      <script>scripts\interact_any.gml</script>
-      <script>scripts\interact_trigger.gml</script>
-    </scripts>
-    <scripts name="Fonts">
-      <script>scripts\fonts_init.gml</script>
-      <script>scripts\fonts_get.gml</script>
-    </scripts>
-    <script>scripts\is_paused.gml</script>
-    <scripts name="Clone">
-      <script>scripts\clone_init.gml</script>
-      <script>scripts\clone_register.gml</script>
-      <script>scripts\clone_apply.gml</script>
-      <script>scripts\clone_set_inst.gml</script>
-      <script>scripts\clone_is_type.gml</script>
-    </scripts>
-    <scripts name="MainMenu">
-      <script>scripts\menu_destroy_main_menu.gml</script>
-      <script>scripts\menu_destroy_options_menu.gml</script>
-      <script>scripts\menu_create_main_menu.gml</script>
-      <script>scripts\menu_create_options_menu.gml</script>
-      <script>scripts\menu_destroy_menu.gml</script>
-      <script>scripts\menu_create_menu.gml</script>
-    </scripts>
-    <scripts name="PauseMenu">
-      <script>scripts\menu_create_pause.gml</script>
-      <script>scripts\menu_destroy_pause.gml</script>
-    </scripts>
-    <script>scripts\damager.gml</script>
-    <scripts name="Is">
-      <script>scripts\is_shield.gml</script>
-      <script>scripts\is_gun.gml</script>
-    </scripts>
-    <scripts name="Book">
-      <script>scripts\book_get_next.gml</script>
-      <script>scripts\book_text.gml</script>
-      <script>scripts\book_any.gml</script>
+      <script>scripts\sm_push_var.gml</script>
+      <script>scripts\sm_pop_var.gml</script>
     </scripts>
     <scripts name="Stubs">
       <script>scripts\stubs_load_dom.gml</script>
@@ -430,61 +636,159 @@
       <script>scripts\stubs_load_spencer.gml</script>
       <script>scripts\stubs_load_alec.gml</script>
     </scripts>
-    <scripts name="Gun">
-      <script>scripts\gun_hand_distance.gml</script>
-      <script>scripts\gun_hand_angle.gml</script>
-      <script>scripts\gun_hand_lookup.gml</script>
-    </scripts>
     <script>scripts\surface_get_scale.gml</script>
+    <scripts name="Ui">
+      <script>scripts\ui_check_weapon_slot_tooltip.gml</script>
+      <script>scripts\ui_clear_textbox_queue.gml</script>
+      <script>scripts\ui_draw.gml</script>
+      <script>scripts\ui_draw_action_indicators.gml</script>
+      <script>scripts\ui_draw_boss_health.gml</script>
+      <script>scripts\ui_draw_death_text.gml</script>
+      <script>scripts\ui_draw_health.gml</script>
+      <script>scripts\ui_draw_health_tooltip.gml</script>
+      <script>scripts\ui_draw_icon.gml</script>
+      <script>scripts\ui_draw_inventory.gml</script>
+      <script>scripts\ui_draw_reload_bar.gml</script>
+      <script>scripts\ui_draw_ring.gml</script>
+      <script>scripts\ui_draw_shield_tooltip.gml</script>
+      <script>scripts\ui_draw_textbox.gml</script>
+      <script>scripts\ui_draw_textbox_element.gml</script>
+      <script>scripts\ui_draw_textbox_ext.gml</script>
+      <script>scripts\ui_draw_textbox_pos.gml</script>
+      <script>scripts\ui_draw_tooltip.gml</script>
+      <script>scripts\ui_draw_tooltips.gml</script>
+      <script>scripts\ui_draw_weapon_comparison.gml</script>
+      <script>scripts\ui_draw_weapon_slot.gml</script>
+      <script>scripts\ui_draw_weapon_tooltip_comparison.gml</script>
+      <script>scripts\ui_draw_weapon_tooltip1.gml</script>
+      <script>scripts\ui_draw_weapon_tooltip2.gml</script>
+      <script>scripts\ui_get_boss_health_percent.gml</script>
+      <script>scripts\ui_get_modifier_colour.gml</script>
+      <script>scripts\ui_get_quality_colour.gml</script>
+      <script>scripts\ui_get_quality_string.gml</script>
+      <script>scripts\ui_queue_message.gml</script>
+      <script>scripts\ui_set_colour.gml</script>
+      <script>scripts\ui_world_to_gui_x.gml</script>
+      <script>scripts\ui_world_to_gui_y.gml</script>
+      <script>scripts\ui_can_render_tooltips.gml</script>
+      <script>scripts\ui_unqueue_textbox.gml</script>
+    </scripts>
+    <script>scripts\wall_casts_shadow.gml</script>
+    <scripts name="Workbench">
+      <script>scripts\workbench_create_menu.gml</script>
+      <script>scripts\workbench_destroy_menu.gml</script>
+      <script>scripts\workbench_update_tooltips.gml</script>
+    </scripts>
+    <script>scripts\get_scaling_coefficient.gml</script>
+    <script>scripts\roll_power.gml</script>
+    <script>scripts\roll_boss_loot.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
     <shader type="GLSLES">shaders\sdr_pause.shader</shader>
-    <shader type="GLSLES">shaders\sdr_world.shader</shader>
+    <shader type="GLSLES">shaders\sdr_outline.shader</shader>
     <shader type="GLSLES">shaders\sdr_normal.shader</shader>
+    <shader type="GLSLES">shaders\sdr_fill.shader</shader>
+    <shader type="GLSLES">shaders\sdr_chromatic_ab.shader</shader>
+    <shaders name="Shadows">
+      <shader type="GLSLES">shaders\sdr_dist.shader</shader>
+      <shader type="GLSLES">shaders\sdr_blend_shadow.shader</shader>
+      <shader type="GLSLES">shaders\sdr_shadow.shader</shader>
+      <shader type="GLSLES">shaders\sdr_post.shader</shader>
+      <shader type="GLSLES">shaders\sdr_reduce_linear.shader</shader>
+      <shader type="GLSLES">shaders\sdr_caster_outline.shader</shader>
+      <shader type="GLSLES">shaders\sdr_post2.shader</shader>
+    </shaders>
   </shaders>
   <fonts name="fonts">
     <font>fonts\fnt_hit</font>
   </fonts>
   <objects name="objects">
+    <objects name="Attacks">
+      <object>objects\obj_shot_plasma</object>
+      <object>objects\obj_shot_normal</object>
+      <object>objects\obj_shot_rail</object>
+      <object>objects\obj_hit_sword</object>
+      <object>objects\obj_shot</object>
+      <object>objects\obj_draw_guns</object>
+    </objects>
+    <objects name="Audio">
+      <object>objects\obj_hub_sound</object>
+      <object>objects\obj_sound</object>
+    </objects>
     <objects name="Camera">
       <object>objects\obj_camera</object>
       <object>objects\obj_room_camera</object>
+    </objects>
+    <objects name="Control">
+      <object>objects\obj_hub_jump</object>
+      <object>objects\obj_progress</object>
+      <object>objects\obj_boss_battle</object>
+      <object>objects\obj_final_boss</object>
     </objects>
     <objects name="Dungeon">
       <object>objects\obj_generator</object>
       <object>objects\obj_level</object>
       <object>objects\obj_cloner</object>
       <object>objects\obj_navmesh</object>
+      <object>objects\obj_progress_bar</object>
+      <object>objects\obj_transition</object>
     </objects>
-    <objects name="UI">
-      <object>objects\obj_minimap</object>
-      <object>objects\obj_room_display</object>
-      <object>objects\obj_debug</object>
-    </objects>
-    <object>objects\obj_credits</object>
-    <objects name="Environment">
-      <object>objects\obj_bush</object>
-    </objects>
-    <object>objects\obj_item</object>
-    <objects name="Attacks">
-      <object>objects\obj_shot_plasma</object>
-      <object>objects\obj_shot_normal</object>
-      <object>objects\obj_shot_rail</object>
-      <object>objects\obj_hit_sword</object>
+    <objects name="Effects">
+      <object>objects\obj_damage_indicator</object>
     </objects>
     <objects name="Entity">
       <object>objects\obj_entity</object>
       <object>objects\obj_player</object>
       <object>objects\obj_target</object>
-      <object>objects\obj_grunt</object>
-      <object>objects\obj_dog</object>
-      <object>objects\obj_boss</object>
+      <object>objects\obj_boss_target</object>
+      <object>objects\obj_turret</object>
       <object>objects\obj_enemy</object>
+      <objects name="Boss1">
+        <object>objects\obj_azar</object>
+        <object>objects\obj_move_point</object>
+        <object>objects\obj_azar_rock</object>
+        <object>objects\obj_azar_wall</object>
+        <object>objects\obj_azar_area</object>
+      </objects>
+      <objects name="Boss2">
+        <object>objects\obj_dym</object>
+        <object>objects\obj_dym_part</object>
+        <object>objects\obj_dym_area</object>
+      </objects>
+      <objects name="Boss3">
+        <object>objects\obj_twan</object>
+        <object>objects\obj_twan_point</object>
+        <object>objects\obj_twan_mine</object>
+        <object>objects\obj_twan_stasis</object>
+        <object>objects\obj_twan_turret</object>
+      </objects>
+      <objects name="Boss4">
+        <object>objects\obj_shuud</object>
+        <object>objects\obj_shuud_body</object>
+        <object>objects\obj_shuud_attack_area</object>
+        <object>objects\obj_shuud_light</object>
+      </objects>
+      <objects name="Enemies">
+        <object>objects\obj_captain</object>
+        <object>objects\obj_clone</object>
+        <object>objects\obj_grunt</object>
+        <object>objects\obj_brute</object>
+        <object>objects\obj_dog</object>
+      </objects>
+      <objects name="FinalBoss">
+        <object>objects\obj_boss_final</object>
+        <object>objects\obj_boss_jump</object>
+      </objects>
     </objects>
-    <object>objects\obj_duck</object>
+    <objects name="Environment">
+      <object>objects\obj_bush</object>
+      <object>objects\obj_rock</object>
+      <object>objects\obj_story</object>
+    </objects>
     <objects name="Interact">
       <object>objects\obj_door</object>
+      <object>objects\obj_teleport</object>
       <object>objects\obj_tutorial_door</object>
       <object>objects\obj_final_door</object>
       <object>objects\obj_cube</object>
@@ -493,34 +797,29 @@
       <object>objects\obj_prompt</object>
       <object>objects\obj_book</object>
       <object>objects\obj_interact_area</object>
+      <object>objects\obj_chest</object>
+      <object>objects\obj_workbench</object>
     </objects>
-    <objects name="Control">
-      <object>objects\obj_hub_jump</object>
-      <object>objects\obj_progress</object>
-      <object>objects\obj_boss_battle</object>
-      <object>objects\obj_final_boss</object>
-    </objects>
-    <objects name="Effects">
-      <object>objects\obj_damage_indicator</object>
-    </objects>
-    <object>objects\obj_clear_entities</object>
-    <object>objects\obj_fonts</object>
-    <object>objects\obj_pause</object>
-    <objects name="Traps">
-      <object>objects\obj_trap</object>
-      <object>objects\obj_tutorial_trap</object>
-      <object>objects\obj_trap_stall</object>
-      <object>objects\obj_trap_spike</object>
-      <object>objects\obj_trap_rock</object>
-      <object>objects\obj_trap_pitfall</object>
-    </objects>
-    <objects name="menu">
+    <objects name="Menus">
       <object>objects\obj_main_menu</object>
       <object>objects\obj_button</object>
       <object>objects\obj_logo</object>
       <object>objects\obj_slider</object>
       <object>objects\obj_pause_menu</object>
       <object>objects\obj_menu</object>
+      <object>objects\obj_pause</object>
+      <object>objects\obj_credits</object>
+      <object>objects\obj_menu_workbench</object>
+    </objects>
+    <object>objects\obj_clear_entities</object>
+    <object>objects\obj_duck</object>
+    <object>objects\obj_fonts</object>
+    <object>objects\obj_health_can</object>
+    <object>objects\obj_component</object>
+    <object>objects\obj_item</object>
+    <objects name="Save">
+      <object>objects\obj_save_data</object>
+      <object>objects\obj_game_save</object>
     </objects>
     <objects name="Spawners">
       <object>objects\obj_spawn</object>
@@ -529,29 +828,47 @@
       <object>objects\obj_spawn_player</object>
       <object>objects\obj_tutorial_spawn</object>
     </objects>
+    <objects name="Transitions">
+      <object>objects\obj_post_process</object>
+      <object>objects\obj_ca</object>
+      <object>objects\obj_fade_out</object>
+      <object>objects\obj_fade_in</object>
+    </objects>
+    <objects name="Traps">
+      <object>objects\obj_trap</object>
+      <object>objects\obj_trap_stall</object>
+      <object>objects\obj_trap_spike</object>
+      <object>objects\obj_trap_rock</object>
+      <object>objects\obj_trap_pitfall</object>
+    </objects>
+    <objects name="Tutorial">
+      <object>objects\obj_tutorial_text</object>
+    </objects>
+    <objects name="UI">
+      <object>objects\obj_minimap</object>
+      <object>objects\obj_room_display</object>
+      <object>objects\obj_debug</object>
+    </objects>
     <objects name="Walls">
       <object>objects\obj_wall</object>
+      <object>objects\obj_cast_wall</object>
       <object>objects\obj_invisible_wall</object>
       <object>objects\obj_gate</object>
       <object>objects\obj_gate_open</object>
       <object>objects\obj_display_cube</object>
+      <object>objects\obj_ai_wall</object>
     </objects>
-    <objects name="Save">
-      <object>objects\obj_save_data</object>
-      <object>objects\obj_game_save</object>
+    <object>objects\obj_cgrid</object>
+    <object>objects\obj_hub</object>
+    <objects name="Shadows">
+      <object>objects\obj_light_var</object>
     </objects>
-    <object>objects\obj_health_can</object>
-    <objects name="Transitions">
-      <object>objects\obj_post_process</object>
-      <object>objects\obj_fade_out</object>
-      <object>objects\obj_fade_in</object>
+    <objects name="Lighting">
+      <object>objects\obj_light_map</object>
+      <object>objects\obj_point_light</object>
+      <object>objects\obj_caster</object>
+      <object>objects\obj_cast_map</object>
     </objects>
-    <object>objects\obj_hub_sound</object>
-    <objects name="Tutorial">
-      <object>objects\obj_tutorial_text</object>
-    </objects>
-    <object>objects\obj_transition</object>
-    <object>objects\obj_draw_guns</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>
@@ -576,15 +893,38 @@
       <room>rooms\rm_stub_11</room>
       <room>rooms\rm_stub_12</room>
       <room>rooms\rm_stub_13</room>
-      <room>rooms\rm_stub_d_1</room>
-      <room>rooms\rm_stub_d_2</room>
+      <rooms name="Dom">
+        <room>rooms\rm_stub_d_1</room>
+        <room>rooms\rm_stub_d_2</room>
+        <room>rooms\rm_stub_d_3</room>
+        <room>rooms\rm_stub_d_4</room>
+        <room>rooms\rm_stub_d_5</room>
+        <room>rooms\rm_stub_d_6</room>
+        <room>rooms\rm_stub_d_7</room>
+        <room>rooms\rm_stub_d_8</room>
+        <room>rooms\rm_stub_d_9</room>
+        <room>rooms\rm_stub_d_10</room>
+        <room>rooms\rm_stub_d_11</room>
+        <room>rooms\rm_stub_d_12</room>
+        <room>rooms\rm_stub_d_13</room>
+        <room>rooms\rm_stub_d_14</room>
+      </rooms>
+      <rooms name="Alec">
+        <room>rooms\rm_stub_a_1</room>
+        <room>rooms\rm_stub_a_2</room>
+        <room>rooms\rm_stub_a_3</room>
+      </rooms>
     </rooms>
     <room>rooms\rm_empty</room>
     <rooms name="Boss">
       <room>rooms\rm_boss_1</room>
+      <room>rooms\rm_boss_2</room>
+      <room>rooms\rm_boss_3</room>
+      <room>rooms\rm_boss_4</room>
       <room>rooms\rm_boss_final</room>
     </rooms>
     <room>rooms\rm_transition</room>
+    <room>rooms\rm_tutorial_beta</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

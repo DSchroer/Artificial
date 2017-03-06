@@ -29,6 +29,14 @@
 damage = 1;
 paused = false;
 cooldown = 0;
+y_off = 45;
+last_hit = noone;
+
+rotation = random(20);
+if(random(2) &lt; 1)
+{
+    rotation = -rotation;
+}
 </string>
           </argument>
         </arguments>
@@ -54,31 +62,33 @@ cooldown = 0;
             <string>
 if(!paused &amp;&amp; is_paused())
 {
+    old_rotation = rotation;
+    rotation = 0;
     old_speed = speed;
     speed = 0;
     paused = true;
 }else if(paused &amp;&amp; !is_paused())
 {
+    rotation = old_rotation;
     speed = old_speed;
     paused = false;
 }
 
-if(cooldown &gt; 0)
+image_angle += rotation;
+
+with(obj_entity)
 {
-    cooldown--;
-}else{
-var entity = instance_place(x, y, obj_entity);
-    if(entity &amp;&amp; entity != parent)
+    if(self != other.parent &amp;&amp; self != other.last_hit &amp;&amp; visible)
     {
-        with(entity)
+        if(point_in_ellipse(other.x, other.y, x + hbox_x1, y + hbox_y1, x + hbox_x2, y + hbox_y2))
         {
-            entity_apply_damage(damager(other.damage));
+            entity_apply_damage(damager(other.damage), other.parent);
+            other.last_hit = self;
         }
-        cooldown = 30;
     }
 }
 
-if(place_meeting(x, y, obj_wall))
+if(cgrid_collision_point(x, y + y_off))
 {
     instance_destroy();
 }

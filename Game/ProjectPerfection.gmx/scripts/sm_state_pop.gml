@@ -1,2 +1,7 @@
 ///sm_state_pop()
-return ds_stack_pop(sm_stack);
+if(sm_next != sm_current_state)
+{
+    return sm_next;
+}
+var pop = ds_stack_pop(sm_stack);
+return pop;

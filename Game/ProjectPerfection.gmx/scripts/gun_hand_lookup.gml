@@ -7,12 +7,12 @@ ret[1] = 0;
 ret[2] = 0;
 ret[3] = 0;
 
-if(gun_sprite == spr_inv_rifle1)
+if(gun_sprite == spr_rifle_base)
 {
-    ret[0] = 81;
-    ret[1] = 45;
-    ret[2] = 110;
-    ret[3] = 45;
+    ret[0] = 59;
+    ret[1] = 36;
+    ret[2] = 79;
+    ret[3] = 42;
 }
 
 if(gun_sprite == spr_pistol_base)

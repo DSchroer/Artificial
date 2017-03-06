@@ -77,6 +77,7 @@ var y_off = ds_list_find_value(room_y_list, itteration);
 
 generator_copy_instances(custom_room, x_off * 64, y_off * 64);
 generator_copy_tiles(custom_room, x_off * 64, y_off * 64);
+room_instance_add(custom_room, x_off * 64, y_off * 64, obj_navmesh);
 
 itteration += 1;
 
@@ -90,7 +91,7 @@ if(itteration &lt; ds_list_size(room_list))
     
     with(obj_minimap)
     {
-        map_set_level(other.level);
+        minimap_set_level(other.level);
     }
     
     persistent = false;
@@ -144,24 +145,7 @@ var end_key = generator_spawn_exit(custom_room);
 generator_spawn_at(end_key, custom_room, obj_clear_entities);
 generator_use_room(end_key);
 
-var p = generator_random_room();
-generator_spawn_at(p, custom_room, obj_health_can);
-
-if(random(2) &lt; 1)
-{
-    var p = generator_random_room();
-    generator_spawn_at(p, custom_room, obj_item);
-    generator_spawn_at(p, custom_room, obj_clear_entities);
-    generator_use_room(p);
-}
-
-if(random(3) &lt; 1 &amp;&amp; book_any())
-{
-    var p = generator_random_room();
-    generator_spawn_at(p, custom_room, obj_book);
-    generator_spawn_at(p, custom_room, obj_clear_entities);
-    generator_use_room(p);
-}
+generator_register_items();
 
 room_set_height(custom_room, height * 64);
 room_set_width(custom_room, width * 64);

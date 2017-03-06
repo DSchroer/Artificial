@@ -8,16 +8,16 @@
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>6</bbox_left>
-  <bbox_right>197</bbox_right>
-  <bbox_top>37</bbox_top>
-  <bbox_bottom>318</bbox_bottom>
+  <bbox_right>161</bbox_right>
+  <bbox_top>201</bbox_top>
+  <bbox_bottom>316</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>204</width>
+  <width>168</width>
   <height>325</height>
   <frames>
     <frame index="0">images\spr_inventory_background_0.png</frame>

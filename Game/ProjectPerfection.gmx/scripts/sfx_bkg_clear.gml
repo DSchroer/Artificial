@@ -1,11 +1,11 @@
 ///sfx_bkg_clear()
-with(obj_player)
+with(obj_sound)
 {
-    if(current_sound_id != -1)
+    if(current_background_id != -1)
     {
-        audio_stop_sound(current_sound_id);
+        audio_stop_sound(current_background_id);
     }
     ds_queue_clear(bkg_queue);
-    current_sound_id = -1;
+    current_background_id = -1;
 }
 

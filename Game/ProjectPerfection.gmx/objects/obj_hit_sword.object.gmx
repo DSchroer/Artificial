@@ -29,7 +29,7 @@
 
 parent = self;
 damage = 0;
-speed = 3;
+hit = false;
 </string>
           </argument>
         </arguments>
@@ -75,14 +75,16 @@ speed = 3;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var entity = instance_place(x, y, obj_entity);
-if(entity &amp;&amp; entity != parent)
+            <string>if(!hit)
 {
-    with(entity)
+    with(obj_entity)
     {
-        entity_apply_damage(other.damage);
+        if(other.parent != self.id &amp;&amp; place_meeting(x, y, other.id))
+        {
+            other.hit = true;
+            entity_apply_damage(damager(other.damage), other.parent);
+        }
     }
-    instance_destroy();
 }
 </string>
           </argument>
@@ -107,6 +109,7 @@ if(entity &amp;&amp; entity != parent)
           <argument>
             <kind>1</kind>
             <string>//nothing
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
 </string>
           </argument>
         </arguments>

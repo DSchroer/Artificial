@@ -254,12 +254,6 @@
     <instance objName="obj_wall" x="1088" y="1280" name="inst_5B5649A9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1152" y="1088" name="inst_82D17E75" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1152" y="1024" name="inst_3A5AAF2E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_tutorial_trap" x="320" y="960" name="inst_54A4518F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_tutorial_trap" x="384" y="960" name="inst_5C651742" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_tutorial_trap" x="448" y="960" name="inst_BD55C274" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_tutorial_trap" x="512" y="960" name="inst_109CF0C6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_tutorial_trap" x="576" y="960" name="inst_124DE8CD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_tutorial_trap" x="640" y="960" name="inst_241A8D3A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tutorial_text" x="608" y="2016" name="inst_BF322263" locked="0" code="text = &quot;Welcome! `br You must be getting used to your new body. &quot;+&#xA;&quot;Let me help you out. `br Use |red W S A D |white to move.&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tutorial_text" x="1824" y="1312" name="inst_954BA9E7" locked="0" code="text = &quot;There is a gun for you over there. `br Dont ask why you need a gun! You will find out. `br Use |red E |white to pick up items.&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tutorial_text" x="192" y="1536" name="inst_2A7C3898" locked="0" code="text = &quot;Here is a shield. You can use it if you want. &quot;+&#xA;    &quot;It will protect you from danger. `br Pick it up with |red E |white . `br Use it to protect yourself with |red Space or Right Click |white .&quot;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

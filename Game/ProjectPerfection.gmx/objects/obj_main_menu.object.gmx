@@ -25,14 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>event_inherited();
+index = -1;
+
 enum menu_type
 {
     main,
     options
 }
-
-
 
 draw_set_color(c_white);
 
@@ -40,15 +40,20 @@ menu_stack = ds_stack_create();
 ds_stack_push(menu_stack, menu_type.main);
 full_screen = false;
 
-keep_centered = ds_list_create();
 menu_create_main_menu();
 
-sfx_set_volume(save_get_value(obj_game_save, "fx_volume", 1));
-sfx_bkg_set_volume(save_get_value(obj_game_save, "music_volume", 1));
 window_set_fullscreen(save_get_value(obj_game_save, "fullscreen", false));
 
-sfx_clear();
-music_id = -1;
+
+if(!instance_exists(obj_sound))
+{
+    instance_create(0,0,obj_sound);
+}
+sfx_bkg_add_without_reset(bkg_menu);
+
+
+
+
 
 </string>
           </argument>
@@ -73,12 +78,9 @@ music_id = -1;
           <argument>
             <kind>1</kind>
             <string>
-if(music_id == -1 || !audio_is_playing(music_id))
-{
-    music_id = audio_play_sound(bkg_menu, 1, false);
-    audio_sound_gain(music_id, clamp(save_get_value(obj_game_save, "music_volume", 1), 0, 1), 0);
-}
-           
+event_inherited();
+
+
 </string>
           </argument>
         </arguments>
@@ -101,7 +103,7 @@ if(music_id == -1 || !audio_is_playing(music_id))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Close game
+            <string>/// Close game
 
 game_end();
 </string>
@@ -126,8 +128,9 @@ game_end();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Open options
+            <string>/// Open options
 
+index = 0;
 ds_stack_push(menu_stack, menu_type.options);
 menu_destroy_menu(menu_type.main);
 menu_create_options_menu();
@@ -156,8 +159,9 @@ menu_create_options_menu();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Close current menu
+            <string>/// Close current menu
 
+index = 0;
 var closing_menu = ds_stack_pop(menu_stack);
 
 menu_destroy_menu(closing_menu);
@@ -186,7 +190,7 @@ menu_create_menu(top);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// New game
+            <string>/// New game
 
 save_clear();
 room_goto(rm_base);
@@ -212,7 +216,7 @@ room_goto(rm_base);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Load game
+            <string>/// Load game
 
 room_goto(rm_base);
 </string>
@@ -237,7 +241,7 @@ room_goto(rm_base);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Fullscreen toggle
+            <string>/// Fullscreen toggle
 
 full_screen = !full_screen;
 window_set_fullscreen(full_screen);
@@ -266,7 +270,7 @@ save_flush(obj_game_save);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Apply settings
+            <string>/// Apply settings
 sfx_set_volume(slider_sound.percent);
 save_set_value(obj_game_save, "fx_volume", slider_sound.percent);
 
@@ -274,6 +278,9 @@ sfx_bkg_set_volume(slider_music.percent);
 save_set_value(obj_game_save, "music_volume", slider_music.percent);
 
 save_flush(obj_game_save);
+
+sfx_set_volume(slider_sound.percent);
+sfx_bkg_set_volume(slider_music.percent);
 
 </string>
           </argument>
@@ -297,7 +304,7 @@ save_flush(obj_game_save);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Credits
+            <string>///Credits
 
 room_goto(rm_credits);
 </string>

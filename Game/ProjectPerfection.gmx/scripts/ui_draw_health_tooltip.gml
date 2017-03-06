@@ -1,14 +1,22 @@
 ///ui_draw_health_tooltip(x, y)
 
+if(!ui_can_render_tooltips())
+{
+    exit;
+}
+
 var xpos = argument0;
 var ypos = argument1;
-var equipped_shield = player_get_shield();
 
 var lines;
 lines[0] = "Health: " + string(current_health) + "/" + string(max_health);
-if(is_array(equipped_shield))
+if(is_shield_active)
 {
-    lines[1] = "Shield: " + string(floor(remaining_shield)) + "/" + string(equipped_shield[shield_index.max_health]);
+    lines[1] = "Shield: " + string(floor(remaining_shield)) + "/" + string(shield_max_health);
+}
+else
+{
+    lines[1] = "Shield Deactivated";
 }
 
 var colours;

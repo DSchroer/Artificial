@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-50000</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_boss_battle</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,12 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0] = 120;
-drawing = true;
-sfx_clear();
-sfx_bkg_add(bkg_final_boss);
-target = obj_boss;
-photo = spr_azar_intro;
+            <string>event_inherited();
+target = obj_boss_final;
 </string>
           </argument>
         </arguments>
@@ -53,42 +49,13 @@ photo = spr_azar_intro;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with(all)
+            <string>
+with(all)
 {
     instance_destroy();
 }
 
 room_goto(rm_credits)
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>drawing = false;
-
-with(target)
-{
-    var prev = sm_state_pop();
-    show_debug_message(prev);
-    sm_set_state(prev);
-}
 </string>
           </argument>
         </arguments>
@@ -114,61 +81,6 @@ with(target)
             <string>if(instance_number(target) == 0 &amp;&amp; alarm[1] == -1)
 {
     alarm[1] = 60;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="4">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>with(target)
-{
-    sm_set_state("cutscene");
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="64">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if(drawing)
-{
-    var w = display_get_gui_width();
-    var h = display_get_gui_height();
-    draw_sprite_pos(photo, 0, 0, 0, w, 0, w, h, 0, h , 255);
-
 }
 </string>
           </argument>

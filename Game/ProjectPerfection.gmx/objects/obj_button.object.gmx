@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>should_draw_tooltip = false;
+text_scale = 1.5;
 x = 0;
 y = 0;
 width = 256;
@@ -33,6 +34,10 @@ height = 64;
 text = "Test";
 user_event_index = -1;
 center_x = false;
+index = 0;
+active_sprite = spr_button_active;
+inactive_sprite = spr_button;
+lines = -1;
 </string>
           </argument>
         </arguments>
@@ -65,9 +70,16 @@ if(center_x)
 var mx = device_mouse_x_to_gui(0);
 var my = device_mouse_y_to_gui(0);
 
-if(point_in_rectangle(mx, my, x, y, x + sprite_width, y + sprite_height))
+if(point_in_rectangle(mx, my, x, y, x + sprite_width, y + sprite_height) &amp;&amp; obj_menu.use_mouse)
 {
-    if(mouse_check_button_pressed(mb_left))
+    obj_menu.index = self.index
+}
+
+if(obj_menu.index == self.index)
+{
+    if(mouse_check_button_pressed(mb_left) || 
+    keyboard_check_pressed(vk_enter) || 
+    keymap_gamepad_check_pressed(gp_face1))
     {
         var index = user_event_index;
         with(obj_menu)
@@ -79,9 +91,15 @@ if(point_in_rectangle(mx, my, x, y, x + sprite_width, y + sprite_height))
         }
         sfx_play(snd_button, false);
     }
-    sprite_index = spr_button_active;
+    sprite_index = active_sprite;
+    //image_xscale = scale;
+    //image_yscale = scale;
+    should_draw_tooltip = true;
 }else{
-    sprite_index = spr_button;
+    sprite_index = inactive_sprite;    
+    //image_xscale = scale;
+    //image_yscale = scale;
+    should_draw_tooltip = false;
 }
 </string>
           </argument>
@@ -105,16 +123,56 @@ if(point_in_rectangle(mx, my, x, y, x + sprite_width, y + sprite_height))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>if(center_x)
+{
+    x = (display_get_gui_width() / 2 - (bbox_right - bbox_left) / 2);
+}
+draw_self();
 
 var mx = device_mouse_x_to_gui(0);
 var my = device_mouse_y_to_gui(0);
 
-var scale = 1.5;
-var text_width = string_width(text) * scale;
-var text_height = string_height(text) * scale;
+var text_width = string_width(text) * text_scale;
+var text_height = string_height(text) * text_scale;
 draw_set_colour(c_white);
-draw_text_transformed(x + (width - text_width) / 2, y + (height - text_height) / 2, text, scale, scale, 0);
+draw_text_transformed(x + (width * image_xscale - text_width) / 2, y + (height * image_yscale - text_height) / 2, text, text_scale, text_scale, 0);
+
+
+// Tooltip
+var lines_size = array_length_1d(lines);
+if(lines_size &gt; 0 &amp;&amp; should_draw_tooltip)
+{
+    var colours;
+    for(var i = 0; i &lt; lines_size; i++)
+    {
+        colours[i] = "|white";
+    }
+    
+    var scales;
+    for(var i = 0; i &lt; lines_size; i++)
+    {
+        scales[i] = 1;
+    }
+    
+    var stats;
+    for(var i = 0; i &lt; lines_size; i++)
+    {
+        stats[i] = -1;
+    }
+    
+    var stat_colours;
+    for(var i = 0; i &lt; lines_size; i++)
+    {
+    }
+    stat_colours[i] = "|white";    
+    
+    ui_draw_tooltip(mx, my, lines, colours, scales, stats, stat_colours);
+
+}
+
+
+
+
 
 </string>
           </argument>

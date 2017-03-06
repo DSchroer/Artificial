@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>application_surface_draw_enable(false);
+            <string>
 
 blur_speed = 0.1;
 blur_amt = 0;
@@ -34,6 +34,13 @@ blur_target = 5;
 shader_val[0] = surface_get_width(application_surface);
 shader_val[1] = surface_get_height(application_surface);
 shader_val[2] = 0;
+
+with(obj_ca)
+{
+    instance_destroy();
+}
+
+application_surface_draw_enable(false);
 </string>
           </argument>
         </arguments>
@@ -94,6 +101,7 @@ if(!is_paused())
         instance_destroy();
     }
 }
+
 </string>
           </argument>
         </arguments>

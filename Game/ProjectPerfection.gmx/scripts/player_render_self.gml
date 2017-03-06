@@ -8,8 +8,6 @@ if(!surface_exists(surface))
 surface_set_target(surface);
 draw_clear_alpha(c_red, 0);
 
-debug_show_string(string(surface_get_scale()));
-
 var yscale = 0.75;
 if(gun_angle > 90 && gun_angle < 270)
 {
@@ -19,19 +17,12 @@ if(gun_angle > 90 && gun_angle < 270)
     image_xscale = 1;
 }
 
-if(gun_angle <= 180)
-{
-    sprite_index = spr_player_back;
-}else{
-    sprite_index = spr_player;
-}
-
 var distance = 13;
 
 if(view_current == 0)
 {
-    var gangle = 270;
-    var gdist = 10;
+    var gangle = 290;
+    var gdist = 100;
     if(is_array(inventory[selected_slot]))
     {
         gangle = gun_hand_angle(inventory[selected_slot], 1, gun_dist, gun_angle, 0.75, yscale);

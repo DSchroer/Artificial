@@ -1,7 +1,5 @@
 ///menu_destroy_main_menu()
 
-ds_list_clear(keep_centered);
-
 with(logo)
 {
     instance_destroy();

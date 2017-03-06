@@ -42,12 +42,24 @@ for(var i = 0; i &lt; array_length_1d(walls); i++)
     var wall = walls[i];
     mp_grid_add_rectangle(nav, wall.x - 32, wall.y - 32, wall.x + 64, wall.y + 64);
 }
+
+walls = level_stub_find_all(obj_ai_wall);
+for(var i = 0; i &lt; array_length_1d(walls); i++)
+{
+    var wall = walls[i];
+    mp_grid_add_rectangle(nav, wall.x - 32, wall.y - 32, wall.x + 64, wall.y + 64);
+}
+
+with(obj_ai_wall)
+{
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="1" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -64,11 +76,7 @@ for(var i = 0; i &lt; array_length_1d(walls); i++)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!level_stub_find(obj_player))
-{
-    mp_grid_destroy(nav);
-    instance_destroy();
-}
+            <string>mp_grid_destroy(nav);
 </string>
           </argument>
         </arguments>

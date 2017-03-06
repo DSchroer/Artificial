@@ -6,8 +6,18 @@ var volume_modifier = argument2;
 if(allow_duplicate || !audio_is_playing(effect))
 {
     var num = audio_play_sound(effect, 2, false);
-    var vol = save_get_value(obj_game_save, "fx_volume", 1);
-    audio_sound_gain(num, clamp(vol * volume_modifier, 0, 1), 0);
+    var vol = 0;
+    with(obj_game_save)
+    {
+        vol = save_get_value(self, "fx_volume", 1);
+    }
+    vol = clamp(vol * volume_modifier, 0, 1);
+    audio_sound_gain(num, vol, 0);
+    with(instance_find(obj_sound, 0))
+    {
+        ds_list_add(sfx_volume_mods, vol);
+        ds_list_add(sfx_playing, num);
+    }
 }
 
 

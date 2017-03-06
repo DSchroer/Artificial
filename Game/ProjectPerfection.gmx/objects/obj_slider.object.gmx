@@ -33,6 +33,8 @@ height = 64;
 user_event_index = -1;
 percent = 0.50;
 center_x = false;
+index = -1;
+tick = false;
 </string>
           </argument>
         </arguments>
@@ -63,7 +65,52 @@ center_x = false;
 var mx = device_mouse_x_to_gui(0);
 var my = device_mouse_y_to_gui(0);
 
-if(mouse_check_button_pressed(mb_left))
+if(point_in_rectangle(mx, my, x, y, x + 256 + 64 + 64, y + 64))
+{
+    if(obj_menu.use_mouse)
+    {
+        obj_menu.index = self.index;
+    }
+}
+
+if(obj_menu.index == self.index)
+{
+    if(abs(gamepad_axis_value(0, gp_axislh)) &lt; 0.2)
+    {
+        tick = false;
+    }else if(gamepad_axis_value(0, gp_axislh) &gt; 0 &amp;&amp; !tick)
+    {
+        tick = true;
+    
+        percent = max(0, percent + 0.05);
+        sfx_play(snd_button, false);
+        
+        var index = user_event_index;
+        with(obj_menu)
+        {
+            if(index &gt;= 0)
+            {
+                event_user(index);
+            }
+        }
+    
+    }else if(!tick){
+        tick = true;
+        percent = min(1, percent - 0.05);
+        sfx_play(snd_button, false);
+    
+        var index = user_event_index;
+        with(obj_menu)
+        {
+            if(index &gt;= 0)
+            {
+                event_user(index);
+            }
+        }
+    }
+}
+
+if(mouse_check_button_pressed(mb_left) &amp;&amp; obj_menu.index == self.index)
 {
     if(point_in_rectangle(mx, my, x, y, x + 64, y + 64))
     {
@@ -112,7 +159,11 @@ if(mouse_check_button_pressed(mb_left))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>if(center_x)
+{
+    x = (display_get_gui_width() / 2 - (bbox_right - bbox_left) / 2);
+}
+draw_self();
 draw_rectangle_color(x + width * (1/6), y + padding, x + width * (1/6) + width * (4/6) * percent, y + height - padding, fill_colour, fill_colour, fill_colour, fill_colour, false);
 
 var scale = 1.5;

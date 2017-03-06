@@ -27,6 +27,10 @@
             <kind>1</kind>
             <string>if(!save_get_value(obj_save_data, "tutorial", false))
 {
+    with(obj_progress)
+    {  
+        tutorial = true;
+    }
      save_set_value(obj_save_data, "tutorial", true);
      save_flush(obj_save_data);
      with(obj_spawn_player)

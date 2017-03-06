@@ -30,6 +30,10 @@ for(var i = 0; i &lt; 3; i++)
 {
     var spawn_points = level_stub_find_all(obj_spawn);
     var point = array_length_1d(spawn_points);
+    if(point == 0)
+    {
+        break;
+    }
     var inst = spawn_points[random(point)];
 
     if(inst != noone)
@@ -43,7 +47,10 @@ for(var i = 0; i &lt; 3; i++)
             instance_destroy();
         }
         
-        instance_create(xp, yp, obj_dog);
+        var monster = instance_create(xp, yp, obj_dog);
+        monster.pow = roll_power();
+        monster.alarm[0] = 1;
+
     }
 }
 
