@@ -61,7 +61,7 @@ if(instance_exists(obj_progress))
     for(var i = 0; i &lt; number_drops; i++)
     {
         var gun = instance_create(x + i * 96, y + 96, obj_item);
-        gun.data = inventory_spawn_gun_ext(max((obj_progress.progress - 1) * 10 + random_range(0, 9), 0), item_quality.uncommon);
+        gun.data = inventory_spawn_gun_ext(roll_power(), item_quality.uncommon);
     }
     instance_create(x - 64, y, obj_health_can);
     instance_create(x + 128, y, obj_health_can);

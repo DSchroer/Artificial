@@ -134,13 +134,11 @@ entity_collision();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(random(3) &lt; 1)
-{
-    var gun = instance_create(x, y, obj_item);
-    gun.data = inventory_spawn_gun(obj_progress.progress + 1);
-}
+            <string>
+roll_boss_loot(1);
+
 kill_boss(1);
-instance_create(x, y, obj_cube);
+instance_create(x - 25 + random(50), y - 25 + random(50), obj_cube);
 event_inherited();
 </string>
           </argument>

@@ -680,6 +680,8 @@
       <script>scripts\workbench_update_tooltips.gml</script>
     </scripts>
     <script>scripts\get_scaling_coefficient.gml</script>
+    <script>scripts\roll_power.gml</script>
+    <script>scripts\roll_boss_loot.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>

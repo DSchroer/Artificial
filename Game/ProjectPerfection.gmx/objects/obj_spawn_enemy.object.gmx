@@ -79,11 +79,11 @@ var weight_table_p6 = array(15, 40, 20, 2, 2);
 
 var weight_table_p8 = array(10, 40, 20, 3, 2);
 var weight_table_p9 = array(8, 35, 20, 4, 2);
-var weight_table_p10 = array(8, 30, 20, 5, 2);
+var weight_table_p10 = array(8, 30, 20, 5, 3);
 
-var weight_table_p12 = array(0, 28, 20, 5, 3);
-var weight_table_p13 = array(0, 20, 20, 6, 4);
-var weight_table_p14 = array(0, 15, 15, 7, 5);
+var weight_table_p12 = array(0, 28, 20, 6, 6);
+var weight_table_p13 = array(0, 20, 20, 7, 7);
+var weight_table_p14 = array(0, 15, 15, 8, 8);
 
 switch(obj_progress.progress)
 {
@@ -140,7 +140,7 @@ if(inst != noone &amp;&amp; item != noone)
     }
     
     var monster = instance_create(xp, yp, item);
-    monster.pow = (obj_progress.progress - 1) * 10 + random_range(0, 9);
+    monster.pow = roll_power();
     monster.alarm[0] = 1;
    
 }
