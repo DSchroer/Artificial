@@ -65,7 +65,7 @@ if(instance_exists(obj_progress))
     }
     instance_create(x - 64, y, obj_health_can);
     instance_create(x + 128, y, obj_health_can);
-    if(random(5) &lt; 1)
+    if(random(2.5) &lt; 1)
     {
         instance_create(x, y - 64, obj_component);
     }
