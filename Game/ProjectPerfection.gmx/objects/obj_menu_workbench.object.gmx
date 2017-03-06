@@ -28,7 +28,9 @@
             <string>event_inherited();
 index = -1;
 created = false;
-
+max_hp_level = 3;
+max_regen_level = 3;
+max_delay_level = 3;
 
 </string>
           </argument>
@@ -150,7 +152,7 @@ with(obj_player)
 {
     var component_count = save_get_value(obj_save_data, "components", 0);
     var current_level = save_get_value(obj_save_data, "shield_delay_powerup", 0);
-    if(component_count &lt; 3 || current_level &gt;= 4)
+    if(component_count &lt; 3 || current_level &gt;= obj_menu_workbench.max_delay_level)
     {
         exit;
     }
@@ -186,7 +188,7 @@ with(obj_player)
 {
     var component_count = save_get_value(obj_save_data, "components", 0);
     var current_level = save_get_value(obj_save_data, "shield_recharge_powerup", 0);
-    if(component_count &lt; 3 || current_level &gt;= 4)
+    if(component_count &lt; 3 || current_level &gt;= obj_menu_workbench.max_regen_level)
     {
         exit;
     }
@@ -221,7 +223,7 @@ with(obj_player)
 {
     var component_count = save_get_value(obj_save_data, "components", 0);
     var current_level = save_get_value(obj_save_data, "shield_health_powerup", 0);
-    if(component_count &lt; 3 || current_level &gt;= 4)
+    if(component_count &lt; 3 || current_level &gt;= obj_menu_workbench.max_hp_level)
     {
         exit;
     }
@@ -265,15 +267,15 @@ if(!created)
 
 // Manage button states
 var num_components = save_get_value(obj_save_data, "components", 0);
-if(num_components &lt; 3 || save_get_value(obj_save_data, "shield_health_powerup", 0) &gt;= 4)
+if(num_components &lt; 3 || save_get_value(obj_save_data, "shield_health_powerup", 0) &gt;= max_hp_level)
 {   
     button_upgrade_health.active_sprite = spr_button_gray;
 }
-if(num_components &lt; 3 || save_get_value(obj_save_data, "shield_recharge_powerup", 0) &gt;= 4)
+if(num_components &lt; 3 || save_get_value(obj_save_data, "shield_recharge_powerup", 0) &gt;= max_regen_level)
 {   
     button_upgrade_recharge.active_sprite = spr_button_gray;
 }
-if(num_components &lt; 3 || save_get_value(obj_save_data, "shield_delay_powerup", 0) &gt;= 4)
+if(num_components &lt; 3 || save_get_value(obj_save_data, "shield_delay_powerup", 0) &gt;= max_delay_level)
 {   
     button_upgrade_delay.active_sprite = spr_button_gray;
 }
