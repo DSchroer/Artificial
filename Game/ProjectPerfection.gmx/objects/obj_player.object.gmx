@@ -241,14 +241,18 @@ if(invincible &gt; 0)
     --invincible;
 }
 
-if(keymap_check(keycode.fire) &amp;&amp; !dead)
+if(!open_workbench)
 {
-    player_fire();
-}
+    if(keymap_check(keycode.fire) &amp;&amp; !dead)
+    {
+        player_fire();
+    }
+    
+    if(keymap_check(keycode.reload))
+    {
+        inventory[selected_slot] = player_reload(inventory[selected_slot]);
+    }
 
-if(keymap_check(keycode.reload))
-{
-    inventory[selected_slot] = player_reload(inventory[selected_slot]);
 }
 
 if(keymap_check(keycode.escape))
@@ -256,6 +260,7 @@ if(keymap_check(keycode.escape))
     if(!is_paused() &amp;&amp; room != rm_transition)
     {
         instance_create(0,0,obj_pause);
+        open_workbench = false;
     }
 }
 

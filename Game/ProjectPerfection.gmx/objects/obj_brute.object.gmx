@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>entity_init();
 event_inherited();
+pow = 1;
 max_health = 500;
 current_health = 500;
 
@@ -40,7 +41,6 @@ weapon[weapon_index.bullet_speed] = 10;
 weapon[weapon_index.bullet_sprite_xscale] = 3;
 weapon[weapon_index.bullet_sprite_yscale] = 3;
 weapon[weapon_index.accuracy] = 10;
-weapon = enemy_scale_gun(weapon);
 
 sword = inventory_create_weapon();
 sword[weapon_index.modifier] = weapon_modifier.sword;
@@ -50,21 +50,48 @@ sword[weapon_index.bullet_sprite_xscale] = 3;
 sword[weapon_index.bullet_sprite_yscale] = 3;
 sword[weapon_index.bullet_speed] = 0;
 sword[weapon_index.accuracy] = 40;
-sword = enemy_scale_gun(sword);
 
 pound = inventory_create_weapon();
 pound[weapon_index.modifier] = weapon_modifier.sword;
-pound[weapon_index.damage] = 50;
+pound[weapon_index.damage] = 100;
 pound[weapon_index.bullet_sprite] = spr_wave;
 pound[weapon_index.bullet_sprite_xscale] = 0.5;
 pound[weapon_index.bullet_sprite_yscale] = 0.5;
 pound[weapon_index.bullet_speed] = 0;
-pound = enemy_scale_gun(pound);
+
 
 volume_mod = 1.4;
 //ds_list_add(hurt_sounds, snd_enemy_rock1);  
 //ds_list_add(hurt_sounds, snd_enemy_rock2);
 //ds_list_add(hurt_sounds, snd_enemy_rock3); // &lt;--- death sound?
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>max_health *= get_scaling_coefficient(pow);
+current_health = max_health;
+weapon = enemy_scale_gun(weapon, pow);
+sword = enemy_scale_gun(sword, pow);
+pound = enemy_scale_gun(pound, pow);
+
 </string>
           </argument>
         </arguments>
@@ -87,7 +114,8 @@ volume_mod = 1.4;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>isomorphic_set_depth();
+            <string>
+isomorphic_set_depth();
 
 var state = sm_get_state();
 
@@ -140,13 +168,13 @@ if(instance_exists(obj_progress))
     if(random(10) &lt; 1)
     {
         var gun = instance_create(x, y, obj_item);
-        gun.data = inventory_spawn_gun(obj_progress.progress + 1);
+        gun.data = inventory_spawn_gun(pow);
     }
     else if(random(17) &lt; 1)
     {
         var health_can = instance_create(x, y, obj_health_can);
     }
-    else if(random(20) &lt; 1)
+    else if(random(15) &lt; 1)
     {
         instance_create(x, y, obj_component);
     }

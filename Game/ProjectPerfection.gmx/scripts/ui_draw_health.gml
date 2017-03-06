@@ -4,7 +4,7 @@ var width = display_get_gui_width();
 var height = display_get_gui_height();
 var mx = device_mouse_x_to_gui(0);
 var my = device_mouse_y_to_gui(0);
-var xp = 10;//(width - sprite_get_width(spr_statusback)) / 2;
+var xp = 10;
 var yp = (height - sprite_get_height(spr_statusback) - 60);
 
 var health_percent = current_health / max_health;
@@ -53,10 +53,6 @@ if(is_array(equipped_gun))
     }
 }
 
-// Check for tooltip
-if(mx > xp && mx < xp + sprite_get_width(spr_statusback) && my > yp && my < yp + sprite_get_height(spr_statusback))
-{
-    ui_draw_health_tooltip(mx, my);
-}
+
 
 

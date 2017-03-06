@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>entity_init();
 event_inherited();
+pow = 0;
 max_health = 400000;
 current_health = 400000;
 
@@ -39,7 +40,7 @@ weapon[weapon_index.bullet_sprite] = spr_wave;
 weapon[weapon_index.bullet_sprite_xscale] = 0.5;
 weapon[weapon_index.bullet_sprite_yscale] = 0.5;
 weapon[weapon_index.bullet_speed] = 0;
-weapon = enemy_scale_gun(weapon);
+weapon = enemy_scale_gun(weapon, pow);
 
 volume_mod = 1.4;
 //ds_list_add(hurt_sounds, snd_enemy_rock1);  

@@ -27,28 +27,54 @@
             <kind>1</kind>
             <string>entity_init();
 event_inherited();
-max_health = 150;
-current_health = 150;
+pow = 1;
+max_health = 200;
+current_health = 200;
 
 sm_init("idle");
 
 weapon = inventory_create_weapon();
 weapon[weapon_index.modifier] = weapon_modifier.normal;
-weapon[weapon_index.damage] = 20;
+weapon[weapon_index.damage] = 30;
 weapon[weapon_index.bullet_sprite] = spr_bullet;
 weapon[weapon_index.accuracy] = 5;
-weapon = enemy_scale_gun(weapon);
 
 sword = inventory_create_weapon();
 sword[weapon_index.modifier] = weapon_modifier.sword;
-sword[weapon_index.damage] = 20;
+sword[weapon_index.damage] = 50;
 sword[weapon_index.bullet_sprite] = spr_sword;
-sword = enemy_scale_gun(sword);
 
 volume_mod = 1.4;
 //ds_list_add(hurt_sounds, snd_enemy_rock1);  
 //ds_list_add(hurt_sounds, snd_enemy_rock2);
 //ds_list_add(hurt_sounds, snd_enemy_rock3); // &lt;--- death sound?
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>max_health *= get_scaling_coefficient(pow);
+current_health = max_health;
+weapon = enemy_scale_gun(weapon, pow);
+sword = enemy_scale_gun(sword, pow);
+
 </string>
           </argument>
         </arguments>
@@ -123,13 +149,13 @@ if(instance_exists(obj_progress))
     if(random(12) &lt; 1)
     {
         var gun = instance_create(x, y, obj_item);
-        gun.data = inventory_spawn_gun(obj_progress.progress + 1);
+        gun.data = inventory_spawn_gun(pow);
     }
     else if(random(20) &lt; 1)
     {
         var health_can = instance_create(x, y, obj_health_can);
     }
-    else if(random(40) &lt; 1)
+    else if(random(30) &lt; 1)
     {
         instance_create(x, y, obj_component);
     }
