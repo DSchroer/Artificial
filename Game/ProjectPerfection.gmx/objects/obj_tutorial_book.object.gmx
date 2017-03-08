@@ -49,7 +49,7 @@ text = "A lot of Artificial's story is told through lore books, research notes, 
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!ui_textbox_open())
+            <string>if(!ui_textbox_open() &amp;&amp; obj_player.textbox_cooldown &lt;= 0)
 {
     ui_textbox_queue(text);
 }

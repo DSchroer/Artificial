@@ -1,7 +1,16 @@
 ///entity_move_input()
 
-if(is_paused() || dead || room == rm_transition || open_workbench)
+if(is_paused() || dead || room == rm_transition || open_workbench || ui_textbox_open())
 {
+    if(ui_textbox_open() && keymap_check(keycode.interact))
+    {
+        ui_textbox_unqueue();
+        if(!ui_textbox_open())
+        {
+            textbox_cooldown = 60;
+        }
+    }
+
     speed = 0;
     exit;
 }
@@ -52,11 +61,6 @@ else if(inv_change_cd > 0)
 if(keymap_check(keycode.hide_inventory))
 {
     hide_inventory = !hide_inventory;
-}
-
-if(keymap_check(keycode.interact))
-{
-    ui_textbox_unqueue();
 }
 
 if(keyboard_check_pressed(vk_f4))

@@ -249,7 +249,7 @@ if(invincible &gt; 0)
     --invincible;
 }
 
-if(!open_workbench)
+if(!open_workbench &amp;&amp; !ui_textbox_open())
 {
     if(keymap_check(keycode.fire) &amp;&amp; !dead)
     {
