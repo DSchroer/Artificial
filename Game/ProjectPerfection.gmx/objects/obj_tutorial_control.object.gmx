@@ -68,6 +68,7 @@ trigger1.trigger_number = 14;
             <kind>1</kind>
             <string>/// Weapon message
 ui_textbox_queue("Broadcasting System: `br You can swap guns with |red Q |white or |red Mouse Wheel"); 
+ui_flash_textbox();
 
 </string>
           </argument>
@@ -94,6 +95,8 @@ ui_textbox_queue("Broadcasting System: `br You can swap guns with |red Q |white 
             <string>/// Shield Message
 
 ui_textbox_queue("Broadcasting System: `br This energy shield will automatically protect you from damage. It will recharge over time if you’re not taking damage. ");
+ui_flash_textbox();
+
 </string>
           </argument>
         </arguments>
@@ -120,6 +123,7 @@ ui_textbox_queue("Broadcasting System: `br This energy shield will automatically
 {
     ui_textbox_queue("Broadcasting System: `br Beginning combat training for Model #9: codename " + '"I"' + ". `br Please press |red RMB |white or |red E |white to continue.");
     ui_textbox_queue("Broadcasting System: `br Now that you’ve had a moment to get used to your new body, it's time to suit up. Press |red WASD |white to move.");
+    ui_flash_textbox();
     obj_progress.tutorial++;
 }
 
@@ -168,9 +172,11 @@ if(obj_progress.tutorial == 1)
     alarm[0] = 60 * 4;   
     obj_progress.tutorial++;
 }
+
 if(obj_progress.tutorial == 4)
 {
     ui_textbox_queue("Broadcasting System: `br During your travels, you will find several different types of guns. Press |red E |white or |red RMB |white to interact with items in the game world.");
+    ui_flash_textbox();
     obj_progress.tutorial++;
 }
 
@@ -192,6 +198,7 @@ if(obj_progress.tutorial == 8)
 if(obj_progress.tutorial == 11)
 {
     ui_textbox_queue("Broadcasting System: `br You are well versed in how to read intergalactic text. Press |red E |white or |red RMB |white to read any books you come across in your travels. ");
+    ui_flash_textbox();
     obj_progress.tutorial++;
 }
 
@@ -201,7 +208,7 @@ if(obj_progress.tutorial == 13)
     obj_progress.tutorial++;   
 }
 
-debug_show_string("TUT:" + string(obj_progress.tutorial));
+
 </string>
           </argument>
         </arguments>

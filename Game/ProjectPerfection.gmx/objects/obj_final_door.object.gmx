@@ -3,7 +3,7 @@
   <spriteName>spr_door_background</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-5</depth>
   <persistent>0</persistent>
   <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -26,20 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>x -= 5;
+y -= 6;
 
 animation_state = -1;
 animation_timer = 0;
 animation_max = 300;
-is_closed = obj_progress.cube_parts &lt; 4;
-if(is_closed)
-{
-    // Create walls
-    var yp = y + sprite_get_height(spr_door_background) - 64 - 6;
-    for(var i = 0; i &lt;= 4; i++)
-    {
-        walls[i] = instance_create(x + i * 64, yp, obj_invisible_wall);        
-    }
-}
+is_closed = true;
+
 
 </string>
           </argument>
@@ -95,7 +88,7 @@ else
           <argument>
             <kind>1</kind>
             <string>
-if(obj_progress.cube_parts &gt;= 4)
+if(!is_closed)
 {
     obj_player.x = 4.5 * 64;
     obj_player.y = 4.5 * 64;
@@ -127,7 +120,7 @@ if(obj_progress.cube_parts &gt;= 4)
             <kind>1</kind>
             <string>draw_sprite(spr_door_background, -1, x, y);
 
-if(animation_state == -1 &amp;&amp; obj_progress.cube_parts &lt; 4)
+if(is_closed)
 {
     draw_sprite(spr_door_left, -1, x, y);
     draw_sprite(spr_door_middle, -1, x, y);
