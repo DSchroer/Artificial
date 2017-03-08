@@ -283,6 +283,19 @@ entity_collision();
 player_set_sprite();
 
 player_render_self();
+
+
+// Component tutorial
+if(!save_get_value(obj_save_data, "components_tutorial", false) &amp;&amp; save_get_value(obj_save_data, "components", 0) &gt; 0)
+{
+    if(!level_stub_find(obj_enemy))
+    {        
+        save_set_value(obj_save_data, "components_tutorial", true);              
+        tutorial_components();        
+    } 
+}
+
+
 </string>
           </argument>
         </arguments>

@@ -298,7 +298,7 @@ var text_height = string_height("Workbench") * scale;
 draw_text_transformed((display_get_gui_width() - text_width) / 2, background_pos_y + 20, "Workbench", scale, scale, 0);
 // Components
 scale = 1;
-var components_str = "Components: " + string(save_get_value(obj_save_data, "components", 0));
+var components_str = "Components: " + string(save_get_value(obj_save_data, "components", 0)) + "/3";
 text_width = string_width(components_str) * scale;
 draw_text_transformed((display_get_gui_width() - text_width) / 2, background_pos_y + text_height * scale + 30, components_str, scale, scale, 0);
 
