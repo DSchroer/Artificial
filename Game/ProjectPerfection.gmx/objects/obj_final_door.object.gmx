@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>x -= 5;
 
+animation_state = -1;
+animation_timer = 0;
+animation_max = 300;
 is_closed = obj_progress.cube_parts &lt; 4;
 if(is_closed)
 {
@@ -60,17 +63,14 @@ if(is_closed)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(is_closed &amp;&amp; obj_progress.cube_parts == 4)
+            <string>
+if(animation_timer &gt; 0)
 {
-    is_closed = false;
-    // Kill walls and open
-    for(var i = 0; i &lt;= 4; i++)
-    {
-        with(walls[i])
-        {
-            instance_destroy();
-        }
-    }
+    animation_timer--;
+}
+else
+{
+    animation_state = -1;
 }
 </string>
           </argument>
@@ -125,9 +125,10 @@ if(obj_progress.cube_parts &gt;= 4)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(obj_progress.cube_parts &lt; 4)
+            <string>draw_sprite(spr_door_background, -1, x, y);
+
+if(animation_state == -1 &amp;&amp; obj_progress.cube_parts &lt; 4)
 {
-    draw_sprite(spr_door_background, -1, x, y);
     draw_sprite(spr_door_left, -1, x, y);
     draw_sprite(spr_door_middle, -1, x, y);
     draw_sprite(spr_door_right, -1, x, y);
@@ -145,6 +146,49 @@ if(obj_progress.cube_parts &gt;= 4)
         draw_sprite(spr_door_right_trim, -1, x, y);
     }
 }
+
+if(animation_state == 1)
+{
+    // Open
+    percent_open = animation_timer / animation_max;
+    inverse_percent = 1 - percent_open;
+
+    draw_sprite_part(spr_door_left, -1, 16 + 90 * inverse_percent, 0, 90 * percent_open, sprite_get_height(spr_door_left), x + 16, y);
+    draw_sprite_part(spr_door_middle, -1, 0, 68, sprite_get_width(spr_door_middle), 126 * percent_open, x, y + 68 + 126 * inverse_percent);
+    draw_sprite_part(spr_door_right, -1, 102, 0, 90 * percent_open, sprite_get_height(spr_door_right), x + 102 + 90 * inverse_percent, y);
+    
+    draw_sprite_part(spr_door_left_trim, -1, 16 + 90 * inverse_percent, 0, 90 * percent_open, sprite_get_height(spr_door_left_trim), x + 16, y);
+    draw_sprite_part(spr_door_middle_trim, -1, 0, 68, sprite_get_width(spr_door_middle_trim), 126 * percent_open, x, y + 68 + 126 * inverse_percent);
+    draw_sprite_part(spr_door_right_trim, -1, 102, 0, 90 * percent_open, sprite_get_height(spr_door_right_trim), x + 102 + 90 * inverse_percent, y);
+    
+}
+
+if(animation_state == 2)
+{
+    //Close
+    percent_open = (animation_max - animation_timer) / animation_max;
+    inverse_percent = 1 - percent_open;
+
+    draw_sprite_part(spr_door_left, -1, 16 + 90 * inverse_percent, 0, 90 * percent_open, sprite_get_height(spr_door_left), x + 16, y);
+    draw_sprite_part(spr_door_middle, -1, 0, 68, sprite_get_width(spr_door_middle), 126 * percent_open, x, y + 68 + 126 * inverse_percent);
+    draw_sprite_part(spr_door_right, -1, 102, 0, 90 * percent_open, sprite_get_height(spr_door_right), x + 102 + 90 * inverse_percent, y);
+
+    if(obj_progress.cube_parts &gt;= 1)
+    {
+        draw_sprite_part(spr_door_left_trim, -1, 16 + 90 * inverse_percent, 0, 90 * percent_open, sprite_get_height(spr_door_left_trim), x + 16, y);
+    }
+    if(obj_progress.cube_parts &gt;= 2)
+    {
+        draw_sprite_part(spr_door_middle_trim, -1, 0, 68, sprite_get_width(spr_door_middle_trim), 126 * percent_open, x, y + 68 + 126 * inverse_percent);
+    }
+    if(obj_progress.cube_parts &gt;= 3)
+    {
+        draw_sprite_part(spr_door_right_trim, -1, 102, 0, 90 * percent_open, sprite_get_height(spr_door_right_trim), x + 102 + 90 * inverse_percent, y);
+    }
+}
+
+draw_sprite(spr_door_border, -1, x, y);
+
 </string>
           </argument>
         </arguments>

@@ -220,6 +220,7 @@
         <sprite>sprites\spr_door_left_trim</sprite>
         <sprite>sprites\spr_door_middle_trim</sprite>
         <sprite>sprites\spr_door_right_trim</sprite>
+        <sprite>sprites\spr_door_border</sprite>
       </sprites>
     </sprites>
     <sprites name="Shots">
@@ -707,6 +708,10 @@
       <script>scripts\tutorial_open_second_doors.gml</script>
       <script>scripts\tutorial_open_third_doors.gml</script>
     </scripts>
+    <scripts name="Moments">
+      <script>scripts\moment_door_open.gml</script>
+      <script>scripts\moment_door_close.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
@@ -729,7 +734,6 @@
     <font>fonts\fnt_hit</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_final_door</object>
     <objects name="Attacks">
       <object>objects\obj_shot_plasma</object>
       <object>objects\obj_shot_normal</object>
@@ -840,6 +844,7 @@
     <object>objects\obj_duck</object>
     <object>objects\obj_health_can</object>
     <object>objects\obj_fonts</object>
+    <object>objects\obj_final_door</object>
     <object>objects\obj_component</object>
     <object>objects\obj_item</object>
     <objects name="Save">
@@ -873,6 +878,7 @@
       <object>objects\obj_tutorial_control</object>
       <object>objects\obj_tutorial_trigger</object>
       <object>objects\obj_tutorial_book</object>
+      <object>objects\obj_tutorial_control_hub</object>
     </objects>
     <objects name="UI">
       <object>objects\obj_minimap</object>

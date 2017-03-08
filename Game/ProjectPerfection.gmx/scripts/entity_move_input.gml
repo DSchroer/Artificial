@@ -96,6 +96,15 @@ if(keyboard_check_pressed(ord("K")))
 {
     obj_progress.cube_parts -= 1;
 }
+if(keyboard_check_pressed(ord("M")))
+{
+    moment_door_open();
+}
+if(keyboard_check_pressed(ord("N")))
+{
+    moment_door_close();
+}
+
 if(keyboard_check_pressed(vk_numpad1))
 {
     inventory[selected_slot] = inventory_spawn_gun(10);
