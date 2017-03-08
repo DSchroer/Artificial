@@ -708,6 +708,8 @@
       <script>scripts\tutorial_create_third_doors.gml</script>
       <script>scripts\tutorial_open_second_doors.gml</script>
       <script>scripts\tutorial_open_third_doors.gml</script>
+      <script>scripts\tutorial_done.gml</script>
+      <script>scripts\tutorial_finish.gml</script>
     </scripts>
     <scripts name="Moments">
       <script>scripts\moment_door_open.gml</script>

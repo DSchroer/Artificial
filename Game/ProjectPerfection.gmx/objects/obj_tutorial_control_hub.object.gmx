@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>alarm[0] = 90;
 obj_progress.tutorial = max(50, obj_progress.tutorial);
+save_set_value(obj_save_data, "tutorial", obj_progress.tutorial);
+save_flush(obj_save_data);
 
 var is_closed = false;
 
@@ -44,6 +46,45 @@ if(is_closed)
 {
     moment_door_build_walls();
 }
+
+//
+trigger1 = instance_create(1152, 1728, obj_tutorial_trigger);
+trigger1.image_xscale *= 14;
+trigger1.image_yscale *= 14;
+trigger1.trigger_number = 10;
+
+
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="6">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+
+ui_textbox_queue("Broadcast System: `br Beginning Mission Brief."); 
+ui_textbox_queue("Broadcast System: `br Your are to retrieve the cube fragments from the surface of Vardus at all cost. After retrieving a fragment, return it to The Sword for safe keeping. "); 
+ui_textbox_queue("Broadcast System: `br Enter the room to the left to teleport to the surface of Vardus. "); 
+ui_flash_textbox();
+obj_progress.tutorial++;
 
 </string>
           </argument>
@@ -76,6 +117,68 @@ if(obj_progress.tutorial == 50)
     obj_progress.tutorial++;
 
 }
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>debug_show_string("T:" + string(obj_progress.tutorial));
+
+if(obj_progress.tutorial == 102 &amp;&amp; !ui_textbox_open())
+{
+    alarm[6] = 60;
+    obj_progress.tutorial++;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="20">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+if(obj_progress.tutorial == 101)
+{
+    ui_textbox_queue("Broadcasting System: `br Good Morning, |red J");
+    ui_textbox_queue("Broadcasting System: `br Congratulations on being the first to pass combat training. Grab your equipment and head to the main room. ");
+    ui_flash_textbox();
+    obj_progress.tutorial++;
+}
+
+
 
 </string>
           </argument>

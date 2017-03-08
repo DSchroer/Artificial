@@ -145,8 +145,13 @@ with(obj_level)
 {
     instance_destroy();
 }
-
+ 
+obj_progress.tutorial++;  
+ui_textbox_clear();
 room_goto(rm_hub);
+
+
+
 </string>
           </argument>
         </arguments>
@@ -169,7 +174,8 @@ room_goto(rm_hub);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>isomorphic_set_depth();
+            <string>
+isomorphic_set_depth();
 
 entity_dampening();
 entity_move_input();                                                                               
@@ -301,10 +307,17 @@ player_render_self();
             <kind>1</kind>
             <string>if(!dead)
 {
+    var delay = 1;
+    if(obj_progress.tutorial == 100)
+    {
+        ui_textbox_queue("Project iteration " + '"I"' + ": Status Failure. `br Eliminate Defect: |red Free Will. ");
+        delay = 2;
+    }
+
     dead = true;
-    alarm[0] = 60 * 4;
-    alarm[1] = 60 * 3;
-    alarm[2] = 60 * 2;
+    alarm[0] = 60 * 4 * delay;
+    alarm[1] = 60 * 3 * delay;
+    alarm[2] = 60 * 2 * delay;
     with(obj_camera)
     {
         zoom_speed = 0.03;

@@ -67,7 +67,7 @@ trigger1.trigger_number = 14;
           <argument>
             <kind>1</kind>
             <string>/// Weapon message
-ui_textbox_queue("Broadcasting System: `br You can swap guns with |red Q |white or |red Mouse Wheel"); 
+ui_textbox_queue("Broadcasting System: `br You can swap guns with |red Q |white or |red Mouse Wheel. |white Guns reload automatically when they run out of ammo, but they can also be reloaded manually by pressing |red R."); 
 ui_flash_textbox();
 
 </string>
@@ -208,7 +208,7 @@ if(obj_progress.tutorial == 13)
     obj_progress.tutorial++;   
 }
 
-
+debug_show_string("T:" + string(obj_progress.tutorial));
 </string>
           </argument>
         </arguments>

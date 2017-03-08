@@ -27,6 +27,23 @@
             <kind>1</kind>
             <string>event_inherited();
 target = obj_boss_final;
+
+if(!tutorial_done())
+{
+    ui_textbox_queue("????: `br Welcome. ");
+    ui_textbox_queue("I: `br ... ");
+    ui_textbox_queue("????: `br There's no reason to be nervous.");
+    ui_textbox_queue("I: `br I'd feel better if I knew where we were and why I'm here.");
+    ui_textbox_queue("????: `br Of course. We are aboard my ship, The Sword. We are currently orbiting the planet of Vardus in the Cataian galaxy. ");
+    ui_textbox_queue("????: `br It may surprise you to hear this, but I cannot leave this ship. That's where you come in. I need something on the planet surface below. ");
+    ui_textbox_queue("????: `br I want you to retrieve a relic called " + '"The Cube"' + ". It lies broken on the surface of Vardus. ");
+    ui_textbox_queue("????: `br Legend has it that this cube can affect matter itself. If an artifact that powerful were reassembled, the scientific discoveries that follow would be incredible.");
+    ui_textbox_queue("I: `br (He sounds sincere, but how could I just hand over something that powerful someone?)");
+    ui_textbox_queue("I: `br I don't think I can help you.");
+    ui_textbox_queue("????: `br Why not? This cube might contain the secrets to anything from improved intergalactic travel to eternal life. ");
+    ui_textbox_queue("I: `br If this cube is as powerful as you say, then I can't help you. Nobody - good or evil - should have access to that much power.");
+    ui_textbox_queue("????: `br I'm sorry you see it that way.");
+}
 </string>
           </argument>
         </arguments>
@@ -81,6 +98,12 @@ room_goto(rm_credits)
             <string>if(instance_number(target) == 0 &amp;&amp; alarm[1] == -1)
 {
     alarm[1] = 60;
+}
+
+if(!ui_textbox_open())
+{
+    tutorial_finish();
+    sfx_bkg_add_without_reset(bkg_final_boss);
 }
 </string>
           </argument>
