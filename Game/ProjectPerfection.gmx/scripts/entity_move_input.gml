@@ -88,7 +88,14 @@ if(keyboard_check_pressed(ord("H")))
 {
     obj_progress.tutorial = 0;
 }
-
+if(keyboard_check_pressed(ord("J")))
+{
+    obj_progress.cube_parts += 1;
+}
+if(keyboard_check_pressed(ord("K")))
+{
+    obj_progress.cube_parts -= 1;
+}
 if(keyboard_check_pressed(vk_numpad1))
 {
     inventory[selected_slot] = inventory_spawn_gun(10);

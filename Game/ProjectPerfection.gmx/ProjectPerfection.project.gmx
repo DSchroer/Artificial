@@ -212,6 +212,15 @@
       <sprite>sprites\spr_pickle_boss</sprite>
       <sprite>sprites\spr_azar_intro</sprite>
       <sprite>sprites\sprite58</sprite>
+      <sprites name="Door">
+        <sprite>sprites\spr_door_background</sprite>
+        <sprite>sprites\spr_door_left</sprite>
+        <sprite>sprites\spr_door_middle</sprite>
+        <sprite>sprites\spr_door_right</sprite>
+        <sprite>sprites\spr_door_left_trim</sprite>
+        <sprite>sprites\spr_door_middle_trim</sprite>
+        <sprite>sprites\spr_door_right_trim</sprite>
+      </sprites>
     </sprites>
     <sprites name="Shots">
       <sprite>sprites\spr_bullet</sprite>
@@ -720,6 +729,7 @@
     <font>fonts\fnt_hit</font>
   </fonts>
   <objects name="objects">
+    <object>objects\obj_final_door</object>
     <objects name="Attacks">
       <object>objects\obj_shot_plasma</object>
       <object>objects\obj_shot_normal</object>
@@ -806,7 +816,6 @@
       <object>objects\obj_door</object>
       <object>objects\obj_teleport</object>
       <object>objects\obj_tutorial_door</object>
-      <object>objects\obj_final_door</object>
       <object>objects\obj_cube</object>
       <object>objects\obj_interact</object>
       <object>objects\obj_interact_solid</object>
@@ -829,8 +838,8 @@
     </objects>
     <object>objects\obj_clear_entities</object>
     <object>objects\obj_duck</object>
-    <object>objects\obj_fonts</object>
     <object>objects\obj_health_can</object>
+    <object>objects\obj_fonts</object>
     <object>objects\obj_component</object>
     <object>objects\obj_item</object>
     <objects name="Save">
