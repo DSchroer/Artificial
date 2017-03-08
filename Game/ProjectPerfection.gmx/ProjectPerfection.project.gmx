@@ -97,37 +97,40 @@
     </sounds>
   </sounds>
   <sprites name="sprites">
-    <sprites name="Player">
-      <sprite>sprites\spr_player</sprite>
-      <sprite>sprites\spr_player_arm_l</sprite>
-      <sprite>sprites\spr_player_arm_l_bottom</sprite>
-      <sprite>sprites\spr_player_arm_r</sprite>
-      <sprite>sprites\spr_player_arm_r_bottom</sprite>
-      <sprite>sprites\spr_player_back</sprite>
-      <sprite>sprites\spr_player_walk</sprite>
+    <sprites name="Entities">
+      <sprites name="Player">
+        <sprite>sprites\spr_player</sprite>
+        <sprite>sprites\spr_player_arm_l</sprite>
+        <sprite>sprites\spr_player_arm_l_bottom</sprite>
+        <sprite>sprites\spr_player_arm_r</sprite>
+        <sprite>sprites\spr_player_arm_r_bottom</sprite>
+        <sprite>sprites\spr_player_back</sprite>
+        <sprite>sprites\spr_player_walk</sprite>
+      </sprites>
+      <sprite>sprites\spr_dog</sprite>
+      <sprites name="Enemy">
+        <sprite>sprites\spr_grunt</sprite>
+        <sprite>sprites\spr_target</sprite>
+      </sprites>
+      <sprite>sprites\spr_env_rock</sprite>
+      <sprites name="Boss">
+        <sprite>sprites\spr_boss</sprite>
+        <sprite>sprites\spr_final_boss</sprite>
+        <sprite>sprites\spr_final_boss_hit</sprite>
+      </sprites>
     </sprites>
-    <sprite>sprites\spr_bush</sprite>
-    <sprite>sprites\spr_shield</sprite>
-    <sprite>sprites\spr_item</sprite>
-    <sprite>sprites\spr_inv_shield1</sprite>
-    <sprites name="Weapons">
-      <sprite>sprites\spr_pistol_base</sprite>
-      <sprite>sprites\spr_pistol_assault</sprite>
-      <sprite>sprites\spr_rifle_base</sprite>
-      <sprite>sprites\spr_rifle_assault</sprite>
-      <sprite>sprites\spr_rifle_doku</sprite>
-      <sprite>sprites\spr_rifle_reflex</sprite>
-    </sprites>
-    <sprite>sprites\spr_target</sprite>
-    <sprite>sprites\spr_dishonDuck</sprite>
-    <sprite>sprites\spr_grunt</sprite>
     <sprites name="Ui">
-      <sprite>sprites\spr_textback</sprite>
-      <sprite>sprites\spr_inventory_background</sprite>
-      <sprite>sprites\spr_logo</sprite>
-      <sprite>sprites\spr_button</sprite>
-      <sprite>sprites\spr_slider</sprite>
-      <sprite>sprites\spr_button_active</sprite>
+      <sprites name="Components">
+        <sprite>sprites\spr_slider</sprite>
+        <sprite>sprites\spr_button_active</sprite>
+        <sprite>sprites\spr_button</sprite>
+        <sprite>sprites\spr_textback_flash</sprite>
+        <sprite>sprites\spr_textback</sprite>
+        <sprite>sprites\spr_workbench_ui</sprite>
+        <sprite>sprites\spr_button_gray</sprite>
+        <sprite>sprites\spr_progress</sprite>
+        <sprite>sprites\spr_prog_pos</sprite>
+      </sprites>
       <sprites name="HUD">
         <sprite>sprites\spr_laser_full</sprite>
         <sprite>sprites\spr_laser_empty</sprite>
@@ -143,8 +146,22 @@
         <sprite>sprites\spr_bossfront</sprite>
         <sprite>sprites\spr_bosshealth</sprite>
         <sprite>sprites\spr_reload_middle</sprite>
+        <sprite>sprites\spr_aim</sprite>
+        <sprite>sprites\spr_inventory_background</sprite>
+        <sprite>sprites\spr_map_border</sprite>
       </sprites>
-      <sprites name="tooltip">
+      <sprite>sprites\spr_logo</sprite>
+      <sprites name="Textbox_img">
+        <sprite>sprites\spr_controller_a</sprite>
+        <sprite>sprites\spr_controller_x</sprite>
+        <sprite>sprites\spr_controller_b</sprite>
+        <sprite>sprites\spr_controller_y</sprite>
+        <sprite>sprites\spr_controller_ddown</sprite>
+        <sprite>sprites\spr_controller_dright</sprite>
+        <sprite>sprites\spr_controller_dleft</sprite>
+        <sprite>sprites\spr_controller_dup</sprite>
+      </sprites>
+      <sprites name="Tooltip">
         <sprite>sprites\spr_tooltip_top_unique</sprite>
         <sprite>sprites\spr_tooltip_body</sprite>
         <sprite>sprites\spr_health_tooltip_back</sprite>
@@ -157,27 +174,10 @@
         <sprite>sprites\spr_arrow_down</sprite>
         <sprite>sprites\spr_arrow_equal</sprite>
       </sprites>
-      <sprites name="textbox_img">
-        <sprite>sprites\spr_controller_a</sprite>
-        <sprite>sprites\spr_controller_x</sprite>
-        <sprite>sprites\spr_controller_b</sprite>
-        <sprite>sprites\spr_controller_y</sprite>
-        <sprite>sprites\spr_controller_ddown</sprite>
-        <sprite>sprites\spr_controller_dright</sprite>
-        <sprite>sprites\spr_controller_dleft</sprite>
-        <sprite>sprites\spr_controller_dup</sprite>
+      <sprites name="Font">
+        <sprite>sprites\spr_base_font</sprite>
       </sprites>
-      <sprite>sprites\spr_textback_flash</sprite>
-      <sprite>sprites\spr_button_gray</sprite>
-      <sprite>sprites\spr_workbench_ui</sprite>
-      <sprite>sprites\spr_progress</sprite>
-      <sprite>sprites\spr_prog_pos</sprite>
     </sprites>
-    <sprites name="Fonts">
-      <sprite>sprites\spr_base_font</sprite>
-    </sprites>
-    <sprite>sprites\spr_trap</sprite>
-    <sprite>sprites\sprite30</sprite>
     <sprites name="Spawn">
       <sprite>sprites\spr_spawner</sprite>
       <sprite>sprites\spr_spawn_enemy</sprite>
@@ -206,14 +206,13 @@
       <sprite>sprites\spr_trap_rock</sprite>
       <sprite>sprites\spr_trap_spike</sprite>
       <sprite>sprites\spr_spike</sprite>
+      <sprite>sprites\spr_trap</sprite>
     </sprites>
-    <sprite>sprites\spr_healthpack</sprite>
     <sprites name="Moments">
       <sprite>sprites\spr_pickle_boss</sprite>
       <sprite>sprites\spr_azar_intro</sprite>
       <sprite>sprites\sprite58</sprite>
     </sprites>
-    <sprite>sprites\spr_aim</sprite>
     <sprites name="Shots">
       <sprite>sprites\spr_bullet</sprite>
       <sprite>sprites\spr_plasma</sprite>
@@ -222,22 +221,25 @@
       <sprite>sprites\spr_sword</sprite>
       <sprite>sprites\spr_wave</sprite>
     </sprites>
-    <sprite>sprites\spr_book</sprite>
-    <sprite>sprites\sprite59</sprite>
-    <sprite>sprites\spr_dog</sprite>
-    <sprite>sprites\spr_map_border</sprite>
     <sprite>sprites\spr_chest_closed</sprite>
     <sprite>sprites\spr_chest_open</sprite>
-    <sprite>sprites\spr_component</sprite>
-    <sprite>sprites\sprite101</sprite>
     <sprite>sprites\spr_workbench</sprite>
-    <sprites name="Boss">
-      <sprite>sprites\spr_boss</sprite>
-      <sprite>sprites\spr_final_boss</sprite>
-      <sprite>sprites\spr_final_boss_hit</sprite>
-    </sprites>
-    <sprite>sprites\spr_env_rock</sprite>
     <sprite>sprites\spr_light</sprite>
+    <sprites name="Items">
+      <sprite>sprites\spr_item</sprite>
+      <sprite>sprites\spr_inv_shield1</sprite>
+      <sprites name="Weapons">
+        <sprite>sprites\spr_pistol_base</sprite>
+        <sprite>sprites\spr_pistol_assault</sprite>
+        <sprite>sprites\spr_rifle_base</sprite>
+        <sprite>sprites\spr_rifle_assault</sprite>
+        <sprite>sprites\spr_rifle_doku</sprite>
+        <sprite>sprites\spr_rifle_reflex</sprite>
+      </sprites>
+      <sprite>sprites\spr_healthpack</sprite>
+      <sprite>sprites\spr_book</sprite>
+      <sprite>sprites\spr_component</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
