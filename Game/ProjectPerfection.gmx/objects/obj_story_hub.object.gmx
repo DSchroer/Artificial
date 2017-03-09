@@ -138,7 +138,11 @@ if(obj_progress.story == story_progress.chapter2_banter1)
     story_update();
 }
 
-
+if(obj_progress.cube_parts == 4)
+{
+    moment_door_open();
+    obj_progress.cube_parts++;   
+}  
 
 
 </string>
