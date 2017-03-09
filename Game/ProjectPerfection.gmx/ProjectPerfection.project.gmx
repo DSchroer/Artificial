@@ -718,6 +718,7 @@
       <script>scripts\moment_door_close.gml</script>
       <script>scripts\moment_door_build_walls.gml</script>
     </scripts>
+    <script>scripts\story_update.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
@@ -910,6 +911,10 @@
       <object>objects\obj_point_light</object>
       <object>objects\obj_caster</object>
       <object>objects\obj_cast_map</object>
+    </objects>
+    <objects name="Story">
+      <object>objects\obj_story_trigger</object>
+      <object>objects\obj_story_hub</object>
     </objects>
   </objects>
   <rooms name="rooms">
