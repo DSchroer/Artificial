@@ -97,37 +97,40 @@
     </sounds>
   </sounds>
   <sprites name="sprites">
-    <sprites name="Player">
-      <sprite>sprites\spr_player</sprite>
-      <sprite>sprites\spr_player_arm_l</sprite>
-      <sprite>sprites\spr_player_arm_l_bottom</sprite>
-      <sprite>sprites\spr_player_arm_r</sprite>
-      <sprite>sprites\spr_player_arm_r_bottom</sprite>
-      <sprite>sprites\spr_player_back</sprite>
-      <sprite>sprites\spr_player_walk</sprite>
+    <sprites name="Entities">
+      <sprites name="Player">
+        <sprite>sprites\spr_player</sprite>
+        <sprite>sprites\spr_player_arm_l</sprite>
+        <sprite>sprites\spr_player_arm_l_bottom</sprite>
+        <sprite>sprites\spr_player_arm_r</sprite>
+        <sprite>sprites\spr_player_arm_r_bottom</sprite>
+        <sprite>sprites\spr_player_back</sprite>
+        <sprite>sprites\spr_player_walk</sprite>
+      </sprites>
+      <sprite>sprites\spr_dog</sprite>
+      <sprites name="Enemy">
+        <sprite>sprites\spr_grunt</sprite>
+        <sprite>sprites\spr_target</sprite>
+      </sprites>
+      <sprite>sprites\spr_env_rock</sprite>
+      <sprites name="Boss">
+        <sprite>sprites\spr_boss</sprite>
+        <sprite>sprites\spr_final_boss</sprite>
+        <sprite>sprites\spr_final_boss_hit</sprite>
+      </sprites>
     </sprites>
-    <sprite>sprites\spr_bush</sprite>
-    <sprite>sprites\spr_shield</sprite>
-    <sprite>sprites\spr_item</sprite>
-    <sprite>sprites\spr_inv_shield1</sprite>
-    <sprites name="Weapons">
-      <sprite>sprites\spr_pistol_base</sprite>
-      <sprite>sprites\spr_pistol_assault</sprite>
-      <sprite>sprites\spr_rifle_base</sprite>
-      <sprite>sprites\spr_rifle_assault</sprite>
-      <sprite>sprites\spr_rifle_doku</sprite>
-      <sprite>sprites\spr_rifle_reflex</sprite>
-    </sprites>
-    <sprite>sprites\spr_target</sprite>
-    <sprite>sprites\spr_dishonDuck</sprite>
-    <sprite>sprites\spr_grunt</sprite>
     <sprites name="Ui">
-      <sprite>sprites\spr_textback</sprite>
-      <sprite>sprites\spr_inventory_background</sprite>
-      <sprite>sprites\spr_logo</sprite>
-      <sprite>sprites\spr_button</sprite>
-      <sprite>sprites\spr_slider</sprite>
-      <sprite>sprites\spr_button_active</sprite>
+      <sprites name="Components">
+        <sprite>sprites\spr_slider</sprite>
+        <sprite>sprites\spr_button_active</sprite>
+        <sprite>sprites\spr_button</sprite>
+        <sprite>sprites\spr_textback_flash</sprite>
+        <sprite>sprites\spr_textback</sprite>
+        <sprite>sprites\spr_workbench_ui</sprite>
+        <sprite>sprites\spr_button_gray</sprite>
+        <sprite>sprites\spr_progress</sprite>
+        <sprite>sprites\spr_prog_pos</sprite>
+      </sprites>
       <sprites name="HUD">
         <sprite>sprites\spr_laser_full</sprite>
         <sprite>sprites\spr_laser_empty</sprite>
@@ -143,8 +146,22 @@
         <sprite>sprites\spr_bossfront</sprite>
         <sprite>sprites\spr_bosshealth</sprite>
         <sprite>sprites\spr_reload_middle</sprite>
+        <sprite>sprites\spr_aim</sprite>
+        <sprite>sprites\spr_inventory_background</sprite>
+        <sprite>sprites\spr_map_border</sprite>
       </sprites>
-      <sprites name="tooltip">
+      <sprite>sprites\spr_logo</sprite>
+      <sprites name="Textbox_img">
+        <sprite>sprites\spr_controller_a</sprite>
+        <sprite>sprites\spr_controller_x</sprite>
+        <sprite>sprites\spr_controller_b</sprite>
+        <sprite>sprites\spr_controller_y</sprite>
+        <sprite>sprites\spr_controller_ddown</sprite>
+        <sprite>sprites\spr_controller_dright</sprite>
+        <sprite>sprites\spr_controller_dleft</sprite>
+        <sprite>sprites\spr_controller_dup</sprite>
+      </sprites>
+      <sprites name="Tooltip">
         <sprite>sprites\spr_tooltip_top_unique</sprite>
         <sprite>sprites\spr_tooltip_body</sprite>
         <sprite>sprites\spr_health_tooltip_back</sprite>
@@ -157,27 +174,10 @@
         <sprite>sprites\spr_arrow_down</sprite>
         <sprite>sprites\spr_arrow_equal</sprite>
       </sprites>
-      <sprites name="textbox_img">
-        <sprite>sprites\spr_controller_a</sprite>
-        <sprite>sprites\spr_controller_x</sprite>
-        <sprite>sprites\spr_controller_b</sprite>
-        <sprite>sprites\spr_controller_y</sprite>
-        <sprite>sprites\spr_controller_ddown</sprite>
-        <sprite>sprites\spr_controller_dright</sprite>
-        <sprite>sprites\spr_controller_dleft</sprite>
-        <sprite>sprites\spr_controller_dup</sprite>
+      <sprites name="Font">
+        <sprite>sprites\spr_base_font</sprite>
       </sprites>
-      <sprite>sprites\spr_textback_flash</sprite>
-      <sprite>sprites\spr_button_gray</sprite>
-      <sprite>sprites\spr_workbench_ui</sprite>
-      <sprite>sprites\spr_progress</sprite>
-      <sprite>sprites\spr_prog_pos</sprite>
     </sprites>
-    <sprites name="Fonts">
-      <sprite>sprites\spr_base_font</sprite>
-    </sprites>
-    <sprite>sprites\spr_trap</sprite>
-    <sprite>sprites\sprite30</sprite>
     <sprites name="Spawn">
       <sprite>sprites\spr_spawner</sprite>
       <sprite>sprites\spr_spawn_enemy</sprite>
@@ -194,6 +194,11 @@
       <sprite>sprites\spr_cast_wall</sprite>
       <sprite>sprites\spr_invisible_wall</sprite>
       <sprite>sprites\spr_interact</sprite>
+      <sprite>sprites\spr_laser_left_closed</sprite>
+      <sprite>sprites\spr_laser_right_closed</sprite>
+      <sprite>sprites\spr_laser_left_open</sprite>
+      <sprite>sprites\spr_laser_right_open</sprite>
+      <sprite>sprites\spr_laser_middle</sprite>
     </sprites>
     <sprites name="Traps">
       <sprite>sprites\spr_trap_stall</sprite>
@@ -201,14 +206,23 @@
       <sprite>sprites\spr_trap_rock</sprite>
       <sprite>sprites\spr_trap_spike</sprite>
       <sprite>sprites\spr_spike</sprite>
+      <sprite>sprites\spr_trap</sprite>
     </sprites>
-    <sprite>sprites\spr_healthpack</sprite>
     <sprites name="Moments">
       <sprite>sprites\spr_pickle_boss</sprite>
       <sprite>sprites\spr_azar_intro</sprite>
       <sprite>sprites\sprite58</sprite>
+      <sprites name="Door">
+        <sprite>sprites\spr_door_background</sprite>
+        <sprite>sprites\spr_door_left</sprite>
+        <sprite>sprites\spr_door_middle</sprite>
+        <sprite>sprites\spr_door_right</sprite>
+        <sprite>sprites\spr_door_left_trim</sprite>
+        <sprite>sprites\spr_door_middle_trim</sprite>
+        <sprite>sprites\spr_door_right_trim</sprite>
+        <sprite>sprites\spr_door_border</sprite>
+      </sprites>
     </sprites>
-    <sprite>sprites\spr_aim</sprite>
     <sprites name="Shots">
       <sprite>sprites\spr_bullet</sprite>
       <sprite>sprites\spr_plasma</sprite>
@@ -217,22 +231,25 @@
       <sprite>sprites\spr_sword</sprite>
       <sprite>sprites\spr_wave</sprite>
     </sprites>
-    <sprite>sprites\spr_book</sprite>
-    <sprite>sprites\sprite59</sprite>
-    <sprite>sprites\spr_dog</sprite>
-    <sprite>sprites\spr_map_border</sprite>
     <sprite>sprites\spr_chest_closed</sprite>
     <sprite>sprites\spr_chest_open</sprite>
-    <sprite>sprites\spr_component</sprite>
-    <sprite>sprites\sprite101</sprite>
     <sprite>sprites\spr_workbench</sprite>
-    <sprites name="Boss">
-      <sprite>sprites\spr_boss</sprite>
-      <sprite>sprites\spr_final_boss</sprite>
-      <sprite>sprites\spr_final_boss_hit</sprite>
-    </sprites>
-    <sprite>sprites\spr_env_rock</sprite>
     <sprite>sprites\spr_light</sprite>
+    <sprites name="Items">
+      <sprite>sprites\spr_item</sprite>
+      <sprite>sprites\spr_inv_shield1</sprite>
+      <sprites name="Weapons">
+        <sprite>sprites\spr_pistol_base</sprite>
+        <sprite>sprites\spr_pistol_assault</sprite>
+        <sprite>sprites\spr_rifle_base</sprite>
+        <sprite>sprites\spr_rifle_assault</sprite>
+        <sprite>sprites\spr_rifle_doku</sprite>
+        <sprite>sprites\spr_rifle_reflex</sprite>
+      </sprites>
+      <sprite>sprites\spr_healthpack</sprite>
+      <sprite>sprites\spr_book</sprite>
+      <sprite>sprites\spr_component</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -439,6 +456,7 @@
       <script>scripts\generator_register_items.gml</script>
       <script>scripts\generator_spawn_item.gml</script>
     </scripts>
+    <script>scripts\get_scaling_coefficient.gml</script>
     <scripts name="Gun">
       <script>scripts\gun_hand_distance.gml</script>
       <script>scripts\gun_hand_angle.gml</script>
@@ -549,6 +567,8 @@
       <script>scripts\player_compute_stats.gml</script>
       <script>scripts\player_levelup_shield.gml</script>
     </scripts>
+    <script>scripts\roll_boss_loot.gml</script>
+    <script>scripts\roll_power.gml</script>
     <scripts name="Save">
       <script>scripts\save_open.gml</script>
       <script>scripts\save_get_value.gml</script>
@@ -638,8 +658,8 @@
     </scripts>
     <script>scripts\surface_get_scale.gml</script>
     <scripts name="Ui">
+      <script>scripts\ui_can_render_tooltips.gml</script>
       <script>scripts\ui_check_weapon_slot_tooltip.gml</script>
-      <script>scripts\ui_clear_textbox_queue.gml</script>
       <script>scripts\ui_draw.gml</script>
       <script>scripts\ui_draw_action_indicators.gml</script>
       <script>scripts\ui_draw_boss_health.gml</script>
@@ -666,12 +686,14 @@
       <script>scripts\ui_get_modifier_colour.gml</script>
       <script>scripts\ui_get_quality_colour.gml</script>
       <script>scripts\ui_get_quality_string.gml</script>
-      <script>scripts\ui_queue_message.gml</script>
       <script>scripts\ui_set_colour.gml</script>
+      <script>scripts\ui_textbox_clear.gml</script>
+      <script>scripts\ui_textbox_open.gml</script>
+      <script>scripts\ui_textbox_queue.gml</script>
+      <script>scripts\ui_textbox_unqueue.gml</script>
       <script>scripts\ui_world_to_gui_x.gml</script>
       <script>scripts\ui_world_to_gui_y.gml</script>
-      <script>scripts\ui_can_render_tooltips.gml</script>
-      <script>scripts\ui_unqueue_textbox.gml</script>
+      <script>scripts\ui_flash_textbox.gml</script>
     </scripts>
     <script>scripts\wall_casts_shadow.gml</script>
     <scripts name="Workbench">
@@ -679,9 +701,24 @@
       <script>scripts\workbench_destroy_menu.gml</script>
       <script>scripts\workbench_update_tooltips.gml</script>
     </scripts>
-    <script>scripts\get_scaling_coefficient.gml</script>
-    <script>scripts\roll_power.gml</script>
-    <script>scripts\roll_boss_loot.gml</script>
+    <scripts name="Tutorial">
+      <script>scripts\tutorial_create_first_doors.gml</script>
+      <script>scripts\tutorial_open_first_doors.gml</script>
+      <script>scripts\tutorial_create_second_doors.gml</script>
+      <script>scripts\tutorial_create_third_doors.gml</script>
+      <script>scripts\tutorial_open_second_doors.gml</script>
+      <script>scripts\tutorial_open_third_doors.gml</script>
+      <script>scripts\tutorial_done.gml</script>
+      <script>scripts\tutorial_finish.gml</script>
+      <script>scripts\tutorial_components.gml</script>
+      <script>scripts\tutorial_workbench.gml</script>
+    </scripts>
+    <scripts name="Moments">
+      <script>scripts\moment_door_open.gml</script>
+      <script>scripts\moment_door_close.gml</script>
+      <script>scripts\moment_door_build_walls.gml</script>
+    </scripts>
+    <script>scripts\story_update.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
@@ -790,7 +827,6 @@
       <object>objects\obj_door</object>
       <object>objects\obj_teleport</object>
       <object>objects\obj_tutorial_door</object>
-      <object>objects\obj_final_door</object>
       <object>objects\obj_cube</object>
       <object>objects\obj_interact</object>
       <object>objects\obj_interact_solid</object>
@@ -813,8 +849,9 @@
     </objects>
     <object>objects\obj_clear_entities</object>
     <object>objects\obj_duck</object>
-    <object>objects\obj_fonts</object>
     <object>objects\obj_health_can</object>
+    <object>objects\obj_fonts</object>
+    <object>objects\obj_final_door</object>
     <object>objects\obj_component</object>
     <object>objects\obj_item</object>
     <objects name="Save">
@@ -843,6 +880,12 @@
     </objects>
     <objects name="Tutorial">
       <object>objects\obj_tutorial_text</object>
+      <object>objects\obj_tutorial_gate_open</object>
+      <object>objects\obj_tutorial_gate_closed</object>
+      <object>objects\obj_tutorial_control</object>
+      <object>objects\obj_tutorial_trigger</object>
+      <object>objects\obj_tutorial_book</object>
+      <object>objects\obj_tutorial_control_hub</object>
     </objects>
     <objects name="UI">
       <object>objects\obj_minimap</object>
@@ -868,6 +911,10 @@
       <object>objects\obj_point_light</object>
       <object>objects\obj_caster</object>
       <object>objects\obj_cast_map</object>
+    </objects>
+    <objects name="Story">
+      <object>objects\obj_story_trigger</object>
+      <object>objects\obj_story_hub</object>
     </objects>
   </objects>
   <rooms name="rooms">

@@ -83,8 +83,12 @@ mele[weapon_index.bullet_speed] = 0;
             <kind>1</kind>
             <string>isomorphic_set_depth();
 
-var state = sm_get_state();
+if(!tutorial_done())
+{    
+    exit;
+}
 
+var state = sm_get_state();
 if(player_exists())
 {
     switch(state)

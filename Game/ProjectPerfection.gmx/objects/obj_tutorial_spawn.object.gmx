@@ -29,7 +29,7 @@
 {
     with(obj_progress)
     {  
-        tutorial = true;
+        tutorial = 0;
     }
      save_set_value(obj_save_data, "tutorial", true);
      save_flush(obj_save_data);

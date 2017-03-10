@@ -1,6 +1,6 @@
 ///ui_draw_death_text()
 
-if(dead)
+if(dead && obj_progress.tutorial > 100)
 {
     var width = display_get_gui_width();
     var height = display_get_gui_height();

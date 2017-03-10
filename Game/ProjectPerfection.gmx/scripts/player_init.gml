@@ -41,6 +41,8 @@ ds_list_add(hurt_sounds, snd_hurt3);
 
 old_tooltips = false;
 
+tutorial_death_override = false;
+
 //animation
 image_speed = 0.25;
 

@@ -178,6 +178,12 @@ if(instance_exists(obj_progress))
     {
         instance_create(x, y, obj_component);
     }
+    
+    if(!save_get_value(obj_save_data, "component_found", false))
+    {
+        instance_create(x, y, obj_component);
+        save_set_value(obj_save_data, "component_found", true);
+    }
 }
 event_inherited();
 </string>

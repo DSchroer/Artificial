@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>
+save_set_value(obj_save_data, "component_found", true);
 save_set_value(obj_save_data, "components", 1 + save_get_value(obj_save_data, "components", 0));
 instance_destroy();
 

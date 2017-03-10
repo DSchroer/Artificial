@@ -1,4 +1,4 @@
-///ui_unqueue_textbox()
+///ui_textbox_unqueue()
 
 if(textbox_cooldown <= 0)
 {

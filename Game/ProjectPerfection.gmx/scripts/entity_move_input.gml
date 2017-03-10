@@ -1,7 +1,16 @@
 ///entity_move_input()
 
-if(is_paused() || dead || room == rm_transition || open_workbench)
+if(is_paused() || dead || room == rm_transition || open_workbench || ui_textbox_open())
 {
+    if(ui_textbox_open() && keymap_check(keycode.interact))
+    {
+        ui_textbox_unqueue();
+        if(!ui_textbox_open())
+        {
+            textbox_cooldown = 60;
+        }
+    }
+
     speed = 0;
     exit;
 }
@@ -54,18 +63,13 @@ if(keymap_check(keycode.hide_inventory))
     hide_inventory = !hide_inventory;
 }
 
-if(keymap_check(keycode.interact))
-{
-    ui_unqueue_textbox();
-}
-
 if(keyboard_check_pressed(vk_f4))
 {
-    ui_queue_message("()[]%+-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id porttito. `a `s `b `s `x `y `br `l `s `r `s `u `s `d Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id porttito" + 
+    ui_textbox_queue("()[]%+-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id porttito. `a `s `b `s `x `y `br `l `s `r `s `u `s `d Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id porttito" + 
     " `a `b `x `y `br `l `r `u `d ");
-    ui_queue_message("Test1 |red Test1 |crimson Test1 |yellow Test1 |orange Test1 |teal Test1 |white Test1 |black Test1 |fuchsia Test1");
-    ui_queue_message("Test2");
-    ui_queue_message("Test3");
+    ui_textbox_queue("Test1 |red Test1 |crimson Test1 |yellow Test1 |orange Test1 |teal Test1 |white Test1 |black Test1 |fuchsia Test1");
+    ui_textbox_queue("Test2");
+    ui_textbox_queue("Test3");
 }
 if(keyboard_check_pressed(vk_f12))
 {
@@ -75,9 +79,30 @@ if(keyboard_check_pressed(vk_f10))
 {
     player_level_up();
 }
+
 if(keyboard_check_pressed(ord("G")))
 {
     room_goto(rm_tutorial_beta);
+}
+if(keyboard_check_pressed(ord("H")))
+{
+    obj_progress.tutorial = 0;
+}
+if(keyboard_check_pressed(ord("J")))
+{
+    obj_progress.cube_parts += 1;
+}
+if(keyboard_check_pressed(ord("K")))
+{
+    obj_progress.cube_parts -= 1;
+}
+if(keyboard_check_pressed(ord("M")))
+{
+    moment_door_open();
+}
+if(keyboard_check_pressed(ord("N")))
+{
+    moment_door_close();
 }
 
 if(keyboard_check_pressed(vk_numpad1))

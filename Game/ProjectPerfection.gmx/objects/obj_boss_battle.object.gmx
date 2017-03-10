@@ -25,7 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0] = 120;
+            <string>if(!tutorial_done())
+{
+    alarm[0] = 1;
+} 
+else
+{
+    alarm[0] = 120;
+}
 drawing = true;
 target = obj_azar;
 photo = spr_azar_intro;
@@ -33,6 +40,20 @@ photo = spr_azar_intro;
 </string>
           </argument>
         </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>110</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_move_start</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
     <event eventtype="2" enumb="0">
@@ -61,7 +82,11 @@ with(target)
     sm_set_state(prev);
 }
 
-sfx_bkg_add_without_reset(bkg_boss1);
+if(tutorial_done())
+{
+    sfx_bkg_add_without_reset(bkg_boss1);
+}
+
 </string>
           </argument>
         </arguments>

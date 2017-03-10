@@ -29,7 +29,7 @@
 text = -1;
 sprite_index = -1;
 
-if(obj_progress.cube_parts &gt;= 4)
+if(obj_progress.cube_parts &gt;= 5)
 {
     instance_destroy();
 }
@@ -55,11 +55,7 @@ if(obj_progress.cube_parts &gt;= 4)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(triggered &amp;&amp; distance_to_object(obj_player) &gt; 100)
-{
-    triggered = false;
-}
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -81,7 +77,21 @@ if(obj_progress.cube_parts &gt;= 4)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>triggered = true;
+            <string>
+if(obj_progress.cube_parts == 4)
+{
+    moment_door_open();
+    obj_progress.cube_parts++;   
+}
+else
+{
+    if(!ui_textbox_open() &amp;&amp; obj_player.textbox_cooldown &lt;= 0)
+    {
+        ui_textbox_queue(text);
+    }
+}
+
+
 </string>
           </argument>
         </arguments>
@@ -104,11 +114,7 @@ if(obj_progress.cube_parts &gt;= 4)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(triggered &amp;&amp; !is_paused())
-{
-    ui_draw_textbox_ext(ui_world_to_gui_x(x - 150), ui_world_to_gui_y(y + 64), text, 1, 300, 150);
-}
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>

@@ -26,9 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>
-if(!save_get_value(obj_save_data, "tutorial", false))
+if(save_get_value(obj_save_data, "tutorial", 0) &lt; 50)
 {
-    room_goto(rm_tutorial);
+    room_goto(rm_tutorial_beta);
 }else{
     room_goto(rm_hub);
 }

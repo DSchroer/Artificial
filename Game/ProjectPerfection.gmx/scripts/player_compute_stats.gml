@@ -9,9 +9,9 @@ with(obj_player)
     
     max_health = (current_level + 1) * 100;
     current_health = max_health;
-    shield_max_health = (current_level + 1) * 75 * (1 + shield_health_powerup * 0.075);
+    shield_max_health = (current_level + 1) * 75 * (1 + shield_health_powerup * 0.1);
     remaining_shield = shield_max_health;
-    shield_recharge_rate = shield_recharge_rate_base * (1 + shield_recharge_powerup * 0.075);
+    shield_recharge_rate = shield_recharge_rate_base * (1 + shield_recharge_powerup * 0.1);
     shield_recharge_delay = shield_recharge_delay_base * (1 - shield_delay_powerup * 0.05);
 }
 
