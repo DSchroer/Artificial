@@ -452,7 +452,7 @@ with(obj_camera)
             <kind>1</kind>
             <string>
 draw_outline_begin();
-draw_outline_update(surface);
+draw_outline_update(surface, true);
 
 if(surface_exists(surface))
 {
