@@ -98,6 +98,7 @@ if(player_exists())
     switch(state)
     {
         case "paused":
+            speed = 0;
             break;
         case "idle":
             azar_idle();
