@@ -5,7 +5,7 @@ enum fonts{
     pixel
 }
 
-var order = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!.?()$',/\+-";
+var order = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!.?()$',/\+-%:#" + chr(34);
 
 var fnt = font_add_sprite_ext(spr_base_font, order, true, 2);
 draw_set_font(fnt);
