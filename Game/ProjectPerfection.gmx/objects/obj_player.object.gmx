@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>event_inherited();
 player_init();
+player_compute_stats();
 inventory_init();
 
 window_set_cursor(cr_none);
