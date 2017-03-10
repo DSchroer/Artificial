@@ -1,29 +1,26 @@
-///draw_outline_update(sprite)
+///draw_outline_update(sprite, is_surface)
 var spr = argument0;
+var surface = argument1;
+
 if(spr == noone)
 {
     exit;
 }
 
 var sprite_scale = shader_get_uniform(sdr_outline, "sprite_size");
-var sprite_uvs = shader_get_uniform(sdr_outline, "sprite_uvs");
 
-var tex;
-var uvs;
-if(surface_exists(spr))
-{
-    tex = surface_get_texture(spr);
-    uvs[0] = 0.0;
-    uvs[1] = 0.0;
-    uvs[2] = 1.0;
-    uvs[3] = 1.0;
-    //uvs = sprite_get_uvs(spr, image_index);
+var tex_h = 0.005;
+var tex_w = 0.005;
+
+if(surface)
+{   
+    var tex = surface_get_texture(spr);
+    tex_h = texture_get_texel_height(tex);
+    tex_w = texture_get_texel_width(tex);
 }else{
-    tex = sprite_get_texture(spr, image_index);
-    uvs = sprite_get_uvs(spr, image_index);
+    var tex = sprite_get_texture(spr, 0);
+    tex_h = texture_get_texel_height(tex);
+    tex_w = texture_get_texel_width(tex);
 }
 
-tex_h = texture_get_texel_height(tex);
-tex_w = texture_get_texel_width(tex);
-
-shader_set_uniform_f(sprite_scale, tex_w, tex_h, 1.0);
+shader_set_uniform_f(sprite_scale, tex_h, tex_w, 1.0);

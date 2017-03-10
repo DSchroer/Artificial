@@ -51,7 +51,6 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="obj_light_map" x="192" y="256" name="inst_788A72FA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="0" y="576" name="inst_7B5797DD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="0" y="640" name="inst_7EAFDAEA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="0" y="704" name="inst_6E6E6D71" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -193,7 +192,6 @@
     <instance objName="obj_shuud_attack_area" x="512" y="64" name="inst_5EFF4FCA" locked="0" code="" scaleX="16" scaleY="36" colour="4294967295" rotation="0"/>
     <instance objName="obj_shuud_attack_area" x="64" y="576" name="inst_94673891" locked="0" code="" scaleX="7" scaleY="21" colour="4294967295" rotation="0"/>
     <instance objName="obj_shuud_attack_area" x="1536" y="576" name="inst_42155F65" locked="0" code="" scaleX="6" scaleY="21" colour="4294967295" rotation="0"/>
-    <instance objName="obj_shuud_light" x="256" y="256" name="inst_573C2045" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

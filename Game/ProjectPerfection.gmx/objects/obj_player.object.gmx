@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>event_inherited();
 player_init();
+player_compute_stats();
 inventory_init();
 
 window_set_cursor(cr_none);
@@ -182,6 +183,7 @@ entity_move_input();
 
 if(is_paused())
 {
+    player_render_self();
     exit;
 }
 
@@ -450,10 +452,12 @@ with(obj_camera)
             <kind>1</kind>
             <string>
 draw_outline_begin();
-draw_outline_update(surface);
+draw_outline_update(surface, true);
 
-
-draw_surface(surface, x - base_x, y - base_y);
+if(surface_exists(surface))
+{
+    draw_surface(surface, x - base_x, y - base_y);
+}
 draw_outline_end();
 </string>
           </argument>

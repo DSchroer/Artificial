@@ -29,7 +29,6 @@
 {
     cgrid_set_collision(id);
 }
-instance_create(x, y, obj_caster);
 </string>
           </argument>
         </arguments>

@@ -1,6 +1,12 @@
 ///interact_any(distance)
 var dist = argument0;
 
+var pos = instance_place(x, y, obj_interact);
+if(pos)
+{
+    return pos;
+}
+
 var inst = instance_nearest(x, y, obj_interact);
 var solid_inst = instance_nearest(x, y, obj_interact_solid);
 

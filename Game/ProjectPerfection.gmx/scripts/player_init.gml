@@ -14,7 +14,6 @@ shield_recharge_rate_base = 0.1;
 shield_recharge_rate = 0.1;
 
 is_shield_active = save_get_value(obj_save_data, "shield", false);
-player_compute_stats();
 
 if(is_shield_active)
 {

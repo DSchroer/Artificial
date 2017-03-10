@@ -580,43 +580,6 @@
       <script>scripts\__jso_gmt_tuple.gml</script>
       <script>scripts\save_list_from_array.gml</script>
     </scripts>
-    <scripts name="Shadows">
-      <scripts name="Light">
-        <script>scripts\light_set_intensity_power.gml</script>
-        <script>scripts\light_create.gml</script>
-        <script>scripts\light_set_dynamic.gml</script>
-        <script>scripts\light_draw_debug.gml</script>
-        <script>scripts\light_set_color.gml</script>
-        <script>scripts\light_set_intensity.gml</script>
-        <script>scripts\light_get_color.gml</script>
-        <script>scripts\light_get_intensity.gml</script>
-        <script>scripts\light_set_cast_shadows.gml</script>
-        <script>scripts\light_get_cast_shadows.gml</script>
-        <script>scripts\light_set_size.gml</script>
-        <script>scripts\light_get_size.gml</script>
-        <script>scripts\light_destroy.gml</script>
-      </scripts>
-      <scripts name="Map">
-        <script>scripts\map_create.gml</script>
-        <script>scripts\map_set_color.gml</script>
-        <script>scripts\map_draw.gml</script>
-        <script>scripts\map_calculate_culling.gml</script>
-        <script>scripts\map_render.gml</script>
-      </scripts>
-      <scripts name="Cast">
-        <script>scripts\cast_create.gml</script>
-        <script>scripts\cast_set_dynamic.gml</script>
-        <script>scripts\cast_set_image.gml</script>
-        <script>scripts\cast_destroy.gml</script>
-      </scripts>
-      <scripts name="Core">
-        <script>scripts\core_shadow.gml</script>
-        <script>scripts\core_distance.gml</script>
-        <script>scripts\core_caster.gml</script>
-        <script>scripts\core_postprocess.gml</script>
-        <script>scripts\core_reductions.gml</script>
-      </scripts>
-    </scripts>
     <scripts name="Sound">
       <script>scripts\sfx_bkg_add.gml</script>
       <script>scripts\sfx_bkg_stop.gml</script>
@@ -719,6 +682,10 @@
       <script>scripts\moment_door_build_walls.gml</script>
     </scripts>
     <script>scripts\story_update.gml</script>
+    <scripts name="Door">
+      <script>scripts\door_expand_horizontal.gml</script>
+      <script>scripts\door_expand_vertical.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
@@ -804,7 +771,6 @@
         <object>objects\obj_shuud</object>
         <object>objects\obj_shuud_body</object>
         <object>objects\obj_shuud_attack_area</object>
-        <object>objects\obj_shuud_light</object>
       </objects>
       <objects name="Enemies">
         <object>objects\obj_captain</object>
@@ -903,15 +869,6 @@
     </objects>
     <object>objects\obj_cgrid</object>
     <object>objects\obj_hub</object>
-    <objects name="Shadows">
-      <object>objects\obj_light_var</object>
-    </objects>
-    <objects name="Lighting">
-      <object>objects\obj_light_map</object>
-      <object>objects\obj_point_light</object>
-      <object>objects\obj_caster</object>
-      <object>objects\obj_cast_map</object>
-    </objects>
     <objects name="Story">
       <object>objects\obj_story_trigger</object>
       <object>objects\obj_story_hub</object>
