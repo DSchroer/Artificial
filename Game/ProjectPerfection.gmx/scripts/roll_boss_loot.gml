@@ -2,9 +2,9 @@
 
 var boss_number = argument0;
 
-var gun1 = instance_create(x - 250 + random(500), y - 250 + random(500), obj_item);
+var gun1 = instance_create(x - 250 + random(500), y - 50 + random(300), obj_item);
 gun1.data = inventory_spawn_gun_ext(roll_power(), item_quality.uncommon);
-var gun2 = instance_create(x - 250 + random(500), y - 250 + random(500), obj_item);
+var gun2 = instance_create(x - 250 + random(500), y - 50 + random(300), obj_item);
 gun2.data = inventory_spawn_gun_ext(roll_power(), item_quality.uncommon);
 
 var gun3 = instance_create(x - 250 + random(500), y - 250 + random(500), obj_item);

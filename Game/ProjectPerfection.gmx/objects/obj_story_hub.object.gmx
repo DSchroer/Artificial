@@ -173,7 +173,7 @@ if(lore != -1)
             <string>///Room Center
 
 // Open the door
-if(obj_progress.cube_parts == 4)
+if(obj_progress.cube_parts == 5 &amp;&amp; !ui_textbox_open())
 {
     moment_door_open();
     obj_progress.cube_parts++;   

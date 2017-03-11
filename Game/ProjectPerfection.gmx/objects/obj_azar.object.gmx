@@ -142,7 +142,14 @@ y = room_height / 2;
 roll_boss_loot(1);
 
 kill_boss(1);
-instance_create(x, y, obj_cube);
+if(obj_progress.cube_parts &lt; 1)
+{
+    instance_create(x, y, obj_cube);
+}
+else
+{
+    instance_create(room_width / 2, room_height / 2 - 192, obj_hub_teleporter);
+}
 event_inherited();
 </string>
           </argument>
