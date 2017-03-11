@@ -35,7 +35,29 @@ else
 }
 drawing = true;
 target = obj_azar;
-photo = spr_azar_intro;
+
+if(room == rm_boss_final)
+{
+    photo = spr_heart_intro;
+}
+else if(room == rm_boss_4)
+{
+    photo = spr_shuud_intro;
+}
+else if(room == rm_boss_3)
+{
+    photo = spr_thwander_intro;
+}
+else if(room == rm_boss_2)
+{
+    photo = spr_dym_intro;
+}
+else 
+{
+    photo = spr_azar_intro;
+}
+
+
 
 </string>
           </argument>

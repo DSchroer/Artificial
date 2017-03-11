@@ -103,8 +103,8 @@ if(keyboard_check_pressed(ord("M")))
 if(keyboard_check_pressed(ord("N")))
 {
     moment_door_close();
-}
-
+}/*
+*/
 if(keyboard_check_pressed(vk_numpad1))
 {
     inventory[selected_slot] = inventory_spawn_gun(10);

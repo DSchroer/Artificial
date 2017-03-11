@@ -6,6 +6,6 @@ var text = argument2;
 
 var text_scale = 1;
 var width = 512 * 1.2;
-var height = 128 * 1.2;
+var height = 128 * 1.4;
 
 ui_draw_textbox_ext(xp, yp, text, text_scale, width, height);

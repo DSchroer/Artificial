@@ -6,4 +6,8 @@ save_flush(obj_save_data);
 
 var loreText = book_text();
 
-return loreText[index % array_length_1d(loreText)];
+if(index < array_length_1d(loreText))
+{
+    return loreText[index];
+}
+return -1;
