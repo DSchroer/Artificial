@@ -107,16 +107,20 @@
         <sprite>sprites\spr_player_back</sprite>
         <sprite>sprites\spr_player_walk</sprite>
       </sprites>
-      <sprite>sprites\spr_dog</sprite>
       <sprites name="Enemy">
-        <sprite>sprites\spr_grunt</sprite>
+        <sprite>sprites\spr_captain</sprite>
         <sprite>sprites\spr_target</sprite>
+        <sprite>sprites\spr_dog</sprite>
+        <sprite>sprites\spr_grunt</sprite>
+        <sprite>sprites\spr_brute</sprite>
       </sprites>
       <sprite>sprites\spr_env_rock</sprite>
       <sprites name="Boss">
-        <sprite>sprites\spr_boss</sprite>
         <sprite>sprites\spr_final_boss</sprite>
         <sprite>sprites\spr_final_boss_hit</sprite>
+        <sprite>sprites\spr_azar</sprite>
+        <sprite>sprites\spr_dym</sprite>
+        <sprite>sprites\spr_thwander</sprite>
       </sprites>
     </sprites>
     <sprites name="Ui">
