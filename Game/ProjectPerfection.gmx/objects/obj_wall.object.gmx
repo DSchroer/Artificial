@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(instance_exists(obj_cgrid))
+            <string>
+
+if(instance_exists(obj_cgrid))
 {
     cgrid_set_collision(id);
 }
@@ -41,6 +43,8 @@ with(obj_level)
         }
     }
 }
+
+
 </string>
           </argument>
         </arguments>
@@ -63,7 +67,10 @@ with(obj_level)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//do nothing
+            <string>if(object_index != obj_wall)
+{
+       draw_self();
+}
 </string>
           </argument>
         </arguments>
