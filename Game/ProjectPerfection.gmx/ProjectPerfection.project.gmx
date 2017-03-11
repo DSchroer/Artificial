@@ -125,6 +125,11 @@
           <sprite>sprites\spr_azar_attack</sprite>
           <sprite>sprites\spr_azar_wave</sprite>
         </sprites>
+        <sprites name="Worm">
+          <sprite>sprites\spr_worm_head</sprite>
+          <sprite>sprites\spr_worm_body</sprite>
+          <sprite>sprites\spr_worm_tail</sprite>
+        </sprites>
       </sprites>
     </sprites>
     <sprites name="Ui">
