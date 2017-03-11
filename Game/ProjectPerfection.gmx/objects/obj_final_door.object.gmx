@@ -57,12 +57,18 @@ is_closed = true;
           <argument>
             <kind>1</kind>
             <string>/// Kill walls 
-for(var i = 0; i &lt;= 4; i++)
+
+if(has_walls)
 {
-    with(walls[i])
+    has_walls = false;
+    for(var i = 0; i &lt;= 4; i++)
     {
-        instance_destroy();
+        with(walls[i])
+        {
+            instance_destroy();
+        }
     }
+
 }
 
 </string>
