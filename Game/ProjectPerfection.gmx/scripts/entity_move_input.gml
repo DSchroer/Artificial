@@ -79,7 +79,7 @@ if(keyboard_check_pressed(vk_f10))
 {
     player_level_up();
 }
-/*
+
 if(keyboard_check_pressed(ord("G")))
 {
     room_goto(rm_tutorial_beta);
@@ -103,7 +103,7 @@ if(keyboard_check_pressed(ord("M")))
 if(keyboard_check_pressed(ord("N")))
 {
     moment_door_close();
-}
+}/*
 */
 if(keyboard_check_pressed(vk_numpad1))
 {

@@ -151,7 +151,8 @@ kill_boss(4);
 roll_boss_loot(4);
 if(obj_progress.cube_parts &lt; 4)
 {
-    instance_create(x, y, obj_cube);
+    var cube = instance_create(x, y, obj_cube);
+    cube.sprite_index = spr_cube_piece4;
 }
 else
 {

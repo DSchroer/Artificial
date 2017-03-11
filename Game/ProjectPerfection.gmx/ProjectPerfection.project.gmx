@@ -230,6 +230,17 @@
       <sprite>sprites\spr_thwander_intro</sprite>
       <sprite>sprites\spr_shuud_intro</sprite>
       <sprite>sprites\spr_heart_intro</sprite>
+      <sprites name="Cube">
+        <sprite>sprites\spr_cube_piece1</sprite>
+        <sprite>sprites\spr_cube_piece2</sprite>
+        <sprite>sprites\spr_cube_piece3</sprite>
+        <sprite>sprites\spr_cube_piece4</sprite>
+        <sprite>sprites\spr_cube_hub1</sprite>
+        <sprite>sprites\spr_cube_hub2</sprite>
+        <sprite>sprites\spr_cube_hub3</sprite>
+        <sprite>sprites\spr_cube_hub4</sprite>
+        <sprite>sprites\spr_cube_hub5</sprite>
+      </sprites>
     </sprites>
     <sprites name="Shots">
       <sprite>sprites\spr_bullet</sprite>
