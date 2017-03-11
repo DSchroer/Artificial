@@ -50,8 +50,7 @@
             <kind>1</kind>
             <string>
 player_level_up();
-var cube = max(obj_progress.cube_parts, obj_progress.progress / 3);
-obj_progress.cube_parts = cube;
+obj_progress.cube_parts++;
 event_inherited();
 instance_destroy();
 

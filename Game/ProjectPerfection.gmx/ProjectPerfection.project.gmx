@@ -701,6 +701,8 @@
       <script>scripts\story_update.gml</script>
       <script>scripts\story_init.gml</script>
       <script>scripts\story_get_chapter.gml</script>
+      <script>scripts\story_get_dialog.gml</script>
+      <script>scripts\story_advance.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">

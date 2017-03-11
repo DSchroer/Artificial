@@ -39,7 +39,7 @@ trigger2.image_xscale *= 9;
 trigger2.image_yscale *= 9;
 trigger2.trigger_number = 11;
 
-// Left hallway
+// Right hallway
 trigger3 = instance_create(2304, 1536, obj_story_trigger);
 trigger3.image_xscale *= 3;
 trigger3.image_yscale *= 3;
@@ -140,7 +140,14 @@ if(lore != -1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Left hallway
+            <string>///Right hallway
+
+
+
+
+
+ 
+
 </string>
           </argument>
         </arguments>
@@ -165,17 +172,18 @@ if(lore != -1)
             <kind>1</kind>
             <string>///Room Center
 
-if(obj_progress.story == story_progress.chapter2_banter1)
-{
-    ui_textbox_queue("This is a test message. With any luck, it should only appear once.");
-    story_update();
-}
-
+// Open the door
 if(obj_progress.cube_parts == 4)
 {
     moment_door_open();
     obj_progress.cube_parts++;   
 }  
+
+if(obj_progress.story == story_progress.chapter3_banter5 || obj_progress.story == story_progress.chapter5_banter1)
+{
+    story_advance(60);
+}
+
 
 
 </string>
@@ -202,6 +210,18 @@ if(obj_progress.cube_parts == 4)
             <kind>1</kind>
             <string>///Teleporter
 
+if(obj_progress.story == story_progress.chapter3_banter1)
+{
+    story_advance(1);
+}
+
+if(obj_progress.story == story_progress.chapter5_banter2)
+{
+    story_advance(1);
+}
+
+
+
 
 </string>
           </argument>
@@ -227,7 +247,7 @@ if(obj_progress.cube_parts == 4)
             <kind>1</kind>
             <string>/// Trigger 4 Passthrough
 
-if(alarm[4] &lt;= 0)
+if(alarm[4] == -1)
 {
     alarm[4] = random_range(20, 50);
 }
@@ -259,7 +279,7 @@ if(alarm[4] &lt;= 0)
             <kind>1</kind>
             <string>/// Trigger 3 Passthrough
 
-if(alarm[3] &lt;= 0)
+if(alarm[3] == -1)
 {
     alarm[3] = random_range(20, 50);
 }
@@ -291,7 +311,7 @@ if(alarm[3] &lt;= 0)
             <kind>1</kind>
             <string>/// Trigger 2 Passthrough
 
-if(alarm[2] &lt;= 0)
+if(alarm[2] == -1)
 {
     alarm[2] = random_range(20, 50);
 }
@@ -323,7 +343,7 @@ if(alarm[2] &lt;= 0)
             <kind>1</kind>
             <string>/// Trigger 1 Passthrough
 
-if(alarm[1] &lt;= 0)
+if(alarm[1] == -1)
 {
     alarm[1] = random_range(20, 50);
 }

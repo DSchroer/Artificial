@@ -38,6 +38,38 @@ cursor_sprite = spr_aim;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="8">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Dialog delay 
+
+var dialog = story_get_dialog();
+if(dialog != -1)
+{
+    story_update();
+}
+ui_textbox_queue(dialog);
+ui_flash_textbox();
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="7">
       <action>
         <libid>1</libid>
@@ -56,8 +88,27 @@ cursor_sprite = spr_aim;
           <argument>
             <kind>1</kind>
             <string>/// Cube related lore. Also hub teleporter spawn
-ui_textbox_queue("You feel a strange sensation. It is as though the cube is granting you some of its power. `br |red Your health has increased by 100. `br |aqua your base shield has increased by 75.");
+ui_textbox_queue("You feel a strange sensation. `br |red Your base health has increased by 100. `br |aqua Your base shield has increased by 75.");
 instance_create(room_width / 2, room_height / 2 - 192, obj_hub_teleporter);
+
+if(obj_progress.cube_parts == 1)
+{
+    story_advance(1);
+}
+else if(obj_progress.cube_parts == 2)
+{
+    story_advance(1);
+    story_advance(1);
+}
+else if(obj_progress.cube_parts == 3)
+{
+    story_advance(1);
+}
+else if(obj_progress.cube_parts == 4)
+{
+    story_advance(1);
+}
+
 
 
 

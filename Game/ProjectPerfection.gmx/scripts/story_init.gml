@@ -11,9 +11,22 @@ enum story_chapter
 
 enum story_progress
 {
-    chapter2_banter1 = 0,
-    chapter2_banter2 = 1,
-    
+    chapter2_banter1,
+    chapter3_banter1,
+    chapter3_banter2,
+    chapter3_banter3,
+    chapter3_banter4,
+    chapter3_banter5,
+    chapter4_banter1,
+    chapter4_banter2,
+    chapter5_banter1,
+    chapter5_banter2,
+    chapter5_banter3,
+    chapter5_banter4,
+    chapter5_banter5,
+    chapter5_banter6,
+    chapter6_banter1,
+    finished 
 };
 
 
