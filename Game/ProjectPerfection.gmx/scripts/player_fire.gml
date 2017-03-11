@@ -2,6 +2,8 @@
 if(inventory[selected_slot] != -1 && is_array(inventory[selected_slot]))
 {
     var item = inventory[selected_slot];
-    inventory[selected_slot] = attack_gun(item, x, y - 64, point_direction(x, y - 64, mouse_x, mouse_y), self);   
+    var item_array = gun_hand_lookup(item[weapon_index.sprite_count + 1]);
+    
+    inventory[selected_slot] = attack_gun_ext(item, x, y - 64, point_direction(x, y - 64, mouse_x, mouse_y), item_array[4], self);   
 }
 
