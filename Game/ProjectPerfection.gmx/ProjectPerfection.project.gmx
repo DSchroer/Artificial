@@ -258,6 +258,7 @@
       <sprite>sprites\spr_book</sprite>
       <sprite>sprites\spr_component</sprite>
     </sprites>
+    <sprite>sprites\spr_lore_computer</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -292,6 +293,7 @@
       <script>scripts\book_any.gml</script>
       <script>scripts\book_number_epic_entries.gml</script>
       <script>scripts\book_get_chapter_library.gml</script>
+      <script>scripts\book_get_computer_hub_lore.gml</script>
     </scripts>
     <scripts name="Camera">
       <script>scripts\camera_init.gml</script>
@@ -698,6 +700,7 @@
     <scripts name="Story">
       <script>scripts\story_update.gml</script>
       <script>scripts\story_init.gml</script>
+      <script>scripts\story_get_chapter.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">
@@ -811,6 +814,8 @@
       <object>objects\obj_interact_solid</object>
       <object>objects\obj_prompt</object>
       <object>objects\obj_book</object>
+      <object>objects\obj_lore_computer</object>
+      <object>objects\obj_research_computer</object>
       <object>objects\obj_interact_area</object>
       <object>objects\obj_chest</object>
       <object>objects\obj_workbench</object>

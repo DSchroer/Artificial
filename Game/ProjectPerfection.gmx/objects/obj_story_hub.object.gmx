@@ -51,6 +51,45 @@ trigger4.image_xscale *= 2;
 trigger4.image_yscale *= 3;
 trigger4.trigger_number = 13;
 
+// Place lore books
+
+var chapter = story_get_chapter();
+
+var lore = book_get_chapter_library(chapter);
+if(lore != -1)
+{
+    var yp;
+    var xp;
+    yp[0] = 1152;
+    yp[1] = 1152;
+    yp[2] = 1152;
+    yp[3] = 960;
+    yp[4] = 960;
+    yp[5] = 768;
+    yp[6] = 768;
+    yp[7] = 768;
+
+    xp[0] = 2848 + random_range(0, 128);    
+    xp[1] = 2848 + random_range(192, 256);    
+    xp[2] = 2848 + random_range(256 + 64, 256 + 128);    
+    xp[3] = 2848 + random_range(0, 128);    
+    xp[4] = 2848 + random_range(192, 256);    
+    xp[5] = 2848 + random_range(256 + 64, 256 + 128);    
+    xp[6] = 2848 + random_range(0, 128);    
+    xp[7] = 2848 + random_range(192, 256);    
+    xp[8] = 2848 + random_range(256 + 64, 256 + 128);    
+
+    for(var i = 0; i &lt; array_length_1d(lore); i++)
+    {
+        var book_inst = instance_create(xp[i], yp[i], obj_book);
+        book_inst.text = lore[i];
+    }
+    
+}
+
+
+
+
 
 
 

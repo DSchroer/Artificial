@@ -88,7 +88,13 @@ case "|teal":
 case "|yellow":
     draw_set_color(c_yellow);
     break;
- 
+case "|beige":
+    draw_set_color(make_color_rgb(255, 221, 202));
+    break; 
+case "|brown":
+    draw_set_color(make_color_rgb(128, 64, 0));
+    break;
+
     
 }
 

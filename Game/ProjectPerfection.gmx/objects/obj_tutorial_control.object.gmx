@@ -121,7 +121,7 @@ ui_flash_textbox();
             <kind>1</kind>
             <string>if(obj_progress.tutorial == 0)
 {
-    ui_textbox_queue("Broadcasting System: `br Beginning combat training for Model #9: codename " + '"I"' + ". `br Please press |red RMB |white or |red E |white to continue.");
+    ui_textbox_queue("Broadcasting System: `br Beginning combat training for Model 9: codename " + '"I"' + ". `br Please press |red RMB |white or |red E |white to continue.");
     ui_textbox_queue("Broadcasting System: `br Now that you’ve had a moment to get used to your new body, it's time to suit up. Press |red WASD |white to move.");
     ui_flash_textbox();
     obj_progress.tutorial++;

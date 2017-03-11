@@ -33,4 +33,9 @@ loreText[i++] = "For a society so advanced and prosperous, they made one critica
 
 // 7 per 
 
+for(var i = 0; i < array_length_1d(loreText); i++)
+{
+    loreText[i] = "|orange History of the Cube " + string(i + 1) + " `br |white " + loreText[i];
+}
+
 return loreText;
