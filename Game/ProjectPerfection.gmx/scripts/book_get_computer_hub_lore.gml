@@ -43,5 +43,10 @@ if(chapter >= story_chapter.chapter5)
     text[i++] = "|fuchsia Research Notes 12 `br Star Year 2650. Month 07. Day 09. `br |white Subject A shows promise as a lab assistant or some other insignificant servant. But he cannot be sent into a combat situation. The damage from a single plasma shot will result in the subject dying. `br |red Experiment Status: Failure ";
 }
 
+if(i == 0)
+{
+    text[i] = "|red No Data Found.";
+}
 return text;   
+
 
