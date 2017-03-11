@@ -14,6 +14,7 @@ shield_recharge_rate_base = 0.1;
 shield_recharge_rate = 0.1;
 shield_recharge_sound = -1;
 shield_is_recharging = true;
+shield_broken_sound = -1;
 
 is_shield_active = save_get_value(obj_save_data, "shield", false);
 

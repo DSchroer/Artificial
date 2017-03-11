@@ -26,6 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>player_heal_percent(100);
+with(obj_player)
+{
+    remaining_shield = shield_max_health;
+}
 </string>
           </argument>
         </arguments>

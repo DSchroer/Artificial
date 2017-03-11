@@ -98,6 +98,8 @@
     <sound>sound\snd_chest</sound>
     <sound>sound\snd_paper_rustle</sound>
     <sound>sound\snd_shield_recharge</sound>
+    <sound>sound\snd_shield_broken</sound>
+    <sound>sound\snd_moment_door_open</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="Entities">

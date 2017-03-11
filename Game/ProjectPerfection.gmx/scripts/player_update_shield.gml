@@ -9,6 +9,11 @@ if(is_shield_active)
         if(audio_is_playing(shield_recharge_sound))
         {
             audio_stop_sound(shield_recharge_sound);
+            shield_recharge_sound = -1;
+        }
+        if(remaining_shield <= 0)
+        {
+            shield_broken_sound = sfx_play(snd_shield_broken, false);
         }
     }
     else
@@ -20,8 +25,18 @@ if(is_shield_active)
         if(!shield_is_recharging)
         {
             shield_recharge_sound = sfx_play(snd_shield_recharge, false);
+            if(audio_is_playing(shield_broken_sound))
+            {
+                shield_broken_sound = -1;
+                audio_stop_sound(shield_broken_sound);
+            }
         }
         shield_is_recharging = true;
+    }
+    
+    if(remaining_shield > 0)
+    {
+        
     } 
 }
 else 
