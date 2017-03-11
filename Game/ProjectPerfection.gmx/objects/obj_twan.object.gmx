@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>entity_init();
 event_inherited();
-max_health = 10000;
-current_health = 10000;
+max_health = 7500;
+current_health = 7500;
 
 sm_init("idle");
 

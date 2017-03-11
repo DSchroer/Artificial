@@ -290,6 +290,8 @@
       <script>scripts\book_get_next.gml</script>
       <script>scripts\book_text.gml</script>
       <script>scripts\book_any.gml</script>
+      <script>scripts\book_number_epic_entries.gml</script>
+      <script>scripts\book_get_chapter_library.gml</script>
     </scripts>
     <scripts name="Camera">
       <script>scripts\camera_init.gml</script>
@@ -689,10 +691,13 @@
       <script>scripts\moment_door_close.gml</script>
       <script>scripts\moment_door_build_walls.gml</script>
     </scripts>
-    <script>scripts\story_update.gml</script>
     <scripts name="Door">
       <script>scripts\door_expand_horizontal.gml</script>
       <script>scripts\door_expand_vertical.gml</script>
+    </scripts>
+    <scripts name="Story">
+      <script>scripts\story_update.gml</script>
+      <script>scripts\story_init.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">

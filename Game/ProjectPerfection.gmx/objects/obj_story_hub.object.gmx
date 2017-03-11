@@ -26,12 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>
-enum story_progress
-{
-    chapter2_banter1 = 0,
-    chapter2_banter2 = 1,
-    
-};
 
 // Teleporter
 trigger1 = instance_create(512 - 64, 768, obj_story_trigger);

@@ -1,5 +1,7 @@
 ///story_update()
 
+
+
 switch(obj_progress.story)
 {
 case story_progress.chapter2_banter1:  
