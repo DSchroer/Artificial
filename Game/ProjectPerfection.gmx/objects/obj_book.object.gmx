@@ -3,7 +3,7 @@
   <spriteName>spr_book</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-5</depth>
   <persistent>0</persistent>
   <parentName>obj_interact</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -32,32 +32,6 @@ text = -1;
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if(triggered &amp;&amp; distance_to_object(obj_player) &gt; 100)
-{
-    triggered = false;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="7" enumb="10">
       <action>
         <libid>1</libid>
@@ -81,12 +55,17 @@ if(text == -1)
 {
     text = book_get_next();
 }
+
+if(!ui_textbox_open() &amp;&amp; obj_player.textbox_cooldown &lt;= 0)
+{
+    ui_textbox_queue(text);
+}
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="64">
+    <event eventtype="7" enumb="4">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -103,9 +82,15 @@ if(text == -1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(triggered &amp;&amp; !is_paused())
+            <string>var point = level_get_spawn_point();
+if(point != noone)
 {
-    ui_draw_textbox_ext(ui_world_to_gui_x(x - 150), ui_world_to_gui_y(y + 64), text, 1, 500, 150);
+   x = point.x;
+   y = point.y;
+   with(point)
+   {
+       instance_destroy();
+   }
 }
 </string>
           </argument>

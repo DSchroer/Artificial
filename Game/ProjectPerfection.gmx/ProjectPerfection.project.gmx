@@ -107,16 +107,20 @@
         <sprite>sprites\spr_player_back</sprite>
         <sprite>sprites\spr_player_walk</sprite>
       </sprites>
-      <sprite>sprites\spr_dog</sprite>
       <sprites name="Enemy">
-        <sprite>sprites\spr_grunt</sprite>
+        <sprite>sprites\spr_captain</sprite>
         <sprite>sprites\spr_target</sprite>
+        <sprite>sprites\spr_dog</sprite>
+        <sprite>sprites\spr_grunt</sprite>
+        <sprite>sprites\spr_brute</sprite>
       </sprites>
       <sprite>sprites\spr_env_rock</sprite>
       <sprites name="Boss">
-        <sprite>sprites\spr_boss</sprite>
         <sprite>sprites\spr_final_boss</sprite>
         <sprite>sprites\spr_final_boss_hit</sprite>
+        <sprite>sprites\spr_azar</sprite>
+        <sprite>sprites\spr_dym</sprite>
+        <sprite>sprites\spr_thwander</sprite>
       </sprites>
     </sprites>
     <sprites name="Ui">
@@ -222,6 +226,21 @@
         <sprite>sprites\spr_door_right_trim</sprite>
         <sprite>sprites\spr_door_border</sprite>
       </sprites>
+      <sprite>sprites\spr_dym_intro</sprite>
+      <sprite>sprites\spr_thwander_intro</sprite>
+      <sprite>sprites\spr_shuud_intro</sprite>
+      <sprite>sprites\spr_heart_intro</sprite>
+      <sprites name="Cube">
+        <sprite>sprites\spr_cube_piece1</sprite>
+        <sprite>sprites\spr_cube_piece2</sprite>
+        <sprite>sprites\spr_cube_piece3</sprite>
+        <sprite>sprites\spr_cube_piece4</sprite>
+        <sprite>sprites\spr_cube_hub1</sprite>
+        <sprite>sprites\spr_cube_hub2</sprite>
+        <sprite>sprites\spr_cube_hub3</sprite>
+        <sprite>sprites\spr_cube_hub4</sprite>
+        <sprite>sprites\spr_cube_hub5</sprite>
+      </sprites>
     </sprites>
     <sprites name="Shots">
       <sprite>sprites\spr_bullet</sprite>
@@ -250,6 +269,7 @@
       <sprite>sprites\spr_book</sprite>
       <sprite>sprites\spr_component</sprite>
     </sprites>
+    <sprite>sprites\spr_lore_computer</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -282,6 +302,9 @@
       <script>scripts\book_get_next.gml</script>
       <script>scripts\book_text.gml</script>
       <script>scripts\book_any.gml</script>
+      <script>scripts\book_number_epic_entries.gml</script>
+      <script>scripts\book_get_chapter_library.gml</script>
+      <script>scripts\book_get_computer_hub_lore.gml</script>
     </scripts>
     <scripts name="Camera">
       <script>scripts\camera_init.gml</script>
@@ -681,10 +704,16 @@
       <script>scripts\moment_door_close.gml</script>
       <script>scripts\moment_door_build_walls.gml</script>
     </scripts>
-    <script>scripts\story_update.gml</script>
     <scripts name="Door">
       <script>scripts\door_expand_horizontal.gml</script>
       <script>scripts\door_expand_vertical.gml</script>
+    </scripts>
+    <scripts name="Story">
+      <script>scripts\story_update.gml</script>
+      <script>scripts\story_init.gml</script>
+      <script>scripts\story_get_chapter.gml</script>
+      <script>scripts\story_get_dialog.gml</script>
+      <script>scripts\story_advance.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">
@@ -798,9 +827,12 @@
       <object>objects\obj_interact_solid</object>
       <object>objects\obj_prompt</object>
       <object>objects\obj_book</object>
+      <object>objects\obj_lore_computer</object>
+      <object>objects\obj_research_computer</object>
       <object>objects\obj_interact_area</object>
       <object>objects\obj_chest</object>
       <object>objects\obj_workbench</object>
+      <object>objects\obj_hub_teleporter</object>
     </objects>
     <objects name="Menus">
       <object>objects\obj_main_menu</object>
