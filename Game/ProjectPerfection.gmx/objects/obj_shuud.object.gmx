@@ -149,6 +149,7 @@ x = room_width / 2;
 y = room_height / 2;
 kill_boss(4);
 roll_boss_loot(4);
+obj_progress.progress++;
 if(obj_progress.cube_parts &lt; 4)
 {
     var cube = instance_create(x, y, obj_cube);
