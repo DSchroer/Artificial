@@ -175,7 +175,7 @@ with(obj_level)
     instance_destroy();
 }
  
-obj_progress.tutorial++;  
+
 ui_textbox_clear();
 room_goto(rm_hub);
 
@@ -356,7 +356,9 @@ if(!save_get_value(obj_save_data, "components_tutorial", false) &amp;&amp; save_
         ui_textbox_queue("Project iteration " + '"I"' + ": Status Failure. `br Eliminate Defect: |red Free Will. ");
         delay = 2;
     }
-
+    obj_progress.tutorial = 101;  
+    save_flush(obj_save_data);
+    
     dead = true;
     alarm[0] = 60 * 4 * delay;
     alarm[1] = 60 * 3 * delay;

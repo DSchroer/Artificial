@@ -33,6 +33,11 @@
     {
         ui_textbox_queue(text[i]); 
     }
+    
+    if(lore_state == 0)
+    {
+        ui_textbox_queue("|red No lore entries found.");
+    }
 
 }
 </string>
