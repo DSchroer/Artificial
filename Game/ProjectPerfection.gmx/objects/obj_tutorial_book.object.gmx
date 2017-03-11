@@ -52,6 +52,7 @@ text = "A lot of Artificial's story is told through lore books, research notes, 
             <string>if(!ui_textbox_open() &amp;&amp; obj_player.textbox_cooldown &lt;= 0)
 {
     ui_textbox_queue(text);
+    sfx_play(snd_paper_rustle, false);
 }
 
 if(!triggered)
@@ -59,6 +60,7 @@ if(!triggered)
     triggered = true;
     obj_progress.tutorial++;
 }
+
 
 </string>
           </argument>

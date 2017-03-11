@@ -18,7 +18,9 @@ if(allow_duplicate || !audio_is_playing(effect))
         ds_list_add(sfx_volume_mods, vol);
         ds_list_add(sfx_playing, num);
     }
+    return num;
 }
+return -1;
 
 
 

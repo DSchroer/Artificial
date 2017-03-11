@@ -95,6 +95,9 @@
       <sound>sound\snd_sniper_regular</sound>
       <sound>sound\snd_sniper_scatter</sound>
     </sounds>
+    <sound>sound\snd_chest</sound>
+    <sound>sound\snd_paper_rustle</sound>
+    <sound>sound\snd_shield_recharge</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="Entities">
@@ -961,6 +964,7 @@
     </rooms>
     <room>rooms\rm_transition</room>
     <room>rooms\rm_tutorial_beta</room>
+    <room>rooms\rm_test_alec</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
