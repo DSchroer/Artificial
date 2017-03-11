@@ -38,6 +38,34 @@ cursor_sprite = spr_aim;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Cube related lore. Also hub teleporter spawn
+ui_textbox_queue("You feel a strange sensation. It is as though the cube is granting you some of its power. `br |red Your health has increased by 100. `br |aqua your base shield has increased by 75.");
+instance_create(room_width / 2, room_height / 2 - 192, obj_hub_teleporter);
+
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="2">
       <action>
         <libid>1</libid>

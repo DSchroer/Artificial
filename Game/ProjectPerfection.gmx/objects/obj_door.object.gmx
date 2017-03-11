@@ -99,7 +99,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(obj_progress.tutorial &lt; 100)
+            <string>if(!tutorial_done())
 {
     exit;
 }

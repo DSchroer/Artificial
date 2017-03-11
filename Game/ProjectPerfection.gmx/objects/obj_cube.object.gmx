@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-5</depth>
   <persistent>0</persistent>
-  <parentName>obj_door</parentName>
+  <parentName>obj_interact</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -49,14 +49,25 @@
           <argument>
             <kind>1</kind>
             <string>
-if(alarm[0] == -1)
-{
-    player_level_up();
-    var cube = max(obj_progress.cube_parts, obj_progress.progress / 3);
-    obj_progress.cube_parts = cube;
-    event_inherited();
-}
+player_level_up();
+var cube = max(obj_progress.cube_parts, obj_progress.progress / 3);
+obj_progress.cube_parts = cube;
+event_inherited();
+instance_destroy();
 
+if(instance_number(obj_ca) == 0)
+{
+    instance_create(0, 0, obj_ca);
+}
+with(obj_ca)
+{
+    obj_ca.cadir = 0;
+    obj_ca.calen = 120;
+}
+with(obj_player)
+{
+    alarm[7] = 180;
+}
 
 </string>
           </argument>
