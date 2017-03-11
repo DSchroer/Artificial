@@ -59,7 +59,10 @@ if(text == -1)
 if(!ui_textbox_open() &amp;&amp; obj_player.textbox_cooldown &lt;= 0)
 {
     ui_textbox_queue(text);
+    sfx_play(snd_paper_rustle, false);
 }
+
+
 </string>
           </argument>
         </arguments>

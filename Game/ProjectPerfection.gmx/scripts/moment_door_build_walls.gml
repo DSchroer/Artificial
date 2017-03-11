@@ -6,7 +6,7 @@ with(obj_final_door)
     {
         walls[i] = instance_create(x + i * 64, yp, obj_invisible_wall);        
     }
-
+    has_walls = true;
 }
 
 

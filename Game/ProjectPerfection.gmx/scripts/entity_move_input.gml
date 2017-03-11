@@ -63,13 +63,9 @@ if(keymap_check(keycode.hide_inventory))
     hide_inventory = !hide_inventory;
 }
 
-if(keyboard_check_pressed(vk_f4))
+if(keyboard_check_pressed(vk_f1))
 {
-    ui_textbox_queue("()[]%+-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id porttito. `a `s `b `s `x `y `br `l `s `r `s `u `s `d Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id porttito" + 
-    " `a `b `x `y `br `l `r `u `d ");
-    ui_textbox_queue("Test1 |red Test1 |crimson Test1 |yellow Test1 |orange Test1 |teal Test1 |white Test1 |black Test1 |fuchsia Test1");
-    ui_textbox_queue("Test2");
-    ui_textbox_queue("Test3");
+    room_goto(rm_test_alec);
 }
 if(keyboard_check_pressed(vk_f12))
 {
