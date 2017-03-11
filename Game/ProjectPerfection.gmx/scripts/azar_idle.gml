@@ -12,7 +12,7 @@ if(current_health / max_health < 0.5)
     {
         with(obj_azar_wall)
         {
-            instance_create(x, y, obj_wall);
+            instance_create(x, y, obj_rock);
             instance_destroy();
         }
         stage = 2;

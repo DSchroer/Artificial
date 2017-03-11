@@ -752,6 +752,7 @@
     <font>fonts\fnt_hit</font>
   </fonts>
   <objects name="objects">
+    <object>objects\obj_shuud_attack_area</object>
     <objects name="Attacks">
       <object>objects\obj_shot_plasma</object>
       <object>objects\obj_shot_normal</object>
@@ -814,7 +815,6 @@
       <objects name="Boss4">
         <object>objects\obj_shuud</object>
         <object>objects\obj_shuud_body</object>
-        <object>objects\obj_shuud_attack_area</object>
       </objects>
       <objects name="Enemies">
         <object>objects\obj_captain</object>
