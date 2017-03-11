@@ -1,18 +1,29 @@
 
-sm_set_state("idle");
+if(sprite_index != spr_azar_attack)
+{
+    sprite_index = spr_azar_attack;
+}
 
-var pdist = point_distance(obj_player.x, obj_player.y, x, y);
-if(pdist < 400)
+if(image_index >= image_number - 1)
 {
-    if(random(2) < 1)
+    sm_set_state("idle");
+}
+
+if(sm_ticks() == 0)
+{
+    var pdist = point_distance(obj_player.x, obj_player.y, x, y);
+    if(pdist < 400)
     {
-        enemy_attack(obj_player, basic);
+        if(random(2) < 1)
+        {
+            enemy_attack(obj_player, basic);
+        }else{
+            enemy_attack(obj_player, slam);
+        }
+    }else if(pdist < 900)
+    {
+        enemy_attack(obj_player, wave);
     }else{
-        enemy_attack(obj_player, slam);
+        enemy_attack(obj_player, rock);
     }
-}else if(pdist < 900)
-{
-    enemy_attack(obj_player, wave);
-}else{
-    enemy_attack(obj_player, rock);
 }
