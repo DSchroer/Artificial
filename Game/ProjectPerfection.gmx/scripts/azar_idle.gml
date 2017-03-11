@@ -1,3 +1,9 @@
+
+if(sprite_index != spr_azar_idle)
+{
+    sprite_index = spr_azar_idle;
+}
+
 var timer = 120;
 if(current_health / max_health < 0.5)
 {

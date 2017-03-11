@@ -118,9 +118,13 @@
       <sprites name="Boss">
         <sprite>sprites\spr_final_boss</sprite>
         <sprite>sprites\spr_final_boss_hit</sprite>
-        <sprite>sprites\spr_azar</sprite>
         <sprite>sprites\spr_dym</sprite>
         <sprite>sprites\spr_thwander</sprite>
+        <sprites name="Azar">
+          <sprite>sprites\spr_azar_idle</sprite>
+          <sprite>sprites\spr_azar_attack</sprite>
+          <sprite>sprites\spr_azar_wave</sprite>
+        </sprites>
       </sprites>
     </sprites>
     <sprites name="Ui">
