@@ -19,7 +19,11 @@ if(sm_ticks() == 0)
 }
 
 var angle = sm_get_var("base") + sm_get_var("angle");
-attack_gun(lazer, x, y, angle, self);
-attack_gun(lazer, x, y, angle + 90, self);
-attack_gun(lazer, x, y, angle + 180, self);
-attack_gun(lazer, x, y, angle - 90, self);
+var cx = x - (sprite_get_xoffset(sprite_index) * image_xscale) + (sprite_width / 2);
+var cy = y - (sprite_get_yoffset(sprite_index) * image_yscale) + (sprite_height / 2);
+var cdist = (sprite_width / 2);
+
+attack_gun_ext(lazer, cx, cy, angle, cdist, self);
+attack_gun_ext(lazer, cx, cy, angle + 90, cdist, self);
+attack_gun_ext(lazer, cx, cy, angle + 180, cdist, self);
+attack_gun_ext(lazer, cx, cy, angle - 90, cdist, self);

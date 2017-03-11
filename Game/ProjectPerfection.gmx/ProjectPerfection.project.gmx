@@ -296,6 +296,7 @@
       <script>scripts\attack_physical.gml</script>
       <script>scripts\attack_sword.gml</script>
       <script>scripts\attack_gun.gml</script>
+      <script>scripts\attack_gun_ext.gml</script>
       <script>scripts\attack_accuracy.gml</script>
     </scripts>
     <scripts name="Book">
