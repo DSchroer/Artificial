@@ -217,6 +217,7 @@
       <sprite>sprites\spr_laser_left_open</sprite>
       <sprite>sprites\spr_laser_right_open</sprite>
       <sprite>sprites\spr_laser_middle</sprite>
+      <sprite>sprites\spr_teleport</sprite>
     </sprites>
     <sprites name="Traps">
       <sprite>sprites\spr_trap_stall</sprite>

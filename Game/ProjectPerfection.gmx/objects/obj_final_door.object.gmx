@@ -32,6 +32,7 @@ animation_state = -1;
 animation_timer = 0;
 animation_max = 300;
 is_closed = true;
+has_walls = true;
 
 
 </string>
@@ -58,6 +59,7 @@ is_closed = true;
             <kind>1</kind>
             <string>/// Kill walls 
 
+/*
 if(has_walls)
 {
     has_walls = false;
@@ -69,7 +71,7 @@ if(has_walls)
         }
     }
 
-}
+}*/
 
 </string>
           </argument>
