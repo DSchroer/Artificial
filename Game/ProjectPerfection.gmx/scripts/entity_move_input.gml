@@ -62,7 +62,7 @@ if(keymap_check(keycode.hide_inventory))
 {
     hide_inventory = !hide_inventory;
 }
-
+/*
 if(keyboard_check_pressed(vk_f1))
 {
     room_goto(rm_test_alec);
@@ -99,8 +99,8 @@ if(keyboard_check_pressed(ord("M")))
 if(keyboard_check_pressed(ord("N")))
 {
     moment_door_close();
-}/*
-*/
+}
+
 if(keyboard_check_pressed(vk_numpad1))
 {
     inventory[selected_slot] = inventory_spawn_gun(10);
@@ -133,6 +133,7 @@ if(keyboard_check_pressed(vk_numpad8))
 {
     inventory[selected_slot] = inventory_spawn_gun(80);
 }
+*/
 if(keyboard_check_pressed(vk_numpad9))
 {
     var rng = inventory_spawn_gun(100);

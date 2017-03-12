@@ -18,6 +18,8 @@ Nick Hall
 Mitch Ebbett
 Rob Jeffries
 Jordan LeBlanc
+Mattias Schroer
+Brandon Ogon
 
 !Other Code
 https://github.com/dicksonlaw583/jsonion-classic
