@@ -299,8 +299,8 @@
     <instance objName="obj_door" x="608" y="608" name="inst_AFAD7285" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tutorial_control_hub" x="64" y="160" name="inst_7CE6E6A6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_story_hub" x="64" y="192" name="inst_C120D571" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_lore_computer" x="2752" y="800" name="inst_4710A4F7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_research_computer" x="3392" y="800" name="inst_68E664BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_lore_computer" x="2752" y="864" name="inst_4710A4F7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_research_computer" x="3328" y="864" name="inst_68E664BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bkg_hub_new" x="256" y="320" w="192" h="192" xo="192" yo="192" id="10017107" name="inst_686BF8B2" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
