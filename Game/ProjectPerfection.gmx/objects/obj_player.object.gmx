@@ -407,7 +407,7 @@ if(!save_get_value(obj_save_data, "components_tutorial", false) &amp;&amp; save_
         ui_textbox_queue("Project iteration " + '"I"' + ": Status Failure. `br Eliminate Defect: |red Free Will. ");
         delay = 2;
     }
-    obj_progress.tutorial = 101;  
+    obj_progress.tutorial = max(obj_progress.tutorial, 101);  
     save_flush(obj_save_data);
     
     dead = true;
