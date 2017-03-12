@@ -29,7 +29,7 @@
 text = -1;
 sprite_index = -1;
 
-if(obj_progress.cube_parts &gt;= 4)
+if(obj_progress.cube_parts &gt;= 5)
 {
     instance_destroy();
 }
@@ -55,11 +55,7 @@ if(obj_progress.cube_parts &gt;= 4)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(triggered &amp;&amp; distance_to_object(obj_player) &gt; 100)
-{
-    triggered = false;
-}
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -81,33 +77,31 @@ if(obj_progress.cube_parts &gt;= 4)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>triggered = true;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="64">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if(triggered &amp;&amp; !is_paused())
+            <string>
+if(obj_progress.cube_parts == 4)
 {
-    ui_draw_textbox_ext(ui_world_to_gui_x(x - 150), ui_world_to_gui_y(y + 64), text, 1, 300, 150);
+    ui_textbox_queue("|purple Cube: `br |white Ah, it feels good to be whole again.");
+    ui_textbox_queue("J: `br You can... talk?");
+    ui_textbox_queue("|purple Cube: `br |white Absolutely. My creator was nice enough to give me consciousness. Although there seems to be something about a talking cube that catches people off-guard.");
+    ui_textbox_queue("J: `br It's pretty unexpected. ");
+    ui_textbox_queue("|purple Cube: `br |white That it is. I should thank you for putting me back together again after all this time. If there's anything I can do for you as a reward, just ask.");
+    ui_textbox_queue("J: `br If you don't mind, I have a question. Are the rumours about your powers true? ");
+    ui_textbox_queue("|purple Cube: `br |white Yes. In fact, it looks like a small bit of my healing power already affected you. ");
+    ui_textbox_queue("J: `br So that's what this weird feeling is...");
+    ui_textbox_queue("|purple Cube: `br |white Yes, it's what the humans call-");
+    ui_textbox_queue("Broadcast System: `br Congratulations on completing the cube. Come speak with me at once for your reward.");
+    ui_textbox_queue("J: `br I have to go. It's time to end this.");    
+    obj_progress.cube_parts++;   
 }
+else if(obj_progress.cube_parts &lt; 4) 
+{
+    if(!ui_textbox_open() &amp;&amp; obj_player.textbox_cooldown &lt;= 0)
+    {
+        ui_textbox_queue(text);
+    }
+}
+
+
 </string>
           </argument>
         </arguments>

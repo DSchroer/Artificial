@@ -12,9 +12,11 @@ shield_recharge_delay_base = 5;
 shield_recharge_delay = 5;
 shield_recharge_rate_base = 0.1;
 shield_recharge_rate = 0.1;
+shield_recharge_sound = -1;
+shield_is_recharging = true;
+shield_broken_sound = -1;
 
 is_shield_active = save_get_value(obj_save_data, "shield", false);
-player_compute_stats();
 
 if(is_shield_active)
 {
@@ -40,6 +42,8 @@ ds_list_add(hurt_sounds, snd_hurt3);
 //ds_list_add(hurt_sounds, snd_hurt4);
 
 old_tooltips = false;
+
+tutorial_death_override = false;
 
 //animation
 image_speed = 0.25;

@@ -27,10 +27,90 @@
             <kind>1</kind>
             <string>event_inherited();
 player_init();
+player_compute_stats();
 inventory_init();
 
 window_set_cursor(cr_none);
 cursor_sprite = spr_aim;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="8">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Dialog delay 
+
+var dialog = story_get_dialog();
+if(dialog != -1)
+{
+    story_update();
+}
+ui_textbox_queue(dialog);
+ui_flash_textbox();
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Cube related lore. Also hub teleporter spawn
+instance_create(room_width / 2, room_height / 2 - 192, obj_hub_teleporter);
+ui_textbox_queue("You feel a strange sensation. `br |red Your base health has increased by 100. `br |aqua Your base shield has increased by 75.");
+
+if(obj_progress.cube_parts == 1)
+{
+    story_advance(1);
+}
+else if(obj_progress.cube_parts == 2)
+{
+    story_advance(1);
+    story_advance(1);
+}
+else if(obj_progress.cube_parts == 3)
+{
+    story_advance(1);
+}
+else if(obj_progress.cube_parts == 4)
+{
+    story_advance(1);
+}
+
+
+
 
 </string>
           </argument>
@@ -145,8 +225,13 @@ with(obj_level)
 {
     instance_destroy();
 }
+ 
 
+ui_textbox_clear();
 room_goto(rm_hub);
+
+
+
 </string>
           </argument>
         </arguments>
@@ -169,13 +254,15 @@ room_goto(rm_hub);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>isomorphic_set_depth();
+            <string>
+isomorphic_set_depth();
 
 entity_dampening();
 entity_move_input();                                                                               
 
 if(is_paused())
 {
+    player_render_self();
     exit;
 }
 
@@ -215,10 +302,18 @@ if(keymap_check(keycode.interact) &amp;&amp; !dead)
         if(is_gun(data))
         {
             out = inventory_pickup_weapon(data);
+            if(obj_progress.tutorial &lt; 50)
+            {
+                obj_progress.tutorial++;
+            }
         }else if(is_shield(data))
         {
             out = -1;
             player_activate_shield();
+            if(obj_progress.tutorial &lt; 50)
+            {
+                obj_progress.tutorial++;
+            }
         }
         
         with(obj)
@@ -241,7 +336,7 @@ if(invincible &gt; 0)
     --invincible;
 }
 
-if(!open_workbench)
+if(!open_workbench &amp;&amp; !ui_textbox_open())
 {
     if(keymap_check(keycode.fire) &amp;&amp; !dead)
     {
@@ -269,6 +364,19 @@ entity_collision();
 player_set_sprite();
 
 player_render_self();
+
+
+// Component tutorial
+if(!save_get_value(obj_save_data, "components_tutorial", false) &amp;&amp; save_get_value(obj_save_data, "components", 0) &gt; 0)
+{
+    if(!level_stub_find(obj_enemy))
+    {        
+        save_set_value(obj_save_data, "components_tutorial", true);              
+        tutorial_components();        
+    } 
+}
+
+
 </string>
           </argument>
         </arguments>
@@ -293,10 +401,19 @@ player_render_self();
             <kind>1</kind>
             <string>if(!dead)
 {
+    var delay = 1;
+    if(obj_progress.tutorial == 100)
+    {
+        ui_textbox_queue("Project iteration " + '"I"' + ": Status Failure. `br Eliminate Defect: |red Free Will. ");
+        delay = 2;
+    }
+    obj_progress.tutorial = 101;  
+    save_flush(obj_save_data);
+    
     dead = true;
-    alarm[0] = 60 * 4;
-    alarm[1] = 60 * 3;
-    alarm[2] = 60 * 2;
+    alarm[0] = 60 * 4 * delay;
+    alarm[1] = 60 * 3 * delay;
+    alarm[2] = 60 * 2 * delay;
     with(obj_camera)
     {
         zoom_speed = 0.03;
@@ -416,10 +533,12 @@ with(obj_camera)
             <kind>1</kind>
             <string>
 draw_outline_begin();
-draw_outline_update(surface);
+draw_outline_update(surface, true);
 
-
-draw_surface(surface, x - base_x, y - base_y);
+if(surface_exists(surface))
+{
+    draw_surface(surface, x - base_x, y - base_y);
+}
 draw_outline_end();
 </string>
           </argument>

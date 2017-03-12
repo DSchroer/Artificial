@@ -77,6 +77,16 @@ else
     room_goto(rm_transition);
 }
 
+if (obj_progress.story == story_progress.chapter3_banter2 || 
+    obj_progress.story == story_progress.chapter4_banter1 ||
+    obj_progress.story == story_progress.chapter5_banter3 ||
+    obj_progress.story == story_progress.chapter5_banter4 ||
+    obj_progress.story == story_progress.chapter5_banter5
+    )
+{
+    story_advance(60);
+}
+
 </string>
           </argument>
         </arguments>
@@ -99,7 +109,12 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(alarm[0] == -1)
+            <string>if(!tutorial_done())
+{
+    exit;
+}
+
+if(alarm[0] == -1)
 {
     sfx_play(snd_door_lock_open, false);
     instance_create(0, 0, obj_fade_out);

@@ -1,4 +1,4 @@
-///ui_queue_message(text)
+///ui_textbox_queue(text)
 
 var text = argument0;
 with(obj_player)

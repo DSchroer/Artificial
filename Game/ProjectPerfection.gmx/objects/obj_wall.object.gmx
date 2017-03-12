@@ -25,16 +25,32 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(instance_exists(obj_cgrid))
+            <string>
+
+if(instance_exists(obj_cgrid))
 {
     cgrid_set_collision(id);
 }
+
+with(obj_level)
+{
+    if(ds_grid_get(door_grid, level_position_x(other.x), level_position_y(other.y)) == 1)
+    {
+        with(other)
+        {
+            instance_create(x, y, obj_gate);
+            instance_destroy();
+        }
+    }
+}
+
+
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="4">
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -51,25 +67,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with(obj_level)
+            <string>if(object_index != obj_wall)
 {
-    if(ds_grid_get(door_grid, level_position_x(other.x), level_position_y(other.y)) == 1)
-    {
-        with(other)
-        {
-            instance_create(x, y, obj_gate);
-            instance_destroy();
-        }
-    }else
-    {
-        with(other)
-        {
-            if(wall_casts_shadow())
-            {
-                instance_create(x, y, obj_caster);
-            }
-        }
-    }
+       draw_self();
 }
 </string>
           </argument>

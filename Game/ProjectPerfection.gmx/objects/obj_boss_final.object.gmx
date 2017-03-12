@@ -28,6 +28,11 @@
             <string>event_inherited();
 current_health = 20000;
 max_health = 20000;
+if(!tutorial_done())
+{
+    max_health = 2000000;
+    current_health = max_health;
+}
 
 prev = "";
 
@@ -83,8 +88,12 @@ mele[weapon_index.bullet_speed] = 0;
             <kind>1</kind>
             <string>isomorphic_set_depth();
 
-var state = sm_get_state();
+if(!tutorial_done())
+{    
+    exit;
+}
 
+var state = sm_get_state();
 if(player_exists())
 {
     switch(state)
