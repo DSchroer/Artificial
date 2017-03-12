@@ -87,7 +87,6 @@ line = ui_get_quality_string(weapon[weapon_index.quality]);
 draw_text_transformed_color(xpos + sprite_get_width(background) * bscale_x - string_width(line) - 10, ypos - 12, line, stat_scale, stat_scale, 0, top_render_color, top_render_color, top_render_color, top_render_color, 1);
 ypos += 3 + string_height(line);
 
-ui_set_colour(c_white);
 // Other stats
 
 // Equipped 

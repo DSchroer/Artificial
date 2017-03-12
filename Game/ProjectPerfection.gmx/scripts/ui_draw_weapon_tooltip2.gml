@@ -5,6 +5,7 @@ if(!ui_can_render_tooltips())
     exit;
 }
 
+
 var xpos = argument0;
 var ypos = argument1;
 var weapon = argument2;
@@ -50,6 +51,7 @@ if(ypos + sprite_get_height(background) * bscale_top_y + sprite_get_height(backg
     ypos = screen_height - (sprite_get_height(background) * bscale_top_y + sprite_get_height(background2) * bscale_bottom_y + 10 );
 }
 
+
 var border_size = 10;
 var dmg = weapon[weapon_index.damage];
 var fire_rate = (60 / weapon[weapon_index.fire_timeout]);
@@ -79,7 +81,6 @@ line = ui_get_quality_string(weapon[weapon_index.quality]);
 draw_text_transformed_color(xpos + sprite_get_width(background) * bscale_x - string_width(line) - 10, ypos - 12, line, stat_scale, stat_scale, 0, top_render_color, top_render_color, top_render_color, top_render_color, 1);
 ypos += 3 + string_height(line);
 
-ui_set_colour(c_white);
 // Other stats
 // Damage
 var line = string(dmg) + " Damage";
@@ -97,7 +98,6 @@ ypos += 3 + string_height(line);
 line = string(bullet_capacity) + " Bullet Capacity";
 draw_text_transformed_color(xpos, ypos, line, stat_scale, stat_scale, 0, c_white, c_white, c_white, c_white, 1);
 ypos += 3 + string_height(line);
-
 
 
 
