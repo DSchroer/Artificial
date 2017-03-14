@@ -167,6 +167,10 @@
         <sprite>sprites\spr_aim</sprite>
         <sprite>sprites\spr_inventory_background</sprite>
         <sprite>sprites\spr_map_border</sprite>
+        <sprite>sprites\spr_healthbar_white</sprite>
+        <sprite>sprites\spr_healthbar_black</sprite>
+        <sprite>sprites\spr_shieldbar_white</sprite>
+        <sprite>sprites\spr_shieldbar_black</sprite>
       </sprites>
       <sprite>sprites\spr_logo</sprite>
       <sprites name="Textbox_img">
@@ -697,6 +701,8 @@
       <script>scripts\ui_world_to_gui_x.gml</script>
       <script>scripts\ui_world_to_gui_y.gml</script>
       <script>scripts\ui_flash_textbox.gml</script>
+      <script>scripts\ui_flash_healthbar.gml</script>
+      <script>scripts\ui_flash_shieldbar.gml</script>
     </scripts>
     <script>scripts\wall_casts_shadow.gml</script>
     <scripts name="Workbench">

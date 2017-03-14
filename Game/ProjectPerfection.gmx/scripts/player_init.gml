@@ -48,6 +48,9 @@ tutorial_death_override = false;
 //animation
 image_speed = 0.25;
 
+ui_shield_animation = 0;
+ui_healthbar_animation = 0;
+
 gun_angle = 0;
 surface = surface_create(256, 256);
 
