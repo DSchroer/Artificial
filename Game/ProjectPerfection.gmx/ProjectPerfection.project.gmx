@@ -167,6 +167,10 @@
         <sprite>sprites\spr_aim</sprite>
         <sprite>sprites\spr_inventory_background</sprite>
         <sprite>sprites\spr_map_border</sprite>
+        <sprite>sprites\spr_healthbar_white</sprite>
+        <sprite>sprites\spr_healthbar_black</sprite>
+        <sprite>sprites\spr_shieldbar_white</sprite>
+        <sprite>sprites\spr_shieldbar_black</sprite>
       </sprites>
       <sprite>sprites\spr_logo</sprite>
       <sprites name="Textbox_img">
@@ -191,6 +195,8 @@
         <sprite>sprites\spr_arrow_up</sprite>
         <sprite>sprites\spr_arrow_down</sprite>
         <sprite>sprites\spr_arrow_equal</sprite>
+        <sprite>sprites\spr_arrow_down_green</sprite>
+        <sprite>sprites\spr_arrow_up_red</sprite>
       </sprites>
       <sprites name="Font">
         <sprite>sprites\spr_base_font</sprite>
@@ -560,6 +566,7 @@
       <script>scripts\level_stub_h.gml</script>
       <script>scripts\level_render_fog.gml</script>
       <script>scripts\level_update_fog.gml</script>
+      <script>scripts\level_can_place_item.gml</script>
     </scripts>
     <scripts name="MainMenu">
       <script>scripts\menu_destroy_main_menu.gml</script>
@@ -696,6 +703,9 @@
       <script>scripts\ui_world_to_gui_x.gml</script>
       <script>scripts\ui_world_to_gui_y.gml</script>
       <script>scripts\ui_flash_textbox.gml</script>
+      <script>scripts\ui_flash_healthbar.gml</script>
+      <script>scripts\ui_flash_shieldbar.gml</script>
+      <script>scripts\ui_start_death_animation.gml</script>
     </scripts>
     <script>scripts\wall_casts_shadow.gml</script>
     <scripts name="Workbench">
@@ -849,6 +859,7 @@
       <object>objects\obj_chest</object>
       <object>objects\obj_workbench</object>
       <object>objects\obj_hub_teleporter</object>
+      <object>objects\obj_chest_open</object>
     </objects>
     <objects name="Menus">
       <object>objects\obj_main_menu</object>
@@ -900,6 +911,7 @@
       <object>objects\obj_tutorial_trigger</object>
       <object>objects\obj_tutorial_book</object>
       <object>objects\obj_tutorial_control_hub</object>
+      <object>objects\rm_tutorial_cinematic_control</object>
     </objects>
     <objects name="UI">
       <object>objects\obj_minimap</object>
@@ -977,6 +989,7 @@
     <room>rooms\rm_transition</room>
     <room>rooms\rm_tutorial_beta</room>
     <room>rooms\rm_test_alec</room>
+    <room>rooms\rm_tutorial_cinematic</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
