@@ -129,7 +129,7 @@ if(point != noone)
             }
             else
             {
-                ui_draw_weapon_tooltip2(uix + 16, uiy + 16, gun_data);
+                ui_draw_weapon_tooltip2(uix + 16, uiy + 16, gun_data, false);
             }
         }
     }
@@ -149,7 +149,7 @@ else if(place_meeting(x, y, obj_player))
             }
             else
             {
-                ui_draw_weapon_tooltip2(uix + 16, uiy + 16, gun_data);
+                ui_draw_weapon_tooltip2(uix + 16, uiy + 16, gun_data, false);
             }
         }
     }

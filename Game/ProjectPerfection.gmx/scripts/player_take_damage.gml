@@ -15,6 +15,7 @@ if(invincible == 0)
     if(remaining_shield > 0 && remaining_shield >= damage)
     {
         remaining_shield -= damage;
+        ui_flash_shieldbar();
         sfx_play(snd_shield_hit, false);
     }
     else 
@@ -34,6 +35,7 @@ if(invincible == 0)
             obj_ca.cadir = other.damage_dir;
             obj_ca.calen = 30;
         }
+        ui_flash_healthbar();
         entity_take_damage(); 
     }
 }  

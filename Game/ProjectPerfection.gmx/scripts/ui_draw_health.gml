@@ -11,9 +11,42 @@ var health_percent = current_health / max_health;
 var shield_percent = player_shield_percent();
 
 // Health + Shield
+// Handle flashing on damage hit
+var health_sprite = spr_healthbar;
+var shield_sprite = spr_shieldbar;
+if(ui_shield_animation >= 1 && ui_shield_animation <= 3)
+{
+    shield_sprite = spr_shieldbar_white;
+    ui_shield_animation++;
+}
+else if(ui_shield_animation > 3 && ui_shield_animation <= 4)
+{
+    shield_sprite = spr_shieldbar_black;
+    ui_shield_animation++;
+}
+else
+{
+    ui_shieldbar_animation = 0;
+}
+
+if(ui_healthbar_animation >= 1 && ui_healthbar_animation <= 3)
+{
+    health_sprite = spr_healthbar_white;
+    ui_healthbar_animation++;
+}
+else if(ui_healthbar_animation > 3 && ui_healthbar_animation <= 4)
+{
+    health_sprite = spr_healthbar_black;
+    ui_healthbar_animation++;
+}
+else
+{
+    ui_healthbar_animation = 0;
+}
+
 draw_sprite(spr_statusback, -1, xp, yp);
-draw_sprite_part(spr_healthbar, -1, 0, 0, sprite_get_width(spr_healthbar) * health_percent - 4, sprite_get_height(spr_healthbar), xp, yp);
-draw_sprite_part(spr_shieldbar, -1, 0, 0, sprite_get_width(spr_shieldbar) * shield_percent - 32, sprite_get_height(spr_shieldbar), xp, yp);
+draw_sprite_part(health_sprite, -1, 0, 0, sprite_get_width(spr_healthbar) * health_percent - 4, sprite_get_height(spr_healthbar), xp, yp);
+draw_sprite_part(shield_sprite, -1, 0, 0, sprite_get_width(spr_shieldbar) * shield_percent - 32, sprite_get_height(spr_shieldbar), xp, yp);
 draw_sprite(spr_statusfront, -1, xp, yp);
 
 // Ammo

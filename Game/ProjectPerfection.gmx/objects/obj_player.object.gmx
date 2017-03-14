@@ -228,7 +228,14 @@ with(obj_level)
  
 
 ui_textbox_clear();
-room_goto(rm_hub);
+if(obj_progress.tutorial == 101)
+{
+    room_goto(rm_tutorial_cinematic);
+}
+else
+{
+    room_goto(rm_hub);
+}
 
 
 
@@ -401,19 +408,15 @@ if(!save_get_value(obj_save_data, "components_tutorial", false) &amp;&amp; save_
             <kind>1</kind>
             <string>if(!dead)
 {
-    var delay = 1;
-    if(obj_progress.tutorial == 100)
-    {
-        ui_textbox_queue("Project iteration " + '"I"' + ": Status Failure. `br Eliminate Defect: |red Free Will. ");
-        delay = 2;
-    }
+
     obj_progress.tutorial = max(obj_progress.tutorial, 101);  
     save_flush(obj_save_data);
     
+    ui_start_death_animation(60 * 4);
     dead = true;
-    alarm[0] = 60 * 4 * delay;
-    alarm[1] = 60 * 3 * delay;
-    alarm[2] = 60 * 2 * delay;
+    alarm[0] = 60 * 4;
+    alarm[1] = 60 * 3;
+    alarm[2] = 60 * 2;
     with(obj_camera)
     {
         zoom_speed = 0.03;

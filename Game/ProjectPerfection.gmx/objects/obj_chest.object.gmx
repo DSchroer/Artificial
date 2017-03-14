@@ -58,20 +58,108 @@ sprite_index = spr_chest_open;
 if(instance_exists(obj_progress))
 {
     var number_drops = irandom_range(1, 2);
-    for(var i = 0; i &lt; number_drops; i++)
+    
+    var x_off;
+    var y_off;
+    var gun_positions = 0;
+    
+    // Guns    
+    for(var i = 0; i &lt; 6 &amp;&amp; number_drops &gt; 0; i++)
     {
-        var gun = instance_create(x + i * 96, y + 96, obj_item);
+        switch(i)
+        {
+        case 0:
+            x_off = -1;        
+            y_off = 1;
+            break;
+        case 1:
+            x_off = 0;        
+            y_off = -1;
+            break;
+        case 2:
+            x_off = 0;        
+            y_off = 1;
+            break;
+        case 3:
+            x_off = -1;        
+            y_off = -1;
+            break;
+        case 4:
+            x_off = -2;        
+            y_off = 0;
+            break;
+        default:
+            x_off = 1;        
+            y_off = 1;
+            break;
+            
+        }            
+    
+        var gun = instance_create(x + x_off * 64, y + y_off * 64, obj_item);
         gun.data = inventory_spawn_gun_ext(roll_power(), item_quality.uncommon);
+        if(level_can_place_item(gun, gun.x, gun.y))
+        {
+            number_drops--;      
+        }
+        else
+        {
+            with(gun)
+            {
+                instance_destroy();
+            }
+        }
+        
     }
-    instance_create(x - 64, y, obj_health_can);
-    instance_create(x + 128, y, obj_health_can);
-    if(random(2) &lt; 1)
+    
+    var healing_item_tries = 20;
+    var remaining_items = irandom_range(1, 3);
+    while(healing_item_tries &gt; 0 &amp;&amp; remaining_items &gt; 0)
     {
-        instance_create(x, y - 64, obj_component);
+        x_off = irandom_range(0, 2) - 1;
+        y_off = irandom_range(0, 2) - 1;
+        var instance = instance_create(x + 64 * x_off, y + 64 * y_off, obj_health_can);
+        if(level_can_place_item(instance, instance.x, instance.y))
+        {
+            remaining_items--;      
+        }
+        else
+        {
+            with(instance)
+            {
+                instance_destroy();
+            }
+        }
+        healing_item_tries--;
+    }
+        
+    
+    // Component    
+    var component_item_tries = 20;
+    var remaining_components = irandom_range(1, 1);
+    while(component_item_tries &gt; 0 &amp;&amp; remaining_components &gt; 0)
+    {
+        x_off = irandom_range(0, 2) - 1;
+        y_off = irandom_range(0, 2) - 1;
+        var instance = instance_create(x + 64 * x_off, y + 64 * y_off, obj_component);
+        if(level_can_place_item(instance, instance.x, instance.y))
+        {
+            remaining_components--;      
+        }
+        else
+        {
+            with(instance)
+            {
+                instance_destroy();
+            }
+        }
+        component_item_tries--;
     }
     sfx_play_volume(snd_door_lock_open, false, 1);
 }
 event_inherited();
+
+instance_create(x, y, obj_chest_open);
+instance_destroy();
 </string>
           </argument>
         </arguments>
