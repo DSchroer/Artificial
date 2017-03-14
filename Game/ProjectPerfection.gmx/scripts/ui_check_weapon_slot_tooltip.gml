@@ -20,7 +20,7 @@ if(is_array(item))
         }
         else
         {
-            ui_draw_weapon_tooltip2(mx, my, item);        
+            ui_draw_weapon_tooltip2(mx, my, item, false);        
         }
     }
 }    

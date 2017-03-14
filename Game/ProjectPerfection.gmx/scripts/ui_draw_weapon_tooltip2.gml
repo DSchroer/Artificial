@@ -1,4 +1,4 @@
-///ui_draw_weapon_tooltip2(x, y, weapon)
+///ui_draw_weapon_tooltip2(x, y, weapon, equipped)
 
 if(!ui_can_render_tooltips())
 {
@@ -9,6 +9,7 @@ if(!ui_can_render_tooltips())
 var xpos = argument0;
 var ypos = argument1;
 var weapon = argument2;
+var equipped = argument3;
 
 var background = spr_tooltip_top_unique;
 var top_render_color = c_black;
@@ -39,6 +40,10 @@ var background2 = spr_tooltip_body;
 var bscale_x = 1.3;
 var bscale_top_y = 2;
 var bscale_bottom_y = 1;
+if(equipped)
+{
+    bscale_bottom_y += 0.2;
+}
 var screen_width = display_get_gui_width();
 var screen_height = display_get_gui_height();
 // Force the tooltip fully on screen, if applicable
@@ -82,6 +87,14 @@ draw_text_transformed_color(xpos + sprite_get_width(background) * bscale_x - str
 ypos += 3 + string_height(line);
 
 // Other stats
+// Equipped 
+if(equipped)
+{
+    line = "Equipped";
+    var equipped_colour = make_color_rgb(255, 200, 111);
+    draw_text_transformed_color(xpos, ypos, line, stat_scale, stat_scale, 0, equipped_colour, equipped_colour, equipped_colour, equipped_colour, 1);
+    ypos += string_height(line) * stat_scale;
+}
 // Damage
 var line = string(dmg) + " Damage";
 draw_text_transformed_color(xpos, ypos, line, stat_scale, stat_scale, 0, c_white, c_white, c_white, c_white, 1);

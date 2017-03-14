@@ -195,6 +195,8 @@
         <sprite>sprites\spr_arrow_up</sprite>
         <sprite>sprites\spr_arrow_down</sprite>
         <sprite>sprites\spr_arrow_equal</sprite>
+        <sprite>sprites\spr_arrow_down_green</sprite>
+        <sprite>sprites\spr_arrow_up_red</sprite>
       </sprites>
       <sprites name="Font">
         <sprite>sprites\spr_base_font</sprite>
