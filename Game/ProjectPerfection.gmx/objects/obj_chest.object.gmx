@@ -135,7 +135,7 @@ if(instance_exists(obj_progress))
     
     // Component    
     var component_item_tries = 20;
-    var remaining_components = irandom_range(0, 1);
+    var remaining_components = irandom_range(1, 1);
     while(component_item_tries &gt; 0 &amp;&amp; remaining_components &gt; 0)
     {
         x_off = irandom_range(0, 2) - 1;

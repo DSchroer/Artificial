@@ -267,7 +267,7 @@ if(story_get_chapter() == story_chapter.chapter3 &amp;&amp; !save_get_value(obj_
 if(obj_progress.cube_parts &gt;= 1 &amp;&amp; !save_get_value(obj_save_data, "tutorial_teleporters1", false))
 {
     save_set_value(obj_save_data, "tutorial_teleporters1", true);
-    ui_textbox_queue("After collecting a cube piece, you can continue the dungeon where you left off. Dying will still reset your progress, although |orange re-killing a boss unlocks a quick teleporter. ");
+    ui_textbox_queue("After collecting a cube piece, you can continue the dungeon where you left off. Dying will still reset your progress, although |orange killing a boss unlocks a quick teleporter. ");
     ui_flash_textbox();   
     
 }
