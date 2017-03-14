@@ -703,6 +703,7 @@
       <script>scripts\ui_flash_textbox.gml</script>
       <script>scripts\ui_flash_healthbar.gml</script>
       <script>scripts\ui_flash_shieldbar.gml</script>
+      <script>scripts\ui_start_death_animation.gml</script>
     </scripts>
     <script>scripts\wall_casts_shadow.gml</script>
     <scripts name="Workbench">
