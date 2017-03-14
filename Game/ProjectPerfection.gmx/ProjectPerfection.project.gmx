@@ -909,6 +909,7 @@
       <object>objects\obj_tutorial_trigger</object>
       <object>objects\obj_tutorial_book</object>
       <object>objects\obj_tutorial_control_hub</object>
+      <object>objects\rm_tutorial_cinematic_control</object>
     </objects>
     <objects name="UI">
       <object>objects\obj_minimap</object>
@@ -986,6 +987,7 @@
     <room>rooms\rm_transition</room>
     <room>rooms\rm_tutorial_beta</room>
     <room>rooms\rm_test_alec</room>
+    <room>rooms\rm_tutorial_cinematic</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

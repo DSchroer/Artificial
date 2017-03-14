@@ -228,7 +228,14 @@ with(obj_level)
  
 
 ui_textbox_clear();
-room_goto(rm_hub);
+if(obj_progress.tutorial == 101)
+{
+    room_goto(rm_tutorial_cinematic);
+}
+else
+{
+    room_goto(rm_hub);
+}
 
 
 
@@ -401,10 +408,7 @@ if(!save_get_value(obj_save_data, "components_tutorial", false) &amp;&amp; save_
             <kind>1</kind>
             <string>if(!dead)
 {
-    if(obj_progress.tutorial == 100)
-    {
-        ui_textbox_queue("Project iteration " + '"I"' + ": Status Failure. `br Eliminate Defect: |red Free Will. ");
-    }
+
     obj_progress.tutorial = max(obj_progress.tutorial, 101);  
     save_flush(obj_save_data);
     
