@@ -35,6 +35,12 @@ if(level != -1)
             edge = edge || ds_grid_get(grid, i, j + 1) != 1;
             edge = edge || ds_grid_get(grid, i, j - 1) != 1;
             
+            //horizontal
+            edge = edge || ds_grid_get(grid, i + 1, j + 1) != 1;
+            edge = edge || ds_grid_get(grid, i + 1, j - 1) != 1;
+            edge = edge || ds_grid_get(grid, i - 1, j + 1) != 1;
+            edge = edge || ds_grid_get(grid, i - 1, j - 1) != 1;
+            
             var c_room = ds_grid_get(level.room_grid, i, j);
             edge = edge || ds_grid_get(level.room_grid, i + 1, j) != c_room;
             edge = edge || ds_grid_get(level.room_grid, i - 1, j) != c_room;

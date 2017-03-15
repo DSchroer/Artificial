@@ -6,7 +6,7 @@ if(sm_ticks() > 60)
     {
         instance_create(x, y, obj_twan_mine);
     }else if(ran < 3){
-        instance_create(x, y, obj_twan_stasis);
+        instance_create(x, y, obj_snare_trap);
     }else{
         instance_create(x, y, obj_twan_turret);
     }

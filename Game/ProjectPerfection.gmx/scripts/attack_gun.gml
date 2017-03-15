@@ -5,4 +5,4 @@ var ypos = argument2;
 var dir = argument3;
 var ignore = argument4;
 
-return attack_gun_ext(weapon, xpos, ypos, dir, 0, ignore);
+return attack_gun_ext(weapon, xpos, ypos, dir, 0, ignore, false);

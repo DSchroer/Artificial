@@ -15,6 +15,8 @@ if(invincible == 0)
     if(remaining_shield > 0 && remaining_shield >= damage)
     {
         remaining_shield -= damage;
+        var hit = instance_create(x, y, obj_shield_hit);
+        hit.direction = damage_dir + 180;
         ui_flash_shieldbar();
         sfx_play(snd_shield_hit, false);
     }

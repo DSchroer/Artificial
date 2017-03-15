@@ -122,6 +122,8 @@ if(itteration &lt; ds_list_size(room_list))
           <argument>
             <kind>1</kind>
             <string>
+google_analytics_event("dungeon", "generate", random_get_seed(), "seed"); 
+
 while(ds_list_size(room_list) &lt;= 5)
 {
     generator_clear();

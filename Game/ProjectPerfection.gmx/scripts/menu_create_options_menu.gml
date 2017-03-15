@@ -9,13 +9,27 @@ button_fullscreen.text = "Fullscreen";
 button_fullscreen.center_x = true;
 button_fullscreen.index = 0;
 
+var vsync = save_get_value(obj_game_save, "vsync", false);
+var vsync_text = "Enable ";
+if(vsync)
+{
+    vsync_text = "Disable ";
+}
+
+button_vsync = instance_create(0, 0, obj_button);
+button_vsync.user_event_index = 7;
+button_vsync.y = button_fullscreen.y + button_fullscreen.height + padding;
+button_vsync.text = vsync_text + "VSync";
+button_vsync.center_x = true;
+button_vsync.index = 1;
+
 slider_music = instance_create(0, 0, obj_slider);
-slider_music.y = button_fullscreen.y + button_fullscreen.height + padding;
+slider_music.y = button_vsync.y + button_vsync.height + padding;
 slider_music.user_event_index = 9;
 slider_music.text = "Music";
 slider_music.percent = save_get_value(obj_game_save, "music_volume", 1);
 slider_music.center_x = true;
-slider_music.index = 1;
+slider_music.index = 2;
 
 slider_sound = instance_create(0, 0, obj_slider);
 slider_sound.y = slider_music.y + slider_music.height + padding;
@@ -23,14 +37,14 @@ slider_sound.user_event_index = 9;
 slider_sound.text = "Sound Effects";
 slider_sound.percent = save_get_value(obj_game_save, "fx_volume", 1);
 slider_sound.center_x = true;
-slider_sound.index = 2;
+slider_sound.index = 3;
 
 button_back = instance_create(0, 0, obj_button);
 button_back.y = slider_sound.y + slider_sound.height + padding;
 button_back.user_event_index = 13;
 button_back.text = "Back";
 button_back.center_x = true;
-button_back.index = 3;
+button_back.index = 4;
 
 index = -1;
 

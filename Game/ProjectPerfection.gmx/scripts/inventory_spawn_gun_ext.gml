@@ -9,7 +9,7 @@ var types = inventory_get_qualities();
 q = choose_weighted(types, weights);
 
 weights = inventory_get_modifier_weights();
-types = array(weapon_modifier.normal, weapon_modifier.rail, weapon_modifier.plasma, weapon_modifier.scatter);
+types = array(weapon_modifier.normal, weapon_modifier.rail, weapon_modifier.plasma, weapon_modifier.scatter,  weapon_modifier.rocket);
 gun[weapon_index.modifier] = choose_weighted(types, weights); 
 gun[weapon_index.name] = "Gun";
 gun[weapon_index.quality] = q;
