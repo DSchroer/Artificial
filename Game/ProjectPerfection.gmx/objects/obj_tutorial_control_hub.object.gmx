@@ -47,33 +47,6 @@ if(is_closed)
     moment_door_build_walls();
 }
 
-//
-trigger1 = instance_create(1152, 1728, obj_tutorial_trigger);
-trigger1.image_xscale *= 14;
-trigger1.image_yscale *= 14;
-trigger1.trigger_number = 10;
-
-trigger2 = instance_create(1920, 960, obj_tutorial_trigger);
-trigger2.image_xscale *= 6;
-trigger2.image_yscale *= 6;
-trigger2.trigger_number = 9;
-
-trigger3 = instance_create(256, 320, obj_tutorial_trigger);
-trigger3.image_xscale *= 12;
-trigger3.image_yscale *= 10;
-trigger3.trigger_number = 11;
-
-trigger4 = instance_create(384, 1024, obj_tutorial_trigger);
-trigger4.image_xscale *= 11;
-trigger4.image_yscale *= 11;
-trigger4.trigger_number = 12;
-
-trigger5 = instance_create(3008, 1344, obj_tutorial_trigger);
-trigger5.image_xscale *= 2;
-trigger5.image_yscale *= 3;
-trigger5.trigger_number = 13;
-
-
 
 </string>
           </argument>

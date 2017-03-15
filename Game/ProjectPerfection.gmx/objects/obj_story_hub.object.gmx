@@ -26,33 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>
-
-// Teleporter
-trigger1 = instance_create(512 - 64, 768, obj_story_trigger);
-trigger1.image_xscale *= 6;
-trigger1.image_yscale *= 8;
-trigger1.trigger_number = 10;
-
-// Room center
-trigger2 = instance_create(1152, 1152, obj_story_trigger);
-trigger2.image_xscale *= 9;
-trigger2.image_yscale *= 9;
-trigger2.trigger_number = 11;
-
-// Right hallway
-trigger3 = instance_create(2304, 1536, obj_story_trigger);
-trigger3.image_xscale *= 3;
-trigger3.image_yscale *= 3;
-trigger3.trigger_number = 12;
-
-// Library door
-trigger4 = instance_create(3008, 1344, obj_story_trigger);
-trigger4.image_xscale *= 2;
-trigger4.image_yscale *= 3;
-trigger4.trigger_number = 13;
-
 // Place lore books
-
 var chapter = story_get_chapter();
 
 var lore = book_get_chapter_library(chapter);

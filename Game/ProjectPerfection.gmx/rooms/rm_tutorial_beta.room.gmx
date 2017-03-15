@@ -247,6 +247,8 @@
     <instance objName="obj_target" x="960" y="1984" name="inst_E70DDC4E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_target" x="960" y="2048" name="inst_B1A400EB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_target" x="960" y="2112" name="inst_9D8ED2EB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tutorial_trigger" x="224" y="1504" name="inst_F0737A36" locked="0" code="trigger_number = 14;&#xA;" scaleX="10" scaleY="9" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tutorial_trigger" x="160" y="512" name="inst_058DC713" locked="0" code="trigger_number = 13;&#xA;" scaleX="12" scaleY="8" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bkg_hub_new" x="544" y="192" w="192" h="192" xo="192" yo="192" id="10016582" name="inst_1921DF51" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

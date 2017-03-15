@@ -32,15 +32,6 @@ tutorial_create_third_doors();
 obj_progress.tutorial = 0;
 alarm[0] = 60;
 
-trigger2 = instance_create(3.5 * 64, 9 * 64, obj_tutorial_trigger);
-trigger2.image_xscale *= 10;
-trigger2.image_yscale *= 8;
-trigger2.trigger_number = 13;
-
-trigger1 = instance_create(3.5 * 64, 24.5 * 64, obj_tutorial_trigger);
-trigger1.image_xscale *= 10;
-trigger1.image_yscale *= 8;
-trigger1.trigger_number = 14;
 
 
 
