@@ -326,6 +326,7 @@
     <scripts name="Attack">
       <script>scripts\attack_plasma.gml</script>
       <script>scripts\attack_normal.gml</script>
+      <script>scripts\attack_rocket.gml</script>
       <script>scripts\attack_scatter.gml</script>
       <script>scripts\attack_rail.gml</script>
       <script>scripts\attack_explosive.gml</script>
@@ -785,6 +786,7 @@
     <objects name="Attacks">
       <object>objects\obj_shot_plasma</object>
       <object>objects\obj_shot_normal</object>
+      <object>objects\obj_shot_explosive</object>
       <object>objects\obj_shot_rail</object>
       <object>objects\obj_hit_sword</object>
       <object>objects\obj_explosion</object>

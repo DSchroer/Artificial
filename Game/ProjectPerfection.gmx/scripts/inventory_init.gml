@@ -28,7 +28,8 @@ enum weapon_modifier
     rail,
     plasma,
     scatter,
-    sword
+    sword,
+    rocket
 };
 
 enum weapon_index

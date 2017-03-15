@@ -57,6 +57,9 @@ switch(weapon[weapon_index.modifier])
     case weapon_modifier.sword:
         attack_sword(weapon, xpos, ypos, dir, ignore);
         break;
+    case weapon_modifier.rocket:
+        attack_rocket(weapon, xpos, ypos, dir, ignore);
+        break;
 }
 
 if(flash)
