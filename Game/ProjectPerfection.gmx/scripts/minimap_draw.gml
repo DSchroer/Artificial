@@ -68,14 +68,14 @@ minimap_draw_symbol(obj_chest, spr_map_chest, px, py, map_size);
 minimap_draw_symbol(obj_book, spr_map_lore, px, py, map_size);
 minimap_draw_symbol(obj_door, spr_map_exit, px, py, map_size);
 
-if(player_exists())
-{
-    draw_sprite(spr_map_player, 0, px, py);
-}
-
 if(fog != -1 && surface_exists(fog))
 {
     draw_surface_part_ext(fog, -play_x / map_size, -play_y / map_size, (sprite_get_width(spr_map_border) - 10) / map_size, (sprite_get_height(spr_map_border) - 10) / map_size, xp + 5, yp + 5, map_size, map_size, c_white, 1);
+}
+
+if(player_exists())
+{
+    draw_sprite(spr_map_player, 0, px, py);
 }
 
 draw_rectangle_color(xp + 5, yp + map_diameter - 12, xp + map_diameter + 10, yp + map_diameter + 10, c_black, c_black, c_black, c_black, false);
