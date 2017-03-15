@@ -166,6 +166,9 @@
     <instance objName="obj_mine_trap" x="640" y="256" name="inst_89899ED3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mine_trap" x="864" y="256" name="inst_FCB74280" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mine_trap" x="800" y="128" name="inst_3ADBFA30" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_poison_trap" x="320" y="320" name="inst_0D8AD462" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_poison_trap" x="384" y="128" name="inst_772268D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_poison_trap" x="480" y="288" name="inst_0CE87338" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bkg_desert_new" x="1088" y="160" w="64" h="64" xo="64" yo="64" id="10014629" name="inst_C935D48B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

@@ -233,6 +233,7 @@
       <sprite>sprites\spr_trap_spike</sprite>
       <sprite>sprites\spr_spike</sprite>
       <sprite>sprites\spr_trap</sprite>
+      <sprite>sprites\spr_p_trap</sprite>
     </sprites>
     <sprites name="Moments">
       <sprite>sprites\spr_pickle_boss</sprite>
@@ -273,6 +274,7 @@
       <sprite>sprites\spr_wave</sprite>
       <sprite>sprites\spr_muzzle_flash</sprite>
       <sprite>sprites\spr_explosion</sprite>
+      <sprite>sprites\spr_poison</sprite>
     </sprites>
     <sprite>sprites\spr_chest_closed</sprite>
     <sprite>sprites\spr_chest_open</sprite>
@@ -303,6 +305,7 @@
       <sprite>sprites\spr_map_health</sprite>
       <sprite>sprites\spr_map_lore</sprite>
     </sprites>
+    <sprite>sprites\spr_sheild_hit</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -916,6 +919,7 @@
       <object>objects\obj_trap</object>
       <object>objects\obj_snare_trap</object>
       <object>objects\obj_mine_trap</object>
+      <object>objects\obj_poison_trap</object>
     </objects>
     <objects name="Tutorial">
       <object>objects\obj_tutorial_text</object>
