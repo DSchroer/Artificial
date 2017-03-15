@@ -9,7 +9,7 @@ enum keycode{
     inv2,
     inv3,
     inv4,
-    shield,
+    dash,
     inventory_move,
     fire,
     hide_inventory,
@@ -66,11 +66,11 @@ if(key == keycode.inv4)
     return keyboard_check_pressed(ord("5"));
 }
 
-if(key == keycode.shield)
+if(key == keycode.dash)
 {
-    return keyboard_check(vk_space) || 
+    return keyboard_check_released(vk_space) || 
     gamepad_button_check(0, gp_shoulderlb) ||
-    mouse_check_button(mb_right);
+    mouse_check_button_released(mb_right);
 }
 
 if(key == keycode.inventory_move)

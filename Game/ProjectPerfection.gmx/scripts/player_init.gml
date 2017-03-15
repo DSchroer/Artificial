@@ -29,6 +29,11 @@ friction_coeff = 0.14;
 acceleration_coeff = 0.10;
 inv_change_cd = 0;
 
+dash_frames = 0;
+dash_last_direction = 0;
+dash_direction = 0;
+dash_speed = 10;
+
 // UI queue
 textbox_queue = ds_queue_create();
 animation_timer = 0;
