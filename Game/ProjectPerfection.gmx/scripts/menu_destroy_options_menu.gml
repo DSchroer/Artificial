@@ -4,6 +4,10 @@ with(button_fullscreen)
 {
     instance_destroy();
 }
+with(button_vsync)
+{
+    instance_destroy();
+}
 with(slider_music)
 {
     instance_destroy();
