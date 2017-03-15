@@ -14,7 +14,7 @@ if(gun_sprite == spr_rifle_base)
     ret[1] = 36;
     ret[2] = 79;
     ret[3] = 42;
-    ret[4] = 50;
+    ret[4] = 75;
 }
 
 if(gun_sprite == spr_pistol_base)
@@ -23,7 +23,7 @@ if(gun_sprite == spr_pistol_base)
     ret[1] = 35;
     ret[2] = 55;
     ret[3] = 35;
-    ret[4] = 40;
+    ret[4] = 55;
 }
 
 return ret;

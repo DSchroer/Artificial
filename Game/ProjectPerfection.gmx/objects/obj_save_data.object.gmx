@@ -25,7 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>save_open("save.txt")
+            <string>save_open("save")
+
+var current_version = "v" + GM_version;
+var version = save_get_value(self, "version", "v0");
+
+if(version != current_version)
+{
+    save_clear();
+    save_set_value(self, "version", current_version);
+    save_flush(self);
+}
 </string>
           </argument>
         </arguments>
@@ -71,7 +81,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>save_open("save.txt")
+            <string>save_open("save")
 </string>
           </argument>
         </arguments>

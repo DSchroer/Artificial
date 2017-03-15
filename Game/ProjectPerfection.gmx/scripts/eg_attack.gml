@@ -16,7 +16,7 @@ if(sm_ticks() % 120 == 0)
     speed = 1.5;
 }
 
-if(sm_ticks() % 60 == 30 || sm_ticks() % 60 == 35 || sm_ticks() % 60 == 40)
+if(sm_ticks() % 60 == 30)
 {
     enemy_attack(obj_player, weapon);
 }

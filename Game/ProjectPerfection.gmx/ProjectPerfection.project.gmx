@@ -23,7 +23,7 @@
     </datafile>
   </datafiles>
   <NewExtensions>
-    <extension index="0">extensions\Shadows</extension>
+    <extension index="0">extensions\GoogleAnalytics</extension>
   </NewExtensions>
   <sounds name="sound">
     <sound>sound\snd_attack</sound>
@@ -224,6 +224,7 @@
       <sprite>sprites\spr_laser_right_open</sprite>
       <sprite>sprites\spr_laser_middle</sprite>
       <sprite>sprites\spr_teleport</sprite>
+      <sprite>sprites\spr_teleport_dead</sprite>
     </sprites>
     <sprites name="Traps">
       <sprite>sprites\spr_trap_stall</sprite>
@@ -232,6 +233,7 @@
       <sprite>sprites\spr_trap_spike</sprite>
       <sprite>sprites\spr_spike</sprite>
       <sprite>sprites\spr_trap</sprite>
+      <sprite>sprites\spr_p_trap</sprite>
     </sprites>
     <sprites name="Moments">
       <sprite>sprites\spr_pickle_boss</sprite>
@@ -270,6 +272,9 @@
       <sprite>sprites\spr_azar_rock</sprite>
       <sprite>sprites\spr_sword</sprite>
       <sprite>sprites\spr_wave</sprite>
+      <sprite>sprites\spr_muzzle_flash</sprite>
+      <sprite>sprites\spr_explosion</sprite>
+      <sprite>sprites\spr_poison</sprite>
     </sprites>
     <sprite>sprites\spr_chest_closed</sprite>
     <sprite>sprites\spr_chest_open</sprite>
@@ -291,6 +296,16 @@
       <sprite>sprites\spr_component</sprite>
     </sprites>
     <sprite>sprites\spr_lore_computer</sprite>
+    <sprites name="Map">
+      <sprite>sprites\spr_map_exit</sprite>
+      <sprite>sprites\spr_map_enemy</sprite>
+      <sprite>sprites\spr_map_player</sprite>
+      <sprite>sprites\spr_map_gun</sprite>
+      <sprite>sprites\spr_map_chest</sprite>
+      <sprite>sprites\spr_map_health</sprite>
+      <sprite>sprites\spr_map_lore</sprite>
+    </sprites>
+    <sprite>sprites\spr_sheild_hit</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -311,6 +326,7 @@
     <scripts name="Attack">
       <script>scripts\attack_plasma.gml</script>
       <script>scripts\attack_normal.gml</script>
+      <script>scripts\attack_rocket.gml</script>
       <script>scripts\attack_scatter.gml</script>
       <script>scripts\attack_rail.gml</script>
       <script>scripts\attack_explosive.gml</script>
@@ -555,6 +571,7 @@
       <script>scripts\level_grid_value.gml</script>
       <script>scripts\level_stub_find.gml</script>
       <script>scripts\level_stub_find_all.gml</script>
+      <script>scripts\level_stub_find_all_ext.gml</script>
       <script>scripts\level_stub_find_all_ds.gml</script>
       <script>scripts\level_set_fog.gml</script>
       <script>scripts\level_draw_fog.gml</script>
@@ -583,6 +600,7 @@
       <script>scripts\minimap_render_map_texture.gml</script>
       <script>scripts\map_should_draw.gml</script>
       <script>scripts\minimap_render_fog.gml</script>
+      <script>scripts\minimap_draw_symbol.gml</script>
     </scripts>
     <scripts name="Overlay">
       <script>scripts\overlay_init.gml</script>
@@ -741,6 +759,7 @@
       <script>scripts\story_get_dialog.gml</script>
       <script>scripts\story_advance.gml</script>
     </scripts>
+    <script>scripts\device_get_id.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
@@ -767,8 +786,10 @@
     <objects name="Attacks">
       <object>objects\obj_shot_plasma</object>
       <object>objects\obj_shot_normal</object>
+      <object>objects\obj_shot_explosive</object>
       <object>objects\obj_shot_rail</object>
       <object>objects\obj_hit_sword</object>
+      <object>objects\obj_explosion</object>
       <object>objects\obj_shot</object>
       <object>objects\obj_draw_guns</object>
     </objects>
@@ -797,6 +818,8 @@
     </objects>
     <objects name="Effects">
       <object>objects\obj_damage_indicator</object>
+      <object>objects\obj_muzzle_flash</object>
+      <object>objects\obj_shield_hit</object>
     </objects>
     <objects name="Entity">
       <object>objects\obj_entity</object>
@@ -821,7 +844,6 @@
         <object>objects\obj_twan</object>
         <object>objects\obj_twan_point</object>
         <object>objects\obj_twan_mine</object>
-        <object>objects\obj_twan_stasis</object>
         <object>objects\obj_twan_turret</object>
       </objects>
       <objects name="Boss4">
@@ -899,10 +921,9 @@
     </objects>
     <objects name="Traps">
       <object>objects\obj_trap</object>
-      <object>objects\obj_trap_stall</object>
-      <object>objects\obj_trap_spike</object>
-      <object>objects\obj_trap_rock</object>
-      <object>objects\obj_trap_pitfall</object>
+      <object>objects\obj_snare_trap</object>
+      <object>objects\obj_mine_trap</object>
+      <object>objects\obj_poison_trap</object>
     </objects>
     <objects name="Tutorial">
       <object>objects\obj_tutorial_text</object>

@@ -12,6 +12,8 @@ switch(weapon_modifier_enum)
         return "Plasma";
     case weapon_modifier.scatter:
         return "Scatter";
+    case weapon_modifier.rocket:
+        return "Rocket";
     default: 
         return "Error";
 }
