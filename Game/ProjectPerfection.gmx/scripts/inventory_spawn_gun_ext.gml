@@ -19,6 +19,7 @@ shot_sprites[weapon_modifier.normal] = spr_bullet;
 shot_sprites[weapon_modifier.plasma] = spr_plasma;
 shot_sprites[weapon_modifier.rail] = spr_rail;
 shot_sprites[weapon_modifier.scatter] = spr_bullet;
+shot_sprites[weapon_modifier.rocket] = spr_bullet;
 gun[weapon_index.bullet_sprite] = shot_sprites[gun[weapon_index.modifier]];
 
 var weights = inventory_get_subtype_weights();
@@ -46,6 +47,7 @@ speeds[weapon_modifier.normal] = 20;
 speeds[weapon_modifier.plasma] = 15;
 speeds[weapon_modifier.rail] = 20;
 speeds[weapon_modifier.scatter] = 20;
+speeds[weapon_modifier.rocket] = 10;
 
 gun[weapon_index.bullet_speed] = speeds[gun[weapon_index.modifier]];
 
