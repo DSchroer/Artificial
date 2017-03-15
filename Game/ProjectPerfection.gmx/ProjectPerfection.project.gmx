@@ -294,6 +294,15 @@
       <sprite>sprites\spr_component</sprite>
     </sprites>
     <sprite>sprites\spr_lore_computer</sprite>
+    <sprites name="Map">
+      <sprite>sprites\spr_map_exit</sprite>
+      <sprite>sprites\spr_map_enemy</sprite>
+      <sprite>sprites\spr_map_player</sprite>
+      <sprite>sprites\spr_map_gun</sprite>
+      <sprite>sprites\spr_map_chest</sprite>
+      <sprite>sprites\spr_map_health</sprite>
+      <sprite>sprites\spr_map_lore</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -558,6 +567,7 @@
       <script>scripts\level_grid_value.gml</script>
       <script>scripts\level_stub_find.gml</script>
       <script>scripts\level_stub_find_all.gml</script>
+      <script>scripts\level_stub_find_all_ext.gml</script>
       <script>scripts\level_stub_find_all_ds.gml</script>
       <script>scripts\level_set_fog.gml</script>
       <script>scripts\level_draw_fog.gml</script>
@@ -586,6 +596,7 @@
       <script>scripts\minimap_render_map_texture.gml</script>
       <script>scripts\map_should_draw.gml</script>
       <script>scripts\minimap_render_fog.gml</script>
+      <script>scripts\minimap_draw_symbol.gml</script>
     </scripts>
     <scripts name="Overlay">
       <script>scripts\overlay_init.gml</script>
