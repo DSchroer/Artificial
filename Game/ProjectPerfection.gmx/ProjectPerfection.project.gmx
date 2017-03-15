@@ -901,10 +901,6 @@
     </objects>
     <objects name="Traps">
       <object>objects\obj_trap</object>
-      <object>objects\obj_trap_stall</object>
-      <object>objects\obj_trap_spike</object>
-      <object>objects\obj_trap_rock</object>
-      <object>objects\obj_trap_pitfall</object>
       <object>objects\obj_snare_trap</object>
     </objects>
     <objects name="Tutorial">
