@@ -26,6 +26,11 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0;
+
+if(!tutorial_done())
+{
+    sprite_index = spr_teleport_dead;
+}
 </string>
           </argument>
         </arguments>
