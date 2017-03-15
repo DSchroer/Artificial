@@ -824,7 +824,6 @@
         <object>objects\obj_twan</object>
         <object>objects\obj_twan_point</object>
         <object>objects\obj_twan_mine</object>
-        <object>objects\obj_twan_stasis</object>
         <object>objects\obj_twan_turret</object>
       </objects>
       <objects name="Boss4">
@@ -906,6 +905,7 @@
       <object>objects\obj_trap_spike</object>
       <object>objects\obj_trap_rock</object>
       <object>objects\obj_trap_pitfall</object>
+      <object>objects\obj_snare_trap</object>
     </objects>
     <objects name="Tutorial">
       <object>objects\obj_tutorial_text</object>
