@@ -58,15 +58,6 @@ else if(inv_change_cd > 0)
     inv_change_cd--;
 }
 
-if(keyboard_check(ord("B")))
-{
-    //level_try_place_item("", x - 64, y - 64);
-    //level_try_place_item("", x - 64, y + 64);
-    //level_try_place_item("", x + 64, y - 64);
-    //level_try_place_item("", x + 64, y + 64);
-    //level_try_place_item("", x, y);
-}
-
 if(keymap_check(keycode.hide_inventory))
 {
     hide_inventory = !hide_inventory;

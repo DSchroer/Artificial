@@ -62,7 +62,7 @@
     <instance objName="obj_menu_workbench" x="128" y="160" name="inst_0C172299" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_workbench" x="2080" y="1024" name="inst_D7B3D20F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_teleport" x="384" y="384" name="inst_A06DFF83" locked="0" code="target = 1;&#xA;image_index = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_teleport" x="608" y="384" name="inst_08319C16" locked="0" code="target = 2;&#xA;image_index = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_teleport" x="608" y="384" name="inst_08319C16" locked="0" code="target = 2;&#xA;image_index = 2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_teleport" x="832" y="384" name="inst_E8D46CED" locked="0" code="target = 3;&#xA;image_index = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="768" y="1088" name="inst_73A5A1C5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="768" y="1024" name="inst_A47B0D80" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
