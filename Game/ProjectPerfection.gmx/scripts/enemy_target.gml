@@ -6,7 +6,7 @@ var t_v_y = lengthdir_y(target.speed, target.direction);
 var shot_speed = argument1;
 
 var totarget_x = target.x - x;
-var totarget_y = target.y - y;
+var totarget_y = (target.y + 32) - y;
 
 var a = dot_product(t_v_x, t_v_y, t_v_x, t_v_y) - (shot_speed * shot_speed);
 var b = 2 * dot_product(t_v_x, t_v_y, totarget_x, totarget_y);
