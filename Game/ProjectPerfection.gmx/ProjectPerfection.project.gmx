@@ -785,6 +785,7 @@
       <object>objects\obj_progress</object>
       <object>objects\obj_boss_battle</object>
       <object>objects\obj_final_boss</object>
+      <object>objects\obj_boss_cube</object>
     </objects>
     <objects name="Dungeon">
       <object>objects\obj_generator</object>
@@ -985,6 +986,7 @@
       <room>rooms\rm_boss_3</room>
       <room>rooms\rm_boss_4</room>
       <room>rooms\rm_boss_final</room>
+      <room>rooms\rm_boss_cube</room>
     </rooms>
     <room>rooms\rm_transition</room>
     <room>rooms\rm_tutorial_beta</room>
