@@ -28,6 +28,8 @@
             <string>event_inherited();
 index = -1;
 
+google_analytics_init("UA-72511762-2", "Artificial", "1.0", "ca.artificialgame.game"); 
+
 enum menu_type
 {
     main,
