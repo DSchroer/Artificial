@@ -78,14 +78,14 @@ with(obj_entity)
 if(hit)
 {
     var ex = instance_create(x,  y, obj_explosion);
-    ex.damage = 150;
+    ex.damage = damage;
     instance_destroy();
 }
 
 if(cgrid_collision_point(x, y + y_off))
 {
     var ex = instance_create(x,  y + y_off, obj_explosion);
-    ex.damage = 150;
+    ex.damage = damage;
     instance_destroy();
 }
 </string>
