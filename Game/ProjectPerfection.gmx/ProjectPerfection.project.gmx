@@ -271,6 +271,7 @@
       <sprite>sprites\spr_azar_rock</sprite>
       <sprite>sprites\spr_sword</sprite>
       <sprite>sprites\spr_wave</sprite>
+      <sprite>sprites\spr_muzzle_flash</sprite>
     </sprites>
     <sprite>sprites\spr_chest_closed</sprite>
     <sprite>sprites\spr_chest_open</sprite>
@@ -797,6 +798,7 @@
     </objects>
     <objects name="Effects">
       <object>objects\obj_damage_indicator</object>
+      <object>objects\obj_muzzle_flash</object>
     </objects>
     <objects name="Entity">
       <object>objects\obj_entity</object>

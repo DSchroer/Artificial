@@ -1,10 +1,11 @@
-///attack_gun_ext(weapon, x, y, direction, dist, ignore)
+///attack_gun_ext(weapon, x, y, direction, dist, ignore, flash)
 var weapon = argument0;
 var xpos = argument1;
 var ypos = argument2;
 var dir = argument3;
 var dist = argument4;
 var ignore = argument5;
+var flash = argument6;
 
 xpos += lengthdir_x(dist, dir);
 ypos += lengthdir_y(dist, dir);
@@ -56,6 +57,11 @@ switch(weapon[weapon_index.modifier])
     case weapon_modifier.sword:
         attack_sword(weapon, xpos, ypos, dir, ignore);
         break;
+}
+
+if(flash)
+{
+    instance_create(xpos, ypos, obj_muzzle_flash);
 }
 
 return weapon;
