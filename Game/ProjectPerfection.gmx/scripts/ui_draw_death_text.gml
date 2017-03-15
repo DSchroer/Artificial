@@ -18,7 +18,7 @@ if(dead)
         draw_set_circle_precision(64);
         var x_percent = ui_world_to_gui_x(x - sprite_get_xoffset(spr_player) + sprite_get_width(spr_player) / 2) / display_get_gui_width();
         var y_percent = ui_world_to_gui_y(y - sprite_get_yoffset(spr_player) + sprite_get_height(spr_player) / 2) / display_get_gui_height();
-        draw_circle(x_percent * death_fog_texture_size, y_percent * death_fog_texture_size, death_animation_radius, false);
+        draw_circle(x_percent * death_fog_texture_size, y_percent * death_fog_texture_size / death_fog_aspect_ratio, death_animation_radius, false);
         draw_set_circle_precision(24);
     
         surface_reset_target();
@@ -26,7 +26,7 @@ if(dead)
         draw_set_alpha(1);
         texture_set_interpolation(false);
     }
-    draw_surface_ext(death_fog, 0, 0, display_get_gui_width() / death_fog_texture_size, display_get_gui_height() / death_fog_texture_size, 0, c_white, 1);
+    draw_surface_ext(death_fog, 0, 0, display_get_gui_width() / death_fog_texture_size, display_get_gui_height() / death_fog_texture_size * death_fog_aspect_ratio, 0, c_white, 1);
         
     
     // Draw the death text    

@@ -584,6 +584,7 @@
       <script>scripts\level_render_fog.gml</script>
       <script>scripts\level_update_fog.gml</script>
       <script>scripts\level_can_place_item.gml</script>
+      <script>scripts\script344.gml</script>
     </scripts>
     <scripts name="MainMenu">
       <script>scripts\menu_destroy_main_menu.gml</script>

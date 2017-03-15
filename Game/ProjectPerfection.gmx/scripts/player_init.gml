@@ -84,5 +84,5 @@ death_animation_radius = 0;
 death_animation_time = 0;
 death_animation_time_max = 0;
 death_fog_texture_size = 1000;
-death_fog = surface_create(death_fog_texture_size, death_fog_texture_size);
+death_fog = -1;
 
