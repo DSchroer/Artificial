@@ -29,6 +29,11 @@ friction_coeff = 0.14;
 acceleration_coeff = 0.10;
 inv_change_cd = 0;
 
+dash_frames = 0;
+dash_last_direction = 0;
+dash_direction = 0;
+dash_speed = 10;
+
 // UI queue
 textbox_queue = ds_queue_create();
 animation_timer = 0;
@@ -47,6 +52,9 @@ tutorial_death_override = false;
 
 //animation
 image_speed = 0.25;
+
+ui_shield_animation = 0;
+ui_healthbar_animation = 0;
 
 gun_angle = 0;
 surface = surface_create(256, 256);
@@ -72,4 +80,5 @@ arm_2_y = -61
 arm_2_delta_dist = 27;
 arm_2_angle_off = -15;
 
-
+death_animation_time = 0;
+death_animation_time_max = 0;

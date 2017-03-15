@@ -44,7 +44,7 @@ var screen_height = display_get_gui_height();
 // Force the tooltip fully on screen, if applicable
 if(xpos + (sprite_get_width(background) * bscale_x + 10) * 2 > screen_width)
 {
-    xpos = screen_width - (sprite_get_width(background) * bscale_x + 10) * 2;
+    xpos = screen_width - (sprite_get_width(background) * bscale_x + 10);
 }
 if(ypos + sprite_get_height(background) * bscale_top_y + sprite_get_height(background2) * bscale_bottom_y + 10 > screen_height)
 {
@@ -87,14 +87,7 @@ line = ui_get_quality_string(weapon[weapon_index.quality]);
 draw_text_transformed_color(xpos + sprite_get_width(background) * bscale_x - string_width(line) - 10, ypos - 12, line, stat_scale, stat_scale, 0, top_render_color, top_render_color, top_render_color, top_render_color, 1);
 ypos += 3 + string_height(line);
 
-ui_set_colour(c_white);
 // Other stats
-
-// Equipped 
-line = "Equipped";
-var equipped_colour = make_color_rgb(255, 200, 111);
-draw_text_transformed_color(xpos, ypos, line, stat_scale, stat_scale, 0, equipped_colour, equipped_colour, equipped_colour, equipped_colour, 1);
-ypos += string_height(line) * stat_scale;
 
 // Damage
 var draw_img = spr_arrow_equal;
@@ -136,7 +129,7 @@ ypos += 3 + string_height(line);
 line = string(reload_time) + " Second Reload";
 if(reload_time > other_reload_time)
 {
-    draw_img = spr_arrow_up;
+    draw_img = spr_arrow_up_red;
 }
 else if(reload_time == other_reload_time)
 {
@@ -144,7 +137,7 @@ else if(reload_time == other_reload_time)
 }
 else 
 {
-    draw_img = spr_arrow_down;
+    draw_img = spr_arrow_down_green;
 }
 draw_sprite(draw_img, -1, xpos, ypos);
 draw_text_transformed_color(xpos + sprite_get_width(draw_img) + 4, ypos, line, stat_scale, stat_scale, 0, draw_color, draw_color, draw_color, draw_color, 1);
@@ -166,3 +159,5 @@ else
 draw_sprite(draw_img, -1, xpos, ypos);
 draw_text_transformed_color(xpos + sprite_get_width(draw_img) + 4, ypos, line, stat_scale, stat_scale, 0, draw_color, draw_color, draw_color, draw_color, 1);
 ypos += 3 + string_height(line);
+
+return xpos;

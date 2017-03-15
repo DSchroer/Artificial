@@ -58,6 +58,15 @@ else if(inv_change_cd > 0)
     inv_change_cd--;
 }
 
+if(keyboard_check(ord("B")))
+{
+    //level_try_place_item("", x - 64, y - 64);
+    //level_try_place_item("", x - 64, y + 64);
+    //level_try_place_item("", x + 64, y - 64);
+    //level_try_place_item("", x + 64, y + 64);
+    //level_try_place_item("", x, y);
+}
+
 if(keymap_check(keycode.hide_inventory))
 {
     hide_inventory = !hide_inventory;
@@ -99,8 +108,8 @@ if(keyboard_check_pressed(ord("M")))
 if(keyboard_check_pressed(ord("N")))
 {
     moment_door_close();
-}/*
-*/
+}
+
 if(keyboard_check_pressed(vk_numpad1))
 {
     inventory[selected_slot] = inventory_spawn_gun(10);
@@ -133,6 +142,7 @@ if(keyboard_check_pressed(vk_numpad8))
 {
     inventory[selected_slot] = inventory_spawn_gun(80);
 }
+
 if(keyboard_check_pressed(vk_numpad9))
 {
     var rng = inventory_spawn_gun(100);

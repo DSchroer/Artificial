@@ -23,7 +23,7 @@
     </datafile>
   </datafiles>
   <NewExtensions>
-    <extension index="0">extensions\Shadows</extension>
+    <extension index="0">extensions\GoogleAnalytics</extension>
   </NewExtensions>
   <sounds name="sound">
     <sound>sound\snd_attack</sound>
@@ -167,6 +167,10 @@
         <sprite>sprites\spr_aim</sprite>
         <sprite>sprites\spr_inventory_background</sprite>
         <sprite>sprites\spr_map_border</sprite>
+        <sprite>sprites\spr_healthbar_white</sprite>
+        <sprite>sprites\spr_healthbar_black</sprite>
+        <sprite>sprites\spr_shieldbar_white</sprite>
+        <sprite>sprites\spr_shieldbar_black</sprite>
       </sprites>
       <sprite>sprites\spr_logo</sprite>
       <sprites name="Textbox_img">
@@ -191,6 +195,8 @@
         <sprite>sprites\spr_arrow_up</sprite>
         <sprite>sprites\spr_arrow_down</sprite>
         <sprite>sprites\spr_arrow_equal</sprite>
+        <sprite>sprites\spr_arrow_down_green</sprite>
+        <sprite>sprites\spr_arrow_up_red</sprite>
       </sprites>
       <sprites name="Font">
         <sprite>sprites\spr_base_font</sprite>
@@ -217,6 +223,8 @@
       <sprite>sprites\spr_laser_left_open</sprite>
       <sprite>sprites\spr_laser_right_open</sprite>
       <sprite>sprites\spr_laser_middle</sprite>
+      <sprite>sprites\spr_teleport</sprite>
+      <sprite>sprites\spr_teleport_dead</sprite>
     </sprites>
     <sprites name="Traps">
       <sprite>sprites\spr_trap_stall</sprite>
@@ -225,6 +233,7 @@
       <sprite>sprites\spr_trap_spike</sprite>
       <sprite>sprites\spr_spike</sprite>
       <sprite>sprites\spr_trap</sprite>
+      <sprite>sprites\spr_p_trap</sprite>
     </sprites>
     <sprites name="Moments">
       <sprite>sprites\spr_pickle_boss</sprite>
@@ -263,6 +272,9 @@
       <sprite>sprites\spr_azar_rock</sprite>
       <sprite>sprites\spr_sword</sprite>
       <sprite>sprites\spr_wave</sprite>
+      <sprite>sprites\spr_muzzle_flash</sprite>
+      <sprite>sprites\spr_explosion</sprite>
+      <sprite>sprites\spr_poison</sprite>
     </sprites>
     <sprite>sprites\spr_chest_closed</sprite>
     <sprite>sprites\spr_chest_open</sprite>
@@ -284,6 +296,16 @@
       <sprite>sprites\spr_component</sprite>
     </sprites>
     <sprite>sprites\spr_lore_computer</sprite>
+    <sprites name="Map">
+      <sprite>sprites\spr_map_exit</sprite>
+      <sprite>sprites\spr_map_enemy</sprite>
+      <sprite>sprites\spr_map_player</sprite>
+      <sprite>sprites\spr_map_gun</sprite>
+      <sprite>sprites\spr_map_chest</sprite>
+      <sprite>sprites\spr_map_health</sprite>
+      <sprite>sprites\spr_map_lore</sprite>
+    </sprites>
+    <sprite>sprites\spr_sheild_hit</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -304,6 +326,7 @@
     <scripts name="Attack">
       <script>scripts\attack_plasma.gml</script>
       <script>scripts\attack_normal.gml</script>
+      <script>scripts\attack_rocket.gml</script>
       <script>scripts\attack_scatter.gml</script>
       <script>scripts\attack_rail.gml</script>
       <script>scripts\attack_explosive.gml</script>
@@ -548,6 +571,7 @@
       <script>scripts\level_grid_value.gml</script>
       <script>scripts\level_stub_find.gml</script>
       <script>scripts\level_stub_find_all.gml</script>
+      <script>scripts\level_stub_find_all_ext.gml</script>
       <script>scripts\level_stub_find_all_ds.gml</script>
       <script>scripts\level_set_fog.gml</script>
       <script>scripts\level_draw_fog.gml</script>
@@ -559,6 +583,7 @@
       <script>scripts\level_stub_h.gml</script>
       <script>scripts\level_render_fog.gml</script>
       <script>scripts\level_update_fog.gml</script>
+      <script>scripts\level_can_place_item.gml</script>
     </scripts>
     <scripts name="MainMenu">
       <script>scripts\menu_destroy_main_menu.gml</script>
@@ -575,6 +600,7 @@
       <script>scripts\minimap_render_map_texture.gml</script>
       <script>scripts\map_should_draw.gml</script>
       <script>scripts\minimap_render_fog.gml</script>
+      <script>scripts\minimap_draw_symbol.gml</script>
     </scripts>
     <scripts name="Overlay">
       <script>scripts\overlay_init.gml</script>
@@ -695,6 +721,9 @@
       <script>scripts\ui_world_to_gui_x.gml</script>
       <script>scripts\ui_world_to_gui_y.gml</script>
       <script>scripts\ui_flash_textbox.gml</script>
+      <script>scripts\ui_flash_healthbar.gml</script>
+      <script>scripts\ui_flash_shieldbar.gml</script>
+      <script>scripts\ui_start_death_animation.gml</script>
     </scripts>
     <script>scripts\wall_casts_shadow.gml</script>
     <scripts name="Workbench">
@@ -730,6 +759,7 @@
       <script>scripts\story_get_dialog.gml</script>
       <script>scripts\story_advance.gml</script>
     </scripts>
+    <script>scripts\device_get_id.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
@@ -756,8 +786,10 @@
     <objects name="Attacks">
       <object>objects\obj_shot_plasma</object>
       <object>objects\obj_shot_normal</object>
+      <object>objects\obj_shot_explosive</object>
       <object>objects\obj_shot_rail</object>
       <object>objects\obj_hit_sword</object>
+      <object>objects\obj_explosion</object>
       <object>objects\obj_shot</object>
       <object>objects\obj_draw_guns</object>
     </objects>
@@ -785,6 +817,8 @@
     </objects>
     <objects name="Effects">
       <object>objects\obj_damage_indicator</object>
+      <object>objects\obj_muzzle_flash</object>
+      <object>objects\obj_shield_hit</object>
     </objects>
     <objects name="Entity">
       <object>objects\obj_entity</object>
@@ -809,7 +843,6 @@
         <object>objects\obj_twan</object>
         <object>objects\obj_twan_point</object>
         <object>objects\obj_twan_mine</object>
-        <object>objects\obj_twan_stasis</object>
         <object>objects\obj_twan_turret</object>
       </objects>
       <objects name="Boss4">
@@ -848,6 +881,7 @@
       <object>objects\obj_chest</object>
       <object>objects\obj_workbench</object>
       <object>objects\obj_hub_teleporter</object>
+      <object>objects\obj_chest_open</object>
     </objects>
     <objects name="Menus">
       <object>objects\obj_main_menu</object>
@@ -886,10 +920,9 @@
     </objects>
     <objects name="Traps">
       <object>objects\obj_trap</object>
-      <object>objects\obj_trap_stall</object>
-      <object>objects\obj_trap_spike</object>
-      <object>objects\obj_trap_rock</object>
-      <object>objects\obj_trap_pitfall</object>
+      <object>objects\obj_snare_trap</object>
+      <object>objects\obj_mine_trap</object>
+      <object>objects\obj_poison_trap</object>
     </objects>
     <objects name="Tutorial">
       <object>objects\obj_tutorial_text</object>
@@ -899,6 +932,7 @@
       <object>objects\obj_tutorial_trigger</object>
       <object>objects\obj_tutorial_book</object>
       <object>objects\obj_tutorial_control_hub</object>
+      <object>objects\rm_tutorial_cinematic_control</object>
     </objects>
     <objects name="UI">
       <object>objects\obj_minimap</object>
@@ -976,6 +1010,7 @@
     <room>rooms\rm_transition</room>
     <room>rooms\rm_tutorial_beta</room>
     <room>rooms\rm_test_alec</room>
+    <room>rooms\rm_tutorial_cinematic</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
