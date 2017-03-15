@@ -272,6 +272,7 @@
       <sprite>sprites\spr_sword</sprite>
       <sprite>sprites\spr_wave</sprite>
       <sprite>sprites\spr_muzzle_flash</sprite>
+      <sprite>sprites\spr_explosion</sprite>
     </sprites>
     <sprite>sprites\spr_chest_closed</sprite>
     <sprite>sprites\spr_chest_open</sprite>
@@ -772,6 +773,7 @@
       <object>objects\obj_shot_normal</object>
       <object>objects\obj_shot_rail</object>
       <object>objects\obj_hit_sword</object>
+      <object>objects\obj_explosion</object>
       <object>objects\obj_shot</object>
       <object>objects\obj_draw_guns</object>
     </objects>
@@ -902,6 +904,7 @@
     <objects name="Traps">
       <object>objects\obj_trap</object>
       <object>objects\obj_snare_trap</object>
+      <object>objects\obj_mine_trap</object>
     </objects>
     <objects name="Tutorial">
       <object>objects\obj_tutorial_text</object>
