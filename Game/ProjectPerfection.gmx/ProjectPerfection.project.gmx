@@ -809,7 +809,6 @@
       <object>objects\obj_progress</object>
       <object>objects\obj_boss_battle</object>
       <object>objects\obj_final_boss</object>
-      <object>objects\obj_boss_cube</object>
     </objects>
     <objects name="Dungeon">
       <object>objects\obj_generator</object>
@@ -937,6 +936,8 @@
       <object>objects\obj_tutorial_book</object>
       <object>objects\obj_tutorial_control_hub</object>
       <object>objects\obj_tutorial_cinematic_control</object>
+      <object>objects\obj_tutorial_spawner</object>
+      <object>objects\obj_combat_sim</object>
     </objects>
     <objects name="UI">
       <object>objects\obj_minimap</object>
@@ -1010,12 +1011,12 @@
       <room>rooms\rm_boss_3</room>
       <room>rooms\rm_boss_4</room>
       <room>rooms\rm_boss_final</room>
-      <room>rooms\rm_boss_cube</room>
     </rooms>
     <room>rooms\rm_transition</room>
     <room>rooms\rm_tutorial_beta</room>
     <room>rooms\rm_test_alec</room>
     <room>rooms\rm_tutorial_cinematic</room>
+    <room>rooms\rm_combat_simulation</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
