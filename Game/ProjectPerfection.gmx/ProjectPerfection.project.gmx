@@ -171,6 +171,7 @@
         <sprite>sprites\spr_healthbar_black</sprite>
         <sprite>sprites\spr_shieldbar_white</sprite>
         <sprite>sprites\spr_shieldbar_black</sprite>
+        <sprite>sprites\spr_component_black</sprite>
       </sprites>
       <sprite>sprites\spr_logo</sprite>
       <sprites name="Textbox_img">
@@ -934,7 +935,7 @@
       <object>objects\obj_tutorial_trigger</object>
       <object>objects\obj_tutorial_book</object>
       <object>objects\obj_tutorial_control_hub</object>
-      <object>objects\rm_tutorial_cinematic_control</object>
+      <object>objects\obj_tutorial_cinematic_control</object>
     </objects>
     <objects name="UI">
       <object>objects\obj_minimap</object>

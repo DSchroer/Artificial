@@ -40,7 +40,48 @@ if(!hide_inventory)
     }
 }
 
+// Components
 
+xp = bx + 125;
+yp = by + 165;
+if(mx > xp && mx < xp + sprite_get_width(spr_component) * 0.5 && my > yp && my < yp + sprite_get_height(spr_component) * 0.5)
+{
+    var lines;
+    lines[0] = "Components";
+    lines[1] = "Take 3 of these to the workbench";
+    lines[2] = "in The Sword to permanently";
+    lines[3] = "upgrade your shield. ";
+    
+    var lines_size = array_length_1d(lines);
+    var colours;
+    for(var i = 0; i < lines_size; i++)
+    {
+        colours[i] = "|white";
+    }
+    colours[0] = "|orange";
+    
+    var scales;
+    for(var i = 0; i < lines_size; i++)
+    {
+        scales[i] = 1;
+    }
+    
+    var stats;
+    for(var i = 0; i < lines_size; i++)
+    {
+        stats[i] = -1;
+    }
+    
+    var stat_colours;
+    for(var i = 0; i < lines_size; i++)
+    {
+    }
+    stat_colours[i] = "|white";    
+    
+    ui_draw_tooltip(mx, my, lines, colours, scales, stats, stat_colours);
+    
+}
 
+ 
    
    
