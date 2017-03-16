@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>triggered = false;
 text = -1;
+destroy_on_read = true;
 </string>
           </argument>
         </arguments>
@@ -62,6 +63,10 @@ if(!ui_textbox_open() &amp;&amp; obj_player.textbox_cooldown &lt;= 0)
     sfx_play(snd_paper_rustle, false);
 }
 
+if(triggered &amp;&amp; destroy_on_read)
+{
+    instance_destroy();
+}
 
 </string>
           </argument>

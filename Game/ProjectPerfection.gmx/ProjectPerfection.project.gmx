@@ -172,6 +172,7 @@
         <sprite>sprites\spr_shieldbar_white</sprite>
         <sprite>sprites\spr_shieldbar_black</sprite>
         <sprite>sprites\spr_component_black</sprite>
+        <sprite>sprites\spr_healthbar_lred</sprite>
       </sprites>
       <sprite>sprites\spr_logo</sprite>
       <sprites name="Textbox_img">

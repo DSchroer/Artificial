@@ -57,6 +57,7 @@ if(lore != -1)
     {
         var book_inst = instance_create(xp[i], yp[i], obj_book);
         book_inst.text = lore[i];
+        book_inst.destroy_on_read = false;
     }
     
 }
