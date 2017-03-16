@@ -68,9 +68,7 @@ if(key == keycode.inv4)
 
 if(key == keycode.dash)
 {
-    return keyboard_check_released(vk_space) || 
-    gamepad_button_check(0, gp_shoulderlb) ;
-    //mouse_check_button_released(mb_right);
+    return keyboard_check_released(vk_space);
 }
 
 if(key == keycode.inventory_move)

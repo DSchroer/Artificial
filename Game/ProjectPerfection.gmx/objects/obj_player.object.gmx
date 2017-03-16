@@ -286,7 +286,7 @@ else
             <kind>1</kind>
             <string>if(!is_paused() &amp;&amp; !open_workbench &amp;&amp; !ui_textbox_open())
 {
-    if(keymap_check(keycode.fire) &amp;&amp; !dead &amp;&amp; dash_frames == 0)
+    if(keymap_check(keycode.fire) &amp;&amp; !dead &amp;&amp; dash_frames &lt;= 0)
     {
         player_fire();
     }
@@ -351,10 +351,9 @@ if(speed != 0)
 {
     dash_last_direction = direction;
 }
-if(keymap_check(keycode.dash) &amp;&amp; !dead &amp;&amp; dash_frames = 0)
+if(keymap_check(keycode.dash) &amp;&amp; !dead &amp;&amp; dash_frames == 0)
 {
     dash_frames = 10;
-    invincible = dash_frames;
     dash_direction = dash_last_direction;
 }
 
@@ -364,7 +363,7 @@ if(dash_frames &gt; 0)
     motion_add(dash_direction, dash_speed);
     if(dash_frames = 0)
     {
-        dash_frames = -10;
+        dash_frames = -60;
     }
 }else if(dash_frames &lt; 0)
 {
