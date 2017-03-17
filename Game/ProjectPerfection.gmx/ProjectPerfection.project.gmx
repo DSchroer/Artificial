@@ -378,11 +378,6 @@
       <script>scripts\collision_line_entity_ellipse.gml</script>
     </scripts>
     <script>scripts\color_random.gml</script>
-    <scripts name="Credits">
-      <script>scripts\credits_init.gml</script>
-      <script>scripts\credits_draw.gml</script>
-      <script>scripts\credits_is_complete.gml</script>
-    </scripts>
     <script>scripts\damager.gml</script>
     <scripts name="Debug">
       <script>scripts\debug_init.gml</script>
@@ -519,7 +514,6 @@
       <script>scripts\generator_register_items.gml</script>
       <script>scripts\generator_spawn_item.gml</script>
     </scripts>
-    <script>scripts\get_scaling_coefficient.gml</script>
     <scripts name="Gun">
       <script>scripts\gun_hand_distance.gml</script>
       <script>scripts\gun_hand_angle.gml</script>
@@ -531,28 +525,6 @@
     <scripts name="Interact">
       <script>scripts\interact_any.gml</script>
       <script>scripts\interact_trigger.gml</script>
-    </scripts>
-    <scripts name="Inventory">
-      <script>scripts\inventory_swap.gml</script>
-      <script>scripts\inventory_create_weapon.gml</script>
-      <script>scripts\inventory_init.gml</script>
-      <script>scripts\inventory_get_modifier_name.gml</script>
-      <script>scripts\inventory_pickup_weapon.gml</script>
-      <script>scripts\inventory_get_subtype_name.gml</script>
-      <script>scripts\inventory_spawn_gun.gml</script>
-      <script>scripts\inventory_scale_stat.gml</script>
-      <script>scripts\inventory_core_table.gml</script>
-      <script>scripts\inventory_skin_gun.gml</script>
-      <script>scripts\inventory_create_shield.gml</script>
-      <script>scripts\inventory_get_modifier_weights.gml</script>
-      <script>scripts\inventory_spawn_gun_ext.gml</script>
-      <script>scripts\inventory_generate_quality_weights.gml</script>
-      <script>scripts\inventory_get_qualities.gml</script>
-      <script>scripts\inventory_get_subtype_weights.gml</script>
-    </scripts>
-    <scripts name="Is">
-      <script>scripts\is_shield.gml</script>
-      <script>scripts\is_gun.gml</script>
     </scripts>
     <script>scripts\is_paused.gml</script>
     <script>scripts\isomorphic_set_depth.gml</script>
@@ -588,14 +560,6 @@
       <script>scripts\level_can_place_item.gml</script>
       <script>scripts\script344.gml</script>
     </scripts>
-    <scripts name="MainMenu">
-      <script>scripts\menu_destroy_main_menu.gml</script>
-      <script>scripts\menu_destroy_options_menu.gml</script>
-      <script>scripts\menu_create_main_menu.gml</script>
-      <script>scripts\menu_create_options_menu.gml</script>
-      <script>scripts\menu_destroy_menu.gml</script>
-      <script>scripts\menu_create_menu.gml</script>
-    </scripts>
     <scripts name="Map">
       <script>scripts\minimap_init.gml</script>
       <script>scripts\minimap_set_level.gml</script>
@@ -613,29 +577,45 @@
       <script>scripts\overlay_save.gml</script>
       <script>scripts\overlay_set_draw.gml</script>
     </scripts>
-    <scripts name="PauseMenu">
-      <script>scripts\menu_create_pause.gml</script>
-      <script>scripts\menu_destroy_pause.gml</script>
-    </scripts>
     <scripts name="Player">
-      <script>scripts\player_init.gml</script>
-      <script>scripts\player_update_shield.gml</script>
-      <script>scripts\player_take_damage.gml</script>
-      <script>scripts\player_fire.gml</script>
+      <scripts name="Inventory">
+        <script>scripts\inventory_swap.gml</script>
+        <script>scripts\inventory_create_weapon.gml</script>
+        <script>scripts\inventory_init.gml</script>
+        <script>scripts\inventory_get_modifier_name.gml</script>
+        <script>scripts\inventory_pickup_weapon.gml</script>
+        <script>scripts\inventory_get_subtype_name.gml</script>
+        <script>scripts\inventory_spawn_gun.gml</script>
+        <script>scripts\inventory_scale_stat.gml</script>
+        <script>scripts\inventory_core_table.gml</script>
+        <script>scripts\inventory_skin_gun.gml</script>
+        <script>scripts\inventory_create_shield.gml</script>
+        <script>scripts\inventory_get_modifier_weights.gml</script>
+        <script>scripts\inventory_spawn_gun_ext.gml</script>
+        <script>scripts\inventory_generate_quality_weights.gml</script>
+        <script>scripts\inventory_get_qualities.gml</script>
+        <script>scripts\inventory_get_subtype_weights.gml</script>
+        <scripts name="Is">
+          <script>scripts\is_shield.gml</script>
+          <script>scripts\is_gun.gml</script>
+        </scripts>
+      </scripts>
+      <script>scripts\player_activate_shield.gml</script>
+      <script>scripts\player_compute_stats.gml</script>
       <script>scripts\player_exists.gml</script>
+      <script>scripts\player_fire.gml</script>
       <script>scripts\player_heal_percent.gml</script>
-      <script>scripts\player_update_gun.gml</script>
+      <script>scripts\player_init.gml</script>
+      <script>scripts\player_level_up.gml</script>
+      <script>scripts\player_levelup_shield.gml</script>
       <script>scripts\player_reload.gml</script>
       <script>scripts\player_render_self.gml</script>
-      <script>scripts\player_activate_shield.gml</script>
-      <script>scripts\player_shield_percent.gml</script>
       <script>scripts\player_set_sprite.gml</script>
-      <script>scripts\player_level_up.gml</script>
-      <script>scripts\player_compute_stats.gml</script>
-      <script>scripts\player_levelup_shield.gml</script>
+      <script>scripts\player_shield_percent.gml</script>
+      <script>scripts\player_take_damage.gml</script>
+      <script>scripts\player_update_gun.gml</script>
+      <script>scripts\player_update_shield.gml</script>
     </scripts>
-    <script>scripts\roll_boss_loot.gml</script>
-    <script>scripts\roll_power.gml</script>
     <scripts name="Save">
       <script>scripts\save_open.gml</script>
       <script>scripts\save_get_value.gml</script>
@@ -688,6 +668,11 @@
     </scripts>
     <script>scripts\surface_get_scale.gml</script>
     <scripts name="Ui">
+      <scripts name="Credits">
+        <script>scripts\credits_init.gml</script>
+        <script>scripts\credits_draw.gml</script>
+        <script>scripts\credits_is_complete.gml</script>
+      </scripts>
       <script>scripts\ui_can_render_tooltips.gml</script>
       <script>scripts\ui_check_weapon_slot_tooltip.gml</script>
       <script>scripts\ui_draw.gml</script>
@@ -712,39 +697,27 @@
       <script>scripts\ui_draw_weapon_tooltip_comparison.gml</script>
       <script>scripts\ui_draw_weapon_tooltip1.gml</script>
       <script>scripts\ui_draw_weapon_tooltip2.gml</script>
+      <script>scripts\ui_flash_healthbar.gml</script>
+      <script>scripts\ui_flash_shieldbar.gml</script>
+      <script>scripts\ui_flash_textbox.gml</script>
       <script>scripts\ui_get_boss_health_percent.gml</script>
       <script>scripts\ui_get_modifier_colour.gml</script>
       <script>scripts\ui_get_quality_colour.gml</script>
       <script>scripts\ui_get_quality_string.gml</script>
       <script>scripts\ui_set_colour.gml</script>
+      <script>scripts\ui_start_death_animation.gml</script>
       <script>scripts\ui_textbox_clear.gml</script>
       <script>scripts\ui_textbox_open.gml</script>
       <script>scripts\ui_textbox_queue.gml</script>
       <script>scripts\ui_textbox_unqueue.gml</script>
       <script>scripts\ui_world_to_gui_x.gml</script>
       <script>scripts\ui_world_to_gui_y.gml</script>
-      <script>scripts\ui_flash_textbox.gml</script>
-      <script>scripts\ui_flash_healthbar.gml</script>
-      <script>scripts\ui_flash_shieldbar.gml</script>
-      <script>scripts\ui_start_death_animation.gml</script>
     </scripts>
     <script>scripts\wall_casts_shadow.gml</script>
     <scripts name="Workbench">
       <script>scripts\workbench_create_menu.gml</script>
       <script>scripts\workbench_destroy_menu.gml</script>
       <script>scripts\workbench_update_tooltips.gml</script>
-    </scripts>
-    <scripts name="Tutorial">
-      <script>scripts\tutorial_create_first_doors.gml</script>
-      <script>scripts\tutorial_open_first_doors.gml</script>
-      <script>scripts\tutorial_create_second_doors.gml</script>
-      <script>scripts\tutorial_create_third_doors.gml</script>
-      <script>scripts\tutorial_open_second_doors.gml</script>
-      <script>scripts\tutorial_open_third_doors.gml</script>
-      <script>scripts\tutorial_done.gml</script>
-      <script>scripts\tutorial_finish.gml</script>
-      <script>scripts\tutorial_components.gml</script>
-      <script>scripts\tutorial_workbench.gml</script>
     </scripts>
     <scripts name="Moments">
       <script>scripts\moment_door_open.gml</script>
@@ -761,8 +734,42 @@
       <script>scripts\story_get_chapter.gml</script>
       <script>scripts\story_get_dialog.gml</script>
       <script>scripts\story_advance.gml</script>
+      <scripts name="Tutorial">
+        <script>scripts\tutorial_create_first_doors.gml</script>
+        <script>scripts\tutorial_open_first_doors.gml</script>
+        <script>scripts\tutorial_create_second_doors.gml</script>
+        <script>scripts\tutorial_create_third_doors.gml</script>
+        <script>scripts\tutorial_open_second_doors.gml</script>
+        <script>scripts\tutorial_open_third_doors.gml</script>
+        <script>scripts\tutorial_done.gml</script>
+        <script>scripts\tutorial_finish.gml</script>
+        <script>scripts\tutorial_components.gml</script>
+        <script>scripts\tutorial_workbench.gml</script>
+      </scripts>
     </scripts>
     <script>scripts\device_get_id.gml</script>
+    <scripts name="Menus">
+      <scripts name="MainMenu">
+        <script>scripts\menu_destroy_main_menu.gml</script>
+        <script>scripts\menu_destroy_options_menu.gml</script>
+        <script>scripts\menu_create_main_menu.gml</script>
+        <script>scripts\menu_create_options_menu.gml</script>
+        <script>scripts\menu_destroy_menu.gml</script>
+        <script>scripts\menu_create_menu.gml</script>
+      </scripts>
+      <scripts name="PauseMenu">
+        <script>scripts\menu_create_pause.gml</script>
+        <script>scripts\menu_destroy_pause.gml</script>
+      </scripts>
+    </scripts>
+    <scripts name="Balance">
+      <script>scripts\get_scaling_coefficient.gml</script>
+      <script>scripts\roll_boss_loot.gml</script>
+      <script>scripts\roll_power.gml</script>
+      <script>scripts\balance_get_enemy_damage_coefficient.gml</script>
+      <script>scripts\balance_get_enemy_health_coefficient.gml</script>
+      <script>scripts\balance_get_loot_scaling.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
