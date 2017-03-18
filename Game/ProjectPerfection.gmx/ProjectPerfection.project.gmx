@@ -308,6 +308,8 @@
       <sprite>sprites\spr_map_lore</sprite>
     </sprites>
     <sprite>sprites\spr_sheild_hit</sprite>
+    <sprite>sprites\spr_light1</sprite>
+    <sprite>sprites\spr_light2</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -876,6 +878,8 @@
       <object>objects\obj_bush</object>
       <object>objects\obj_rock</object>
       <object>objects\obj_story</object>
+      <object>objects\obj_light1</object>
+      <object>objects\obj_light2</object>
     </objects>
     <objects name="Interact">
       <object>objects\obj_door</object>
@@ -969,13 +973,10 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_main_menu</room>
     <room>rooms\rm_base</room>
-    <room>rooms\rm_tutorial</room>
     <room>rooms\rm_hub</room>
     <room>rooms\rm_dungeon_test</room>
     <room>rooms\rm_sandbox</room>
-    <room>rooms\rm_credits</room>
     <room>rooms\rm_test</room>
     <rooms name="Stubs">
       <room>rooms\rm_stub_1</room>
@@ -1021,10 +1022,18 @@
       <room>rooms\rm_boss_final</room>
     </rooms>
     <room>rooms\rm_transition</room>
-    <room>rooms\rm_tutorial_beta</room>
     <room>rooms\rm_test_alec</room>
-    <room>rooms\rm_tutorial_cinematic</room>
-    <room>rooms\rm_combat_simulation</room>
+    <rooms name="Tutorial">
+      <room>rooms\rm_tutorial_cinematic</room>
+      <room>rooms\rm_combat_simulation</room>
+      <room>rooms\rm_tutorial_beta</room>
+      <room>rooms\rm_tutorial</room>
+      <room>rooms\rm_tutorial_final1</room>
+    </rooms>
+    <rooms name="Menus">
+      <room>rooms\rm_credits</room>
+      <room>rooms\rm_main_menu</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

@@ -101,7 +101,10 @@ if(keyboard_check_pressed(vk_numpad5))
 {
     room_goto(rm_combat_simulation);
 }
-
+if(keyboard_check_pressed(vk_numpad6))
+{
+    room_goto(rm_tutorial_final1);
+}
 if(keyboard_check_pressed(vk_numpad9))
 {
     var rng = inventory_spawn_gun(100);
