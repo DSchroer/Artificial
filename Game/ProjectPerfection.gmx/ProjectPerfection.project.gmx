@@ -558,7 +558,8 @@
       <script>scripts\level_render_fog.gml</script>
       <script>scripts\level_update_fog.gml</script>
       <script>scripts\level_can_place_item.gml</script>
-      <script>scripts\script344.gml</script>
+      <script>scripts\level_drop_items.gml</script>
+      <script>scripts\level_drop_item_ext.gml</script>
     </scripts>
     <scripts name="Map">
       <script>scripts\minimap_init.gml</script>

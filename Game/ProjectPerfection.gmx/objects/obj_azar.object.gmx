@@ -157,12 +157,12 @@ kill_boss(1);
 obj_progress.progress++;
 if(obj_progress.cube_parts &lt; 1)
 {
-    var cube = instance_create(x, y, obj_cube);
+    var cube = instance_create(x, y - 128, obj_cube);
     cube.sprite_index = spr_cube_hub2;
 }
 else
 {
-    instance_create(room_width / 2, room_height / 2 - 192, obj_hub_teleporter);
+    instance_create(room_width / 2, room_height / 2 - 256, obj_hub_teleporter);
 }
 event_inherited();
 </string>

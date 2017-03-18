@@ -9,7 +9,12 @@ if(dead)
     if(death_animation_radius != new_radius)
     {   
         death_animation_radius = new_radius;
-    
+        if(!surface_exists(death_fog))
+        {
+            death_fog_aspect_ratio = display_get_gui_width() / display_get_gui_height();
+            death_fog = surface_create(death_fog_texture_size, death_fog_texture_size / death_fog_aspect_ratio);
+        }
+        
         surface_set_target(death_fog);
         draw_clear(c_black);
         draw_set_blend_mode(bm_subtract);
