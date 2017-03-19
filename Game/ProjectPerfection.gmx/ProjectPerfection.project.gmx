@@ -950,6 +950,9 @@
       <object>objects\obj_tutorial_cinematic_control</object>
       <object>objects\obj_tutorial_spawner</object>
       <object>objects\obj_combat_sim</object>
+      <objects name="Revised">
+        <object>objects\obj_tutorial_state</object>
+      </objects>
     </objects>
     <objects name="UI">
       <object>objects\obj_minimap</object>
@@ -973,6 +976,7 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_main_menu</room>
     <room>rooms\rm_base</room>
     <room>rooms\rm_hub</room>
     <room>rooms\rm_dungeon_test</room>
@@ -1025,14 +1029,13 @@
     <room>rooms\rm_test_alec</room>
     <rooms name="Tutorial">
       <room>rooms\rm_tutorial_cinematic</room>
-      <room>rooms\rm_combat_simulation</room>
+      <room>rooms\rm_tutorial_final2</room>
       <room>rooms\rm_tutorial_beta</room>
       <room>rooms\rm_tutorial</room>
       <room>rooms\rm_tutorial_final1</room>
     </rooms>
     <rooms name="Menus">
       <room>rooms\rm_credits</room>
-      <room>rooms\rm_main_menu</room>
     </rooms>
   </rooms>
   <help>

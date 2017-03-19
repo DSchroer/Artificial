@@ -2,7 +2,7 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -25,26 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>combat_started1 = false;
-combat_can_spawn1 = false;
-combat_ended1 = false;
-
-combat_started2 = false;
-combat_ended2 = false;
-
-combat_started3 = false;
-combat_ended3 = false;
-
-combat_started4 = false;
-combat_ended4 = false;
-
-
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
+    <event eventtype="7" enumb="25">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -61,17 +47,16 @@ combat_ended4 = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-ui_textbox_queue("|broadcast Broadcasting System: `br |white In your travels, you will meet many enemies. You must be prepared to neutralize them at any cost by pressing |key LMB |white to shoot your gun. ");
-ui_flash_textbox(); 
-combat_can_spawn1 = true;
+            <string>/// Tutorial Rm#1 Start
+ui_textbox_queue("|broadcast Broadcasting System: `br |white Now that you've had a moment to get used to your new body, it's time to suit up. `br Press |key WASD |white to move and |key RMB |white to advance dialog windows. ");
+ui_flash_textbox();
 
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="7" enumb="24">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -88,52 +73,64 @@ combat_can_spawn1 = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var can_continue = false; 
+            <string>/// Trigger#2 - Dash prompt
 
-with(obj_player)
-{
-    can_continue = is_shield_active &amp;&amp; (inventory[inventory_slot.weapon1] != -1 || inventory[inventory_slot.weapon2] != -1);
-}
+ui_textbox_queue("|broadcast Broadcasting System: `br |white You have been equipped with the ability to temporary dash at supersonic speeds. `br Press |key Space |white to |orange Dash |white");
+ui_flash_textbox();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="23">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Trigger#3 - Dash info
 
-if(!can_continue)
-{
-    exit;
-}
+ui_textbox_queue("|broadcast Broadcasting System: `br |white Dashing is not only faster, it allows you to dodge enemy attacks if timed correctly");
+ui_flash_textbox();
 
-if(!instance_exists(obj_enemy))
-{
-    if(!combat_started1)
-    {
-        combat_started1 = true;
-        alarm[0] = 60 * 3;
-        
-        for(var i = 0; i &lt; instance_number(obj_tutorial_spawner); i++)
-        {
-            var spawner = instance_find(obj_tutorial_spawner, i);
-            spawner.active = true;
-        }
-    }
-    else if(combat_can_spawn1 &amp;&amp; !ui_textbox_open())
-    {
-        combat_can_spawn1 = false;
-        var spawnx;
-        var spawny;
-        for(var i = 0; i &lt; instance_number(obj_tutorial_spawner); i++)
-        {
-            var spawner = instance_find(obj_tutorial_spawner, i);
-            if(spawner.position == 1)
-            {
-                instance_create(spawner.x, spawner.y, obj_grunt);
-                break;   
-            }
-        }        
-    
-    }
-        
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="22">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Combat Equipment Message
 
-
-}
-
+ui_textbox_queue("|broadcast Broadcasting System: `br |white Beginning Combat Simulation. Please equip yourself with the provided energy shield and weapon. `br Press |key RMB |white to interact with items.");
+ui_textbox_queue("|broadcast Broadcasting System: `br |white Please note: while energy shield technology is powerful it is not able to prevent all damage. It can only take a limited amount of damage before it must recharge. ");
+ui_flash_textbox();
 
 </string>
           </argument>

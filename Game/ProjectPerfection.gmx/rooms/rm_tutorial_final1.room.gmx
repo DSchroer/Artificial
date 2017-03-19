@@ -41,14 +41,14 @@
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
   </backgrounds>
   <views>
-    <view visible="0" objName="" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
-    <view visible="0" objName="" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
-    <view visible="0" objName="" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
-    <view visible="0" objName="" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
-    <view visible="0" objName="" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
-    <view visible="0" objName="" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
-    <view visible="0" objName="" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
-    <view visible="0" objName="" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
     <instance objName="obj_light1" x="1600" y="928" name="inst_180F1B5C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -57,6 +57,11 @@
     <instance objName="obj_light1" x="2560" y="928" name="inst_AAB9C2FD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_light1" x="2720" y="736" name="inst_8412C87E" locked="0" code="" scaleX="2" scaleY="1.25" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn_player" x="1024" y="992" name="inst_BF37773E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tutorial_door" x="2816" y="672" name="inst_60F69C91" locked="0" code="destination = rm_tutorial_final2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tutorial_state" x="544" y="352" name="inst_2E65D85C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tutorial_trigger" x="832" y="896" name="inst_C69C2702" locked="0" code="trigger_number = 15;&#xA;refires_automatically = false;" scaleX="8" scaleY="4" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tutorial_trigger" x="1568" y="928" name="inst_15AC03DE" locked="0" code="trigger_number = 14;&#xA;refires_automatically = false;&#xA;" scaleX="2.5" scaleY="3" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tutorial_trigger" x="2656" y="864" name="inst_89CAFAD6" locked="0" code="trigger_number = 13;&#xA;refires_automatically = false;" scaleX="2.53968262672424" scaleY="4.06349229812622" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bkg_hub_new" x="608" y="736" w="192" h="192" xo="192" yo="192" id="10024004" name="inst_56C6B27D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
