@@ -121,6 +121,19 @@
       <sound>sound\snd_dog_death</sound>
       <sound>sound\snd_dog_hit</sound>
     </sounds>
+    <sounds name="boss">
+      <sounds name="Azar">
+        <sound>sound\snd_azar_death</sound>
+        <sound>sound\snd_azar_teleport</sound>
+        <sound>sound\snd_azar_basic</sound>
+        <sound>sound\snd_azar_slam</sound>
+        <sound>sound\snd_azar_rock_throw</sound>
+        <sound>sound\snd_azar_rock_wave</sound>
+      </sounds>
+    </sounds>
+    <sound>sound\snd_depth_complete</sound>
+    <sound>sound\snd_component_drop</sound>
+    <sound>sound\snd_gun_drop</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="Entities">

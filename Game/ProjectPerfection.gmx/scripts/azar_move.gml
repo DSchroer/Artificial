@@ -18,6 +18,7 @@ if(sm_ticks() == 0)
         r.floor_x = x + random(256) - 128;
         r.floor_y = y + random(256) - 128;
     }
+    sfx_play_volume(snd_azar_teleport, false, 1.2);
 }else{
     if(instance_number(obj_azar_rock) < 5)
     {
