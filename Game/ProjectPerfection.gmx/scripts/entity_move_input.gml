@@ -58,9 +58,9 @@ else if(inv_change_cd > 0)
     inv_change_cd--;
 }
 
-if(keymap_check(keycode.hide_inventory))
+if(keymap_check(keycode.hide_tooltips))
 {
-    hide_inventory = !hide_inventory;
+    hide_tooltips = !hide_tooltips;
 }
 
 

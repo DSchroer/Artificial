@@ -132,6 +132,10 @@ ui_textbox_queue("|broadcast Broadcasting System: `br |white Beginning Combat Si
 ui_textbox_queue("|broadcast Broadcasting System: `br |white Please note: while energy shield technology is powerful it is not able to prevent all damage. It can only take a limited amount of damage before it must recharge. ");
 ui_flash_textbox();
 
+with(obj_combat_sim)
+{
+    alarm[7] = 30 * 60;
+}
 </string>
           </argument>
         </arguments>

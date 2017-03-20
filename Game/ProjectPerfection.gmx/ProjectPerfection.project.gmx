@@ -958,10 +958,10 @@
       <object>objects\obj_tutorial_control_hub</object>
       <object>objects\obj_tutorial_cinematic_control</object>
       <object>objects\obj_tutorial_spawner</object>
-      <object>objects\obj_combat_sim</object>
       <objects name="Revised">
         <object>objects\obj_tutorial_state</object>
         <object>objects\obj_tutorial_room3_control</object>
+        <object>objects\obj_combat_sim</object>
       </objects>
       <object>objects\obj_tutorial_door</object>
       <object>objects\obj_tutorial_teleporter</object>

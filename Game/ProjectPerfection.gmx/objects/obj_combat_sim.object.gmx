@@ -78,6 +78,37 @@ door_r.sprite_index = spr_laser_right_closed;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(room_state &lt; sim_state.items_pickedup)
+{
+    if(!ui_textbox_open())
+    {
+        ui_textbox_queue("|broadcast Broadcast System: `br |white Please pick up the two guns and energy shield in the middle of the room using |key RMB");
+        ui_flash_textbox();
+    }
+    alarm[7] = 30 * 60;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="6">
       <action>
         <libid>1</libid>
