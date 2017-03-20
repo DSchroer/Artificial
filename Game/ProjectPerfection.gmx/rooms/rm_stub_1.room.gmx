@@ -130,6 +130,10 @@
     <instance objName="obj_invisible_wall" x="640" y="0" name="inst_0A7DDE93" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="704" y="0" name="inst_53543483" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="768" y="0" name="inst_0FC080C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rock" x="192" y="704" name="inst_95045CB7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rock" x="192" y="256" name="inst_17EADFEB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rock" x="704" y="256" name="inst_6A91462C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rock" x="704" y="704" name="inst_19D68AFB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bkg_desert_new" x="0" y="0" w="64" h="64" xo="64" yo="192" id="10016374" name="inst_316FF178" depth="100000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

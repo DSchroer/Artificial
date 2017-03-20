@@ -99,9 +99,27 @@ if(keyboard_check_pressed(vk_numpad4))
 }
 if(keyboard_check_pressed(vk_numpad5))
 {
-    room_goto(rm_combat_simulation);
+    room_goto(rm_tutorial_final3);
 }
-
+if(keyboard_check_pressed(vk_numpad6))
+{
+    inventory[0] = -1;
+    inventory[1] = -1;
+    obj_player.is_shield_active = false;
+    room_goto(rm_tutorial_final1);
+}
+if(keyboard_check_pressed(vk_numpad7))
+{
+    inventory[0] = -1;
+    inventory[1] = -1;
+    obj_player.is_shield_active = false;
+    room_goto(rm_tutorial_final2);
+}
+if(keyboard_check_pressed(vk_numpad8))
+{
+    room_goto(rm_hub);
+    obj_progress.tutorial = 9001;
+}
 if(keyboard_check_pressed(vk_numpad9))
 {
     var rng = inventory_spawn_gun(100);

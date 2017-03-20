@@ -49,7 +49,7 @@ if(mx > xp && mx < xp + sprite_get_width(spr_component) * 0.5 && my > yp && my <
     var lines;
     lines[0] = "Components";
     lines[1] = "Take 3 of these to the workbench";
-    lines[2] = "in The Sword to permanently";
+    lines[2] = "in your ship to permanently";
     lines[3] = "upgrade your shield. ";
     
     var lines_size = array_length_1d(lines);

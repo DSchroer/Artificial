@@ -477,7 +477,8 @@ if(!save_get_value(obj_save_data, "components_tutorial", false) &amp;&amp; save_
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!dead)
+            <string>
+if(!dead)
 {
 
     obj_progress.tutorial = max(obj_progress.tutorial, 101);  
