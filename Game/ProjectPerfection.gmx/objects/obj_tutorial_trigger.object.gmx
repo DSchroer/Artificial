@@ -67,7 +67,7 @@ if(room == rm_tutorial_beta)
         event_user(num);
     }
 }
-else if(room == rm_tutorial_final1 || room == rm_tutorial_final2)
+else if(room == rm_tutorial_final1 || room == rm_tutorial_final2 || room == rm_tutorial_final3)
 {
     with(obj_tutorial_state)
     {

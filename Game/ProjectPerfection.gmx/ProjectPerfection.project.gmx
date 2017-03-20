@@ -892,8 +892,8 @@
     <objects name="Interact">
       <object>objects\obj_door</object>
       <object>objects\obj_teleport</object>
-      <object>objects\obj_tutorial_door</object>
       <object>objects\obj_cube</object>
+      <object>objects\obj_cube_base</object>
       <object>objects\obj_interact</object>
       <object>objects\obj_interact_solid</object>
       <object>objects\obj_prompt</object>
@@ -951,6 +951,7 @@
       <object>objects\obj_tutorial_text</object>
       <object>objects\obj_tutorial_gate_open</object>
       <object>objects\obj_tutorial_gate_closed</object>
+      <object>objects\obj_tutorial_corpse</object>
       <object>objects\obj_tutorial_control</object>
       <object>objects\obj_tutorial_trigger</object>
       <object>objects\obj_tutorial_book</object>
@@ -960,7 +961,10 @@
       <object>objects\obj_combat_sim</object>
       <objects name="Revised">
         <object>objects\obj_tutorial_state</object>
+        <object>objects\obj_tutorial_room3_control</object>
       </objects>
+      <object>objects\obj_tutorial_door</object>
+      <object>objects\obj_tutorial_teleporter</object>
     </objects>
     <objects name="UI">
       <object>objects\obj_minimap</object>

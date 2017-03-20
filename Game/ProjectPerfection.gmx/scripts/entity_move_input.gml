@@ -99,6 +99,7 @@ if(keyboard_check_pressed(vk_numpad4))
 }
 if(keyboard_check_pressed(vk_numpad5))
 {
+    room_goto(rm_tutorial_final3);
 }
 if(keyboard_check_pressed(vk_numpad6))
 {
