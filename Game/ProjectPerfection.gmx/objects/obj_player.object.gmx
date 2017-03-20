@@ -543,6 +543,11 @@ if(!dead)
             <kind>1</kind>
             <string>room_speed = 60;
 
+if(instance_exists(obj_level))
+{
+    google_analytics_screenview(level_stub_name());
+}
+
 if(instance_number(obj_spawn_player) &gt; 0)
 {
     x = obj_spawn_player.x;
