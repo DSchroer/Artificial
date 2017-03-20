@@ -155,7 +155,7 @@ ui_flash_textbox();
           <argument>
             <kind>1</kind>
             <string>/// Rm#3 Death Message
-ui_textbox_queue("????: `br Protect The Cube... Protect it from... the... sc... ts... I... Vard...s... too...");
+ui_textbox_queue("????: `br I tri... protect The Cube... Protect it from... the... sc... ts... I... Vard...s... too... destroy it... `br &lt;The creature passes away&gt;");
 
 </string>
           </argument>

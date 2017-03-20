@@ -733,24 +733,24 @@
       <script>scripts\door_expand_horizontal.gml</script>
       <script>scripts\door_expand_vertical.gml</script>
     </scripts>
+    <scripts name="Tutorial">
+      <script>scripts\tutorial_create_first_doors.gml</script>
+      <script>scripts\tutorial_open_first_doors.gml</script>
+      <script>scripts\tutorial_create_second_doors.gml</script>
+      <script>scripts\tutorial_create_third_doors.gml</script>
+      <script>scripts\tutorial_open_second_doors.gml</script>
+      <script>scripts\tutorial_open_third_doors.gml</script>
+      <script>scripts\tutorial_done.gml</script>
+      <script>scripts\tutorial_finish.gml</script>
+      <script>scripts\tutorial_components.gml</script>
+      <script>scripts\tutorial_workbench.gml</script>
+    </scripts>
     <scripts name="Story">
       <script>scripts\story_update.gml</script>
       <script>scripts\story_init.gml</script>
       <script>scripts\story_get_chapter.gml</script>
       <script>scripts\story_get_dialog.gml</script>
       <script>scripts\story_advance.gml</script>
-      <scripts name="Tutorial">
-        <script>scripts\tutorial_create_first_doors.gml</script>
-        <script>scripts\tutorial_open_first_doors.gml</script>
-        <script>scripts\tutorial_create_second_doors.gml</script>
-        <script>scripts\tutorial_create_third_doors.gml</script>
-        <script>scripts\tutorial_open_second_doors.gml</script>
-        <script>scripts\tutorial_open_third_doors.gml</script>
-        <script>scripts\tutorial_done.gml</script>
-        <script>scripts\tutorial_finish.gml</script>
-        <script>scripts\tutorial_components.gml</script>
-        <script>scripts\tutorial_workbench.gml</script>
-      </scripts>
     </scripts>
     <script>scripts\device_get_id.gml</script>
     <scripts name="Menus">
