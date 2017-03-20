@@ -31,6 +31,7 @@ index = -1;
 difficulty_setting = difficulty.normal;
 
 google_analytics_init("UA-72511762-2", "Artificial", "1.0", "ca.artificialgame.game"); 
+google_analytics_screenview(room_get_name(room));
 
 enum menu_type
 {
