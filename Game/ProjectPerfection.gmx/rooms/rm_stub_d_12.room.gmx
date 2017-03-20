@@ -136,6 +136,7 @@
     <instance objName="obj_spawn" x="704" y="512" name="inst_7204C02A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn_enemy" x="128" y="192" name="inst_73FE2A50" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn_enemy" x="192" y="192" name="inst_853B6CEC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rock" x="576" y="384" name="inst_A014ED82" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bkg_desert_new" x="0" y="0" w="192" h="192" xo="192" yo="64" id="10022532" name="inst_AB6F841E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
