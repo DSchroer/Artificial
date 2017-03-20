@@ -122,14 +122,14 @@ if(itteration &lt; ds_list_size(room_list))
           <argument>
             <kind>1</kind>
             <string>
-google_analytics_event("dungeon", "generate", random_get_seed(), "seed"); 
-
 while(ds_list_size(room_list) &lt;= 5)
 {
     generator_clear();
     generator_set_room(rm_stub_1, 0, 0, 15, 15, 0, 0);
     generator_populate(0, 0, 15, 15, 0, 0);
 }
+
+google_analytics_event("dungeon", "generate", ds_list_size(room_list), "stubs"); 
 
 generator_add_doors();
 generator_create_spawn_map();
@@ -138,6 +138,7 @@ constructing = true;
 persistent = true;
 
 custom_room = room_add();
+
 room_set_background_colour(custom_room, c_black, true);
 generator_spawn_at(0, custom_room, obj_clear_entities);
 generator_spawn_at(0, custom_room, obj_fade_in);
