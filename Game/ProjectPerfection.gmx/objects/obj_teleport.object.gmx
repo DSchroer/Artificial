@@ -31,7 +31,7 @@ parts = 0;
 target = 1;
 with(obj_progress)
 {
-    other.parts = floor(boss);
+    other.parts = cube_parts;
 }
 
 image_speed = 0;

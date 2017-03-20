@@ -55,6 +55,7 @@ image_speed = 0.25;
 
 ui_shield_animation = 0;
 ui_healthbar_animation = 0;
+low_health_flash_animation_cooldown = 0;
 
 gun_angle = 0;
 surface = surface_create(256, 256);
@@ -80,5 +81,9 @@ arm_2_y = -61
 arm_2_delta_dist = 27;
 arm_2_angle_off = -15;
 
+death_animation_radius = 0;
 death_animation_time = 0;
 death_animation_time_max = 0;
+death_fog_texture_size = 1000;
+death_fog = -1;
+

@@ -2,7 +2,7 @@
 <object>
   <spriteName>spr_gate</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
+  <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -26,12 +26,14 @@
           <argument>
             <kind>1</kind>
             <string>trigger_number = -1;
+fired = false;
+refires_automatically = true;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="4" ename="obj_player">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -48,22 +50,35 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(area_contains_point(self, obj_player.x, obj_player.y))
+            <string>if(fired)
 {
-    var num = trigger_number;
-    if(room == rm_tutorial_beta)
+    exit;
+}
+if(!refires_automatically)
+{   
+    fired = true;
+}
+
+var num = trigger_number;
+if(room == rm_tutorial_beta)
+{
+    with(obj_tutorial_control)
     {
-        with(obj_tutorial_control)
-        {
-            event_user(num);
-        }
+        event_user(num);
     }
-    else
+}
+else if(room == rm_tutorial_final1 || room == rm_tutorial_final2 || room == rm_tutorial_final3)
+{
+    with(obj_tutorial_state)
     {
-        with(obj_tutorial_control_hub)
-        {
-            event_user(num);
-        }
+        event_user(num);
+    }
+}
+else
+{
+    with(obj_tutorial_control_hub)
+    {
+        event_user(num);
     }
 }
 </string>

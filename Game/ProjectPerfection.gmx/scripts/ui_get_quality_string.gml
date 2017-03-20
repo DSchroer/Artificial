@@ -14,6 +14,8 @@ case item_quality.epic:
     return "Epic";
 case item_quality.legendary:
     return "Legendary";
+case item_quality.unique:
+    return "Unique";
 default:
     return "Error undefined quality";
 }

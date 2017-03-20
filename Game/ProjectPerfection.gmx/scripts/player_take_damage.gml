@@ -37,7 +37,7 @@ if(invincible == 0)
             obj_ca.cadir = other.damage_dir;
             obj_ca.calen = 30;
         }
-        ui_flash_healthbar();
+        ui_flash_healthbar(spr_healthbar_white);
         entity_take_damage(); 
     }
 }  

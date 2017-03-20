@@ -69,7 +69,7 @@ volume_mod = 1.4;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>max_health *= get_scaling_coefficient(pow);
+            <string>max_health *= balance_get_enemy_health_coefficient(pow);
 current_health = max_health;
 weapon = enemy_scale_gun(weapon, pow);
 </string>
@@ -141,16 +141,23 @@ entity_collision();
             <string>
 if(instance_exists(obj_progress))
 {
+    var items;
+    var item_index = 0;
     if(random(14) &lt; 1)
     {
         var gun = instance_create(x, y, obj_item);
         gun.data = inventory_spawn_gun(pow);
+        items[item_index++] = gun;
     }
-    else if(random(20) &lt; 1)
+    if(random(20) &lt; 1)
     {
-        var health_can = instance_create(x, y, obj_health_can);
+        items[item_index++] = instance_create(x, y, obj_health_can);
     }
-
+    
+    if(item_index &gt; 0)
+    {
+        level_drop_items(x, y, items);
+    }
 }
 event_inherited();
 </string>

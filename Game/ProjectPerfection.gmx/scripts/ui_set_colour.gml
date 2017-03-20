@@ -94,6 +94,30 @@ case "|beige":
 case "|brown":
     draw_set_color(make_color_rgb(128, 64, 0));
     break;
+case "|lgray":
+    draw_set_color(make_color_rgb(200, 200, 200));
+    break;
+case "|broadcast":
+    draw_set_color(make_color_rgb(200, 200, 200));
+    break;
+case "|lred":
+    draw_set_color(make_color_rgb(237, 41, 57));
+    break;
+case "|gold":
+    draw_set_color(make_color_rgb(255, 215, 0));
+    break;
+case "|greengold":
+    draw_set_color(make_color_rgb(223, 255, 0));
+    break;
+case "|pink":
+    draw_set_color(make_color_rgb(255, 192, 203));
+    break;
+case "|key":
+case "|crayolared":
+    draw_set_color(make_color_rgb(238, 32, 77));
+    break;
+    
+    
 
     
 }

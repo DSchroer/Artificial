@@ -58,24 +58,12 @@ else if(inv_change_cd > 0)
     inv_change_cd--;
 }
 
-if(keyboard_check(ord("B")))
-{
-    //level_try_place_item("", x - 64, y - 64);
-    //level_try_place_item("", x - 64, y + 64);
-    //level_try_place_item("", x + 64, y - 64);
-    //level_try_place_item("", x + 64, y + 64);
-    //level_try_place_item("", x, y);
-}
-
 if(keymap_check(keycode.hide_inventory))
 {
     hide_inventory = !hide_inventory;
 }
 
-if(keyboard_check_pressed(vk_f1))
-{
-    room_goto(rm_test_alec);
-}
+
 if(keyboard_check_pressed(vk_f12))
 {
     old_tooltips = !old_tooltips;
@@ -85,14 +73,6 @@ if(keyboard_check_pressed(vk_f10))
     player_level_up();
 }
 
-if(keyboard_check_pressed(ord("G")))
-{
-    room_goto(rm_tutorial_beta);
-}
-if(keyboard_check_pressed(ord("H")))
-{
-    obj_progress.tutorial = 0;
-}
 if(keyboard_check_pressed(ord("J")))
 {
     obj_progress.cube_parts += 1;
@@ -101,48 +81,45 @@ if(keyboard_check_pressed(ord("K")))
 {
     obj_progress.cube_parts -= 1;
 }
-if(keyboard_check_pressed(ord("M")))
-{
-    moment_door_open();
-}
-if(keyboard_check_pressed(ord("N")))
-{
-    moment_door_close();
-}
-
 if(keyboard_check_pressed(vk_numpad1))
 {
     inventory[selected_slot] = inventory_spawn_gun(10);
 }
 if(keyboard_check_pressed(vk_numpad2))
 {
-    inventory[selected_slot] = inventory_spawn_gun(20);
+    inventory[selected_slot] = inventory_spawn_gun(60);
 }
 if(keyboard_check_pressed(vk_numpad3))
 {
-    inventory[selected_slot] = inventory_spawn_gun(30);
+    inventory[selected_slot] = inventory_spawn_gun(120);
 }
 if(keyboard_check_pressed(vk_numpad4))
 {
-    inventory[selected_slot] = inventory_spawn_gun(40);
+    room_goto(rm_test_alec);
 }
 if(keyboard_check_pressed(vk_numpad5))
 {
-    inventory[selected_slot] = inventory_spawn_gun(50);
+    room_goto(rm_tutorial_final3);
 }
 if(keyboard_check_pressed(vk_numpad6))
 {
-    inventory[selected_slot] = inventory_spawn_gun(60);
+    inventory[0] = -1;
+    inventory[1] = -1;
+    obj_player.is_shield_active = false;
+    room_goto(rm_tutorial_final1);
 }
 if(keyboard_check_pressed(vk_numpad7))
 {
-    inventory[selected_slot] = inventory_spawn_gun(70);
+    inventory[0] = -1;
+    inventory[1] = -1;
+    obj_player.is_shield_active = false;
+    room_goto(rm_tutorial_final2);
 }
 if(keyboard_check_pressed(vk_numpad8))
 {
-    inventory[selected_slot] = inventory_spawn_gun(80);
+    room_goto(rm_hub);
+    obj_progress.tutorial = 9001;
 }
-
 if(keyboard_check_pressed(vk_numpad9))
 {
     var rng = inventory_spawn_gun(100);

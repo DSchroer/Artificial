@@ -7,6 +7,10 @@ var text = argument2;
 var text_scale = argument3;
 var width = argument4;
 var height = argument5;
+if(!is_string(text))
+{
+    exit;
+}
 
 // Split the string into words
 var slot = 0;

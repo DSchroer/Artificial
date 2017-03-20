@@ -49,7 +49,8 @@ hitbox_set = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!hitbox_set)
+            <string>isomorphic_set_depth();
+if(!hitbox_set)
 {
     if(is_gun(data))
     {

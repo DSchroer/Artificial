@@ -28,12 +28,16 @@
             <string>event_inherited();
 index = -1;
 
+difficulty_setting = difficulty.normal;
+
 google_analytics_init("UA-72511762-2", "Artificial", "1.0", "ca.artificialgame.game"); 
 
 enum menu_type
 {
     main,
-    options
+    options,
+    difficulty_menu,
+    tutorial_skip
 }
 
 draw_set_color(c_white);
@@ -199,8 +203,9 @@ menu_create_menu(top);
             <kind>1</kind>
             <string>/// New game
 
-save_clear();
-room_goto(rm_base);
+ds_stack_push(menu_stack, menu_type.difficulty_menu);
+menu_destroy_main_menu();
+menu_create_difficulty_menu();
 </string>
           </argument>
         </arguments>
@@ -336,7 +341,8 @@ room_goto(rm_credits);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>/// vysnc
+
 var vsync = save_get_value(obj_game_save, "vsync", false);
 vsync = !vsync;
 display_reset(0, vsync);
@@ -350,6 +356,172 @@ if(vsync)
 
 save_set_value(obj_game_save, "vsync", vsync);
 save_flush(obj_game_save);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="16">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Difficulty: Easy
+
+difficulty_setting = difficulty.easy;
+menu_destroy_difficulty_menu();
+
+if(save_get_value(obj_game_save, "has_beaten_tutorial", false))
+{
+    ds_stack_push(menu_stack, menu_type.tutorial_skip);
+    menu_create_skip_tutorial();
+}
+else
+{
+    menu_start_game(true);
+}
+
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="15">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Difficulty: Normal
+
+difficulty_setting = difficulty.normal;
+menu_destroy_difficulty_menu();
+
+if(save_get_value(obj_game_save, "has_beaten_tutorial", false))
+{
+    ds_stack_push(menu_stack, menu_type.tutorial_skip);
+    menu_create_skip_tutorial();
+}
+else
+{
+    menu_start_game(true);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="14">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Difficulty: Hard
+
+difficulty_setting = difficulty.nightmare;
+menu_destroy_difficulty_menu();
+
+if(save_get_value(obj_game_save, "has_beaten_tutorial", false))
+{
+    ds_stack_push(menu_stack, menu_type.tutorial_skip);
+    menu_create_skip_tutorial();
+}
+else
+{
+    menu_start_game(true);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="13">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Skip Tutorial 
+
+
+menu_start_game(false);
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="12">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Play Tutorial 
+
+menu_start_game(true);
+
+
 </string>
           </argument>
         </arguments>
