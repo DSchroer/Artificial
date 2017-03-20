@@ -1,5 +1,10 @@
 ///ui_draw_weapon_comparison(x, y, held_item, other_item)
 
+if(is_paused() || dead)
+{
+    exit;
+}
+
 var xp = argument0;
 var yp = argument1;
 var held_item = argument2;

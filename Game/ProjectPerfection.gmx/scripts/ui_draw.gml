@@ -1,5 +1,10 @@
 ///ui_draw()
 
+if(is_paused() || dead)
+{
+    exit;
+}
+
 ui_draw_health();
 ui_draw_inventory();
 ui_draw_boss_health();
