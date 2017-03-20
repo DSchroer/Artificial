@@ -89,9 +89,9 @@
     <instance objName="obj_invisible_wall" x="992" y="1216" name="inst_8F4B932D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="928" y="1216" name="inst_BBF680A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn_player" x="1376" y="1760" name="inst_D6EA26BF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_item" x="1504" y="1088" name="inst_7F42CF2E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_item" x="1312" y="1088" name="inst_96DEDFB7" locked="0" code="data = inventory_create_shield();" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_tutorial_trigger" x="1184" y="960" name="inst_62F419E7" locked="0" code="trigger_number = 12;&#xA;refires_automatically = false;" scaleX="7.11111116409302" scaleY="4" colour="4294967295" rotation="0"/>
+    <instance objName="obj_item" x="1568" y="1088" name="inst_7F42CF2E" locked="0" code="data = inventory_get_tutorial_weapon()&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_item" x="1408" y="1088" name="inst_96DEDFB7" locked="0" code="data = inventory_create_shield();" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tutorial_trigger" x="1152" y="960" name="inst_62F419E7" locked="0" code="visible = false;&#xA;trigger_number = 12;&#xA;refires_automatically = false;&#xA;&#xA;" scaleX="8" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="obj_tutorial_spawner" x="800" y="768" name="inst_783057C6" locked="0" code="position = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tutorial_spawner" x="800" y="1344" name="inst_9A721EAE" locked="0" code="position = 7;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tutorial_spawner" x="1952" y="768" name="inst_784986A8" locked="0" code="position = 6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -220,6 +220,12 @@
     <instance objName="obj_invisible_wall" x="1472" y="160" name="inst_877A9AAD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="1472" y="96" name="inst_D1EFAB93" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="1280" y="96" name="inst_721BBDA7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_light1" x="1216" y="224" name="inst_235BC72F" locked="0" code="" scaleX="3" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="obj_light1" x="1088" y="608" name="inst_532BBCB1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_light1" x="1600" y="608" name="inst_EB252D96" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_item" x="1248" y="1088" name="inst_7C7212CC" locked="0" code="data = inventory_get_tutorial_weapon2()" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tutorial_state" x="64" y="32" name="inst_AB724C83" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tutorial_door" x="1344" y="128" name="inst_AD45D842" locked="0" code="destination = rm_tutorial_final3;&#xA;" scaleX="2" scaleY="1.5" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bkg_hub_new" x="960" y="1312" w="192" h="192" xo="192" yo="192" id="10023997" name="inst_F93B98CF" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -286,8 +292,6 @@
     <tile bgName="bkg_hub_new" x="2080" y="1248" w="32" h="128" xo="64" yo="352" id="10024199" name="inst_7342EDFE" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_hub_new" x="2080" y="1376" w="32" h="128" xo="64" yo="352" id="10024200" name="inst_3F33227B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_hub_new" x="864" y="480" w="64" h="128" xo="64" yo="0" id="10024201" name="inst_CEB9A017" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bkg_hub_new" x="1120" y="480" w="64" h="128" xo="64" yo="0" id="10024202" name="inst_24E3E248" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bkg_hub_new" x="1632" y="480" w="64" h="128" xo="64" yo="0" id="10024204" name="inst_17CF6686" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_hub_new" x="1888" y="480" w="64" h="128" xo="64" yo="0" id="10024205" name="inst_E7394B9A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_hub_new" x="672" y="1568" w="64" h="64" xo="448" yo="768" id="10024206" name="inst_9E648B01" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_hub_new" x="2080" y="1568" w="64" h="64" xo="576" yo="768" id="10024207" name="inst_B01B76B7" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -338,10 +342,14 @@
     <tile bgName="bkg_hub_new" x="1184" y="224" w="32" h="128" xo="96" yo="352" id="10024294" name="inst_F1FAE747" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_hub_new" x="1184" y="352" w="32" h="128" xo="96" yo="352" id="10024295" name="inst_72044234" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_hub_new" x="1344" y="96" w="128" h="128" xo="448" yo="0" id="10024296" name="inst_9EDC3082" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bkg_hub_new" x="1216" y="96" w="64" h="128" xo="320" yo="0" id="10024297" name="inst_3A833E98" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bkg_hub_new" x="1280" y="96" w="64" h="128" xo="320" yo="0" id="10024298" name="inst_FE5FB58B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bkg_hub_new" x="1472" y="96" w="64" h="128" xo="320" yo="0" id="10024301" name="inst_E55380C5" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bkg_hub_new" x="1536" y="96" w="64" h="128" xo="320" yo="0" id="10024302" name="inst_F66FE0BB" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_hub_new" x="1248" y="96" w="64" h="128" xo="192" yo="0" id="10024303" name="inst_A18AB29D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_hub_new" x="1504" y="96" w="64" h="128" xo="192" yo="0" id="10024304" name="inst_6C4D6CF7" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_hub_new" x="1216" y="96" w="32" h="128" xo="320" yo="0" id="10024305" name="inst_2658C7D9" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_hub_new" x="1312" y="96" w="32" h="128" xo="320" yo="0" id="10024306" name="inst_B0D77872" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_hub_new" x="1472" y="96" w="32" h="128" xo="320" yo="0" id="10024307" name="inst_B5421391" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_hub_new" x="1568" y="96" w="32" h="128" xo="320" yo="0" id="10024308" name="inst_EC43C1A5" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_hub_new" x="1632" y="480" w="64" h="128" xo="192" yo="0" id="10024309" name="inst_73739463" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_hub_new" x="1120" y="480" w="64" h="128" xo="192" yo="0" id="10024310" name="inst_D92D192C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_hub_new" x="1024" y="1312" w="32" h="128" xo="288" yo="704" id="10024244" name="inst_73F997AE" depth="-2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_hub_new" x="928" y="1312" w="32" h="128" xo="256" yo="704" id="10024245" name="inst_62E20EC8" depth="-2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_hub_new" x="1024" y="1216" w="32" h="96" xo="96" yo="320" id="10024246" name="inst_208B7966" depth="-2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

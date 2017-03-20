@@ -44,16 +44,87 @@ enum sim_state
     waiting_for_combat5,
     begin_combat5,
     combat5_inprogress,
-    combat_done
+    waiting_for_hit,
+    ship_just_hit,
+    ship_hit,
+    combat_done,
+    doors_open
 }
-
 
 room_state = sim_state.start;
 
+// Create doors
+
+var xp = 1216;
+var yp = 480;
+door_l = instance_create(xp, yp, obj_tutorial_gate_closed);
+door_l.sprite_index = spr_laser_left_closed;
+door_m1 = instance_create(xp + 64, yp, obj_tutorial_gate_closed);
+door_m1.sprite_index = spr_laser_middle;
+door_m2 = instance_create(xp + 128, yp, obj_tutorial_gate_closed);
+door_m2.sprite_index = spr_laser_middle;
+door_m3 = instance_create(xp + 192, yp, obj_tutorial_gate_closed);
+door_m3.sprite_index = spr_laser_middle;
+door_m4 = instance_create(xp + 256, yp, obj_tutorial_gate_closed);
+door_m4.sprite_index = spr_laser_middle;
+door_r = instance_create(xp + 320, yp, obj_tutorial_gate_closed);
+door_r.sprite_index = spr_laser_right_closed;
 
 
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="6">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+ui_textbox_queue("|broadcast Broadcasting System: `br |white Warning: unknown object has collided with ship. ");
+ui_textbox_queue("|broadcast Broadcasting System: `br |white Activating safety protocols. Please be advised that the active combat simulation has been terminated and all door locks have been released. ");
+ui_flash_textbox(); 
+room_state = sim_state.combat_done;
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>room_state = sim_state.ship_just_hit;
 </string>
           </argument>
         </arguments>
@@ -101,8 +172,7 @@ room_state = sim_state.start;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-ui_textbox_queue("|broadcast Broadcasting System: `br |white Enemies are unpredicatable. It is always best to be prepared for anything.");
+            <string>ui_textbox_queue("|broadcast Broadcasting System: `br |white Don't forget that pillars, rocks, and dashing can all be used to avoid enemy attacks.");
 ui_flash_textbox();
 room_state = sim_state.begin_combat4;
 
@@ -129,7 +199,7 @@ room_state = sim_state.begin_combat4;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ui_textbox_queue("|broadcast Broadcasting System: `br |white Don't forget that pillars, rocks, and dashing can all be used to avoid enemy attacks.");
+            <string>ui_textbox_queue("|broadcast Broadcasting System: `br |white Your shield will begin to recharge quickly when no enemies are in the room. You can use this and healing items to help you survive.");
 ui_flash_textbox(); 
 room_state = sim_state.begin_combat3;
 
@@ -211,26 +281,46 @@ room_state = sim_state.begin_combat1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with(obj_player)
+            <string>// Prevent the player from dying
+with(obj_player)
 {
-    if(current_health &lt; 50)
+    if(current_health &lt; 100)
     {
-        current_health = 50;
+        current_health = 100;
     }
 }
 
-var can_continue = false; 
-
-with(obj_player)
+// Camera effect for near the end
+if(room_state == sim_state.ship_hit)
 {
-    can_continue = is_shield_active &amp;&amp; (inventory[inventory_slot.weapon1] != -1 || inventory[inventory_slot.weapon2] != -1);
+    with(obj_camera)
+    {
+        camera_shake(50);
+    }
 }
 
+// Don't run the rest of this code until the player picks stuff up
+var can_continue = false; 
+with(obj_player)
+{
+    can_continue = is_shield_active &amp;&amp; inventory[inventory_slot.weapon1] != -1 &amp;&amp; inventory[inventory_slot.weapon2] != -1;
+}
 if(!can_continue)
 {
     exit;
 }
 
+// Destroy any monster drops
+if(instance_exists(obj_item))
+{
+    with(obj_item)
+    {
+        instance_destroy();
+    }   
+}
+
+
+// Basically a state machine to do ~5 rounds of combat and display messages between each round
 if(!instance_exists(obj_enemy))
 {
     if(room_state == sim_state.start)
@@ -285,7 +375,13 @@ if(!instance_exists(obj_enemy))
     else if(room_state == sim_state.begin_combat3 &amp;&amp; !ui_textbox_open())
     {
         room_state = sim_state.combat3_inprogress;
-        
+        // HP cans
+        instance_create(1376, 896, obj_health_can);
+        instance_create(1376, 1216, obj_health_can);
+        instance_create(1120, 1056, obj_health_can);
+        instance_create(1632, 1056, obj_health_can);
+                  
+        // Enemies    
         for(var i = 0; i &lt; instance_number(obj_tutorial_spawner); i++)
         {
             var spawner = instance_find(obj_tutorial_spawner, i);
@@ -331,9 +427,51 @@ if(!instance_exists(obj_enemy))
     }
     else if(room_state == sim_state.combat5_inprogress)
     {
-        room_state = sim_state.combat_done;
-        ui_textbox_queue("NOTE TO TESTER: This is where other exciting things would happen");
+        room_state = sim_state.waiting_for_hit;
+        alarm[5] = 90;
     }
+    else if(room_state == sim_state.ship_just_hit)
+    {
+        alarm[6] = 240;
+        room_state = sim_state.ship_hit;
+        // Play explosion sound
+    }
+    else if(room_state == sim_state.combat_done)
+    {
+        room_state = sim_state.doors_open;
+        // Free lazor doors   
+        with(door_l)
+        {
+            instance_destroy();
+        }
+        with(door_r)
+        {
+            instance_destroy();
+        }
+        with(door_m1)
+        {
+            instance_destroy();
+        }
+        with(door_m2)
+        {
+            instance_destroy();
+        }
+        with(door_m3)
+        {
+            instance_destroy();
+        }
+        with(door_m4)
+        {
+            instance_destroy();
+        }        
+        var xp = 1216;
+        var yp = 480;
+        door_l = instance_create(xp, yp, obj_tutorial_gate_open);
+        door_l.sprite_index = spr_laser_left_open;
+        door_r = instance_create(xp + 320, yp, obj_tutorial_gate_open);
+        door_r.sprite_index = spr_laser_right_open;
+    }
+    
     
 }
 

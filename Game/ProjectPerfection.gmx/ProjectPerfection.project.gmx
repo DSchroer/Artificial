@@ -603,6 +603,7 @@
           <script>scripts\is_gun.gml</script>
         </scripts>
         <script>scripts\inventory_get_tutorial_weapon.gml</script>
+        <script>scripts\inventory_get_tutorial_weapon2.gml</script>
       </scripts>
       <script>scripts\player_activate_shield.gml</script>
       <script>scripts\player_compute_stats.gml</script>
@@ -1040,6 +1041,7 @@
       <room>rooms\rm_tutorial_beta</room>
       <room>rooms\rm_tutorial</room>
       <room>rooms\rm_tutorial_final1</room>
+      <room>rooms\rm_tutorial_final3</room>
     </rooms>
     <rooms name="Menus">
       <room>rooms\rm_credits</room>
