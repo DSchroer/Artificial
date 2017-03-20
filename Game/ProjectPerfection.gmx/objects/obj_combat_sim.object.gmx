@@ -25,19 +25,143 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>combat_started1 = false;
-combat_can_spawn1 = false;
-combat_ended1 = false;
+            <string>
+enum sim_state
+{
+    start,
+    items_pickedup,
+    begin_combat1,
+    combat1_inprogress,
+    waiting_for_combat2,
+    begin_combat2,
+    combat2_inprogress,
+    waiting_for_combat3,
+    begin_combat3,
+    combat3_inprogress,
+    waiting_for_combat4,
+    begin_combat4,
+    combat4_inprogress,
+    waiting_for_combat5,
+    begin_combat5,
+    combat5_inprogress,
+    combat_done
+}
 
-combat_started2 = false;
-combat_ended2 = false;
 
-combat_started3 = false;
-combat_ended3 = false;
+room_state = sim_state.start;
 
-combat_started4 = false;
-combat_ended4 = false;
 
+
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>room_state = sim_state.begin_combat5;
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+ui_textbox_queue("|broadcast Broadcasting System: `br |white Enemies are unpredicatable. It is always best to be prepared for anything.");
+ui_flash_textbox();
+room_state = sim_state.begin_combat4;
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>ui_textbox_queue("|broadcast Broadcasting System: `br |white Don't forget that pillars, rocks, and dashing can all be used to avoid enemy attacks.");
+ui_flash_textbox(); 
+room_state = sim_state.begin_combat3;
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///
+
+ui_textbox_queue("|broadcast Broadcasting System: `br |white Your gun will reload automatically when it runs out of bullets. However, you can also reload automatically with |key R |white and swap your weapons with |key Mouse Wheel");
+ui_textbox_queue("|broadcast Broadcasting System: `br |white Don't let enemies surround you, or the damage can add up quickly. ");
+ui_flash_textbox(); 
+room_state = sim_state.begin_combat2;
 
 </string>
           </argument>
@@ -64,8 +188,7 @@ combat_ended4 = false;
             <string>
 ui_textbox_queue("|broadcast Broadcasting System: `br |white In your travels, you will meet many enemies. You must be prepared to neutralize them at any cost by pressing |key LMB |white to shoot your gun. ");
 ui_flash_textbox(); 
-combat_can_spawn1 = true;
-
+room_state = sim_state.begin_combat1;
 </string>
           </argument>
         </arguments>
@@ -88,7 +211,15 @@ combat_can_spawn1 = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var can_continue = false; 
+            <string>with(obj_player)
+{
+    if(current_health &lt; 50)
+    {
+        current_health = 50;
+    }
+}
+
+var can_continue = false; 
 
 with(obj_player)
 {
@@ -102,10 +233,10 @@ if(!can_continue)
 
 if(!instance_exists(obj_enemy))
 {
-    if(!combat_started1)
+    if(room_state == sim_state.start)
     {
-        combat_started1 = true;
-        alarm[0] = 60 * 3;
+        room_state = sim_state.items_pickedup;       
+        alarm[0] = 60;
         
         for(var i = 0; i &lt; instance_number(obj_tutorial_spawner); i++)
         {
@@ -113,9 +244,9 @@ if(!instance_exists(obj_enemy))
             spawner.active = true;
         }
     }
-    else if(combat_can_spawn1 &amp;&amp; !ui_textbox_open())
+    else if(room_state == sim_state.begin_combat1 &amp;&amp; !ui_textbox_open())
     {
-        combat_can_spawn1 = false;
+        room_state = sim_state.combat1_inprogress;
         var spawnx;
         var spawny;
         for(var i = 0; i &lt; instance_number(obj_tutorial_spawner); i++)
@@ -123,15 +254,87 @@ if(!instance_exists(obj_enemy))
             var spawner = instance_find(obj_tutorial_spawner, i);
             if(spawner.position == 1)
             {
-                instance_create(spawner.x, spawner.y, obj_grunt);
+                instance_create(spawner.x + sprite_get_xoffset(object_get_sprite(obj_grunt)), spawner.y + sprite_get_yoffset(object_get_sprite(obj_grunt)), obj_grunt);
                 break;   
             }
         }        
-    
     }
+    else if(room_state == sim_state.combat1_inprogress)
+    {
+        alarm[1] = 60;
+        room_state = sim_state.waiting_for_combat2;
+    }
+    else if(room_state == sim_state.begin_combat2 &amp;&amp; !ui_textbox_open())
+    {
+        room_state = sim_state.combat2_inprogress;
         
-
-
+        for(var i = 0; i &lt; instance_number(obj_tutorial_spawner); i++)
+        {
+            var spawner = instance_find(obj_tutorial_spawner, i);
+            if(spawner.position &gt;= 5)
+            {
+                instance_create(spawner.x + sprite_get_xoffset(object_get_sprite(obj_grunt)), spawner.y + sprite_get_yoffset(object_get_sprite(obj_grunt)), obj_grunt);
+            }
+        }   
+    }
+    else if(room_state == sim_state.combat2_inprogress)
+    {
+        alarm[2] = 60;
+        room_state = sim_state.waiting_for_combat3;
+    }
+    else if(room_state == sim_state.begin_combat3 &amp;&amp; !ui_textbox_open())
+    {
+        room_state = sim_state.combat3_inprogress;
+        
+        for(var i = 0; i &lt; instance_number(obj_tutorial_spawner); i++)
+        {
+            var spawner = instance_find(obj_tutorial_spawner, i);
+            if(spawner.position &lt; 5)
+            {
+                instance_create(spawner.x + sprite_get_xoffset(object_get_sprite(obj_grunt)), spawner.y + sprite_get_yoffset(object_get_sprite(obj_grunt)), obj_grunt);
+            }
+        }   
+    }
+    else if(room_state == sim_state.combat3_inprogress)
+    {
+        alarm[3] = 90;
+        room_state = sim_state.waiting_for_combat4;
+    }
+    else if(room_state == sim_state.begin_combat4 &amp;&amp; !ui_textbox_open())
+    {
+        room_state = sim_state.combat4_inprogress;
+        for(var i = 0; i &lt; instance_number(obj_tutorial_spawner); i++)
+        {
+            var spawner = instance_find(obj_tutorial_spawner, i);
+            if(spawner.position == 2 || spawner.position == 3 || spawner.position == 5 || spawner.position == 8)
+            {
+                instance_create(spawner.x + sprite_get_xoffset(object_get_sprite(obj_grunt)), spawner.y + sprite_get_yoffset(object_get_sprite(obj_grunt)), obj_grunt);
+            }
+        }  
+    }
+    else if(room_state == sim_state.combat4_inprogress)
+    {
+        alarm[4] = 90;
+        room_state = sim_state.waiting_for_combat5;
+    }
+    else if(room_state == sim_state.begin_combat5 &amp;&amp; !ui_textbox_open())
+    {
+        room_state = sim_state.combat5_inprogress;
+        for(var i = 0; i &lt; instance_number(obj_tutorial_spawner); i++)
+        {
+            var spawner = instance_find(obj_tutorial_spawner, i);
+            if(spawner.position == 1 || spawner.position == 4 || spawner.position == 6 || spawner.position == 7)
+            {
+                instance_create(spawner.x + sprite_get_xoffset(object_get_sprite(obj_grunt)), spawner.y + sprite_get_yoffset(object_get_sprite(obj_grunt)), obj_grunt);
+            }
+        }  
+    }
+    else if(room_state == sim_state.combat5_inprogress)
+    {
+        room_state = sim_state.combat_done;
+        ui_textbox_queue("NOTE TO TESTER: This is where other exciting things would happen");
+    }
+    
 }
 
 

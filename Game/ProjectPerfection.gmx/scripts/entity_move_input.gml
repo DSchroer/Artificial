@@ -99,16 +99,19 @@ if(keyboard_check_pressed(vk_numpad4))
 }
 if(keyboard_check_pressed(vk_numpad5))
 {
-    room_goto(rm_combat_simulation);
 }
 if(keyboard_check_pressed(vk_numpad6))
 {
+    inventory[0] = -1;
+    inventory[1] = -1;
+    obj_player.is_shield_active = false;
     room_goto(rm_tutorial_final1);
 }
 if(keyboard_check_pressed(vk_numpad7))
 {
     inventory[0] = -1;
     inventory[1] = -1;
+    obj_player.is_shield_active = false;
     room_goto(rm_tutorial_final2);
 }
 if(keyboard_check_pressed(vk_numpad8))
