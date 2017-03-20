@@ -1,5 +1,5 @@
 ///save_open(file)
-file_name = working_directory + argument0;
+file_name = argument0;
 save_data = -1;
 
 if(dirty)
