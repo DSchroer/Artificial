@@ -2,6 +2,11 @@
 file_name = working_directory + argument0;
 save_data = -1;
 
+if(dirty)
+{
+    save_flush(self);
+}
+
 if(debug_mode)
 {
     file_name += ".txt";
@@ -20,11 +25,6 @@ if(file_exists(file_name))
             data += file_text_readln(file);
         }
         file_text_close(file);
-        
-        if(!debug_mode)
-        {
-            data = decry
-        }
         
         if(string_pos("{", data) != 0 && string_pos("}", data) != 0)
         {

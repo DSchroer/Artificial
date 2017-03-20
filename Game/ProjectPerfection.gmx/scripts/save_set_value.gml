@@ -30,6 +30,8 @@ with(save)
     {
         jso_map_add_sublist(save_data, name, save_list_from_array(value))
     }
+    
+    dirty = true;
 }
 
 
