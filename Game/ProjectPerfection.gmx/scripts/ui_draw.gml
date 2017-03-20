@@ -1,6 +1,12 @@
 ///ui_draw()
 
-if(is_paused() || dead)
+if(dead)
+{
+    ui_draw_death_text();
+    exit;
+}
+
+if(is_paused())
 {
     exit;
 }
@@ -15,5 +21,4 @@ ui_draw_inventory();
 ui_draw_boss_health();
 ui_draw_action_indicators();
 ui_draw_textbox_element();
-ui_draw_death_text();
 ui_draw_tooltips();
