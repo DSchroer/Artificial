@@ -79,7 +79,7 @@ if(point_distance(x, y, target_x, target_y) &lt; mv_speed || is_paused())
 
 rock[weapon_index.bullet_sprite_xscale] = image_xscale;
 rock[weapon_index.bullet_sprite_yscale] = image_yscale;
-attack_gun(rock, x, y, image_angle, self);
+attack_gun(rock, x, y, image_angle, self, false, false);
 </string>
           </argument>
         </arguments>

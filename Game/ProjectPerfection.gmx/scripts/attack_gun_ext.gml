@@ -1,4 +1,4 @@
-///attack_gun_ext(weapon, x, y, direction, dist, ignore, flash)
+///attack_gun_ext(weapon, x, y, direction, dist, ignore, flash, play_sound, allow_sound_stacking)
 var weapon = argument0;
 var xpos = argument1;
 var ypos = argument2;
@@ -6,6 +6,8 @@ var dir = argument3;
 var dist = argument4;
 var ignore = argument5;
 var flash = argument6;
+var play_sound = argument7;
+var allow_sound_stacking = argument8;
 
 xpos += lengthdir_x(dist, dir);
 ypos += lengthdir_y(dist, dir);
@@ -43,22 +45,22 @@ if(self.object_index == obj_player)
 switch(weapon[weapon_index.modifier])
 {
     case weapon_modifier.normal:
-        attack_normal(weapon, xpos, ypos, dir, ignore);
+        attack_normal(weapon, xpos, ypos, dir, ignore, play_sound, allow_sound_stacking);
         break;
     case weapon_modifier.plasma:
-        attack_plasma(weapon, xpos, ypos, dir, ignore);
+        attack_plasma(weapon, xpos, ypos, dir, ignore, play_sound, allow_sound_stacking);
         break;
     case weapon_modifier.rail:
-        attack_rail(weapon, xpos, ypos, dir, ignore);
+        attack_rail(weapon, xpos, ypos, dir, ignore, play_sound, allow_sound_stacking);
         break;
     case weapon_modifier.scatter:
-        attack_scatter(weapon, xpos, ypos, dir, ignore);
+        attack_scatter(weapon, xpos, ypos, dir, ignore, play_sound, allow_sound_stacking);
         break;
     case weapon_modifier.sword:
         attack_sword(weapon, xpos, ypos, dir, ignore);
         break;
     case weapon_modifier.rocket:
-        attack_rocket(weapon, xpos, ypos, dir, ignore);
+        attack_rocket(weapon, xpos, ypos, dir, ignore, play_sound, allow_sound_stacking);
         break;
 }
 

@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!tutorial_done())
+            <string>sfx_bkg_stop();
+
+if(!tutorial_done())
 {
     alarm[0] = 1;
 } 
@@ -106,7 +108,27 @@ with(target)
 
 if(tutorial_done())
 {
-    sfx_bkg_add_without_reset(bkg_boss1);
+    if(room == rm_boss_4)
+    {
+         sfx_bkg_add_without_reset(bkg_boss4);
+    }
+    else if(room == rm_boss_3)
+    {
+         sfx_bkg_add_without_reset(bkg_boss3);
+    }
+    else if(room == rm_boss_2)
+    {
+         sfx_bkg_add_without_reset(bkg_boss2);
+    }
+    else if(room == rm_boss_1)
+    {
+         sfx_bkg_add_without_reset(bkg_boss1);
+    }   
+    else if(room == rm_boss_final)
+    {
+         sfx_bkg_add_without_reset(bkg_final_boss);
+    }
+         
 }
 
 </string>

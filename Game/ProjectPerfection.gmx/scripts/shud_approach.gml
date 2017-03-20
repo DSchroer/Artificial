@@ -51,5 +51,5 @@ if(sm_has_var("dir"))
 {
     direction += sm_get_var("dir");
 }
-attack_gun(mele, x, y, 0, self);
+attack_gun(mele, x, y, 0, self, false, false);
 

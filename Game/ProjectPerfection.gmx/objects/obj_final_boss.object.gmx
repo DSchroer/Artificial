@@ -120,7 +120,7 @@ room_goto(rm_credits)
     alarm[1] = 60;
 }
 
-if(!ui_textbox_open() &amp;&amp; alarm[2] == -1)
+if(!tutorial_done() &amp;&amp; !ui_textbox_open() &amp;&amp; alarm[2] == -1)
 {
     alarm[2] = 30;
     instance_create(0, 0, obj_fade_out);

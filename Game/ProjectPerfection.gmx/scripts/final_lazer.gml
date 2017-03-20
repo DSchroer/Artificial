@@ -23,7 +23,7 @@ var cx = x - (sprite_get_xoffset(sprite_index) * image_xscale) + (sprite_width /
 var cy = y - (sprite_get_yoffset(sprite_index) * image_yscale) + (sprite_height / 2);
 var cdist = (sprite_width / 2);
 
-attack_gun_ext(lazer, cx, cy, angle, cdist, self, false);
-attack_gun_ext(lazer, cx, cy, angle + 90, cdist, self, false);
-attack_gun_ext(lazer, cx, cy, angle + 180, cdist, self, false);
-attack_gun_ext(lazer, cx, cy, angle - 90, cdist, self, false);
+attack_gun_ext(lazer, cx, cy, angle, cdist, self, false, true, false);
+attack_gun_ext(lazer, cx, cy, angle + 90, cdist, self, false, true, false);
+attack_gun_ext(lazer, cx, cy, angle + 180, cdist, self, false, true, false);
+attack_gun_ext(lazer, cx, cy, angle - 90, cdist, self, false, true, false);

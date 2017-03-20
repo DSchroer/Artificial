@@ -57,12 +57,6 @@
     <sound>sound\snd_hurt4</sound>
     <sound>sound\snd_laser2</sound>
     <sound>sound\snd_healing_pills</sound>
-    <sound>sound\bkg_hub1</sound>
-    <sound>sound\bkg_final_boss</sound>
-    <sound>sound\bkg_hub2</sound>
-    <sound>sound\bkg_desert2</sound>
-    <sound>sound\bkg_boss1</sound>
-    <sound>sound\bkg_menu</sound>
     <sounds name="guns">
       <sound>sound\snd_heavy_scatter</sound>
       <sound>sound\snd_assault_explosive</sound>
@@ -100,6 +94,33 @@
     <sound>sound\snd_shield_recharge</sound>
     <sound>sound\snd_shield_broken</sound>
     <sound>sound\snd_moment_door_open</sound>
+    <sounds name="music">
+      <sound>sound\bkg_final_boss</sound>
+      <sound>sound\bkg_boss1</sound>
+      <sound>sound\bkg_menu</sound>
+      <sound>sound\bkg_hub2</sound>
+      <sound>sound\bkg_desert2</sound>
+      <sound>sound\bkg_hub1</sound>
+      <sound>sound\bkg_boss2</sound>
+      <sound>sound\bkg_boss3</sound>
+      <sound>sound\bkg_boss4</sound>
+    </sounds>
+    <sounds name="enemy">
+      <sound>sound\snd_grunt_hit</sound>
+      <sound>sound\snd_grunt_attack</sound>
+      <sound>sound\snd_grunt_death</sound>
+      <sound>sound\snd_brute_melee</sound>
+      <sound>sound\snd_brute_gp</sound>
+      <sound>sound\snd_brute_throw</sound>
+      <sound>sound\snd_brute_hit</sound>
+      <sound>sound\snd_brute_death</sound>
+      <sound>sound\snd_captain_attack</sound>
+      <sound>sound\snd_captain_hit</sound>
+      <sound>sound\snd_captain_death</sound>
+      <sound>sound\snd_dog_attack</sound>
+      <sound>sound\snd_dog_death</sound>
+      <sound>sound\snd_dog_hit</sound>
+    </sounds>
   </sounds>
   <sprites name="sprites">
     <sprites name="Entities">
@@ -333,8 +354,6 @@
       <script>scripts\attack_rocket.gml</script>
       <script>scripts\attack_scatter.gml</script>
       <script>scripts\attack_rail.gml</script>
-      <script>scripts\attack_explosive.gml</script>
-      <script>scripts\attack_physical.gml</script>
       <script>scripts\attack_sword.gml</script>
       <script>scripts\attack_gun.gml</script>
       <script>scripts\attack_gun_ext.gml</script>
