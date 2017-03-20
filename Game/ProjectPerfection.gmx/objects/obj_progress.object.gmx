@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>tutorial =  save_get_value(obj_save_data, "tutorial", false);
+            <string>tutorial = save_get_value(obj_save_data, "tutorial", 0);
 cube_parts =  save_get_value(obj_save_data, "cube", 0);
 progress = save_get_value(obj_save_data, "progress", 0);
 boss = save_get_value(obj_save_data, "boss", 0);

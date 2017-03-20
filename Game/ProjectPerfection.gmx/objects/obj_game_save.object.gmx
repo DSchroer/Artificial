@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>save_open("app")
+            <string>dirty = false;
+save_open("app");
+
 </string>
           </argument>
         </arguments>
