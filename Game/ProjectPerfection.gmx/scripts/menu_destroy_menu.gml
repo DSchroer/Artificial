@@ -10,5 +10,12 @@ case menu_type.main:
 case menu_type.options:
     menu_destroy_options_menu();
     break;
+case menu_type.difficulty_menu:
+    menu_destroy_difficulty_menu();
+    break;
+case menu_type.tutorial_skip:
+    menu_destroy_skip_tutorial();
+    break;
+
 }
 

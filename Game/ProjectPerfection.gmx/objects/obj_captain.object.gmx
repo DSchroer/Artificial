@@ -70,7 +70,7 @@ volume_mod = 1.4;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>max_health *= get_scaling_coefficient(pow);
+            <string>max_health *= balance_get_enemy_health_coefficient(pow);
 current_health = max_health;
 weapon = enemy_scale_gun(weapon, pow);
 sword = enemy_scale_gun(sword, pow);

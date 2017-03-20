@@ -64,7 +64,10 @@ ui_textbox_queue("|fuchsia Research Notes: Experiment 'I' `br Star Year 2653. Mo
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(rm_hub);
+            <string>save_set_value(obj_game_save, "has_beaten_tutorial", true);
+save_flush(obj_game_save);
+room_goto(rm_hub);
+
 </string>
           </argument>
         </arguments>

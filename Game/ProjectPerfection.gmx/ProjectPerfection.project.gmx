@@ -602,6 +602,7 @@
           <script>scripts\is_shield.gml</script>
           <script>scripts\is_gun.gml</script>
         </scripts>
+        <script>scripts\inventory_get_tutorial_weapon.gml</script>
       </scripts>
       <script>scripts\player_activate_shield.gml</script>
       <script>scripts\player_compute_stats.gml</script>
@@ -753,12 +754,17 @@
     <script>scripts\device_get_id.gml</script>
     <scripts name="Menus">
       <scripts name="MainMenu">
-        <script>scripts\menu_destroy_main_menu.gml</script>
-        <script>scripts\menu_destroy_options_menu.gml</script>
+        <script>scripts\menu_create_difficulty_menu.gml</script>
         <script>scripts\menu_create_main_menu.gml</script>
-        <script>scripts\menu_create_options_menu.gml</script>
-        <script>scripts\menu_destroy_menu.gml</script>
         <script>scripts\menu_create_menu.gml</script>
+        <script>scripts\menu_create_options_menu.gml</script>
+        <script>scripts\menu_create_skip_tutorial.gml</script>
+        <script>scripts\menu_destroy_difficulty_menu.gml</script>
+        <script>scripts\menu_destroy_main_menu.gml</script>
+        <script>scripts\menu_destroy_menu.gml</script>
+        <script>scripts\menu_destroy_options_menu.gml</script>
+        <script>scripts\menu_destroy_skip_tutorial.gml</script>
+        <script>scripts\menu_start_game.gml</script>
       </scripts>
       <scripts name="PauseMenu">
         <script>scripts\menu_create_pause.gml</script>
@@ -766,12 +772,13 @@
       </scripts>
     </scripts>
     <scripts name="Balance">
-      <script>scripts\get_scaling_coefficient.gml</script>
+      <script>scripts\balance_global_scaling_coefficient.gml</script>
       <script>scripts\roll_boss_loot.gml</script>
       <script>scripts\roll_power.gml</script>
       <script>scripts\balance_get_enemy_damage_coefficient.gml</script>
       <script>scripts\balance_get_enemy_health_coefficient.gml</script>
-      <script>scripts\balance_get_loot_scaling.gml</script>
+      <script>scripts\balance_get_loot_scaling_coefficient.gml</script>
+      <script>scripts\balance_global_difficulty_coefficient.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">

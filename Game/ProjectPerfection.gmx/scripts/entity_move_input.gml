@@ -107,12 +107,14 @@ if(keyboard_check_pressed(vk_numpad6))
 }
 if(keyboard_check_pressed(vk_numpad7))
 {
+    inventory[0] = -1;
+    inventory[1] = -1;
     room_goto(rm_tutorial_final2);
 }
 if(keyboard_check_pressed(vk_numpad8))
 {
-    inventory[0] = -1;
-    inventory[1] = -1;
+    room_goto(rm_hub);
+    obj_progress.tutorial = 9001;
 }
 if(keyboard_check_pressed(vk_numpad9))
 {
