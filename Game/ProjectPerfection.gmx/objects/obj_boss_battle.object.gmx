@@ -118,6 +118,7 @@ if(tutorial_done())
     }
     else if(room == rm_boss_2)
     {
+         sfx_bkg_set_volume_modifier(2.0);
          sfx_bkg_add_without_reset(bkg_boss2);
     }
     else if(room == rm_boss_1)

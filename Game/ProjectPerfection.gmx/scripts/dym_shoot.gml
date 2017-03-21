@@ -11,6 +11,9 @@ if(sm_ticks() > 60)
         instance_destroy();
     }
     sm_set_state("idle");
+    
+    sfx_play_volume(snd_dym_cloudslash, false, 1.0);
+
 }
 
 rock_angle = (rock_angle + 3) % 360;

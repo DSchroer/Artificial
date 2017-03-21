@@ -130,6 +130,39 @@
         <sound>sound\snd_azar_rock_throw</sound>
         <sound>sound\snd_azar_rock_wave</sound>
       </sounds>
+      <sounds name="Dym">
+        <sound>sound\snd_dym_basic</sound>
+        <sound>sound\snd_dym_cloudslash</sound>
+        <sound>sound\snd_dym_summon</sound>
+        <sound>sound\snd_dym_cloudport</sound>
+        <sound>sound\snd_dym_grab</sound>
+        <sound>sound\snd_dym_death</sound>
+      </sounds>
+      <sounds name="Thwander">
+        <sound>sound\snd_thwander_mine_explosion</sound>
+        <sound>sound\snd_thwander_launch_mine</sound>
+        <sound>sound\snd_thwander_rifle_shot</sound>
+        <sound>sound\snd_thwander_sniper_rifle_shot</sound>
+        <sound>sound\snd_thwander_statis_mine_active</sound>
+        <sound>sound\snd_thwander_turret_shot</sound>
+        <sound>sound\snd_thwander_death</sound>
+      </sounds>
+      <sounds name="Shuude">
+        <sound>sound\snd_shuude_attack_basic</sound>
+        <sound>sound\snd_shuude_scream_beam</sound>
+        <sound>sound\snd_shuude_death</sound>
+      </sounds>
+      <sounds name="Heart">
+        <sound>sound\snd_heart_basic</sound>
+        <sound>sound\snd_heart_death</sound>
+        <sound>sound\snd_heart_spawn_enemies</sound>
+        <sound>sound\snd_heart_quad_laser</sound>
+        <sound>sound\snd_heart_electroport</sound>
+        <sound>sound\snd_heart_icreatedyou</sound>
+        <sound>sound\snd_heart_icreatedyou_explosion</sound>
+        <sound>sound\snd_heart_icreatedyou_full</sound>
+        <sound>sound\snd_heart_icreatedyou_noexplode</sound>
+      </sounds>
     </sounds>
     <sound>sound\snd_depth_complete</sound>
     <sound>sound\snd_component_drop</sound>
@@ -682,6 +715,7 @@
       <script>scripts\sfx_bkg_add_without_reset.gml</script>
       <script>scripts\script219.gml</script>
       <script>scripts\sfx_play_gun.gml</script>
+      <script>scripts\sfx_bkg_set_volume_modifier.gml</script>
     </scripts>
     <scripts name="State">
       <script>scripts\sm_init.gml</script>
