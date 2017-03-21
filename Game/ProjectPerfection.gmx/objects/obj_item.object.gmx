@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>data = inventory_spawn_gun(1);
 hitbox_set = false;
+sfx_played = !tutorial_done();
 </string>
           </argument>
         </arguments>
@@ -60,6 +61,12 @@ if(!hitbox_set)
         mask_index = data[shield_index.world_sprite];
     }
     hitbox_set = true;
+}
+
+if(!sfx_played)
+{
+    sfx_played = true;
+   // sfx_play(snd_gun_drop, false);
 }
 </string>
           </argument>

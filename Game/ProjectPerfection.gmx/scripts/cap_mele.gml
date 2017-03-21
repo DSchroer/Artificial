@@ -9,4 +9,5 @@ speed = 0;
 if(sm_ticks() % 10 == 0)
 {
     enemy_attack(obj_player, sword);
+    sfx_play_volume(snd_brute_melee, false, 1.2);
 }

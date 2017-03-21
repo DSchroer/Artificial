@@ -11,8 +11,10 @@ if(sm_ticks() == 0)
     }else{
         sm_set_var("dir", -1);
     }
+    sfx_play_volume(snd_heart_quad_laser, false, 1.0);
 }else if(sm_get_var("angle") > 90 || sm_get_var("angle") < -90)
 {
+    audio_stop_sound(snd_heart_quad_laser);
     sm_set_state(sm_state_pop());
 }else if(sm_ticks() > 30){
     sm_set_var("angle", sm_get_var("angle") + sm_get_var("dir"));
@@ -23,7 +25,7 @@ var cx = x - (sprite_get_xoffset(sprite_index) * image_xscale) + (sprite_width /
 var cy = y - (sprite_get_yoffset(sprite_index) * image_yscale) + (sprite_height / 2);
 var cdist = (sprite_width / 2);
 
-attack_gun_ext(lazer, cx, cy, angle, cdist, self, false);
-attack_gun_ext(lazer, cx, cy, angle + 90, cdist, self, false);
-attack_gun_ext(lazer, cx, cy, angle + 180, cdist, self, false);
-attack_gun_ext(lazer, cx, cy, angle - 90, cdist, self, false);
+attack_gun_ext(lazer, cx, cy, angle, cdist, self, false, false, false);
+attack_gun_ext(lazer, cx, cy, angle + 90, cdist, self, false, false, false);
+attack_gun_ext(lazer, cx, cy, angle + 180, cdist, self, false, false, false);
+attack_gun_ext(lazer, cx, cy, angle - 90, cdist, self, false, false, false);

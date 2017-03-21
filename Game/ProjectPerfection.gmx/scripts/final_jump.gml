@@ -11,6 +11,8 @@ if(sm_ticks() == 0)
     ghost.image_xscale = image_xscale;
     ghost.image_yscale = image_yscale;
     ghost.time = 45;
+    
+    sfx_play_volume(snd_heart_electroport, false, 1.0);
 }
 var tx = sm_get_var("tx");
 var ty = sm_get_var("ty");
@@ -35,4 +37,4 @@ if(point_distance(x, y, tx, ty) <= speed)
 
 mele[weapon_index.bullet_sprite_xscale] = image_xscale;
 mele[weapon_index.bullet_sprite_yscale] = image_yscale;
-attack_gun(mele, x, y, 0, self);
+attack_gun(mele, x, y, 0, self, false, false);

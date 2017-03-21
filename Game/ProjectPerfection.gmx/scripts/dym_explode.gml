@@ -5,9 +5,10 @@ if(sm_ticks() == 60)
 {
     with(obj_dym_part)
     {   
-        attack_gun(other.rock, x, y, point_direction(x, y, other.x, other.y) + 180, self);
+        attack_gun(other.rock, x, y, point_direction(x, y, other.x, other.y) + 180, self, false, false);
         instance_destroy();
     }
+    sfx_play_volume(snd_dym_cloudslash, false, 1.0);
 }
 
 if(sm_ticks() > 100)

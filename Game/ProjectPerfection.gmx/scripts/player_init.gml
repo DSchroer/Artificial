@@ -22,7 +22,7 @@ if(is_shield_active)
 {
     remaining_shield = shield_max_health;
 }
-hide_inventory = false;
+hide_tooltips = true;
 invincible = 0;
 movement_this_frame = false;
 friction_coeff = 0.14;

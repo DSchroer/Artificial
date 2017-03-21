@@ -8,8 +8,6 @@ damage = 0;
 damage_dir = 0;
 damage_from = noone;
 hurt_sounds = ds_list_create();
-volume_mod = 1.2;
-
 repulsion_force = 0.5;
 
 hbox_x1 = -(sprite_get_xoffset(sprite_index) * image_xscale);

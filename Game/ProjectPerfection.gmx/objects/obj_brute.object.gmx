@@ -60,10 +60,9 @@ pound[weapon_index.bullet_sprite_yscale] = 0.5;
 pound[weapon_index.bullet_speed] = 0;
 
 
-volume_mod = 1.4;
-//ds_list_add(hurt_sounds, snd_enemy_rock1);  
-//ds_list_add(hurt_sounds, snd_enemy_rock2);
-//ds_list_add(hurt_sounds, snd_enemy_rock3); // &lt;--- death sound?
+
+volume_mod = 0.9;
+ds_list_add(hurt_sounds, snd_brute_hit); 
 </string>
           </argument>
         </arguments>
@@ -162,7 +161,7 @@ entity_collision();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>sfx_play_volume(snd_brute_death, false, 0.75);
 if(instance_exists(obj_progress))
 {
     var items;

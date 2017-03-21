@@ -57,12 +57,6 @@
     <sound>sound\snd_hurt4</sound>
     <sound>sound\snd_laser2</sound>
     <sound>sound\snd_healing_pills</sound>
-    <sound>sound\bkg_hub1</sound>
-    <sound>sound\bkg_final_boss</sound>
-    <sound>sound\bkg_hub2</sound>
-    <sound>sound\bkg_desert2</sound>
-    <sound>sound\bkg_boss1</sound>
-    <sound>sound\bkg_menu</sound>
     <sounds name="guns">
       <sound>sound\snd_heavy_scatter</sound>
       <sound>sound\snd_assault_explosive</sound>
@@ -100,6 +94,83 @@
     <sound>sound\snd_shield_recharge</sound>
     <sound>sound\snd_shield_broken</sound>
     <sound>sound\snd_moment_door_open</sound>
+    <sounds name="music">
+      <sound>sound\bkg_final_boss</sound>
+      <sound>sound\bkg_boss1</sound>
+      <sound>sound\bkg_menu</sound>
+      <sound>sound\bkg_hub2</sound>
+      <sound>sound\bkg_desert2</sound>
+      <sound>sound\bkg_hub1</sound>
+      <sound>sound\bkg_boss2</sound>
+      <sound>sound\bkg_boss3</sound>
+      <sound>sound\bkg_boss4</sound>
+    </sounds>
+    <sounds name="enemy">
+      <sound>sound\snd_grunt_hit</sound>
+      <sound>sound\snd_grunt_attack</sound>
+      <sound>sound\snd_grunt_death</sound>
+      <sound>sound\snd_brute_melee</sound>
+      <sound>sound\snd_brute_gp</sound>
+      <sound>sound\snd_brute_throw</sound>
+      <sound>sound\snd_brute_hit</sound>
+      <sound>sound\snd_brute_death</sound>
+      <sound>sound\snd_captain_attack</sound>
+      <sound>sound\snd_captain_hit</sound>
+      <sound>sound\snd_captain_death</sound>
+      <sound>sound\snd_dog_attack</sound>
+      <sound>sound\snd_dog_death</sound>
+      <sound>sound\snd_dog_hit</sound>
+    </sounds>
+    <sounds name="boss">
+      <sounds name="Azar">
+        <sound>sound\snd_azar_death</sound>
+        <sound>sound\snd_azar_teleport</sound>
+        <sound>sound\snd_azar_basic</sound>
+        <sound>sound\snd_azar_slam</sound>
+        <sound>sound\snd_azar_rock_throw</sound>
+        <sound>sound\snd_azar_rock_wave</sound>
+      </sounds>
+      <sounds name="Dym">
+        <sound>sound\snd_dym_basic</sound>
+        <sound>sound\snd_dym_cloudslash</sound>
+        <sound>sound\snd_dym_summon</sound>
+        <sound>sound\snd_dym_cloudport</sound>
+        <sound>sound\snd_dym_grab</sound>
+        <sound>sound\snd_dym_death</sound>
+      </sounds>
+      <sounds name="Thwander">
+        <sound>sound\snd_thwander_mine_explosion</sound>
+        <sound>sound\snd_thwander_launch_mine</sound>
+        <sound>sound\snd_thwander_rifle_shot</sound>
+        <sound>sound\snd_thwander_sniper_rifle_shot</sound>
+        <sound>sound\snd_thwander_statis_mine_active</sound>
+        <sound>sound\snd_thwander_turret_shot</sound>
+        <sound>sound\snd_thwander_death</sound>
+      </sounds>
+      <sounds name="Shuude">
+        <sound>sound\snd_shuude_attack_basic</sound>
+        <sound>sound\snd_shuude_scream_beam</sound>
+        <sound>sound\snd_shuude_death</sound>
+        <sound>sound\snd_shuude_echolocate</sound>
+        <sound>sound\snd_shuude_scream_small</sound>
+        <sound>sound\snd_shuude_scream_long</sound>
+      </sounds>
+      <sounds name="Heart">
+        <sound>sound\snd_heart_basic</sound>
+        <sound>sound\snd_heart_death</sound>
+        <sound>sound\snd_heart_spawn_enemies</sound>
+        <sound>sound\snd_heart_quad_laser</sound>
+        <sound>sound\snd_heart_electroport</sound>
+        <sound>sound\snd_heart_icreatedyou</sound>
+        <sound>sound\snd_heart_icreatedyou_explosion</sound>
+        <sound>sound\snd_heart_icreatedyou_full</sound>
+        <sound>sound\snd_heart_icreatedyou_noexplode</sound>
+      </sounds>
+      <sound>sound\snd_death_explosion</sound>
+    </sounds>
+    <sound>sound\snd_depth_complete</sound>
+    <sound>sound\snd_component_drop</sound>
+    <sound>sound\snd_gun_drop</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="Entities">
@@ -333,8 +404,6 @@
       <script>scripts\attack_rocket.gml</script>
       <script>scripts\attack_scatter.gml</script>
       <script>scripts\attack_rail.gml</script>
-      <script>scripts\attack_explosive.gml</script>
-      <script>scripts\attack_physical.gml</script>
       <script>scripts\attack_sword.gml</script>
       <script>scripts\attack_gun.gml</script>
       <script>scripts\attack_gun_ext.gml</script>
@@ -460,6 +529,7 @@
         <script>scripts\shud_scream.gml</script>
         <script>scripts\shud_beam.gml</script>
         <script>scripts\shud_turn_dir.gml</script>
+        <script>scripts\shud_stop_other_audio.gml</script>
       </scripts>
       <scripts name="Dym">
         <script>scripts\dym_idle.gml</script>
@@ -650,6 +720,7 @@
       <script>scripts\sfx_bkg_add_without_reset.gml</script>
       <script>scripts\script219.gml</script>
       <script>scripts\sfx_play_gun.gml</script>
+      <script>scripts\sfx_bkg_set_volume_modifier.gml</script>
     </scripts>
     <scripts name="State">
       <script>scripts\sm_init.gml</script>
@@ -734,24 +805,24 @@
       <script>scripts\door_expand_horizontal.gml</script>
       <script>scripts\door_expand_vertical.gml</script>
     </scripts>
+    <scripts name="Tutorial">
+      <script>scripts\tutorial_create_first_doors.gml</script>
+      <script>scripts\tutorial_open_first_doors.gml</script>
+      <script>scripts\tutorial_create_second_doors.gml</script>
+      <script>scripts\tutorial_create_third_doors.gml</script>
+      <script>scripts\tutorial_open_second_doors.gml</script>
+      <script>scripts\tutorial_open_third_doors.gml</script>
+      <script>scripts\tutorial_done.gml</script>
+      <script>scripts\tutorial_finish.gml</script>
+      <script>scripts\tutorial_components.gml</script>
+      <script>scripts\tutorial_workbench.gml</script>
+    </scripts>
     <scripts name="Story">
       <script>scripts\story_update.gml</script>
       <script>scripts\story_init.gml</script>
       <script>scripts\story_get_chapter.gml</script>
       <script>scripts\story_get_dialog.gml</script>
       <script>scripts\story_advance.gml</script>
-      <scripts name="Tutorial">
-        <script>scripts\tutorial_create_first_doors.gml</script>
-        <script>scripts\tutorial_open_first_doors.gml</script>
-        <script>scripts\tutorial_create_second_doors.gml</script>
-        <script>scripts\tutorial_create_third_doors.gml</script>
-        <script>scripts\tutorial_open_second_doors.gml</script>
-        <script>scripts\tutorial_open_third_doors.gml</script>
-        <script>scripts\tutorial_done.gml</script>
-        <script>scripts\tutorial_finish.gml</script>
-        <script>scripts\tutorial_components.gml</script>
-        <script>scripts\tutorial_workbench.gml</script>
-      </scripts>
     </scripts>
     <script>scripts\device_get_id.gml</script>
     <scripts name="Menus">
@@ -959,10 +1030,10 @@
       <object>objects\obj_tutorial_control_hub</object>
       <object>objects\obj_tutorial_cinematic_control</object>
       <object>objects\obj_tutorial_spawner</object>
-      <object>objects\obj_combat_sim</object>
       <objects name="Revised">
         <object>objects\obj_tutorial_state</object>
         <object>objects\obj_tutorial_room3_control</object>
+        <object>objects\obj_combat_sim</object>
       </objects>
       <object>objects\obj_tutorial_door</object>
       <object>objects\obj_tutorial_teleporter</object>

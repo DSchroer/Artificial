@@ -39,10 +39,9 @@ weapon[weapon_index.bullet_sprite] = spr_plasma;
 weapon[weapon_index.accuracy] = 30;
 
 
-volume_mod = 1.4;
-//ds_list_add(hurt_sounds, snd_enemy_rock1);  
-//ds_list_add(hurt_sounds, snd_enemy_rock2);
-//ds_list_add(hurt_sounds, snd_enemy_rock3); // &lt;--- death sound?
+
+volume_mod = 0.5;
+ds_list_add(hurt_sounds, snd_grunt_hit); 
 </string>
           </argument>
         </arguments>
@@ -138,6 +137,7 @@ entity_collision();
           <argument>
             <kind>1</kind>
             <string>
+sfx_play_volume(snd_grunt_death, false, 0.5);
 if(instance_exists(obj_progress))
 {
     var items;

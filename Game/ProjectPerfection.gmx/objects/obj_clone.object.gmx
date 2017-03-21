@@ -36,10 +36,10 @@ weapon = inventory_spawn_gun(5);
 inventory[0] = weapon;
 selected_slot = 0;
 
-volume_mod = 1.4;
-//ds_list_add(hurt_sounds, snd_enemy_rock1);  
-//ds_list_add(hurt_sounds, snd_enemy_rock2);
-//ds_list_add(hurt_sounds, snd_enemy_rock3); // &lt;--- death sound?
+volume_mod = 1;
+ds_list_add(hurt_sounds, snd_hurt1);
+ds_list_add(hurt_sounds, snd_hurt2);
+ds_list_add(hurt_sounds, snd_hurt3);
 </string>
           </argument>
         </arguments>

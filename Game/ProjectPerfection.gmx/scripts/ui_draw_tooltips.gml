@@ -10,7 +10,11 @@ var yp;
 // Health tooltip
 xp = 10;
 yp = (height - sprite_get_height(spr_statusback) - 60);
-if(mx > xp && mx < xp + sprite_get_width(spr_statusback) && my > yp && my < yp + sprite_get_height(spr_statusback))
+if(!hide_tooltips)
+{
+    ui_draw_health_tooltip(xp, yp - 90);
+}
+else if((mx > xp && mx < xp + sprite_get_width(spr_statusback) && my > yp && my < yp + sprite_get_height(spr_statusback)))
 {
     ui_draw_health_tooltip(mx, my);
 }
@@ -18,7 +22,7 @@ if(mx > xp && mx < xp + sprite_get_width(spr_statusback) && my > yp && my < yp +
 // Inventory
 var bx = width - sprite_get_width(spr_inventory_background) - 10 + 6;
 var by = height - sprite_get_height(spr_inventory_background) - 10;
-if(!hide_inventory)
+if(hide_tooltips)
 {
     // Selected slot
     var selected = inventory[selected_slot];     
@@ -39,12 +43,34 @@ if(!hide_inventory)
         ui_check_weapon_slot_tooltip(bx, by + 254, 1, selected);
     }
 }
+else
+{
+    // Selected slot
+    var selected = inventory[selected_slot];     
+    // Other slots
+    var other_slot_index = 0;
+    if(selected_slot == 0)
+    {
+        other_slot_index = 1;
+    }
+    var other_slot = inventory[other_slot_index];
+
+    // Force draw tooltips
+    if(selected != -1)
+    {
+        ui_draw_weapon_tooltip2(bx - 300, by + 202, selected, false);  
+    }
+    if(other_slot != -1)
+    {
+        ui_draw_weapon_tooltip2(bx - 300, by, other_slot, false);  
+    }
+}
 
 // Components
 
 xp = bx + 125;
 yp = by + 165;
-if(mx > xp && mx < xp + sprite_get_width(spr_component) * 0.5 && my > yp && my < yp + sprite_get_height(spr_component) * 0.5)
+if(!hide_tooltips || (mx > xp && mx < xp + sprite_get_width(spr_component) * 0.5 && my > yp && my < yp + sprite_get_height(spr_component) * 0.5))
 {
     var lines;
     lines[0] = "Components";
@@ -77,9 +103,14 @@ if(mx > xp && mx < xp + sprite_get_width(spr_component) * 0.5 && my > yp && my <
     {
     }
     stat_colours[i] = "|white";    
-    
-    ui_draw_tooltip(mx, my, lines, colours, scales, stats, stat_colours);
-    
+    if(!hide_tooltips)
+    {
+        ui_draw_tooltip(bx - 20, by - 120, lines, colours, scales, stats, stat_colours);
+    }
+    else
+    {
+        ui_draw_tooltip(mx, my, lines, colours, scales, stats, stat_colours);
+    }
 }
 
  

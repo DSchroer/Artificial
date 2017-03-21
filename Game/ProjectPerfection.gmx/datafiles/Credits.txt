@@ -28,9 +28,14 @@ https://github.com/dicksonlaw583/jsonion-classic
 Dominus - DL Sounds
 Catedral - DL Sounds
 Dark Atmosphere - DL Sounds
-Epic - www.bensound.com
+Epic(Boss 1 Battle) - www.bensound.com
 The Signals - Sergey Cheremisinov
 Don't Lie to Inner Child - Sergey Cheremisinov
+Six Degrees - Kryptic Minds
+Boss 2, 3, 4 Battle - Graham Plowman
+Final Boss Battle - Graham Plowman
+Depth Music - BaseWeightLove(Youtube)
+
 
 !Sound Effects
 Fleshstab - BlastwaveFX
@@ -63,3 +68,6 @@ Rustling Paper - Keweldog
 Laser Gun Recharge - Dpoggioli
 Alarms - Guitarguy1985
 Big Door Closed Sound - Clemens F
+Boss 4 Screams - freesoundeffects.com
+Enemy guns - soundbible.com
+OpenGameArt.org

@@ -122,7 +122,7 @@ entity_collision();
 {
     instance_destroy();
 }
-
+sfx_play_volume(snd_thwander_death, false, 0.75);
 x = room_width / 2;
 y = room_height / 2;
 

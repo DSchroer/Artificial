@@ -251,14 +251,9 @@ with(obj_level)
  
 
 ui_textbox_clear();
-if(obj_progress.tutorial == 101)
-{
-    room_goto(rm_tutorial_cinematic);
-}
-else
-{
-    room_goto(rm_hub);
-}
+
+room_goto(rm_hub);
+
 
 
 

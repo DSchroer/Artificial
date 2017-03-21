@@ -147,7 +147,7 @@ entity_collision();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>sfx_play_volume(snd_azar_death, false, 1.25);
 x = room_width / 2;
 y = room_height / 2;
 

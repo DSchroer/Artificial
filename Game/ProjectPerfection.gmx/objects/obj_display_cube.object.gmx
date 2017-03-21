@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>isomorphic_set_depth()
 
+yoffset = 0;
+moving_up = true;
+
 </string>
           </argument>
         </arguments>
@@ -49,25 +52,43 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(obj_progress.cube_parts == 0)
+            <string>
+if(moving_up)
 {
-    //draw_sprite(spr_cube_hub1, -1, x, y);
-}
-else if(obj_progress.cube_parts == 1)
-{
-    draw_sprite(spr_cube_hub2, -1, x, y);
-}
-else if(obj_progress.cube_parts == 2)
-{
-    draw_sprite(spr_cube_hub3, -1, x, y);
-}
-else if(obj_progress.cube_parts == 3)
-{
-    draw_sprite(spr_cube_hub4, -1, x, y);
+    yoffset -= 4 / 60;
+    if(yoffset &lt; -12)
+    {
+        moving_up = false;
+    }    
 }
 else
 {
-    draw_sprite(spr_cube_hub5, -1, x, y);
+    yoffset += 4 / 60;
+    if(yoffset &gt; 0)
+    {
+        moving_up = true;
+    }    
+}
+
+if(obj_progress.cube_parts == 0)
+{
+    draw_sprite(spr_cube_hub1, -1, x, y + yoffset);
+}
+else if(obj_progress.cube_parts == 1)
+{
+    draw_sprite(spr_cube_hub2, -1, x, y + yoffset);
+}
+else if(obj_progress.cube_parts == 2)
+{
+    draw_sprite(spr_cube_hub3, -1, x, y + yoffset);
+}
+else if(obj_progress.cube_parts == 3)
+{
+    draw_sprite(spr_cube_hub4, -1, x, y + yoffset);
+}
+else
+{
+    draw_sprite(spr_cube_hub5, -1, x, y + yoffset);
 }
 
 

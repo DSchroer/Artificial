@@ -3,6 +3,7 @@ speed = 0;
 if(sm_ticks() == 0)
 {
     rock_dist *= 3;
+    sfx_play_volume(snd_dym_cloudslash, false, 1.0);
 }
 
 with(obj_dym_part)

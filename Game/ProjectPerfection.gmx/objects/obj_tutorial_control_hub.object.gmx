@@ -53,36 +53,6 @@ if(is_closed)
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="6">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>
-
-ui_textbox_queue("Broadcast System: `br Beginning Mission Brief."); 
-ui_textbox_queue("Broadcast System: `br Your are to retrieve the cube fragments from the surface of Vardus at all cost. After retrieving a fragment, return it to The Sword for safe keeping. "); 
-ui_textbox_queue("Broadcast System: `br Enter the room to the left to teleport to the surface of Vardus. "); 
-ui_flash_textbox();
-obj_progress.tutorial++;
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
@@ -133,13 +103,6 @@ if(obj_progress.tutorial == 50)
           <argument>
             <kind>1</kind>
             <string>debug_show_string("T:" + string(obj_progress.tutorial));
-
-if(obj_progress.tutorial == 102 &amp;&amp; !ui_textbox_open())
-{
-    alarm[6] = 60;
-    obj_progress.tutorial++;
-}
-
 
 </string>
           </argument>
@@ -194,7 +157,7 @@ if(!save_get_value(obj_save_data, "tutorial_library_explained", false))
           <argument>
             <kind>1</kind>
             <string>/// (Nearly) Teleporter Trigger
-
+/*
 if(story_get_chapter() != story_chapter.chapter1 &amp;&amp; !save_get_value(obj_save_data, "tutorial_library_hint1", false))
 {   
     save_set_value(obj_save_data, "tutorial_library_hint1", true);
@@ -204,6 +167,7 @@ if(story_get_chapter() != story_chapter.chapter1 &amp;&amp; !save_get_value(obj_
         ui_flash_textbox();
     }
 }
+*/
 
 if(story_get_chapter() == story_chapter.chapter3 &amp;&amp; !save_get_value(obj_save_data, "tutorial_library_hint2", false))
 {
@@ -266,13 +230,15 @@ if(obj_progress.cube_parts &gt;= 1 &amp;&amp; !save_get_value(obj_save_data, "tu
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-if(obj_progress.tutorial == 101)
+            <string>/// Mission Brief
+
+if(!save_get_value(obj_save_data, "tutorial_mission_brief", false))
 {
-    ui_textbox_queue("Broadcasting System: `br Good Morning, |red J");
-    ui_textbox_queue("Broadcasting System: `br Congratulations on being the first to pass combat training. Grab your equipment and head to the main room. ");
+    save_set_value(obj_save_data, "tutorial_mission_brief", true);
+    
+    ui_textbox_queue("Broadcasting System: `br We are now orbiting Vardus in the Cataian Galaxy. It is time to begin your search for pieces of the cube.");
+    ui_textbox_queue("Broadcasting System: `br Please report to the teleporters on the left of the ship.");
     ui_flash_textbox();
-    obj_progress.tutorial++;
 }
 
 
