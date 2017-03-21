@@ -32,6 +32,7 @@
         entity_apply_damage(150, other);
     }
     instance_destroy();
+    sfx_play_volume(snd_thwander_mine_explosion, false, 0.65);
 }
 </string>
           </argument>

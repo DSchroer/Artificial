@@ -163,6 +163,7 @@
         <sound>sound\snd_heart_icreatedyou_full</sound>
         <sound>sound\snd_heart_icreatedyou_noexplode</sound>
       </sounds>
+      <sound>sound\snd_death_explosion</sound>
     </sounds>
     <sound>sound\snd_depth_complete</sound>
     <sound>sound\snd_component_drop</sound>

@@ -11,4 +11,5 @@ if(sm_ticks() > 60)
         instance_create(x, y, obj_twan_turret);
     }
     sm_set_state("idle");
+    sfx_play_volume(snd_thwander_launch_mine, false, 0.8);
 }

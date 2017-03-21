@@ -117,7 +117,7 @@ room_goto(rm_credits)
             <kind>1</kind>
             <string>if(instance_number(target) == 0 &amp;&amp; alarm[1] == -1)
 {
-    alarm[1] = 60;
+    alarm[1] = 600;
 }
 
 if(!tutorial_done() &amp;&amp; !ui_textbox_open() &amp;&amp; alarm[2] == -1)

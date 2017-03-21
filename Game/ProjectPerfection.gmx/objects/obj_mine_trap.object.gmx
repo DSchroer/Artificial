@@ -30,6 +30,7 @@
     var ex = instance_create(x + 32, y + 32, obj_explosion);
     ex.damage = 150;
     instance_destroy();
+    sfx_play_volume(snd_thwander_mine_explosion, false, 0.65);
 }
 </string>
           </argument>

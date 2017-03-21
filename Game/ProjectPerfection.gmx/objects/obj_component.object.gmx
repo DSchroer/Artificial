@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sfx_play(snd_component_drop, false);
+            <string>sfx_play_volume(snd_component_drop, false, 0.5);
 </string>
           </argument>
         </arguments>

@@ -6,4 +6,5 @@ if(sm_ticks() > 15)
 }else if(sm_ticks() % 5 == 0)
 {
     enemy_attack(obj_player, bolt);
+    sfx_play_volume(snd_heart_basic, false, 1.0);
 }
