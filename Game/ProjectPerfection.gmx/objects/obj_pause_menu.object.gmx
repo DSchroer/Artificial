@@ -84,12 +84,13 @@ room_goto(rm_hub);
           <argument>
             <kind>1</kind>
             <string>/// Goto Main Menu
+
+save_flush(obj_save_data);
 with(all)
 {
     instance_destroy();
 }
 
-save_flush(obj_save_data);
 room_goto(rm_main_menu);
 </string>
           </argument>

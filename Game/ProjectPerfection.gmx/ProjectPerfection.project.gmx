@@ -578,6 +578,7 @@
       <script>scripts\level_set_room.gml</script>
       <script>scripts\level_grid_value.gml</script>
       <script>scripts\level_stub_find.gml</script>
+      <script>scripts\level_stub_name.gml</script>
       <script>scripts\level_stub_find_all.gml</script>
       <script>scripts\level_stub_find_all_ext.gml</script>
       <script>scripts\level_stub_find_all_ds.gml</script>

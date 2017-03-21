@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>save_open("save")
+            <string>dirty = false;
+save_open("save");
 
 var current_version = "v" + GM_version;
 var version = save_get_value(self, "version", "v0");

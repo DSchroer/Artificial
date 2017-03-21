@@ -340,7 +340,7 @@ if(gun_recoil &gt; 0)
 
 player_update_shield();
 debug_show_string("fps: " + string(fps));
-
+debug_show_string("stub: " + level_stub_name());
 
 if(speed != 0)
 {
@@ -474,7 +474,12 @@ if(!save_get_value(obj_save_data, "components_tutorial", false) &amp;&amp; save_
             <kind>1</kind>
             <string>
 if(!dead)
-{ 
+{
+    obj_progress.tutorial = max(obj_progress.tutorial, 101);  
+    save_flush(obj_save_data);
+    
+    google_analytics_event("death", level_stub_name()); 
+    
     ui_start_death_animation(60 * 4);
     dead = true;
     alarm[0] = 60 * 4;
@@ -532,6 +537,11 @@ if(!dead)
           <argument>
             <kind>1</kind>
             <string>room_speed = 60;
+
+if(instance_exists(obj_level))
+{
+    google_analytics_screenview(level_stub_name());
+}
 
 if(instance_number(obj_spawn_player) &gt; 0)
 {

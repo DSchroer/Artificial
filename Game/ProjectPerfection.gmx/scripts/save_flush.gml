@@ -16,5 +16,6 @@ with(save)
         ds_map_secure_save(save_map, file_name);
         ds_map_destroy(save_map);
     }
+    dirty = false;
 }
 

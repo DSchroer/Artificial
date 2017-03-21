@@ -31,6 +31,7 @@ index = -1;
 difficulty_setting = difficulty.normal;
 
 google_analytics_init("UA-72511762-2", "Artificial", "1.0", "ca.artificialgame.game"); 
+google_analytics_screenview(room_get_name(room));
 
 enum menu_type
 {
@@ -230,6 +231,7 @@ menu_create_difficulty_menu();
             <kind>1</kind>
             <string>/// Load game
 
+google_analytics_event("game", "load");
 room_goto(rm_base);
 </string>
           </argument>
@@ -380,6 +382,8 @@ save_flush(obj_game_save);
             <kind>1</kind>
             <string>/// Difficulty: Easy
 
+google_analytics_event("game", "easy");
+
 difficulty_setting = difficulty.easy;
 menu_destroy_difficulty_menu();
 
@@ -419,6 +423,8 @@ else
             <kind>1</kind>
             <string>/// Difficulty: Normal
 
+google_analytics_event("game", "normal");
+
 difficulty_setting = difficulty.normal;
 menu_destroy_difficulty_menu();
 
@@ -454,6 +460,8 @@ else
           <argument>
             <kind>1</kind>
             <string>/// Difficulty: Hard
+
+google_analytics_event("game", "hard");
 
 difficulty_setting = difficulty.nightmare;
 menu_destroy_difficulty_menu();
