@@ -148,7 +148,9 @@ image_angle = direction;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with(obj_shuud_body)
+            <string>sfx_play_volume(snd_shuude_death, false, 0.75);
+
+with(obj_shuud_body)
 {
     instance_destroy();
 }

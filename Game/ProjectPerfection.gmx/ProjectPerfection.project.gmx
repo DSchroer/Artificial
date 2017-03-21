@@ -151,6 +151,9 @@
         <sound>sound\snd_shuude_attack_basic</sound>
         <sound>sound\snd_shuude_scream_beam</sound>
         <sound>sound\snd_shuude_death</sound>
+        <sound>sound\snd_shuude_echolocate</sound>
+        <sound>sound\snd_shuude_scream_small</sound>
+        <sound>sound\snd_shuude_scream_long</sound>
       </sounds>
       <sounds name="Heart">
         <sound>sound\snd_heart_basic</sound>
@@ -526,6 +529,7 @@
         <script>scripts\shud_scream.gml</script>
         <script>scripts\shud_beam.gml</script>
         <script>scripts\shud_turn_dir.gml</script>
+        <script>scripts\shud_stop_other_audio.gml</script>
       </scripts>
       <scripts name="Dym">
         <script>scripts\dym_idle.gml</script>

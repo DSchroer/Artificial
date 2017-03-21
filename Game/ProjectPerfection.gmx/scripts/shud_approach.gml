@@ -4,6 +4,15 @@ speed = 10;
 
 if(sm_ticks() == 0)
 {
+ 
+    shud_stop_other_audio(snd_shuude_scream_small);
+    var num = sfx_play_volume(snd_shuude_scream_small, false, 0.8);
+    if(num != -1)
+    {
+        var rng = random_range(-0.05, 0.125);
+        audio_sound_pitch(num, (1 + rng));
+    }
+        
     sm_set_var("attack", random(4));
 }
 
