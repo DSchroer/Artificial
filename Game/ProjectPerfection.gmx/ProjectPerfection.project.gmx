@@ -381,6 +381,8 @@
     <sprite>sprites\spr_sheild_hit</sprite>
     <sprite>sprites\spr_light1</sprite>
     <sprite>sprites\spr_light2</sprite>
+    <sprite>sprites\spr_tutorial_dash</sprite>
+    <sprite>sprites\spr_tutorial_dash2</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -1037,6 +1039,8 @@
       </objects>
       <object>objects\obj_tutorial_door</object>
       <object>objects\obj_tutorial_teleporter</object>
+      <object>objects\obj_tutorial_prop_dash</object>
+      <object>objects\obj_tutorial_prop_dash_2</object>
     </objects>
     <objects name="UI">
       <object>objects\obj_minimap</object>
