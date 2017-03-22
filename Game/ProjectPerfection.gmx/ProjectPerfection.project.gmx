@@ -381,6 +381,7 @@
     <sprite>sprites\spr_sheild_hit</sprite>
     <sprite>sprites\spr_light1</sprite>
     <sprite>sprites\spr_light2</sprite>
+    <sprite>sprites\spr_sparkle</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>

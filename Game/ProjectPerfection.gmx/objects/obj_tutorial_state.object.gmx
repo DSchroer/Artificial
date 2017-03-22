@@ -159,7 +159,8 @@ with(obj_combat_sim)
           <argument>
             <kind>1</kind>
             <string>/// Rm#3 Death Message
-ui_textbox_queue("????: `br I tri... protect The Cube... Protect it from... the... sc... ts... I... Vard...s... too... destroy it... `br &lt;The creature passes away&gt;");
+ui_textbox_queue("????: `br I tri... protect The Cube... Protect it from... the... sc... ts... I... Vard...s... too... destroy it...");
+ui_textbox_queue("Whatever this creature was seems to have passed away.");
 
 </string>
           </argument>

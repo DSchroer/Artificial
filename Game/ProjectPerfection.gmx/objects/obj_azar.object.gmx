@@ -158,7 +158,7 @@ obj_progress.progress++;
 if(obj_progress.cube_parts &lt; 1)
 {
     var cube = instance_create(x, y - 128, obj_cube);
-    cube.sprite_index = spr_cube_hub2;
+    cube.sprite_index = spr_cube_piece1;
 }
 else
 {

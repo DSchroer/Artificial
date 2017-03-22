@@ -28,6 +28,8 @@
             <string>data = inventory_spawn_gun(1);
 hitbox_set = false;
 sfx_played = !tutorial_done();
+animation_index = 0;
+sparkles = false;
 </string>
           </argument>
         </arguments>
@@ -189,12 +191,25 @@ else if(place_meeting(x, y, obj_player))
 if(is_gun(data))
 {
     draw_weapon(data, x, y, 1, 1, 0, 1);
+    if(sparkles)
+    {
+        draw_sprite_ext(spr_sparkle, floor(animation_index), x, y - 16, 1.0, 1.0, 0, c_white, 1.0); 
+        animation_index = (animation_index + 0.1) % sprite_get_number(spr_sparkle);
+    }
 }else if(is_shield(data))
 {
     draw_shield(data, x, y, 1, 1, 0, 1);
+    if(sparkles)
+    {
+        draw_sprite_ext(spr_sparkle, floor(animation_index), x, y, 1.0, 1.0, 0, c_white, 1.0); 
+        animation_index = (animation_index + 0.1) % sprite_get_number(spr_sparkle);
+    }
 }else{
     draw_self();
 }
+
+
+
 </string>
           </argument>
         </arguments>

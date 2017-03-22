@@ -29,7 +29,7 @@
 
 yoffset = 0;
 moving_up = true;
-
+animation_index = 0;
 </string>
           </argument>
         </arguments>
@@ -91,6 +91,11 @@ else
     draw_sprite(spr_cube_hub5, -1, x, y + yoffset);
 }
 
+if(obj_progress.cube_parts == 4)
+{
+    draw_sprite_ext(spr_sparkle, floor(animation_index), x + 16, y + yoffset + 16, 1.0, 1.0, 0, c_white, 1.0); 
+    animation_index = (animation_index + 0.1) % sprite_get_number(spr_sparkle);
+}
 
 </string>
           </argument>
