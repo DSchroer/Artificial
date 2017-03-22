@@ -14,4 +14,5 @@ if(sm_ticks() % 120 == 0)
 if(sm_ticks() % 50 == 5)
 {
     enemy_attack(obj_player, weapon);
+    sfx_play_volume(snd_dog_attack, false, 0.2);
 }

@@ -17,6 +17,8 @@ if(sm_ticks() == 0)
     sm_set_var("sy", y);
     sm_set_var("px", testx);
     sm_set_var("py", testy);
+    
+    sfx_play_volume(snd_dym_cloudport, false, 1.0);
 }
 
 var sx = sm_get_var("sx");

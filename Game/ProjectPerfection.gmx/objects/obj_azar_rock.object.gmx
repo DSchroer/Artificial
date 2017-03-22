@@ -98,6 +98,8 @@ if(point_distance(x, y, target.x, target.y) &lt; 20)
 {
     instance_destroy();
 }
+
+
 </string>
           </argument>
         </arguments>

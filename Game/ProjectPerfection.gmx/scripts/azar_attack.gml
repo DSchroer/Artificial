@@ -17,13 +17,17 @@ if(sm_ticks() == 0)
         if(random(2) < 1)
         {
             enemy_attack(obj_player, basic);
+            sfx_play_volume(snd_azar_basic, false, 1.2);
         }else{
             enemy_attack(obj_player, slam);
+            sfx_play_volume(snd_azar_slam, false, 1.2);
         }
     }else if(pdist < 900)
     {
         enemy_attack(obj_player, wave);
+        sfx_play_volume(snd_azar_rock_wave, false, 1.2);
     }else{
         enemy_attack(obj_player, rock);
+        sfx_play_volume(snd_azar_rock_throw, false, 1.2);
     }
 }

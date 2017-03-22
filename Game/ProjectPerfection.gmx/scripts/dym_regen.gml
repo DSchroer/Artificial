@@ -11,6 +11,7 @@ if(sm_ticks() == 0)
         inst.x = x + lengthdir_x(1500, angle);
         inst.y = y - 64 + lengthdir_y(1500, angle);
     }
+    sfx_play_volume(snd_dym_summon, false, 2.8);
 }
 
 var furthest = instance_furthest(x, y, obj_dym_part);

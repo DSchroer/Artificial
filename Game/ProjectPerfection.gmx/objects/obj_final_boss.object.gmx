@@ -30,20 +30,40 @@ target = obj_boss_final;
 
 if(!tutorial_done())
 {
-    ui_textbox_queue("????: `br Welcome. My creator called me Lyra, after his favourite constellation.");
-    ui_textbox_queue("I: `br ... ");
-    ui_textbox_queue("Lyra: `br There's no reason to be nervous.");
-    ui_textbox_queue("I: `br I'd feel better if I knew where we were and why I'm here.");
-    ui_textbox_queue("Lyra: `br Of course. We are aboard my ship, The Sword. We are currently orbiting the planet of Vardus in the Cataian galaxy. ");
-    ui_textbox_queue("Lyra: `br It may surprise you to hear this, but I cannot leave this ship. That's where you come in. I need something on the planet surface below. ");
-    ui_textbox_queue("Lyra: `br I want you to retrieve a relic called " + '"The Cube"' + ". It lies broken on the surface of Vardus. ");
-    ui_textbox_queue("Lyra: `br Legend has it that this cube can affect matter itself. If an artifact that powerful were reassembled, the scientific discoveries that follow would be incredible.");
-    ui_textbox_queue("I: `br (He sounds sincere, but how could I just hand over something that powerful someone?)");
-    ui_textbox_queue("I: `br I don't think I can help you.");
-    ui_textbox_queue("Lyra: `br Why not? This cube might contain the secrets to anything from improved intergalactic travel to eternal life. ");
-    ui_textbox_queue("I: `br If this cube is as powerful as you say, then I can't help you. Nobody - good or evil - should have access to that much power.");
-    ui_textbox_queue("Lyra: `br I'm sorry you see it that way.");
+    ui_textbox_queue("????: `br Welcome. I have not properly introduced myself. I am this ship's central processing unit. My creator called me Lyra, after his favourite constellation.");
+    ui_textbox_queue("Lyra: `br Of course, you probably don't care much about that. After all, I created you to be the perfect soldier, not to think or ask questions. ");
+    ui_textbox_queue("Lyra: `br Have you retrieved the object that made impact with the ship?");
+    ui_textbox_queue("J: `br Yes sir. It appears to be little more than a useless cube shaped rock. ");
+    ui_textbox_queue("Lyra: `br A cube? Could the rumours be true after all?");
+    ui_textbox_queue("Lyra: `br We will soon arrive at the planet of Vardus. Tomorrow, you will investigate the planet surface for more parts of this 'cube'. With any luck, the remaining parts are somewhere on the surface.");
+    ui_textbox_queue("Lyra: `br If the rumours are true, then the completed cube is one of the greatest scientific items of all time. We must retrieve it at all cost. ");
+    ui_textbox_queue("J: `br Yes sir.");    
 }
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>room_goto(rm_tutorial_cinematic);
 </string>
           </argument>
         </arguments>
@@ -97,13 +117,13 @@ room_goto(rm_credits)
             <kind>1</kind>
             <string>if(instance_number(target) == 0 &amp;&amp; alarm[1] == -1)
 {
-    alarm[1] = 60;
+    alarm[1] = 600;
 }
 
-if(!ui_textbox_open())
+if(!tutorial_done() &amp;&amp; !ui_textbox_open() &amp;&amp; alarm[2] == -1)
 {
-    tutorial_finish();
-    sfx_bkg_add_without_reset(bkg_final_boss);
+    alarm[2] = 30;
+    instance_create(0, 0, obj_fade_out);
 }
 </string>
           </argument>

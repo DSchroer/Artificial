@@ -19,4 +19,4 @@ speed = 20;
 
 mele[weapon_index.bullet_sprite_xscale] = image_xscale;
 mele[weapon_index.bullet_sprite_yscale] = image_yscale;
-attack_gun(mele, x, y, 0, self);
+attack_gun(mele, x, y, 0, self, false, false);

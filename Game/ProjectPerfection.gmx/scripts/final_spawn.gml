@@ -7,6 +7,7 @@ if(sm_ticks() == 0 && instance_number(obj_clone) == 0)
         var s = spawners[i];
         instance_create(s.x, s.y, obj_clone);
     }
+    sfx_play_volume(snd_heart_spawn_enemies, false, 0.6);
 }else if(sm_ticks() > 30)
 {
     sm_state_force_push("idle");

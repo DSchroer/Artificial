@@ -147,7 +147,7 @@ entity_collision();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>sfx_play_volume(snd_azar_death, false, 1.25);
 x = room_width / 2;
 y = room_height / 2;
 
@@ -158,7 +158,7 @@ obj_progress.progress++;
 if(obj_progress.cube_parts &lt; 1)
 {
     var cube = instance_create(x, y - 128, obj_cube);
-    cube.sprite_index = spr_cube_hub2;
+    cube.sprite_index = spr_cube_piece1;
 }
 else
 {

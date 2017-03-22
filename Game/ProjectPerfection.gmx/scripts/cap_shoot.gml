@@ -15,4 +15,5 @@ speed = 0;
 if(sm_ticks() % 60 > 30 && sm_ticks() % 5 == 0)
 {
     enemy_attack(obj_player, weapon);
+    sfx_play_volume(snd_captain_attack, true, 0.2);
 }

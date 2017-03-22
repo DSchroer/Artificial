@@ -154,6 +154,8 @@ entity_collision();
     instance_destroy();
 }
 
+sfx_play_volume(snd_dym_death, false, 1.25);
+
 x = room_width / 2;
 y = room_height / 2;
 
