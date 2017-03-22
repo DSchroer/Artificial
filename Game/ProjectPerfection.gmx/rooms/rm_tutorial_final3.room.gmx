@@ -54,7 +54,7 @@
     <instance objName="obj_tutorial_corpse" x="1088" y="672" name="inst_EC9D88E7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_cube_base" x="960" y="672" name="inst_2F106815" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn_player" x="1504" y="928" name="inst_822E6B90" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_tutorial_trigger" x="800" y="608" name="inst_4AF6EA51" locked="0" code="trigger_number = 11;&#xA;refires_automatically = false;&#xA;visible = false;&#xA;" scaleX="7.5" scaleY="4" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tutorial_trigger" x="800" y="608" name="inst_4AF6EA51" locked="0" code="trigger_number = 11;&#xA;refires_automatically = false;&#xA;visible = false;" scaleX="7.5" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="obj_tutorial_state" x="416" y="224" name="inst_D2DC7070" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tutorial_room3_control" x="448" y="224" name="inst_EFBAFC04" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="1344" y="1056" name="inst_26FD776C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

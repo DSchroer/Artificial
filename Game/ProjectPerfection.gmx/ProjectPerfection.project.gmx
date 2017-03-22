@@ -383,6 +383,7 @@
     <sprite>sprites\spr_light2</sprite>
     <sprite>sprites\spr_tutorial_dash</sprite>
     <sprite>sprites\spr_tutorial_dash2</sprite>
+    <sprite>sprites\spr_sparkle</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
