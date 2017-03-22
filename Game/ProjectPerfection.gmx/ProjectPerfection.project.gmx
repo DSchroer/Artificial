@@ -382,6 +382,11 @@
     <sprite>sprites\spr_light1</sprite>
     <sprite>sprites\spr_light2</sprite>
     <sprite>sprites\spr_sparkle</sprite>
+    <sprites name="Lights">
+      <sprite>sprites\spr_pointlight</sprite>
+      <sprite>sprites\spr_conelight</sprite>
+      <sprite>sprites\spr_directedlight</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -1058,6 +1063,11 @@
     <objects name="Story">
       <object>objects\obj_story_trigger</object>
       <object>objects\obj_story_hub</object>
+    </objects>
+    <objects name="Lighting">
+      <object>objects\obj_lightdrawer</object>
+      <object>objects\obj_light</object>
+      <object>objects\obj_pointlight</object>
     </objects>
   </objects>
   <rooms name="rooms">
