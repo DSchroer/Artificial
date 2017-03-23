@@ -348,7 +348,7 @@ if(speed != 0)
 }
 if(keymap_check(keycode.dash) &amp;&amp; !dead &amp;&amp; dash_frames == 0)
 {
-    dash_frames = 10;
+    dash_frames = 15;
     dash_direction = dash_last_direction;
 }
 

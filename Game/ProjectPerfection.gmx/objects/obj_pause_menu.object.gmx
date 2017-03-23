@@ -27,6 +27,241 @@
             <kind>1</kind>
             <string>event_inherited();
 index = 0;
+
+menu_stack = ds_stack_create();
+ds_stack_push(menu_stack, menu_type.main);
+
+full_screen = save_get_value(obj_game_save, "fullscreen", false);
+last_full_screen = window_get_fullscreen();
+
+menu_create_pause();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+if(ds_stack_top(menu_stack) == menu_type.options)
+{
+    menu_destroy_options_menu();
+}else{
+    menu_destroy_pause();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+if(window_get_fullscreen() != last_full_screen)
+{
+    last_full_screen = window_get_fullscreen();
+    
+    if(ds_stack_top(menu_stack) == menu_type.options)
+    {
+        menu_destroy_options_menu();
+        var yp = (display_get_gui_height() / 2) - 100
+        menu_create_options_menu(yp);
+    }else{
+        menu_destroy_pause();
+        menu_create_pause();
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="24">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Open options
+
+index = 0;
+ds_stack_push(menu_stack, menu_type.options);
+menu_destroy_pause();
+var yp = (display_get_gui_height() / 2) - 100
+menu_create_options_menu(yp);
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="23">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Close current menu
+
+index = 0;
+var closing_menu = ds_stack_pop(menu_stack);
+
+menu_destroy_options_menu();
+
+menu_create_pause();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="20">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Fullscreen toggle
+
+full_screen = !full_screen;
+window_set_fullscreen(full_screen);
+save_set_value(obj_game_save, "fullscreen", full_screen);
+save_flush(obj_game_save);
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="19">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Apply settings
+sfx_set_volume(slider_sound.percent);
+save_set_value(obj_game_save, "fx_volume", slider_sound.percent);
+
+sfx_bkg_set_volume(slider_music.percent);
+save_set_value(obj_game_save, "music_volume", slider_music.percent);
+
+save_flush(obj_game_save);
+
+sfx_set_volume(slider_sound.percent);
+sfx_bkg_set_volume(slider_music.percent);
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="17">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// vysnc
+
+var vsync = save_get_value(obj_game_save, "vsync", false);
+vsync = !vsync;
+display_reset(0, vsync);
+
+if(vsync)
+{
+    button_vsync.text = "Disable VSync";
+}else{
+    button_vsync.text = "Enable VSync";
+}
+
+save_set_value(obj_game_save, "vsync", vsync);
+save_flush(obj_game_save);
 </string>
           </argument>
         </arguments>
@@ -145,9 +380,31 @@ with(obj_pause)
             <string>var scale = 2.5;
 var text_width = string_width("Paused") * scale;
 var text_height = string_height("Paused") * scale;
-var yp = (display_get_gui_height() / 2)
+var yp = (display_get_gui_height() / 2) - 100;
 draw_text_transformed((display_get_gui_width() / 2) - (text_width / 2), yp - 100, "Paused", scale, scale, 0);
 
+if(instance_exists(obj_player))
+{
+    if(surface_exists(obj_player.surface))
+    {
+        var w = surface_get_width(obj_player.surface);
+        var h = surface_get_height(obj_player.surface);
+        draw_set_alpha(0.5);
+        draw_rectangle_colour(0, 75, 260, 560, c_black, c_black, c_black, c_black, false);
+        draw_set_alpha(1);
+        draw_surface_ext(obj_player.surface, 10 - 75, 10, 1.5, 1.5, 0, c_white, 1);
+        
+        draw_set_halign(fa_center);
+        draw_text(130, 380, "Subject Name: J");
+        draw_text(130, 410, "Level: " + string(save_get_value(obj_save_data, "player_level", 1)));
+        draw_text(130, 440, "HP: " + string(round(obj_player.current_health)) + "/" + string(round(obj_player.max_health)));
+        draw_text(130, 470, "Shield: " + string(round(obj_player.remaining_shield)) + "/"+ string(round(obj_player.shield_max_health)));
+        draw_text(130, 500, "Recharge Rate: " + string(round(obj_player.shield_recharge_rate * 100)) + "%");
+        draw_text(130, 530, "Recharge Delay: " + string(round(obj_player.shield_recharge_delay)));
+        
+        draw_set_halign(fa_left);
+    }
+}
 </string>
           </argument>
         </arguments>

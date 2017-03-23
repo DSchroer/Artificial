@@ -1,4 +1,6 @@
-///menu_create_options_menu()
+///menu_create_options_menu(basey)
+
+var basey = argument0;
 
 var padding = 10;
 
@@ -8,6 +10,11 @@ button_fullscreen.y = sprite_get_height(spr_logo) + 128;
 button_fullscreen.text = "Fullscreen";
 button_fullscreen.center_x = true;
 button_fullscreen.index = 0;
+
+if(basey != 0)
+{
+    button_fullscreen.y = basey;
+}
 
 var vsync = save_get_value(obj_game_save, "vsync", false);
 var vsync_text = "Enable ";

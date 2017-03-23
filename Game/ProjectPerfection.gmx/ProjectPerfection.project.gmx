@@ -363,6 +363,12 @@
         <sprite>sprites\spr_rifle_assault</sprite>
         <sprite>sprites\spr_rifle_doku</sprite>
         <sprite>sprites\spr_rifle_reflex</sprite>
+        <sprites name="Unique">
+          <sprite>sprites\spr_azar_will</sprite>
+          <sprite>sprites\spr_dym_hands</sprite>
+          <sprite>sprites\spr_twan_eye</sprite>
+          <sprite>sprites\spr_shuud_voice</sprite>
+        </sprites>
       </sprites>
       <sprite>sprites\spr_healthpack</sprite>
       <sprite>sprites\spr_book</sprite>
@@ -382,6 +388,15 @@
     <sprite>sprites\spr_light1</sprite>
     <sprite>sprites\spr_light2</sprite>
     <sprite>sprites\spr_sparkle</sprite>
+    <sprites name="Lights">
+      <sprite>sprites\spr_pointlight</sprite>
+      <sprite>sprites\spr_conelight</sprite>
+      <sprite>sprites\spr_directedlight</sprite>
+      <sprite>sprites\spr_wall_bloom</sprite>
+    </sprites>
+    <sprites name="Effects">
+      <sprite>sprites\spr_loot</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -676,6 +691,7 @@
         </scripts>
         <script>scripts\inventory_get_tutorial_weapon.gml</script>
         <script>scripts\inventory_get_tutorial_weapon2.gml</script>
+        <script>scripts\inventory_quality_color.gml</script>
       </scripts>
       <script>scripts\player_activate_shield.gml</script>
       <script>scripts\player_compute_stats.gml</script>
@@ -1058,6 +1074,17 @@
     <objects name="Story">
       <object>objects\obj_story_trigger</object>
       <object>objects\obj_story_hub</object>
+    </objects>
+    <objects name="Lighting">
+      <object>objects\obj_lightdrawer</object>
+      <object>objects\obj_light</object>
+      <object>objects\obj_pointlight</object>
+    </objects>
+    <objects name="Weapons">
+      <object>objects\obj_azar_will</object>
+      <object>objects\obj_dym_hands</object>
+      <object>objects\obj_twan_eye</object>
+      <object>objects\obj_shuud_voice</object>
     </objects>
   </objects>
   <rooms name="rooms">
