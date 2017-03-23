@@ -390,7 +390,7 @@ if(instance_exists(obj_player))
         var w = surface_get_width(obj_player.surface);
         var h = surface_get_height(obj_player.surface);
         draw_set_alpha(0.5);
-        draw_rectangle_colour(0, 75, 260, 500, c_black, c_black, c_black, c_black, false);
+        draw_rectangle_colour(0, 75, 260, 560, c_black, c_black, c_black, c_black, false);
         draw_set_alpha(1);
         draw_surface_ext(obj_player.surface, 10 - 75, 10, 1.5, 1.5, 0, c_white, 1);
         
@@ -399,6 +399,8 @@ if(instance_exists(obj_player))
         draw_text(130, 410, "Level: " + string(save_get_value(obj_save_data, "player_level", 1)));
         draw_text(130, 440, "HP: " + string(round(obj_player.current_health)) + "/" + string(round(obj_player.max_health)));
         draw_text(130, 470, "Shield: " + string(round(obj_player.remaining_shield)) + "/"+ string(round(obj_player.shield_max_health)));
+        draw_text(130, 500, "Recharge Rate: " + string(round(obj_player.shield_recharge_rate * 100)) + "%");
+        draw_text(130, 530, "Recharge Delay: " + string(round(obj_player.shield_recharge_delay)));
         
         draw_set_halign(fa_left);
     }
