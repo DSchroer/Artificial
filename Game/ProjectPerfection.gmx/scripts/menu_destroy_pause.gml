@@ -1,10 +1,11 @@
 ///menu_destroy_pause()
-with(pause_menu)
+
+with(button_resume)
 {
     instance_destroy();
 }
 
-with(button_resume)
+with(button_options)
 {
     instance_destroy();
 }

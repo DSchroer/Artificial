@@ -146,7 +146,7 @@ game_end();
 index = 0;
 ds_stack_push(menu_stack, menu_type.options);
 menu_destroy_menu(menu_type.main);
-menu_create_options_menu();
+menu_create_options_menu(0);
 
 
 

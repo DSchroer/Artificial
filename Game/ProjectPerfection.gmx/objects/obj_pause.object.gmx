@@ -32,7 +32,7 @@
 
 instance_create(0, 0, obj_post_process);
 
-menu_create_pause();
+instance_create(0, 0, obj_pause_menu);
 </string>
           </argument>
         </arguments>
@@ -55,7 +55,12 @@ menu_create_pause();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>menu_destroy_pause();
+            <string>
+
+with(obj_pause_menu)
+{
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
