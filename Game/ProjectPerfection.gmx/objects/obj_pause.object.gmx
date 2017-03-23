@@ -85,6 +85,7 @@ with(obj_pause_menu)
             <kind>1</kind>
             <string>if(keymap_check(keycode.escape))
 {
+    
     instance_destroy();
 }
 </string>

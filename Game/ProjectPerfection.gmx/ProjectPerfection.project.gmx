@@ -363,6 +363,12 @@
         <sprite>sprites\spr_rifle_assault</sprite>
         <sprite>sprites\spr_rifle_doku</sprite>
         <sprite>sprites\spr_rifle_reflex</sprite>
+        <sprites name="Unique">
+          <sprite>sprites\spr_azar_will</sprite>
+          <sprite>sprites\spr_dym_hands</sprite>
+          <sprite>sprites\spr_twan_eye</sprite>
+          <sprite>sprites\spr_shuud_voice</sprite>
+        </sprites>
       </sprites>
       <sprite>sprites\spr_healthpack</sprite>
       <sprite>sprites\spr_book</sprite>
@@ -386,6 +392,9 @@
       <sprite>sprites\spr_pointlight</sprite>
       <sprite>sprites\spr_conelight</sprite>
       <sprite>sprites\spr_directedlight</sprite>
+    </sprites>
+    <sprites name="Effects">
+      <sprite>sprites\spr_loot</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -681,6 +690,7 @@
         </scripts>
         <script>scripts\inventory_get_tutorial_weapon.gml</script>
         <script>scripts\inventory_get_tutorial_weapon2.gml</script>
+        <script>scripts\inventory_quality_color.gml</script>
       </scripts>
       <script>scripts\player_activate_shield.gml</script>
       <script>scripts\player_compute_stats.gml</script>
@@ -1068,6 +1078,9 @@
       <object>objects\obj_lightdrawer</object>
       <object>objects\obj_light</object>
       <object>objects\obj_pointlight</object>
+    </objects>
+    <objects name="Weapons">
+      <object>objects\obj_azar_will</object>
     </objects>
   </objects>
   <rooms name="rooms">

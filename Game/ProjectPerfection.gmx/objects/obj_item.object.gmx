@@ -29,6 +29,7 @@
 hitbox_set = false;
 sfx_played = !tutorial_done();
 animation_index = 0;
+beam_index = 0;
 sparkles = false;
 </string>
           </argument>
@@ -190,7 +191,15 @@ else if(place_meeting(x, y, obj_player))
 
 if(is_gun(data))
 {
+    if(data[weapon_index.quality] != item_quality.common)
+    {
+        var col = inventory_quality_color(data[weapon_index.quality]);
+        draw_sprite_ext(spr_loot, floor(beam_index), x + (156 / 4), y + 32, 1, 1, 0, col, 1.0);
+        beam_index = (beam_index + 0.1) % sprite_get_number(spr_loot);
+    }
+    
     draw_weapon(data, x, y, 1, 1, 0, 1);
+    
     if(sparkles)
     {
         draw_sprite_ext(spr_sparkle, floor(animation_index), x, y - 16, 1.0, 1.0, 0, c_white, 1.0); 
