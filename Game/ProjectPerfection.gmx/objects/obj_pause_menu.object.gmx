@@ -383,6 +383,26 @@ var text_height = string_height("Paused") * scale;
 var yp = (display_get_gui_height() / 2) - 100;
 draw_text_transformed((display_get_gui_width() / 2) - (text_width / 2), yp - 100, "Paused", scale, scale, 0);
 
+if(instance_exists(obj_player))
+{
+    if(surface_exists(obj_player.surface))
+    {
+        var w = surface_get_width(obj_player.surface);
+        var h = surface_get_height(obj_player.surface);
+        draw_set_alpha(0.5);
+        draw_rectangle_colour(0, 75, 260, 500, c_black, c_black, c_black, c_black, false);
+        draw_set_alpha(1);
+        draw_surface_ext(obj_player.surface, 10 - 75, 10, 1.5, 1.5, 0, c_white, 1);
+        
+        draw_set_halign(fa_center);
+        draw_text(130, 380, "Subject Name: J");
+        draw_text(130, 410, "Level: " + string(save_get_value(obj_save_data, "player_level", 1)));
+        draw_text(130, 440, "HP: " + string(round(obj_player.current_health)) + "/" + string(round(obj_player.max_health)));
+        draw_text(130, 470, "Shield: " + string(round(obj_player.remaining_shield)) + "/"+ string(round(obj_player.shield_max_health)));
+        
+        draw_set_halign(fa_left);
+    }
+}
 </string>
           </argument>
         </arguments>
