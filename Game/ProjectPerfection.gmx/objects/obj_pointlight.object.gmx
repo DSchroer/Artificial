@@ -3,7 +3,7 @@
   <spriteName>spr_pointlight</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-10</depth>
   <persistent>0</persistent>
   <parentName>obj_light</parentName>
   <maskName>&lt;undefined&gt;</maskName>

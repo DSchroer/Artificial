@@ -26,9 +26,12 @@
           <argument>
             <kind>1</kind>
             <string>intensity = 0.5;
-col_r = 255;
+col_r = 0;
 col_g = 0;
-col_b = 0;
+col_b = 255;
+
+bloom_mask = noone;
+bloom_scale = 0.3;
 
 flicker_range = 1;
 flicker_min = 0.1;

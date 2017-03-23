@@ -25,12 +25,24 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//draw_set_blend_mode(bm_add);
+            <string>
 draw_set_blend_mode_ext( bm_dest_color, bm_one );
 
 with(obj_light)
 {
     draw_self();
+}
+
+draw_set_blend_mode(bm_add);
+
+with(obj_light)
+{
+    var sprite = sprite_index;
+    if(bloom_mask != noone)
+    {
+        sprite = bloom_mask;
+    }
+    draw_sprite_ext(sprite, image_index, x, y, image_xscale * bloom_scale, image_yscale * bloom_scale, 0, image_blend, image_alpha);
 }
 
 draw_set_blend_mode(bm_normal);

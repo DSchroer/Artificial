@@ -392,6 +392,7 @@
       <sprite>sprites\spr_pointlight</sprite>
       <sprite>sprites\spr_conelight</sprite>
       <sprite>sprites\spr_directedlight</sprite>
+      <sprite>sprites\spr_wall_bloom</sprite>
     </sprites>
     <sprites name="Effects">
       <sprite>sprites\spr_loot</sprite>
@@ -1081,6 +1082,9 @@
     </objects>
     <objects name="Weapons">
       <object>objects\obj_azar_will</object>
+      <object>objects\obj_dym_hands</object>
+      <object>objects\obj_twan_eye</object>
+      <object>objects\obj_shuud_voice</object>
     </objects>
   </objects>
   <rooms name="rooms">
