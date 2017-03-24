@@ -68,7 +68,7 @@ if(key == keycode.inv4)
 
 if(key == keycode.dash)
 {
-    return keyboard_check_released(vk_space);
+    return keyboard_check_released(vk_space) || keymap_gamepad_check_released(gp_face2);
 }
 
 if(key == keycode.inventory_move)
