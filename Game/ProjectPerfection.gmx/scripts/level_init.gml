@@ -18,3 +18,5 @@ room_x_list = ds_list_create();
 room_y_list = ds_list_create();
 room_w_list = ds_list_create();
 room_h_list = ds_list_create();
+
+spawn_map = ds_map_create();

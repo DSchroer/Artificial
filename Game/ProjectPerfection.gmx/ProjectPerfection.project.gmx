@@ -601,6 +601,7 @@
       </scripts>
       <script>scripts\generator_register_items.gml</script>
       <script>scripts\generator_spawn_item.gml</script>
+      <script>scripts\generator_spawn_item_ext.gml</script>
     </scripts>
     <scripts name="Gun">
       <script>scripts\gun_hand_distance.gml</script>
