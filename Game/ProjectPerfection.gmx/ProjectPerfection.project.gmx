@@ -601,6 +601,7 @@
       </scripts>
       <script>scripts\generator_register_items.gml</script>
       <script>scripts\generator_spawn_item.gml</script>
+      <script>scripts\generator_spawn_item_ext.gml</script>
     </scripts>
     <scripts name="Gun">
       <script>scripts\gun_hand_distance.gml</script>
@@ -649,6 +650,7 @@
       <script>scripts\level_can_place_item.gml</script>
       <script>scripts\level_drop_items.gml</script>
       <script>scripts\level_drop_item_ext.gml</script>
+      <script>scripts\level_path_in_stub.gml</script>
     </scripts>
     <scripts name="Map">
       <script>scripts\minimap_init.gml</script>
@@ -925,12 +927,12 @@
       <object>objects\obj_navmesh</object>
       <object>objects\obj_progress_bar</object>
       <object>objects\obj_transition</object>
+      <object>objects\obj_direct_line</object>
     </objects>
     <objects name="Effects">
       <object>objects\obj_damage_indicator</object>
       <object>objects\obj_muzzle_flash</object>
       <object>objects\obj_shield_hit</object>
-      <object>objects\obj_direct_line</object>
     </objects>
     <objects name="Entity">
       <object>objects\obj_entity</object>

@@ -3,11 +3,11 @@
 // Health items
 for(var i = 0; i < random(3); i++)
 {
-    generator_spawn_item(obj_health_can, 1, false, false); 
+    generator_spawn_item_ext(obj_health_can, 1, true, false, bias.bias_off_path, 5); 
 }
 
 // Chests
-generator_spawn_item(obj_chest, 1, false, false);
+generator_spawn_item_ext(obj_chest, 1, true, false, bias.bias_off_path, 10);
 
 // Lore
 if(book_any())
@@ -34,11 +34,11 @@ if(book_any())
     var remainder = lore_modifier % 1;
     for(var i = 0; i < floor(lore_modifier); i++)
     {
-        generator_spawn_item(obj_book, 1, true, true); 
+        generator_spawn_item_ext(obj_book, 1, true, true, bias.bias_path, 10); 
     }
     if(random(1) < remainder)
     {
-        generator_spawn_item(obj_book, 1, true, true); 
+        generator_spawn_item_ext(obj_book, 1, true, true, bias.bias_path, 10); 
     }        
     
 }
