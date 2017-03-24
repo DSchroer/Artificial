@@ -64,6 +64,11 @@ sin_speed = 10;
           <argument>
             <kind>1</kind>
             <string>
+if(is_paused())
+{
+    exit;
+}
+
 if(sin_range != 0)
 {
     intensity = 0.5 + sin_min + (sin(sin_ticks / sin_speed) * sin_range * 0.5);
