@@ -870,6 +870,7 @@
       <script>scripts\balance_get_loot_scaling_coefficient.gml</script>
       <script>scripts\balance_global_difficulty_coefficient.gml</script>
     </scripts>
+    <script>scripts\cube_get_sprite.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
@@ -929,6 +930,7 @@
       <object>objects\obj_damage_indicator</object>
       <object>objects\obj_muzzle_flash</object>
       <object>objects\obj_shield_hit</object>
+      <object>objects\obj_direct_line</object>
     </objects>
     <objects name="Entity">
       <object>objects\obj_entity</object>
