@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,8 +25,31 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>debug_init();
-show_debug_overlay(true);
+            <string>path = path_add();
+computed = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>path_delete(path);
 </string>
           </argument>
         </arguments>
@@ -50,48 +73,16 @@ show_debug_overlay(true);
           <argument>
             <kind>1</kind>
             <string>
-debug_show_string("P: " + string(obj_progress.progress));
-debug_show_string("C: " + string(obj_progress.cube_parts));
-debug_show_string("B: " + string(obj_progress.boss));
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="63">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>
-if ds_map_find_value(async_load, "status")
+if(instance_exists(obj_navmesh) &amp;&amp; !computed)
 {
-if ds_map_find_value(async_load, "result") != ""
-   {
-       var name = ds_map_find_value(async_load, "result");
-       var ind = asset_get_index(name);
-       if(room_exists(ind))
-       {
-            with(obj_level)
-            {
-                instance_destroy();
-            }
-       
-            room_goto(ind);
-       }
-   }
+    var px = obj_door.x;
+    var py = obj_door.y;
+    var points = enemy_navmesh_closest(px, py);
+    
+    if(mp_grid_path(obj_navmesh.nav, path, x, y, points[0], points[1], true))
+    {
+        computed = true;
+    }
 }
 
 </string>
@@ -99,7 +90,7 @@ if ds_map_find_value(async_load, "result") != ""
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="64">
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -116,89 +107,19 @@ if ds_map_find_value(async_load, "result") != ""
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-debug_draw();
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="10" enumb="119">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>instance_create(obj_player.x, obj_player.y, obj_direct_line);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="10" enumb="118">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>with(obj_progress)
+            <string>if(computed)
 {
-    progress++;
+    draw_set_color(c_green);
+    draw_circle(x, y, 10, false);
+    
+    for(var i = 0; i &lt; path_get_number(path); i++)
+    {
+         draw_circle(path_get_point_x(path, i), path_get_point_y(path, i), 5, false);
+    }
+}else{
+    draw_set_color(c_red);
+    draw_circle(x, y, 10, false);
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="10" enumb="117">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>
-get_string_async("Room Name", "");
-
-/*
-var ind = asset_get_index(name);
-if(room_exists(ind))
-{
-    room_goto(ind);
-}*/
 </string>
           </argument>
         </arguments>

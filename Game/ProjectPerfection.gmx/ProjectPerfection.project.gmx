@@ -930,6 +930,7 @@
       <object>objects\obj_damage_indicator</object>
       <object>objects\obj_muzzle_flash</object>
       <object>objects\obj_shield_hit</object>
+      <object>objects\obj_direct_line</object>
     </objects>
     <objects name="Entity">
       <object>objects\obj_entity</object>

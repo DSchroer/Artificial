@@ -26,11 +26,40 @@
           <argument>
             <kind>1</kind>
             <string>
-var xp = level_stub_x();
-var yp = level_stub_y();
-var wp = level_stub_w();
-var hp = level_stub_h();
+var xp = 0;
+var yp = 0;
+var wp = room_width / 64;
+var hp = room_height / 64;
 
+nav_x = xp * 64;
+nav_y = yp * 64;
+
+nav = mp_grid_create(nav_x, nav_y, wp * 2, hp * 2, 32, 32);
+
+with(obj_wall)
+{
+    var door = false;
+    if(instance_exists(obj_level))
+    {
+        if(ds_grid_get(obj_level.door_grid, level_position_x(x), level_position_y(y)) == 1)
+        {
+            door = true;
+        }
+    }
+    
+    if(!door)
+    {
+        mp_grid_add_rectangle(other.nav, x - 32, y - 32, x + 64, y + 64);
+    }
+}
+
+with(obj_ai_wall)
+{
+    mp_grid_add_rectangle(other.nav, x - 32, y - 32, x + 64, y + 64);
+    instance_destroy();
+}
+
+/*
 nav_x = xp * 64;
 nav_y = yp * 64;
 
@@ -66,7 +95,7 @@ for(var i = 0; i &lt; array_length_1d(walls); i++)
 with(obj_ai_wall)
 {
     instance_destroy();
-}
+}*/
 </string>
           </argument>
         </arguments>
