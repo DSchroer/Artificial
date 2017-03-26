@@ -34,24 +34,23 @@ if(lore != -1)
 {
     var yp;
     var xp;
-    yp[0] = 1152;
-    yp[1] = 1152;
-    yp[2] = 1152;
+    yp[0] = 640;
+    yp[1] = 640;
+    yp[2] = 960;
     yp[3] = 960;
     yp[4] = 960;
-    yp[5] = 768;
-    yp[6] = 768;
-    yp[7] = 768;
+    yp[5] = 1152;
+    yp[6] = 1152;
+    yp[7] = 1152;
 
-    xp[0] = 2848 + random_range(0, 128);    
-    xp[1] = 2848 + random_range(192, 256);    
-    xp[2] = 2848 + random_range(256 + 64, 256 + 128);    
-    xp[3] = 2848 + random_range(0, 128);    
-    xp[4] = 2848 + random_range(192, 256);    
-    xp[5] = 2848 + random_range(256 + 64, 256 + 128);    
-    xp[6] = 2848 + random_range(0, 128);    
-    xp[7] = 2848 + random_range(192, 256);    
-    xp[8] = 2848 + random_range(256 + 64, 256 + 128);    
+    xp[0] = 2848 + random_range(0, 64);    
+    xp[1] = 3168 + random_range(0, 64);    
+    xp[2] = 2848 + random_range(0, 64);    
+    xp[3] = 2848 + random_range(160, 160+64);    
+    xp[4] = 2848 + random_range(160+64+32, 160+64+32+64);    
+    xp[5] = 2752 + random_range(0, 64);    
+    xp[6] = 3008 + random_range(0, 64);    
+    xp[7] = 3264 + random_range(0, 64);    
 
     for(var i = 0; i &lt; array_length_1d(lore); i++)
     {

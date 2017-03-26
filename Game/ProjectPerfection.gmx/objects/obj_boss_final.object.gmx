@@ -64,6 +64,9 @@ mele[weapon_index.bullet_sprite_yscale] = image_yscale;
 mele[weapon_index.bullet_sprite_alpha] = 0;
 mele[weapon_index.damage] = 200;
 mele[weapon_index.bullet_speed] = 0;
+
+volume_mod = 0.2;
+ds_list_add(hurt_sounds, snd_heart_hit); 
 </string>
           </argument>
         </arguments>

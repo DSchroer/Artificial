@@ -7,7 +7,10 @@ for(var i = 0; i < random(3); i++)
 }
 
 // Chests
-generator_spawn_item_ext(obj_chest, 1, true, false, bias.bias_off_path, 10);
+for(var i = 0; i < 3; i++)
+{
+    generator_spawn_item_ext(obj_chest, 1, true, false, bias.bias_off_path, 10);
+}
 
 // Lore
 if(book_any())

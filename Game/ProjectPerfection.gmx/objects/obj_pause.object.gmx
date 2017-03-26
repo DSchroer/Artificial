@@ -33,6 +33,8 @@
 instance_create(0, 0, obj_post_process);
 
 instance_create(0, 0, obj_pause_menu);
+
+audio_pause_all();
 </string>
           </argument>
         </arguments>
@@ -61,6 +63,8 @@ with(obj_pause_menu)
 {
     instance_destroy();
 }
+
+audio_resume_all();
 </string>
           </argument>
         </arguments>

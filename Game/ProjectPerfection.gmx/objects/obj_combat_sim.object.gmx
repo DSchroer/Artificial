@@ -495,6 +495,7 @@ if(!instance_exists(obj_enemy))
         {
             instance_destroy();
         }        
+        sfx_play_volume(snd_laser_door_open, false, 1.0);
         var xp = 1216;
         var yp = 480;
         door_l = instance_create(xp, yp, obj_tutorial_gate_open);

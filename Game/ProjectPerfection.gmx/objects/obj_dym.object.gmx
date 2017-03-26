@@ -19,7 +19,7 @@
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>self</whoName>
+        <whoName>obj_dym</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -58,9 +58,9 @@ for(var i = 0; i &lt; 7; i++)
     inst.y = y - 64 + lengthdir_y(rock_dist, angle);
 }
 
-//ds_list_add(hurt_sounds, snd_enemy_rock1);  
-//ds_list_add(hurt_sounds, snd_enemy_rock2);
-//ds_list_add(hurt_sounds, snd_enemy_rock3); // &lt;--- death sound?
+phase = false;
+volume_mod = 0.75;
+ds_list_add(hurt_sounds, snd_dym_hit); 
 </string>
           </argument>
         </arguments>
@@ -84,6 +84,12 @@ for(var i = 0; i &lt; 7; i++)
           <argument>
             <kind>1</kind>
             <string>isomorphic_set_depth();
+
+if(!phase &amp;&amp; ui_get_boss_health_percent() &lt; 0.5)
+{
+    phase = true;
+    sfx_play_volume(snd_dym_phase, false, 1.0);
+}
 
 var num = instance_number(obj_dym_part)
 for(var i = 0; i &lt; num; i++)

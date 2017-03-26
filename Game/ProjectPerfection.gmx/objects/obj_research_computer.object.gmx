@@ -32,7 +32,7 @@
     {
         ui_textbox_queue(text[i]); 
     }
-
+    sfx_play_volume(snd_computer_interact, false, 0.33);
 }
 </string>
           </argument>

@@ -129,6 +129,7 @@
         <sound>sound\snd_azar_slam</sound>
         <sound>sound\snd_azar_rock_throw</sound>
         <sound>sound\snd_azar_rock_wave</sound>
+        <sound>sound\snd_azar_hit</sound>
       </sounds>
       <sounds name="Dym">
         <sound>sound\snd_dym_basic</sound>
@@ -137,6 +138,7 @@
         <sound>sound\snd_dym_cloudport</sound>
         <sound>sound\snd_dym_grab</sound>
         <sound>sound\snd_dym_death</sound>
+        <sound>sound\snd_dym_hit</sound>
       </sounds>
       <sounds name="Thwander">
         <sound>sound\snd_thwander_mine_explosion</sound>
@@ -146,6 +148,7 @@
         <sound>sound\snd_thwander_statis_mine_active</sound>
         <sound>sound\snd_thwander_turret_shot</sound>
         <sound>sound\snd_thwander_death</sound>
+        <sound>sound\snd_thwander_hit</sound>
       </sounds>
       <sounds name="Shuude">
         <sound>sound\snd_shuude_attack_basic</sound>
@@ -154,6 +157,7 @@
         <sound>sound\snd_shuude_echolocate</sound>
         <sound>sound\snd_shuude_scream_small</sound>
         <sound>sound\snd_shuude_scream_long</sound>
+        <sound>sound\snd_shuude_hit</sound>
       </sounds>
       <sounds name="Heart">
         <sound>sound\snd_heart_basic</sound>
@@ -165,12 +169,29 @@
         <sound>sound\snd_heart_icreatedyou_explosion</sound>
         <sound>sound\snd_heart_icreatedyou_full</sound>
         <sound>sound\snd_heart_icreatedyou_noexplode</sound>
+        <sound>sound\snd_heart_hit</sound>
       </sounds>
       <sound>sound\snd_death_explosion</sound>
     </sounds>
     <sound>sound\snd_depth_complete</sound>
     <sound>sound\snd_component_drop</sound>
     <sound>sound\snd_gun_drop</sound>
+    <sound>sound\snd_laser_door_open</sound>
+    <sound>sound\snd_laser_door_close</sound>
+    <sound>sound\snd_computer_interact</sound>
+    <sound>sound\snd_cube_pickup</sound>
+    <sound>sound\snd_spike_trap</sound>
+    <sound>sound\sfx_trap_spike</sound>
+    <sound>sound\snd_no_components</sound>
+    <sound>sound\snd_workbench_success</sound>
+    <sound>sound\snd_thwander_phase_change</sound>
+    <sound>sound\snd_shuude_phase</sound>
+    <sound>sound\snd_dym_phase</sound>
+    <sound>sound\snd_azar_phase</sound>
+    <sound>sound\snd_grunt_ambient</sound>
+    <sound>sound\snd_dog_ambient</sound>
+    <sound>sound\snd_captain_ambient</sound>
+    <sound>sound\snd_brute_ambient</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="Entities">
@@ -387,6 +408,8 @@
     <sprite>sprites\spr_sheild_hit</sprite>
     <sprite>sprites\spr_light1</sprite>
     <sprite>sprites\spr_light2</sprite>
+    <sprite>sprites\spr_tutorial_dash</sprite>
+    <sprite>sprites\spr_tutorial_dash2</sprite>
     <sprite>sprites\spr_sparkle</sprite>
     <sprites name="Lights">
       <sprite>sprites\spr_pointlight</sprite>
@@ -397,6 +420,7 @@
     <sprites name="Effects">
       <sprite>sprites\spr_loot</sprite>
     </sprites>
+    <sprite>sprites\sprite176</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -809,6 +833,7 @@
       <script>scripts\ui_textbox_unqueue.gml</script>
       <script>scripts\ui_world_to_gui_x.gml</script>
       <script>scripts\ui_world_to_gui_y.gml</script>
+      <script>scripts\script358.gml</script>
     </scripts>
     <script>scripts\wall_casts_shadow.gml</script>
     <scripts name="Workbench">
@@ -872,6 +897,7 @@
       <script>scripts\balance_get_enemy_health_coefficient.gml</script>
       <script>scripts\balance_get_loot_scaling_coefficient.gml</script>
       <script>scripts\balance_global_difficulty_coefficient.gml</script>
+      <script>scripts\balance_get_player_damage_modifier.gml</script>
     </scripts>
     <script>scripts\cube_get_sprite.gml</script>
   </scripts>
@@ -1059,6 +1085,8 @@
       </objects>
       <object>objects\obj_tutorial_door</object>
       <object>objects\obj_tutorial_teleporter</object>
+      <object>objects\obj_tutorial_prop_dash</object>
+      <object>objects\obj_tutorial_prop_dash_2</object>
     </objects>
     <objects name="UI">
       <object>objects\obj_minimap</object>
@@ -1084,6 +1112,8 @@
       <object>objects\obj_lightdrawer</object>
       <object>objects\obj_light</object>
       <object>objects\obj_pointlight</object>
+      <object>objects\obj_wall_light</object>
+      <object>objects\obj_computer_light</object>
     </objects>
     <objects name="Weapons">
       <object>objects\obj_azar_will</object>
