@@ -1,10 +1,11 @@
-///inventory_spawn_gun_ext(power, min_quality)
+///inventory_spawn_gun_ext(power, min_quality, common_weight)
 var pow = argument0;
 var min_quality = argument1;
+var common_weight = argument2;
 var gun = inventory_create_weapon();
 
 var q;
-var weights = inventory_generate_quality_weights(min_quality);
+var weights = inventory_generate_quality_weights(min_quality, common_weight);
 var types = inventory_get_qualities();
 q = choose_weighted(types, weights);
 

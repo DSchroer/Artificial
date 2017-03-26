@@ -875,6 +875,7 @@
       <script>scripts\balance_get_enemy_health_coefficient.gml</script>
       <script>scripts\balance_get_loot_scaling_coefficient.gml</script>
       <script>scripts\balance_global_difficulty_coefficient.gml</script>
+      <script>scripts\balance_get_player_damage_modifier.gml</script>
     </scripts>
     <script>scripts\cube_get_sprite.gml</script>
   </scripts>

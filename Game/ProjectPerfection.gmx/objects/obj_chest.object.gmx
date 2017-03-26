@@ -118,20 +118,23 @@ if(instance_exists(obj_progress))
     var item_index = 0;    
 
     // HP
-    for(var i = 0; i &lt; 3; i++)
+    for(var i = 0; i &lt; 1; i++)
     {
         items[item_index++] = instance_create(x, y, obj_health_can);
     }        
     
     // Component    
-    items[item_index++] = instance_create(x, y, obj_component);
-
+    if(random(3) &lt; 1)
+    {
+        items[item_index++] = instance_create(x, y, obj_component);
+    }
+    
     // Guns    
-    var number_guns = irandom_range(1, 2);
+    var number_guns = 1;//irandom_range(1);
     for(var i = 0; i &lt; number_guns; i++)
     {
         var gun = instance_create(x, y, obj_item);
-        gun.data = inventory_spawn_gun_ext(roll_power(), item_quality.uncommon);
+        gun.data = inventory_spawn_gun_ext(roll_power(), item_quality.common, 50);
         items[item_index++] = gun;        
     }
 
