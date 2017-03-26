@@ -35,23 +35,23 @@ if(dead)
         
     
     // Draw the death text    
-    if(obj_progress.tutorial > 101)
-    {
-        var width = display_get_gui_width();
-        var height = display_get_gui_height();
+ 
+
+    var width = display_get_gui_width();
+    var height = display_get_gui_height();
+
+    var message = "The Dungeon Defeated You";
+    var scale = 3;        
+    var xp = (width - string_width(message) * scale) / 2;
+    var yp = 20;
+    draw_text_transformed_color(xp, yp, message, scale, scale, 0, c_red, c_red, c_red, c_red, 1);
     
-        var message = "The Dungeon Defeated You";
-        var scale = 3;        
-        var xp = (width - string_width(message) * scale) / 2;
-        var yp = 20;
-        draw_text_transformed_color(xp, yp, message, scale, scale, 0, c_red, c_red, c_red, c_red, 1);
-        
-        message = "Preparing for reconstruction";
-        scale = 2;        
-        xp = (width - string_width(message) * scale) / 2;
-        yp += 60;
-        draw_text_transformed_color(xp, yp, message, scale, scale, 0, c_white, c_white, c_white, c_white, 1);
-    }
+    message = "Preparing for reconstruction";
+    scale = 2;        
+    xp = (width - string_width(message) * scale) / 2;
+    yp += 60;
+    draw_text_transformed_color(xp, yp, message, scale, scale, 0, c_white, c_white, c_white, c_white, 1);
+
 
 }
 else

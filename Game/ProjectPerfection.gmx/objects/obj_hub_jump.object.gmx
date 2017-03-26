@@ -28,7 +28,7 @@
             <string>
 if(save_get_value(obj_save_data, "tutorial", 0) &lt; 50)
 {
-    room_goto(rm_tutorial_beta);
+    room_goto(rm_tutorial_final1);
 }
 else
 {

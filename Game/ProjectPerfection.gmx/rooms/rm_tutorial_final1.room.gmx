@@ -187,6 +187,7 @@
     <instance objName="obj_wall_light" x="3072" y="672" name="inst_5FB49C9D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="1024" y="672" name="inst_BF8FE800" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="1088" y="672" name="inst_7F4A32AB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_hub_sound" x="576" y="352" name="inst_81210984" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bkg_hub_new" x="608" y="736" w="192" h="192" xo="192" yo="192" id="10024004" name="inst_56C6B27D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
