@@ -419,6 +419,7 @@
     </sprites>
     <sprites name="Effects">
       <sprite>sprites\spr_loot</sprite>
+      <sprite>sprites\spr_ring_charge</sprite>
     </sprites>
     <sprite>sprites\sprite176</sprite>
   </sprites>
@@ -1001,6 +1002,7 @@
       <objects name="FinalBoss">
         <object>objects\obj_boss_final</object>
         <object>objects\obj_boss_jump</object>
+        <object>objects\obj_final_ring</object>
       </objects>
     </objects>
     <objects name="Environment">

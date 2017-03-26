@@ -40,7 +40,7 @@ sm_init("retreat");
 var body = instance_create(x, y, obj_shuud_body);
 body.target = self;
 
-for(var i = 0; i &lt; 5; i++)
+for(var i = 0; i &lt; 7; i++)
 {
     var inst = instance_create(x, y, obj_shuud_body);
     inst.target = body;

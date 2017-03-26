@@ -41,13 +41,13 @@ sm_init("idle");
 lazer = inventory_create_weapon();
 lazer[weapon_index.modifier] = weapon_modifier.rail;
 lazer[weapon_index.bullet_sprite] = spr_rail;
-lazer[weapon_index.damage] = 100;
+lazer[weapon_index.damage] = 200;
 lazer[weapon_index.bullet_speed] = 0;
 
 bolt = inventory_create_weapon();
 bolt[weapon_index.modifier] = weapon_modifier.normal;
 bolt[weapon_index.bullet_sprite] = spr_bullet;
-bolt[weapon_index.damage] = 200;
+bolt[weapon_index.damage] = 100;
 
 kill = inventory_create_weapon();
 kill[weapon_index.modifier] = weapon_modifier.rail;
