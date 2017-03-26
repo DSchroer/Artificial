@@ -1089,6 +1089,7 @@
       <object>objects\obj_lightdrawer</object>
       <object>objects\obj_light</object>
       <object>objects\obj_pointlight</object>
+      <object>objects\obj_wall_light</object>
     </objects>
     <objects name="Weapons">
       <object>objects\obj_azar_will</object>

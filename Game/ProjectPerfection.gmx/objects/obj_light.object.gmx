@@ -37,7 +37,7 @@ flicker_range = 1;
 flicker_min = 0.1;
 flicker_max = 0.8;
 
-sin_range = 1;
+sin_range = 0;
 sin_min = 0;
 sin_ticks = 0;
 sin_speed = 10;

@@ -19,7 +19,7 @@ button_normal.user_event_index = 5;
 button_normal.y = button_easy.y + button_easy.height + padding;
 button_normal.text = "Normal Difficulty";
 button_normal.center_x = true;
-button_normal.image_xscale = 1.25;
+button_normal.image_xscale = 1.3;
 button_normal.index = 1;
 
 button_hard = instance_create(0, 0, obj_button);
