@@ -7,7 +7,7 @@ if(instance_number(obj_dym_part) == 0)
     exit;
 }
 
-if(sm_ticks() > 240)
+if(sm_ticks() > 120)
 {
     var a = random(5);
     if(a < 1)
@@ -37,7 +37,7 @@ with(obj_dym_part)
 }
 if(current_health / max_health < 0.5)
 {
-    sp = 5;
+    sp = 10;
     with(obj_dym_part)
     {
         mv_mod = 1.5;
