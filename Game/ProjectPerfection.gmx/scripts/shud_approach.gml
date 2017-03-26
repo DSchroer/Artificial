@@ -13,7 +13,7 @@ if(sm_ticks() == 0)
         audio_sound_pitch(num, (1 + rng));
     }
         
-    sm_set_var("attack", random(4));
+    sm_set_var("attack", random(5));
 }
 
 var player_distance = point_distance(x, y, obj_player.x, obj_player.y);
@@ -23,7 +23,12 @@ if(player_distance < 600 && area_contains(obj_shuud_attack_area, self))
     if(attack < 1)
     {
         sm_set_state("scream");
-    }else if(attack < 2)
+    }
+    else if(attack < 2)
+    {
+        sm_set_state("sweat");
+    }
+    else if(attack < 3)
     {
         sm_set_state("beam");
     }else{
@@ -62,3 +67,7 @@ if(sm_has_var("dir"))
 }
 attack_gun(mele, x, y, 0, self, false, false);
 
+if(sm_ticks() > 5 * 60)
+{
+    sm_set_state("retreat");
+}

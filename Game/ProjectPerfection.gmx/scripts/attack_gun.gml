@@ -7,6 +7,6 @@ var ignore = argument4;
 var play_sound = argument5;
 var allow_sound_stacking = argument6;
 
-return attack_gun_ext(weapon, xpos, ypos, dir, 0, ignore, false, play_sound, allow_sound_stacking);
+return attack_gun_ext(weapon, xpos, ypos, dir, 0, ignore, false, play_sound, allow_sound_stacking, false);
 
 

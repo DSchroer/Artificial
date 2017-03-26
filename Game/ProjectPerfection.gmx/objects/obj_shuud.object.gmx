@@ -3,7 +3,7 @@
   <spriteName>spr_worm_head</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-50000</depth>
   <persistent>0</persistent>
   <parentName>obj_enemy</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -61,8 +61,14 @@ mele[weapon_index.bullet_speed] = 0;
 scream = inventory_create_weapon();
 scream[weapon_index.modifier] = weapon_modifier.scatter;
 scream[weapon_index.bullet_sprite] = spr_bullet;
-scream[weapon_index.damage] = 50;
-scream[weapon_index.accuracy] = 45;
+scream[weapon_index.damage] = 250;
+scream[weapon_index.accuracy] = 10;
+
+sweat = inventory_create_weapon();
+sweat[weapon_index.modifier] = weapon_modifier.plasma;
+sweat[weapon_index.bullet_sprite] = spr_plasma;
+sweat[weapon_index.damage] = 50;
+sweat[weapon_index.accuracy] = 0;
 
 beam = inventory_create_weapon();
 beam[weapon_index.modifier] = weapon_modifier.rail;
@@ -91,8 +97,7 @@ beam[weapon_index.accuracy] = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>isomorphic_set_depth();
-
+            <string>
 if(iframes &gt; 0)
 {
     iframes -= 1;
@@ -115,6 +120,9 @@ if(player_exists())
             break;
         case "scream":
             shud_scream();
+            break;
+        case "sweat":
+            shud_sweat();
             break;
         case "beam":
             shud_beam();
