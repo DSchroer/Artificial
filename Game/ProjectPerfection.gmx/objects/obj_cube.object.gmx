@@ -69,6 +69,7 @@ with(obj_player)
     alarm[7] = 180;
 }
 
+sfx_play_volume(snd_depth_complete, false, 1.0);
 </string>
           </argument>
         </arguments>

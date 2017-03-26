@@ -129,6 +129,7 @@
         <sound>sound\snd_azar_slam</sound>
         <sound>sound\snd_azar_rock_throw</sound>
         <sound>sound\snd_azar_rock_wave</sound>
+        <sound>sound\snd_azar_hit</sound>
       </sounds>
       <sounds name="Dym">
         <sound>sound\snd_dym_basic</sound>
@@ -137,6 +138,7 @@
         <sound>sound\snd_dym_cloudport</sound>
         <sound>sound\snd_dym_grab</sound>
         <sound>sound\snd_dym_death</sound>
+        <sound>sound\snd_dym_hit</sound>
       </sounds>
       <sounds name="Thwander">
         <sound>sound\snd_thwander_mine_explosion</sound>
@@ -146,6 +148,7 @@
         <sound>sound\snd_thwander_statis_mine_active</sound>
         <sound>sound\snd_thwander_turret_shot</sound>
         <sound>sound\snd_thwander_death</sound>
+        <sound>sound\snd_thwander_hit</sound>
       </sounds>
       <sounds name="Shuude">
         <sound>sound\snd_shuude_attack_basic</sound>
@@ -154,6 +157,7 @@
         <sound>sound\snd_shuude_echolocate</sound>
         <sound>sound\snd_shuude_scream_small</sound>
         <sound>sound\snd_shuude_scream_long</sound>
+        <sound>sound\snd_shuude_hit</sound>
       </sounds>
       <sounds name="Heart">
         <sound>sound\snd_heart_basic</sound>
@@ -165,12 +169,18 @@
         <sound>sound\snd_heart_icreatedyou_explosion</sound>
         <sound>sound\snd_heart_icreatedyou_full</sound>
         <sound>sound\snd_heart_icreatedyou_noexplode</sound>
+        <sound>sound\snd_heart_hit</sound>
       </sounds>
       <sound>sound\snd_death_explosion</sound>
     </sounds>
     <sound>sound\snd_depth_complete</sound>
     <sound>sound\snd_component_drop</sound>
     <sound>sound\snd_gun_drop</sound>
+    <sound>sound\snd_laser_door_open</sound>
+    <sound>sound\snd_laser_door_close</sound>
+    <sound>sound\snd_computer_interact</sound>
+    <sound>sound\snd_cube_pickup</sound>
+    <sound>sound\snd_spike_trap</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="Entities">

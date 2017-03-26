@@ -92,6 +92,7 @@ vertical = false;
             {
                 cgrid_set_collision(id);
                 open = false;
+                sfx_play_volume(snd_laser_door_close, false, 1.3);
             }
         }
     }else{
@@ -101,6 +102,7 @@ vertical = false;
             {
                 cgrid_set_collision(0);
                 open = true;
+                sfx_play_volume(snd_laser_door_open, false, 1.3);
             }
         }
     }
@@ -113,6 +115,7 @@ vertical = false;
             {
                 cgrid_set_collision(id);
                 open = false;
+                sfx_play_volume(snd_laser_door_close, false, 1.3);
             }
         }
     }else{
@@ -122,7 +125,8 @@ vertical = false;
             {
                 cgrid_set_collision(0);
                 open = true;
-            }
+                sfx_play_volume(snd_laser_door_open, false, 1.3);
+           }
         }
     }
     

@@ -36,7 +36,7 @@ button_exit_diff.y = button_hard.y + button_hard.height + padding;
 button_exit_diff.text = "Back";
 button_exit_diff.center_x = true;
 button_exit_diff.image_xscale = 1.3;
-button_exit_diff.index = 4;
+button_exit_diff.index = 3;
 
 index = -1;
 

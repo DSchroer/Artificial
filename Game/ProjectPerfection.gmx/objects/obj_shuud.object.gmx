@@ -69,6 +69,9 @@ beam[weapon_index.modifier] = weapon_modifier.rail;
 beam[weapon_index.bullet_sprite] = spr_rail;
 beam[weapon_index.damage] = 50;
 beam[weapon_index.accuracy] = 0;
+
+volume_mod = 1.0;
+ds_list_add(hurt_sounds, snd_shuude_hit); 
 </string>
           </argument>
         </arguments>

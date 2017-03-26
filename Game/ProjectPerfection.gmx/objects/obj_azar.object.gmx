@@ -68,10 +68,8 @@ rock[weapon_index.accuracy] = 0;
 
 stage = 1;
 
-volume_mod = 1.4;
-//ds_list_add(hurt_sounds, snd_enemy_rock1);  
-//ds_list_add(hurt_sounds, snd_enemy_rock2);
-//ds_list_add(hurt_sounds, snd_enemy_rock3); // &lt;--- death sound?
+volume_mod = 1.0;
+ds_list_add(hurt_sounds, snd_azar_hit); 
 </string>
           </argument>
         </arguments>
