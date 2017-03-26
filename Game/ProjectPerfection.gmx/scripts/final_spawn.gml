@@ -10,6 +10,5 @@ if(sm_ticks() == 0 && instance_number(obj_clone) == 0)
     sfx_play_volume(snd_heart_spawn_enemies, false, 0.6);
 }else if(sm_ticks() > 30)
 {
-    sm_state_force_push("idle");
-    sm_set_state("lazer");
+    sm_set_state(sm_state_pop());
 }

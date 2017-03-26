@@ -15,7 +15,14 @@ if(sm_ticks() == 0)
 }else if(sm_get_var("angle") > 90 || sm_get_var("angle") < -90)
 {
     audio_stop_sound(snd_heart_quad_laser);
-    sm_set_state(sm_state_pop());
+    
+    if(current_health / max_health < 0.7)
+    {
+        sm_set_state(sm_state_pop());
+    }else{
+        sm_state_force_push("idle");
+        sm_set_state("spawn");
+    }
 }else if(sm_ticks() > 30){
     sm_set_var("angle", sm_get_var("angle") + sm_get_var("dir"));
 }
