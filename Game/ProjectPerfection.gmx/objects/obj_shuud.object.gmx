@@ -109,7 +109,7 @@ ds_list_add(hurt_sounds, snd_shuude_hit);
         <arguments>
           <argument>
             <kind>1</kind>
-		<string>
+            <string>
 
 if(!phase &amp;&amp; ui_get_boss_health_percent() &lt; 0.5)
 {

@@ -984,7 +984,6 @@
         <object>objects\obj_dym_area</object>
       </objects>
       <objects name="Boss3">
-        <object>objects\obj_twan</object>
         <object>objects\obj_twan_point</object>
         <object>objects\obj_twan_turret</object>
       </objects>
