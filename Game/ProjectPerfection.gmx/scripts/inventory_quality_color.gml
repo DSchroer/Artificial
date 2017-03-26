@@ -9,5 +9,7 @@ case item_quality.rare:
     return make_color_rgb(28, 41, 213);
 case item_quality.uncommon:
     return make_color_rgb(26, 239, 15);
+case item_quality.unique:
+    return make_color_rgb(255, 215, 0);
 }
 return c_white;

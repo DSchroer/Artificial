@@ -37,7 +37,7 @@ sm_init("idle");
 basic = inventory_create_weapon();
 basic[weapon_index.modifier] = weapon_modifier.plasma;
 basic[weapon_index.damage] = 50;
-basic[weapon_index.accuracy] = 30;
+basic[weapon_index.accuracy] = 23;
 basic[weapon_index.bullet_sprite] = spr_azar_rock;
 
 slam = inventory_create_weapon();
