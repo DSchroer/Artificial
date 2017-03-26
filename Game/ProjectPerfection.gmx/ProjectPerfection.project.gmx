@@ -904,6 +904,7 @@
       <script>scripts\balance_get_player_damage_modifier.gml</script>
     </scripts>
     <script>scripts\cube_get_sprite.gml</script>
+    <script>scripts\script365.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
