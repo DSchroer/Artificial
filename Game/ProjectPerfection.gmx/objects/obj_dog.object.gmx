@@ -92,6 +92,11 @@ weapon = enemy_scale_gun(weapon, pow);
             <kind>1</kind>
             <string>isomorphic_set_depth();
 
+if(random(900) &lt; 1)
+{
+    sfx_play_volume(snd_dog_ambient, false, 1.0);
+}
+
 var state = sm_get_state();
 
 if(player_exists())

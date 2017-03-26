@@ -58,6 +58,7 @@ for(var i = 0; i &lt; 7; i++)
     inst.y = y - 64 + lengthdir_y(rock_dist, angle);
 }
 
+phase = false;
 volume_mod = 0.75;
 ds_list_add(hurt_sounds, snd_dym_hit); 
 </string>
@@ -83,6 +84,12 @@ ds_list_add(hurt_sounds, snd_dym_hit);
           <argument>
             <kind>1</kind>
             <string>isomorphic_set_depth();
+
+if(!phase &amp;&amp; ui_get_boss_health_percent() &lt; 0.5)
+{
+    phase = true;
+    sfx_play_volume(snd_dym_phase, false, 1.0);
+}
 
 var num = instance_number(obj_dym_part)
 for(var i = 0; i &lt; num; i++)

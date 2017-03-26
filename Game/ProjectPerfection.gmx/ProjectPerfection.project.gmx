@@ -181,6 +181,17 @@
     <sound>sound\snd_computer_interact</sound>
     <sound>sound\snd_cube_pickup</sound>
     <sound>sound\snd_spike_trap</sound>
+    <sound>sound\sfx_trap_spike</sound>
+    <sound>sound\snd_no_components</sound>
+    <sound>sound\snd_workbench_success</sound>
+    <sound>sound\snd_thwander_phase_change</sound>
+    <sound>sound\snd_shuude_phase</sound>
+    <sound>sound\snd_dym_phase</sound>
+    <sound>sound\snd_azar_phase</sound>
+    <sound>sound\snd_grunt_ambient</sound>
+    <sound>sound\snd_dog_ambient</sound>
+    <sound>sound\snd_captain_ambient</sound>
+    <sound>sound\snd_brute_ambient</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="Entities">
@@ -409,6 +420,7 @@
     <sprites name="Effects">
       <sprite>sprites\spr_loot</sprite>
     </sprites>
+    <sprite>sprites\sprite176</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>

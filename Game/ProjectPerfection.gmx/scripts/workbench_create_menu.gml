@@ -23,6 +23,7 @@ button_upgrade_health.index = 0;
 button_upgrade_health.image_xscale = 1.2;
 button_upgrade_health.image_yscale = 0.7;
 button_upgrade_health.text_scale = 1.0;
+button_upgrade_health.muted = true;
 
 button_upgrade_recharge = instance_create(0, 0, obj_button);
 button_upgrade_recharge.user_event_index = 13;
@@ -33,6 +34,7 @@ button_upgrade_recharge.index = 1;
 button_upgrade_recharge.image_xscale = 1.2;
 button_upgrade_recharge.image_yscale = 0.7;
 button_upgrade_recharge.text_scale = 1.0;
+button_upgrade_recharge.muted = true;
 
 button_upgrade_delay = instance_create(0, 0, obj_button);
 button_upgrade_delay.user_event_index = 14;
@@ -43,6 +45,7 @@ button_upgrade_delay.index = 2;
 button_upgrade_delay.image_xscale = 1.2;
 button_upgrade_delay.image_yscale = 0.7;
 button_upgrade_delay.text_scale = 1.0;
+button_upgrade_delay.muted = true;
 
 button_close = instance_create(0, 0, obj_button);
 button_close.user_event_index = 15;

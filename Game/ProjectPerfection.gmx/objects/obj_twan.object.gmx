@@ -45,6 +45,7 @@ sniper[weapon_index.bullet_sprite] = spr_bullet;
 sniper[weapon_index.bullet_speed] = 30;
 sniper[weapon_index.accuracy] = 0;
 
+phase = false;
 volume_mod = 1.4;
 ds_list_add(hurt_sounds, snd_thwander_hit); 
 </string>
@@ -70,6 +71,12 @@ ds_list_add(hurt_sounds, snd_thwander_hit);
           <argument>
             <kind>1</kind>
             <string>isomorphic_set_depth();
+
+if(!phase &amp;&amp; ui_get_boss_health_percent() &lt; 0.5)
+{
+    phase = true;
+    sfx_play_volume(snd_thwander_phase_change, false, 1.0);
+}
 
 var state = sm_get_state();
 if(player_exists())

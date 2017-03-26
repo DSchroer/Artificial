@@ -68,6 +68,7 @@ rock[weapon_index.accuracy] = 0;
 
 stage = 1;
 
+phase = false;
 volume_mod = 1.0;
 ds_list_add(hurt_sounds, snd_azar_hit); 
 </string>
@@ -93,6 +94,12 @@ ds_list_add(hurt_sounds, snd_azar_hit);
           <argument>
             <kind>1</kind>
             <string>isomorphic_set_depth();
+
+if(!phase &amp;&amp; ui_get_boss_health_percent() &lt; 0.5)
+{
+    phase = true;
+    sfx_play_volume(snd_azar_phase, false, 1.0);
+}
 
 var state = sm_get_state();
 
