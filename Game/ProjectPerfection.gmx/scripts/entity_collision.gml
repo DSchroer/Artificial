@@ -1,4 +1,9 @@
 ///entity_collision()
+if(is_paused())
+{
+    exit;
+}
+
 var col_entity = instance_place(x, y, obj_entity);
 if(col_entity && col_entity != self)
 {

@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
+current_health = 30;
+max_health = 30;
 
 triggered = false;
 </string>

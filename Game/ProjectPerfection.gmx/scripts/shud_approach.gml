@@ -1,6 +1,6 @@
 ///shud_approach()
 
-speed = 10;
+speed = 10 * speed_mod;
 
 if(sm_ticks() == 0)
 {
@@ -13,21 +13,30 @@ if(sm_ticks() == 0)
         audio_sound_pitch(num, (1 + rng));
     }
         
-    sm_set_var("attack", random(4));
+    sm_set_var("attack", random(6));
 }
 
 var player_distance = point_distance(x, y, obj_player.x, obj_player.y);
 var attack = sm_get_var("attack");
 if(player_distance < 600 && area_contains(obj_shuud_attack_area, self))
 {
-    if(attack < 1)
+    if(attack < 2)
     {
         sm_set_state("scream");
-    }else if(attack < 2)
+    }
+    else if(attack < 3)
+    {
+        sm_set_state("sweat");
+    }
+    else if(attack < 4)
+    {
+        sm_set_state("moist");
+    }
+    else if(attack < 5)
     {
         sm_set_state("beam");
     }else{
-        speed = 15;
+        speed = 15 * speed_mod;
     }
 }
 
@@ -62,3 +71,7 @@ if(sm_has_var("dir"))
 }
 attack_gun(mele, x, y, 0, self, false, false);
 
+if(sm_ticks() > 5 * 60)
+{
+    sm_set_state("retreat");
+}

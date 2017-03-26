@@ -27,14 +27,14 @@
             <kind>1</kind>
             <string>entity_init();
 event_inherited();
-max_health = 100;
-current_health = 100;
+max_health = 50;
+current_health = 50;
 
 sm_init("idle");
 
 weapon = inventory_create_weapon();
-weapon[weapon_index.modifier] = weapon_modifier.normal;
-weapon[weapon_index.damage] = 20;
+weapon[weapon_index.modifier] = weapon_modifier.rocket;
+weapon[weapon_index.damage] = 10;
 weapon[weapon_index.bullet_sprite] = spr_bullet;
 weapon[weapon_index.accuracy] = 30;
 

@@ -1,6 +1,6 @@
 ///shud_turn()
 
-speed = 10;
+speed = 10 * speed_mod;
 var t_dir = -point_direction(x, y, obj_player.x, obj_player.y);
 if(angle_difference(direction, t_dir) > 0)
 {
