@@ -67,10 +67,7 @@ with(obj_level)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(object_index != obj_wall)
-{
-       draw_self();
-}
+            <string>//do nothing
 </string>
           </argument>
         </arguments>

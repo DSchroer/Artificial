@@ -88,6 +88,11 @@ with(obj_entity)
     }
 }
 
+if(!point_in_rectangle(x, y, 0, 0, room_width, room_height))
+{
+    instance_destroy();
+}
+
 if(cgrid_collision_point(x, y + y_off))
 {
     instance_destroy();

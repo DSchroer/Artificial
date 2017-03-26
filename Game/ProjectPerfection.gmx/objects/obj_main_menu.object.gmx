@@ -286,11 +286,19 @@ save_flush(obj_game_save);
           <argument>
             <kind>1</kind>
             <string>/// Apply settings
+
+
+slider_sound.percent = max(0, min(1, slider_sound.percent));
+slider_music.percent = max(0, min(1, slider_music.percent));
+slider_ctrlr.percent = max(0, min(1, slider_ctrlr.percent));
+
 sfx_set_volume(slider_sound.percent);
 save_set_value(obj_game_save, "fx_volume", slider_sound.percent);
 
 sfx_bkg_set_volume(slider_music.percent);
 save_set_value(obj_game_save, "music_volume", slider_music.percent);
+
+save_set_value(obj_game_save, "controller_sensitivity", slider_ctrlr.percent);
 
 save_flush(obj_game_save);
 

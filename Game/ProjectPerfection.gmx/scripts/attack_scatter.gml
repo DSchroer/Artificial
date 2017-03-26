@@ -1,4 +1,4 @@
-///attack_scatter(weapon, x, y, direction, ignore, play_sound, allow_sound_stacking)
+///attack_scatter(weapon, x, y, direction, ignore, play_sound, allow_sound_stacking, uniform)
 var weapon = argument0;
 var xpos = argument1;
 var ypos = argument2;
@@ -6,6 +6,7 @@ var dir = argument3;
 var ignore = argument4;
 var play_sound = argument5;
 var allow_sound_stacking = argument6;
+var uniform = argument7;
 
 var amt = 5;
 
@@ -20,7 +21,14 @@ for(var i = 0; i < amt; i++)
     shot.image_yscale = weapon[weapon_index.bullet_sprite_yscale];
     shot.image_alpha = weapon[weapon_index.bullet_sprite_alpha];
     
-    shot.direction = attack_accuracy(attack_accuracy(dir, weapon[weapon_index.accuracy]), 30);
+    if(uniform)
+    {
+        shot.direction = (dir - (weapon[weapon_index.accuracy] / 2)) + ((weapon[weapon_index.accuracy] / amt) * i);
+    }else{
+        shot.direction = attack_accuracy(attack_accuracy(dir, weapon[weapon_index.accuracy]), 30);
+    }
+    
+    
     shot.speed = weapon[weapon_index.bullet_speed];
     shot.parent = self;
     shot.damage = round(weapon[weapon_index.damage] / amt);

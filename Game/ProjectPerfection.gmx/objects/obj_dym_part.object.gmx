@@ -29,8 +29,8 @@
 
 target_x = x;
 target_y = y;
-speed = 10;
-mv_speed = 10;
+speed = 20;
+mv_speed = 20;
 mv_mod = 1;
 
 rock = inventory_create_weapon();

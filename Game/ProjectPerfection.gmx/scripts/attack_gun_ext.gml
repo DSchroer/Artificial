@@ -1,4 +1,4 @@
-///attack_gun_ext(weapon, x, y, direction, dist, ignore, flash, play_sound, allow_sound_stacking)
+///attack_gun_ext(weapon, x, y, direction, dist, ignore, flash, play_sound, allow_sound_stacking, uniform)
 var weapon = argument0;
 var xpos = argument1;
 var ypos = argument2;
@@ -8,6 +8,7 @@ var ignore = argument5;
 var flash = argument6;
 var play_sound = argument7;
 var allow_sound_stacking = argument8;
+var uniform = argument9;
 
 xpos += lengthdir_x(dist, dir);
 ypos += lengthdir_y(dist, dir);
@@ -54,7 +55,7 @@ switch(weapon[weapon_index.modifier])
         attack_rail(weapon, xpos, ypos, dir, ignore, play_sound, allow_sound_stacking);
         break;
     case weapon_modifier.scatter:
-        attack_scatter(weapon, xpos, ypos, dir, ignore, play_sound, allow_sound_stacking);
+        attack_scatter(weapon, xpos, ypos, dir, ignore, play_sound, allow_sound_stacking, uniform);
         break;
     case weapon_modifier.sword:
         attack_sword(weapon, xpos, ypos, dir, ignore);
