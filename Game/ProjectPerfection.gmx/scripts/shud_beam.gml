@@ -1,5 +1,5 @@
 ///shud_beam()
-speed = 5;
+speed = 5 * speed_mod;
 
 if(sm_ticks() > 80)
 {
@@ -30,3 +30,5 @@ else if(sm_ticks() > 25)
     var t_dir = -point_direction(x, y, obj_player.x, obj_player.y);
     shud_turn_dir(t_dir, 1);
 }
+
+attack_gun(mele, x, y, 0, self, false, false);

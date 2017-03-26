@@ -29,7 +29,7 @@
 x_end = x;
 y_end = y;
 hit_instance = undefined;
-alarm[0] = 5;
+alarm[0] = 3;
 
 parent = self;
 damage = 0;
@@ -115,6 +115,8 @@ y_off = 45;
         y_end = y + lengthdir_y(max_range, direction);
     }
 }
+
+image_alpha = 1 - ((1 / 3) * (3 - alarm[0]))
 </string>
           </argument>
         </arguments>

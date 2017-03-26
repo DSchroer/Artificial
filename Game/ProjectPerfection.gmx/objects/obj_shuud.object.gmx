@@ -30,6 +30,8 @@ current_health = 15000;
 max_health = 15000;
 iframes = 0;
 
+speed_mod = 1;
+
 image_xscale = 2;
 image_yscale = 2;
 
@@ -61,19 +63,25 @@ mele[weapon_index.bullet_speed] = 0;
 scream = inventory_create_weapon();
 scream[weapon_index.modifier] = weapon_modifier.scatter;
 scream[weapon_index.bullet_sprite] = spr_bullet;
-scream[weapon_index.damage] = 250;
+scream[weapon_index.damage] = 750;
 scream[weapon_index.accuracy] = 10;
 
 sweat = inventory_create_weapon();
 sweat[weapon_index.modifier] = weapon_modifier.plasma;
 sweat[weapon_index.bullet_sprite] = spr_plasma;
-sweat[weapon_index.damage] = 50;
+sweat[weapon_index.damage] = 150;
 sweat[weapon_index.accuracy] = 0;
+
+moist = inventory_create_weapon();
+moist[weapon_index.modifier] = weapon_modifier.plasma;
+moist[weapon_index.bullet_sprite] = spr_plasma;
+moist[weapon_index.damage] = 150;
+moist[weapon_index.accuracy] = 0;
 
 beam = inventory_create_weapon();
 beam[weapon_index.modifier] = weapon_modifier.rail;
 beam[weapon_index.bullet_sprite] = spr_rail;
-beam[weapon_index.damage] = 50;
+beam[weapon_index.damage] = 200;
 beam[weapon_index.accuracy] = 0;
 </string>
           </argument>
@@ -103,6 +111,11 @@ if(iframes &gt; 0)
     iframes -= 1;
 }
 
+if(current_health / max_health &lt; 0.5)
+{
+    speed_mod = 1.5;
+}
+
 var state = sm_get_state();
 debug_show_string(state);
 if(player_exists())
@@ -123,6 +136,9 @@ if(player_exists())
             break;
         case "sweat":
             shud_sweat();
+            break;
+        case "moist":
+            shud_moist();
             break;
         case "beam":
             shud_beam();

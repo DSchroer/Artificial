@@ -1,6 +1,6 @@
 ///shud_sweat()
 
-speed = 15;
+speed = 15 * speed_mod;
 
 if(sm_ticks() % 15 == 0)
 {
@@ -17,3 +17,5 @@ if(sm_ticks() > 30 * 5)
 {
     sm_set_state("turn");
 }
+
+attack_gun(mele, x, y, 0, self, false, false);

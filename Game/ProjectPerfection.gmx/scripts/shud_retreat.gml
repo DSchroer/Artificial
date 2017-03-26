@@ -1,5 +1,5 @@
 ///shud_retreat()
-speed = 10;
+speed = 10 * speed_mod;
 
 if(sm_ticks() > 100)
 {
