@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>sfx_bkg_set_volume_modifier(6.0);
 sfx_bkg_add_without_reset(bkg_hub2);
 </string>
           </argument>

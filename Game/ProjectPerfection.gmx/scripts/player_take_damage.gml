@@ -1,5 +1,7 @@
 ///player_take_damage()
 
+damage *= balance_get_player_damage_modifier();
+
 if(invincible == 0)
 {
     invincible = 15;

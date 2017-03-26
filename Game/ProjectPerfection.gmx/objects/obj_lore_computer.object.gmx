@@ -38,7 +38,7 @@
     {
         ui_textbox_queue("|red No lore entries found.");
     }
-
+    sfx_play_volume(snd_computer_interact, false, 0.33);
 }
 </string>
           </argument>

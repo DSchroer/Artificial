@@ -91,6 +91,12 @@ weapon = enemy_scale_gun(weapon, pow);
             <kind>1</kind>
             <string>isomorphic_set_depth();
 
+
+if(random(5000) &lt; 1)
+{
+    sfx_play_volume(snd_grunt_ambient, false, 1.0);
+}
+
 var state = sm_get_state();
 
 if(player_exists())
@@ -143,7 +149,7 @@ if(instance_exists(obj_progress))
     var items;
     var item_index = 0;
 
-    if(random(12) &lt; 1)
+    if(random(30) &lt; 1)
     {
         var gun = instance_create(x, y, obj_item);
         gun.data = inventory_spawn_gun(pow);

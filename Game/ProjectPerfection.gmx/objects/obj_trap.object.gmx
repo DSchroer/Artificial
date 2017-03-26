@@ -81,6 +81,7 @@ image_index = 0;
 image_speed = 1;
 isomorphic_set_depth();
 
+sfx_play_volume(sfx_trap_spike, false, 0.5);
 if(!one_shot)
 {
     alarm[1] = one_shot_timeout;

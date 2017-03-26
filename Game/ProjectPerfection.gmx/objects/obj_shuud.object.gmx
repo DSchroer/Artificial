@@ -83,6 +83,10 @@ beam[weapon_index.modifier] = weapon_modifier.rail;
 beam[weapon_index.bullet_sprite] = spr_rail;
 beam[weapon_index.damage] = 200;
 beam[weapon_index.accuracy] = 0;
+
+phase = false;
+volume_mod = 1.0;
+ds_list_add(hurt_sounds, snd_shuude_hit); 
 </string>
           </argument>
         </arguments>
@@ -105,7 +109,14 @@ beam[weapon_index.accuracy] = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+		<string>
+
+if(!phase &amp;&amp; ui_get_boss_health_percent() &lt; 0.5)
+{
+    phase = true;
+    sfx_play_volume(snd_shuude_phase, false, 1.0);
+}
+            
 if(iframes &gt; 0)
 {
     iframes -= 1;

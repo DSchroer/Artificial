@@ -69,7 +69,7 @@ if(!hitbox_set)
 if(!sfx_played)
 {
     sfx_played = true;
-   // sfx_play(snd_gun_drop, false);
+    sfx_play_volume(snd_gun_drop, false, 0.27);
 }
 </string>
           </argument>

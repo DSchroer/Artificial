@@ -38,6 +38,7 @@ index = 0;
 active_sprite = spr_button_active;
 inactive_sprite = spr_button;
 lines = -1;
+muted = false;
 </string>
           </argument>
         </arguments>
@@ -89,7 +90,10 @@ if(obj_menu.index == self.index)
                 event_user(index);
             }
         }
-        sfx_play(snd_button, false);
+        if(!muted)
+        {
+            sfx_play(snd_button, false);
+        }
     }
     sprite_index = active_sprite;
     //image_xscale = scale;
