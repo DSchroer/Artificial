@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>entity_init();
 event_inherited();
-max_health = 7500;
-current_health = 7500;
+max_health = 5000;
+current_health = 5000;
 
 sm_init("idle");
 
@@ -40,10 +40,17 @@ shots = 0;
 
 sniper = inventory_create_weapon();
 sniper[weapon_index.modifier] = weapon_modifier.normal;
-sniper[weapon_index.damage] = 50;
+sniper[weapon_index.damage] = 100;
 sniper[weapon_index.bullet_sprite] = spr_bullet;
 sniper[weapon_index.bullet_speed] = 30;
 sniper[weapon_index.accuracy] = 0;
+
+mgun = inventory_create_weapon();
+mgun[weapon_index.modifier] = weapon_modifier.normal;
+mgun[weapon_index.damage] = 30;
+mgun[weapon_index.bullet_sprite] = spr_bullet;
+mgun[weapon_index.bullet_speed] = 30;
+mgun[weapon_index.accuracy] = 15;
 
 //ds_list_add(hurt_sounds, snd_enemy_rock1);  
 //ds_list_add(hurt_sounds, snd_enemy_rock2);
@@ -89,13 +96,16 @@ if(player_exists())
         case "fire":
             twan_fire_shot();
             break;
+        case "mgun":
+            twan_fire_mgun();
+            break;
         case "mine":
             twan_mine();
             break;
     }
 }
 
-entity_collision();
+//entity_collision();
 </string>
           </argument>
         </arguments>

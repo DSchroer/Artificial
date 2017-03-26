@@ -560,6 +560,7 @@
         <script>scripts\twan_idle.gml</script>
         <script>scripts\twan_find_point.gml</script>
         <script>scripts\twan_fire_shot.gml</script>
+        <script>scripts\twan_fire_mgun.gml</script>
         <script>scripts\twan_mine.gml</script>
       </scripts>
     </scripts>
@@ -957,7 +958,6 @@
       <objects name="Boss3">
         <object>objects\obj_twan</object>
         <object>objects\obj_twan_point</object>
-        <object>objects\obj_twan_mine</object>
         <object>objects\obj_twan_turret</object>
       </objects>
       <objects name="Boss4">
