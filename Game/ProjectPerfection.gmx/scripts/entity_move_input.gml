@@ -182,6 +182,9 @@ if(abs(haxis_rs) > 0.35 || abs(vaxis_rs) > 0.35)
     var px = display_get_gui_width() / 2;
     var py = display_get_gui_height() / 2;
     
-    window_mouse_set( px + lengthdir_x(magnitude * px, dir), py +  lengthdir_y(magnitude * py, dir));
+    px = lerp(window_mouse_get_x(), px + lengthdir_x(magnitude * px, dir), 0.05);
+    py = lerp(window_mouse_get_y(), py + lengthdir_y(magnitude * py, dir), 0.05);
+    
+    window_mouse_set( px, py);
 }
 

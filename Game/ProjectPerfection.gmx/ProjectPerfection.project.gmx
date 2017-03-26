@@ -363,6 +363,12 @@
         <sprite>sprites\spr_rifle_assault</sprite>
         <sprite>sprites\spr_rifle_doku</sprite>
         <sprite>sprites\spr_rifle_reflex</sprite>
+        <sprites name="Unique">
+          <sprite>sprites\spr_azar_will</sprite>
+          <sprite>sprites\spr_dym_hands</sprite>
+          <sprite>sprites\spr_twan_eye</sprite>
+          <sprite>sprites\spr_shuud_voice</sprite>
+        </sprites>
       </sprites>
       <sprite>sprites\spr_healthpack</sprite>
       <sprite>sprites\spr_book</sprite>
@@ -384,6 +390,15 @@
     <sprite>sprites\spr_tutorial_dash</sprite>
     <sprite>sprites\spr_tutorial_dash2</sprite>
     <sprite>sprites\spr_sparkle</sprite>
+    <sprites name="Lights">
+      <sprite>sprites\spr_pointlight</sprite>
+      <sprite>sprites\spr_conelight</sprite>
+      <sprite>sprites\spr_directedlight</sprite>
+      <sprite>sprites\spr_wall_bloom</sprite>
+    </sprites>
+    <sprites name="Effects">
+      <sprite>sprites\spr_loot</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -588,6 +603,7 @@
       </scripts>
       <script>scripts\generator_register_items.gml</script>
       <script>scripts\generator_spawn_item.gml</script>
+      <script>scripts\generator_spawn_item_ext.gml</script>
     </scripts>
     <scripts name="Gun">
       <script>scripts\gun_hand_distance.gml</script>
@@ -608,6 +624,7 @@
       <script>scripts\keymap_check.gml</script>
       <script>scripts\keymap_gamepad_check.gml</script>
       <script>scripts\keymap_gamepad_check_pressed.gml</script>
+      <script>scripts\keymap_gamepad_check_released.gml</script>
     </scripts>
     <script>scripts\kill_boss.gml</script>
     <scripts name="Level">
@@ -636,6 +653,7 @@
       <script>scripts\level_can_place_item.gml</script>
       <script>scripts\level_drop_items.gml</script>
       <script>scripts\level_drop_item_ext.gml</script>
+      <script>scripts\level_path_in_stub.gml</script>
     </scripts>
     <scripts name="Map">
       <script>scripts\minimap_init.gml</script>
@@ -678,6 +696,7 @@
         </scripts>
         <script>scripts\inventory_get_tutorial_weapon.gml</script>
         <script>scripts\inventory_get_tutorial_weapon2.gml</script>
+        <script>scripts\inventory_quality_color.gml</script>
       </scripts>
       <script>scripts\player_activate_shield.gml</script>
       <script>scripts\player_compute_stats.gml</script>
@@ -857,6 +876,7 @@
       <script>scripts\balance_get_loot_scaling_coefficient.gml</script>
       <script>scripts\balance_global_difficulty_coefficient.gml</script>
     </scripts>
+    <script>scripts\cube_get_sprite.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdr_circle.shader</shader>
@@ -911,6 +931,7 @@
       <object>objects\obj_navmesh</object>
       <object>objects\obj_progress_bar</object>
       <object>objects\obj_transition</object>
+      <object>objects\obj_direct_line</object>
     </objects>
     <objects name="Effects">
       <object>objects\obj_damage_indicator</object>
@@ -1063,6 +1084,17 @@
     <objects name="Story">
       <object>objects\obj_story_trigger</object>
       <object>objects\obj_story_hub</object>
+    </objects>
+    <objects name="Lighting">
+      <object>objects\obj_lightdrawer</object>
+      <object>objects\obj_light</object>
+      <object>objects\obj_pointlight</object>
+    </objects>
+    <objects name="Weapons">
+      <object>objects\obj_azar_will</object>
+      <object>objects\obj_dym_hands</object>
+      <object>objects\obj_twan_eye</object>
+      <object>objects\obj_shuud_voice</object>
     </objects>
   </objects>
   <rooms name="rooms">

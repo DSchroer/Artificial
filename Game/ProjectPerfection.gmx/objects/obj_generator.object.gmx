@@ -142,12 +142,11 @@ custom_room = room_add();
 room_set_background_colour(custom_room, c_black, true);
 generator_spawn_at(0, custom_room, obj_clear_entities);
 generator_spawn_at(0, custom_room, obj_fade_in);
+generator_spawn_at(0, custom_room, obj_direct_line);
 
 var end_key = generator_spawn_exit(custom_room);
 generator_spawn_at(end_key, custom_room, obj_clear_entities);
 generator_use_room(end_key);
-
-generator_register_items();
 
 room_set_height(custom_room, height * 64);
 room_set_width(custom_room, width * 64);

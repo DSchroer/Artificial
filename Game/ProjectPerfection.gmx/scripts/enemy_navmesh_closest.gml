@@ -16,9 +16,9 @@ with(navmesh)
         return closest;
     }
     
-    for(var i = -1; i < 2; i++)
+    for(var i = -2; i < 3; i++)
     {
-        for(var j = -1; j < 2; j++)
+        for(var j = -2; j < 3; j++)
         {
             closest[0] = xp + (i * 32);
             closest[1] = yp + (j * 32);

@@ -1,5 +1,12 @@
 ///player_set_sprite()
 
+if(is_paused())
+{
+    image_speed = 0;
+}else {
+    image_speed = 0.25;
+}
+
 var haxis_ls = gamepad_axis_value(0, gp_axislh);
 var vaxis_ls = gamepad_axis_value(0, gp_axislv);
 if(speed != 0 && 
