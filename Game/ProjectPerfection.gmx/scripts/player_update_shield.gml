@@ -24,7 +24,7 @@ if(is_shield_active)
     }
     else
     {
-        var recharge_ammount = shield_max_health * shield_recharge_rate * (delta_time / 1000000);
+        var recharge_ammount = shield_recharge_rate * (delta_time / 1000000);
         if(superfast_recharge)
         {
             recharge_ammount *= 4;
@@ -44,13 +44,11 @@ if(is_shield_active)
         shield_is_recharging = true;
     }
     
-    if(remaining_shield > 0)
-    {
-        
-    } 
 }
 else 
 {
     remaining_shield = 0;
     shield_is_recharging = false;
 }
+
+debug_show_string("SR: " + string(shield_recharge_rate));
