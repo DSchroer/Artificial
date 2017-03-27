@@ -321,6 +321,8 @@
       <sprite>sprites\spr_teleport</sprite>
       <sprite>sprites\spr_teleport_dead</sprite>
       <sprite>sprites\spr_teleport_decal</sprite>
+      <sprite>sprites\spr_bollard</sprite>
+      <sprite>sprites\spr_plate</sprite>
     </sprites>
     <sprites name="Traps">
       <sprite>sprites\spr_trap_stall</sprite>
@@ -1100,6 +1102,11 @@
       <object>objects\obj_tutorial_teleporter</object>
       <object>objects\obj_tutorial_prop_dash</object>
       <object>objects\obj_tutorial_prop_dash_2</object>
+      <objects name="Dash">
+        <object>objects\obj_bollard</object>
+        <object>objects\obj_plate</object>
+        <object>objects\obj_dash_area</object>
+      </objects>
     </objects>
     <objects name="UI">
       <object>objects\obj_minimap</object>
