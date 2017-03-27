@@ -143,6 +143,12 @@ x = room_width / 2;
 y = room_height / 2;
 
 roll_boss_loot(3);
+
+if(random(1) &lt; 0.15)
+{
+    instance_create(x - 250 + random(500), y + random(300), obj_twan_eye);
+}
+
 kill_boss(3);
 obj_progress.progress++;
 if(obj_progress.cube_parts &lt; 3)
