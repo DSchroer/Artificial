@@ -95,5 +95,6 @@ reload = inventory_scale_stat(reload, bases[q] / 100, ranges[q] / 100, core[subT
 gun[weapon_index.reload_timeout] = reload * 60;
 
 gun = inventory_skin_gun(gun);
+gun[weapon_index.name] = inventory_gun_name(gun);
 
 return gun;
