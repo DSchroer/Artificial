@@ -95,6 +95,7 @@ if(is_open &amp;&amp; !created)
 else if(!is_open &amp;&amp; created)
 {
     workbench_destroy_menu();
+    instance_destroy();
 }
 
 
@@ -125,6 +126,10 @@ with(obj_player)
 {
     open_workbench = false;
 }
+
+instance_destroy();
+
+
 </string>
           </argument>
         </arguments>

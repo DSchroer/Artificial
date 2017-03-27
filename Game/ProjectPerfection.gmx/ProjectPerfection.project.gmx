@@ -237,6 +237,7 @@
         <sprite>sprites\spr_textback_flash</sprite>
         <sprite>sprites\spr_textback</sprite>
         <sprite>sprites\spr_workbench_ui</sprite>
+        <sprite>sprites\spr_lore_book</sprite>
         <sprite>sprites\spr_button_gray</sprite>
         <sprite>sprites\spr_progress</sprite>
         <sprite>sprites\spr_prog_pos</sprite>
@@ -798,6 +799,7 @@
         <script>scripts\credits_draw.gml</script>
         <script>scripts\credits_is_complete.gml</script>
       </scripts>
+      <script>scripts\ui_draw_journal.gml</script>
       <script>scripts\ui_can_render_tooltips.gml</script>
       <script>scripts\ui_check_weapon_slot_tooltip.gml</script>
       <script>scripts\ui_draw.gml</script>
@@ -837,7 +839,6 @@
       <script>scripts\ui_textbox_unqueue.gml</script>
       <script>scripts\ui_world_to_gui_x.gml</script>
       <script>scripts\ui_world_to_gui_y.gml</script>
-      <script>scripts\script358.gml</script>
     </scripts>
     <script>scripts\wall_casts_shadow.gml</script>
     <scripts name="Workbench">

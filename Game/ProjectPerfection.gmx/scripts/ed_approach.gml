@@ -12,4 +12,4 @@ if(point_distance(x, y, obj_player.x, obj_player.y) < 75)
     exit;
 }
 
-enemy_navmesh_move(obj_player, 6, 30);
+enemy_navmesh_move(obj_player, 8, 30);

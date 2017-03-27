@@ -59,7 +59,6 @@
     <instance objName="obj_interact_area" x="1440" y="1440" name="inst_DD2193E2" locked="-1" code="text = &quot;The parts of the cube you've gathered hover in the air, powerless in its current form.&quot;&#xA;" scaleX="3" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="obj_display_cube" x="1392" y="1312" name="inst_BD1E0FF8" locked="-1" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_hub" x="256" y="160" name="inst_FE8E36AE" locked="-1" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_menu_workbench" x="128" y="160" name="inst_0C172299" locked="-1" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_workbench" x="2112" y="1024" name="inst_D7B3D20F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_teleport" x="576" y="1312" name="inst_A06DFF83" locked="0" code="target = 1;&#xA;image_index = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_teleport" x="768" y="1312" name="inst_08319C16" locked="0" code="target = 2;&#xA;image_index = 2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
