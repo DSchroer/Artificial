@@ -736,6 +736,7 @@
         <script>scripts\inventory_get_tutorial_weapon.gml</script>
         <script>scripts\inventory_get_tutorial_weapon2.gml</script>
         <script>scripts\inventory_quality_color.gml</script>
+        <script>scripts\inventory_gun_name.gml</script>
       </scripts>
       <script>scripts\player_activate_shield.gml</script>
       <script>scripts\player_compute_stats.gml</script>
