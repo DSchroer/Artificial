@@ -79,7 +79,7 @@ image_index = 0;
             <kind>1</kind>
             <string>event_user(0);
 image_speed = 1;
-isomorphic_set_depth();
+depth = isomorphic_set_depth_ext(y + 22);
 
 sfx_play_volume(sfx_trap_spike, false, 0.5);
 if(!one_shot)
