@@ -2,7 +2,7 @@
 <sprite>
   <type>0</type>
   <xorig>64</xorig>
-  <yorigin>120</yorigin>
+  <yorigin>122</yorigin>
   <colkind>1</colkind>
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
@@ -18,7 +18,7 @@
   </TextureGroups>
   <For3D>0</For3D>
   <width>128</width>
-  <height>128</height>
+  <height>132</height>
   <frames>
     <frame index="0">images\spr_azar_idle_0.png</frame>
     <frame index="1">images\spr_azar_idle_1.png</frame>
