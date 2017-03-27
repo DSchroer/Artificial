@@ -188,6 +188,19 @@
     <instance objName="obj_invisible_wall" x="1024" y="672" name="inst_BF8FE800" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="1088" y="672" name="inst_7F4A32AB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_hub_sound" x="576" y="352" name="inst_81210984" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_plate" x="1984" y="896" name="inst_5C41C4A6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_plate" x="1984" y="928" name="inst_B954EA34" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_plate" x="1984" y="960" name="inst_969D9751" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_plate" x="1984" y="992" name="inst_3E8596C8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_plate" x="1984" y="1024" name="inst_6A9DB3C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_plate" x="1984" y="1056" name="inst_E0FF2F0E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_dash_area" x="1984" y="928" name="inst_63F0B3C1" locked="0" code="" scaleX="3" scaleY="3.04761910438538" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bollard" x="2176" y="896" name="inst_426C20F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bollard" x="2176" y="928" name="inst_6C3383A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bollard" x="2176" y="960" name="inst_362879B4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bollard" x="2176" y="992" name="inst_6FB4A20C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bollard" x="2176" y="1024" name="inst_FB15604A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bollard" x="2176" y="1056" name="inst_4C0147F7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bkg_hub_new" x="608" y="736" w="192" h="192" xo="192" yo="192" id="10024004" name="inst_56C6B27D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

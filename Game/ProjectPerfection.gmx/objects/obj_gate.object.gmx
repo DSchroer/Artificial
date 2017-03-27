@@ -86,8 +86,31 @@ vertical = false;
     }
     if(enemies)
     {
-        if(open &amp;&amp; !instance_place(x, y, obj_entity))
+        if(open)
         {
+            var inst = instance_place(x, y, obj_entity);
+            while(inst)
+            {
+                if(vertical)
+                {
+                    if(inst.x &gt; x + 32)
+                    {
+                        inst.x += 10;
+                    }else{
+                        inst.x -= 10;
+                    }
+                }else{
+                    if(inst.y &gt; y + 32)
+                    {
+                        inst.y += 10;
+                    }else{
+                        inst.y -= 10;
+                    }
+                }
+                
+                inst = instance_place(x, y, obj_entity);
+            }
+            
             if(instance_exists(obj_cgrid))
             {
                 cgrid_set_collision(id);

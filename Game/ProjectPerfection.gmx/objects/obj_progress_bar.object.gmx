@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>
 texture_set_interpolation(false);
-var scale = (view_wport - 200) / sprite_width;
-draw_sprite_ext(sprite_index, obj_progress.progress, view_xport[0] + 100, view_hport/2, scale, scale, 0, c_white, 1);
+var scale = (display_get_gui_width() - 200) / sprite_width;
+draw_sprite_ext(sprite_index, obj_progress.progress, 100, (display_get_gui_height() / 2) - ((sprite_height / 2) * scale), scale, scale, 0, c_white, 1);
 
 </string>
           </argument>

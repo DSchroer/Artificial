@@ -226,7 +226,7 @@ if(room_exists(ind))
     instance_destroy();
 }
 
-room_goto(rm_boss_final);
+room_goto(rm_sandbox);
 </string>
           </argument>
         </arguments>
