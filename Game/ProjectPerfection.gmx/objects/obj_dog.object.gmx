@@ -119,9 +119,6 @@ if(player_exists())
     switch(state)
     {
         case "paused":
-            speed = 0;
-            image_speed = 0;
-            break;
         case "idle":
             eg_idle();
             break;
