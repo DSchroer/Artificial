@@ -144,7 +144,11 @@ event_inherited();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>var yscale = 1;
+if(obj_player.x &lt; x)
+{
+    yscale = -1;
+}
 
 switch(hit_stage)
 {
@@ -154,7 +158,7 @@ switch(hit_stage)
         draw_outline_update(sprite_index, false);
         draw_self();
         draw_outline_end();
-        draw_weapon(weapon, x, y - 32, 1, 1, point_direction(x, y, obj_player.x, obj_player.y), 1);
+        draw_weapon(weapon, x, y - 32, 1, yscale, point_direction(x, y, obj_player.x, obj_player.y), 1);
         break;
         
     }
@@ -163,7 +167,7 @@ switch(hit_stage)
         --hit_stage;
         shader_set(sdr_fill);
         draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_black, 1);
-        draw_weapon_color(weapon, x, y - 32, 1, 1, point_direction(x, y, obj_player.x, obj_player.y), 1, c_black);
+        draw_weapon_color(weapon, x, y - 32, 1, yscale, point_direction(x, y, obj_player.x, obj_player.y), 1, c_black);
         shader_reset();
         break;
     }
@@ -172,7 +176,7 @@ switch(hit_stage)
         --hit_stage;
         shader_set(sdr_fill);
         draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_white, 1);
-        draw_weapon_color(weapon, x, y - 32, image_xscale, 1, point_direction(x, y, obj_player.x, obj_player.y), 1, c_white);
+        draw_weapon_color(weapon, x, y - 32, 1, yscale, point_direction(x, y, obj_player.x, obj_player.y), 1, c_white);
         shader_reset();
         break;
     }
