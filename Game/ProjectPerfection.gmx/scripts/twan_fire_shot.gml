@@ -6,7 +6,7 @@ if(sm_ticks() == 0)
 
 if(sm_ticks() == 30 + sm_get_var("rand"))
 {
-    enemy_attack(obj_player, sniper);
+    enemy_attack_pos(obj_player, sniper, x, y - 64);
     sfx_play_volume(snd_thwander_sniper_rifle_shot, true, 0.25);
 }
 
