@@ -211,6 +211,8 @@
         <sprite>sprites\spr_grunt</sprite>
         <sprite>sprites\spr_brute</sprite>
         <sprite>sprites\spr_turret</sprite>
+        <sprite>sprites\spr_dog_move</sprite>
+        <sprite>sprites\spr_grunt_move</sprite>
       </sprites>
       <sprite>sprites\spr_env_rock</sprite>
       <sprites name="Boss">
@@ -399,6 +401,10 @@
           <sprite>sprites\spr_twan_eye</sprite>
           <sprite>sprites\spr_shuud_voice</sprite>
         </sprites>
+        <sprite>sprites\spr_smg_base</sprite>
+        <sprite>sprites\spr_smg_assault</sprite>
+        <sprite>sprites\spr_smg_doku</sprite>
+        <sprite>sprites\spr_smg_reflex</sprite>
       </sprites>
       <sprite>sprites\spr_healthpack</sprite>
       <sprite>sprites\spr_book</sprite>
