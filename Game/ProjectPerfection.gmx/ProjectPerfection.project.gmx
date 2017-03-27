@@ -320,6 +320,7 @@
       <sprite>sprites\spr_laser_middle</sprite>
       <sprite>sprites\spr_teleport</sprite>
       <sprite>sprites\spr_teleport_dead</sprite>
+      <sprite>sprites\spr_teleport_decal</sprite>
     </sprites>
     <sprites name="Traps">
       <sprite>sprites\spr_trap_stall</sprite>
