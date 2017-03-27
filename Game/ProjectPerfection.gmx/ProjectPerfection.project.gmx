@@ -211,6 +211,7 @@
         <sprite>sprites\spr_grunt</sprite>
         <sprite>sprites\spr_brute</sprite>
         <sprite>sprites\spr_turret</sprite>
+        <sprite>sprites\spr_dog_move</sprite>
       </sprites>
       <sprite>sprites\spr_env_rock</sprite>
       <sprites name="Boss">

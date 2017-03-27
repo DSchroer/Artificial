@@ -97,14 +97,32 @@ weapon = enemy_scale_gun(weapon, pow);
   //  sfx_play_volume(snd_dog_ambient, false, 0.75);
 //}
 
+if(obj_player.x &gt; x)
+{
+    image_xscale = 1;
+}else{
+    image_xscale = -1;
+}
+
 var state = sm_get_state();
+
+if(speed != 0)
+{
+    sprite_index = spr_dog_move;
+}else{
+    sprite_index = spr_dog;
+}
+image_speed = 0.5;
 
 if(player_exists())
 {
     switch(state)
     {
-        case "idle":
         case "paused":
+            speed = 0;
+            image_speed = 0;
+            break;
+        case "idle":
             eg_idle();
             break;
         case "approach":
