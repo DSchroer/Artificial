@@ -372,6 +372,7 @@
       <sprite>sprites\spr_azar_rock</sprite>
       <sprite>sprites\spr_rock</sprite>
       <sprite>sprites\spr_direction_rock</sprite>
+      <sprite>sprites\spr_small_arrow</sprite>
       <sprite>sprites\spr_sword</sprite>
       <sprite>sprites\spr_wave</sprite>
       <sprite>sprites\spr_muzzle_flash</sprite>
@@ -640,6 +641,7 @@
       <script>scripts\generator_register_items.gml</script>
       <script>scripts\generator_spawn_item.gml</script>
       <script>scripts\generator_spawn_item_ext.gml</script>
+      <script>scripts\generator_place_directions.gml</script>
     </scripts>
     <scripts name="Gun">
       <script>scripts\gun_hand_distance.gml</script>
@@ -690,6 +692,7 @@
       <script>scripts\level_drop_items.gml</script>
       <script>scripts\level_drop_item_ext.gml</script>
       <script>scripts\level_path_in_stub.gml</script>
+      <script>scripts\level_stub_at.gml</script>
     </scripts>
     <scripts name="Map">
       <script>scripts\minimap_init.gml</script>
@@ -1024,6 +1027,7 @@
       <object>objects\obj_story</object>
       <object>objects\obj_light1</object>
       <object>objects\obj_light2</object>
+      <object>objects\obj_marker</object>
     </objects>
     <objects name="Interact">
       <object>objects\obj_door</object>
