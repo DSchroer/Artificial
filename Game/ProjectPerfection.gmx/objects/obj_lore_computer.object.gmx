@@ -25,7 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!ui_textbox_open() &amp;&amp; obj_player.textbox_cooldown &lt;= 0)
+            <string>
+ui_open_journal();
+
+exit;
+if(!ui_textbox_open() &amp;&amp; obj_player.textbox_cooldown &lt;= 0)
 {
     var text = book_text();
     var lore_state = save_get_value(obj_save_data, "lore", 0)

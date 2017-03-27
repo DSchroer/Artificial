@@ -241,6 +241,8 @@
         <sprite>sprites\spr_button_gray</sprite>
         <sprite>sprites\spr_progress</sprite>
         <sprite>sprites\spr_prog_pos</sprite>
+        <sprite>sprites\spr_journal_entry_button</sprite>
+        <sprite>sprites\spr_journal_entry_active</sprite>
       </sprites>
       <sprites name="HUD">
         <sprite>sprites\spr_laser_full</sprite>
@@ -839,6 +841,9 @@
       <script>scripts\ui_textbox_unqueue.gml</script>
       <script>scripts\ui_world_to_gui_x.gml</script>
       <script>scripts\ui_world_to_gui_y.gml</script>
+      <script>scripts\ui_open_journal.gml</script>
+      <script>scripts\ui_close_journal.gml</script>
+      <script>scripts\ui_is_blocking_window_open.gml</script>
     </scripts>
     <script>scripts\wall_casts_shadow.gml</script>
     <scripts name="Workbench">

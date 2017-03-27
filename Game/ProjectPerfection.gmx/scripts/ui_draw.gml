@@ -22,3 +22,5 @@ ui_draw_boss_health();
 ui_draw_action_indicators();
 ui_draw_textbox_element();
 ui_draw_tooltips();
+
+ui_draw_journal();

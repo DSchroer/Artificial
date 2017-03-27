@@ -1,6 +1,6 @@
 ///entity_move_input()
 
-if(is_paused() || dead || room == rm_transition || open_workbench || ui_textbox_open())
+if(is_paused() || dead || room == rm_transition || open_workbench || ui_textbox_open() || journal_is_open)
 {
     if(ui_textbox_open() && keymap_check(keycode.interact))
     {
