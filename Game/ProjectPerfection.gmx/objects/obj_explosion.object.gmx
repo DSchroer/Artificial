@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0] = 5;
+            <string>alarm[0] = 9;
 
 parent = self;
 damage = 0;
