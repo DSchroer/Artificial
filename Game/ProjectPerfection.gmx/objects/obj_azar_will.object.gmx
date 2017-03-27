@@ -28,6 +28,18 @@
             <string>event_inherited();
 
 data = inventory_create_weapon();
+data[weapon_index.modifier] = weapon_modifier.rocket;
+data[weapon_index.weapon_subtype] = weapon_subtype.machine_gun;
+data[weapon_index.name] = "Azar's Will";
+data[weapon_index.quality] = item_quality.unique;
+data[weapon_index.damage] = 12;
+data[weapon_index.capacity] = 60;
+data[weapon_index.remaining] = 60;
+data[weapon_index.reload_timeout] = 5 * 60;
+data[weapon_index.fire_timeout] = 60 / 25;
+data[weapon_index.bullet_speed] = 10;
+data[weapon_index.accuracy] = 15;
+data[weapon_index.recoil_modifier] = 2;
 data[weapon_index.sprite_count] = 1;
 data[weapon_index.sprite_count + 1] = spr_azar_will;
 data[weapon_index.sprite_count + 2] = c_white;

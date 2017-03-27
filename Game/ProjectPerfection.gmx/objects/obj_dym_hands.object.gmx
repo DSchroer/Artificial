@@ -28,6 +28,18 @@
             <string>event_inherited();
 
 data = inventory_create_weapon();
+data[weapon_index.modifier] = weapon_modifier.scatter;
+data[weapon_index.weapon_subtype] = weapon_subtype.smg;
+data[weapon_index.name] = "Hand of Dym";
+data[weapon_index.quality] = item_quality.unique;
+data[weapon_index.damage] = 12.5;
+data[weapon_index.capacity] = 30;
+data[weapon_index.remaining] = 30;
+data[weapon_index.reload_timeout] = 1 * 60;
+data[weapon_index.fire_timeout] = 60 / 20;
+data[weapon_index.bullet_speed] = 20;
+data[weapon_index.accuracy] = 20;
+data[weapon_index.recoil_modifier] = 1;
 data[weapon_index.sprite_count] = 1;
 data[weapon_index.sprite_count + 1] = spr_dym_hands;
 data[weapon_index.sprite_count + 2] = c_white;
