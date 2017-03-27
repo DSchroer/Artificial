@@ -14,12 +14,21 @@ Nick Tremblay
 Spencer Gould
 
 !Testers
+Alexander Storey
+Alyssa Roche
+Andrew Vissers
+Benjamin Ray
+Bradley Silliker 
+Brandon Ogon
+Jordan LeBlanc
+Joseph Daniels
 Nick Hall
+Mattias Schroer
 Mitch Ebbett
 Rob Jeffries
-Jordan LeBlanc
-Mattias Schroer
-Brandon Ogon
+Ryan Bell
+Tyler MacEachern
+Tyler Cosman
 
 !Other Code
 https://github.com/dicksonlaw583/jsonion-classic
@@ -28,13 +37,15 @@ https://github.com/dicksonlaw583/jsonion-classic
 Dominus - DL Sounds
 Catedral - DL Sounds
 Dark Atmosphere - DL Sounds
-Epic(Boss 1 Battle) - www.bensound.com
+Epic - www.bensound.com
 The Signals - Sergey Cheremisinov
 Don't Lie to Inner Child - Sergey Cheremisinov
 Six Degrees - Kryptic Minds
-Boss 2, 3, 4 Battle - Graham Plowman
-Final Boss Battle - Graham Plowman
-Depth Music - BaseWeightLove(Youtube)
+Return To Arkham - Graham Plowman
+Cthulhu Rising - Graham Plowman
+Flight of the Mi-Go - Graham Plowman
+Dagon - Graham Plowman
+Kryptic Minds Six Degrees - BaseWeightLove(Youtube)
 
 
 !Sound Effects

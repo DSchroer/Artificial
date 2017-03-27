@@ -9,21 +9,41 @@ var mx = device_mouse_x_to_gui(0);
 var my = device_mouse_y_to_gui(0);
 var width = display_get_gui_width();
 var height = display_get_gui_height();
-var xp = 100;
-var yp = 100;
-var button_width = sprite_get_width(spr_journal_entry_button);
-var button_height = 48;
+var back_width = width - 400;
+var back_height = height - 400;
+var xp = 200;
+var yp = 150;
+var padding = 3;
+var button_width = sprite_get_width(spr_journal_entry_button) ;
+var button_height = 48 ;
+var cell_width = 256;
+var cell_height = 48;
+var scroll_bar_size = 64;
+var scroll_bar_width = 16;
+
+// Book contents
+var max_sizes = book_get_max_sizes();
+var book_contents = book_get_computer_hub_lore(story_get_chapter());
+var sizes;
+for(var i = 0; i < array_length_1d(book_contents); i++)
+{
+    sizes[i] = array_length_1d(book_contents[i]);
+}
+var titles;
+titles[0] = "History of the Cube";
+titles[1] = "The Guardians";
+titles[2] = "Lyra";
+titles[3] = "Research Notes";
 
 // Navbar:
 
 // Background
-draw_sprite(spr_lore_book, -1, xp, yp);
-var number_of_rows = floor((sprite_get_height(spr_lore_book) - 3 * 64) / 48);
+draw_set_alpha(0.6);
+ui_set_colour("|artificial_navy");
+draw_rectangle(xp, yp, xp + cell_width + scroll_bar_width + padding, yp + back_height, false);
+draw_set_alpha(1.0);
+var number_of_rows = floor((back_height - array_length_1d(titles) * cell_height) / cell_height);
 
-var sizes;
-sizes[0] = 6;
-sizes[1] = 10;
-sizes[2] = 5;
 
 var yoffset = 0;
 var items_considered = 0;
@@ -31,13 +51,14 @@ for(var i = 0; i < array_length_1d(journal_is_open_slots); i++)
 {
     // Draw wider buttons for "categories"
     var spr_used = spr_journal_entry_button;
-    if(items_considered == scroll_index)
+    if(journal_active_category == i && journal_active_entry == -1)
     {
         spr_used = spr_journal_entry_active;
     }
-    draw_sprite_ext(spr_used, -1, xp, yp + yoffset, 1.3, 1, 0, c_white, 1);
+    draw_set_colour(c_gray);
+    draw_rectangle(xp + 2 * padding, yp + yoffset + 0.5 * padding, xp + cell_width - padding * 4, yp + yoffset + cell_height - padding * 0.5, false);
     items_considered++;
-    yoffset += 48;
+    yoffset += cell_height;
      
     // Draw sublists of the categories, as much as space allows.   
     if(journal_is_open_slots[i])
@@ -53,17 +74,21 @@ for(var i = 0; i < array_length_1d(journal_is_open_slots); i++)
         for(var j = start_range; j < end_range && number_of_rows > 0; j++)
         {
             spr_used = spr_journal_entry_button;
-            if(items_considered == scroll_index)
+            
+            //if(journal_active_category == i && journal_active_entry == j)
+            //{
+            if(scroll_index == items_considered)
             {
                 spr_used = spr_journal_entry_active;
+                journal_active_category = i;
+                journal_active_entry = j;
             }
+            //}
             
-            debug_show_string("JAC:" + string(journal_active_category));
-            debug_show_string("JAE:" + string(journal_active_entry));
-            
+                        
             draw_sprite(spr_used, -1, xp, yp + yoffset);
             draw_text(xp, yp + yoffset, string(j));
-            yoffset += 48;         
+            yoffset += cell_height;       
             number_of_rows--;
             items_considered++;
         }
@@ -83,15 +108,13 @@ for(var i = 0; i < array_length_1d(sizes); i++)
 
 ui_set_colour("|black");
 // Scroll bar background
-draw_rectangle(xp + sprite_get_width(spr_journal_entry_active) * 1.3, yp, 
-               xp + sprite_get_width(spr_journal_entry_active) * 1.3 + 16, yp + sprite_get_height(spr_lore_book), false);
+draw_rectangle(xp + cell_width, yp + padding, 
+               xp + cell_width + scroll_bar_width, yp + back_height - padding, false);
 // Scroll bar button 
-var sub_bar_size = 64;
-var sub_start = (sprite_get_height(spr_lore_book) - sub_bar_size) * (scroll_index / (size_sum - 1));
-var sub_bar_width = 16;
+var scroll_start = (back_height - scroll_bar_size) * (scroll_index / max(1, (size_sum - 1)));
 ui_set_colour("|gray");
-draw_rectangle(xp + sprite_get_width(spr_journal_entry_active) * 1.3, yp + sub_start, 
-               xp + sprite_get_width(spr_journal_entry_active) * 1.3 + sub_bar_width, yp + sub_start + sub_bar_size, false);
+draw_rectangle(xp + cell_width, yp + scroll_start, 
+               xp + cell_width + scroll_bar_width, yp + scroll_start + scroll_bar_size, false);
 
 // Input
 // Controller
@@ -101,7 +124,7 @@ if(keymap_check(keycode.back))
 }
 if(keymap_check(keycode.interact))
 {
-    number_of_rows = floor((sprite_get_height(spr_lore_book) - 3 * 64) / 48);
+    number_of_rows = floor((back_height - array_length_1d(titles) * cell_height) / cell_height);
     items_considered = 0;
     var done = false;
     for(var i = 0; i < array_length_1d(journal_is_open_slots) && !done; i++)
@@ -110,9 +133,10 @@ if(keymap_check(keycode.interact))
         {
             journal_is_open_slots[i] = !journal_is_open_slots[i];            
         }
-        items_considered++;        
+        items_considered++;                
         if(journal_is_open_slots[i])
         {
+        /*
             var start_range = 0;
             var end_range = sizes[i];
             if(scroll_index - items_considered >= number_of_rows)
@@ -133,6 +157,8 @@ if(keymap_check(keycode.interact))
                 number_of_rows--;
                 items_considered++;
             }
+            */
+            items_considered += sizes[i];
         }
     }
 }
@@ -153,8 +179,7 @@ if(journal_scroll_cooldown == 0)
         else
         {
             scroll_index++;
-        }
-                
+        }                
         scroll_index = clamp(scroll_index, 0, size_sum - 1);        
     }
 }
@@ -163,26 +188,17 @@ if(journal_scroll_cooldown > 0)
     journal_scroll_cooldown--;
 }
 
-
-
-
-debug_show_string("JAC:" + string(journal_active_category));
-debug_show_string("JAE:" + string(journal_active_entry));
-debug_show_string("Scroll:" + string(scroll_index));
-
 // Mouse
 if(mouse_check_button_pressed(mb_left))
 {    
-    if(point_in_rectangle(mx, my, xp + sprite_get_width(spr_journal_entry_active) * 1.3, yp, xp + sprite_get_width(spr_journal_entry_active) * 1.3 + sub_bar_width, yp + sprite_get_height(spr_lore_book)))
+    if(point_in_rectangle(mx, my, xp + cell_width, yp + padding * 2, xp + cell_width + scroll_bar_width, yp + back_height - padding * 4))
     {
-        percent = min((my - yp) / (sprite_get_height(spr_lore_book) - sub_bar_size), 1.0);
-        scroll_index = round(percent * size_sum - 1);
-
-    
+        percent = min((my - yp) / (back_height - scroll_bar_size), 1.0);
+        scroll_index = round(percent * max(size_sum - 1, 1));    
     }
     else
     {
-        number_of_rows = floor((sprite_get_height(spr_lore_book) - 3 * 64) / 48);        
+        number_of_rows = floor((back_height - array_length_1d(titles) * cell_height) / cell_height);   
         var done = false;    
         yoffset = 0;
         items_considered = 0;
@@ -197,7 +213,7 @@ if(mouse_check_button_pressed(mb_left))
                 break;
             }          
             items_considered++;
-            yoffset += 48;
+            yoffset += cell_height;
              
             if(journal_is_open_slots[i])
             {
@@ -222,21 +238,26 @@ if(mouse_check_button_pressed(mb_left))
                         journal_active_entry = j;
                         scroll_index = items_considered;
                         done = true;
-                    }
-                    
-                    yoffset += 48;         
+                    }                    
+                    yoffset += cell_height;         
                     number_of_rows--;
                     items_considered++;
-                }
-                
+                }                
                 items_considered += extra;
             }
-        }
-    
+        }    
     }
-
 }
 
-//
+if(journal_active_category != -1 && journal_active_entry != -1)
+{
+    var cont = book_contents[journal_active_category];
+    var text = cont[journal_active_entry];
+    
+    ui_draw_textbox_ext(xp + cell_width + scroll_bar_width + padding * 6, yp, text, 1.0, 512, 256);
+}
+
+
+
 
 

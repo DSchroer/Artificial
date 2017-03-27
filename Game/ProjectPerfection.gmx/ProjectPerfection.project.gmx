@@ -460,6 +460,7 @@
       <script>scripts\book_number_epic_entries.gml</script>
       <script>scripts\book_get_chapter_library.gml</script>
       <script>scripts\book_get_computer_hub_lore.gml</script>
+      <script>scripts\book_get_max_sizes.gml</script>
     </scripts>
     <scripts name="Camera">
       <script>scripts\camera_init.gml</script>
