@@ -210,6 +210,7 @@
         <sprite>sprites\spr_dog</sprite>
         <sprite>sprites\spr_grunt</sprite>
         <sprite>sprites\spr_brute</sprite>
+        <sprite>sprites\spr_turret</sprite>
       </sprites>
       <sprite>sprites\spr_env_rock</sprite>
       <sprites name="Boss">
@@ -364,6 +365,8 @@
       <sprite>sprites\spr_plasma</sprite>
       <sprite>sprites\spr_rail</sprite>
       <sprite>sprites\spr_azar_rock</sprite>
+      <sprite>sprites\spr_rock</sprite>
+      <sprite>sprites\spr_direction_rock</sprite>
       <sprite>sprites\spr_sword</sprite>
       <sprite>sprites\spr_wave</sprite>
       <sprite>sprites\spr_muzzle_flash</sprite>
@@ -498,6 +501,7 @@
     </scripts>
     <scripts name="Draw">
       <script>scripts\draw_weapon.gml</script>
+      <script>scripts\draw_weapon_color.gml</script>
       <script>scripts\draw_shield.gml</script>
       <script>scripts\draw_outline_begin.gml</script>
       <script>scripts\draw_outline_update.gml</script>
@@ -971,7 +975,6 @@
       <object>objects\obj_player</object>
       <object>objects\obj_target</object>
       <object>objects\obj_boss_target</object>
-      <object>objects\obj_turret</object>
       <object>objects\obj_enemy</object>
       <objects name="Boss1">
         <object>objects\obj_azar</object>
@@ -988,6 +991,7 @@
       <objects name="Boss3">
         <object>objects\obj_twan_point</object>
         <object>objects\obj_twan_turret</object>
+        <object>objects\obj_twan</object>
       </objects>
       <objects name="Boss4">
         <object>objects\obj_shuud</object>
@@ -999,6 +1003,7 @@
         <object>objects\obj_grunt</object>
         <object>objects\obj_brute</object>
         <object>objects\obj_dog</object>
+        <object>objects\obj_turret</object>
       </objects>
       <objects name="FinalBoss">
         <object>objects\obj_boss_final</object>
