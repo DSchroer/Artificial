@@ -328,7 +328,9 @@
       <sprite>sprites\spr_trap_spike</sprite>
       <sprite>sprites\spr_spike</sprite>
       <sprite>sprites\spr_trap</sprite>
+      <sprite>sprites\spr_stasis</sprite>
       <sprite>sprites\spr_p_trap</sprite>
+      <sprite>sprites\spr_stasis_field</sprite>
     </sprites>
     <sprites name="Moments">
       <sprite>sprites\spr_pickle_boss</sprite>
@@ -969,6 +971,7 @@
       <object>objects\obj_damage_indicator</object>
       <object>objects\obj_muzzle_flash</object>
       <object>objects\obj_shield_hit</object>
+      <object>objects\obj_stasis</object>
     </objects>
     <objects name="Entity">
       <object>objects\obj_entity</object>
