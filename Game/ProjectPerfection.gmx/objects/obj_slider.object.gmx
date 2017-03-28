@@ -75,10 +75,10 @@ if(point_in_rectangle(mx, my, x, y, x + 256 + 64 + 64, y + 64))
 
 if(obj_menu.index == self.index)
 {
-    if(abs(gamepad_axis_value(0, gp_axislh)) &lt; 0.2)
+    if(abs(keymap_gamepad_axis(gp_axislh)) &lt; 0.2)
     {
         tick = false;
-    }else if(gamepad_axis_value(0, gp_axislh) &gt; 0 &amp;&amp; !tick)
+    }else if(keymap_gamepad_axis(gp_axislh) &gt; 0 &amp;&amp; !tick)
     {
         tick = true;
     

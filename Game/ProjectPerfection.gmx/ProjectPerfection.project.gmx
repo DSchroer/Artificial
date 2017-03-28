@@ -675,6 +675,7 @@
       <script>scripts\keymap_gamepad_check.gml</script>
       <script>scripts\keymap_gamepad_check_pressed.gml</script>
       <script>scripts\keymap_gamepad_check_released.gml</script>
+      <script>scripts\keymap_gamepad_axis.gml</script>
     </scripts>
     <script>scripts\kill_boss.gml</script>
     <scripts name="Level">

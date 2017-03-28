@@ -29,6 +29,8 @@
 
 tx = 0;
 ty = 0;
+
+nav = false;
 </string>
           </argument>
         </arguments>
@@ -52,6 +54,15 @@ ty = 0;
           <argument>
             <kind>1</kind>
             <string>direction = point_direction(x + 32, y + 46, tx, ty);
+
+if(!nav)
+{
+    with(obj_navmesh)
+    {
+        mp_grid_add_rectangle(nav, other.x - 32, other.y - 32, other.x + 64, other.y + 64);
+    }
+    nav = true;
+}
 </string>
           </argument>
         </arguments>

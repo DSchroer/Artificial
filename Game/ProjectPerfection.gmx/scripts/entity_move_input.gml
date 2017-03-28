@@ -166,8 +166,8 @@ if(keyboard_check_pressed(vk_numpad9))
 }
 
 // Left analogue stick:
-var haxis_ls = gamepad_axis_value(0, gp_axislh);
-var vaxis_ls = gamepad_axis_value(0, gp_axislv);
+var haxis_ls = keymap_gamepad_axis(gp_axislh);
+var vaxis_ls = keymap_gamepad_axis(gp_axislv);
 
 // Analogue sticks typically have a small set value even when untouched.
 // This causes the player to move slightly when they shouldn't.
@@ -180,8 +180,8 @@ if(abs(haxis_ls) > 0.35 || abs(vaxis_ls) > 0.35)
     motion_add(dir, magnitude * 3);
 }
 
-var haxis_rs = gamepad_axis_value(0, gp_axisrh);
-var vaxis_rs = gamepad_axis_value(0, gp_axisrv);
+var haxis_rs = keymap_gamepad_axis(gp_axisrh);
+var vaxis_rs = keymap_gamepad_axis(gp_axisrv);
 
 // Analogue sticks typically have a small set value even when untouched.
 // This causes the player to move slightly when they shouldn't.
@@ -190,8 +190,6 @@ if(abs(haxis_rs) > 0.35 || abs(vaxis_rs) > 0.35)
     // Compute the direction and magnitude of the analogue stick press.
     var dir = point_direction(0, 0, haxis_rs, vaxis_rs);
     var magnitude = point_distance(0, 0, haxis_rs, vaxis_rs);
-    
-    
     
     var px = display_get_gui_width() / 2;
     var py = display_get_gui_height() / 2;
@@ -224,10 +222,8 @@ if(abs(haxis_rs) > 0.35 || abs(vaxis_rs) > 0.35)
         
         var magnitude = max(0.2, min( 0.8, dist / px));
         
-        var sen = save_get_value(obj_game_save, "controller_sensitivity", 0.5);
-        
-        px = lerp(window_mouse_get_x(), px + lengthdir_x(magnitude * px, dir), 0.05 * ((0.5 + sen) * 3));
-        py = lerp(window_mouse_get_y(), py + lengthdir_y(magnitude * py, dir), 0.05 * ((0.5 + sen) * 3));
+        px = lerp(window_mouse_get_x(), px + lengthdir_x(magnitude * px, dir), 0.05);
+        py = lerp(window_mouse_get_y(), py + lengthdir_y(magnitude * py, dir), 0.05);
         
         window_mouse_set( px, py);
     }

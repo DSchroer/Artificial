@@ -15,7 +15,7 @@ if(sm_ticks() == 0)
 
 if(sm_ticks() == 60)
 {
-    rock_angle = (rock_angle + 150) % 360;
+    rock_angle = (rock_angle + 170) % 360;
 }
 
 if(sm_ticks() >= 60 && sm_ticks() <= 63)

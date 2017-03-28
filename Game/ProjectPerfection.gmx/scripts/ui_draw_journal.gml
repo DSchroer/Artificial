@@ -177,8 +177,8 @@ if(keymap_check(keycode.interact))
 }
 if(journal_scroll_cooldown == 0)
 {
-    var haxis_ls = gamepad_axis_value(0, gp_axislh);
-    var vaxis_ls = gamepad_axis_value(0, gp_axislv);
+    var haxis_ls = keymap_gamepad_axis(gp_axislh);
+    var vaxis_ls = keymap_gamepad_axis(gp_axislv);
     if(abs(haxis_ls) > 0.35 || abs(vaxis_ls) > 0.35) 
     {
         var dir = point_direction(0, 0, haxis_ls, vaxis_ls);

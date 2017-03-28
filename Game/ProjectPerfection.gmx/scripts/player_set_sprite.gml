@@ -7,8 +7,8 @@ if(is_paused())
     image_speed = 0.25;
 }
 
-var haxis_ls = gamepad_axis_value(0, gp_axislh);
-var vaxis_ls = gamepad_axis_value(0, gp_axislv);
+var haxis_ls = keymap_gamepad_axis(gp_axislh);
+var vaxis_ls = keymap_gamepad_axis(gp_axislv);
 if(speed != 0 && 
     (keymap_check(keycode.up) || 
     keymap_check(keycode.down) || 
