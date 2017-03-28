@@ -72,6 +72,12 @@ if(player_exists())
     y_target = (obj_player.y * 0.75) + (mouse_y * 0.25);
 }
 
+if(instance_exists(obj_final_door) &amp;&amp; obj_final_door.animation_timer &gt; 0)
+{
+    x_target = obj_final_door.x + (obj_final_door.sprite_width / 2);
+    y_target = obj_final_door.y + (obj_final_door.sprite_width / 2);
+    camera_shake(16);
+}
 
 if(window_get_width() != view_wport[0] || window_get_height() != view_hport[0])
 {
