@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>index = 1;
 use_mouse = true;
+event_data = 0;
 mouse_prev_x = mouse_x;
 mouse_prev_y = mouse_y;
 tick = false;
