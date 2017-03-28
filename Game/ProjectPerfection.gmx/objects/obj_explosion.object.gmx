@@ -84,10 +84,10 @@ image_yscale = 2;
     with(obj_entity)
     {
         var dir = point_direction(other.x, other.y, x, y);
-        var cx = other.x + lengthdir_x(rad, dir);
-        var cy = other.y + lengthdir_y(rad, dir);
+        var cx = lengthdir_x(rad, dir);
+        var cy = lengthdir_y(rad, dir);
     
-        if(other.parent != self.id &amp;&amp; point_in_ellipse(cx, cy, x + hbox_x1, y + hbox_y1, x + hbox_x2, y + hbox_y2) )
+        if(other.parent != self.id &amp;&amp; line_in_ellipse(other.x - cx, other.y - cy, other.x + cx, other.y + cy, x + hbox_x1, y + hbox_y1, x + hbox_x2, y + hbox_y2) )
         {
             other.hit = true;
             entity_apply_damage(damager(other.damage), other.parent);
