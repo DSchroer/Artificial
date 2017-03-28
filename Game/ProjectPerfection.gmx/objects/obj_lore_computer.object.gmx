@@ -25,25 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>player_reset_journal();
 ui_open_journal();
 
-exit;
-if(!ui_textbox_open() &amp;&amp; obj_player.textbox_cooldown &lt;= 0)
-{
-    var text = book_text();
-    var lore_state = save_get_value(obj_save_data, "lore", 0)
-    for(var i = 0; i &lt; lore_state; i++)
-    {
-        ui_textbox_queue(text[i]); 
-    }
-    
-    if(lore_state == 0)
-    {
-        ui_textbox_queue("|red No lore entries found.");
-    }
-    sfx_play_volume(snd_computer_interact, false, 0.33);
-}
 </string>
           </argument>
         </arguments>

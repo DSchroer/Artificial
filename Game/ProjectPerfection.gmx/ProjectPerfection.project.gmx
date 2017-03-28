@@ -847,6 +847,7 @@
       <script>scripts\ui_open_journal.gml</script>
       <script>scripts\ui_close_journal.gml</script>
       <script>scripts\ui_is_blocking_window_open.gml</script>
+      <script>scripts\player_reset_journal.gml</script>
     </scripts>
     <script>scripts\wall_casts_shadow.gml</script>
     <scripts name="Workbench">
@@ -1032,7 +1033,6 @@
       <object>objects\obj_prompt</object>
       <object>objects\obj_book</object>
       <object>objects\obj_lore_computer</object>
-      <object>objects\obj_research_computer</object>
       <object>objects\obj_interact_area</object>
       <object>objects\obj_chest</object>
       <object>objects\obj_workbench</object>

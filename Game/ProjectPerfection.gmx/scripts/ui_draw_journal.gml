@@ -23,7 +23,9 @@ var yp = 100;
 var alpha_per = 0.75;
 // Book contents
 var max_sizes = book_get_max_sizes();
+max_sizes[4] = 1;
 var book_contents = book_get_computer_hub_lore(story_get_chapter());
+book_contents[4] = -1;
 var sizes;
 sizes[0] = save_get_value(obj_save_data, "lore", 0);
 
@@ -31,11 +33,14 @@ for(var i = 1; i < array_length_1d(book_contents); i++)
 {
     sizes[i] = array_length_1d(book_contents[i]);
 }
+sizes[4] = 0;
+
 var titles;
 titles[0] = "History of the Cube";
 titles[1] = "The Guardians";
 titles[2] = "Lyra";
 titles[3] = "Research Notes";
+titles[4] = "Close";
 
 // Navbar:
 
@@ -59,7 +64,11 @@ for(var i = 0; i < array_length_1d(journal_is_open_slots); i++)
     draw_set_alpha(0.75);
     draw_rectangle(xp + 2 * padding, yp + yoffset + 0.5 * padding, xp + cell_width - padding * 2, yp + yoffset + cell_height - padding * 0.5, false);
     draw_set_alpha(1.0);
-    var title_string_ = titles[i] + "  (" + string(sizes[i]) + "/" + string(max_sizes[i]) + " found)"; 
+    var title_string_ = titles[i];
+    if(i != array_length_1d(journal_is_open_slots) - 1)
+    {
+         title_string_ += "  (" + string(sizes[i]) + "/" + string(max_sizes[i]) + " found)"; 
+    }
     draw_set_colour(c_white);
     if(journal_is_open_slots[i])
     {
@@ -88,8 +97,6 @@ for(var i = 0; i < array_length_1d(journal_is_open_slots); i++)
         {
             extra = end_range - start_range - number_of_rows;
         }        
-        debug_show_string("START:" + string(number_of_rows));
-        debug_show_string("Extra:" + string(scroll_index - items_considered + 1));
         if(extra > 0 && scroll_index - items_considered + 1 == start_range + number_of_rows)
         {
             start_range += 1;
@@ -159,6 +166,11 @@ if(keymap_check(keycode.interact))
         if(scroll_index == items_considered)
         {
             journal_is_open_slots[i] = !journal_is_open_slots[i];            
+            if(i == array_length_1d(journal_is_open_slots) - 1)
+            {
+                journal_is_open = false;
+                exit;
+            }
         }
         items_considered++;                
         if(journal_is_open_slots[i])
@@ -219,6 +231,11 @@ if(mouse_check_button(mb_left) && journal_scroll_cooldown == 0)
                 journal_active_category = i;
                 journal_active_entry = -1;                    
                 scroll_index = items_considered;
+                if(i == array_length_1d(journal_is_open_slots) - 1)
+                {
+                    journal_is_open = false;
+                    exit;
+                }
                 break;
             }          
             items_considered++;
