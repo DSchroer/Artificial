@@ -224,10 +224,8 @@ if(abs(haxis_rs) > 0.35 || abs(vaxis_rs) > 0.35)
         
         var magnitude = max(0.2, min( 0.8, dist / px));
         
-        var sen = save_get_value(obj_game_save, "controller_sensitivity", 0.5);
-        
-        px = lerp(window_mouse_get_x(), px + lengthdir_x(magnitude * px, dir), 0.05 * ((0.5 + sen) * 3));
-        py = lerp(window_mouse_get_y(), py + lengthdir_y(magnitude * py, dir), 0.05 * ((0.5 + sen) * 3));
+        px = lerp(window_mouse_get_x(), px + lengthdir_x(magnitude * px, dir), 0.05);
+        py = lerp(window_mouse_get_y(), py + lengthdir_y(magnitude * py, dir), 0.05);
         
         window_mouse_set( px, py);
     }
