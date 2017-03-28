@@ -1,6 +1,6 @@
 ///entity_move_input()
 
-if(is_paused() || dead || room == rm_transition || open_workbench || ui_textbox_open())
+if(is_paused() || dead || room == rm_transition || open_workbench || ui_textbox_open() || journal_is_open)
 {
     if(ui_textbox_open() && keymap_check(keycode.interact))
     {
@@ -81,6 +81,18 @@ if(keyboard_check_pressed(ord("K")))
 {
     obj_progress.cube_parts -= 1;
 }
+if(keyboard_check_pressed(ord("N")))
+{
+    save_set_value(obj_save_data, "lore", save_get_value(obj_save_data, "lore", 0) + 1);
+}
+if(keyboard_check_pressed(ord("M")))
+{
+    save_set_value(obj_save_data, "lore", save_get_value(obj_save_data, "lore", 0) - 1);
+
+}
+
+
+
 if(keyboard_check_pressed(vk_numpad1))
 {
     inventory[selected_slot] = inventory_spawn_gun(10);

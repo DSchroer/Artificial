@@ -407,7 +407,7 @@ if(instance_exists(obj_player))
         draw_text(130, 410, "Level: " + string(save_get_value(obj_save_data, "player_level", 1)));
         draw_text(130, 440, "HP: " + string(round(obj_player.current_health)) + "/" + string(round(obj_player.max_health)));
         draw_text(130, 470, "Shield: " + string(round(obj_player.remaining_shield)) + "/"+ string(round(obj_player.shield_max_health)));
-        draw_text(130, 500, "Recharge Rate: " + string(round(obj_player.shield_recharge_rate)) + " / sec");
+        draw_text(130, 500, "Recharge Rate: " + string(round(obj_player.shield_recharge_rate)));
         draw_text(130, 530, "Recharge Delay: " + string(round(obj_player.shield_recharge_delay)));
         
         var cube = save_get_value(obj_save_data, "cube", 0);

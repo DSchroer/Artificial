@@ -28,6 +28,10 @@
             <string>with(obj_player)
 {
     open_workbench = true;
+    if(!instance_exists(obj_menu_workbench))
+    {
+        instance_create(0, 0, obj_menu_workbench);
+    }
     ui_textbox_clear();
 }
 </string>

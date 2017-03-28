@@ -15,9 +15,7 @@ shield_recharge_rate = 0.1;
 shield_recharge_sound = -1;
 shield_is_recharging = true;
 shield_broken_sound = -1;
-
 is_shield_active = save_get_value(obj_save_data, "shield", false);
-
 if(is_shield_active)
 {
     remaining_shield = shield_max_health;
@@ -86,4 +84,16 @@ death_animation_time = 0;
 death_animation_time_max = 0;
 death_fog_texture_size = 1000;
 death_fog = -1;
+
+journal_scroll_cooldown = 0;
+journal_is_open = false;
+scroll_index = 0;
+journal_is_open_slots[0] = false;
+journal_is_open_slots[1] = false;
+journal_is_open_slots[2] = false;
+journal_is_open_slots[3] = false;
+journal_is_open_slots[4] = false;
+journal_active_category = -1;
+journal_active_entry = -1;
+journal_block_mouse = false;
 

@@ -240,9 +240,12 @@
         <sprite>sprites\spr_textback_flash</sprite>
         <sprite>sprites\spr_textback</sprite>
         <sprite>sprites\spr_workbench_ui</sprite>
+        <sprite>sprites\spr_lore_book</sprite>
         <sprite>sprites\spr_button_gray</sprite>
         <sprite>sprites\spr_progress</sprite>
         <sprite>sprites\spr_prog_pos</sprite>
+        <sprite>sprites\spr_journal_entry_button</sprite>
+        <sprite>sprites\spr_journal_entry_active</sprite>
       </sprites>
       <sprites name="HUD">
         <sprite>sprites\spr_laser_full</sprite>
@@ -298,6 +301,8 @@
       <sprites name="Font">
         <sprite>sprites\spr_base_font</sprite>
       </sprites>
+      <sprite>sprites\spr_white_right</sprite>
+      <sprite>sprites\spr_white_down</sprite>
     </sprites>
     <sprites name="Spawn">
       <sprite>sprites\spr_spawner</sprite>
@@ -472,6 +477,7 @@
       <script>scripts\book_number_epic_entries.gml</script>
       <script>scripts\book_get_chapter_library.gml</script>
       <script>scripts\book_get_computer_hub_lore.gml</script>
+      <script>scripts\book_get_max_sizes.gml</script>
     </scripts>
     <scripts name="Camera">
       <script>scripts\camera_init.gml</script>
@@ -818,6 +824,7 @@
         <script>scripts\credits_draw.gml</script>
         <script>scripts\credits_is_complete.gml</script>
       </scripts>
+      <script>scripts\ui_draw_journal.gml</script>
       <script>scripts\ui_can_render_tooltips.gml</script>
       <script>scripts\ui_check_weapon_slot_tooltip.gml</script>
       <script>scripts\ui_draw.gml</script>
@@ -857,7 +864,10 @@
       <script>scripts\ui_textbox_unqueue.gml</script>
       <script>scripts\ui_world_to_gui_x.gml</script>
       <script>scripts\ui_world_to_gui_y.gml</script>
-      <script>scripts\script358.gml</script>
+      <script>scripts\ui_open_journal.gml</script>
+      <script>scripts\ui_close_journal.gml</script>
+      <script>scripts\ui_is_blocking_window_open.gml</script>
+      <script>scripts\player_reset_journal.gml</script>
     </scripts>
     <script>scripts\wall_casts_shadow.gml</script>
     <scripts name="Workbench">
@@ -1046,7 +1056,6 @@
       <object>objects\obj_prompt</object>
       <object>objects\obj_book</object>
       <object>objects\obj_lore_computer</object>
-      <object>objects\obj_research_computer</object>
       <object>objects\obj_interact_area</object>
       <object>objects\obj_chest</object>
       <object>objects\obj_workbench</object>
