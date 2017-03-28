@@ -1111,8 +1111,8 @@
       <object>objects\obj_tutorial_control</object>
       <object>objects\obj_tutorial_trigger</object>
       <object>objects\obj_tutorial_control_hub</object>
-      <object>objects\obj_tutorial_cinematic_control</object>
       <object>objects\obj_tutorial_spawner</object>
+      <object>objects\obj_tutorial_cinematic_control</object>
       <objects name="Revised">
         <object>objects\obj_tutorial_state</object>
         <object>objects\obj_tutorial_room3_control</object>

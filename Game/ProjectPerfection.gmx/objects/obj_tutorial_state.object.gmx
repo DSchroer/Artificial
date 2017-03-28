@@ -37,6 +37,8 @@ else if(room == rm_tutorial_final3)
 {
     obj_progress.tutorial = 3;
 }
+save_set_value(obj_save_data, "tutorial", obj_progress.tutorial);
+save_flush(obj_save_data);
 
 </string>
           </argument>

@@ -1,6 +1,6 @@
 ///entity_move_input()
 
-if(is_paused() || dead || room == rm_transition || open_workbench || ui_textbox_open() || journal_is_open)
+if(is_paused() || dead || room == rm_transition || ui_is_blocking_window_open())
 {
     if(ui_textbox_open() && keymap_check(keycode.interact))
     {
@@ -148,7 +148,7 @@ if(keyboard_check_pressed(vk_numpad9))
     weapon[weapon_index.fire_cooldown] = 0;
     weapon[weapon_index.reload_timeout] = 1;
     weapon[weapon_index.reload_cooldown] = 0;
-    weapon[weapon_index.name] = "Developer Gun";
+    weapon[weapon_index.name] = "Unheard of Auto Rifle";
     weapon[weapon_index.weapon_subtype] = weapon_subtype.pistol;
     
     weapon[weapon_index.bullet_sprite] = spr_bullet;

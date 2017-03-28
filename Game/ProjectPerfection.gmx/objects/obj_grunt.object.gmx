@@ -92,10 +92,10 @@ weapon = enemy_scale_gun(weapon, pow);
             <string>isomorphic_set_depth();
 
 
-if(random(5000) &lt; 1)
-{
-    sfx_play_volume(snd_grunt_ambient, false, 1.0);
-}
+//if(random(5000) &lt; 1)
+//{
+ //   sfx_play_volume(snd_grunt_ambient, false, 1.0);
+//}
 
 if(obj_player.x &gt; x)
 {

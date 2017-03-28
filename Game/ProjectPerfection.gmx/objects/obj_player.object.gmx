@@ -346,7 +346,7 @@ if(speed != 0)
 {
     dash_last_direction = direction;
 }
-if(keymap_check(keycode.dash) &amp;&amp; !dead &amp;&amp; dash_frames == 0)
+if(keymap_check(keycode.dash) &amp;&amp; !dead &amp;&amp; dash_frames == 0 &amp;&amp; !ui_is_blocking_window_open())
 {
     dash_frames = 15;
     dash_direction = dash_last_direction;
@@ -365,7 +365,7 @@ if(dash_frames &gt; 0)
     dash_frames += 1;
 }
 
-if(keymap_check(keycode.interact) &amp;&amp; !dead)
+if(keymap_check(keycode.interact) &amp;&amp; !dead &amp;&amp; !ui_is_blocking_window_open())
 {
     var inter = interact_any(128);
     if(inter == noone)
@@ -406,7 +406,7 @@ if(invincible &gt; 0)
     --invincible;
 }
 
-if(!open_workbench &amp;&amp; !ui_textbox_open())
+if(!open_workbench &amp;&amp; !ui_is_blocking_window_open() )
 {   
     if(keymap_check(keycode.reload))
     {
