@@ -26,23 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>alarm[0] = 90;
-obj_progress.tutorial = max(50, obj_progress.tutorial);
-save_set_value(obj_save_data, "tutorial", obj_progress.tutorial);
-save_flush(obj_save_data);
 
-var is_closed = false;
-
-// Check if door should be closed or not
-if(obj_progress.tutorial &gt;= 100)
-{
-    if(obj_progress.cube_parts &lt; 5)
-    {
-        is_closed = true;       
-    }
-}
-
-obj_final_door.is_closed = is_closed;
-if(is_closed)
+obj_final_door.is_closed = obj_progress.cube_parts &lt; 5;
+if(obj_final_door.is_closed)
 {
     moment_door_build_walls();
 }

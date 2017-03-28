@@ -380,18 +380,10 @@ if(keymap_check(keycode.interact) &amp;&amp; !dead)
         if(is_gun(data))
         {
             out = inventory_pickup_weapon(data);
-            if(obj_progress.tutorial &lt; 50)
-            {
-                obj_progress.tutorial++;
-            }
         }else if(is_shield(data))
         {
             out = -1;
             player_activate_shield();
-            if(obj_progress.tutorial &lt; 50)
-            {
-                obj_progress.tutorial++;
-            }
         }
         
         with(obj)

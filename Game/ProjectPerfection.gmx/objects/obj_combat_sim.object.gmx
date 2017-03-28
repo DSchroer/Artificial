@@ -70,8 +70,14 @@ door_m4.sprite_index = spr_laser_middle;
 door_r = instance_create(xp + 320, yp, obj_tutorial_gate_closed);
 door_r.sprite_index = spr_laser_right_closed;
 
+with(obj_player)
+{
+    inventory[0] = -1;
+    inventory[1] = -1;
+    obj_player.is_shield_active = false;
+    
 
-
+}
 
 </string>
           </argument>
