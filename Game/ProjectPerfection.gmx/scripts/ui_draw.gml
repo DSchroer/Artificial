@@ -16,9 +16,17 @@ if(room == rm_tutorial_cinematic)
     exit;
 }
 
-ui_draw_health();
-ui_draw_inventory();
-ui_draw_boss_health();
-ui_draw_action_indicators();
+if(!journal_is_open)
+{
+    ui_draw_health();
+    ui_draw_inventory();
+    ui_draw_boss_health();
+    ui_draw_action_indicators();
+}
 ui_draw_textbox_element();
-ui_draw_tooltips();
+if(!journal_is_open)
+{   
+    ui_draw_tooltips();
+}
+
+ui_draw_journal();

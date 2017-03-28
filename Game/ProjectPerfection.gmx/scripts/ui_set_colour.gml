@@ -116,6 +116,9 @@ case "|key":
 case "|crayolared":
     draw_set_color(make_color_rgb(238, 32, 77));
     break;
+case "|artificial_navy":
+    draw_set_color(make_color_rgb(0, 0, 16));
+    break;
     
     
 

@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!ui_textbox_open() &amp;&amp; obj_player.textbox_cooldown &lt;= 0)
+            <string>ui_open_journal();
+
+/*
+if(!ui_textbox_open() &amp;&amp; obj_player.textbox_cooldown &lt;= 0)
 {
     var text = book_get_computer_hub_lore(story_get_chapter());
     for(var i = 0; i &lt; array_length_1d(text); i++)
@@ -34,6 +37,7 @@
     }
     sfx_play_volume(snd_computer_interact, false, 0.33);
 }
+*/
 </string>
           </argument>
         </arguments>
