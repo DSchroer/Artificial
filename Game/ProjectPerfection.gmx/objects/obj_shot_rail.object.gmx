@@ -90,7 +90,7 @@ y_off = 45;
     with(parent)
     {
         entity_dist = range_finder_ellipse(other.x, other.y, other.direction, other.max_range, obj_entity, false, true);
-        wall_dist = range_finder(other.x, other.y + other.y_off, other.direction, other.max_range, obj_wall, false, true);
+        wall_dist = range_finder(other.x, other.y, other.direction, other.max_range, obj_wall, false, true, other.y_off);
     }
     
     if(entity_dist != -1 &amp;&amp; (wall_dist == -1 || entity_dist &lt; wall_dist))

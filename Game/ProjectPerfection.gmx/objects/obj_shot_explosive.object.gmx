@@ -87,7 +87,7 @@ if(!point_in_rectangle(x, y, 0, 0, room_width, room_height))
     instance_destroy();
 }
 
-if(cgrid_collision_point(x, y + y_off))
+if(cgrid_collision_point(x, y + y_off) &amp;&amp; cgrid_collision_point(x, y))
 {
     var ex = instance_create(x,  y + y_off, obj_explosion);
     ex.damage = damage;
