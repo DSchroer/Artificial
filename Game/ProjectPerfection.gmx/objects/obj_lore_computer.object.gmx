@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>player_reset_journal();
+            <string>
+player_reset_journal();
 ui_open_journal();
 
 </string>

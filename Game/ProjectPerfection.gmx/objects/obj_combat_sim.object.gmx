@@ -70,8 +70,14 @@ door_m4.sprite_index = spr_laser_middle;
 door_r = instance_create(xp + 320, yp, obj_tutorial_gate_closed);
 door_r.sprite_index = spr_laser_right_closed;
 
+with(obj_player)
+{
+    inventory[0] = -1;
+    inventory[1] = -1;
+    obj_player.is_shield_active = false;
+    
 
-
+}
 
 </string>
           </argument>
@@ -379,7 +385,7 @@ if(!instance_exists(obj_enemy))
                 break;   
             }
         }        
-        sfx_play_volume(snd_heart_spawn_enemies, false, 0.6);
+        sfx_play_volume(snd_heart_spawn_enemies, false, 0.4);
     }
     else if(room_state == sim_state.combat1_inprogress)
     {
@@ -398,7 +404,7 @@ if(!instance_exists(obj_enemy))
                 instance_create(spawner.x + sprite_get_xoffset(object_get_sprite(obj_grunt)), spawner.y + sprite_get_yoffset(object_get_sprite(obj_grunt)), obj_grunt);
             }
         }   
-        sfx_play_volume(snd_heart_spawn_enemies, false, 0.6);
+        sfx_play_volume(snd_heart_spawn_enemies, false, 0.4);
     }
     else if(room_state == sim_state.combat2_inprogress)
     {
@@ -423,7 +429,7 @@ if(!instance_exists(obj_enemy))
                 instance_create(spawner.x + sprite_get_xoffset(object_get_sprite(obj_grunt)), spawner.y + sprite_get_yoffset(object_get_sprite(obj_grunt)), obj_grunt);
             }
         }   
-        sfx_play_volume(snd_heart_spawn_enemies, false, 0.6);
+        sfx_play_volume(snd_heart_spawn_enemies, false, 0.4);
     }
     else if(room_state == sim_state.combat3_inprogress)
     {
@@ -441,7 +447,7 @@ if(!instance_exists(obj_enemy))
                 instance_create(spawner.x + sprite_get_xoffset(object_get_sprite(obj_grunt)), spawner.y + sprite_get_yoffset(object_get_sprite(obj_grunt)), obj_grunt);
             }
         }  
-        sfx_play_volume(snd_heart_spawn_enemies, false, 0.6);
+        sfx_play_volume(snd_heart_spawn_enemies, false, 0.4);
     }
     else if(room_state == sim_state.combat4_inprogress)
     {
@@ -459,7 +465,7 @@ if(!instance_exists(obj_enemy))
                 instance_create(spawner.x + sprite_get_xoffset(object_get_sprite(obj_grunt)), spawner.y + sprite_get_yoffset(object_get_sprite(obj_grunt)), obj_grunt);
             }
         }  
-        sfx_play_volume(snd_heart_spawn_enemies, false, 0.6);
+        sfx_play_volume(snd_heart_spawn_enemies, false, 0.4);
     }
     else if(room_state == sim_state.combat5_inprogress)
     {

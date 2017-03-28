@@ -428,8 +428,12 @@ if(instance_exists(obj_player))
         draw_text(130, 530, "Recharge Delay: " + string(round(obj_player.shield_recharge_delay)));
         
         var cube = save_get_value(obj_save_data, "cube", 0);
+        if(tutorial_done())
+        {
+            cube++;
+        }
         draw_sprite_ext(cube_get_sprite(), 0, w - 130 - 72, 232 - 72, 1.5, 1.5, 0, c_white, 1);
-        draw_text(w - 130, 380, "Cube Pieces: " + string(cube) + " of 4");
+        draw_text(w - 130, 380, "Cube Pieces: " + string(min(cube, 5)) + " of 5");
         
         draw_set_halign(fa_left);
     }
