@@ -1,4 +1,4 @@
-/// range_finder(x,y,dir,range,object,prec,notme)
+/// range_finder(x,y,dir,range,object,prec,notme, offset)
 //
 //  Returns the exact distance to the nearest instance of an object in a
 //  given direction from a given point, or noone if no instance is found.
@@ -21,17 +21,29 @@
     object = argument4;
     prec = argument5;
     notme = argument6;
+    var offset = argument7;
+    
     sx = lengthdir_x(range,dir);
     sy = lengthdir_y(range,dir);
     dx = ox + sx;
     dy = oy + sy;
-    if (collision_line(ox,oy,dx,dy,object,prec,notme) < 0) {
+    
+    var ca = collision_line(ox,oy + offset,dx,dy + offset,object,prec,notme);
+    var cb = collision_line(ox,oy,dx,dy,object,prec,notme);
+    var hit = (ca >= 0 && cb >= 0);
+    
+    if (!hit) {
         distance = -1;
     }else{
         while ((abs(sx) >= 1) || (abs(sy) >= 1)) {
             sx /= 2;
             sy /= 2;
-            if (collision_line(ox,oy,dx,dy,object,prec,notme) < 0) {
+            
+            ca = collision_line(ox,oy + offset,dx,dy + offset,object,prec,notme);
+            cb = collision_line(ox,oy,dx,dy,object,prec,notme);
+            hit = (ca >= 0 && cb >= 0);
+            
+            if (!hit) {
                 dx += sx;
                 dy += sy;
             }else{
@@ -39,6 +51,7 @@
                 dy -= sy;
             }
         }
+        
         distance = point_distance(ox,oy,dx,dy);
     }
     return distance;
