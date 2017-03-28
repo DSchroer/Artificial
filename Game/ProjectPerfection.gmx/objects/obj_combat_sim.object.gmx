@@ -379,7 +379,7 @@ if(!instance_exists(obj_enemy))
                 break;   
             }
         }        
-        sfx_play_volume(snd_heart_spawn_enemies, false, 0.6);
+        sfx_play_volume(snd_heart_spawn_enemies, false, 0.4);
     }
     else if(room_state == sim_state.combat1_inprogress)
     {
@@ -398,7 +398,7 @@ if(!instance_exists(obj_enemy))
                 instance_create(spawner.x + sprite_get_xoffset(object_get_sprite(obj_grunt)), spawner.y + sprite_get_yoffset(object_get_sprite(obj_grunt)), obj_grunt);
             }
         }   
-        sfx_play_volume(snd_heart_spawn_enemies, false, 0.6);
+        sfx_play_volume(snd_heart_spawn_enemies, false, 0.4);
     }
     else if(room_state == sim_state.combat2_inprogress)
     {
@@ -423,7 +423,7 @@ if(!instance_exists(obj_enemy))
                 instance_create(spawner.x + sprite_get_xoffset(object_get_sprite(obj_grunt)), spawner.y + sprite_get_yoffset(object_get_sprite(obj_grunt)), obj_grunt);
             }
         }   
-        sfx_play_volume(snd_heart_spawn_enemies, false, 0.6);
+        sfx_play_volume(snd_heart_spawn_enemies, false, 0.4);
     }
     else if(room_state == sim_state.combat3_inprogress)
     {
@@ -441,7 +441,7 @@ if(!instance_exists(obj_enemy))
                 instance_create(spawner.x + sprite_get_xoffset(object_get_sprite(obj_grunt)), spawner.y + sprite_get_yoffset(object_get_sprite(obj_grunt)), obj_grunt);
             }
         }  
-        sfx_play_volume(snd_heart_spawn_enemies, false, 0.6);
+        sfx_play_volume(snd_heart_spawn_enemies, false, 0.4);
     }
     else if(room_state == sim_state.combat4_inprogress)
     {
@@ -459,7 +459,7 @@ if(!instance_exists(obj_enemy))
                 instance_create(spawner.x + sprite_get_xoffset(object_get_sprite(obj_grunt)), spawner.y + sprite_get_yoffset(object_get_sprite(obj_grunt)), obj_grunt);
             }
         }  
-        sfx_play_volume(snd_heart_spawn_enemies, false, 0.6);
+        sfx_play_volume(snd_heart_spawn_enemies, false, 0.4);
     }
     else if(room_state == sim_state.combat5_inprogress)
     {

@@ -41,16 +41,14 @@ if(lore != -1)
     yp[4] = 960;
     yp[5] = 1152;
     yp[6] = 1152;
-    yp[7] = 1152;
 
     xp[0] = 2848 + random_range(0, 64);    
     xp[1] = 3168 + random_range(0, 64);    
     xp[2] = 2848 + random_range(0, 64);    
     xp[3] = 2848 + random_range(160, 160+64);    
     xp[4] = 2848 + random_range(160+64+32, 160+64+32+64);    
-    xp[5] = 2752 + random_range(0, 64);    
-    xp[6] = 3008 + random_range(0, 64);    
-    xp[7] = 3264 + random_range(0, 64);    
+    xp[5] = 2752 + random_range(0, 128);    
+    xp[6] = 3200 + random_range(0, 128);    
 
     for(var i = 0; i &lt; array_length_1d(lore); i++)
     {
@@ -68,59 +66,6 @@ if(lore != -1)
 
 
 
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="4">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Library door
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="3">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Right hallway
-
-
-
-
-
- 
 
 </string>
           </argument>
@@ -165,107 +110,6 @@ if(obj_progress.story == story_progress.chapter3_banter5 || obj_progress.story =
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Teleporter
-
-if(obj_progress.story == story_progress.chapter3_banter1)
-{
-    story_advance(1);
-}
-
-if(obj_progress.story == story_progress.chapter5_banter2)
-{
-    story_advance(1);
-}
-
-
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="23">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Trigger 4 Passthrough
-
-if(alarm[4] == -1)
-{
-    alarm[4] = random_range(20, 50);
-}
-
-
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="22">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Trigger 3 Passthrough
-
-if(alarm[3] == -1)
-{
-    alarm[3] = random_range(20, 50);
-}
-
-
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="7" enumb="21">
       <action>
         <libid>1</libid>
@@ -288,38 +132,6 @@ if(alarm[3] == -1)
 if(alarm[2] == -1)
 {
     alarm[2] = random_range(20, 50);
-}
-
-
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="20">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Trigger 1 Passthrough
-
-if(alarm[1] == -1)
-{
-    alarm[1] = random_range(20, 50);
 }
 
 

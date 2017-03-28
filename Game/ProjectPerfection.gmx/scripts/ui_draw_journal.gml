@@ -152,10 +152,6 @@ draw_rectangle(xp + cell_width, yp + scroll_start,
 
 // Input
 // Controller
-if(keymap_check(keycode.back))
-{
-    ui_close_journal();
-}
 if(keymap_check(keycode.interact))
 {
     number_of_rows = floor((back_height - array_length_1d(titles) * cell_height) / cell_height);
@@ -187,7 +183,7 @@ if(journal_scroll_cooldown == 0)
     {
         var dir = point_direction(0, 0, haxis_ls, vaxis_ls);
         var magnitude = point_distance(0, 0, haxis_ls, vaxis_ls);
-        journal_scroll_cooldown = floor(3 / magnitude);
+        journal_scroll_cooldown = floor(6 / magnitude);
         
         if(dir >= 0 && dir <= 180)
         {
@@ -208,7 +204,7 @@ if(journal_scroll_cooldown > 0)
 // Mouse
 if(mouse_check_button(mb_left) && journal_scroll_cooldown == 0)
 {    
-    journal_scroll_cooldown = 5;
+    journal_scroll_cooldown = 6;
     if(point_in_rectangle(mx, my, xp + cell_width, yp + padding * 2, xp + cell_width + scroll_bar_width, yp + back_height - padding * 2))
     {
         // Scroll bar

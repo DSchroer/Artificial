@@ -1,6 +1,10 @@
 ///player_reset_journal()
 with(obj_player)
-{
+{   
+    if(journal_is_open)
+    {
+        exit;
+    }
     journal_scroll_cooldown = 0;
     journal_is_open = false;
     scroll_index = 0;
