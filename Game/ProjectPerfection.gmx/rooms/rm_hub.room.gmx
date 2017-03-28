@@ -280,7 +280,6 @@
     <instance objName="obj_invisible_wall" x="3456" y="640" name="inst_CD73B813" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="3424" y="608" name="inst_4CE66825" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="3040" y="608" name="inst_2171784C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_door" x="384" y="1312" name="inst_AFAD7285" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tutorial_control_hub" x="64" y="160" name="inst_7CE6E6A6" locked="-1" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_story_hub" x="64" y="192" name="inst_C120D571" locked="-1" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_lore_computer" x="2912" y="1152" name="inst_4710A4F7" locked="-1" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -381,10 +380,6 @@
     <instance objName="obj_invisible_wall" x="704" y="1024" name="inst_B81E9BC8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="576" y="1024" name="inst_93FF95CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="512" y="1024" name="inst_EC66818B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_azar_will" x="1808" y="1424" name="inst_167EEE7A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_dym_hands" x="1968" y="1424" name="inst_269EF8FA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_twan_eye" x="2112" y="1424" name="inst_AAF9DC90" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_shuud_voice" x="1968" y="1552" name="inst_03304ACF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_light" x="1088" y="1088" name="inst_FB94ED02" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_light" x="320" y="1088" name="inst_91E9ECB2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_light" x="2848" y="1472" name="inst_471B76BD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -448,6 +443,7 @@
     <instance objName="obj_invisible_wall" x="3424" y="832" name="inst_E0EBA124" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="3360" y="832" name="inst_CA2A0036" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="3296" y="832" name="inst_24D7BD9D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_teleport" x="384" y="1312" name="inst_F9E9079D" locked="0" code="target = 0;&#xA;image_index = 0;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bkg_hub_new" x="384" y="1152" w="192" h="192" xo="192" yo="192" id="10017129" name="inst_B8C21CEA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

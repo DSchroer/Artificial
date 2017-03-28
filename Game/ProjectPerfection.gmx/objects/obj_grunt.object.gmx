@@ -36,7 +36,7 @@ sm_init("idle");
 weapon = inventory_create_weapon();
 weapon[weapon_index.damage] = 30;
 weapon[weapon_index.bullet_sprite] = spr_plasma;
-weapon[weapon_index.accuracy] = 30;
+weapon[weapon_index.accuracy] = 15;
 
 
 
@@ -97,14 +97,29 @@ if(random(5000) &lt; 1)
     sfx_play_volume(snd_grunt_ambient, false, 1.0);
 }
 
+if(obj_player.x &gt; x)
+{
+    image_xscale = 1;
+}else{
+    image_xscale = -1;
+}
+
 var state = sm_get_state();
+
+if(speed != 0)
+{
+    sprite_index = spr_grunt_move;
+}else{
+    sprite_index = spr_grunt;
+}
+image_speed = 0.5;
 
 if(player_exists())
 {
     switch(state)
     {
-        case "idle":
         case "paused":
+        case "idle":
             eg_idle();
             break;
         case "approach":

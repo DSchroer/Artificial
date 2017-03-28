@@ -59,7 +59,10 @@ image_speed = 0;
             <kind>1</kind>
             <string>with(obj_progress)
 {
-    progress = other.target * 4;
+    if(progress &lt; other.target * 4 || progress &gt; (other.target + 1) * 4)
+    {
+        progress = other.target * 4;
+    }
 }
 
 with(obj_level)
@@ -67,7 +70,36 @@ with(obj_level)
     instance_destroy();
 }
 
-room_goto(rm_transition);
+var prog = obj_progress.progress;
+
+if(prog == 3)
+{
+    room_goto(rm_boss_1)
+}
+else if(prog == 7)
+{
+    room_goto(rm_boss_2)
+}
+else if(prog == 11)
+{
+    room_goto(rm_boss_3)
+}
+else if(prog == 15)
+{
+    room_goto(rm_boss_4)
+}
+else if(prog &gt;= 16)
+{
+    with(obj_progress)
+    {
+        progress = 0;
+    }
+    room_goto(rm_hub);
+}
+else
+{
+    room_goto(rm_transition);
+}
 
 
 </string>
@@ -126,10 +158,37 @@ if(alarm[0] == -1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(parts &lt; target)
+            <string>isomorphic_set_depth();
+
+if(parts &lt; target)
 {
     sprite_index = spr_teleport_dead;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
+draw_sprite(spr_teleport_decal, target, x - sprite_get_xoffset(sprite_index), y - 39 - sprite_get_yoffset(sprite_index));
+
 </string>
           </argument>
         </arguments>

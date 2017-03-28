@@ -161,6 +161,11 @@ y = room_height / 2;
 
 roll_boss_loot(1);
 
+if(random(1) &lt; 0.15)
+{
+    instance_create(x - 250 + random(500), y + random(300), obj_azar_will);
+}
+
 kill_boss(1);
 obj_progress.progress++;
 if(obj_progress.cube_parts &lt; 1)

@@ -36,7 +36,8 @@ with(req)
                 }
             }
         }
+        return inst;
     }else{
-        room_instance_add(new_room, (rx + (rw/2) - 1) * 64, (ry + (rh/2) - 1) * 64, obj);
-    }
+        return room_instance_add(new_room, (rx + (rw/2) - 1) * 64, (ry + (rh/2) - 1) * 64, obj);
+   }
 }

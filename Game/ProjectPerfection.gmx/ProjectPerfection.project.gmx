@@ -210,6 +210,9 @@
         <sprite>sprites\spr_dog</sprite>
         <sprite>sprites\spr_grunt</sprite>
         <sprite>sprites\spr_brute</sprite>
+        <sprite>sprites\spr_turret</sprite>
+        <sprite>sprites\spr_dog_move</sprite>
+        <sprite>sprites\spr_grunt_move</sprite>
       </sprites>
       <sprite>sprites\spr_env_rock</sprite>
       <sprites name="Boss">
@@ -324,6 +327,9 @@
       <sprite>sprites\spr_laser_middle</sprite>
       <sprite>sprites\spr_teleport</sprite>
       <sprite>sprites\spr_teleport_dead</sprite>
+      <sprite>sprites\spr_teleport_decal</sprite>
+      <sprite>sprites\spr_bollard</sprite>
+      <sprite>sprites\spr_plate</sprite>
     </sprites>
     <sprites name="Traps">
       <sprite>sprites\spr_trap_stall</sprite>
@@ -332,7 +338,9 @@
       <sprite>sprites\spr_trap_spike</sprite>
       <sprite>sprites\spr_spike</sprite>
       <sprite>sprites\spr_trap</sprite>
+      <sprite>sprites\spr_stasis</sprite>
       <sprite>sprites\spr_p_trap</sprite>
+      <sprite>sprites\spr_stasis_field</sprite>
     </sprites>
     <sprites name="Moments">
       <sprite>sprites\spr_pickle_boss</sprite>
@@ -369,6 +377,9 @@
       <sprite>sprites\spr_plasma</sprite>
       <sprite>sprites\spr_rail</sprite>
       <sprite>sprites\spr_azar_rock</sprite>
+      <sprite>sprites\spr_rock</sprite>
+      <sprite>sprites\spr_direction_rock</sprite>
+      <sprite>sprites\spr_small_arrow</sprite>
       <sprite>sprites\spr_sword</sprite>
       <sprite>sprites\spr_wave</sprite>
       <sprite>sprites\spr_muzzle_flash</sprite>
@@ -395,6 +406,10 @@
           <sprite>sprites\spr_twan_eye</sprite>
           <sprite>sprites\spr_shuud_voice</sprite>
         </sprites>
+        <sprite>sprites\spr_smg_base</sprite>
+        <sprite>sprites\spr_smg_assault</sprite>
+        <sprite>sprites\spr_smg_doku</sprite>
+        <sprite>sprites\spr_smg_reflex</sprite>
       </sprites>
       <sprite>sprites\spr_healthpack</sprite>
       <sprite>sprites\spr_book</sprite>
@@ -504,6 +519,7 @@
     </scripts>
     <scripts name="Draw">
       <script>scripts\draw_weapon.gml</script>
+      <script>scripts\draw_weapon_color.gml</script>
       <script>scripts\draw_shield.gml</script>
       <script>scripts\draw_outline_begin.gml</script>
       <script>scripts\draw_outline_update.gml</script>
@@ -556,6 +572,7 @@
         <script>scripts\brute_approach.gml</script>
       </scripts>
       <script>scripts\enemy_attack.gml</script>
+      <script>scripts\enemy_attack_pos.gml</script>
       <scripts name="Clone">
         <script>scripts\clone_shoot.gml</script>
       </scripts>
@@ -636,6 +653,7 @@
       <script>scripts\generator_register_items.gml</script>
       <script>scripts\generator_spawn_item.gml</script>
       <script>scripts\generator_spawn_item_ext.gml</script>
+      <script>scripts\generator_place_directions.gml</script>
     </scripts>
     <scripts name="Gun">
       <script>scripts\gun_hand_distance.gml</script>
@@ -686,6 +704,7 @@
       <script>scripts\level_drop_items.gml</script>
       <script>scripts\level_drop_item_ext.gml</script>
       <script>scripts\level_path_in_stub.gml</script>
+      <script>scripts\level_stub_at.gml</script>
     </scripts>
     <scripts name="Map">
       <script>scripts\minimap_init.gml</script>
@@ -729,6 +748,7 @@
         <script>scripts\inventory_get_tutorial_weapon.gml</script>
         <script>scripts\inventory_get_tutorial_weapon2.gml</script>
         <script>scripts\inventory_quality_color.gml</script>
+        <script>scripts\inventory_gun_name.gml</script>
       </scripts>
       <script>scripts\player_activate_shield.gml</script>
       <script>scripts\player_compute_stats.gml</script>
@@ -975,13 +995,13 @@
       <object>objects\obj_damage_indicator</object>
       <object>objects\obj_muzzle_flash</object>
       <object>objects\obj_shield_hit</object>
+      <object>objects\obj_stasis</object>
     </objects>
     <objects name="Entity">
       <object>objects\obj_entity</object>
       <object>objects\obj_player</object>
       <object>objects\obj_target</object>
       <object>objects\obj_boss_target</object>
-      <object>objects\obj_turret</object>
       <object>objects\obj_enemy</object>
       <objects name="Boss1">
         <object>objects\obj_azar</object>
@@ -998,6 +1018,7 @@
       <objects name="Boss3">
         <object>objects\obj_twan_point</object>
         <object>objects\obj_twan_turret</object>
+        <object>objects\obj_twan</object>
       </objects>
       <objects name="Boss4">
         <object>objects\obj_shuud</object>
@@ -1009,6 +1030,7 @@
         <object>objects\obj_grunt</object>
         <object>objects\obj_brute</object>
         <object>objects\obj_dog</object>
+        <object>objects\obj_turret</object>
       </objects>
       <objects name="FinalBoss">
         <object>objects\obj_boss_final</object>
@@ -1022,6 +1044,7 @@
       <object>objects\obj_story</object>
       <object>objects\obj_light1</object>
       <object>objects\obj_light2</object>
+      <object>objects\obj_marker</object>
     </objects>
     <objects name="Interact">
       <object>objects\obj_door</object>
@@ -1100,6 +1123,11 @@
       <object>objects\obj_tutorial_teleporter</object>
       <object>objects\obj_tutorial_prop_dash</object>
       <object>objects\obj_tutorial_prop_dash_2</object>
+      <objects name="Dash">
+        <object>objects\obj_bollard</object>
+        <object>objects\obj_plate</object>
+        <object>objects\obj_dash_area</object>
+      </objects>
     </objects>
     <objects name="UI">
       <object>objects\obj_minimap</object>

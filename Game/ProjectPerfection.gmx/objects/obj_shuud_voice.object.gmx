@@ -28,6 +28,19 @@
             <string>event_inherited();
 
 data = inventory_create_weapon();
+data[weapon_index.modifier] = weapon_modifier.rail;
+data[weapon_index.weapon_subtype] = weapon_subtype.auto_rifle;
+data[weapon_index.name] = "Voice of Shuude";
+data[weapon_index.quality] = item_quality.unique;
+data[weapon_index.damage] = 34;
+data[weapon_index.capacity] = 40;
+data[weapon_index.remaining] = 40;
+data[weapon_index.reload_timeout] = 4 * 60;
+data[weapon_index.fire_timeout] = 60 / 30;
+data[weapon_index.bullet_speed] = 20;
+data[weapon_index.bullet_sprite] = spr_rail;
+data[weapon_index.accuracy] = 15;
+data[weapon_index.recoil_modifier] = 2;
 data[weapon_index.sprite_count] = 1;
 data[weapon_index.sprite_count + 1] = spr_shuud_voice;
 data[weapon_index.sprite_count + 2] = c_white;

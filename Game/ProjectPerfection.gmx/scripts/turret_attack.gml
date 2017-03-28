@@ -18,6 +18,7 @@ if(sm_ticks() % 120 == 0)
 
 if(sm_ticks() % 60 == 30)
 {
-    enemy_attack(obj_player, weapon);
+    var time = weapon[weapon_index.bullet_speed];
+    attack_gun_ext(weapon, x, y - 32, enemy_target(obj_player, time), 80, self, true, false, false, false);
     sfx_play_volume(snd_thwander_turret_shot, false, 0.6);
 }

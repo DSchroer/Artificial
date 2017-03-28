@@ -24,6 +24,14 @@ else if(gun_sprite == spr_pistol_base)
     ret[3] = 35;
     ret[4] = 55;
 }
+else if(gun_sprite == spr_smg_base)
+{
+    ret[0] = 55;
+    ret[1] = 35;
+    ret[2] = 70;
+    ret[3] = 46;
+    ret[4] = 55;
+}
 else if(gun_sprite == spr_azar_will)
 {
     ret[0] = 66;

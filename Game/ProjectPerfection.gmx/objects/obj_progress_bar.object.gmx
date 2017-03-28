@@ -26,12 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>
+texture_set_interpolation(false);
+var scale = (display_get_gui_width() - 200) / sprite_width;
+draw_sprite_ext(sprite_index, obj_progress.progress, 100, (display_get_gui_height() / 2) - ((sprite_height / 2) * scale), scale, scale, 0, c_white, 1);
 
-var scale = (view_wport - 200) / sprite_width;
-draw_sprite_ext(sprite_index, image_index, view_xport[0] + 100, view_hport/2, scale, scale, 0, c_white, 1);
-
-var xp = lerp(100, view_wport - 100, obj_progress.progress / 16);
-draw_sprite_ext(spr_prog_pos, 0, xp + (scale * 4), view_hport/2 - 50, scale, scale, 0, c_white, 1);
 </string>
           </argument>
         </arguments>
