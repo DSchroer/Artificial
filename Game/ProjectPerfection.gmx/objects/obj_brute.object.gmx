@@ -143,7 +143,7 @@ if(player_exists())
     }
 }
 
-entity_collision();
+//entity_collision();
 </string>
           </argument>
         </arguments>

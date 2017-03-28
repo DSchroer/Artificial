@@ -102,7 +102,7 @@ direction = 90 + (random(45) - 22.5);
 
 draw_set_color(c_red);
 draw_set_font(fonts_get(fonts.pixel));
-draw_text_transformed(x, y, string(damage), 3, 3, 0);
+draw_text_transformed(x, y, string(round(damage)), 3, 3, 0);
 </string>
           </argument>
         </arguments>

@@ -354,19 +354,36 @@ room_goto(rm_credits);
             <kind>1</kind>
             <string>/// vysnc
 
-var vsync = save_get_value(obj_game_save, "vsync", false);
-vsync = !vsync;
-display_reset(0, vsync);
-
-if(vsync)
+if(event_data == 0)
 {
-    button_vsync.text = "Disable VSync";
-}else{
-    button_vsync.text = "Enable VSync";
+    var vsync = save_get_value(obj_game_save, "vsync", false);
+    vsync = !vsync;
+    display_reset(0, vsync);
+    
+    if(vsync)
+    {
+        button_vsync.text = "Disable VSync";
+    }else{
+        button_vsync.text = "Enable VSync";
+    }
+    
+    save_set_value(obj_game_save, "vsync", vsync);
+    save_flush(obj_game_save);
+}else if(event_data == 1)
+{
+    var auto_aim = save_get_value(obj_game_save, "aim", false);
+    auto_aim = !auto_aim;
+    
+    if(auto_aim)
+    {
+        button_aim.text = "Disable Aimbot";
+    }else{
+        button_aim.text = "Enable Aimbot";
+    }
+    
+    save_set_value(obj_game_save, "aim", auto_aim);
+    save_flush(obj_game_save);
 }
-
-save_set_value(obj_game_save, "vsync", vsync);
-save_flush(obj_game_save);
 </string>
           </argument>
         </arguments>
