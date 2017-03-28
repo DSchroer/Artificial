@@ -346,7 +346,7 @@ if(speed != 0)
 {
     dash_last_direction = direction;
 }
-if(keymap_check(keycode.dash) &amp;&amp; !dead &amp;&amp; dash_frames == 0)
+if(keymap_check(keycode.dash) &amp;&amp; !dead &amp;&amp; dash_frames == 0 &amp;&amp; !open_workbench &amp;&amp; !ui_textbox_open())
 {
     dash_frames = 15;
     dash_direction = dash_last_direction;
