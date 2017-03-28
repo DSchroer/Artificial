@@ -51,15 +51,13 @@ var yoffset = 0;
 var items_considered = 0;
 for(var i = 0; i < array_length_1d(journal_is_open_slots); i++)
 {
-    // Draw wider buttons for "categories"
-    
     draw_set_colour(c_gray);
-    if(journal_active_category == i && journal_active_entry == -1)
+    if(scroll_index == items_considered)
     {
         draw_set_colour(c_aqua);
     }
     draw_set_alpha(0.75);
-    draw_rectangle(xp + 2 * padding, yp + yoffset + 0.5 * padding, xp + cell_width - padding * 4, yp + yoffset + cell_height - padding * 0.5, false);
+    draw_rectangle(xp + 2 * padding, yp + yoffset + 0.5 * padding, xp + cell_width - padding * 2, yp + yoffset + cell_height - padding * 0.5, false);
     draw_set_alpha(1.0);
     var title_string_ = titles[i] + "  (" + string(sizes[i]) + "/" + string(max_sizes[i]) + " found)"; 
     draw_set_colour(c_white);
@@ -85,12 +83,24 @@ for(var i = 0; i < array_length_1d(journal_is_open_slots); i++)
         {
             start_range += scroll_index - items_considered - number_of_rows + 1;          
         }
+        var extra = 0;
+        if(end_range - start_range > number_of_rows)
+        {
+            extra = end_range - start_range - number_of_rows;
+        }        
+        debug_show_string("START:" + string(number_of_rows));
+        debug_show_string("Extra:" + string(scroll_index - items_considered + 1));
+        if(extra > 0 && scroll_index - items_considered + 1 == start_range + number_of_rows)
+        {
+            start_range += 1;
+            end_range += 1;
+        }
         items_considered += min(sizes[i], start_range);
+        
+         
         // Need to do some black magic with indices because we only want to take certain sublists.
         for(var j = start_range; j < end_range && number_of_rows > 0; j++)
         {
-            //if(journal_active_category == i && journal_active_entry == j)
-            //{
             draw_set_colour(make_colour_rgb(5, 5, 5));
             if(scroll_index == items_considered)
             {
@@ -98,9 +108,8 @@ for(var i = 0; i < array_length_1d(journal_is_open_slots); i++)
                 journal_active_category = i;
                 journal_active_entry = j;
             }
-            //}
             draw_set_alpha(0.75);
-            draw_rectangle(xp + padding * 2, yp + yoffset + padding, xp + cell_width - 4 * padding, yp + yoffset + cell_height - padding, false );
+            draw_rectangle(xp + padding * 2, yp + yoffset + padding, xp + cell_width - 2 * padding, yp + yoffset + cell_height - padding, false );
             draw_set_alpha(1.0);
             
             draw_set_colour(c_white);
@@ -124,7 +133,7 @@ for(var i = 0; i < array_length_1d(sizes); i++)
     }
 }
 
-ui_set_colour("|black");
+draw_set_colour(make_colour_rgb(5, 5, 5));
 // Scroll bar background
 draw_rectangle(xp + cell_width, yp + padding, 
                xp + cell_width + scroll_bar_width, yp + back_height - padding, false);
@@ -154,28 +163,6 @@ if(keymap_check(keycode.interact))
         items_considered++;                
         if(journal_is_open_slots[i])
         {
-        /*
-            var start_range = 0;
-            var end_range = sizes[i];
-            if(scroll_index - items_considered >= number_of_rows)
-            {
-                start_range += scroll_index - items_considered - number_of_rows + 1;          
-            }
-            items_considered += min(sizes[i], start_range);
-            
-            for(var j = start_range; j < end_range && number_of_rows > 0; j++)
-            {
-                if(items_considered == scroll_index)
-                {
-                    journal_active_category = i;
-                    journal_active_entry = j;
-                    done = true;
-                    break;
-                }      
-                number_of_rows--;
-                items_considered++;
-            }
-            */
             items_considered += sizes[i];
         }
     }
@@ -207,9 +194,10 @@ if(journal_scroll_cooldown > 0)
 }
 
 // Mouse
-if(mouse_check_button(mb_left))
+if(mouse_check_button(mb_left) && journal_scroll_cooldown == 0)
 {    
-    if(point_in_rectangle(mx, my, xp + cell_width, yp + padding * 2, xp + cell_width + scroll_bar_width, yp + back_height - padding * 4))
+    journal_scroll_cooldown = 5;
+    if(point_in_rectangle(mx, my, xp + cell_width, yp + padding * 2, xp + cell_width + scroll_bar_width, yp + back_height - padding * 2))
     {
         // Scroll bar
         percent = min((my - yp) / (back_height - scroll_bar_size), 1.0);
@@ -224,8 +212,9 @@ if(mouse_check_button(mb_left))
         items_considered = 0;
         for(var i = 0; i < array_length_1d(journal_is_open_slots); i++)
         {
-            if(point_in_rectangle(mx, my, xp + padding * 2, yp + yoffset, xp + cell_width - padding * 4, yp + yoffset + button_height))
+            if(point_in_rectangle(mx, my, xp + padding * 2, yp + yoffset, xp + cell_width - padding * 2, yp + yoffset + button_height))
             {
+                journal_scroll_cooldown = 30;
                 journal_is_open_slots[i] = !journal_is_open_slots[i];        
                 journal_active_category = i;
                 journal_active_entry = -1;                    
@@ -243,16 +232,23 @@ if(mouse_check_button(mb_left))
                 {
                     start_range += scroll_index - items_considered - number_of_rows + 1;          
                 }
-                items_considered += min(sizes[i], start_range);
                 var extra = 0;
                 if(end_range - start_range > number_of_rows)
                 {
                     extra = end_range - start_range - number_of_rows;
                 }
                 
+                if(extra > 0 && scroll_index - items_considered + 1 == start_range + number_of_rows)
+                {
+                    start_range += 1;
+                    end_range += 1;
+                }
+                items_considered += min(sizes[i], start_range);
+                
+                
                 for(var j = start_range; j < end_range && number_of_rows > 0; j++)
                 {
-                    if(point_in_rectangle(mx, my, xp + padding * 2, yp + yoffset, xp + cell_width - padding * 4, yp + yoffset + button_height))
+                    if(point_in_rectangle(mx, my, xp + padding * 2, yp + yoffset, xp + cell_width - padding * 2, yp + yoffset + button_height))
                     {
                         journal_active_category = i;
                         journal_active_entry = j;
