@@ -385,6 +385,7 @@
       <sprite>sprites\spr_muzzle_flash</sprite>
       <sprite>sprites\spr_explosion</sprite>
       <sprite>sprites\spr_poison</sprite>
+      <sprite>sprites\spr_dym_part</sprite>
     </sprites>
     <sprite>sprites\spr_chest_closed</sprite>
     <sprite>sprites\spr_chest_open</sprite>
