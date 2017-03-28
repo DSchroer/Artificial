@@ -6,7 +6,11 @@ var i = 0;
 
 var boss_lore;
 i = 0;
-if(chapter >= story_chapter.chapter2)
+if(chapter <= story_chapter.chapter2)
+{
+    boss_lore = -1;
+}
+if(chapter >= story_chapter.chapter3)
 {
     boss_lore[i++] = "|brown Azar, The Unbreakable 1 `br |white Azar was a member of a race of subterranean dwarves. As a dwarf, he was always fascinated by the earth and secrets hidden beneath its crust. He dreamed that one day when he grew older, he would explore deep beneath the surface of his planet. But the destruction of his planet ended Azar's dream.";
     boss_lore[i++] = "|brown Azar, The Unbreakable 2 `br |white After the Cube was invented, Azar realized that it was the key to his dream. If he could control the Cube's power, he could invent a way to traverse the earth. And so Azar swore to fight for his science. When the great war came to a close, Azar used the power of his cube fragment to not only grow taller but also closer to the earth.";

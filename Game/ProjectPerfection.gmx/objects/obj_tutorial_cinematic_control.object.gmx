@@ -73,6 +73,8 @@ ui_textbox_queue("|fuchsia Research Notes: Experiment 'I' `br Star Year 2653. Mo
             <string>save_set_value(obj_game_save, "has_beaten_tutorial", true);
 save_flush(obj_game_save);
 obj_progress.tutorial = 9001;  
+save_set_value(obj_save_data, "tutorial", 9001);
+save_flush(obj_save_data);
 
 room_goto(rm_hub);
 
