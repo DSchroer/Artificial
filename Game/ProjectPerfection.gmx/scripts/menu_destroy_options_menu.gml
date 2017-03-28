@@ -8,6 +8,10 @@ with(button_vsync)
 {
     instance_destroy();
 }
+with(button_aim)
+{
+    instance_destroy();
+}
 with(slider_ctrlr)
 {
     instance_destroy();

@@ -18,6 +18,6 @@ if(sm_ticks() % 120 == 0)
 
 if(sm_ticks() % 60 == 30)
 {
-    enemy_attack(obj_player, weapon);
+    enemy_attack_pos(obj_player, weapon, x, y - 32);
     sfx_play_volume(snd_grunt_attack, true, 0.20);
 }

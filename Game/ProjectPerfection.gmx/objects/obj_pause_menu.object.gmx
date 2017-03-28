@@ -94,7 +94,7 @@ if(window_get_fullscreen() != last_full_screen)
     if(ds_stack_top(menu_stack) == menu_type.options)
     {
         menu_destroy_options_menu();
-        var yp = (display_get_gui_height() / 2) - 100
+        var yp = (display_get_gui_height() / 2) - 200
         menu_create_options_menu(yp);
     }else{
         menu_destroy_pause();
@@ -128,7 +128,7 @@ if(window_get_fullscreen() != last_full_screen)
 index = 0;
 ds_stack_push(menu_stack, menu_type.options);
 menu_destroy_pause();
-var yp = (display_get_gui_height() / 2) - 100
+var yp = (display_get_gui_height() / 2) - 200
 menu_create_options_menu(yp);
 
 </string>
@@ -256,19 +256,36 @@ sfx_bkg_set_volume(slider_music.percent);
             <kind>1</kind>
             <string>/// vysnc
 
-var vsync = save_get_value(obj_game_save, "vsync", false);
-vsync = !vsync;
-display_reset(0, vsync);
-
-if(vsync)
+if(event_data == 0)
 {
-    button_vsync.text = "Disable VSync";
-}else{
-    button_vsync.text = "Enable VSync";
+    var vsync = save_get_value(obj_game_save, "vsync", false);
+    vsync = !vsync;
+    display_reset(0, vsync);
+    
+    if(vsync)
+    {
+        button_vsync.text = "Disable VSync";
+    }else{
+        button_vsync.text = "Enable VSync";
+    }
+    
+    save_set_value(obj_game_save, "vsync", vsync);
+    save_flush(obj_game_save);
+}else if(event_data == 1)
+{
+    var auto_aim = save_get_value(obj_game_save, "aim", false);
+    auto_aim = !auto_aim;
+    
+    if(auto_aim)
+    {
+        button_aim.text = "Disable Aimbot";
+    }else{
+        button_aim.text = "Enable Aimbot";
+    }
+    
+    save_set_value(obj_game_save, "aim", auto_aim);
+    save_flush(obj_game_save);
 }
-
-save_set_value(obj_game_save, "vsync", vsync);
-save_flush(obj_game_save);
 </string>
           </argument>
         </arguments>
@@ -387,7 +404,7 @@ with(obj_pause)
             <string>var scale = 2.5;
 var text_width = string_width("Paused") * scale;
 var text_height = string_height("Paused") * scale;
-var yp = (display_get_gui_height() / 2) - 100;
+var yp = (display_get_gui_height() / 2) - 200;
 draw_text_transformed((display_get_gui_width() / 2) - (text_width / 2), yp - 100, "Paused", scale, scale, 0);
 
 if(instance_exists(obj_player))

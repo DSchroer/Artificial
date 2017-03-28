@@ -33,6 +33,7 @@ width = 256;
 height = 64;
 text = "Test";
 user_event_index = -1;
+event_data = 0;
 center_x = false;
 index = 0;
 active_sprite = spr_button_active;
@@ -87,6 +88,7 @@ if(obj_menu.index == self.index)
         {
             if(index &gt;= 0)
             {
+                event_data = other.event_data;
                 event_user(index);
             }
         }

@@ -16,7 +16,7 @@ if(sm_ticks() == 0)
     {
         if(random(2) < 1)
         {
-            enemy_attack(obj_player, basic);
+            enemy_attack_pos(obj_player, basic, x, y - 64);
             sfx_play_volume(snd_azar_basic, false, 1.2);
         }else{
             enemy_attack(obj_player, slam);
@@ -24,10 +24,10 @@ if(sm_ticks() == 0)
         }
     }else if(pdist < 900)
     {
-        enemy_attack(obj_player, wave);
+        enemy_attack_pos(obj_player, wave, x, y - 64);
         sfx_play_volume(snd_azar_rock_wave, false, 1.2);
     }else{
-        enemy_attack(obj_player, rock);
+        enemy_attack_pos(obj_player, rock, x, y - 64);
         sfx_play_volume(snd_azar_rock_throw, false, 1.2);
     }
 }

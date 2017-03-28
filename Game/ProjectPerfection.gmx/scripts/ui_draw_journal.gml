@@ -289,5 +289,3 @@ if(journal_active_category != -1 && journal_active_entry != -1)
 
 
 
-
-

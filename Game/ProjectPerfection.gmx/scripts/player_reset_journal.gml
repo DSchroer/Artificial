@@ -18,5 +18,3 @@ with(obj_player)
     journal_block_mouse = false;
 
 }
-
-

@@ -190,7 +190,9 @@ if(abs(haxis_rs) > 0.35 || abs(vaxis_rs) > 0.35)
     // Compute the direction and magnitude of the analogue stick press.
     var dir = point_direction(0, 0, haxis_rs, vaxis_rs);
     var magnitude = point_distance(0, 0, haxis_rs, vaxis_rs);
- 
+    
+    
+    
     var px = display_get_gui_width() / 2;
     var py = display_get_gui_height() / 2;
     
@@ -200,5 +202,36 @@ if(abs(haxis_rs) > 0.35 || abs(vaxis_rs) > 0.35)
     py = lerp(window_mouse_get_y(), py + lengthdir_y(magnitude * py, dir), 0.05 * ((0.5 + sen) * 3));
     
     window_mouse_set( px, py);
+}else if(save_get_value(obj_game_save, "aim", false)){
+
+    var enemies = level_stub_find_all(obj_enemy);
+    if(array_length_1d(enemies) > 0)
+    {
+        var dir = 0;
+        var dist = 1000;
+        for(var i = 0; i < array_length_1d(enemies); i++)
+        {
+            var enemy = enemies[i];
+            if(point_distance(x, y - 61, enemy.x, enemy.y - (enemy.sprite_height / 2)) < dist)
+            {
+                dir = point_direction(x, y - 61, enemy.x, enemy.y - (enemy.sprite_height / 2));
+                dist = point_distance(x, y - 61, enemy.x, enemy.y - (enemy.sprite_height / 2));
+            }
+        }
+        
+        var px = display_get_gui_width() / 2;
+        var py = display_get_gui_height() / 2;
+        
+        var magnitude = max(0.2, min( 0.8, dist / px));
+        
+        var sen = save_get_value(obj_game_save, "controller_sensitivity", 0.5);
+        
+        px = lerp(window_mouse_get_x(), px + lengthdir_x(magnitude * px, dir), 0.05 * ((0.5 + sen) * 3));
+        py = lerp(window_mouse_get_y(), py + lengthdir_y(magnitude * py, dir), 0.05 * ((0.5 + sen) * 3));
+        
+        window_mouse_set( px, py);
+    }
 }
+
+
 
