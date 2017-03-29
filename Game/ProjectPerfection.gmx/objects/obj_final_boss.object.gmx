@@ -27,15 +27,42 @@
             <kind>1</kind>
             <string>event_inherited();
 target = obj_boss_final;
+can_trigger_load = false;
 
 if(!tutorial_done())
 {
     ui_textbox_queue("????: `br I am this ship's central processing unit. My creator called me |greengold Lyra |white after his favourite constellation.");
     ui_textbox_queue("Lyra: `br As luck would have it, that broken |cube cube |white you hold is a piece of a great scientific device, rumoured to have been destroyed on the nearby planet of Vardus. ");
     ui_textbox_queue("Lyra: `br Tomorrow, you will investigate the planet surface for more parts of this |cube cube. |white If the rumours are true, then the greatest scientific device of all time will soon be ours.");
+    with(obj_boss_battle)
+    {
+        drawing = false;
+    }
+
 }
+else if(!save_get_value(obj_save_data, "final_boss_dialog", false))
+{
+    save_set_value(obj_save_data, "final_boss_dialog", true);   
+    save_flush(obj_save_data);
+    ui_textbox_queue("Lyra: This is amazing. I can't believe the cube is finally ours. And it seems to be every bit as powerful as rumoured. ");
+    ui_textbox_queue("J: ...");
+    ui_textbox_queue("J: We should destroy it. The universe isn't ready for something like it. ");
+    ui_textbox_queue("Lyra: How are you questioning orders? How disappointing. I guess you're nothing but another defective experiment. ");
+    can_trigger_load = true;
 
-
+    with(obj_boss_battle)
+    {
+        drawing = false;
+    }
+}
+else
+{
+    with(obj_boss_battle)
+    {
+        drawing = true;
+        alarm[0] = 120;
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -110,15 +137,26 @@ room_goto(rm_credits)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(instance_number(target) == 0 &amp;&amp; alarm[1] == -1)
+            <string>/*
+if(instance_number(target) == 0 &amp;&amp; alarm[1] == -1)
 {
     alarm[1] = 600;
 }
-
+*/
 if(!tutorial_done() &amp;&amp; !ui_textbox_open() &amp;&amp; alarm[2] == -1)
 {
     alarm[2] = 30;
     instance_create(0, 0, obj_fade_out);
+}
+
+if(can_trigger_load &amp;&amp; !ui_textbox_open())
+{
+    can_trigger_load = false;
+    with(obj_final_boss)
+    {
+        alarm[0] = 120;
+        drawing = true;
+    }
 }
 </string>
           </argument>

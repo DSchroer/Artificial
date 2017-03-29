@@ -20,6 +20,8 @@ Andrew Vissers
 Benjamin Ray
 Bradley Silliker 
 Brandon Ogon
+Chelsey Manuel
+Haley Butler
 Jordan LeBlanc
 Joseph Daniels
 Nick Hall
@@ -31,7 +33,10 @@ Tyler MacEachern
 Tyler Cosman
 
 !Alpha Feedback
-
+Joshua Sallos 
+Nick Di Feo
+Tyler Matchette
+Dan Jackson
 
 !Other Code
 https://github.com/dicksonlaw583/jsonion-classic
