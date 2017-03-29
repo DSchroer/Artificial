@@ -453,8 +453,10 @@
     </sprites>
     <sprite>sprites\sprite176</sprite>
     <sprite>sprites\spr_planet</sprite>
+    <sprite>sprites\spr_cut_planet</sprite>
     <sprite>sprites\spr_stars</sprite>
     <sprite>sprites\spr_ship</sprite>
+    <sprite>sprites\spr_cut_ship</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -1012,6 +1014,7 @@
       <object>objects\obj_muzzle_flash</object>
       <object>objects\obj_shield_hit</object>
       <object>objects\obj_stasis</object>
+      <object>objects\obj_teleport_effect</object>
     </objects>
     <objects name="Entity">
       <object>objects\obj_entity</object>
@@ -1241,6 +1244,7 @@
     <rooms name="Menus">
       <room>rooms\rm_credits</room>
     </rooms>
+    <room>rooms\rm_teleport</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
