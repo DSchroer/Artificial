@@ -14,6 +14,7 @@ speed = 0;
 
 if(sm_ticks() % 60 > 30 && sm_ticks() % 5 == 0)
 {
+    entity_use_animation(spr_captain_attack, true);
     enemy_attack_pos(obj_player, weapon, x, y - 48);
     sfx_play_volume(snd_captain_attack, true, 0.2);
 }

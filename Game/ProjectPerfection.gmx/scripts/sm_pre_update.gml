@@ -1,4 +1,9 @@
 ///sm_pre_update()
+if(is_paused())
+{
+    exit;
+}
+
 if(sm_current_state != sm_next)
 {
     if(!sm_no_push)

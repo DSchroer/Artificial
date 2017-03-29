@@ -18,6 +18,7 @@ if(sm_ticks() % 120 == 0)
 
 if(sm_ticks() % 60 == 30)
 {
+    entity_use_animation(spr_grunt_attack, true);
     enemy_attack_pos(obj_player, weapon, x, y - 32);
     sfx_play_volume(snd_grunt_attack, true, 0.20);
 }

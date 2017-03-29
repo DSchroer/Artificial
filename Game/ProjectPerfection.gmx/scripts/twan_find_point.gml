@@ -26,6 +26,15 @@ if(instance_number(obj_twan_point) == 0)
         }
     }
 }else{
+
+    if(obj_twan_point.x > x)
+    {
+        image_xscale = 1;
+    }else{
+        image_xscale = -1;
+    }
+
+    entity_use_animation(spr_twan_move, true);
     enemy_navmesh_move_nowall(obj_twan_point, 10, 60);
     
     if(!sm_has_var("wait"))

@@ -74,10 +74,20 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(center_x)
+            <string>
+var w = display_get_gui_width();
+var h = display_get_gui_height();
+draw_sprite_pos(spr_stars, 0, 0, 0, w, 0, w, h, 0, h, 1);
+
+if(center_x)
 {
     x = (display_get_gui_width() / 2 - (bbox_right - bbox_left) / 2);
 }
+
+draw_sprite_ext(spr_planet, 0, x - 200, y + 100, 2, 2, 0, c_white, 1);
+
+draw_sprite_ext(spr_ship, 0, x + 200, y + 100, 2, 2, 0, c_white, 1);
+
 draw_self();
 </string>
           </argument>
