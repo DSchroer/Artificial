@@ -452,6 +452,9 @@
       <sprite>sprites\spr_ring_charge</sprite>
     </sprites>
     <sprite>sprites\sprite176</sprite>
+    <sprite>sprites\spr_planet</sprite>
+    <sprite>sprites\spr_stars</sprite>
+    <sprite>sprites\spr_ship</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
