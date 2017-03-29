@@ -52,6 +52,7 @@
   </views>
   <instances>
     <instance objName="obj_teleport_effect" x="160" y="224" name="inst_36945528" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_fade_in" x="160" y="256" name="inst_88A96BEF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
