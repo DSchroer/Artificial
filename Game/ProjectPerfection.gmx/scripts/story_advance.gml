@@ -1,6 +1,6 @@
 ///story_advance(delay);
 var delay = argument0;
-
+exit;
 
 if(delay <= 1)
 {

@@ -117,7 +117,7 @@ if(obj_progress.tutorial == 50)
 if(!save_get_value(obj_save_data, "tutorial_library_explained", false))
 {
     save_set_value(obj_save_data, "tutorial_library_explained", true);
-    ui_textbox_queue("Welcome to the library. As the story progresses, new lore explaining the ship, bosses and other experiments will be added here. You can also reread previous lore books here using the computers. ");
+    ui_textbox_queue("Welcome to the |yellow library. |white As the story progresses, new |yellow lore |white explaining the world will be added here. You can also reread previous lore books using the computer. ");
     ui_flash_textbox();
 }
 </string>
@@ -148,8 +148,7 @@ if(!save_get_value(obj_save_data, "tutorial_mission_brief", false))
 {
     save_set_value(obj_save_data, "tutorial_mission_brief", true);
     
-    ui_textbox_queue("Broadcasting System: `br We are now orbiting Vardus in the Cataian Galaxy. It is time to begin your search for pieces of the cube.");
-    ui_textbox_queue("Broadcasting System: `br Please report to the teleporters on the left of the ship.");
+    ui_textbox_queue("|broadcast Broadcasting System: |white `br It's time to begin your search for pieces of the |cube cube. |white Please report to the |orange teleporters on the left |white of the ship.");
     ui_flash_textbox();
 }
 

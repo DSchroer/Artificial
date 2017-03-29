@@ -2,7 +2,7 @@
 
 var weapon = inventory_create_weapon();
 weapon[weapon_index.item_id] = item_ids.gun;
-weapon[weapon_index.quality] = item_quality.unique;
+weapon[weapon_index.quality] = item_quality.common;
 weapon[weapon_index.modifier] = weapon_modifier.normal;
 weapon[weapon_index.damage] = 30;
 weapon[weapon_index.accuracy] = 30;

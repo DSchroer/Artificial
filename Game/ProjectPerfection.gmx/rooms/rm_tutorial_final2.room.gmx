@@ -89,7 +89,7 @@
     <instance objName="obj_invisible_wall" x="992" y="1216" name="inst_8F4B932D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="928" y="1216" name="inst_BBF680A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn_player" x="1376" y="1760" name="inst_D6EA26BF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_item" x="1568" y="1088" name="inst_7F42CF2E" locked="0" code="data = inventory_get_tutorial_weapon();&#xA;sparkles = false;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_item" x="1568" y="1088" name="inst_7F42CF2E" locked="0" code="data = inventory_get_tutorial_weapon();&#xA;sparkles = true;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_item" x="1408" y="1088" name="inst_96DEDFB7" locked="0" code="data = inventory_create_shield();&#xA;sparkles = true;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tutorial_trigger" x="1152" y="960" name="inst_62F419E7" locked="0" code="visible = false;&#xA;trigger_number = 12;&#xA;refires_automatically = false;" scaleX="8" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="obj_tutorial_spawner" x="800" y="768" name="inst_783057C6" locked="0" code="position = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -220,7 +220,7 @@
     <instance objName="obj_invisible_wall" x="1472" y="160" name="inst_877A9AAD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="1472" y="96" name="inst_D1EFAB93" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="1280" y="96" name="inst_721BBDA7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_item" x="1248" y="1088" name="inst_7C7212CC" locked="0" code="data = inventory_get_tutorial_weapon2()&#xA;sparkles = false;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_item" x="1248" y="1088" name="inst_7C7212CC" locked="0" code="data = inventory_get_tutorial_weapon2()&#xA;sparkles = true;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tutorial_state" x="64" y="32" name="inst_AB724C83" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tutorial_door" x="1344" y="128" name="inst_AD45D842" locked="0" code="destination = rm_tutorial_final3;&#xA;" scaleX="2" scaleY="1.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_light" x="1152" y="544" name="inst_4066E4A1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
