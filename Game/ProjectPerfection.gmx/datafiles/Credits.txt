@@ -13,7 +13,7 @@ Nick Tremblay
 !Designer
 Spencer Gould
 
-!Testers
+!Testing and Feedback
 Alexander Storey
 Alyssa Roche
 Andrew Vissers
@@ -29,6 +29,9 @@ Rob Jeffries
 Ryan Bell
 Tyler MacEachern
 Tyler Cosman
+
+!Alpha Feedback
+
 
 !Other Code
 https://github.com/dicksonlaw583/jsonion-classic
