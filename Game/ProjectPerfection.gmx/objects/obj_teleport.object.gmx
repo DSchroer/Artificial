@@ -101,7 +101,10 @@ else
     room_goto(rm_transition);
 }
 
-
+with(obj_player)
+{
+    alarm[9] = 60;
+}
 </string>
           </argument>
         </arguments>

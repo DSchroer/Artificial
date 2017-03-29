@@ -34,20 +34,31 @@ with(obj_player)
     current_health = max_health;
 }
 
-/*
-ui_textbox_queue("|fuchsia Research Notes: Experiment 'J' `br Star Year 2653. Month 09. Day 27. `br |white Project iteration 'J' appears to be a success. All the combat prowess of its predecessors, but finally able to follow instructions. It may not be a 'true' AI now, but perhaps what I have constructed is even better. ");
-ui_textbox_queue("|fuchsia Research Notes: Experiment 'J' `br Star Year 2653. Month 09. Day 27. `br |white Science always seems to hold the answer to these problems. It's take nearly 2 years of tweaks, reprogramming, and bioengineering; however it has all been worth it. I have built the perfect soldier.");
-ui_textbox_queue("|fuchsia Research Notes: Experiment 'J' `br Star Year 2653. Month 09. Day 27. `br |white What's interesting is that even fate seems to favour my quest to reassemble the cube. After all, what are the chances part of the cube would impact our ship just as we arrived on the planet? I suppose even fate can see the value in science.");
-ui_textbox_queue("|fuchsia Research Notes: Experiment 'J' `br Star Year 2653. Month 09. Day 27. `br |white Tomorrow 'J' will embark on his mission. Hopefully, the planet of Vardus holds the secrets to this cube. ");
-ui_textbox_queue("|fuchsia Research Notes: Experiment 'J' `br Star Year 2653. Month 09. Day 27. `br |white Summary: `br Project iteration 10: Codename 'J' `br Status: |green Success. |white `br Defects: None");
-*/
-/*
-ui_textbox_queue("|fuchsia Research Notes: Experiment 'I' `br Star Year 2653. Month 09. Day 27. `br |white Project iteration " + '"I"' + " is without question a |red failure. |white The defects were too glaring and obvious to overlook, so it became necessary to dispose of the subject. After all, if it cannot see the value in gathering the cube then it is useless to the mission.");
-ui_textbox_queue("|fuchsia Research Notes: Experiment 'I' `br Star Year 2653. Month 09. Day 27. `br |white But perhaps |orange science |white holds the answer. It would seem that by giving these AI the ability to think and reason, they rapidly develop this pesky thing the humans call |yellow Free Will.");
-ui_textbox_queue("|fuchsia Research Notes: Experiment 'I' `br Star Year 2653. Month 09. Day 27. `br |white However, if |orange science |white can create perfect AI, then with a few tweaks surely it can create a being unable to question authority. If the past experiments have proven anything, a being that cannot think is the answer. It must surely be the perfect soldier.");
-ui_textbox_queue("|fuchsia Research Notes: Experiment 'I' `br Star Year 2653. Month 09. Day 27. `br |white Tomorrow, research will begin on iteration 10, codename 'J'. It will be unable defy our orders. It will gather the cube.");
-ui_textbox_queue("|fuchsia Research Notes: Experiment 'I' `br Star Year 2653. Month 09. Day 27. `br |white Summary: `br Project iteration 9: Codename 'I' `br Status: |red Failure. |white `br Critical Defect: |yellow Free Will. ");
-*/
+var counter = save_get_value(obj_save_data, "end_of_chapter_moment_counter", 1);
+
+if(obj_progress.cube_parts == 1 &amp;&amp; counter == 1)
+{
+    save_set_value(obj_save_data, "end_of_chapter_moment_counter", counter + 1);
+    ui_textbox_queue("");
+    ui_textbox_queue("");
+    
+}
+else if(obj_progress.cube_parts == 2 &amp;&amp; counter == 2)
+{
+    save_set_value(obj_save_data, "end_of_chapter_moment_counter", counter + 1);
+
+}
+else if(obj_progress.cube_parts == 3 &amp;&amp; counter == 3)
+{
+    save_set_value(obj_save_data, "end_of_chapter_moment_counter", counter + 1);
+
+}
+else if(obj_progress.cube_parts == 4 &amp;&amp; counter == 4)
+{
+    save_set_value(obj_save_data, "end_of_chapter_moment_counter", counter + 1);
+
+}
+
     
 </string>
           </argument>

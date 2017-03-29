@@ -97,3 +97,5 @@ journal_active_category = -1;
 journal_active_entry = -1;
 journal_block_mouse = false;
 
+boss_warning_timer_active = false;
+

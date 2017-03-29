@@ -15,7 +15,7 @@ if(!is_gun(held_item) || !is_gun(other_item))
     exit;
 }
 
-var move_value = (sprite_get_width(spr_tooltip_top_legendary) * 1.5 + 20);
+var move_value = (sprite_get_width(spr_tooltip_top_legendary) * 1.6 + 20);
 var xpos = ui_draw_weapon_tooltip_comparison(xp, yp, other_item, held_item);
 ui_draw_weapon_tooltip2(xpos - move_value, yp, held_item, true);
 

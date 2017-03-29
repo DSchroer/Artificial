@@ -148,7 +148,7 @@ if(keyboard_check_pressed(vk_numpad9))
     weapon[weapon_index.fire_cooldown] = 0;
     weapon[weapon_index.reload_timeout] = 1;
     weapon[weapon_index.reload_cooldown] = 0;
-    weapon[weapon_index.name] = "Unheard of Auto Rifle";
+    weapon[weapon_index.name] = "inconceivable sniper rifle";
     weapon[weapon_index.weapon_subtype] = weapon_subtype.pistol;
     
     weapon[weapon_index.bullet_sprite] = spr_bullet;

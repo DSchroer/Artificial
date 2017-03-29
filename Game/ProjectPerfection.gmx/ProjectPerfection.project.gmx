@@ -956,6 +956,7 @@
   </shaders>
   <fonts name="fonts">
     <font>fonts\fnt_hit</font>
+    <font>fonts\font1</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_shuud_attack_area</object>

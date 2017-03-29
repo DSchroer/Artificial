@@ -61,6 +61,68 @@ cursor_sprite = spr_aim;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="9">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var p = save_get_value(obj_save_data, "boss_warning", 0);
+if(obj_progress.progress == 1 &amp;&amp; p == 0)
+{
+    save_set_value(obj_save_data, "boss_warning", 1);
+    ui_textbox_queue("Azar: You should not be here, traveller. There is nothing but ruins left on Vardus. You can still turn back before it's too late. ");
+    ui_flash_textbox();
+}
+else if(obj_progress.progress == 2 &amp;&amp; p == 1)
+{
+    save_set_value(obj_save_data, "boss_warning", 2);
+    ui_textbox_queue("Azar: I don't know why you keep going. There's nothing of value left here. Only ruins, death, and this accursed |cube cube. ");
+    ui_flash_textbox();
+}
+else if(obj_progress.progress == 4 &amp;&amp; p == 2)
+{
+    save_set_value(obj_save_data, "boss_warning", 3);
+    ui_textbox_queue("Dym: Why would you come here? Why would anyone come to the barren wasteland that is Vardus. The planet is nothing but a shadow of its former self. ");
+    ui_flash_textbox();
+}
+
+else if(obj_progress.progress == 6 &amp;&amp; p == 3)
+{
+    save_set_value(obj_save_data, "boss_warning", 4);
+    ui_textbox_queue("Dym: Azar didn't deserve to die. Neither did Cora. What kind of monster are you?");
+    ui_flash_textbox();
+}
+else if(obj_progress.progress == 9 &amp;&amp; p == 4)
+{
+    save_set_value(obj_save_data, "boss_warning", 5);
+    ui_textbox_queue("Thwander: I suppose if you've made it this far, then you've already killed Azar, Dym, and Cora. There's no point in warning you to turn back. Your mission is all to clear. ");
+    ui_flash_textbox();
+}
+else if(obj_progress.progress == 10 &amp;&amp; p == 5)
+{
+    save_set_value(obj_save_data, "boss_warning", 6);
+    ui_textbox_queue("Thwander: I have to wonder why anyone would come here though. Why anyone would want this |cube cube piece. I'd trade it away in a second to return to the forests of my home planet. ");
+    ui_flash_textbox();
+}
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="8">
       <action>
         <libid>1</libid>

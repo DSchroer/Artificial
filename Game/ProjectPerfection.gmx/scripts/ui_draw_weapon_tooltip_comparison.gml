@@ -36,7 +36,7 @@ case item_quality.unique:
 }
 
 var background2 = spr_tooltip_body;
-var bscale_x = 1.5;
+var bscale_x = 1.6;
 var bscale_top_y = 2;
 var bscale_bottom_y = 1.2;
 var screen_width = display_get_gui_width();
