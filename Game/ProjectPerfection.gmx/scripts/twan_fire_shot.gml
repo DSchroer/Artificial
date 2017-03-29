@@ -1,4 +1,8 @@
 ///twan_fire_shot()
+
+entity_face_player()
+entity_use_animation(spr_twan_shoot, true);
+
 if(sm_ticks() == 0)
 {
     sm_set_var("rand", round(random(10)));

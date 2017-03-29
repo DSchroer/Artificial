@@ -213,13 +213,15 @@
         <sprite>sprites\spr_turret</sprite>
         <sprite>sprites\spr_dog_move</sprite>
         <sprite>sprites\spr_grunt_move</sprite>
+        <sprite>sprites\spr_grunt_attack</sprite>
+        <sprite>sprites\spr_captain_move</sprite>
+        <sprite>sprites\spr_captain_attack</sprite>
       </sprites>
       <sprite>sprites\spr_env_rock</sprite>
       <sprites name="Boss">
         <sprite>sprites\spr_final_boss</sprite>
         <sprite>sprites\spr_final_boss_hit</sprite>
         <sprite>sprites\spr_dym</sprite>
-        <sprite>sprites\spr_thwander</sprite>
         <sprites name="Azar">
           <sprite>sprites\spr_azar_idle</sprite>
           <sprite>sprites\spr_azar_attack</sprite>
@@ -229,6 +231,12 @@
           <sprite>sprites\spr_worm_head</sprite>
           <sprite>sprites\spr_worm_body</sprite>
           <sprite>sprites\spr_worm_tail</sprite>
+        </sprites>
+        <sprites name="Twan">
+          <sprite>sprites\spr_thwander</sprite>
+          <sprite>sprites\spr_twan_move</sprite>
+          <sprite>sprites\spr_thwan_mine</sprite>
+          <sprite>sprites\spr_twan_shoot</sprite>
         </sprites>
       </sprites>
     </sprites>
@@ -374,6 +382,7 @@
     </sprites>
     <sprites name="Shots">
       <sprite>sprites\spr_bullet</sprite>
+      <sprite>sprites\spr_rocket</sprite>
       <sprite>sprites\spr_plasma</sprite>
       <sprite>sprites\spr_rail</sprite>
       <sprite>sprites\spr_azar_rock</sprite>
@@ -622,6 +631,8 @@
       <script>scripts\entity_collision.gml</script>
       <script>scripts\entity_apply_damage.gml</script>
       <script>scripts\entity_take_damage.gml</script>
+      <script>scripts\entity_use_animation.gml</script>
+      <script>scripts\entity_face_player.gml</script>
     </scripts>
     <scripts name="Fonts">
       <script>scripts\fonts_init.gml</script>
