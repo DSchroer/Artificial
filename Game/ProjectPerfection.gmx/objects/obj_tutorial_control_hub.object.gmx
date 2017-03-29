@@ -147,7 +147,6 @@ if(!save_get_value(obj_save_data, "tutorial_library_explained", false))
 if(!save_get_value(obj_save_data, "tutorial_mission_brief", false))
 {
     save_set_value(obj_save_data, "tutorial_mission_brief", true);
-    
     ui_textbox_queue("|broadcast Broadcasting System: |white `br It's time to begin your search for pieces of the |cube cube. |white Please report to the |orange teleporters on the left |white of the ship.");
     ui_flash_textbox();
 }

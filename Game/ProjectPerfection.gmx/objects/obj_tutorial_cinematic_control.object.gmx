@@ -34,29 +34,42 @@ with(obj_player)
     current_health = max_health;
 }
 
-var counter = save_get_value(obj_save_data, "end_of_chapter_moment_counter", 1);
+var counter = save_get_value(obj_save_data, "eocmoment", 1);
 
-if(obj_progress.cube_parts == 1 &amp;&amp; counter == 1)
+if(obj_progress.cube_parts == 1 &amp;&amp; counter &lt;= 1)
 {
-    save_set_value(obj_save_data, "end_of_chapter_moment_counter", counter + 1);
-    ui_textbox_queue("");
-    ui_textbox_queue("");
-    
+    save_set_value(obj_save_data, "eocmoment", 2);
+    save_flush(obj_save_data);
+    ui_textbox_queue("As you walk through the portal, you feel like you can hear a whisper in the wind. It's as if someone wants to tell you something, but can't quite piece together any words. As you look around, the room is empty. Perhaps it's just your imagination. ");
+    ui_textbox_queue("J: (How strange. I could feel a small amount power as I picked up the |cube cube |white piece. But if that's all this cube has to offer, then surely it's useless. No more powerful than a simple battery. )");
+    ui_textbox_queue("J: (I suppose it's possible that the secret to the |cube cube's |white power lies elsewhere on Vardus. It can't hurt to keep looking if there's even a chance that the cube can be restored to its former glory. )");
+    ui_textbox_queue("J: (After all, a scientific discovery like this only comes along once in a century. Imagine what we could do with it. The people we could help... )");
 }
-else if(obj_progress.cube_parts == 2 &amp;&amp; counter == 2)
+else if(obj_progress.cube_parts == 2 &amp;&amp; counter &lt;= 2)
 {
-    save_set_value(obj_save_data, "end_of_chapter_moment_counter", counter + 1);
-
+    save_set_value(obj_save_data, "eocmoment", 3);
+    save_flush(obj_save_data);
+    ui_textbox_queue("As you walk through the portal, you hear the same whisper in the winds as before. This time, you think you can make out parts of certain words. It isn't much, but you think you can hear " + '"' + "... to ... ga..e... c...e... it....i...ar..." + '"' + ". ");
+    ui_textbox_queue("J: (This is all so strange. It seems that Vardus used to be covered in vegetation, but now... it's nothing but a barren desert. What could have done this?)");
+    ui_textbox_queue("J: (And of course there's Azar and Dym. They each held a piece of the cube. They even seemed to be trying to warn me about something on Vardus...)");
+    ui_textbox_queue("J: (Either way, this whole thing seems to be centered around the cube. I'm only missing two more pieces, so I should probably explore the rest of the planet. After all, the cube is just a rock. It can't hurt anyone. ) ");
 }
-else if(obj_progress.cube_parts == 3 &amp;&amp; counter == 3)
+else if(obj_progress.cube_parts == 3 &amp;&amp; counter &lt;= 3)
 {
-    save_set_value(obj_save_data, "end_of_chapter_moment_counter", counter + 1);
-
+    save_set_value(obj_save_data, "eocmoment", 4);
+    save_flush(obj_save_data);
+    ui_textbox_queue("As you walk through the portal, you hear that familiar voice that was trying to communicate with you before. You can make out full words now, but not full sentences. As you listen, you hear " + '"' + "... Vardus... not ready... destroyed... ... ... me ... " + '"' + ". ");
+    ui_textbox_queue("J: (Only 1 more piece of the cube left. A great scientific discovery is so close, but it doesn't feel right.)");
+    ui_textbox_queue("J: (The last cube piece belonged to something that looked human. And she certainly didn't want the cube piece. But how can something like that be ‘cursed'?");
 }
-else if(obj_progress.cube_parts == 4 &amp;&amp; counter == 4)
+else if(obj_progress.cube_parts == 4 &amp;&amp; counter &lt;= 4)
 {
-    save_set_value(obj_save_data, "end_of_chapter_moment_counter", counter + 1);
-
+    save_set_value(obj_save_data, "eocmoment", 5);
+    save_flush(obj_save_data);
+    ui_textbox_queue("As you walk through the portal this time, you hear nothing. The winds are silent. ");
+    ui_textbox_queue("J: (The last cube piece. The greatest scientific device ever known is whole once again. )");
+    ui_textbox_queue("J: (If the records scattered around this place are true, then the cube is can create any element. The greatest invention ever. But also the greatest weapon ever known. Whatever the anti-matter bomb is, it was created using the cube, and decimated Vardus.)");
+    ui_textbox_queue("J: (But the people here were corrupt... unable to handle the cube's power... we'd never be so foolish... would we? Can we really take that chance though?)");
 }
 
     

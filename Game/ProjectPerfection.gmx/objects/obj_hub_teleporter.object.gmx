@@ -49,7 +49,7 @@ event_inherited();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(rm_hub);
+            <string>room_goto(rm_tutorial_cinematic);
 </string>
           </argument>
         </arguments>
