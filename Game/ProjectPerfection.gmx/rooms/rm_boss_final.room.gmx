@@ -209,6 +209,7 @@
     <instance objName="obj_wall" x="640" y="64" name="inst_C763BFA1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="704" y="64" name="inst_C086377F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="768" y="64" name="inst_6983F211" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tele_eff_in" x="128" y="160" name="inst_193235B1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bkg_hub" x="256" y="448" w="64" h="64" xo="384" yo="576" id="10008893" name="inst_458CA61B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

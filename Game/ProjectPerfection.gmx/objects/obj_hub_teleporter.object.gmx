@@ -77,6 +77,7 @@ event_inherited();
     sfx_play(snd_door_lock_open, false);
     instance_create(0, 0, obj_fade_out);
     alarm[0] = 30;
+    instance_create(0, 0, obj_tele_eff_out);
 }
 
 </string>

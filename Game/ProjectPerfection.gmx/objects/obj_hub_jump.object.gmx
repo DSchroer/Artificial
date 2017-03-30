@@ -32,7 +32,7 @@ if(save_get_value(obj_save_data, "fb_dead", false))
 }
 else if(save_get_value(obj_save_data, "tutorial", 0) &lt;= 1)
 {
-    room_goto(rm_tutorial_final1);
+    room_goto(rm_intro);
 }
 else if(save_get_value(obj_save_data, "tutorial", 0) == 2)
 {
