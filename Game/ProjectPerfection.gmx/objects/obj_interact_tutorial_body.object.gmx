@@ -85,7 +85,7 @@ else
             <kind>1</kind>
             <string>if(!ui_textbox_open() &amp;&amp; cooldown == 0)
 {
-    ui_textbox_queue("The creature seems to have passed away.");
+    ui_textbox_queue("The creature seems to have passed away.", -1);
 }
 </string>
           </argument>

@@ -34,6 +34,7 @@ dash_speed = 10;
 
 // UI queue
 textbox_queue = ds_queue_create();
+portrait_queue = ds_queue_create();
 animation_timer = 0;
 textbox_cooldown = 0;
 

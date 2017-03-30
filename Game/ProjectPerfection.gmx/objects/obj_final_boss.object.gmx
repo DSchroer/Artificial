@@ -42,9 +42,9 @@ if(save_get_value(obj_save_data, "fb_dead", false))
 }
 else if(!tutorial_done())
 {
-    ui_textbox_queue("????: `br I am this ship's central processing unit. My creator called me |greengold Lyra |white after his favourite constellation.");
-    ui_textbox_queue("Lyra: `br As luck would have it, that broken |cube cube |white you hold is a piece of a great scientific device, rumoured to have been destroyed on the nearby planet of Vardus. ");
-    ui_textbox_queue("Lyra: `br Tomorrow, you will investigate the planet surface for more parts of this |cube cube. |white If the rumours are true, then the greatest scientific device of all time will soon be ours.");
+    ui_textbox_queue("I am this ship's central processing unit. My creator called me |greengold Lyra |white after his favourite constellation.", spr_portrait_lyra);
+    ui_textbox_queue("As luck would have it, that broken |cube cube |white you hold is a piece of a great scientific device, rumoured to have been destroyed on the nearby planet of Vardus. ", spr_portrait_lyra);
+    ui_textbox_queue("Tomorrow, you will investigate the planet surface for more parts of this |cube cube. |white If the rumours are true, then the greatest scientific device of all time will soon be ours.", spr_portrait_lyra);
     with(obj_boss_battle)
     {
         drawing = false;
@@ -55,10 +55,10 @@ else if(!save_get_value(obj_save_data, "final_boss_dialog", false))
 {
     save_set_value(obj_save_data, "final_boss_dialog", true);   
     save_flush(obj_save_data);
-    ui_textbox_queue("Lyra: This is amazing. I can't believe the cube is finally ours. And it seems to be every bit as powerful as rumoured. ");
-    ui_textbox_queue("J: ...");
-    ui_textbox_queue("J: We should destroy it. The universe isn't ready for something like it. ");
-    ui_textbox_queue("Lyra: How are you questioning orders? How disappointing. I guess you're nothing but another defective experiment. ");
+    ui_textbox_queue("I can't believe the |cube cube |white is finally ours. And it seems to be every bit as powerful as rumoured. ", spr_portrait_lyra);
+    ui_textbox_queue("...", spr_portrait_j);
+    ui_textbox_queue("We've made a mistake putting the |cube cube |white back together. We should destroy it. The universe just isn't ready for it. ", spr_portrait_j);
+    ui_textbox_queue("I thought I had created the perfect solider, but I guess I was wrong. Whatever I've created is clearly insane. Oh well, I can always destroy you and try again. ", spr_portrait_lyra);
     can_trigger_load = true;
 
     drawing = false;
@@ -125,7 +125,7 @@ inst.data = inventory_get_end_weapon();
 var killable = instance_create(xp, yp - 300, obj_cube_killable);
 can_spawn_cube = false;
 
-ui_textbox_queue("J: (I suppose doing the right thing is never easy. The universe just isn't ready for this. I have to |yellow destroy the cube. |white )");
+ui_textbox_queue("(I suppose doing the right thing is never easy. The universe just isn't ready for this. I have to |yellow destroy the cube. |white )", spr_portrait_j);
 
 </string>
           </argument>

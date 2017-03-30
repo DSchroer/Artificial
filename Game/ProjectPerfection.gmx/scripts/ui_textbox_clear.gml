@@ -1,3 +1,9 @@
 ///ui_textbox_clear()
 
-ds_queue_clear(obj_player.textbox_queue);
+with(obj_player)
+{
+    ds_queue_clear(textbox_queue);
+    ds_queue_clear(portrait_queue);
+       
+}
+

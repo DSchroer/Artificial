@@ -57,6 +57,7 @@ if(obj_final_door.is_closed)
           <argument>
             <kind>1</kind>
             <string>
+/*
 if(obj_progress.tutorial == 50)
 {
     ui_textbox_queue("I: (This is all so strange. What do they want with me?)");
@@ -65,7 +66,7 @@ if(obj_progress.tutorial == 50)
     obj_progress.tutorial++;
 
 }
-
+*/
 </string>
           </argument>
         </arguments>
@@ -117,7 +118,7 @@ if(obj_progress.tutorial == 50)
 if(!save_get_value(obj_save_data, "tutorial_library_explained", false))
 {
     save_set_value(obj_save_data, "tutorial_library_explained", true);
-    ui_textbox_queue("Welcome to the |yellow library. |white As the story progresses, new |yellow lore |white explaining the world will be added here. You can also reread previous lore books using the computer. ");
+    ui_textbox_queue("Welcome to the |yellow library. |white As the story progresses, new |yellow lore |white explaining the world will be added here. You can also reread previous lore books using the computer. ", -1);
     ui_flash_textbox();
 }
 </string>
@@ -147,7 +148,7 @@ if(!save_get_value(obj_save_data, "tutorial_library_explained", false))
 if(!save_get_value(obj_save_data, "tutorial_mission_brief", false))
 {
     save_set_value(obj_save_data, "tutorial_mission_brief", true);
-    ui_textbox_queue("|broadcast Broadcasting System: |white `br It's time to begin your search for pieces of the |cube cube. |white Please report to the |orange teleporters on the left |white of the ship.");
+    ui_textbox_queue("It's time to begin your search for pieces of the |cube cube. |white Please report to the |orange teleporters on the left |white of the ship.", spr_portrait_broadcast);
     ui_flash_textbox();
 }
 

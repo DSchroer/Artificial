@@ -86,7 +86,7 @@ save_flush(obj_save_data);
           <argument>
             <kind>1</kind>
             <string>/// Tutorial Rm#1 Start
-ui_textbox_queue("|broadcast Broadcasting System: `br |white Now that you've had a moment to get used to your new body, it's time to suit up. `br Press |key WASD |white to |yellow move |white and |key RMB |white to |yellow advance dialog |white windows. ");
+ui_textbox_queue("Now that you've had a moment to get used to your new body, it's time to suit up. `br Press |key WASD |white to |yellow move |white and |key RMB |white to |yellow advance dialog |white windows. ", spr_portrait_broadcast);
 ui_flash_textbox();
 
 </string>
@@ -113,7 +113,7 @@ ui_flash_textbox();
             <kind>1</kind>
             <string>/// Trigger#2 - Dash prompt
 
-ui_textbox_queue("|broadcast Broadcasting System: `br |white Press |key Space |white to |yellow Dash");
+ui_textbox_queue("Press |key Space |white to |yellow Dash", spr_portrait_broadcast);
 ui_flash_textbox();
 
 
@@ -142,7 +142,7 @@ ui_flash_textbox();
             <kind>1</kind>
             <string>/// Trigger#3 - Dash info
 
-ui_textbox_queue("|broadcast Broadcasting System: `br |white Dashing is not only faster, it allows you to dodge enemy attacks if timed correctly");
+ui_textbox_queue("Dashing is not only faster, it allows you to dodge enemy attacks if timed correctly", spr_portrait_broadcast);
 ui_flash_textbox();
 
 </string>
@@ -169,7 +169,7 @@ ui_flash_textbox();
             <kind>1</kind>
             <string>/// Combat Equipment Message
 
-ui_textbox_queue("|broadcast Broadcasting System: `br |white Press |key RMB |white to |yellow interact |white with items.");
+ui_textbox_queue("Press |key RMB |white to |yellow interact |white with items.", spr_portrait_broadcast);
 //ui_textbox_queue("|broadcast Broadcasting System: `br |white Please note: while energy shield technology is powerful it is not able to prevent all damage. It can only take a limited amount of damage before it must recharge. ");
 ui_flash_textbox();
 
@@ -200,7 +200,7 @@ with(obj_combat_sim)
           <argument>
             <kind>1</kind>
             <string>/// Rm#3 Death Message
-ui_textbox_queue("????: `br I tri... protect... cube... protect it from... the... sc... ts... I... Vard...s... too... destroy it...");
+ui_textbox_queue("I tri... protect... cube... protect it from... the... sc... ts... I... Vard...s... too... destroy it...", spr_portrait_question);
 
 
 </string>

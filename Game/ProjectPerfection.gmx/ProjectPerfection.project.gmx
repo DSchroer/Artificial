@@ -311,6 +311,17 @@
       </sprites>
       <sprite>sprites\spr_white_right</sprite>
       <sprite>sprites\spr_white_down</sprite>
+      <sprites name="Portraits">
+        <sprite>sprites\spr_portrait_question</sprite>
+        <sprite>sprites\spr_portrait_lyra</sprite>
+        <sprite>sprites\spr_portrait_azar</sprite>
+        <sprite>sprites\spr_portrait_broadcast</sprite>
+        <sprite>sprites\spr_portrait_dym</sprite>
+        <sprite>sprites\spr_portrait_thwander</sprite>
+        <sprite>sprites\spr_portrait_j</sprite>
+        <sprite>sprites\spr_portrait_lore</sprite>
+        <sprite>sprites\spr_portrait_cube</sprite>
+      </sprites>
     </sprites>
     <sprites name="Spawn">
       <sprite>sprites\spr_spawner</sprite>
@@ -453,7 +464,6 @@
     </sprites>
     <sprite>sprites\spr_cube_dust</sprite>
     <sprite>sprites\sprite198</sprite>
-    <sprite>sprites\sprite176</sprite>
     <sprite>sprites\spr_planet</sprite>
     <sprite>sprites\spr_cut_planet</sprite>
     <sprite>sprites\spr_stars</sprite>

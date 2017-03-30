@@ -105,7 +105,7 @@ with(obj_player)
 {
     if(!ui_textbox_open())
     {
-        ui_textbox_queue("|broadcast Broadcast System: `br |white Please pick up the two guns and energy shield in the middle of the room using |key RMB");
+        ui_textbox_queue("Please pick up the two guns and energy shield in the middle of the room using |key RMB", spr_portrait_broadcast);
         ui_flash_textbox();
     }
     alarm[7] = 30 * 60;
@@ -133,8 +133,8 @@ with(obj_player)
           <argument>
             <kind>1</kind>
             <string>
-ui_textbox_queue("|broadcast Broadcasting System: `br |white Warning: unknown object has collided with the ship causing minor damage.");
-ui_textbox_queue("|broadcast Broadcasting System: `br |white Activating the following safety protocols: `br 1. Stopping active combat simulation `br 2. Releasing all door locks. ");
+ui_textbox_queue("Warning: unknown object has collided with the ship causing minor damage.", spr_portrait_broadcast);
+ui_textbox_queue("Activating the following safety protocols: `br 1. Stopping active combat simulation `br 2. Releasing all door locks. ", spr_portrait_broadcast);
 ui_flash_textbox(); 
 room_state = sim_state.combat_done;
 
@@ -209,7 +209,7 @@ room_state = sim_state.combat_done;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ui_textbox_queue("|broadcast Broadcasting System: `br |white Walls, rocks, and dashing can all be used to avoid enemy attacks.");
+            <string>ui_textbox_queue("Walls, rocks, and dashing can all be used to avoid enemy attacks.", spr_portrait_broadcast);
 ui_flash_textbox();
 room_state = sim_state.begin_combat4;
 
@@ -236,7 +236,7 @@ room_state = sim_state.begin_combat4;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ui_textbox_queue("|broadcast Broadcasting System: `br |white Your shield will recharge quickly when no enemies are in the room. Use this and healing items to help you survive.");
+            <string>ui_textbox_queue("Your shield will recharge quickly when no enemies are in the room. Use this and healing items to help you survive.", spr_portrait_broadcast);
 ui_flash_textbox(); 
 room_state = sim_state.begin_combat3;
 
@@ -263,7 +263,7 @@ room_state = sim_state.begin_combat3;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ui_textbox_queue("|broadcast Broadcasting System: `br |white Press |key R |white to |yellow reload |white your equipped gun and |key Mouse Wheel |white to |yellow swap weapons |white");
+            <string>ui_textbox_queue("Press |key R |white to |yellow reload |white your equipped gun and |key Mouse Wheel |white to |yellow swap weapons |white", spr_portrait_broadcast);
 ui_flash_textbox(); 
 room_state = sim_state.begin_combat2;
 
@@ -290,8 +290,8 @@ room_state = sim_state.begin_combat2;
           <argument>
             <kind>1</kind>
             <string>
-ui_textbox_queue("|broadcast Broadcasting System: `br |white Beginning Combat Simulation. ");
-ui_textbox_queue("|broadcast Broadcasting System: `br |white Press |key LMB |white to |yellow shoot |white your gun. ");
+ui_textbox_queue("Beginning Combat Simulation. ", spr_portrait_broadcast);
+ui_textbox_queue("Press |key LMB |white to |yellow shoot |white your gun. ", spr_portrait_broadcast);
 ui_flash_textbox(); 
 room_state = sim_state.begin_combat1;
 </string>

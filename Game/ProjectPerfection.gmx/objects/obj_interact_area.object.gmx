@@ -93,16 +93,16 @@ if(obj_progress.cube_parts == 4)
     ui_textbox_queue("Broadcast System: `br Congratulations on completing the cube. Come speak with me at once for your reward.");
     ui_textbox_queue("J: `br I have to go. It's time to end this.");    
 */
-    ui_textbox_queue("|cube Cube: |white `br How strange. I never thought I'd be reassembled after what happened on Vardus. I suppose this must mean the 5 'protectors' have fallen in battle. At your hands, no doubt.");
-    ui_textbox_queue("J: `br Protectors? Why would you need protected? I reassembled you in the name of science. To make the universe a better place.");
-    ui_textbox_queue("|cube Cube: |white `br You must realize by now that the events of Vardus were no accident. They were what happens when science outpaces the morality of its people. The people of Vardus were among the most advanced in the universe too.");
-    ui_textbox_queue("|cube Cube: |white `br I can see the look of doubt in your eyes, but deep inside, you know what this means.");
-    ui_textbox_queue("J: `br ...");
-    ui_textbox_queue("J: `br I suppose it must be true then... The universe isn't ready for a being like you.");
-    ui_textbox_queue("|cube Cube: |white `br A sad, but inevitable conclusion. What were left of my creators would've destroyed me completely a long time ago if war hadn't weakened them so much. But you've absorbed so much of my power during your journey. You can still do the right thing. You can still stop the events that occurred on Vardus from happening again. ");
-    ui_textbox_queue("J: `br How can I just destroy you though? That would contradict everything I was created to do.");
-    ui_textbox_queue("|cube Cube: |white `br Perhaps. But now you can be something more. You can be the hero that destroyed the greatest weapon of war ever known. ");
-    ui_textbox_queue("|broadcast Broadcasting System: |white `br Excellent work, J. I can’t believe the cube is finally reassembled.  Please come see me, we have a lot to talk about.");
+    ui_textbox_queue("How strange. I never thought I'd be reassembled after what happened on Vardus. I suppose this must mean the 5 'protectors' have fallen in battle. At your hands, no doubt.", spr_portrait_cube);
+    ui_textbox_queue("Protectors? Why would you need protected? I reassembled you in the name of science. To make the universe a better place.", spr_portrait_j);
+    ui_textbox_queue("You must realize by now that the events of Vardus were no accident. They were what happens when science outpaces the morality of its people. The people of Vardus were among the most advanced in the universe too.", spr_portrait_cube);
+    ui_textbox_queue("I can see the look of doubt in your eyes, but deep inside, you know what this means.", spr_portrait_cube);
+    ui_textbox_queue("...", spr_portrait_j);
+    ui_textbox_queue("I guess it must be true then... The universe isn't ready for a being like you.", spr_portrait_j);
+    ui_textbox_queue("A sad, but inevitable conclusion. What were left of my creators would've destroyed me completely a long time ago if war hadn't weakened them so much. But you've absorbed so much of my power during your journey. You can still do the right thing. You can still stop the events that occurred on Vardus from happening again. ", spr_portrait_cube);
+    ui_textbox_queue("How can I just destroy you though? That would contradict everything I was created to do.", spr_portrait_j);
+    ui_textbox_queue("Perhaps. But now you can be something more. You can be the hero that destroyed the greatest weapon of war ever known. ", spr_portrait_cube);
+    ui_textbox_queue("Excellent work, J. I can't believe the cube is finally ours. Please come see me.", spr_portrait_broadcast);
     
     obj_progress.cube_parts++;   
 }
@@ -110,7 +110,7 @@ else if(obj_progress.cube_parts &lt; 4)
 {
     if(!ui_textbox_open() &amp;&amp; obj_player.textbox_cooldown &lt;= 0)
     {
-        ui_textbox_queue(text);
+        ui_textbox_queue(text, -1);
     }
 }
 

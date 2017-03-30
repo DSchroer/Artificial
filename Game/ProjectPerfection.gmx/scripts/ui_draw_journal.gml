@@ -287,6 +287,6 @@ if(journal_active_category != -1 && journal_active_entry != -1)
     var cont = book_contents[journal_active_category];
     var text = cont[journal_active_entry];
     
-    ui_draw_textbox_ext(xp + cell_width + scroll_bar_width + padding * 6, yp + back_height - 226, text, 1.0, 512, 226);
+    ui_draw_textbox_ext(xp + cell_width + scroll_bar_width + padding * 6, yp + back_height - 226, text, 1.0, 512, 226, -1);
 }
 

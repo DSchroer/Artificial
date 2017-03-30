@@ -48,7 +48,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ui_textbox_queue("|broadcast Broadcast System: `br |white Activating quick teleporter. `br Report to the ship's command room immediately.");
+            <string>ui_textbox_queue("Activating quick teleporter. `br Report to the ship's command room immediately.", spr_portrait_broadcast);
 ui_flash_textbox();
 var inst = instance_create(704, 704, obj_tutorial_teleporter);
 inst.destination = rm_boss_final;
