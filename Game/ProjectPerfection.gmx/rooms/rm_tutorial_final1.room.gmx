@@ -200,6 +200,7 @@
     <instance objName="obj_bollard" x="2176" y="992" name="inst_6FB4A20C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bollard" x="2176" y="1024" name="inst_FB15604A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bollard" x="2176" y="1056" name="inst_4C0147F7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_fade_in" x="608" y="352" name="inst_1A03F32E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bkg_hub_new" x="608" y="736" w="192" h="192" xo="192" yo="192" id="10024004" name="inst_56C6B27D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

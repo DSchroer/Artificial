@@ -32,6 +32,9 @@ if(!instance_exists(obj_sound))
     instance_create(0,0,obj_sound);
 }
 
+init_x = -1;
+init_y = -1;
+
 sfx_bkg_add_without_reset(bkg_menu);
 
 </string>
@@ -80,7 +83,13 @@ sfx_bkg_add_without_reset(bkg_menu);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(credits_is_complete() || keyboard_check_pressed(vk_escape))
+            <string>if(init_x == -1)
+{
+    init_x = x;
+    init_y = y;
+}
+
+if(credits_is_complete() || keyboard_check_pressed(vk_escape))
 {
     room_goto(rm_main_menu);
 }
@@ -117,7 +126,18 @@ sfx_bkg_add_without_reset(bkg_menu);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>credits_draw()
+            <string>var w = display_get_gui_width();
+var h = display_get_gui_height();
+draw_sprite_pos(spr_stars, 0, 0, 0, w, 0, w, h, 0, h, 1);
+
+var xp = (display_get_gui_width() / 2 - (bbox_right - bbox_left) / 2);
+
+draw_sprite_ext(spr_planet, 0, xp - 459, 164 - ((y - init_y) / 20), 2, 2, 0, c_white, 1);
+draw_sprite_ext(spr_ship, 0, xp - 59, 164 + ((y - init_y) / 7), 2, 2, 0, c_white, 1);
+
+credits_draw()
+
+
 </string>
           </argument>
         </arguments>

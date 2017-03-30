@@ -1030,6 +1030,9 @@
       <object>objects\obj_shield_hit</object>
       <object>objects\obj_stasis</object>
       <object>objects\obj_teleport_effect</object>
+      <object>objects\obj_intro_scene</object>
+      <object>objects\obj_tele_eff_out</object>
+      <object>objects\obj_tele_eff_in</object>
     </objects>
     <objects name="Entity">
       <object>objects\obj_entity</object>
@@ -1290,6 +1293,7 @@
       <room>rooms\rm_credits</room>
     </rooms>
     <room>rooms\rm_teleport</room>
+    <room>rooms\rm_intro</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

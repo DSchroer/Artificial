@@ -247,6 +247,7 @@ if(!tutorial_done() &amp;&amp; !ui_textbox_open() &amp;&amp; alarm[2] == -1)
 {
     alarm[2] = 30;
     instance_create(0, 0, obj_fade_out);
+    instance_create(0, 0, obj_tele_eff_out);
 }
 
 if(can_trigger_load &amp;&amp; !ui_textbox_open())

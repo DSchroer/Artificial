@@ -33,6 +33,7 @@ inventory_init();
 window_set_cursor(cr_none);
 cursor_sprite = spr_aim;
 
+window_locked = false;
 </string>
           </argument>
         </arguments>
@@ -174,6 +175,7 @@ ui_flash_textbox();
             <kind>1</kind>
             <string>/// Cube related lore. Also hub teleporter spawn
 instance_create(room_width / 2, room_height / 2 - 192, obj_hub_teleporter);
+instance_create(room_width / 2, room_height / 2 - 192, obj_teleporter_light)
 ui_textbox_queue("You feel a strange sensation. `br |red Your base health has increased by 100. `br |aqua Your base shield has increased by 75.", -1);
 
 if(obj_progress.cube_parts == 1)
@@ -341,12 +343,19 @@ room_goto(rm_hub);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!is_paused() &amp;&amp; !open_workbench &amp;&amp; !ui_textbox_open())
+            <string>if(!is_paused() &amp;&amp; !window_locked)
 {
     if(keymap_check(keycode.fire) &amp;&amp; !dead &amp;&amp; dash_frames &lt;= 0)
     {
         player_fire();
     }
+}
+
+if(ui_is_blocking_window_open())
+{
+    window_locked = true;
+}else{
+    window_locked = false;
 }
 </string>
           </argument>
@@ -408,7 +417,7 @@ if(speed != 0)
 {
     dash_last_direction = direction;
 }
-if(keymap_check(keycode.dash) &amp;&amp; !dead &amp;&amp; dash_frames == 0 &amp;&amp; !ui_is_blocking_window_open())
+if(keymap_check(keycode.dash) &amp;&amp; !dead &amp;&amp; dash_frames == 0 &amp;&amp; !window_locked)
 {
     dash_frames = 15;
     dash_direction = dash_last_direction;
@@ -427,7 +436,7 @@ if(dash_frames &gt; 0)
     dash_frames += 1;
 }
 
-if(keymap_check(keycode.interact) &amp;&amp; !dead &amp;&amp; !ui_is_blocking_window_open())
+if(keymap_check(keycode.interact) &amp;&amp; !dead &amp;&amp; !window_locked)
 {
     var inter = interact_any(128);
     if(inter == noone)
@@ -468,7 +477,7 @@ if(invincible &gt; 0)
     --invincible;
 }
 
-if(!open_workbench &amp;&amp; !ui_is_blocking_window_open() )
+if(!open_workbench &amp;&amp; !window_locked )
 {   
     if(keymap_check(keycode.reload))
     {

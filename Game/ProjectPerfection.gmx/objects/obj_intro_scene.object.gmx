@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-50000</depth>
+  <depth>-40000</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,63 +25,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sfx_bkg_stop();
+            <string>//alarm[0] = 5 * 60;
+ticks = 0;
 
-if(tutorial_done())
-{
-    if(room == rm_boss_final &amp;&amp; !save_get_value(obj_save_data, "final_boss_dialog", false))
-    {
+zscale = 1;
+off_dist = 1;
+ship_off = 0;
 
-    }
-    else
-    {
-        alarm[0] = 120;
-    }
-}
+pan = 0;
 
-drawing = true;
-target = obj_azar;
-
-if(room == rm_boss_final)
-{
-    photo = spr_heart_intro;
-}
-else if(room == rm_boss_4)
-{
-    photo = spr_shuud_intro;
-}
-else if(room == rm_boss_3)
-{
-    photo = spr_thwander_intro;
-}
-else if(room == rm_boss_2)
-{
-    photo = spr_dym_intro;
-}
-else 
-{
-    photo = spr_azar_intro;
-}
-
-
-
+play_color = make_colour_rgb(105, 255, 253)
 </string>
           </argument>
         </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>110</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_move_start</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
     </event>
     <event eventtype="2" enumb="0">
@@ -101,71 +57,9 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>drawing = false;
-instance_create(0, 0, obj_tele_eff_in);
+            <string>
+room_goto(rm_tutorial_final1);
 
-with(target)
-{
-    var prev = sm_state_pop();
-    show_debug_message(prev);
-    sm_set_state(prev);
-}
-
-if(tutorial_done())
-{
-    if(room == rm_boss_4)
-    {
-         sfx_bkg_set_volume_modifier(2.0);
-         sfx_bkg_add_without_reset(bkg_boss4);
-    }
-    else if(room == rm_boss_3)
-    {
-         sfx_bkg_set_volume_modifier(2.0);
-         sfx_bkg_add_without_reset(bkg_boss3);
-    }
-    else if(room == rm_boss_2)
-    {
-         sfx_bkg_set_volume_modifier(2.0);
-         sfx_bkg_add_without_reset(bkg_boss2);
-    }
-    else if(room == rm_boss_1)
-    {
-         sfx_bkg_add_without_reset(bkg_boss1);
-    }   
-    else if(room == rm_boss_final)
-    {
-         sfx_bkg_set_volume_modifier(3.0);
-         sfx_bkg_add_without_reset(bkg_final_boss);
-    }
-         
-}
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="4">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>with(target)
-{
-    sm_set_state("cutscene");
-}
 </string>
           </argument>
         </arguments>
@@ -188,13 +82,32 @@ if(tutorial_done())
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(drawing)
-{
-    var w = display_get_gui_width();
-    var h = display_get_gui_height();
-    draw_sprite_pos(photo, 0, 0, 0, w, 0, w, h, 0, h , 255);
+            <string>var w = display_get_gui_width()
+var h = display_get_gui_height();
+texture_set_interpolation(false);
+ticks++;
 
+pan += 0.5;
+if(ticks &gt; 120)
+{
+    zscale += 0.01;
+    off_dist = lerp(1, 0, (ticks - 120) / 240)
+    ship_off += 5;
+    if(ticks &gt; 350 &amp;&amp; alarm[0] == -1)
+    {
+        alarm[0] = 30;
+        instance_create(0, 0, obj_fade_out);
+    }
+}else{
+    zscale = lerp(0.5, 1, ticks / 120)
 }
+
+draw_rectangle_colour(0, 0, w, h, c_black, c_black, c_black, c_black, false);
+draw_sprite_pos(spr_stars, 0, 0, 0, w, 0, w, h, 0, h, 1);
+
+draw_sprite_ext(spr_cut_planet, 0, (w / 2) + 300 + ship_off, (h / 2) + (pan / 3), 1 * zscale, 1 * zscale, 0, c_white, 1);
+
+draw_sprite_ext(spr_cut_ship, 0, (w / 2) - (300 * off_dist), (h / 2) + ((100 + pan) * off_dist),  3 * zscale, 3 * zscale, 0, c_white, 1)
 </string>
           </argument>
         </arguments>
