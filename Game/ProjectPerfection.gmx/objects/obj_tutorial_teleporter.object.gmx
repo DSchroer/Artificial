@@ -76,6 +76,7 @@ image_speed = 0;
 {
     instance_create(0, 0, obj_fade_out);
     alarm[0] = 30;
+    instance_create(0, 0, obj_tele_eff_out);
 }
 
 </string>

@@ -141,7 +141,7 @@ debug_draw();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//instance_create(obj_player.x, obj_player.y, obj_direct_line);
+            <string>instance_create(0, 0, obj_tele_eff_in);
 </string>
           </argument>
         </arguments>

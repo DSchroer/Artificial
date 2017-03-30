@@ -102,6 +102,7 @@ else
           <argument>
             <kind>1</kind>
             <string>drawing = false;
+instance_create(0, 0, obj_tele_eff_in);
 
 with(target)
 {
