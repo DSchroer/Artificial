@@ -1190,6 +1190,8 @@
       <object>objects\obj_pointlight</object>
       <object>objects\obj_wall_light</object>
       <object>objects\obj_computer_light</object>
+      <object>objects\obj_teleporter_light</object>
+      <object>objects\obj_cube_light</object>
     </objects>
     <objects name="Weapons">
       <object>objects\obj_azar_will</object>

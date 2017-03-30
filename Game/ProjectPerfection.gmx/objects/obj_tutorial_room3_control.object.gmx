@@ -52,6 +52,7 @@
 ui_flash_textbox();
 var inst = instance_create(704, 704, obj_tutorial_teleporter);
 inst.destination = rm_boss_final;
+instance_create(736, 736, obj_teleporter_light);
 </string>
           </argument>
         </arguments>
