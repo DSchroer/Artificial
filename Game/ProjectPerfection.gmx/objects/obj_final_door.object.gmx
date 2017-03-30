@@ -167,15 +167,15 @@ if(is_closed)
     
     if(obj_progress.cube_parts &gt;= 1)
     {
-        draw_sprite(spr_door_left_trim, -1, x, y);
+        draw_sprite(spr_door_right_trim, -1, x, y);
     }
     if(obj_progress.cube_parts &gt;= 2)
     {
-        draw_sprite(spr_door_middle_trim, -1, x, y);
+        draw_sprite(spr_door_left_trim, -1, x, y);
     }
     if(obj_progress.cube_parts &gt;= 3)
     {
-        draw_sprite(spr_door_right_trim, -1, x, y);
+        draw_sprite(spr_door_middle_trim, -1, x, y);
     }
 }
 
@@ -207,15 +207,15 @@ if(animation_state == 2)
 
     if(obj_progress.cube_parts &gt;= 1)
     {
-        draw_sprite_part(spr_door_left_trim, -1, 16 + 90 * inverse_percent, 0, 90 * percent_open, sprite_get_height(spr_door_left_trim), x + 16, y);
+        draw_sprite(spr_door_right_trim, -1, x, y);
     }
     if(obj_progress.cube_parts &gt;= 2)
     {
-        draw_sprite_part(spr_door_middle_trim, -1, 0, 68, sprite_get_width(spr_door_middle_trim), 126 * percent_open, x, y + 68 + 126 * inverse_percent);
+        draw_sprite(spr_door_left_trim, -1, x, y);
     }
     if(obj_progress.cube_parts &gt;= 3)
     {
-        draw_sprite_part(spr_door_right_trim, -1, 102, 0, 90 * percent_open, sprite_get_height(spr_door_right_trim), x + 102 + 90 * inverse_percent, y);
+        draw_sprite(spr_door_middle_trim, -1, x, y);
     }
 }
 

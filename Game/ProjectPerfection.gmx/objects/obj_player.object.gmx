@@ -61,6 +61,68 @@ cursor_sprite = spr_aim;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="9">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var p = save_get_value(obj_save_data, "boss_warning", 0);
+if(obj_progress.progress == 1 &amp;&amp; p == 0)
+{
+    save_set_value(obj_save_data, "boss_warning", 1);
+    ui_textbox_queue("You should not be here, traveller. There is nothing but ruins left on Vardus. You can still turn back before it's too late. ", spr_portrait_azar);
+    ui_flash_textbox();
+}
+else if(obj_progress.progress == 2 &amp;&amp; p == 1)
+{
+    save_set_value(obj_save_data, "boss_warning", 2);
+    ui_textbox_queue("I don't know why you keep going. There's nothing of value left here. Only ruins, death, and this accursed |cube cube. ", spr_portrait_azar);
+    ui_flash_textbox();
+}
+else if(obj_progress.progress == 4 &amp;&amp; p == 2)
+{
+    save_set_value(obj_save_data, "boss_warning", 3);
+    ui_textbox_queue("Why would you come to this barren wasteland? Vardus is nothing but a shadow of its former self thanks to this |cube cube", spr_portrait_dym);
+    ui_flash_textbox();
+}
+
+else if(obj_progress.progress == 6 &amp;&amp; p == 3)
+{
+    save_set_value(obj_save_data, "boss_warning", 4);
+   // ui_textbox_queue("Azar didn't deserve to die. Neither did Cora. What kind of monster are you?", spr_portrait_dym);
+    //ui_flash_textbox();
+}
+else if(obj_progress.progress == 9 &amp;&amp; p == 4)
+{
+    save_set_value(obj_save_data, "boss_warning", 5);
+    ui_textbox_queue("I guess if you've come it this far, then there's no point in warning you to turn back. Your mission is all too clear. ",  spr_portrait_thwander);
+    ui_flash_textbox();
+}
+else if(obj_progress.progress == 10 &amp;&amp; p == 5)
+{
+    save_set_value(obj_save_data, "boss_warning", 6);
+    ui_textbox_queue("I have to wonder why anyone would come here though. Why anyone would want this |cube cube piece. I'd trade it away in a second to return to the forests of my home planet. ", spr_portrait_thwander);
+    ui_flash_textbox();
+}
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="8">
       <action>
         <libid>1</libid>
@@ -79,7 +141,7 @@ cursor_sprite = spr_aim;
           <argument>
             <kind>1</kind>
             <string>/// Dialog delay 
-
+/*
 var dialog = story_get_dialog();
 if(dialog != -1)
 {
@@ -87,7 +149,7 @@ if(dialog != -1)
 }
 ui_textbox_queue(dialog);
 ui_flash_textbox();
-
+*/
 </string>
           </argument>
         </arguments>
@@ -112,7 +174,7 @@ ui_flash_textbox();
             <kind>1</kind>
             <string>/// Cube related lore. Also hub teleporter spawn
 instance_create(room_width / 2, room_height / 2 - 192, obj_hub_teleporter);
-ui_textbox_queue("You feel a strange sensation. `br |red Your base health has increased by 100. `br |aqua Your base shield has increased by 75.");
+ui_textbox_queue("You feel a strange sensation. `br |red Your base health has increased by 100. `br |aqua Your base shield has increased by 75.", -1);
 
 if(obj_progress.cube_parts == 1)
 {

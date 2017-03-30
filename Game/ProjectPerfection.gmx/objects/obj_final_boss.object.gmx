@@ -27,19 +27,105 @@
             <kind>1</kind>
             <string>event_inherited();
 target = obj_boss_final;
+can_trigger_load = false;
+can_spawn_cube = true;
+shake_it_off = 0;
 
-if(!tutorial_done())
+if(save_get_value(obj_save_data, "fb_dead", false))
 {
-    ui_textbox_queue("????: `br Welcome. I have not properly introduced myself. I am this ship's central processing unit. My creator called me Lyra, after his favourite constellation.");
-    ui_textbox_queue("Lyra: `br Of course, you probably don't care much about that. After all, I created you to be the perfect soldier, not to think or ask questions. ");
-    ui_textbox_queue("Lyra: `br Have you retrieved the object that made impact with the ship?");
-    ui_textbox_queue("J: `br Yes sir. It appears to be little more than a useless cube shaped rock. ");
-    ui_textbox_queue("Lyra: `br A cube? Could the rumours be true after all?");
-    ui_textbox_queue("Lyra: `br We will soon arrive at the planet of Vardus. Tomorrow, you will investigate the planet surface for more parts of this 'cube'. With any luck, the remaining parts are somewhere on the surface.");
-    ui_textbox_queue("Lyra: `br If the rumours are true, then the completed cube is one of the greatest scientific items of all time. We must retrieve it at all cost. ");
-    ui_textbox_queue("J: `br Yes sir.");    
+    alarm[3] = 1;
+    drawing = false;
+    with(obj_boss_final)
+    {
+        instance_destroy();
+    }
 }
+else if(!tutorial_done())
+{
+    ui_textbox_queue("I am this ship's central processing unit. My creator called me |greengold Lyra |white after his favourite constellation.", spr_portrait_lyra);
+    ui_textbox_queue("As luck would have it, that broken |cube cube |white you hold is a piece of a great scientific device, rumoured to have been destroyed on the nearby planet of Vardus. ", spr_portrait_lyra);
+    ui_textbox_queue("Tomorrow, you will investigate the planet surface for more parts of this |cube cube. |white If the rumours are true, then the greatest scientific device of all time will soon be ours.", spr_portrait_lyra);
+    with(obj_boss_battle)
+    {
+        drawing = false;
+    }
 
+}
+else if(!save_get_value(obj_save_data, "final_boss_dialog", false))
+{
+    save_set_value(obj_save_data, "final_boss_dialog", true);   
+    save_flush(obj_save_data);
+    ui_textbox_queue("I can't believe the |cube cube |white is finally ours. And it seems to be every bit as powerful as rumoured. ", spr_portrait_lyra);
+    ui_textbox_queue("...", spr_portrait_j);
+    ui_textbox_queue("We've made a mistake putting the |cube cube |white back together. We should destroy it. The universe just isn't ready for it. ", spr_portrait_j);
+    ui_textbox_queue("I thought I had created the perfect solider, but I guess I was wrong. Whatever I've created is clearly insane. Oh well, I can always destroy you and try again. ", spr_portrait_lyra);
+    can_trigger_load = true;
+
+    drawing = false;
+}
+else
+{
+    drawing = true;
+    alarm[0] = 120;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+instance_create(0, 0, obj_fade_out);
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var xp = room_width / 2;
+var yp = room_height / 2 - 180;
+ 
+var inst = instance_create(xp, yp, obj_item);
+inst.data = inventory_get_end_weapon();    
+
+var killable = instance_create(xp, yp - 300, obj_cube_killable);
+can_spawn_cube = false;
+
+ui_textbox_queue("(I suppose doing the right thing is never easy. The universe just isn't ready for this. I have to |yellow destroy the cube. |white )", spr_portrait_j);
 
 </string>
           </argument>
@@ -86,13 +172,10 @@ if(!tutorial_done())
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-with(all)
-{
-    instance_destroy();
-}
+            <string>save_set_value(obj_save_data, "end_of_game", true);
+save_flush(obj_save_data);
 
-room_goto(rm_credits)
+room_goto(rm_tutorial_cinematic);
 </string>
           </argument>
         </arguments>
@@ -115,15 +198,65 @@ room_goto(rm_credits)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(instance_number(target) == 0 &amp;&amp; alarm[1] == -1)
+            <string>
+if(shake_it_off &gt; 0)
 {
-    alarm[1] = 600;
+    var shake_factor = 50;
+    if(shake_it_off &lt; 180)
+    {
+        shake_factor = 40;
+    }
+    else if(shake_it_off &lt; 120)
+    {
+        shake_factor = 30;
+    }
+    else if(shake_it_off &lt; 60)
+    {
+        shake_factor = 20;
+    }
+    with(obj_camera)
+    {
+        camera_shake(shake_factor);
+    }
+    shake_it_off--;
+}
+
+if(instance_number(target) == 0)
+{
+    sfx_bkg_stop();
+}
+
+if(!instance_exists(obj_cube_killable) &amp;&amp; !can_spawn_cube &amp;&amp; alarm[4] == -1 &amp;&amp; alarm[1] == -1)
+{
+    shake_it_off = 240;
+    alarm[4] = 390;
+    alarm[1] = 420;
+}
+else if(instance_number(target) == 0 &amp;&amp; alarm[3] == -1 &amp;&amp; can_spawn_cube)
+{
+    with(obj_clone)
+    {
+        instance_destroy();
+    }
+    save_set_value(obj_save_data, "fb_dead", true);
+    save_flush(obj_save_data);
+    alarm[3] = 30;
 }
 
 if(!tutorial_done() &amp;&amp; !ui_textbox_open() &amp;&amp; alarm[2] == -1)
 {
     alarm[2] = 30;
     instance_create(0, 0, obj_fade_out);
+}
+
+if(can_trigger_load &amp;&amp; !ui_textbox_open())
+{
+    can_trigger_load = false;
+    with(obj_final_boss)
+    {
+        alarm[0] = 120;
+        drawing = true;
+    }
 }
 </string>
           </argument>

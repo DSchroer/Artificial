@@ -99,7 +99,7 @@ alarm[0] = room_speed * 2;
 
 if(triggered)
 {
-    ui_draw_textbox_pos(x, y, "DONT TOUCH ME!");
+  //  ui_draw_textbox_pos(x, y, "DONT TOUCH ME!");
 }
 </string>
           </argument>

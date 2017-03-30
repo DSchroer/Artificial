@@ -1,7 +1,7 @@
 ///story_advance(delay);
 var delay = argument0;
-
-
+exit;
+/*
 if(delay <= 1)
 {
     var dialog = story_get_dialog();
@@ -19,4 +19,4 @@ else
         alarm[8] = delay;
     }
 }
-
+*/

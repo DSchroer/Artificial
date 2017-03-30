@@ -70,13 +70,16 @@ for(var i = 0; i < array_length_1d(journal_is_open_slots); i++)
          title_string_ += "  (" + string(sizes[i]) + "/" + string(max_sizes[i]) + " found)"; 
     }
     draw_set_colour(c_white);
-    if(journal_is_open_slots[i])
+    if(i != array_length_1d(journal_is_open_slots) - 1)
     {
-        draw_sprite(spr_white_down, -1, xp + 8, yp + yoffset + (cell_height - 16) / 2);
-    }  
-    else
-    {
-        draw_sprite(spr_white_right, -1, xp + 8, yp + yoffset + (cell_height - 16) / 2);
+        if(journal_is_open_slots[i])
+        {
+            draw_sprite(spr_white_down, -1, xp + 8, yp + yoffset + (cell_height - 16) / 2);
+        }  
+        else
+        {
+            draw_sprite(spr_white_right, -1, xp + 8, yp + yoffset + (cell_height - 16) / 2);
+        }
     }
     draw_text(xp + 32, yp + yoffset + (cell_height - string_height(title_string_)) / 2, title_string_);
     
@@ -284,8 +287,6 @@ if(journal_active_category != -1 && journal_active_entry != -1)
     var cont = book_contents[journal_active_category];
     var text = cont[journal_active_entry];
     
-    ui_draw_textbox_ext(xp + cell_width + scroll_bar_width + padding * 6, yp + back_height - 226, text, 1.0, 512, 226);
+    ui_draw_textbox_ext(xp + cell_width + scroll_bar_width + padding * 6, yp + back_height - 226, text, 1.0, 512, 226, -1);
 }
-
-
 

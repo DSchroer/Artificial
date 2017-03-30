@@ -88,7 +88,14 @@ if(keyboard_check_pressed(ord("N")))
 if(keyboard_check_pressed(ord("M")))
 {
     save_set_value(obj_save_data, "lore", save_get_value(obj_save_data, "lore", 0) - 1);
-
+}
+if(keyboard_check_pressed(ord("Y")))
+{
+    obj_progress.progress += 1;
+}
+if(keyboard_check_pressed(ord("U")))
+{
+    obj_progress.progress -= 1;
 }
 
 
@@ -148,7 +155,7 @@ if(keyboard_check_pressed(vk_numpad9))
     weapon[weapon_index.fire_cooldown] = 0;
     weapon[weapon_index.reload_timeout] = 1;
     weapon[weapon_index.reload_cooldown] = 0;
-    weapon[weapon_index.name] = "Unheard of Auto Rifle";
+    weapon[weapon_index.name] = "inconceivable sniper rifle";
     weapon[weapon_index.weapon_subtype] = weapon_subtype.pistol;
     
     weapon[weapon_index.bullet_sprite] = spr_bullet;
@@ -163,6 +170,10 @@ if(keyboard_check_pressed(vk_numpad9))
     weapon[weapon_index.sprite_count + 2] = color_random();
 
     inventory[selected_slot] = weapon;
+}
+if(keyboard_check_pressed(vk_numpad0))
+{
+    inventory[selected_slot] = inventory_get_end_weapon();
 }
 
 // Left analogue stick:

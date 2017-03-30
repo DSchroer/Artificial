@@ -1,4 +1,4 @@
-///ui_draw_textbox_ext(x, y, text, text_scale, width, height)
+///ui_draw_textbox_ext(x, y, text, text_scale, width, height, portrait)
 
 // Arguments
 var xpos = argument0;
@@ -7,6 +7,7 @@ var text = argument2;
 var text_scale = argument3;
 var width = argument4;
 var height = argument5;
+var portrait = argument6;
 if(!is_string(text))
 {
     exit;
@@ -45,11 +46,22 @@ with(obj_player)
 
 var scale_factor_x = 1.2;
 var scale_factor_y = 1.2;
-var border_size_x = 16;
+var border_size_x_right = 16;
+var border_size_x_left = 16;
+var portrait_size = 140;
+
+if(portrait != -1)
+{
+    width += portrait_size;
+    xpos -= portrait_size / 2;
+    border_size_x_left += portrait_size;
+}
+
+
 var border_size_y = 16;
 var space_width = string_width(" ") * text_scale * 1.5;
-var textbox_width = width - (2 * border_size_x);
-var textbox_height = height - (2 * border_size_y);
+var textbox_width = width - (border_size_x_right + border_size_x_left);
+var textbox_height = height - (border_size_x_right + border_size_x_left);
 var text_height = string_height(" ") * text_scale;
 
 // Draw background
@@ -58,7 +70,7 @@ draw_sprite_ext(background, -1, xpos, ypos, width / sprite_get_width(background)
 draw_set_colour(c_white);
 
 // Draw the text, line by line, word by word
-var linex = xpos + border_size_x;
+var linex = xpos + border_size_x_left;
 var liney = ypos + border_size_y;
 var word_index = 0;
 var remaining_space = textbox_width;
@@ -77,7 +89,7 @@ while(word_index < array_length_1d(words))
         // Draw a 16x16 image
         if(remaining_space < word_width)
         {
-            linex = xpos + border_size_x;
+            linex = xpos + border_size_x_left;
             remaining_space = textbox_width;
             liney += text_height;
         }
@@ -113,7 +125,7 @@ while(word_index < array_length_1d(words))
             break;
         case "`br":
             word_width = 0;
-            linex = xpos + border_size_x;
+            linex = xpos + border_size_x_left;
             remaining_space = textbox_width;
             liney += text_height;
             break;
@@ -127,7 +139,7 @@ while(word_index < array_length_1d(words))
         // Draw text
         if(remaining_space < word_width)
         {
-            linex = xpos + border_size_x;
+            linex = xpos + border_size_x_left;
             remaining_space = textbox_width;
             liney += text_height;
         }
@@ -139,5 +151,10 @@ while(word_index < array_length_1d(words))
     word_index += 1;   
 }
 
+if(portrait != -1)
+{
+    var portrait_scale = 1.5;
+    draw_sprite_ext(portrait, -1, xpos + (border_size_x_left - sprite_get_width(portrait) * portrait_scale) / 2, ypos + (height - sprite_get_height(portrait) * portrait_scale) / 2 - 16, portrait_scale, portrait_scale, 0, c_white, 1);
+}
 
 

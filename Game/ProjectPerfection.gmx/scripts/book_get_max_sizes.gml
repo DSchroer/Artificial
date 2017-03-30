@@ -4,6 +4,6 @@ var result;
 result[0] = array_length_1d(book_text());
 result[1] = 8;
 result[2] = 4;
-result[3] = 12;
+result[3] = 13;
 return result;   
 

@@ -51,9 +51,9 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="obj_cube_base" x="896" y="672" name="inst_2F106815" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_cube_base" x="864" y="672" name="inst_2F106815" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn_player" x="1504" y="928" name="inst_822E6B90" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_tutorial_trigger" x="800" y="608" name="inst_4AF6EA51" locked="0" code="trigger_number = 11;&#xA;refires_automatically = false;&#xA;visible = false;" scaleX="7.5" scaleY="4" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tutorial_trigger" x="768" y="608" name="inst_4AF6EA51" locked="0" code="trigger_number = 11;&#xA;refires_automatically = false;&#xA;visible = false;" scaleX="7.5" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="obj_tutorial_state" x="416" y="224" name="inst_D2DC7070" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tutorial_room3_control" x="448" y="224" name="inst_EFBAFC04" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="1344" y="1056" name="inst_26FD776C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -126,6 +126,7 @@
     <instance objName="obj_wall_light" x="1312" y="544" name="inst_7E26D0EC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_light" x="1568" y="544" name="inst_F099E3FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_hub_sound" x="352" y="224" name="inst_0C966B0F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_interact_tutorial_body" x="1088" y="672" name="inst_AEBB89DD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bkg_hub_new" x="640" y="672" w="192" h="192" xo="192" yo="192" id="10024311" name="inst_55D215C1" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -197,7 +198,7 @@
     <tile bgName="bkg_hub_new" x="1248" y="480" w="32" h="128" xo="320" yo="0" id="10024529" name="inst_57EE572C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_hub_new" x="832" y="608" w="192" h="192" xo="192" yo="192" id="10024530" name="inst_F0F08450" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_hub_new" x="448" y="480" w="64" h="128" xo="192" yo="0" id="10024535" name="inst_51CE9D28" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bkg_hub_new" x="1056" y="704" w="64" h="32" xo="704" yo="224" id="10024531" name="inst_C6CFBCE1" depth="-2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_hub_new" x="1088" y="704" w="64" h="32" xo="704" yo="224" id="10024531" name="inst_C6CFBCE1" depth="-2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_hub_new" x="960" y="608" w="96" h="64" xo="832" yo="320" id="10024534" name="inst_1F248373" depth="-2" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>0</PhysicsWorld>

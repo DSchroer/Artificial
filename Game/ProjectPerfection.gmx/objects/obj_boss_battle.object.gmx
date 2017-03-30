@@ -27,14 +27,18 @@
             <kind>1</kind>
             <string>sfx_bkg_stop();
 
-if(!tutorial_done())
+if(tutorial_done())
 {
-    alarm[0] = 1;
-} 
-else
-{
-    alarm[0] = 120;
+    if(room == rm_boss_final &amp;&amp; !save_get_value(obj_save_data, "final_boss_dialog", false))
+    {
+
+    }
+    else
+    {
+        alarm[0] = 120;
+    }
 }
+
 drawing = true;
 target = obj_azar;
 

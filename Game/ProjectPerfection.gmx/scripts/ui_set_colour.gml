@@ -98,7 +98,7 @@ case "|lgray":
     draw_set_color(make_color_rgb(200, 200, 200));
     break;
 case "|broadcast":
-    draw_set_color(make_color_rgb(200, 200, 200));
+    draw_set_color(make_color_rgb(160, 160, 160));
     break;
 case "|lred":
     draw_set_color(make_color_rgb(237, 41, 57));
@@ -118,6 +118,9 @@ case "|crayolared":
     break;
 case "|artificial_navy":
     draw_set_color(make_color_rgb(0, 0, 16));
+    break;
+case "|cube":
+    draw_set_color(make_color_rgb(138,43,226));
     break;
     
     

@@ -55,7 +55,7 @@ save_set_value(obj_save_data, "has_cube_base", true);
 event_inherited();
 instance_destroy();
 
-ui_textbox_queue("The cube appears to be missing several parts, and it powerless in its current form.");
+ui_textbox_queue("The cube shaped rock appears to be missing several parts.", -1);
 </string>
           </argument>
         </arguments>
