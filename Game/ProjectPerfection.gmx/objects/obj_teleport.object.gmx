@@ -73,7 +73,10 @@ with(obj_level)
 room_goto(rm_teleport);
 
 
-
+with(obj_player)
+{
+    alarm[9] = 60;
+}
 </string>
           </argument>
         </arguments>

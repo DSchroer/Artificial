@@ -73,12 +73,12 @@ if(is_paused())
     image_speed = 0.1;
 }
 
-var damage = (obj_player.max_health * percent) / 60;
+var damage = (obj_player.max_health * percent) / 4;
 mele[weapon_index.damage] = damage;
 
 if(timer == 0)
 {
-    attack_gun(mele, x, y, 0, self, false, false);;
+    attack_gun(mele, x, y, 0, self, false, false);
 }
 
 timer = (timer + 1) % 3;

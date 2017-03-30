@@ -311,6 +311,17 @@
       </sprites>
       <sprite>sprites\spr_white_right</sprite>
       <sprite>sprites\spr_white_down</sprite>
+      <sprites name="Portraits">
+        <sprite>sprites\spr_portrait_question</sprite>
+        <sprite>sprites\spr_portrait_lyra</sprite>
+        <sprite>sprites\spr_portrait_azar</sprite>
+        <sprite>sprites\spr_portrait_broadcast</sprite>
+        <sprite>sprites\spr_portrait_dym</sprite>
+        <sprite>sprites\spr_portrait_thwander</sprite>
+        <sprite>sprites\spr_portrait_j</sprite>
+        <sprite>sprites\spr_portrait_lore</sprite>
+        <sprite>sprites\spr_portrait_cube</sprite>
+      </sprites>
     </sprites>
     <sprites name="Spawn">
       <sprite>sprites\spr_spawner</sprite>
@@ -451,7 +462,8 @@
       <sprite>sprites\spr_loot</sprite>
       <sprite>sprites\spr_ring_charge</sprite>
     </sprites>
-    <sprite>sprites\sprite176</sprite>
+    <sprite>sprites\spr_cube_dust</sprite>
+    <sprite>sprites\sprite198</sprite>
     <sprite>sprites\spr_planet</sprite>
     <sprite>sprites\spr_cut_planet</sprite>
     <sprite>sprites\spr_stars</sprite>
@@ -765,6 +777,7 @@
         </scripts>
         <script>scripts\inventory_get_tutorial_weapon.gml</script>
         <script>scripts\inventory_get_tutorial_weapon2.gml</script>
+        <script>scripts\inventory_get_end_weapon.gml</script>
         <script>scripts\inventory_quality_color.gml</script>
         <script>scripts\inventory_gun_name.gml</script>
       </scripts>
@@ -973,6 +986,7 @@
   </shaders>
   <fonts name="fonts">
     <font>fonts\fnt_hit</font>
+    <font>fonts\font1</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_shuud_attack_area</object>
@@ -1055,6 +1069,8 @@
         <object>objects\obj_boss_final</object>
         <object>objects\obj_boss_jump</object>
         <object>objects\obj_final_ring</object>
+        <object>objects\obj_cube_killable</object>
+        <object>objects\obj_cube_dust</object>
       </objects>
     </objects>
     <objects name="Environment">
@@ -1126,16 +1142,17 @@
       <object>objects\obj_tutorial_text</object>
       <object>objects\obj_tutorial_gate_open</object>
       <object>objects\obj_tutorial_gate_closed</object>
-      <object>objects\obj_tutorial_corpse</object>
       <object>objects\obj_tutorial_control</object>
       <object>objects\obj_tutorial_trigger</object>
-      <object>objects\obj_tutorial_control_hub</object>
       <object>objects\obj_tutorial_spawner</object>
       <object>objects\obj_tutorial_cinematic_control</object>
       <objects name="Revised">
         <object>objects\obj_tutorial_state</object>
         <object>objects\obj_tutorial_room3_control</object>
         <object>objects\obj_combat_sim</object>
+        <object>objects\obj_interact_tutorial_body</object>
+        <object>objects\obj_tutorial_control_hub</object>
+        <object>objects\obj_tutorial_corpse</object>
       </objects>
       <object>objects\obj_tutorial_door</object>
       <object>objects\obj_tutorial_teleporter</object>
@@ -1173,6 +1190,8 @@
       <object>objects\obj_pointlight</object>
       <object>objects\obj_wall_light</object>
       <object>objects\obj_computer_light</object>
+      <object>objects\obj_teleporter_light</object>
+      <object>objects\obj_cube_light</object>
     </objects>
     <objects name="Weapons">
       <object>objects\obj_azar_will</object>

@@ -105,7 +105,7 @@ with(obj_player)
 {
     if(!ui_textbox_open())
     {
-        ui_textbox_queue("|broadcast Broadcast System: `br |white Please pick up the two guns and energy shield in the middle of the room using |key RMB");
+        ui_textbox_queue("Please pick up the two guns and energy shield in the middle of the room using |key RMB", spr_portrait_broadcast);
         ui_flash_textbox();
     }
     alarm[7] = 30 * 60;
@@ -133,8 +133,8 @@ with(obj_player)
           <argument>
             <kind>1</kind>
             <string>
-ui_textbox_queue("|broadcast Broadcasting System: `br |white Warning: unknown object has collided with ship. ");
-ui_textbox_queue("|broadcast Broadcasting System: `br |white Activating safety protocols. Please be advised that the active combat simulation has been terminated and all door locks have been released. ");
+ui_textbox_queue("Warning: unknown object has collided with the ship causing minor damage.", spr_portrait_broadcast);
+ui_textbox_queue("Activating the following safety protocols: `br 1. Stopping active combat simulation `br 2. Releasing all door locks. ", spr_portrait_broadcast);
 ui_flash_textbox(); 
 room_state = sim_state.combat_done;
 
@@ -209,7 +209,7 @@ room_state = sim_state.combat_done;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ui_textbox_queue("|broadcast Broadcasting System: `br |white Don't forget that pillars, rocks, and dashing can all be used to avoid enemy attacks.");
+            <string>ui_textbox_queue("Walls, rocks, and dashing can all be used to avoid enemy attacks.", spr_portrait_broadcast);
 ui_flash_textbox();
 room_state = sim_state.begin_combat4;
 
@@ -236,7 +236,7 @@ room_state = sim_state.begin_combat4;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ui_textbox_queue("|broadcast Broadcasting System: `br |white Your shield will begin to recharge quickly when no enemies are in the room. You can use this and healing items to help you survive.");
+            <string>ui_textbox_queue("Your shield will recharge quickly when no enemies are in the room. Use this and healing items to help you survive.", spr_portrait_broadcast);
 ui_flash_textbox(); 
 room_state = sim_state.begin_combat3;
 
@@ -263,10 +263,7 @@ room_state = sim_state.begin_combat3;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///
-
-ui_textbox_queue("|broadcast Broadcasting System: `br |white Your gun will reload automatically when it runs out of bullets. However, you can also reload automatically with |key R |white and swap your weapons with |key Mouse Wheel");
-ui_textbox_queue("|broadcast Broadcasting System: `br |white Don't let enemies surround you, or the damage can add up quickly. ");
+            <string>ui_textbox_queue("Press |key R |white to |yellow reload |white your equipped gun and |key Mouse Wheel |white to |yellow swap weapons |white", spr_portrait_broadcast);
 ui_flash_textbox(); 
 room_state = sim_state.begin_combat2;
 
@@ -293,7 +290,8 @@ room_state = sim_state.begin_combat2;
           <argument>
             <kind>1</kind>
             <string>
-ui_textbox_queue("|broadcast Broadcasting System: `br |white In your travels, you will meet many enemies. You must be prepared to neutralize them at any cost by pressing |key LMB |white to shoot your gun. ");
+ui_textbox_queue("Beginning Combat Simulation. ", spr_portrait_broadcast);
+ui_textbox_queue("Press |key LMB |white to |yellow shoot |white your gun. ", spr_portrait_broadcast);
 ui_flash_textbox(); 
 room_state = sim_state.begin_combat1;
 </string>
@@ -379,10 +377,9 @@ if(!instance_exists(obj_enemy))
         for(var i = 0; i &lt; instance_number(obj_tutorial_spawner); i++)
         {
             var spawner = instance_find(obj_tutorial_spawner, i);
-            if(spawner.position == 1)
+            if(spawner.position == 1 || spawner.position == 4)
             {
                 instance_create(spawner.x + sprite_get_xoffset(object_get_sprite(obj_grunt)), spawner.y + sprite_get_yoffset(object_get_sprite(obj_grunt)), obj_grunt);
-                break;   
             }
         }        
         sfx_play_volume(snd_heart_spawn_enemies, false, 0.4);
@@ -408,8 +405,11 @@ if(!instance_exists(obj_enemy))
     }
     else if(room_state == sim_state.combat2_inprogress)
     {
-        alarm[2] = 60;
-        room_state = sim_state.waiting_for_combat3;
+        //alarm[2] = 60;
+        //room_state = sim_state.waiting_for_combat3;
+        
+        room_state = sim_state.waiting_for_hit;
+        alarm[5] = 90;
     }
     else if(room_state == sim_state.begin_combat3 &amp;&amp; !ui_textbox_open())
     {

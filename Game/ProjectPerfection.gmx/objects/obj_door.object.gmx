@@ -100,14 +100,9 @@ else
     room_goto(rm_transition);
 }
 
-if (obj_progress.story == story_progress.chapter3_banter2 || 
-    obj_progress.story == story_progress.chapter4_banter1 ||
-    obj_progress.story == story_progress.chapter5_banter3 ||
-    obj_progress.story == story_progress.chapter5_banter4 ||
-    obj_progress.story == story_progress.chapter5_banter5
-    )
+with(obj_player)
 {
-    story_advance(60);
+    alarm[9] = 60;
 }
 
 </string>

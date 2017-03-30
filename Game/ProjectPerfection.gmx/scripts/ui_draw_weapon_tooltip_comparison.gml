@@ -36,8 +36,8 @@ case item_quality.unique:
 }
 
 var background2 = spr_tooltip_body;
-var bscale_x = 1.5;
-var bscale_top_y = 2;
+var bscale_x = 1.6;
+var bscale_top_y = 1.75;
 var bscale_bottom_y = 1.2;
 var screen_width = display_get_gui_width();
 var screen_height = display_get_gui_height();
@@ -74,7 +74,7 @@ xpos += border_size;
 // Name
 var title_scale = 1.5;
 draw_text_transformed_color(xpos, ypos + 5, wname, title_scale, title_scale, 0, top_render_color, top_render_color, top_render_color, top_render_color, 1);
-ypos += 7 + string_height(wname) * 2;
+ypos += 7 + string_height(wname) * title_scale;
 
 // Subtype
 var stat_scale = 1;

@@ -79,8 +79,15 @@ current_health = 30;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var ex = instance_create(x + 32, y + 32, obj_explosion);
-ex.damage = 150;
+            <string>
+var dmg = 150;
+with(obj_player)
+{
+    dmg = max_health * 0.75;
+}
+
+var ex = instance_create(x + 32, y + 32, obj_explosion);
+ex.damage = dmg;
     
 event_inherited();
 </string>

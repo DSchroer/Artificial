@@ -28,7 +28,7 @@
             <string>
 player_reset_journal();
 ui_open_journal();
-
+sfx_play_volume(snd_computer_interact, false, 0.8);
 </string>
           </argument>
         </arguments>

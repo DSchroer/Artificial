@@ -86,7 +86,7 @@ else if(obj_progress.cube_parts == 3)
 {
     draw_sprite(spr_cube_hub4, -1, x, y + yoffset);
 }
-else
+else if(obj_progress.cube_parts &lt; 6)
 {
     draw_sprite(spr_cube_hub5, -1, x, y + yoffset);
 }

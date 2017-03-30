@@ -11,6 +11,7 @@ if(play_tutorial)
 else
 {
     save_clear();
+    save_flush(obj_save_data);
     save_set_value(obj_save_data, "difficulty", difficulty_setting);
     save_set_value(obj_save_data, "inv0", inventory_get_tutorial_weapon());
     save_set_value(obj_save_data, "inv1", inventory_get_tutorial_weapon2());

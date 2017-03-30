@@ -34,6 +34,7 @@ dash_speed = 10;
 
 // UI queue
 textbox_queue = ds_queue_create();
+portrait_queue = ds_queue_create();
 animation_timer = 0;
 textbox_cooldown = 0;
 
@@ -96,4 +97,6 @@ journal_is_open_slots[4] = false;
 journal_active_category = -1;
 journal_active_entry = -1;
 journal_block_mouse = false;
+
+boss_warning_timer_active = false;
 

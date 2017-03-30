@@ -59,7 +59,7 @@ if(text == -1)
 
 if(!ui_textbox_open() &amp;&amp; obj_player.textbox_cooldown &lt;= 0)
 {
-    ui_textbox_queue(text);
+    ui_textbox_queue(text, spr_portrait_lore);
     sfx_play_volume(snd_paper_rustle, false, 1.3);
 }
 

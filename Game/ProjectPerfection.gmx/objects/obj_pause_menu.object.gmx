@@ -309,7 +309,7 @@ if(event_data == 0)
           <argument>
             <kind>1</kind>
             <string>/// Goto hub
-if(!tutorial_done())
+if(!tutorial_done() || room == rm_boss_final)
 {
     exit;
 }
