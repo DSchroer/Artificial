@@ -158,7 +158,7 @@
     <instance objName="obj_invisible_wall" x="512" y="640" name="inst_6F3D239B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="512" y="704" name="inst_94A1C3D9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="512" y="768" name="inst_28B2CD16" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_spawn" x="256" y="288" name="inst_8FF4585A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_spawn" x="160" y="224" name="inst_8FF4585A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn" x="352" y="640" name="inst_98956D57" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn" x="224" y="928" name="inst_FF6FAE87" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn" x="1024" y="992" name="inst_A047D37D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

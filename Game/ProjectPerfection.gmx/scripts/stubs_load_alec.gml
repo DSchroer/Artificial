@@ -6,10 +6,11 @@
 //generator_add_option(rm_stub_base_23, 23, 23);
 
 
+
 generator_add_option(rm_stub_a_1, 23, 13);
 generator_add_option(rm_stub_a_2, 25, 15);
 generator_add_option(rm_stub_a_3, 15, 15);
-exit;
+
 generator_add_option(rm_stub_a_4, 15, 15);
 generator_add_option(rm_stub_a_5, 15, 15);
 generator_add_option(rm_stub_a_6, 15, 15);
@@ -30,13 +31,15 @@ generator_add_option(rm_stub_a_20, 25, 19);
 generator_add_option(rm_stub_a_21, 25, 19);
 generator_add_option(rm_stub_a_22, 23, 23);
 generator_add_option(rm_stub_a_23, 23, 23);
-generator_add_option(rm_stub_a_24, 15, 15);
+generator_add_option(rm_stub_a_24, 19, 19);
 generator_add_option(rm_stub_a_25, 19, 19);
 generator_add_option(rm_stub_a_26, 19, 19);
 generator_add_option(rm_stub_a_27, 15, 15);
 generator_add_option_ext(rm_stub_a_28, 23, 23, stub_flags.stop_shortcut);
-
-
+generator_add_option(rm_stub_a_29, 13, 19);
+generator_add_option_ext(rm_stub_a_30, 13, 19, stub_flags.stop_shortcut);
+generator_add_option_ext(rm_stub_a_31, 23, 23, stub_flags.stop_shortcut);
+generator_add_option_ext(rm_stub_a_32, 19, 19, stub_flags.stop_shortcut);
 
 
 

@@ -178,7 +178,7 @@
     <instance objName="obj_wall" x="1024" y="64" name="inst_A08B64CA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1088" y="64" name="inst_ED7D460E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_snare_trap" x="192" y="512" name="inst_69A41C69" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_snare_trap" x="544" y="256" name="inst_B17D0D5D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_snare_trap" x="768" y="256" name="inst_B17D0D5D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_snare_trap" x="832" y="960" name="inst_AE9D3799" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mine_trap" x="512" y="512" name="inst_684CE5DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mine_trap" x="352" y="864" name="inst_5B046E8E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

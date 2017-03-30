@@ -122,9 +122,7 @@
     <instance objName="obj_invisible_wall" x="768" y="0" name="inst_0FC080C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock" x="256" y="320" name="inst_694395C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock" x="192" y="320" name="inst_3775DBB9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_rock" x="576" y="192" name="inst_3170D8B6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock" x="608" y="288" name="inst_BC340AAE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_rock" x="800" y="416" name="inst_5D195188" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock" x="640" y="672" name="inst_4A559F76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock" x="640" y="608" name="inst_025606F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock" x="672" y="544" name="inst_A65BB06D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

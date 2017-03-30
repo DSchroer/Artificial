@@ -1236,7 +1236,6 @@
           <room>rooms\rm_stub_base_wide19</room>
         </rooms>
         <rooms name="15x15">
-          <room>rooms\rm_stub_a_24</room>
           <room>rooms\rm_stub_a_27</room>
           <room>rooms\rm_stub_a_3</room>
           <room>rooms\rm_stub_a_4</room>
@@ -1248,6 +1247,7 @@
           <room>rooms\rm_stub_a_11</room>
           <room>rooms\rm_stub_a_12</room>
           <room>rooms\rm_stub_a_13</room>
+          <room>rooms\rm_stub_a_24</room>
           <room>rooms\rm_stub_a_16</room>
           <room>rooms\rm_stub_a_25</room>
           <room>rooms\rm_stub_a_17</room>
@@ -1256,6 +1256,7 @@
           <room>rooms\rm_stub_a_7</room>
           <room>rooms\rm_stub_a_8</room>
           <room>rooms\rm_stub_a_9</room>
+          <room>rooms\rm_stub_a_32</room>
         </rooms>
         <rooms name="25x19">
           <room>rooms\rm_stub_a_14</room>
@@ -1282,7 +1283,6 @@
         </rooms>
       </rooms>
       <rooms name="Junk">
-        <room>rooms\rm_stub_8</room>
         <room>rooms\rm_stub_6</room>
         <room>rooms\rm_stub_3</room>
         <room>rooms\rm_stub_11</room>

@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>triggered = false;
 timeout = 10;
-damage = 30;
+damage = obj_player.shield_max_health + obj_player.max_health * 0.1;
 one_shot = true;
 one_shot_timeout = 60;
 image_speed = 0;
