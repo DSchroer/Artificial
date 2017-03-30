@@ -60,10 +60,10 @@ tick = false;
     mouse_prev_y = mouse_y;
 }
 
-if(abs(gamepad_axis_value(0, gp_axislv)) &lt; 0.2)
+if(abs(keymap_gamepad_axis(gp_axislv)) &lt; 0.2)
 {
     tick = false;
-}else if(gamepad_axis_value(0, gp_axislv) &gt; 0 &amp;&amp; !tick)
+}else if(keymap_gamepad_axis(gp_axislv) &gt; 0 &amp;&amp; !tick)
 {
     tick = true;
     use_mouse = false;

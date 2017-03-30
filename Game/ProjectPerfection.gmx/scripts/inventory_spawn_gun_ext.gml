@@ -20,7 +20,7 @@ shot_sprites[weapon_modifier.normal] = spr_bullet;
 shot_sprites[weapon_modifier.plasma] = spr_plasma;
 shot_sprites[weapon_modifier.rail] = spr_rail;
 shot_sprites[weapon_modifier.scatter] = spr_bullet;
-shot_sprites[weapon_modifier.rocket] = spr_bullet;
+shot_sprites[weapon_modifier.rocket] = spr_rocket;
 gun[weapon_index.bullet_sprite] = shot_sprites[gun[weapon_index.modifier]];
 
 var weights = inventory_get_subtype_weights();

@@ -59,7 +59,7 @@ image_speed = 0;
             <kind>1</kind>
             <string>with(obj_progress)
 {
-    if(progress &lt; other.target * 4 || progress &gt; (other.target + 1) * 4)
+    if(progress &lt; other.target * 4 || progress &gt;= (other.target + 1) * 4)
     {
         progress = other.target * 4;
     }
@@ -70,36 +70,8 @@ with(obj_level)
     instance_destroy();
 }
 
-var prog = obj_progress.progress;
+room_goto(rm_teleport);
 
-if(prog == 3)
-{
-    room_goto(rm_boss_1)
-}
-else if(prog == 7)
-{
-    room_goto(rm_boss_2)
-}
-else if(prog == 11)
-{
-    room_goto(rm_boss_3)
-}
-else if(prog == 15)
-{
-    room_goto(rm_boss_4)
-}
-else if(prog &gt;= 16)
-{
-    with(obj_progress)
-    {
-        progress = 0;
-    }
-    room_goto(rm_hub);
-}
-else
-{
-    room_goto(rm_transition);
-}
 
 with(obj_player)
 {

@@ -43,7 +43,10 @@ sword = inventory_create_weapon();
 sword[weapon_index.modifier] = weapon_modifier.sword;
 sword[weapon_index.damage] = 50;
 sword[weapon_index.bullet_sprite] = spr_sword;
+sword[weapon_index.bullet_sprite_xscale] = 2;
+sword[weapon_index.bullet_sprite_yscale] = 2;
 
+image_speed = 0.5
 
 volume_mod = 0.5;
 ds_list_add(hurt_sounds, snd_captain_hit); 
@@ -103,6 +106,8 @@ if(random(5000) &lt; 1)
     sfx_play_volume(snd_captain_ambient, false, 1.0);
 }
 
+entity_face_player();
+
 var state = sm_get_state();
 if(player_exists())
 {
@@ -110,15 +115,19 @@ if(player_exists())
     {
         case "idle":
         case "paused":
+            entity_use_animation(spr_captain, true);
             eg_idle();
             break;
         case "approach":
+            entity_use_animation(spr_captain_move, false);
             cap_approach();
             break;
         case "shoot":
+            entity_use_animation(spr_captain, false);
             cap_shoot();
             break;
         case "mele":
+            entity_use_animation(spr_captain, false);
             cap_mele();
             break;
     }

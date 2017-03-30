@@ -69,7 +69,9 @@ if(key == keycode.inv4)
 
 if(key == keycode.dash)
 {
-    return keyboard_check_released(vk_space) || keymap_gamepad_check_released(gp_face2);
+    return keyboard_check_released(vk_space) || 
+    keymap_gamepad_check_released(gp_face2) ||
+    keymap_gamepad_check_released(gp_shoulderl);
 }
 
 if(key == keycode.back)

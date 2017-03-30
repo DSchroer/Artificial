@@ -40,6 +40,7 @@ data[weapon_index.fire_timeout] = 60 / 25;
 data[weapon_index.bullet_speed] = 10;
 data[weapon_index.accuracy] = 15;
 data[weapon_index.recoil_modifier] = 2;
+data[weapon_index.bullet_sprite] = spr_rocket;
 data[weapon_index.sprite_count] = 1;
 data[weapon_index.sprite_count + 1] = spr_azar_will;
 data[weapon_index.sprite_count + 2] = c_white;

@@ -73,6 +73,8 @@ alarm[0] = 10;
           <argument>
             <kind>1</kind>
             <string>
+image_alpha = alarm[0] / 10;
+
 image_angle = direction;
 x = obj_player.x + lengthdir_x(dist, direction);
 y = obj_player.y - 32 + lengthdir_y(dist, direction);

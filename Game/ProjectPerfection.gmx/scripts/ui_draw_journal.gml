@@ -180,8 +180,8 @@ if(keymap_check(keycode.interact))
 }
 if(journal_scroll_cooldown == 0)
 {
-    var haxis_ls = gamepad_axis_value(0, gp_axislh);
-    var vaxis_ls = gamepad_axis_value(0, gp_axislv);
+    var haxis_ls = keymap_gamepad_axis(gp_axislh);
+    var vaxis_ls = keymap_gamepad_axis(gp_axislv);
     if(abs(haxis_ls) > 0.35 || abs(vaxis_ls) > 0.35) 
     {
         var dir = point_direction(0, 0, haxis_ls, vaxis_ls);
@@ -286,9 +286,7 @@ if(journal_active_category != -1 && journal_active_entry != -1)
 {
     var cont = book_contents[journal_active_category];
     var text = cont[journal_active_entry];
-    animation_timer = 0;
+    
     ui_draw_textbox_ext(xp + cell_width + scroll_bar_width + padding * 6, yp + back_height - 226, text, 1.0, 512, 226);
 }
-
-
 

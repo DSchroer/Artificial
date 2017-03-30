@@ -213,13 +213,15 @@
         <sprite>sprites\spr_turret</sprite>
         <sprite>sprites\spr_dog_move</sprite>
         <sprite>sprites\spr_grunt_move</sprite>
+        <sprite>sprites\spr_grunt_attack</sprite>
+        <sprite>sprites\spr_captain_move</sprite>
+        <sprite>sprites\spr_captain_attack</sprite>
       </sprites>
       <sprite>sprites\spr_env_rock</sprite>
       <sprites name="Boss">
         <sprite>sprites\spr_final_boss</sprite>
         <sprite>sprites\spr_final_boss_hit</sprite>
         <sprite>sprites\spr_dym</sprite>
-        <sprite>sprites\spr_thwander</sprite>
         <sprites name="Azar">
           <sprite>sprites\spr_azar_idle</sprite>
           <sprite>sprites\spr_azar_attack</sprite>
@@ -229,6 +231,12 @@
           <sprite>sprites\spr_worm_head</sprite>
           <sprite>sprites\spr_worm_body</sprite>
           <sprite>sprites\spr_worm_tail</sprite>
+        </sprites>
+        <sprites name="Twan">
+          <sprite>sprites\spr_thwander</sprite>
+          <sprite>sprites\spr_twan_move</sprite>
+          <sprite>sprites\spr_thwan_mine</sprite>
+          <sprite>sprites\spr_twan_shoot</sprite>
         </sprites>
       </sprites>
     </sprites>
@@ -374,6 +382,7 @@
     </sprites>
     <sprites name="Shots">
       <sprite>sprites\spr_bullet</sprite>
+      <sprite>sprites\spr_rocket</sprite>
       <sprite>sprites\spr_plasma</sprite>
       <sprite>sprites\spr_rail</sprite>
       <sprite>sprites\spr_azar_rock</sprite>
@@ -385,6 +394,7 @@
       <sprite>sprites\spr_muzzle_flash</sprite>
       <sprite>sprites\spr_explosion</sprite>
       <sprite>sprites\spr_poison</sprite>
+      <sprite>sprites\spr_dym_part</sprite>
     </sprites>
     <sprite>sprites\spr_chest_closed</sprite>
     <sprite>sprites\spr_chest_open</sprite>
@@ -443,6 +453,12 @@
     </sprites>
     <sprite>sprites\spr_cube_dust</sprite>
     <sprite>sprites\sprite198</sprite>
+    <sprite>sprites\sprite176</sprite>
+    <sprite>sprites\spr_planet</sprite>
+    <sprite>sprites\spr_cut_planet</sprite>
+    <sprite>sprites\spr_stars</sprite>
+    <sprite>sprites\spr_ship</sprite>
+    <sprite>sprites\spr_cut_ship</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_tile</background>
@@ -622,6 +638,8 @@
       <script>scripts\entity_collision.gml</script>
       <script>scripts\entity_apply_damage.gml</script>
       <script>scripts\entity_take_damage.gml</script>
+      <script>scripts\entity_use_animation.gml</script>
+      <script>scripts\entity_face_player.gml</script>
     </scripts>
     <scripts name="Fonts">
       <script>scripts\fonts_init.gml</script>
@@ -676,6 +694,7 @@
       <script>scripts\keymap_gamepad_check.gml</script>
       <script>scripts\keymap_gamepad_check_pressed.gml</script>
       <script>scripts\keymap_gamepad_check_released.gml</script>
+      <script>scripts\keymap_gamepad_axis.gml</script>
     </scripts>
     <script>scripts\kill_boss.gml</script>
     <scripts name="Level">
@@ -999,6 +1018,7 @@
       <object>objects\obj_muzzle_flash</object>
       <object>objects\obj_shield_hit</object>
       <object>objects\obj_stasis</object>
+      <object>objects\obj_teleport_effect</object>
     </objects>
     <objects name="Entity">
       <object>objects\obj_entity</object>
@@ -1231,6 +1251,7 @@
     <rooms name="Menus">
       <room>rooms\rm_credits</room>
     </rooms>
+    <room>rooms\rm_teleport</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

@@ -166,7 +166,7 @@ debug_draw();
             <kind>1</kind>
             <string>with(obj_progress)
 {
-    progress++;
+    cube_parts++;
 }
 </string>
           </argument>
@@ -226,7 +226,7 @@ if(room_exists(ind))
     instance_destroy();
 }
 
-room_goto(rm_sandbox);
+room_goto(rm_teleport);
 </string>
           </argument>
         </arguments>

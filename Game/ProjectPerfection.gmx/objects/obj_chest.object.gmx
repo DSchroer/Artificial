@@ -26,6 +26,37 @@
           <argument>
             <kind>1</kind>
             <string>triggered = false;
+nav = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(!nav)
+{
+    with(obj_navmesh)
+    {
+        mp_grid_add_rectangle(nav, other.x - 32, other.y - 32, other.x + 64, other.y + 64);
+    }
+    nav = true;
+}
 </string>
           </argument>
         </arguments>
