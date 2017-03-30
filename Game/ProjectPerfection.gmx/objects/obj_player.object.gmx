@@ -175,7 +175,6 @@ ui_flash_textbox();
             <kind>1</kind>
             <string>/// Cube related lore. Also hub teleporter spawn
 instance_create(room_width / 2, room_height / 2 - 192, obj_hub_teleporter);
-instance_create(room_width / 2, room_height / 2 - 192, obj_teleporter_light)
 ui_textbox_queue("You feel a strange sensation. `br |red Your base health has increased by 100. `br |aqua Your base shield has increased by 75.", -1);
 
 if(obj_progress.cube_parts == 1)
