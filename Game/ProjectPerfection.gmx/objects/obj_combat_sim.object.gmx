@@ -377,10 +377,9 @@ if(!instance_exists(obj_enemy))
         for(var i = 0; i &lt; instance_number(obj_tutorial_spawner); i++)
         {
             var spawner = instance_find(obj_tutorial_spawner, i);
-            if(spawner.position == 1)
+            if(spawner.position == 1 || spawner.position == 4)
             {
                 instance_create(spawner.x + sprite_get_xoffset(object_get_sprite(obj_grunt)), spawner.y + sprite_get_yoffset(object_get_sprite(obj_grunt)), obj_grunt);
-                break;   
             }
         }        
         sfx_play_volume(snd_heart_spawn_enemies, false, 0.4);
@@ -406,8 +405,11 @@ if(!instance_exists(obj_enemy))
     }
     else if(room_state == sim_state.combat2_inprogress)
     {
-        alarm[2] = 60;
-        room_state = sim_state.waiting_for_combat3;
+        //alarm[2] = 60;
+        //room_state = sim_state.waiting_for_combat3;
+        
+        room_state = sim_state.waiting_for_hit;
+        alarm[5] = 90;
     }
     else if(room_state == sim_state.begin_combat3 &amp;&amp; !ui_textbox_open())
     {
