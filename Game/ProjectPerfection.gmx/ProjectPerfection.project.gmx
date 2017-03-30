@@ -847,6 +847,7 @@
       <script>scripts\stubs_load_nick.gml</script>
       <script>scripts\stubs_load_spencer.gml</script>
       <script>scripts\stubs_load_alec.gml</script>
+      <script>scripts\stubs_load_base.gml</script>
     </scripts>
     <script>scripts\surface_get_scale.gml</script>
     <scripts name="Ui">
@@ -1240,6 +1241,31 @@
         <room>rooms\rm_stub_a_1</room>
         <room>rooms\rm_stub_a_2</room>
         <room>rooms\rm_stub_a_3</room>
+        <rooms name="Bases">
+          <room>rooms\rm_stub_base_15</room>
+          <room>rooms\rm_stub_base_23</room>
+          <room>rooms\rm_stub_base_19</room>
+          <room>rooms\rm_stub_a_16</room>
+          <room>rooms\rm_stub_base_wide19</room>
+        </rooms>
+        <rooms name="Final_15">
+          <room>rooms\rm_stub_a_4</room>
+          <room>rooms\rm_stub_a_5</room>
+          <room>rooms\rm_stub_a_6</room>
+        </rooms>
+        <rooms name="Final_19">
+          <room>rooms\rm_stub_a_7</room>
+          <room>rooms\rm_stub_a_10</room>
+          <room>rooms\rm_stub_a_13</room>
+          <room>rooms\rm_stub_a_9</room>
+          <room>rooms\rm_stub_a_8</room>
+          <room>rooms\rm_stub_a_12</room>
+          <room>rooms\rm_stub_a_11</room>
+        </rooms>
+        <rooms name="Final_wide19">
+          <room>rooms\rm_stub_a_14</room>
+          <room>rooms\rm_stub_a_15</room>
+        </rooms>
       </rooms>
     </rooms>
     <room>rooms\rm_empty</room>
