@@ -91,12 +91,12 @@ if(obj_progress.tutorial == 50)
             <kind>1</kind>
             <string>debug_show_string("T:" + string(obj_progress.tutorial));
 
-if(obj_progress.cube_parts == 4 &amp;&amp; !instance_exists(obj_cube_light))
+if((obj_progress.cube_parts == 4 || obj_progress.cube_parts == 5) &amp;&amp; !instance_exists(obj_cube_light))
 {
     instance_create(1408, 1408, obj_cube_light);
 }
 
-if(obj_progress.cube_parts != 4)
+if(obj_progress.cube_parts != 4 &amp;&amp; obj_progress.cube_parts != 5)
 {
     with(obj_cube_light)
     {
