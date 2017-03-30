@@ -22,7 +22,10 @@ generator_add_option(rm_stub_a_12, 19, 19);
 generator_add_option(rm_stub_a_13, 19, 19);
 generator_add_option_ext(rm_stub_a_14, 25, 19, stub_flags.stop_shortcut);
 
+generator_add_option_ext(rm_stub_a_17, 23, 23, stub_flags.no_door_down | stub_flags.no_door_right);
+generator_add_option_ext(rm_stub_a_18, 23, 23, stub_flags.no_door_down | stub_flags.no_door_right);
 
 
+generator_add_option(rm_stub_a_19, 23, 23);
 
 
