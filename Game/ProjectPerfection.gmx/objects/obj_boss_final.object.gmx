@@ -148,6 +148,9 @@ if(player_exists())
             <string>sfx_play_volume(snd_heart_death, false, 1);
 google_analytics_event("game", "finished");
 event_inherited();
+
+
+
 </string>
           </argument>
         </arguments>

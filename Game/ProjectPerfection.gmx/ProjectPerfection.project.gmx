@@ -441,7 +441,7 @@
       <sprite>sprites\spr_loot</sprite>
       <sprite>sprites\spr_ring_charge</sprite>
     </sprites>
-    <sprite>sprites\sprite176</sprite>
+    <sprite>sprites\spr_cube_dust</sprite>
     <sprite>sprites\sprite198</sprite>
   </sprites>
   <backgrounds name="background">
@@ -748,6 +748,7 @@
         </scripts>
         <script>scripts\inventory_get_tutorial_weapon.gml</script>
         <script>scripts\inventory_get_tutorial_weapon2.gml</script>
+        <script>scripts\inventory_get_end_weapon.gml</script>
         <script>scripts\inventory_quality_color.gml</script>
         <script>scripts\inventory_gun_name.gml</script>
       </scripts>
@@ -1038,6 +1039,8 @@
         <object>objects\obj_boss_final</object>
         <object>objects\obj_boss_jump</object>
         <object>objects\obj_final_ring</object>
+        <object>objects\obj_cube_killable</object>
+        <object>objects\obj_cube_dust</object>
       </objects>
     </objects>
     <objects name="Environment">

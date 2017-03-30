@@ -71,8 +71,44 @@ else if(obj_progress.cube_parts == 4 &amp;&amp; counter &lt;= 4)
     ui_textbox_queue("J: (If the records scattered around this place are true, then the cube is can create any element. The greatest invention ever. But also the greatest weapon ever known. Whatever the anti-matter bomb is, it was created using the cube, and decimated Vardus.)");
     ui_textbox_queue("J: (But the people here were corrupt... unable to handle the cube's power... we'd never be so foolish... would we? Can we really take that chance though?)");
 }
+else if(save_get_value(obj_save_data, "end_of_game", false))
+{
+    ui_textbox_queue("And so, J defiantly destroyed |cube the cube. |white He hoped that by destroying it, he could prevent the events on Vardus from ever happening again.");
+    ui_textbox_queue("The golems on the surface of the planet all crumbled to dust without |cube the cube |white nearby, joining the 5 fallen protectors. For the first time in many years, Vardus was at peace.");
+    ui_textbox_queue("The planet could now begin the process of healing. Perhaps one day its lush jungles and great lakes would return. ");
+    ui_textbox_queue("Maybe some day, another cube will be constructed by beings that can appreciate it. Ones that understood the simple lesson: science has no morality. It is merely a tool that its creators must use wisely. Not for war, but for the betterment of everyone.");
+}
 
     
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+with(all)
+{
+    instance_destroy();
+}
+
+room_goto(rm_credits)
 </string>
           </argument>
         </arguments>
@@ -126,10 +162,20 @@ room_goto(rm_hub);
           <argument>
             <kind>1</kind>
             <string>
-if(!ui_textbox_open() &amp;&amp; alarm[0] == -1)
+if(!ui_textbox_open() &amp;&amp; alarm[0] == -1 &amp;&amp; alarm[1] == -1)
 {
-    alarm[0] = 60;
+    if(save_get_value(obj_save_data, "end_of_game", false))
+    {
+        alarm[1] = 60;
+    }
+    else
+    {
+        alarm[0] = 60;
+    }
 }
+
+
+
 </string>
           </argument>
         </arguments>

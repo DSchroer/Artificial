@@ -28,8 +28,19 @@
             <string>event_inherited();
 target = obj_boss_final;
 can_trigger_load = false;
+can_spawn_cube = true;
+shake_it_off = 0;
 
-if(!tutorial_done())
+if(save_get_value(obj_save_data, "fb_dead", false))
+{
+    alarm[3] = 1;
+    drawing = false;
+    with(obj_boss_final)
+    {
+        instance_destroy();
+    }
+}
+else if(!tutorial_done())
 {
     ui_textbox_queue("????: `br I am this ship's central processing unit. My creator called me |greengold Lyra |white after his favourite constellation.");
     ui_textbox_queue("Lyra: `br As luck would have it, that broken |cube cube |white you hold is a piece of a great scientific device, rumoured to have been destroyed on the nearby planet of Vardus. ");
@@ -50,19 +61,72 @@ else if(!save_get_value(obj_save_data, "final_boss_dialog", false))
     ui_textbox_queue("Lyra: How are you questioning orders? How disappointing. I guess you're nothing but another defective experiment. ");
     can_trigger_load = true;
 
-    with(obj_boss_battle)
-    {
-        drawing = false;
-    }
+    drawing = false;
 }
 else
 {
-    with(obj_boss_battle)
-    {
-        drawing = true;
-        alarm[0] = 120;
-    }
+    drawing = true;
+    alarm[0] = 120;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+instance_create(0, 0, obj_fade_out);
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var xp = room_width / 2;
+var yp = room_height / 2 - 180;
+ 
+var inst = instance_create(xp, yp, obj_item);
+inst.data = inventory_get_end_weapon();    
+
+var killable = instance_create(xp, yp - 300, obj_cube_killable);
+can_spawn_cube = false;
+
+ui_textbox_queue("J: (I suppose doing the right thing is never easy. The universe just isn't ready for this. I have to |yellow destroy the cube. |white )");
+
 </string>
           </argument>
         </arguments>
@@ -108,13 +172,10 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-with(all)
-{
-    instance_destroy();
-}
+            <string>save_set_value(obj_save_data, "end_of_game", true);
+save_flush(obj_save_data);
 
-room_goto(rm_credits)
+room_goto(rm_tutorial_cinematic);
 </string>
           </argument>
         </arguments>
@@ -137,12 +198,51 @@ room_goto(rm_credits)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*
-if(instance_number(target) == 0 &amp;&amp; alarm[1] == -1)
+            <string>
+if(shake_it_off &gt; 0)
 {
-    alarm[1] = 600;
+    var shake_factor = 50;
+    if(shake_it_off &lt; 180)
+    {
+        shake_factor = 40;
+    }
+    else if(shake_it_off &lt; 120)
+    {
+        shake_factor = 30;
+    }
+    else if(shake_it_off &lt; 60)
+    {
+        shake_factor = 20;
+    }
+    with(obj_camera)
+    {
+        camera_shake(shake_factor);
+    }
+    shake_it_off--;
 }
-*/
+
+if(instance_number(target) == 0)
+{
+    sfx_bkg_stop();
+}
+
+if(!instance_exists(obj_cube_killable) &amp;&amp; !can_spawn_cube &amp;&amp; alarm[4] == -1 &amp;&amp; alarm[1] == -1)
+{
+    shake_it_off = 240;
+    alarm[4] = 390;
+    alarm[1] = 420;
+}
+else if(instance_number(target) == 0 &amp;&amp; alarm[3] == -1 &amp;&amp; can_spawn_cube)
+{
+    with(obj_clone)
+    {
+        instance_destroy();
+    }
+    save_set_value(obj_save_data, "fb_dead", true);
+    save_flush(obj_save_data);
+    alarm[3] = 30;
+}
+
 if(!tutorial_done() &amp;&amp; !ui_textbox_open() &amp;&amp; alarm[2] == -1)
 {
     alarm[2] = 30;

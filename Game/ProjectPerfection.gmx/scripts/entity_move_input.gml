@@ -164,6 +164,10 @@ if(keyboard_check_pressed(vk_numpad9))
 
     inventory[selected_slot] = weapon;
 }
+if(keyboard_check_pressed(vk_numpad0))
+{
+    inventory[selected_slot] = inventory_get_end_weapon();
+}
 
 // Left analogue stick:
 var haxis_ls = gamepad_axis_value(0, gp_axislh);

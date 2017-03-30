@@ -9,7 +9,7 @@ var current_boss_health = 100;
 var max_boss_health = 100;
 var percent_remaining = ui_get_boss_health_percent(); // current_boss_health / max_boss_health;
 
-if(percent_remaining < 0 || !tutorial_done())
+if(percent_remaining < 0 || !tutorial_done() || ui_textbox_open())
 {
     exit;
 }
