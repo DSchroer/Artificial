@@ -28,9 +28,9 @@
             <string>event_inherited();
 image_xscale = 10;
 image_yscale = 5;
-color_r = 128;
-color_g = 128;
-color_b = 255;
+col_r = 128;
+col_r = 128;
+col_r = 255;
 </string>
           </argument>
         </arguments>

@@ -171,6 +171,8 @@ if(point != noone)
         instance_destroy();
     }
 }
+
+instance_create(x + 32, y + 32, obj_teleporter_light)
 </string>
           </argument>
         </arguments>

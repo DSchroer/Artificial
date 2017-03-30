@@ -26,11 +26,14 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-image_xscale = 12;
-image_yscale = 12;
-color_r = 255;
-color_g = 250;
-color_b = 205;
+image_xscale = 7;
+image_yscale = 7;
+col_r = 230;
+col_g = 230;
+col_b = 255;
+
+sin_range = 0.2;
+sin_min = -0.3;
 </string>
           </argument>
         </arguments>
