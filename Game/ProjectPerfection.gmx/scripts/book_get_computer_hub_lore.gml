@@ -28,11 +28,8 @@ if(chapter >= story_chapter.chapter5)
 
 var lyra_lore;
 i = 0;
-if(chapter >= story_chapter.chapter2)
-{ 
-    lyra_lore[i++] = "|greengold Origin of Lyra 1 `br |white The Lyra AI was created by a scientist to help with research. While Lyra was a true AI, its purpose was always scientific discovery. It did its best to help its creator by running simulations or doing computations.";
-    lyra_lore[i++] = "|greengold Origin of Lyra 2 `br |white All was good, for a time. But eventually the scientist grew old and retired. Lyra was quickly forgotten by its creator. ";
-} 
+lyra_lore[i++] = "|greengold Origin of Lyra 1 `br |white The Lyra AI was created by a scientist to help with research. While Lyra was a true AI, its purpose was always scientific discovery. It did its best to help its creator by running simulations or doing computations.";
+lyra_lore[i++] = "|greengold Origin of Lyra 2 `br |white All was good, for a time. But eventually the scientist grew old and retired. Lyra was quickly forgotten by its creator. ";
 if(chapter >= story_chapter.chapter3)
 { 
     lyra_lore[i++] = "|greengold Origin of Lyra 3 `br |white But, like any conscious being, Lyra longed to be useful. To continue its research. One day, some travellers visited the lab. Lyra saw its chance and installed itself on The Sword's computers, finally free to explore the galaxy without its creator.";
@@ -44,12 +41,9 @@ if(chapter >= story_chapter.chapter4)
 
 var research_notes;
 i = 0;
-if(chapter >= story_chapter.chapter2)
-{
-    research_notes[i++] = "|crimson Experiment J `br Star Year 2653. Month 09. Day 27. `br |white Project iteration 'J' appears to be a success. The combat ability of past experiments, but able to follow instructions. It may not be a 'true' AI now, but what I've created is even better. ";
-    research_notes[i++] = "|crimson Experiment J `br Star Year 2653. Month 09. Day 27. `br |white It's taken nearly 2 years of tweaks, reprogramming, and bioengineering. But it's all been worth it. I've built the perfect soldier. Finally, the cube is within my grasp. ";
-    research_notes[i++] = "|fuchsia Research Notes 1 `br Star Year 2653. Month 09. Day 27. `br |white After careful review of surveillance tapes and testing of debris, it appears that the cube hit the ship with another being. This being died soon after impact and was made of star dust. This is unlike anything in the known galaxy. ";
-} 
+research_notes[i++] = "|crimson Experiment J `br Star Year 2653. Month 09. Day 27. `br |white Project iteration 'J' appears to be a success. The combat ability of past experiments, but able to follow instructions. It may not be a 'true' AI now, but what I've created is even better. ";
+research_notes[i++] = "|crimson Experiment J `br Star Year 2653. Month 09. Day 27. `br |white It's taken nearly 2 years of tweaks, reprogramming, and bioengineering. But it's all been worth it. I've built the perfect soldier. Finally, the cube is within my grasp. ";
+research_notes[i++] = "|fuchsia Research Notes 1 `br Star Year 2653. Month 09. Day 27. `br |white After careful review of surveillance tapes and testing of debris, it appears that the cube hit the ship with another being. This being died soon after impact and was made of star dust. This is unlike anything in the known galaxy. ";
 if(chapter >= story_chapter.chapter3)
 {
     research_notes[i++] = "|fuchsia Research Notes 2 `br Star Year 2653. Month 10. Day 14. `br |white Subject J has successfully passed all system checks and is displaying all the physical ability of its predecessors.";
