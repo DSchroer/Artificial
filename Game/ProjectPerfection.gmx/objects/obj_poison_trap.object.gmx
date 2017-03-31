@@ -73,6 +73,9 @@ if(is_paused())
     image_speed = 0.1;
 }
 
+mele[weapon_index.bullet_sprite_xscale] = image_xscale;
+mele[weapon_index.bullet_sprite_yscale] = image_yscale;
+
 var damage = (obj_player.max_health * percent) / 4;
 mele[weapon_index.damage] = damage;
 
