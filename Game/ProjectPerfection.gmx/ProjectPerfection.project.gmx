@@ -1213,43 +1213,36 @@
     <room>rooms\rm_test</room>
     <rooms name="Stubs">
       <room>rooms\rm_stub_1</room>
-      <rooms name="Dom">
-        <room>rooms\rm_stub_d_2</room>
-        <room>rooms\rm_stub_d_3</room>
-        <room>rooms\rm_stub_d_4</room>
-        <room>rooms\rm_stub_d_5</room>
-        <room>rooms\rm_stub_d_6</room>
-        <room>rooms\rm_stub_d_7</room>
-        <room>rooms\rm_stub_d_8</room>
-        <room>rooms\rm_stub_d_9</room>
-        <room>rooms\rm_stub_d_10</room>
-        <room>rooms\rm_stub_d_11</room>
-        <room>rooms\rm_stub_d_12</room>
-        <room>rooms\rm_stub_d_13</room>
-        <room>rooms\rm_stub_d_14</room>
-      </rooms>
       <rooms name="Alec">
-        <rooms name="Bases">
-          <room>rooms\rm_stub_base_15</room>
-          <room>rooms\rm_stub_base_23</room>
-          <room>rooms\rm_stub_base_19</room>
-          <room>rooms\rm_stub_base_wide19</room>
+        <rooms name="13x19">
+          <room>rooms\rm_stub_a_30</room>
+          <room>rooms\rm_stub_a_29</room>
+          <room>rooms\rm_stub_a_40</room>
         </rooms>
         <rooms name="15x15">
           <room>rooms\rm_stub_a_27</room>
           <room>rooms\rm_stub_a_27_2</room>
           <room>rooms\rm_stub_a_3</room>
+          <room>rooms\rm_stub_a_42</room>
           <room>rooms\rm_stub_a_4</room>
+          <room>rooms\rm_stub_a_34</room>
           <room>rooms\rm_stub_a_5</room>
           <room>rooms\rm_stub_a_5_2</room>
           <room>rooms\rm_stub_a_33</room>
           <room>rooms\rm_stub_a_6</room>
+        </rooms>
+        <rooms name="17x19">
+          <room>rooms\rm_stub_a_36</room>
+        </rooms>
+        <rooms name="19x13">
+          <room>rooms\rm_stub_a_38</room>
         </rooms>
         <rooms name="19x19">
           <room>rooms\rm_stub_a_10</room>
           <room>rooms\rm_stub_a_11</room>
           <room>rooms\rm_stub_a_11_2</room>
           <room>rooms\rm_stub_a_12</room>
+          <room>rooms\rm_stub_a_43</room>
           <room>rooms\rm_stub_a_13</room>
           <room>rooms\rm_stub_a_24</room>
           <room>rooms\rm_stub_a_16</room>
@@ -1264,6 +1257,28 @@
           <room>rooms\rm_stub_a_8</room>
           <room>rooms\rm_stub_a_9</room>
           <room>rooms\rm_stub_a_32</room>
+          <room>rooms\rm_stub_a_37</room>
+        </rooms>
+        <rooms name="23x13">
+          <room>rooms\rm_stub_a_1</room>
+          <room>rooms\rm_stub_a_1_2</room>
+        </rooms>
+        <rooms name="23x23">
+          <room>rooms\rm_stub_a_19</room>
+          <room>rooms\rm_stub_a_41</room>
+          <room>rooms\rm_stub_a_45</room>
+          <room>rooms\rm_stub_a_31</room>
+          <room>rooms\rm_stub_a_39</room>
+          <room>rooms\rm_stub_a_44</room>
+          <room>rooms\rm_stub_a_22</room>
+          <room>rooms\rm_stub_a_22_2</room>
+          <room>rooms\rm_stub_a_23</room>
+          <room>rooms\rm_stub_a_23_2</room>
+          <room>rooms\rm_stub_a_28</room>
+          <room>rooms\rm_stub_a_35</room>
+        </rooms>
+        <rooms name="25x15">
+          <room>rooms\rm_stub_a_2</room>
         </rooms>
         <rooms name="25x19">
           <room>rooms\rm_stub_a_14</room>
@@ -1273,32 +1288,12 @@
           <room>rooms\rm_stub_a_21_3</room>
           <room>rooms\rm_stub_a_21_2</room>
         </rooms>
-        <rooms name="23x23">
-          <room>rooms\rm_stub_a_19</room>
-          <room>rooms\rm_stub_a_31</room>
-          <room>rooms\rm_stub_a_22</room>
-          <room>rooms\rm_stub_a_22_2</room>
-          <room>rooms\rm_stub_a_23</room>
-          <room>rooms\rm_stub_a_23_2</room>
-          <room>rooms\rm_stub_a_28</room>
+        <rooms name="Bases">
+          <room>rooms\rm_stub_base_15</room>
+          <room>rooms\rm_stub_base_23</room>
+          <room>rooms\rm_stub_base_19</room>
+          <room>rooms\rm_stub_base_wide19</room>
         </rooms>
-        <rooms name="13x19">
-          <room>rooms\rm_stub_a_30</room>
-          <room>rooms\rm_stub_a_29</room>
-        </rooms>
-        <rooms name="23x13">
-          <room>rooms\rm_stub_a_1</room>
-          <room>rooms\rm_stub_a_1_2</room>
-        </rooms>
-        <rooms name="25x15">
-          <room>rooms\rm_stub_a_2</room>
-        </rooms>
-      </rooms>
-      <rooms name="Junk">
-        <room>rooms\rm_stub_3</room>
-        <room>rooms\rm_stub_11</room>
-        <room>rooms\rm_stub_2</room>
-        <room>rooms\rm_stub_4</room>
       </rooms>
     </rooms>
     <room>rooms\rm_empty</room>

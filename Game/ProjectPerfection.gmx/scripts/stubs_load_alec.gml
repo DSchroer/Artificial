@@ -1,17 +1,9 @@
 ///stubs_load_alec()
 
-
-//generator_add_option(rm_stub_base_15, 15, 15);
-//generator_add_option(rm_stub_base_19, 19, 19);
-//generator_add_option(rm_stub_base_23, 23, 23);
-
-
-
 generator_add_option(rm_stub_a_1, 23, 13);
 generator_add_option(rm_stub_a_1_2, 23, 13);
 generator_add_option(rm_stub_a_2, 25, 15);
 generator_add_option(rm_stub_a_3, 15, 15);
-
 generator_add_option(rm_stub_a_4, 15, 15);
 generator_add_option(rm_stub_a_5, 15, 15);
 generator_add_option(rm_stub_a_5_2, 15, 15);
@@ -52,6 +44,17 @@ generator_add_option_ext(rm_stub_a_30, 13, 19, stub_flags.stop_shortcut);
 generator_add_option_ext(rm_stub_a_31, 23, 23, stub_flags.stop_shortcut);
 generator_add_option_ext(rm_stub_a_32, 19, 19, stub_flags.stop_shortcut);
 generator_add_option(rm_stub_a_33, 15, 15);
-
+generator_add_option(rm_stub_a_34, 15, 15);
+generator_add_option(rm_stub_a_35, 23, 23);
+generator_add_option_ext(rm_stub_a_36, 17, 19, stub_flags.stop_shortcut);
+generator_add_option(rm_stub_a_37, 19, 19);
+generator_add_option_ext(rm_stub_a_38, 19, 13, stub_flags.stop_shortcut);
+generator_add_option_ext(rm_stub_a_39, 23, 23, stub_flags.no_door_left);
+generator_add_option(rm_stub_a_40, 13, 19); 
+generator_add_option(rm_stub_a_41, 23, 23);
+generator_add_option(rm_stub_a_42, 15, 15);
+generator_add_option(rm_stub_a_43, 19, 19);
+generator_add_option_ext(rm_stub_a_44, 23, 23, stub_flags.no_door_right);
+generator_add_option_ext(rm_stub_a_45, 23, 23, stub_flags.no_door_down | stub_flags.no_door_left);
 
 
