@@ -27,26 +27,12 @@
             <kind>1</kind>
             <string>generator_init(100, 100);
 
-generator_add_option_ext(rm_stub_1, 15, 15, stub_flags.no_door_down);
-generator_add_option(rm_stub_2, 19, 19);
-generator_add_option_ext(rm_stub_3, 23, 23, 0);
-
-generator_add_option(rm_stub_4, 15, 15);
-generator_add_option(rm_stub_5, 15, 15);
-generator_add_option(rm_stub_6, 15, 15);
-
-generator_add_option(rm_stub_7, 19, 19);
-generator_add_option(rm_stub_8, 19, 19);
-generator_add_option(rm_stub_9, 19, 19);
-
-generator_add_option(rm_stub_11, 23, 23);
-generator_add_option(rm_stub_12, 23, 23);
-
-generator_add_option_ext(rm_stub_13, 23, 23, stub_flags.no_door_down | stub_flags.no_door_right);
+stubs_load_base();
+stubs_load_alec();
+exit;
 
 stubs_load_dom();
 stubs_load_nick();
-stubs_load_alec();
 stubs_load_spencer();
 </string>
           </argument>
@@ -125,8 +111,8 @@ if(itteration &lt; ds_list_size(room_list))
 while(ds_list_size(room_list) &lt;= 5)
 {
     generator_clear();
-    generator_set_room(rm_stub_1, 0, 0, 15, 15, 0, 0);
-    generator_populate(0, 0, 15, 15, 0, 0);
+    generator_set_room(rm_stub_1, 0, 0, 17, 17, 0, 0);
+    generator_populate(0, 0, 17, 17, 0, 0);
 }
 
 google_analytics_event("dungeon", "generate", ds_list_size(room_list), "stubs"); 

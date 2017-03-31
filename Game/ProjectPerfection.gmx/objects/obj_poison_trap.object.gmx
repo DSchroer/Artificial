@@ -28,7 +28,7 @@
             <string>
 image_index = random(4);
 image_alpha = 0.5;
-percent = 0.3;
+percent = 0.43;
 timer = 0;
 
 offb = random(4);

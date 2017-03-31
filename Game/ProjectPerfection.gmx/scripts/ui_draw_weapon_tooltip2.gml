@@ -78,7 +78,7 @@ ypos += 7 + string_height(wname) * title_scale;
 // Subtype
 var stat_scale = 1;
 line = inventory_get_modifier_name(weapon[weapon_index.modifier]) + " " + inventory_get_subtype_name(weapon[weapon_index.weapon_subtype]);
-draw_text_transformed_color(xpos, ypos + 8, line, stat_scale, stat_scale, 0, top_render_color, top_render_color, top_render_color, top_render_color, 1);
+draw_text_transformed_color(xpos, ypos + 5, line, stat_scale, stat_scale, 0, top_render_color, top_render_color, top_render_color, top_render_color, 1);
 ypos += 3 + string_height(line);
 
 // Rarity

@@ -80,10 +80,10 @@ current_health = 30;
           <argument>
             <kind>1</kind>
             <string>
-var dmg = 150;
+var dmg = 120;
 with(obj_player)
 {
-    dmg = max_health * 0.75;
+    dmg = max_health * 0.5;
 }
 
 var ex = instance_create(x + 32, y + 32, obj_explosion);
