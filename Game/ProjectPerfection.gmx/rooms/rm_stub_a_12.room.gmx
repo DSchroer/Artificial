@@ -158,7 +158,6 @@
     <instance objName="obj_rock" x="864" y="544" name="inst_DDD62441" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock" x="960" y="672" name="inst_C410B08F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock" x="928" y="512" name="inst_2CEA42BF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_snare_trap" x="864" y="192" name="inst_014097E0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_poison_trap" x="480" y="480" name="inst_9AE618A0" locked="0" code="" scaleX="3.5" scaleY="3.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock" x="256" y="320" name="inst_F6855B8C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock" x="320" y="384" name="inst_02BD9D36" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

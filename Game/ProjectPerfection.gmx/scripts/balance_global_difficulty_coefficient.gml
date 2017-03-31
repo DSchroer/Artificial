@@ -14,7 +14,7 @@ switch(difficulty)
 case difficulty.easy:
     return 0.7;
 case difficulty.nightmare:
-    return 2;
+    return 1.7;
 default: 
     return 1;    
 }

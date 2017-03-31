@@ -162,21 +162,22 @@
     <instance objName="obj_invisible_wall" x="1408" y="1344" name="inst_A87A7910" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock" x="224" y="448" name="inst_88EF5E9A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock" x="288" y="416" name="inst_7CD9D28A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_rock" x="768" y="640" name="inst_CB26C940" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_rock" x="320" y="480" name="inst_31FA6178" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_rock" x="928" y="864" name="inst_0739C068" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_rock" x="736" y="704" name="inst_EF7BC573" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_rock" x="544" y="576" name="inst_E9160B42" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_rock" x="1152" y="384" name="inst_C7609C80" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_rock" x="1056" y="288" name="inst_08CF91B5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_rock" x="1120" y="320" name="inst_F6CAFE5F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_rock" x="1184" y="1056" name="inst_9F3CDC78" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_rock" x="1120" y="1056" name="inst_DE60F6A3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_rock" x="416" y="960" name="inst_97F53D54" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_rock" x="384" y="896" name="inst_AD471072" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_rock" x="1088" y="1120" name="inst_D331CA80" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_rock" x="896" y="928" name="inst_661574D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_rock" x="1152" y="1120" name="inst_E76BB157" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rock" x="896" y="480" name="inst_CB26C940" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rock" x="352" y="512" name="inst_31FA6178" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rock" x="864" y="416" name="inst_0739C068" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rock" x="416" y="416" name="inst_EF7BC573" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rock" x="512" y="352" name="inst_E9160B42" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rock" x="1056" y="512" name="inst_C7609C80" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rock" x="800" y="544" name="inst_08CF91B5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rock" x="992" y="576" name="inst_F6CAFE5F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rock" x="960" y="992" name="inst_9F3CDC78" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rock" x="1024" y="1024" name="inst_DE60F6A3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rock" x="416" y="1184" name="inst_97F53D54" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rock" x="512" y="800" name="inst_BA199C5A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rock" x="544" y="864" name="inst_AD471072" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rock" x="896" y="1120" name="inst_D331CA80" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rock" x="800" y="928" name="inst_661574D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rock" x="864" y="1024" name="inst_E76BB157" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn_enemy" x="96" y="320" name="inst_CBE26BBC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn_enemy" x="160" y="320" name="inst_2CC8711E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn_enemy" x="128" y="384" name="inst_760A3D57" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -188,8 +189,7 @@
     <instance objName="obj_spawn" x="640" y="288" name="inst_41B51F42" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn" x="256" y="224" name="inst_0801941B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn" x="1248" y="256" name="inst_FFC4FFCB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_poison_trap" x="608" y="864" name="inst_A3FCAF14" locked="0" code="" scaleX="3.55555558204651" scaleY="3" colour="4294967295" rotation="0"/>
-    <instance objName="obj_poison_trap" x="992" y="352" name="inst_57EC2529" locked="0" code="" scaleX="3" scaleY="2.5" colour="4294967295" rotation="0"/>
+    <instance objName="obj_poison_trap" x="128" y="928" name="inst_A3FCAF14" locked="0" code="" scaleX="5.5" scaleY="5" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bkg_desert_new" x="0" y="768" w="192" h="192" xo="192" yo="64" id="10016381" name="inst_91D4C275" depth="100000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
