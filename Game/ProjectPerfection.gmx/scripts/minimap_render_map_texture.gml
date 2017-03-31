@@ -51,7 +51,8 @@ if(level != -1)
             {
                 if(ds_grid_get(level.door_grid, i, j) > 0)
                 {
-                    draw_rectangle_color(i * map_size, j * map_size, (i + 1) * map_size, (j + 1) * map_size, c_green, c_green, c_green, c_green, false);
+                    var mapCol = make_color_rgb(241, 150, 97);
+                    draw_rectangle_color(i * map_size, j * map_size, (i + 1) * map_size, (j + 1) * map_size, mapCol, mapCol, mapCol, mapCol, false);
                 }else{
                     draw_rectangle_color(i * map_size, j * map_size, (i + 1) * map_size, (j + 1) * map_size, c_black, c_black, c_black, c_black, false);
                 }
