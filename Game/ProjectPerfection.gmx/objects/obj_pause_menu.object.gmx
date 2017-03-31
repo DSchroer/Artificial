@@ -309,7 +309,12 @@ if(event_data == 0)
           <argument>
             <kind>1</kind>
             <string>/// Goto hub
-if(!tutorial_done() || room == rm_boss_final)
+if(!tutorial_done() ||
+    room == rm_boss_final ||
+    room == rm_boss_1 ||
+    room == rm_boss_2 ||
+    room == rm_boss_3 ||
+    room == rm_boss_4)
 {
     exit;
 }

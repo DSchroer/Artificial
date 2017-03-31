@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_interact_solid</parentName>
+  <parentName>obj_interact</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>image_speed = 0;
 event_inherited();
+instance_create(x + 32, y + 32, obj_teleporter_light);
 </string>
           </argument>
         </arguments>

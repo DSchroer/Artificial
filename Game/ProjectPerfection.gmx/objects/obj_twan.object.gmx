@@ -85,6 +85,16 @@ if(!phase &amp;&amp; ui_get_boss_health_percent() &lt; 0.5)
     sfx_play_volume(snd_thwander_phase_change, false, 1.0);
 }
 
+if(!point_in_rectangle(x, y, 0, 0, room_width, room_height))
+{
+    x = xstart;
+    y = ystart;
+    with(obj_twan_point)
+    {
+        instance_destroy();
+    }
+}
+
 var state = sm_get_state();
 if(player_exists())
 {

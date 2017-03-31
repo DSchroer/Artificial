@@ -22,4 +22,4 @@ if(sm_ticks() > 120 && enemy_line_of_sight(45))
 }
 
 
-enemy_navmesh_move(obj_player, 2, 60);
+enemy_navmesh_move_nowall(obj_player, 2, 60);

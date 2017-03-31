@@ -31,4 +31,4 @@ if(enemy_line_of_sight(45))
     sm_set_var("tmr", 0);
 }
 
-enemy_navmesh_move(obj_player, 5, 60);
+enemy_navmesh_move_nowall(obj_player, 5, 60);
