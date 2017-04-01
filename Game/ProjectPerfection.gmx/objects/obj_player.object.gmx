@@ -114,7 +114,7 @@ else if(obj_progress.progress == 9 &amp;&amp; p == 4)
 else if(obj_progress.progress == 10 &amp;&amp; p == 5)
 {
     save_set_value(obj_save_data, "boss_warning", 6);
-    ui_textbox_queue("I have to wonder why anyone would come here though. Why anyone would want this |cube cube piece. I'd trade it away in a second to return to the forests of my home planet. ", spr_portrait_thwander);
+    ui_textbox_queue("I have to wonder why anyone would come here though. Why anyone would want this |cube cube |white piece. I'd trade it away in a second to return to the forests of my home planet. ", spr_portrait_thwander);
     ui_flash_textbox();
 }
 
@@ -487,10 +487,22 @@ if(!open_workbench &amp;&amp; !window_locked )
 
 if(keymap_check(keycode.escape))
 {
-    if(!is_paused() &amp;&amp; room != rm_transition)
+    if(!is_paused())
     {
-        instance_create(0,0,obj_pause);
-        open_workbench = false;
+        if(journal_is_open)
+        {
+            journal_is_open = false; 
+        }
+        else if(open_workbench)
+        {
+            open_workbench = false;
+        }
+        else if(room != rm_transition)
+        {
+            instance_create(0,0,obj_pause);
+            open_workbench = false;
+            journal_is_open = false;
+        }
     }
 }
 

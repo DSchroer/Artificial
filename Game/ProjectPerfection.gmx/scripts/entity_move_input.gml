@@ -57,16 +57,17 @@ else if(inv_change_cd > 0)
 {
     inv_change_cd--;
 }
-
 if(keymap_check(keycode.hide_tooltips))
 {
     hide_tooltips = !hide_tooltips;
 }
 
 
+
+
 if(keyboard_check_pressed(vk_f12))
 {
-    old_tooltips = !old_tooltips;
+    room_goto(rm_transition);
 }
 if(keyboard_check_pressed(vk_f10))
 {

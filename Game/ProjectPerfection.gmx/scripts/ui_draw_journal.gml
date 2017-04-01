@@ -196,8 +196,21 @@ if(journal_scroll_cooldown == 0)
         {
             scroll_index++;
         }                
-        scroll_index = clamp(scroll_index, 0, size_sum - 1);        
     }
+    
+    if(keyboard_check(ord("W")))
+    {
+        scroll_index--;
+        journal_scroll_cooldown = 6;
+    }
+    if(keyboard_check(ord("S")))
+    {
+        scroll_index++;
+        journal_scroll_cooldown = 6;
+    }
+    
+    scroll_index = clamp(scroll_index, 0, size_sum - 1);        
+    
 }
 if(journal_scroll_cooldown > 0)
 {
