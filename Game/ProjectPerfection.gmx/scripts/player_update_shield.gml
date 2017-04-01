@@ -27,7 +27,7 @@ if(is_shield_active)
         var recharge_ammount = shield_recharge_rate * (delta_time / 1000000);
         if(superfast_recharge)
         {
-            recharge_ammount *= 4;
+            recharge_ammount *= 7;
         }
         remaining_shield += recharge_ammount;
         remaining_shield = min(remaining_shield, shield_max_health);
