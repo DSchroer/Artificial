@@ -1,15 +1,33 @@
 ///stubs_load_alec()
 
+/*
 generator_add_option(rm_stub_a_1, 23, 13);
+generator_add_option(rm_stub_a_1_r, 23, 13);
 generator_add_option(rm_stub_a_1_2, 23, 13);
+generator_add_option(rm_stub_a_1_2_r, 23, 13);
 generator_add_option(rm_stub_a_2, 25, 15);
+generator_add_option(rm_stub_a_2_r, 25, 15);
+
+
 generator_add_option(rm_stub_a_3, 15, 15);
+generator_add_option(rm_stub_a_3_r, 15, 15);
+generator_add_option(rm_stub_a_3_r_2, 15, 15);
 generator_add_option(rm_stub_a_4, 15, 15);
+*/
+
 generator_add_option(rm_stub_a_5, 15, 15);
+generator_add_option(rm_stub_a_5_r, 15, 15);
+
 generator_add_option(rm_stub_a_5_2, 15, 15);
 generator_add_option(rm_stub_a_6, 15, 15);
+generator_add_option(rm_stub_a_6_r, 15, 15);
+
+exit;
+
 generator_add_option(rm_stub_a_7, 19, 19);
 generator_add_option(rm_stub_a_8, 19, 19);
+
+
 generator_add_option(rm_stub_a_9, 19, 19);
 generator_add_option(rm_stub_a_10, 19, 19);
 generator_add_option(rm_stub_a_11, 19, 19);
