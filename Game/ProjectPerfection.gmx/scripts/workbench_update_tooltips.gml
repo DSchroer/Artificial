@@ -28,10 +28,10 @@ level = save_get_value(obj_save_data, "shield_delay_powerup", 0);
 var lines3;
 i = 0;
 lines3[i++] = "Upgrade shield recharge delay";
-lines3[i++] = "Current upgrade: -" + string(5 * level) + "%";
+lines3[i++] = "Current upgrade: -" + string(7 * level) + "%";
 if(level < obj_menu_workbench.max_delay_level)
 {
-    lines3[i++] = "Next upgrade: -" + string(5 * (1 + level)) + "%";
+    lines3[i++] = "Next upgrade: -" + string(7 * (1 + level)) + "%";
 }
 lines3[i++] = "Consumes 3 components.";
 
