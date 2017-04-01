@@ -487,10 +487,22 @@ if(!open_workbench &amp;&amp; !window_locked )
 
 if(keymap_check(keycode.escape))
 {
-    if(!is_paused() &amp;&amp; room != rm_transition)
+    if(!is_paused())
     {
-        instance_create(0,0,obj_pause);
-        open_workbench = false;
+        if(journal_is_open)
+        {
+            journal_is_open = false; 
+        }
+        else if(open_workbench)
+        {
+            open_workbench = false;
+        }
+        else if(room != rm_transition)
+        {
+            instance_create(0,0,obj_pause);
+            open_workbench = false;
+            journal_is_open = false;
+        }
     }
 }
 
