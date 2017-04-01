@@ -10,7 +10,7 @@ generator_add_option(rm_stub_a_2_r, 25, 15);
 generator_add_option(rm_stub_a_2_2, 25, 15);
 generator_add_option(rm_stub_a_3, 15, 15);
 generator_add_option(rm_stub_a_3_r, 15, 15);
-generator_add_option(rm_stub_a_3_r_2, 15, 15);
+generator_add_option_ext(rm_stub_a_3_r_2, 15, 15, stub_flags.stop_shortcut);
 generator_add_option(rm_stub_a_4, 15, 15);
 generator_add_option(rm_stub_a_5, 15, 15);
 generator_add_option(rm_stub_a_5_r, 15, 15);
