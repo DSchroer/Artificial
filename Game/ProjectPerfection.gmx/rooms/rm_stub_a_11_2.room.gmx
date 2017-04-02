@@ -165,7 +165,7 @@
     <instance objName="obj_rock" x="192" y="832" name="inst_1915C404" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock" x="192" y="896" name="inst_DBA09BAC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock" x="448" y="672" name="inst_EC81BA71" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_rock" x="896" y="992" name="inst_05FB243F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rock" x="896" y="928" name="inst_05FB243F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock" x="832" y="928" name="inst_C410B08F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock" x="960" y="320" name="inst_0B01D2E7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock" x="896" y="256" name="inst_469DBD41" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

@@ -16,7 +16,7 @@ else if(progress >= 8 && progress <= 10)
 }
 else
 {
-    return (progress + 4.25) * 10 + random_range(0, 22);
+    return (progress + 4.5) * 10 + random_range(0, 22);
 }
 
 
