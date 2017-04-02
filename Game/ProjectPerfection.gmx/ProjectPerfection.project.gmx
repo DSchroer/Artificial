@@ -355,6 +355,7 @@
       <sprite>sprites\spr_teleport_decal</sprite>
       <sprite>sprites\spr_bollard</sprite>
       <sprite>sprites\spr_plate</sprite>
+      <sprite>sprites\spr_floor_rock</sprite>
     </sprites>
     <sprites name="Traps">
       <sprite>sprites\spr_trap_stall</sprite>
