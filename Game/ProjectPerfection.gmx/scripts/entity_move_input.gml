@@ -64,7 +64,7 @@ if(keymap_check(keycode.hide_tooltips))
 
 
 
-
+/*
 if(keyboard_check_pressed(vk_f12))
 {
     room_goto(rm_transition);
@@ -176,6 +176,7 @@ if(keyboard_check_pressed(vk_numpad0))
 {
     inventory[selected_slot] = inventory_get_end_weapon();
 }
+*/
 
 // Left analogue stick:
 var haxis_ls = keymap_gamepad_axis(gp_axislh);
