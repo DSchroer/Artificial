@@ -65,18 +65,21 @@ scream[weapon_index.modifier] = weapon_modifier.scatter;
 scream[weapon_index.bullet_sprite] = spr_bullet;
 scream[weapon_index.damage] = 750;
 scream[weapon_index.accuracy] = 10;
+sweat[weapon_index.bullet_speed] = 15;
 
 sweat = inventory_create_weapon();
 sweat[weapon_index.modifier] = weapon_modifier.plasma;
 sweat[weapon_index.bullet_sprite] = spr_plasma;
 sweat[weapon_index.damage] = 150;
 sweat[weapon_index.accuracy] = 0;
+sweat[weapon_index.bullet_speed] = 10;
 
 moist = inventory_create_weapon();
 moist[weapon_index.modifier] = weapon_modifier.plasma;
 moist[weapon_index.bullet_sprite] = spr_plasma;
 moist[weapon_index.damage] = 150;
 moist[weapon_index.accuracy] = 0;
+moist[weapon_index.bullet_speed] = 10;
 
 beam = inventory_create_weapon();
 beam[weapon_index.modifier] = weapon_modifier.rail;
@@ -124,7 +127,7 @@ if(iframes &gt; 0)
 
 if(current_health / max_health &lt; 0.5)
 {
-    speed_mod = 1.5;
+    speed_mod = 1.35;
 }
 
 var state = sm_get_state();
