@@ -549,10 +549,10 @@ if(!save_get_value(obj_save_data, "components_tutorial", false) &amp;&amp; save_
             <string>
 if(!dead)
 {
-   
-    
     google_analytics_event("death", level_stub_name()); 
     
+    image_speed = 0.2
+    entity_use_animation(spr_player_die, true);
     ui_start_death_animation(60 * 4);
     dead = true;
     alarm[0] = 60 * 4;

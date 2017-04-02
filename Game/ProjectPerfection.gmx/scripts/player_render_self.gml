@@ -32,11 +32,14 @@ if(view_current == 0)
     var gx = lengthdir_x(gdist, gangle) + base_x + (gun_x * image_xscale);
     var gy = lengthdir_y(gdist, gangle) + base_y + gun_y;
 
-    draw_ik(base_x + (arm_2_x * image_xscale), base_y + arm_2_y, gx, gy, 23-6, 22-5, image_xscale > 0, spr_player_arm_r, spr_player_arm_r_bottom);
-    
+    if(!dead)
+    {
+        draw_ik(base_x + (arm_2_x * image_xscale), base_y + arm_2_y, gx, gy, 23-6, 22-5, image_xscale > 0, spr_player_arm_r, spr_player_arm_r_bottom);
+    }
+        
     draw_sprite_ext(sprite_index, image_index, base_x, base_y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
     
-    if(is_array(inventory[selected_slot]))
+    if(is_array(inventory[selected_slot]) && !dead)
     {
         draw_held_gun(inventory[selected_slot], base_x + (gun_x * image_xscale), base_y + gun_y, gun_dist, gun_angle, 0.75, yscale);
     }
@@ -50,7 +53,10 @@ if(view_current == 0)
     gx = lengthdir_x(gdist, gangle) + base_x + (gun_x * image_xscale);
     gy = lengthdir_y(gdist, gangle) + base_y + gun_y;
     
-    draw_ik(base_x + (arm_1_x * image_xscale), base_y + arm_1_y, gx, gy, 23-6, 22-5, image_xscale > 0, spr_player_arm_l, spr_player_arm_l_bottom);
+    if(!dead)
+    {
+        draw_ik(base_x + (arm_1_x * image_xscale), base_y + arm_1_y, gx, gy, 23-6, 22-5, image_xscale > 0, spr_player_arm_l, spr_player_arm_l_bottom);
+    }
 }
 
 surface_reset_target();

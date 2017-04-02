@@ -203,6 +203,7 @@
         <sprite>sprites\spr_player_arm_r_bottom</sprite>
         <sprite>sprites\spr_player_back</sprite>
         <sprite>sprites\spr_player_walk</sprite>
+        <sprite>sprites\spr_player_die</sprite>
       </sprites>
       <sprites name="Enemy">
         <sprite>sprites\spr_captain</sprite>
