@@ -3,6 +3,7 @@ speed = 0;
 
 if(sm_ticks() > 60)
 {
+    entity_use_animation(spr_brute_attack, true);
     if(random(2) < 1)
     {
         enemy_attack(obj_player, sword);

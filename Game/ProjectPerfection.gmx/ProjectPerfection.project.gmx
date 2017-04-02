@@ -203,6 +203,7 @@
         <sprite>sprites\spr_player_arm_r_bottom</sprite>
         <sprite>sprites\spr_player_back</sprite>
         <sprite>sprites\spr_player_walk</sprite>
+        <sprite>sprites\spr_player_die</sprite>
       </sprites>
       <sprites name="Enemy">
         <sprite>sprites\spr_captain</sprite>
@@ -216,6 +217,11 @@
         <sprite>sprites\spr_grunt_attack</sprite>
         <sprite>sprites\spr_captain_move</sprite>
         <sprite>sprites\spr_captain_attack</sprite>
+        <sprite>sprites\spr_pickle_idle</sprite>
+        <sprite>sprites\spr_pickle_attack</sprite>
+        <sprite>sprites\spr_pickle_move</sprite>
+        <sprite>sprites\spr_brute_move</sprite>
+        <sprite>sprites\spr_brute_attack</sprite>
       </sprites>
       <sprite>sprites\spr_env_rock</sprite>
       <sprites name="Boss">
@@ -349,6 +355,7 @@
       <sprite>sprites\spr_teleport_decal</sprite>
       <sprite>sprites\spr_bollard</sprite>
       <sprite>sprites\spr_plate</sprite>
+      <sprite>sprites\spr_floor_rock</sprite>
     </sprites>
     <sprites name="Traps">
       <sprite>sprites\spr_trap_stall</sprite>
@@ -639,6 +646,9 @@
         <script>scripts\twan_fire_shot.gml</script>
         <script>scripts\twan_fire_mgun.gml</script>
         <script>scripts\twan_mine.gml</script>
+      </scripts>
+      <scripts name="Pickle">
+        <script>scripts\ep_attack.gml</script>
       </scripts>
     </scripts>
     <scripts name="Entity">
@@ -1065,6 +1075,7 @@
         <object>objects\obj_captain</object>
         <object>objects\obj_clone</object>
         <object>objects\obj_grunt</object>
+        <object>objects\obj_pickle</object>
         <object>objects\obj_brute</object>
         <object>objects\obj_dog</object>
         <object>objects\obj_turret</object>
@@ -1096,6 +1107,7 @@
       <object>objects\obj_book</object>
       <object>objects\obj_lore_computer</object>
       <object>objects\obj_interact_area</object>
+      <object>objects\obj_secret_interact</object>
       <object>objects\obj_chest</object>
       <object>objects\obj_workbench</object>
       <object>objects\obj_hub_teleporter</object>
@@ -1193,6 +1205,7 @@
       <object>objects\obj_light</object>
       <object>objects\obj_pointlight</object>
       <object>objects\obj_wall_light</object>
+      <object>objects\obj_secret_light</object>
       <object>objects\obj_computer_light</object>
       <object>objects\obj_teleporter_light</object>
       <object>objects\obj_cube_light</object>

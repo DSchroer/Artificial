@@ -85,6 +85,15 @@ var weight_table_p12 = array(0, 28, 20, 6, 6);
 var weight_table_p13 = array(0, 20, 20, 7, 7);
 var weight_table_p14 = array(0, 15, 15, 8, 8);
 
+var pickle = save_get_value(obj_save_data, "pickle", false);
+if(pickle &amp;&amp; obj_progress.progress &gt;= 12)
+{
+    spawn_values = array(noone, obj_grunt, obj_spawn_dog, obj_captain, obj_brute, obj_pickle);
+    weight_table_p12 = array(0, 28, 20, 6, 6, 3);
+    weight_table_p13 = array(0, 20, 20, 7, 7, 3);
+    weight_table_p14 = array(0, 15, 15, 8, 8, 3);
+}
+
 switch(obj_progress.progress)
 {
 case 0:

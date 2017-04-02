@@ -176,7 +176,7 @@
     <instance objName="obj_invisible_wall" x="2336" y="1120" name="inst_0866C946" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="2400" y="1120" name="inst_007EFC18" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="2464" y="1120" name="inst_6ACA9F23" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_tutorial_prop_dash" x="1728" y="960" name="inst_CC7FA3FA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tutorial_prop_dash" x="1760" y="992" name="inst_CC7FA3FA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_light" x="1664" y="864" name="inst_8DD64BB2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_light" x="1984" y="864" name="inst_03F2AC89" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_light" x="2304" y="864" name="inst_A6F2EF34" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

@@ -7,6 +7,25 @@ if(is_paused())
     image_speed = 0.25;
 }
 
+if(dead)
+{
+    if(image_speed != 0)
+    {
+        image_speed = 0.1
+    }
+
+    if(sprite_index != spr_player_die)
+    {
+        sprite_index = spr_player_die
+    }
+    
+    if(image_index >= image_number - 1)
+    {
+        image_speed = 0;
+    }
+    exit; 
+}
+
 var haxis_ls = keymap_gamepad_axis(gp_axislh);
 var vaxis_ls = keymap_gamepad_axis(gp_axislv);
 if(speed != 0 && 
@@ -21,4 +40,3 @@ if(speed != 0 &&
 }else{
     sprite_index = spr_player;
 }
-

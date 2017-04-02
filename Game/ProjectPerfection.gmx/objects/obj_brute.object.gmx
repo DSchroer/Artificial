@@ -59,7 +59,7 @@ pound[weapon_index.bullet_sprite_xscale] = 0.5;
 pound[weapon_index.bullet_sprite_yscale] = 0.5;
 pound[weapon_index.bullet_speed] = 0;
 
-
+image_speed = 0.25
 
 volume_mod = 0.9;
 ds_list_add(hurt_sounds, snd_brute_hit); 
@@ -121,6 +121,8 @@ if(random(5000) &lt; 1)
     sfx_play_volume(snd_brute_ambient, false, 1.0);
 }
 
+entity_face_player();
+
 var state = sm_get_state();
 
 if(player_exists())
@@ -129,15 +131,19 @@ if(player_exists())
     {
         case "idle":
         case "paused":
+            entity_use_animation(spr_brute, true);
             eg_idle();
             break;
         case "approach":
+            entity_use_animation(spr_brute_move, false);
             brute_approach();
             break;
         case "attack":
+            entity_use_animation(spr_brute, false);
             brute_attack();
             break;
         case "mele":
+            entity_use_animation(spr_brute, false);
             brute_mele();
             break;
     }
